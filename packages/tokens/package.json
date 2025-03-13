@@ -1,0 +1,9 @@
+{
+  "name": "@axiom/tokens",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {},
+  "devDependencies": {
+    "@figma/rest-api-spec": "^0.24.0"
+  }
+}
