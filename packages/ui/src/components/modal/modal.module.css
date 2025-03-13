@@ -1,0 +1,119 @@
+@layer ui.component {
+  .backdrop {
+    position: fixed;
+    inset: 0;
+    background-color: var(--wb-modal-backdrop-background);
+    z-index: 1000;
+  }
+
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--wb-modal-background);
+    border-radius: var(--wb-modal-border-radius);
+    width: var(--wb-modal-width);
+    z-index: 1001;
+    outline: none;
+    overflow: auto;
+  }
+
+  .header {
+    display: flex;
+    padding: var(--wb-modal-padding);
+    justify-content: space-between;
+    align-items: center;
+    border-radius: var(--wb-modal-border-radius) var(--wb-modal-border-radius) 0
+      0;
+    border-bottom: 0.0625rem solid var(--wb-modal-header-border-color);
+    background: var(--wb-modal-header-background);
+  }
+
+  .title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .icon {
+    display: flex;
+    padding: var(--wb-modal-icon-padding);
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 0.375rem;
+    background: var(--wb-modal-icon-background);
+    color: var(--wb-modal-icon-color);
+  }
+
+  .title {
+    margin: 0;
+    color: var(--wb-modal-title-color);
+  }
+
+  .description {
+    color: var(--wb-modal-description-color);
+    font-family: Poppins;
+    font-size: var(--wb-modal-description-size);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--wb-modal-description-line-height);
+    margin: 0;
+  }
+
+  .content {
+    display: flex;
+    padding: var(--wb-modal-content-padding);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    align-self: stretch;
+    background: var(--wb-modal-content-background);
+  }
+
+  .footer {
+    display: flex;
+    padding: var(--wb-modal-footer-padding);
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+
+    &.separated {
+      border-top: 1px solid var(--wb-modal-footer-border-color);
+    }
+  }
+
+  .large {
+    width: var(--wb-modal-large-width);
+
+    .header {
+      padding: var(--wb-modal-large-padding);
+    }
+
+    .title {
+      font-size: var(--wb-modal-large-title-size);
+      line-height: var(--wb-modal-large-title-line-height);
+    }
+
+    .icon {
+      padding: var(--wb-modal-large-icon-padding);
+    }
+
+    .content {
+      padding: var(--wb-modal-large-padding);
+    }
+
+    .footer {
+      &.separated {
+        padding: var(--wb-modal-large-padding);
+      }
+
+      &.integrated {
+        padding: 0 var(--wb-modal-large-padding) var(--wb-modal-large-padding)
+          var(--wb-modal-large-padding);
+      }
+    }
+  }
+}

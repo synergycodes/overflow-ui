@@ -1,0 +1,40 @@
+:root {
+  --wb-avatar-border-color: var(--ax-input-stroke-primary-default); /* missing token */
+  --wb-avatar-background-color: var(--ax-colors-blue-500); /* missing token */
+}
+
+.container {
+  border: 1px solid var(--wb-avatar-border-color);
+  background-color: var(--wb-avatar-background-color);
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.extra-large {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  &.large {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &.medium {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &.small {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

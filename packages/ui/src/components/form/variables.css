@@ -1,0 +1,4 @@
+:root {
+  --wb-form-label-color: var(--color-text-txt--secondary--default);
+  --wb-form-label-asterisk-color: var(--colors-red-red-400); /* no token */
+}

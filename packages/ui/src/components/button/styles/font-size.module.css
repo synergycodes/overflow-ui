@@ -1,0 +1,15 @@
+@layer ui.component {
+  .extra-large {
+    composes: button-large from global;
+  }
+
+  .large {
+    composes: button-medium from global;
+  }
+
+  .medium,
+  .small,
+  .extra-small {
+    composes: button-small from global;
+  }
+}

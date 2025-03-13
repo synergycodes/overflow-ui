@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  flex: 1;
+  min-width: 0;
+  word-break: break-word;
+}
+
+.title {
+  composes: h8 from global;
+  color: var(--wb-snackbar-title-color);
+}
+
+.subtitle {
+  composes: p10 from global;
+  color: var(--wb-snackbar-subtitle-color);
+}

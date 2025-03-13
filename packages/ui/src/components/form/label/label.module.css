@@ -1,0 +1,32 @@
+@layer ui.component {
+  .container {
+    display: flex;
+    gap: 0.25rem;
+    color: var(--wb-form-label-color);
+    align-items: center;
+
+    .label {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 100%;
+    }
+
+    svg {
+      width: 0.625rem;
+      height: 0.625rem;
+      min-width: 0.625rem;
+
+      color: var(--wb-form-label-asterisk-color);
+    }
+  }
+
+  .large {
+    composes: p10 from global;
+  }
+
+  .medium,
+  .small {
+    composes: p11 from global;
+  }
+}

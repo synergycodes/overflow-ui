@@ -1,0 +1,16 @@
+@layer ui.component {
+  .large {
+    composes: p9 from global;
+    padding: 0.6875rem 0.5rem;
+  }
+
+  .medium {
+    composes: p10 from global;
+    padding: 0.625rem 0.5rem;
+  }
+
+  .small {
+    composes: p10 from global;
+    padding: 0.5rem;
+  }
+}

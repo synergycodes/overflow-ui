@@ -1,0 +1,29 @@
+@layer ui.component {
+  .nav-button {
+    background-color: transparent;
+    color: var(--wb-button-nav-color);
+
+    &:hover {
+      background-color: var(--wb-button-nav-background-color);
+
+      &.no-background {
+        background: transparent;
+        color: var(--wb-button-nav-color-hover);
+      }
+    }
+
+    &:active {
+      color: var(--wb-button-nav-color-active);
+      background-color: var(--wb-button-nav-background-color);
+    }
+
+    &:focus-visible {
+      background-color: var(--wb-button-nav-background-color);
+    }
+
+    &:disabled {
+      color: var(--wb-button-nav-color-disabled);
+      background-color: transparent;
+    }
+  }
+}

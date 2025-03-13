@@ -1,0 +1,76 @@
+@layer ui.component {
+  .container {
+    width: var(--wb-icon-switch-width);
+    height: var(--wb-icon-switch-height);
+    position: relative;
+    border: none;
+  }
+
+  .track {
+    position: absolute;
+    inset: 0;
+    border-radius: calc(var(--wb-icon-switch-height) / 2);
+    background-color: var(--wb-icon-switch-track-bg);
+    transition: background-color 0.1s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--wb-icon-switch-padding);
+    color: var(--wb-icon-switch-icon-color)
+  }
+
+  .track > div {
+    width: var(--wb-icon-switch-icon-size);
+    height: var(--wb-icon-switch-icon-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .thumb {
+    position: absolute;
+    top: var(--wb-icon-switch-thumb-offset);
+    left: var(--wb-icon-switch-thumb-offset);
+    width: var(--wb-icon-switch-thumb-size);
+    height: var(--wb-icon-switch-thumb-size);
+    border-radius: 50%;
+    background-color: var(--wb-icon-switch-thumb-bg);
+    transition: transform 0.1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.primary {
+      background-color: var(--wb-icon-switch-thumb-bg-primary);
+      color: var(--wb-icon-switch-icon-selected-color);
+    }
+
+    &.secondary {
+      background-color: var(--wb-icon-switch-thumb-bg-secondary);
+      color: var(--wb-icon-switch-thumb-bg-primary);
+    }
+  }
+
+  .icon {
+    width: var(--wb-icon-switch-icon-size);
+    height: var(--wb-icon-switch-icon-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .thumb .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .thumb .icon.icon-right {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  .container:has(input:checked) .thumb {
+    transform: translateX(var(--wb-icon-switch-translate));
+  }
+}

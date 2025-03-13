@@ -1,0 +1,18 @@
+@layer ui.component {
+  .extra-large,
+  .large {
+    padding: 1rem;
+  }
+
+  .medium {
+    padding: 0.75rem;
+  }
+
+  .small {
+    padding: 0.625rem;
+  }
+
+  .extra-small {
+    padding: 0.5rem;
+  }
+}

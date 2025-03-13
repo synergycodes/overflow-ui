@@ -1,0 +1,6 @@
+@layer ui.component {
+  .clear-button {
+    display: flex;
+    cursor: pointer;
+  }
+}

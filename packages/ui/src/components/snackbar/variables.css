@@ -1,0 +1,57 @@
+:root {
+  --wb-snackbar-width: 31.25rem;
+  --wb-snackbar-title-color: var(--color-text-txt--primary--default);
+  --wb-snackbar-subtitle-color: var(--color-text-txt--secondary--default);
+  --wb-snackbar-close-icon-color: var(--color-text-txt--tertiary--default);
+
+  --wb-snackbar-default-border: var(--color-ui-ui--stroke--secondary--default);
+  --wb-snackbar-default-background: var(--color-ui-ui--bg--primary--default);
+  --wb-snackbar-default-icon-color: var(--color-text-txt--tertiary--default);
+
+  --wb-snackbar-success-border: var(
+    --colors-green-green-300
+  ); /* missing token */
+  --wb-snackbar-success-background: linear-gradient(
+      0deg,
+      var(--color-snackbar-snackbar--bg--success) 0%,
+      var(--color-snackbar-snackbar--bg--success) 100%
+    ),
+    var(--color-ui-ui--bg--primary--default);
+  --wb-snackbar-success-icon-color: var(
+    --colors-green-green-400
+  ); /* missing token */
+
+  --wb-snackbar-error-border: var(--colors-red-red-400); /* missing token */
+  --wb-snackbar-error-background: linear-gradient(
+      0deg,
+      var(--color-snackbar-snackbar--bg--error) 0%,
+      var(--color-snackbar-snackbar--bg--error) 100%
+    ),
+    var(--color-ui-ui--bg--primary--default);
+  --wb-snackbar-error-icon-color: var(--colors-red-red-400); /* missing token */
+
+  --wb-snackbar-warning-border: var(
+    --colors-orange-orange-300
+  ); /* missing token */
+  --wb-snackbar-warning-background: linear-gradient(
+      0deg,
+      var(--color-snackbar-snackbar--bg--warning) 0%,
+      var(--color-snackbar-snackbar--bg--warning) 100%
+    ),
+    var(--color-ui-ui--bg--primary--default);
+
+  --wb-snackbar-warning-icon-color: var(
+    --colors-orange-orange-400
+  ); /* missing token */
+
+  --wb-snackbar-info-border: var(--color-ui-ui--bg--tertiary--selected);
+  --wb-snackbar-info-background: linear-gradient(
+      0deg,
+      var(--color-snackbar-snackbar--bg--information) 0%,
+      var(--color-snackbar-snackbar--bg--information) 100%
+    ),
+    var(--color-ui-ui--bg--primary--default);
+  --wb-snackbar-info-icon-color: var(
+    --colors-blue-blue-400
+  ); /* missing token */
+}

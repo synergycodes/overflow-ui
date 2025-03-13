@@ -1,0 +1,13 @@
+:root {
+  --wb-input-color-disabled: var(--ax-txt-quaternary-default);
+
+  --wb-input-root-color: var(--ax-txt-secondary-default);
+  --wb-input-root-border-color: var(--ax-input-stroke-primary-default);
+  --wb-input-root-border-color-focus: var(--ax-input-stroke-primary-focus);
+
+  --wb-input-root-background-color-error: var(--ax-input-bg-primary-error);
+  --wb-input-root-border-color-error: var(--ax-input-stroke-primary-error);
+  --wb-input-root-color-error: var(--ax-txt-error-default);
+
+  --wb-input-root-color-disabled: var(--ax-txt-quaternary-default);
+}

@@ -1,0 +1,16 @@
+:root {
+  --wb-list-item-separator-background-color: var(
+    --color-ui-ui--separator--primary--default
+  );
+}
+
+@layer ui.component {
+  .separator {
+    border-top: 1px solid var(--wb-list-item-separator-background-color);
+    width: 100%;
+    margin: 0;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+  }
+}

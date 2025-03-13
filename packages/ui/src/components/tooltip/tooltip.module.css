@@ -1,0 +1,20 @@
+.container {
+  padding: var(--wb-tooltip-padding);
+  border-radius: var(--wb-tooltip-radius-size);
+  box-sizing: border-box;
+  width: max-content;
+  max-width: 33vw;
+  z-index: 100;
+}
+
+.tooltip-default {
+  color: var(--wb-tooltip-text-color);
+  background-color: var(--wb-tooltip-default-background);
+  fill: var(--wb-tooltip-default-background);
+}
+
+.tooltip-blue {
+  color: var(--wb-tooltip-blue-text-color);
+  background-color: var(--wb-tooltip-blue-background);
+  fill: var(--wb-tooltip-blue-background);
+}

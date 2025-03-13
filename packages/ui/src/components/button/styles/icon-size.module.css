@@ -1,0 +1,51 @@
+@layer ui.component {
+  .extra-large {
+    svg {
+      width: var(--wb-icon-size-extra-large);
+      height: var(--wb-icon-size-extra-large);
+    }
+  }
+
+  .large {
+    svg {
+      width: var(--wb-icon-size-large);
+      height: var(--wb-icon-size-large);
+    }
+  }
+
+  .medium {
+    svg {
+      width: var(--wb-icon-size-medium);
+      height: var(--wb-icon-size-medium);
+    }
+  }
+
+  .small {
+    svg {
+      width: var(--wb-icon-size-small);
+      height: var(--wb-icon-size-small);
+    }
+  }
+
+  .extra-small {
+    svg {
+      width: var(--wb-icon-size-extra-small);
+      height: var(--wb-icon-size-extra-small);
+    }
+  }
+
+  .xx-small,
+  .xxx-small {
+    svg {
+      width: var(--wb-icon-size-xx-xxx-small);
+      height: var(--wb-icon-size-xx-xxx-small);
+    }
+  }
+
+  .xxxx-small {
+    svg {
+      width: var(--wb-icon-size-xxxx-small);
+      height: var(--wb-icon-size-xxxx-small);
+    }
+  }
+}

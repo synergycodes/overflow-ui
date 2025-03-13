@@ -1,0 +1,10 @@
+@layer ui.component {
+  .large {
+    composes: p9 from global;
+  }
+
+  .medium,
+  .small {
+    composes: p10 from global;
+  }
+}

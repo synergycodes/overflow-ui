@@ -1,0 +1,11 @@
+.container {
+  background: transparent;
+  border: 1px solid var(--wb-input-root-border-color);
+  color: var(--wb-input-root-color);
+  cursor: pointer;
+  width: 100%;
+
+  &[aria-expanded='true'] {
+    border-color: var(--wb-input-root-border-color-focus);
+  }
+}

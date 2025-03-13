@@ -1,0 +1,24 @@
+@layer ui.component {
+  :not(.circle) {
+    &.extra-large,
+    &.large {
+      border-radius: var(--wb-button-border-radius-large);
+    }
+
+    &.medium {
+      border-radius: var(--wb-button-border-radius-medium);
+    }
+
+    &.small,
+    &.extra-small,
+    &.xx-small,
+    &.xxx-small,
+    &.xxxx-small {
+      border-radius: var(--wb-button-border-radius-small);
+    }
+  }
+
+  .circle {
+    border-radius: var(--wb-button-border-radius-circle);
+  }
+}

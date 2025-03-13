@@ -1,0 +1,57 @@
+@layer ui.component {
+  .container {
+    display: flex;
+    width: 100%;
+    min-width: 100px;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    cursor: pointer;
+
+    color: var(--wb-select-button-color);
+
+    border: 1px solid var(--wb-select-button-border-color);
+
+    &:not(:hover) {
+      transition: all var(--wb-transition);
+    }
+
+    &:global(.base--expanded) {
+      border-color: var(--wb-select-button-border-color-focus);
+    }
+
+    &:focus-visible {
+      border-color: var(--wb-select-button-border-color-focus);
+      outline: none;
+    }
+
+    &:disabled {
+      color: var(--wb-select-button-color-disabled);
+      cursor: auto;
+    }
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+      min-width: 1rem;
+    }
+  }
+
+  .large {
+    composes: p9 from global;
+    padding: 0.6875rem 0.75rem;
+    border-radius: 0.5rem;
+  }
+
+  .medium {
+    composes: p10 from global;
+    padding: 0.625rem 0.75rem;
+    border-radius: 0.375rem;
+  }
+
+  .small {
+    composes: p10 from global;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+  }
+}
