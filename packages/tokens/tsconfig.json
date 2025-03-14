@@ -1,0 +1,4 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "types": ["types.d.ts"]
+}

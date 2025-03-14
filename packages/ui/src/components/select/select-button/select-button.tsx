@@ -1,7 +1,7 @@
-import { WithIcon } from '@/axiom/shared/types/with-icon';
-import { SelectRootSlotProps } from '@mui/base';
-import { CaretDown } from '@phosphor-icons/react';
-import React from 'react';
+import { WithIcon } from "@ui/shared/types/with-icon";
+import { SelectRootSlotProps } from "@mui/base";
+import { CaretDown } from "@phosphor-icons/react";
+import React from "react";
 
 export const SelectButton = React.forwardRef(function Button<
   TValue extends object,

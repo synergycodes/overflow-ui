@@ -1,8 +1,8 @@
-import { Size } from '../shared/types/label-size';
-import { ListItem } from '../shared/types/list-item';
+import { ItemSize } from "@ui/shared/types/item-size";
+import { ListItem } from "@ui/shared/types/list-item";
 
 export type MenuItemProps = ListItem & {
   destructive?: boolean;
   onClick?: () => void;
-  size?: Size;
+  size?: ItemSize;
 };

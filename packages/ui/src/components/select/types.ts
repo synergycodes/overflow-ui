@@ -1,4 +1,4 @@
-import { ListItem } from '../shared/types/list-item';
+import { ListItem } from "../../shared/types/list-item";
 
 export type SelectItem = ListItem & {
   value?: string | number | null;

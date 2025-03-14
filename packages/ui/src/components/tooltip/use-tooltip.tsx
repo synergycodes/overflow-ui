@@ -11,8 +11,9 @@ import {
   useRole,
   useInteractions,
   Placement,
-} from '@floating-ui/react';
-import { useMemo, useRef, useState } from 'react';
+  UseInteractionsReturn,
+} from "@floating-ui/react";
+import { useMemo, useRef, useState } from "react";
 
 const TOOLTIP_OFFSET = 10;
 const TOOLTIP_PADDING = 5;
@@ -28,10 +29,10 @@ export type TooltipOptions = {
 
 export function useTooltip({
   initialOpen = false,
-  placement = 'bottom',
+  placement = "bottom",
   open: controlledOpen,
   onOpenChange: setControlledOpen,
-}: TooltipOptions = {}) {
+}: TooltipOptions = {}): UseTooltipResult {
   const [uncontrolledOpen, setUncontrolledOpen] = useState(initialOpen);
 
   const open = controlledOpen ?? uncontrolledOpen;
@@ -46,8 +47,8 @@ export function useTooltip({
     middleware: [
       offset(TOOLTIP_OFFSET),
       flip({
-        crossAxis: placement.includes('-'),
-        fallbackAxisSideDirection: 'start',
+        crossAxis: placement.includes("-"),
+        fallbackAxisSideDirection: "start",
         padding: TOOLTIP_PADDING,
       }),
       shift({ padding: TOOLTIP_PADDING }),
@@ -71,7 +72,7 @@ export function useTooltip({
     enabled: controlledOpen == null,
   });
   const dismiss = useDismiss(context);
-  const role = useRole(context, { role: 'tooltip' });
+  const role = useRole(context, { role: "tooltip" });
 
   const interactions = useInteractions([hover, focus, dismiss, role]);
 
@@ -86,3 +87,10 @@ export function useTooltip({
     [open, setOpen, interactions, data, arrowRef],
   );
 }
+
+type UseTooltipResult = UseInteractionsReturn &
+  ReturnType<typeof useFloating> & {
+    open: boolean;
+    setOpen: (open: boolean) => void;
+    arrowRef: React.RefObject<null>;
+  };

@@ -1,8 +1,8 @@
-import { InputProps as InputBaseProps } from '@mui/base';
-import { Size } from '@/axiom/shared/types/label-size';
+import { InputProps as InputBaseProps } from "@mui/base";
+import { ItemSize } from "@ui/shared/types/item-size";
 
 export type InputProps = InputBaseProps & {
   searchIcon?: boolean;
   onClear?: () => void;
-  size?: Size;
+  size?: ItemSize;
 };

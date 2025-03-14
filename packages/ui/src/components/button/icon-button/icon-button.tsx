@@ -1,14 +1,15 @@
-import clsx from 'clsx';
+import clsx from "clsx";
 
-import variantStyles from '../styles/variant.module.css';
-import borderRadiusStyles from '../styles/border-radius.module.css';
-import iconSizeStyles from '../styles/icon-size.module.css';
-import iconPaddingStyles from '../styles/icon-padding.module.css';
+import variantStyles from "../styles/variant.module.css";
+import borderRadiusStyles from "../styles/border-radius.module.css";
+import iconSizeStyles from "../styles/icon-size.module.css";
+import iconPaddingStyles from "../styles/icon-padding.module.css";
 
-import { Variant, Size, Shape, BaseButtonProps } from '../types';
-import { Icon } from '@phosphor-icons/react';
-import { BaseButton } from '../base-button/base-button';
-import { forwardRef } from 'react';
+import { Variant, Shape, BaseButtonProps } from "../types";
+import type { Icon } from "@phosphor-icons/react";
+import { BaseButton } from "../base-button/base-button";
+import { forwardRef } from "react";
+import { Size } from "@ui/shared/types/size";
 
 type IconButtonProps = {
   Icon: Icon;
@@ -22,7 +23,7 @@ export const IconButton = forwardRef<
   BaseButtonProps<IconButtonProps>
 >(
   (
-    { size = 'medium', variant = 'primary', shape = '', Icon, ...props },
+    { size = "medium", variant = "primary", shape = "", Icon, ...props },
     ref,
   ) => (
     <BaseButton

@@ -1,23 +1,23 @@
-import styles from './form-control-with-label.module.css';
+import styles from "./form-control-with-label.module.css";
 
-import { Label } from '../label/label';
-import { PropsWithChildren } from 'react';
-import { Size } from '../../shared/types/label-size';
+import { Label } from "../label/label";
+import { PropsWithChildren } from "react";
+import { ItemSize } from "@ui/shared/types/item-size";
 
 type Props = {
   label: string;
   required?: boolean;
-  size?: Size;
+  size?: ItemSize;
 };
 
 export function FormControlWithLabel({
   label,
   required,
-  size = 'medium',
+  size = "medium",
   children,
 }: PropsWithChildren<Props>) {
   return (
-    <div className={styles['container']}>
+    <div className={styles["container"]}>
       <Label label={label} required={required} size={size} />
       {children}
     </div>

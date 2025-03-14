@@ -1,11 +1,11 @@
-import { MenuButtonProps } from '@mui/base';
+import { MenuButtonProps } from "@mui/base";
 import {
   cloneElement,
   forwardRef,
   ForwardRefExoticComponent,
   ReactElement,
   RefAttributes,
-} from 'react';
+} from "react";
 
 const cache = new WeakMap<
   ReactElement,
@@ -26,14 +26,17 @@ export function createTriggerButton(component: ReactElement) {
     }
 
     if (isForwardRefComponent(component)) {
-      const element = cloneElement(component, { ...props, ref });
+      const element = cloneElement(component, {
+        ...props,
+        ref,
+      } as MenuButtonProps);
       cache.set(component, { element, ref });
 
       return element;
     }
 
     console.error(
-      'The element passed as children must be a valid React element with forwardRef',
+      "The element passed as children must be a valid React element with forwardRef",
     );
 
     return null;
@@ -50,7 +53,7 @@ export function isForwardRefComponent<T>(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   component: any,
 ): component is ForwardRefExoticComponent<RefAttributes<T>> {
-  const forwardRefSymbol = Symbol.for('react.forward_ref');
+  const forwardRefSymbol = Symbol.for("react.forward_ref");
 
   while (component) {
     if (component.$$typeof === forwardRefSymbol) {

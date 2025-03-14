@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {},
   "devDependencies": {
-    "@figma/rest-api-spec": "^0.24.0"
+    "@figma/rest-api-spec": "^0.24.0",
+    "@tokens-studio/sd-transforms": "^1.2.12",
+    "style-dictionary": "^4.3.3"
   }
 }

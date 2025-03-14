@@ -1,55 +1,34 @@
-import "dotenv/config";
-import * as fs from "node:fs";
+/* eslint-disable import/no-unresolved */
+import { register } from "@tokens-studio/sd-transforms";
+import StyleDictionary from "style-dictionary";
 
-import FigmaApi from "./figma-api.js";
+// will register them on StyleDictionary object
+// that is installed as a dependency of this package.
+register(StyleDictionary);
 
-import { green } from "./utils.js";
-import { tokenFilesFromLocalVariables } from "./token_export.js";
-
-/**
- * Usage:
- *
- * // Defaults to writing to the tokens_new directory
- * npm run sync-figma-to-tokens
- *
- * // Writes to the specified directory
- * npm run sync-figma-to-tokens -- --output directory_name
- */
+const styleDictionary = new StyleDictionary({
+  // make sure to have source match your token files!
+  // be careful about accidentally matching your package.json or similar files that are not tokens
+  source: ["tokens/**/*.json"],
+  preprocessors: ["tokens-studio"], // <-- since 0.16.0 this must be explicit
+  platforms: {
+    css: {
+      transformGroup: "tokens-studio", // <-- apply the tokens-studio transformGroup to apply all transforms
+      transforms: ["name/kebab"], // <-- add a token name transform for generating token names, default is camel
+      buildPath: "build/css/",
+      files: [
+        {
+          destination: "variables.css",
+          format: "css/variables",
+        },
+      ],
+    },
+  },
+});
 
 async function main() {
-  if (!process.env.PERSONAL_ACCESS_TOKEN || !process.env.FILE_KEY) {
-    throw new Error(
-      "PERSONAL_ACCESS_TOKEN and FILE_KEY environemnt variables are required",
-    );
-  }
-  const fileKey = process.env.FILE_KEY;
-
-  const api = new FigmaApi(process.env.PERSONAL_ACCESS_TOKEN);
-  const localVariables = await api.getLocalVariables(fileKey);
-
-  const tokensFiles = tokenFilesFromLocalVariables(localVariables);
-
-  let outputDir = "tokens_new";
-  const outputArgIdx = process.argv.indexOf("--output");
-  if (outputArgIdx !== -1) {
-    outputDir = process.argv[outputArgIdx + 1];
-  }
-
-  if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir);
-  }
-
-  Object.entries(tokensFiles).forEach(([fileName, fileContent]) => {
-    fs.writeFileSync(
-      `${outputDir}/${fileName}`,
-      JSON.stringify(fileContent, null, 2),
-    );
-    console.log(`Wrote ${fileName}`);
-  });
-
-  console.log(
-    green(`✅ Tokens files have been written to the ${outputDir} directory`),
-  );
+  await styleDictionary.cleanAllPlatforms();
+  await styleDictionary.buildAllPlatforms();
 }
 
 main();

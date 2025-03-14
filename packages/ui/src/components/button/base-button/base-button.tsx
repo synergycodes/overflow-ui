@@ -1,16 +1,16 @@
-import clsx from 'clsx';
-import buttonStyles from './base-button.module.css';
-import '../variables.css';
+import clsx from "clsx";
+import buttonStyles from "./base-button.module.css";
+import "../variables.css";
 
-import { Button } from '@mui/base/Button';
-import { BaseButtonProps, CommonButtonProps } from '../types';
-import { forwardRef } from 'react';
-import { prepareForSlot } from '@mui/base';
+import { Button } from "@mui/base/Button";
+import { BaseButtonProps, CommonButtonProps } from "../types";
+import { forwardRef } from "react";
+import { prepareForSlot } from "@mui/base";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from '@/axiom/tooltip/tooltip';
+} from "@ui/components/tooltip/tooltip";
 
 type Props = {
   /** Class name meant to be used by parent components using <BaseButton /> directly */
@@ -27,7 +27,7 @@ export const BaseButton = prepareForSlot(
         className,
         tooltip,
         disabled,
-        tooltipType = 'default',
+        tooltipType = "default",
         ...props
       },
       ref,
@@ -35,7 +35,7 @@ export const BaseButton = prepareForSlot(
       const button = (
         <Button
           ref={ref}
-          className={clsx(buttonStyles['button'], styles, className)}
+          className={clsx(buttonStyles["button"], styles, className)}
           disabled={disabled}
           {...props}
         >

@@ -1,17 +1,18 @@
-import { TooltipVariant } from '../tooltip/types';
+import { TooltipVariant } from "../tooltip/types";
 
-export type Variant =
-  | 'primary'
-  | 'secondary'
-  | 'gray'
-  | 'error'
-  | 'warning'
-  | 'success'
-  | 'ghost-destructive';
+export const BUTTON_VARIANTS = [
+  "primary",
+  "secondary",
+  "gray",
+  "error",
+  "warning",
+  "success",
+  "ghost-destructive",
+] as const;
 
-export type Size = 'extra-large' | 'large' | 'medium' | 'small' | 'extra-small';
+export type Variant = (typeof BUTTON_VARIANTS)[number];
 
-export type Shape = '' | 'circle';
+export type Shape = "" | "circle";
 
 export type BaseButtonProps<T> = T &
   React.DetailedHTMLProps<

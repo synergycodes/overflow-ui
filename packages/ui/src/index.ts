@@ -1,0 +1,51 @@
+// [TODO] Improvement: Should we automate it?
+// Using glob library could help us generate this entrypoint and imports
+
+import "./styles/layers.css";
+import "./styles/axiom.css";
+
+export * from "./components/accordion/accordion";
+export * from "./components/avatar/avatar";
+
+export * from "./components/button/icon-button/icon-button";
+export * from "./components/button/icon-label-button/icon-label-button";
+export * from "./components/button/label-button/label-button";
+export * from "./components/button/nav-button/nav-button";
+
+export * from "./components/checkbox/checkbox";
+
+export * from "./components/date-picker/date-picker";
+
+export * from "./components/form/form-control-with-label/form-control-with-label";
+export * from "./components/form/label/label";
+
+export * from "./components/input/input";
+
+export * from "./components/menu/menu";
+
+export * from "./components/modal/modal";
+
+export * from "./components/radio-button/radio";
+
+export * from "./components/select/select";
+
+export * from "./components/switch/switch";
+export * from "./components/switch/icon-switch/icon-switch";
+
+export * from "./components/snackbar/snackbar";
+
+export * from "./components/text-area/text-area";
+
+export * from "./components/tooltip/tooltip";
+
+// Types
+export * from "./components/button/types";
+export * from "./components/date-picker/types";
+export * from "./components/input/types";
+export * from "./components/menu/types";
+export * from "./components/modal/types";
+export * from "./components/select/types";
+export * from "./components/snackbar/types";
+export * from "./components/tooltip/types";
+export * from "./shared/types/size";
+export * from "./shared/types/item-size";

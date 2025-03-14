@@ -1,13 +1,13 @@
-import clsx from 'clsx';
-import switchStyles from './switch.module.css';
-import './variables.css';
+import clsx from "clsx";
+import switchStyles from "./switch.module.css";
+import "./variables.css";
 
-import { Switch as SwitchBase, SwitchProps } from '@mui/base';
-import { Size } from '@/axiom/shared/types/label-size';
-import { ChangeEvent } from 'react';
+import { Switch as SwitchBase, SwitchProps } from "@mui/base";
+import { ItemSize } from "@ui/shared/types/item-size";
+import { ChangeEvent } from "react";
 
 export type BaseSwitchProps = {
-  size?: Size;
+  size?: ItemSize;
   styles?: string;
   thumbChildren?: React.ReactNode;
   trackChildren?: React.ReactNode;
@@ -15,10 +15,10 @@ export type BaseSwitchProps = {
   checked?: boolean;
   disabled?: boolean;
   onChange?: (checked: boolean, event: ChangeEvent<HTMLInputElement>) => void;
-} & Omit<SwitchProps, 'onChange'>;
+} & Omit<SwitchProps, "onChange">;
 
 export function Switch({
-  size = 'small',
+  size = "small",
   className,
   styles,
   thumbChildren,
@@ -33,22 +33,22 @@ export function Switch({
   const slotProps = {
     root: {
       className: clsx(
-        switchStyles['container'],
+        switchStyles["container"],
         switchStyles[size],
         styles,
         className,
       ),
     },
     thumb: {
-      className: clsx(thumbChildren ? '' : switchStyles['thumb']),
+      className: clsx(thumbChildren ? "" : switchStyles["thumb"]),
       children: thumbChildren,
     },
     track: {
-      className: clsx(trackChildren ? '' : switchStyles['track']),
+      className: clsx(trackChildren ? "" : switchStyles["track"]),
       children: trackChildren,
     },
     input: {
-      className: switchStyles['input'],
+      className: switchStyles["input"],
     },
   };
 

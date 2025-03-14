@@ -1,15 +1,15 @@
-import clsx from 'clsx';
-import styles from './text-area.module.css';
-import './variables.css';
+import clsx from "clsx";
+import styles from "./text-area.module.css";
+import "./variables.css";
 
-import { TextareaAutosize } from '@mui/base/TextareaAutosize';
-import { Size } from '../shared/types/label-size';
+import { TextareaAutosize } from "@mui/base/TextareaAutosize";
+import { ItemSize } from "../../shared/types/item-size";
 
 export type TextAreaProps = {
   value?: string;
   defaultValue?: string;
   placeholder?: string;
-  size?: Size;
+  size?: ItemSize;
   maxRows?: number;
   minRows?: number;
   disabled?: boolean;
@@ -22,7 +22,7 @@ export function TextArea({
   value,
   defaultValue,
   placeholder,
-  size = 'medium',
+  size = "medium",
   maxRows,
   minRows,
   disabled,
@@ -34,8 +34,8 @@ export function TextArea({
   const containerClasses = clsx(
     styles[`container-${size}`],
     {
-      'base--error': error,
-      'base--disabled': disabled,
+      "base--error": error,
+      "base--disabled": disabled,
     },
     className,
   );

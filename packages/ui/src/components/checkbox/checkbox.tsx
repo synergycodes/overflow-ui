@@ -1,10 +1,10 @@
-import clsx from 'clsx';
-import styles from './checkbox.module.css';
-import './variables.css';
+import clsx from "clsx";
+import styles from "./checkbox.module.css";
+import "./variables.css";
 
-import { InputHTMLAttributes } from 'react';
-import { Check, Minus } from '@phosphor-icons/react';
-import { Size } from '@/axiom/shared/types/label-size';
+import { InputHTMLAttributes } from "react";
+import { Check, Minus } from "@phosphor-icons/react";
+import { ItemSize } from "@ui/shared/types/item-size";
 
 const iconSizes = {
   small: 10,
@@ -13,13 +13,13 @@ const iconSizes = {
 };
 
 type Props = {
-  size?: Size;
+  size?: ItemSize;
   indeterminate?: boolean;
   checked?: boolean;
-} & Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>;
+} & Omit<InputHTMLAttributes<HTMLInputElement>, "size">;
 
 export function Checkbox({
-  size = 'medium',
+  size = "medium",
   className,
   indeterminate,
   checked,
@@ -31,10 +31,10 @@ export function Checkbox({
   }
 
   return (
-    <label className={styles['wrapper']}>
+    <label className={styles["wrapper"]}>
       <input
         type="checkbox"
-        className={clsx(styles['checkbox'], styles[size], className)}
+        className={clsx(styles["checkbox"], styles[size], className)}
         onChange={handleChange}
         checked={checked}
         ref={(input) => {
@@ -44,7 +44,7 @@ export function Checkbox({
         }}
         {...props}
       />
-      <span className={styles['icon']}>
+      <span className={styles["icon"]}>
         {indeterminate ? (
           <Minus size={iconSizes[size]} weight="bold" />
         ) : (
