@@ -3,7 +3,8 @@
   "scripts": {
     "lint": "pnpm -r lint",
     "lint:fix": "pnpm -r lint:fix",
-    "typecheck": "pnpm -r typecheck"
+    "typecheck": "pnpm -r typecheck",
+    "dev": "pnpm -r dev"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.0",

@@ -1,8 +1,8 @@
 // [TODO] Improvement: Should we automate it?
 // Using glob library could help us generate this entrypoint and imports
 
+import "@axiom/tokens/dist/axiom.css";
 import "./styles/layers.css";
-import "./styles/axiom.css";
 
 export * from "./components/accordion/accordion";
 export * from "./components/avatar/avatar";

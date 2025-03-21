@@ -6,7 +6,7 @@ import importPlugin from "eslint-plugin-import";
 
 /** @type {import('eslint').Linter.RulesRecord} */
 const rules = {
-  // "import/no-absolute-path": ["error"],
+  "import/no-unresolved": ["off"],
 };
 
 /** @type {import('eslint').Linter.Config[]} */

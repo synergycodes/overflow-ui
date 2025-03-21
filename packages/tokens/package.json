@@ -2,10 +2,21 @@
   "name": "@axiom/tokens",
   "version": "0.0.0",
   "private": true,
-  "scripts": {},
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepare": "tsx src/index.ts"
+  },
   "devDependencies": {
+    "@figma-export/core": "^6.2.0",
     "@figma/rest-api-spec": "^0.24.0",
     "@tokens-studio/sd-transforms": "^1.2.12",
-    "style-dictionary": "^4.3.3"
+    "remeda": "^2.21.2",
+    "style-dictionary": "^4.3.3",
+    "tsx": "^4.19.3"
+  },
+  "dependencies": {
+    "token-transformer": "^0.0.33"
   }
 }
