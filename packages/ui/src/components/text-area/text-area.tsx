@@ -1,10 +1,10 @@
-import clsx from "clsx";
-import styles from "./text-area.module.css";
-import inputFontStyles from "@ui/shared/styles/input-font-size.module.css";
-import inputSizeStyles from "@ui/shared/styles/input-size.module.css";
+import clsx from 'clsx';
+import styles from './text-area.module.css';
+import inputFontStyles from '@ui/shared/styles/input-font-size.module.css';
+import inputSizeStyles from '@ui/shared/styles/input-size.module.css';
 
-import { TextareaAutosize } from "@mui/base/TextareaAutosize";
-import { ItemSize } from "../../shared/types/item-size";
+import { TextareaAutosize } from '@mui/base/TextareaAutosize';
+import { ItemSize } from '../../shared/types/item-size';
 
 export type TextAreaProps = {
   value?: string;
@@ -23,7 +23,7 @@ export function TextArea({
   value,
   defaultValue,
   placeholder,
-  size = "medium",
+  size = 'medium',
   maxRows,
   minRows,
   disabled,
@@ -33,16 +33,16 @@ export function TextArea({
   ...props
 }: TextAreaProps) {
   const containerClasses = clsx(
-    styles["text-area-container"],
+    styles['text-area-container'],
     inputSizeStyles[size],
     {
-      "base--error": error,
-      "base--disabled": disabled,
+      'base--error': error,
+      'base--disabled': disabled,
     },
-    className
+    className,
   );
 
-  const textareaClasses = clsx(styles["text-area"], inputFontStyles[size]);
+  const textareaClasses = clsx(styles['text-area'], inputFontStyles[size]);
 
   return (
     <div className={containerClasses}>

@@ -1,6 +1,10 @@
 :root {
-  --ax-public-button-background-color-disabled: var(--ax-button-primary-bg-disabled);
-  --ax-public-button-focus-visible-box-shadow-color: var(--ax-txt-primary-default);
+  --ax-public-button-background-color-disabled: var(
+    --ax-button-primary-bg-disabled
+  );
+  --ax-public-button-focus-visible-box-shadow-color: var(
+    --ax-txt-primary-default
+  );
   --ax-public-button-inner-border-color: var(--ax-ui-bg-primary-default);
   --ax-public-button-color: var(--ax-txt-primary-white);
 }

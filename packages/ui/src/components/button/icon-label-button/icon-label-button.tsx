@@ -1,15 +1,15 @@
-import clsx from "clsx";
+import clsx from 'clsx';
 
-import variantStyles from "../styles/variant.module.css";
-import borderRadiusStyles from "../styles/border-radius.module.css";
-import fontSizeStyles from "../styles/font-size.module.css";
-import iconSizeStyles from "../styles/icon-size.module.css";
-import paddingStyles from "./padding.module.css";
+import variantStyles from '../styles/variant.module.css';
+import borderRadiusStyles from '../styles/border-radius.module.css';
+import fontSizeStyles from '../styles/font-size.module.css';
+import iconSizeStyles from '../styles/icon-size.module.css';
+import paddingStyles from './padding.module.css';
 
-import { Variant, BaseButtonProps } from "../types";
-import { forwardRef } from "react";
-import { BaseButton } from "../base-button/base-button";
-import { Size } from "@ui/shared/types/size";
+import { Variant, BaseButtonProps } from '../types';
+import { forwardRef } from 'react';
+import { BaseButton } from '../base-button/base-button';
+import { Size } from '@ui/shared/types/size';
 
 type IconNode = React.ReactNode;
 type IconLabelButtonProps = {
@@ -51,7 +51,7 @@ type AllowedChildren =
 export const IconLabelButton = forwardRef<
   HTMLButtonElement,
   BaseButtonProps<IconLabelButtonProps>
->(({ size = "medium", variant = "primary", children, ...props }, ref) => (
+>(({ size = 'medium', variant = 'primary', children, ...props }, ref) => (
   <BaseButton
     ref={ref}
     size={size}

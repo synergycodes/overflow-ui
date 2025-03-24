@@ -4,6 +4,20 @@
  * work well for content-centric websites.
  */
 
+.markdown.markdown {
+  h1,
+  h2,
+  h3,
+  p {
+    all: revert;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #962ee5;

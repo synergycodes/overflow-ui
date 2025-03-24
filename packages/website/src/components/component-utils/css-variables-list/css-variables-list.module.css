@@ -1,0 +1,13 @@
+.variable-item {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
+  .name {
+    font-family: monospace;
+  }
+
+  .comment {
+    opacity: 0.5;
+  }
+}

@@ -1,9 +1,9 @@
-import clsx from "clsx";
-import switchStyles from "./switch.module.css";
+import clsx from 'clsx';
+import switchStyles from './switch.module.css';
 
-import { Switch as SwitchBase, SwitchProps } from "@mui/base";
-import { ChangeEvent } from "react";
-import { SelectorSize } from "@ui/shared/types/selector-size";
+import { Switch as SwitchBase, SwitchProps } from '@mui/base';
+import { ChangeEvent } from 'react';
+import { SelectorSize } from '@ui/shared/types/selector-size';
 
 export type BaseSwitchProps = {
   size?: SelectorSize;
@@ -14,10 +14,10 @@ export type BaseSwitchProps = {
   checked?: boolean;
   disabled?: boolean;
   onChange?: (checked: boolean, event: ChangeEvent<HTMLInputElement>) => void;
-} & Omit<SwitchProps, "onChange">;
+} & Omit<SwitchProps, 'onChange'>;
 
 export function Switch({
-  size = "medium",
+  size = 'medium',
   className,
   styles,
   thumbChildren,
@@ -32,18 +32,18 @@ export function Switch({
   const slotProps = {
     root: {
       className: clsx(
-        switchStyles["container"],
+        switchStyles['container'],
         switchStyles[size],
         styles,
-        className
+        className,
       ),
     },
     thumb: {
-      className: clsx({ [switchStyles["thumb"]]: !thumbChildren }),
+      className: clsx({ [switchStyles['thumb']]: !thumbChildren }),
       children: thumbChildren,
     },
     track: {
-      className: clsx({ [switchStyles["track"]]: !trackChildren }),
+      className: clsx({ [switchStyles['track']]: !trackChildren }),
       children: trackChildren,
     },
   };

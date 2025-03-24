@@ -1,9 +1,9 @@
-import clsx from "clsx";
-import radioButtonStyles from "./radio.module.css";
-import radioButtonSizeStyles from "./radio-size.module.css";
+import clsx from 'clsx';
+import radioButtonStyles from './radio.module.css';
+import radioButtonSizeStyles from './radio-size.module.css';
 
-import { InputHTMLAttributes } from "react";
-import { SelectorSize } from "@ui/shared/types/selector-size";
+import { InputHTMLAttributes } from 'react';
+import { SelectorSize } from '@ui/shared/types/selector-size';
 
 type Props = {
   size?: SelectorSize;
@@ -12,11 +12,11 @@ type Props = {
   value: string | number;
 } & Omit<
   InputHTMLAttributes<HTMLInputElement>,
-  "size" | "type" | "value" | "name"
+  'size' | 'type' | 'value' | 'name'
 >;
 
 export function Radio({
-  size = "medium",
+  size = 'medium',
   className,
   checked,
   name,
@@ -29,13 +29,13 @@ export function Radio({
   }
 
   return (
-    <label className={radioButtonStyles["wrapper"]}>
+    <label className={radioButtonStyles['wrapper']}>
       <input
         type="radio"
         className={clsx(
-          radioButtonStyles["radio"],
+          radioButtonStyles['radio'],
           radioButtonSizeStyles[size],
-          className
+          className,
         )}
         name={name}
         value={value}
