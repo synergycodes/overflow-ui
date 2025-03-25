@@ -1,32 +1,36 @@
-import tokenData from "../tokens.json";
 import { register } from "@tokens-studio/sd-transforms";
 import StyleDictionary, { Config } from "style-dictionary";
 import { toFileName } from "./to-file-name";
 import { OUTPUT_DIR, TOKEN_OUTPUT_DIR } from "./constants";
+import { config } from "../config";
+const { primitives, themes } = config;
 
 register(StyleDictionary);
 
 export async function tokensToCss() {
-  const tokenSets = tokenData.$metadata.tokenSetOrder;
+  for (const theme of themes) {
+    const { name } = theme;
+    const themeName = toFileName(name);
 
-  for (const theme of tokenSets) {
-    const themeName = toFileName(theme);
+    const source = [...primitives, name].map(
+      (tokenSet) => `${TOKEN_OUTPUT_DIR}${tokenSet}.json`,
+    );
 
     const config = {
-      source: [`${TOKEN_OUTPUT_DIR}${themeName}.json`],
+      source,
       preprocessors: ["tokens-studio"],
       platforms: {
         css: {
           transformGroup: "tokens-studio",
           transforms: ["name/kebab"],
           buildPath: OUTPUT_DIR,
+          options: {
+            outputReferences: true,
+          },
           files: [
             {
               destination: `${themeName}.css`,
               format: "css/variables",
-              options: {
-                outputReferences: true,
-              },
             },
           ],
         },
@@ -34,7 +38,7 @@ export async function tokensToCss() {
       log: logOptions,
     };
 
-    const styleDictionary = new StyleDictionary(config as Config);
+    const styleDictionary = new StyleDictionary(config);
 
     await styleDictionary.buildAllPlatforms();
   }
@@ -46,4 +50,4 @@ const logOptions = {
   errors: {
     brokenReferences: "console", // 'throw' | 'console'
   },
-};
+} satisfies Config["log"];
