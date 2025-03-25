@@ -8,8 +8,9 @@ const { primitives, themes } = config;
 register(StyleDictionary);
 
 export async function tokensToCss() {
-  for (const theme of themes) {
-    const { name } = theme;
+  const tokenSets = [...primitives, ...themes.map(({ name }) => name)];
+
+  for (const name of tokenSets) {
     const themeName = toFileName(name);
 
     const source = [...primitives, name].map(
