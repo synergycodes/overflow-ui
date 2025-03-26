@@ -23,9 +23,9 @@ function createPrimitiveImport(name: string) {
   return `@import "./${name}.css";`;
 }
 
-async function createThemeImport({ name, htmlTheme: htmlTheme }: Theme) {
+async function createThemeImport({ name, htmlTheme }: Theme) {
   const css = await readFile(`./dist/${name}.css`);
-  return `html[data-theme='${htmlTheme}'], @media (prefers-color-scheme: ${htmlTheme}) {
+  return `html[data-theme='${htmlTheme}'] {
   ${css.toString()}
 }`;
 }
