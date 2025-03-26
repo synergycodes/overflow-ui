@@ -5,11 +5,11 @@ export const config: Config = {
   themes: [
     {
       name: "tokens-dark",
-      mediaQuery: "prefers-color-scheme: dark",
+      htmlTheme: "dark",
     },
     {
       name: "tokens-light",
-      mediaQuery: "prefers-color-scheme: light",
+      htmlTheme: "light",
     },
   ],
 };
