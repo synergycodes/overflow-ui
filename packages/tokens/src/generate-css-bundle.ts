@@ -23,9 +23,7 @@ function createPrimitiveImport(name: string) {
   return `@import "./${name}.css";`;
 }
 
-async function createThemeImport({ name, htmlTheme }: Theme) {
+async function createThemeImport({ name }: Theme) {
   const css = await readFile(`./dist/${name}.css`);
-  return `html[data-theme='${htmlTheme}'] {
-  ${css.toString()}
-}`;
+  return css.toString();
 }

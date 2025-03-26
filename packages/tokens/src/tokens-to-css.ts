@@ -8,42 +8,61 @@ const { primitives, themes } = config;
 register(StyleDictionary);
 
 export async function tokensToCss() {
-  const tokenSets = [...primitives, ...themes.map(({ name }) => name)];
+  const primitiveSource = primitives.map(
+    (tokenSet) => `${TOKEN_OUTPUT_DIR}${tokenSet}.json`,
+  );
 
-  for (const name of tokenSets) {
-    const themeName = toFileName(name);
+  for (const primitive of primitives) {
+    const themeName = toFileName(primitive);
 
-    const source = [...primitives, name].map(
-      (tokenSet) => `${TOKEN_OUTPUT_DIR}${tokenSet}.json`,
-    );
-
-    const config = {
-      source,
-      preprocessors: ["tokens-studio"],
-      platforms: {
-        css: {
-          transformGroup: "tokens-studio",
-          transforms: ["name/kebab"],
-          buildPath: OUTPUT_DIR,
-          options: {
-            outputReferences: true,
-          },
-          files: [
-            {
-              destination: `${themeName}.css`,
-              format: "css/variables",
-            },
-          ],
-        },
-      },
-      log: logOptions,
-    };
+    const config = createSDConfig({ name: themeName, source: primitiveSource });
 
     const styleDictionary = new StyleDictionary(config);
+    await styleDictionary.buildAllPlatforms();
+  }
 
+  for (const { name, selector } of themes) {
+    const themeName = toFileName(name);
+
+    const source = [...primitiveSource, `${TOKEN_OUTPUT_DIR}${name}.json`];
+
+    const config = createSDConfig({ name: themeName, source, selector });
+
+    const styleDictionary = new StyleDictionary(config);
     await styleDictionary.buildAllPlatforms();
   }
 }
+
+function createSDConfig({ name, selector, source }: SDConfigParams) {
+  return {
+    source,
+    preprocessors: ["tokens-studio"],
+    platforms: {
+      css: {
+        transformGroup: "tokens-studio",
+        transforms: ["name/kebab"],
+        buildPath: OUTPUT_DIR,
+        options: {
+          outputReferences: true,
+          selector,
+        },
+        files: [
+          {
+            destination: `${name}.css`,
+            format: "css/variables",
+          },
+        ],
+      },
+    },
+    log: logOptions,
+  };
+}
+
+type SDConfigParams = {
+  name: string;
+  source: string[];
+  selector?: string;
+};
 
 const logOptions = {
   warnings: "disabled", // 'warn' | 'error' | 'disabled'

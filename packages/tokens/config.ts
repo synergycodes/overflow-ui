@@ -5,11 +5,11 @@ export const config: Config = {
   themes: [
     {
       name: "tokens-dark",
-      htmlTheme: "dark",
+      selector: "html[data-theme='dark']",
     },
     {
       name: "tokens-light",
-      htmlTheme: "light",
+      selector: "html[data-theme='light']",
     },
   ],
 };
