@@ -5,5 +5,5 @@ export type Config = {
 
 export type Theme = {
   name: string;
-  selector: string;
+  htmlTheme: string;
 };
