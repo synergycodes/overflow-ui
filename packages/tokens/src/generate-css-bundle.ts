@@ -1,17 +1,17 @@
 import { config } from "../config";
 import { Theme } from "./types";
-import { writeFile } from "node:fs/promises";
+import { writeFile, readFile } from "node:fs/promises";
 const { primitives, themes } = config;
 
 const codeChunks: string[] = [];
 
-export function generateCSSBundle() {
+export async function generateCSSBundle() {
   for (const primitive of primitives) {
     codeChunks.push(createPrimitiveImport(primitive));
   }
 
   for (const theme of themes) {
-    codeChunks.push(createThemeImport(theme));
+    codeChunks.push(await createThemeImport(theme));
   }
 
   const code = codeChunks.join("\n\n");
@@ -23,8 +23,9 @@ function createPrimitiveImport(name: string) {
   return `@import "./${name}.css";`;
 }
 
-function createThemeImport({ name, mediaQuery }: Theme) {
-  return `@media (${mediaQuery}) {
-  ${createPrimitiveImport(name)}
+async function createThemeImport({ name, htmlTheme: htmlTheme }: Theme) {
+  const css = await readFile(`./dist/${name}.css`);
+  return `html[data-theme='${htmlTheme}'], @media (prefers-color-scheme: ${htmlTheme}) {
+  ${css.toString()}
 }`;
 }
