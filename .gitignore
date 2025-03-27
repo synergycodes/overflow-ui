@@ -2,3 +2,7 @@ node_modules
 dist
 
 *storybook.log
+
+# System Files
+.DS_Store
+Thumbs.db

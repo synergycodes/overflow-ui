@@ -1,9 +1,15 @@
+:root {
+  --wb-button-background-color-disabled: var(--ax-button-primary-bg-disabled);
+  --wb-button-focus-visible-box-shadow-color: var(--ax-txt-primary-default);
+  --wb-button-inner-border-color: var(--ax-ui-bg-primary-default);
+  --wb-button-color: var(--ax-txt-primary-inverse);
+}
+
 @layer ui.base {
   .button {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
     position: relative;
     color: var(--wb-button-color);
     border: unset;
@@ -11,7 +17,7 @@
 
     &:focus-visible {
       box-shadow:
-        0px 0px 0px 2px #000,
+        0px 0px 0px 2px var(--wb-button-focus-visible-box-shadow-color),
         inset 0 0 0 1px var(--wb-button-inner-border-color);
       outline: none;
     }

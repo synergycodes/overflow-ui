@@ -1,3 +1,64 @@
+:root {
+  --wb-button-primary-background: var(--ax-button-primary-bg-default);
+  --wb-button-primary-background-hover: var(--ax-button-primary-bg-hover);
+  --wb-button-primary-background-active: var(--ax-button-primary-bg-active);
+  --wb-button-primary-background-focus: var(--ax-button-primary-bg-focus);
+
+  --wb-button-secondary-border-color: var(--ax-ui-stroke-secondary-default);
+  --wb-button-secondary-color: var(--ax-txt-primary-default);
+  --wb-button-secondary-border-color-hover: var(--ax-ui-stroke-primary-focus);
+  --wb-button-secondary-color-active: var(--ax-txt-secondary-default);
+  --wb-button-secondary-border-color-active: var(--ax-ui-stroke-primary-focus);
+  --wb-button-secondary-border-color-focus: var(--ax-ui-stroke-primary-focus);
+  --wb-button-secondary-border-color-disabled: var(
+    --ax-ui-stroke-secondary-default
+  );
+  --wb-button-secondary-color-disabled: var(--ax-txt-quaternary-default);
+
+  --wb-button-ghost-destructive-background-color: var(
+    --ax-button-ghost-destructive-bg-default
+  );
+  --wb-button-ghost-destructive-border-color: var(
+    --ax-button-ghost-destructive-stroke-default
+  );
+  --wb-button-ghost-destructive-color: var(--ax-txt-destuctive-default);
+  --wb-button-ghost-destructive-background-color-hover: var(
+    --ax-button-ghost-destructive-bg-hover
+  );
+  --wb-button-ghost-destructive-background-color-active: var(
+    --ax-button-ghost-destructive-bg-active
+  );
+  --wb-button-ghost-destructive-background-color-focus: var(
+    --ax-button-ghost-destructive-bg-focus
+  );
+  --wb-button-ghost-destructive-background-color-disabled: var(
+    --ax-button-ghost-destructive-bg-disabled
+  );
+  --wb-button-ghost-destructive-color-disabled: var(
+    --ax-txt-destructive-disabled
+  );
+
+  --wb-button-gray-background: var(--ax-button-gray-bg-default);
+  --wb-button-gray-background-hover: var(--ax-button-gray-bg-hover);
+  --wb-button-gray-background-active: var(--ax-button-gray-bg-active);
+  --wb-button-gray-background-focus: var(--ax-button-gray-bg-focus);
+
+  --wb-button-error-background: var(--ax-button-red-bg-default);
+  --wb-button-error-background-hover: var(--ax-button-red-bg-hover);
+  --wb-button-error-background-active: var(--ax-button-red-bg-active);
+  --wb-button-error-background-focus: var(--ax-button-red-bg-focus);
+
+  --wb-button-success-background: var(--ax-button-green-bg-default);
+  --wb-button-success-background-hover: var(--ax-button-green-bg-hover);
+  --wb-button-success-background-active: var(--ax-button-green-bg-active);
+  --wb-button-success-background-focus: var(--ax-button-green-bg-focus);
+
+  --wb-button-warning-background: var(--ax-button-orange-bg-default);
+  --wb-button-warning-background-hover: var(--ax-button-orange-bg-hover);
+  --wb-button-warning-background-active: var(--ax-button-orange-bg-active);
+  --wb-button-warning-background-focus: var(--ax-button-orange-bg-focus);
+}
+
 @layer ui.component {
   button {
     &:not(:disabled) {
@@ -42,26 +103,34 @@
       }
 
       &.ghost-destructive {
-        border: 1px solid var(--color-button-ghost-destructive-stroke-button-gh-destr-default);
-        background-color: var(--color-button-ghost-destructive-bg-button-gh-destr-default);
-        color: var(--color-text-txt--destructive--default);
+        border: 1px solid var(--wb-button-ghost-destructive-border-color);
+        background-color: var(--wb-button-ghost-destructive-background-color);
+        color: var(--wb-button-ghost-destructive-color);
 
         &:hover {
-          background-color: var(--color-button-ghost-destructive-bg-button-gh-destr-hover);
+          background-color: var(
+            --wb-button-ghost-destructive-background-color-hover
+          );
         }
 
         &:active {
-          background-color: var(--color-button-ghost-destructive-bg-button-gh-destr-active);
+          background-color: var(
+            --wb-button-ghost-destructive-background-color-active
+          );
         }
 
         &:focus-visible {
-          background-color: var(--color-button-ghost-destructive-bg-button-gh-destr-focus);
-          border: 2px solid var(--color-button-ghost-destructive-stroke-button-gh-destr-default);
+          background-color: var(
+            --wb-button-ghost-destructive-background-color-focus
+          );
+          border-width: 2px;
         }
 
         &:disabled {
-          background-color: var(--color-button-ghost-destructive-bg-button-gh-destr-disabled);
-          color: var(--color-text-txt--destructive--disabled);
+          background-color: var(
+            --wb-button-ghost-destructive-background-color-disabled
+          );
+          color: var(--wb-button-ghost-destructive-color-disabled);
         }
       }
 

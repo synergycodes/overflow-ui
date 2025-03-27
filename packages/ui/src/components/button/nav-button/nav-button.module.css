@@ -1,3 +1,11 @@
+:root {
+  --wb-button-nav-background-color: var(--ax-nav-button-bg-primary-hover);
+  --wb-button-nav-color: var(--ax-nav-button-icon-primary-default);
+  --wb-button-nav-color-active: var(--ax-nav-button-icon-primary-active);
+  --wb-button-nav-color-hover: var(--ax-nav-button-icon-primary-hover);
+  --wb-button-nav-color-disabled: var(--ax-nav-button-icon-primary-disabled);
+}
+
 @layer ui.component {
   .nav-button {
     background-color: transparent;

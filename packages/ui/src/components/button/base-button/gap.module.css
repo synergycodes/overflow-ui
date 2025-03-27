@@ -1,0 +1,29 @@
+:root {
+  --wb-button-gap-extra-large: var(--ax-token-spacing-button-xl-gap);
+  --wb-button-gap-large: var(--ax-token-spacing-button-l-gap);
+  --wb-button-gap-medium: var(--ax-token-spacing-button-m-gap);
+  --wb-button-gap-small: var(--ax-token-spacing-button-s-gap);
+  --wb-button-gap-extra-small: var(--ax-token-spacing-button-xs-gap);
+}
+
+@layer ui.component {
+  .extra-large {
+    gap: var(--wb-button-gap-extra-large);
+  }
+
+  .large {
+    gap: var(--wb-button-gap-large);
+  }
+
+  .medium {
+    gap: var(--wb-button-gap-medium);
+  }
+
+  .small {
+    gap: var(--wb-button-gap-small);
+  }
+
+  .extra-small {
+    gap: var(--wb-button-gap-extra-small);
+  }
+}

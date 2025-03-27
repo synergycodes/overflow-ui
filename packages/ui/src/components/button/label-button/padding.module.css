@@ -1,18 +1,35 @@
+:root {
+  --wb-label-button-padding-extra-large: var(
+      --ax-token-spacing-button-xl-v-pad-1
+    )
+    var(--ax-token-spacing-button-xl-h-pad-1);
+  --wb-label-button-padding-large: var(--ax-token-spacing-button-l-v-pad-1)
+    var(--ax-token-spacing-button-l-h-pad-1);
+  --wb-label-button-padding-medium: var(--ax-token-spacing-button-m-v-pad-1)
+    var(--ax-token-spacing-button-m-h-pad-1);
+  --wb-label-button-padding-small: var(--ax-token-spacing-button-s-v-pad-1)
+    var(--ax-token-spacing-button-s-h-pad-1);
+  --wb-label-button-padding-extra-small: var(
+      --ax-token-spacing-button-xs-v-pad-1
+    )
+    var(--ax-token-spacing-button-xs-h-pad-1);
+}
+
 @layer ui.component {
   .extra-large,
   .large {
-    padding: 1rem;
+    padding: var(--wb-label-button-padding-extra-large);
   }
 
   .medium {
-    padding: 0.75rem;
+    padding: var(--wb-label-button-padding-medium);
   }
 
   .small {
-    padding: 0.625rem;
+    padding: var(--wb-label-button-padding-small);
   }
 
   .extra-small {
-    padding: 0.5rem;
+    padding: var(--wb-label-button-padding-extra-small);
   }
 }

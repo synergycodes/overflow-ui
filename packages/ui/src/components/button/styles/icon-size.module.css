@@ -1,3 +1,15 @@
+:root {
+  /* missing tokens */
+  --wb-icon-size-extra-large: 1.5rem;
+  --wb-icon-size-large: 1.25rem;
+  --wb-icon-size-medium: 1.125rem;
+  --wb-icon-size-small: 1.125rem;
+  --wb-icon-size-extra-small: 1rem;
+  --wb-icon-size-xx-small: 0.75rem;
+  --wb-icon-size-xxx-small: 0.75rem;
+  --wb-icon-size-xxxx-small: 0.625rem;
+}
+
 @layer ui.component {
   .extra-large {
     svg {
@@ -34,11 +46,17 @@
     }
   }
 
-  .xx-small,
+  .xx-small {
+    svg {
+      width: var(--wb-icon-size-xx-small);
+      height: var(--wb-icon-size-xx-small);
+    }
+  }
+
   .xxx-small {
     svg {
-      width: var(--wb-icon-size-xx-xxx-small);
-      height: var(--wb-icon-size-xx-xxx-small);
+      width: var(--wb-icon-size-xxx-small);
+      height: var(--wb-icon-size-xxx-small);
     }
   }
 

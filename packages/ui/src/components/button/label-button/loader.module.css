@@ -1,3 +1,10 @@
+:root {
+  --wb-button-loader-dot-size: 0.3125rem;
+  --wb-button-loader-dot-border-radius: 0.3125rem;
+  --wb-button-loader-dot-color: var(--ax-txt-primary-inverse);
+  --wb-button-loader-animation-duration: 0.75s;
+}
+
 @layer ui.component {
   .disable-events {
     pointer-events: none;
@@ -26,7 +33,7 @@
 
   .dot-flashing::before,
   .dot-flashing::after {
-    content: '';
+    content: "";
     display: inline-block;
     top: 0;
   }

@@ -24,20 +24,21 @@ export const IconButton = forwardRef<
 >(
   (
     { size = "medium", variant = "primary", shape = "", Icon, ...props },
-    ref,
+    ref
   ) => (
     <BaseButton
       ref={ref}
+      size={size}
       styles={clsx(
         variantStyles[variant],
         iconPaddingStyles[size],
         iconSizeStyles[size],
         borderRadiusStyles[shape],
-        borderRadiusStyles[size],
+        borderRadiusStyles[size]
       )}
       {...props}
     >
       <Icon />
     </BaseButton>
-  ),
+  )
 );
