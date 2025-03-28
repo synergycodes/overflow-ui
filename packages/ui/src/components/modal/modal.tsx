@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import styles from "./modal.module.css";
-import "./variables.css";
 
 import { Modal as BaseModal } from "@mui/base/Modal";
 import { forwardRef, type ReactNode } from "react";
@@ -34,7 +33,7 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
       open,
       onClose,
     },
-    ref,
+    ref
   ) => {
     return (
       <BaseModal open={open} onClose={onClose} slots={{ backdrop: Backdrop }}>
@@ -42,7 +41,7 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
           <div
             className={clsx(
               styles["modal"],
-              size === "large" && styles["large"],
+              size === "large" && styles["large"]
             )}
             ref={ref}
           >
@@ -70,7 +69,7 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
         </Fade>
       </BaseModal>
     );
-  },
+  }
 );
 
 const Backdrop = forwardRef<

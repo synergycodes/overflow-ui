@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import styles from "./tooltip.module.css";
-import "./variables.css";
 
 import {
   useMergeRefs,
