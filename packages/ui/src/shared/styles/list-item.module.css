@@ -1,64 +1,64 @@
 :root {
-  --wb-list-item-background-color: var(--ax-dropdown-bg-secondary-default);
-  --wb-list-item-background-color-selected: var(
+  --ax-public-list-item-background-color: var(--ax-dropdown-bg-secondary-default);
+  --ax-public-list-item-background-color-selected: var(
     --ax-dropdown-bg-secondary-active
   );
-  --wb-list-item-color-selected: var(--ax-txt-primary-white);
-  --wb-list-item-color: var(--ax-txt-primary-default);
+  --ax-public-list-item-color-selected: var(--ax-txt-primary-white);
+  --ax-public-list-item-color: var(--ax-txt-primary-default);
 
-  --wb-list-item-background-color-focus: var(
+  --ax-public-list-item-background-color-focus: var(
     --ax-dropdown-bg-secondary-default
   );
-  --wb-list-item-outline-color-focus: var(--ax-ui-stroke-primary-focus);
+  --ax-public-list-item-outline-color-focus: var(--ax-ui-stroke-primary-focus);
 
-  --wb-list-item-color-destructive: var(--ax-txt-error-default);
-  --wb-list-item-background-color-destructive: var(
+  --ax-public-list-item-color-destructive: var(--ax-txt-error-default);
+  --ax-public-list-item-background-color-destructive: var(
     --ax-dropdown-bg-destructive-default
   );
-  --wb-list-item-background-color-hover-destructive: var(
+  --ax-public-list-item-background-color-hover-destructive: var(
     --ax-dropdown-bg-destructive-hover
   );
-  --wb-list-border-radius: var(--ax-token-radius-dropdown-item-s);
+  --ax-public-list-border-radius: var(--ax-token-radius-dropdown-item-s);
 }
 
 @layer ui.component {
   .list-item {
     display: flex;
     align-items: center;
-    border-radius: var(--wb-list-border-radius);
+    border-radius: var(--ax-public-list-border-radius);
     width: max-content;
     min-width: 100%;
     box-sizing: border-box;
     cursor: pointer;
-    color: var(--wb-list-item-color);
+    color: var(--ax-public-list-item-color);
 
     &:hover:not(:global(.base--disabled)) {
-      background-color: var(--wb-list-item-background-color);
+      background-color: var(--ax-public-list-item-background-color);
     }
 
     &:global(.base--selected):not(option:focus-visible) {
-      background-color: var(--wb-list-item-background-color-selected);
-      color: var(--wb-list-item-color-selected);
+      background-color: var(--ax-public-list-item-background-color-selected);
+      color: var(--ax-public-list-item-color-selected);
     }
 
     &:focus-visible {
-      outline: 1px solid var(--wb-list-item-outline-color-focus);
-      background-color: var(--wb-list-item-background-color-focus);
+      outline: 1px solid var(--ax-public-list-item-outline-color-focus);
+      background-color: var(--ax-public-list-item-background-color-focus);
     }
 
     &:global(.base--disabled) {
-      color: var(--wb-input-color-disabled);
+      color: var(--ax-public-input-color-disabled);
       cursor: auto;
     }
 
     &.destructive {
-      color: var(--wb-list-item-color-destructive);
-      background-color: var(--wb-list-item-background-color-destructive);
+      color: var(--ax-public-list-item-color-destructive);
+      background-color: var(--ax-public-list-item-background-color-destructive);
 
       &:hover,
       &:focus-visible {
         background-color: var(
-          --wb-list-item-background-color-hover-destructive
+          --ax-public-list-item-background-color-hover-destructive
         );
       }
     }

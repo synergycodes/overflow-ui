@@ -1,15 +1,15 @@
 :root {
-  --wb-label-button-padding-extra-large: var(
+  --ax-public-label-button-padding-extra-large: var(
       --ax-token-spacing-button-xl-v-pad-1
     )
     var(--ax-token-spacing-button-xl-h-pad-1);
-  --wb-label-button-padding-large: var(--ax-token-spacing-button-l-v-pad-1)
+  --ax-public-label-button-padding-large: var(--ax-token-spacing-button-l-v-pad-1)
     var(--ax-token-spacing-button-l-h-pad-1);
-  --wb-label-button-padding-medium: var(--ax-token-spacing-button-m-v-pad-1)
+  --ax-public-label-button-padding-medium: var(--ax-token-spacing-button-m-v-pad-1)
     var(--ax-token-spacing-button-m-h-pad-1);
-  --wb-label-button-padding-small: var(--ax-token-spacing-button-s-v-pad-1)
+  --ax-public-label-button-padding-small: var(--ax-token-spacing-button-s-v-pad-1)
     var(--ax-token-spacing-button-s-h-pad-1);
-  --wb-label-button-padding-extra-small: var(
+  --ax-public-label-button-padding-extra-small: var(
       --ax-token-spacing-button-xs-v-pad-1
     )
     var(--ax-token-spacing-button-xs-h-pad-1);
@@ -18,18 +18,18 @@
 @layer ui.component {
   .extra-large,
   .large {
-    padding: var(--wb-label-button-padding-extra-large);
+    padding: var(--ax-public-label-button-padding-extra-large);
   }
 
   .medium {
-    padding: var(--wb-label-button-padding-medium);
+    padding: var(--ax-public-label-button-padding-medium);
   }
 
   .small {
-    padding: var(--wb-label-button-padding-small);
+    padding: var(--ax-public-label-button-padding-small);
   }
 
   .extra-small {
-    padding: var(--wb-label-button-padding-extra-small);
+    padding: var(--ax-public-label-button-padding-extra-small);
   }
 }

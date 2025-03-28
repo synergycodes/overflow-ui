@@ -1,8 +1,8 @@
 :root {
-  --wb-tooltip-default-background: var(--ax-tooltip-bg-default);
-  --wb-tooltip-blue-background: var(--ax-tooltip-bg-blue);
-  --wb-tooltip-padding: var(--ax-token-spacing-tooltip-v-pad) var(--ax-token-spacing-tooltip-h-pad);
-  --wb-tooltip-radius-size: var(--ax-token-radius-tooltip);
-  --wb-tooltip-text-color: var(--ax-txt-tooltip-bw);
-  --wb-tooltip-blue-text-color: var(--ax-txt-tooltip-blue);
+  --ax-public-tooltip-default-background: var(--ax-tooltip-bg-default);
+  --ax-public-tooltip-blue-background: var(--ax-tooltip-bg-blue);
+  --ax-public-tooltip-padding: var(--ax-token-spacing-tooltip-v-pad) var(--ax-token-spacing-tooltip-h-pad);
+  --ax-public-tooltip-radius-size: var(--ax-token-radius-tooltip);
+  --ax-public-tooltip-text-color: var(--ax-txt-tooltip-bw);
+  --ax-public-tooltip-blue-text-color: var(--ax-txt-tooltip-blue);
 }

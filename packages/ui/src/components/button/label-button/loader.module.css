@@ -1,8 +1,8 @@
 :root {
-  --wb-button-loader-dot-size: 0.3125rem;
-  --wb-button-loader-dot-border-radius: 0.3125rem;
-  --wb-button-loader-dot-color: var(--ax-txt-primary-inverse);
-  --wb-button-loader-animation-duration: 0.75s;
+  --ax-public-button-loader-dot-size: 0.3125rem;
+  --ax-public-button-loader-dot-border-radius: 0.3125rem;
+  --ax-public-button-loader-dot-color: var(--ax-txt-primary-inverse);
+  --ax-public-button-loader-animation-duration: 0.75s;
 }
 
 @layer ui.component {
@@ -18,17 +18,17 @@
   .dot-flashing::before,
   .dot-flashing::after {
     position: absolute;
-    width: var(--wb-button-loader-dot-size);
-    height: var(--wb-button-loader-dot-size);
-    border-radius: var(--wb-button-loader-dot-border-radius);
-    background-color: var(--wb-button-loader-dot-color);
-    color: var(--wb-button-loader-dot-color);
-    animation: dot-flashing var(--wb-button-loader-animation-duration) infinite
+    width: var(--ax-public-button-loader-dot-size);
+    height: var(--ax-public-button-loader-dot-size);
+    border-radius: var(--ax-public-button-loader-dot-border-radius);
+    background-color: var(--ax-public-button-loader-dot-color);
+    color: var(--ax-public-button-loader-dot-color);
+    animation: dot-flashing var(--ax-public-button-loader-animation-duration) infinite
       linear alternate;
   }
 
   .dot-flashing {
-    animation-delay: calc(var(--wb-button-loader-animation-duration) / 2);
+    animation-delay: calc(var(--ax-public-button-loader-animation-duration) / 2);
   }
 
   .dot-flashing::before,
@@ -39,13 +39,13 @@
   }
 
   .dot-flashing::before {
-    left: calc(-1 * var(--wb-button-loader-dot-size) * 2);
+    left: calc(-1 * var(--ax-public-button-loader-dot-size) * 2);
     animation-delay: 0s;
   }
 
   .dot-flashing::after {
-    left: calc(var(--wb-button-loader-dot-size) * 2);
-    animation-delay: var(--wb-button-loader-animation-duration);
+    left: calc(var(--ax-public-button-loader-dot-size) * 2);
+    animation-delay: var(--ax-public-button-loader-animation-duration);
   }
 
   @keyframes dot-flashing {

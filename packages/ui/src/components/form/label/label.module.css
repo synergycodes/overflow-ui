@@ -2,7 +2,7 @@
   .container {
     display: flex;
     gap: 0.25rem;
-    color: var(--wb-form-label-color);
+    color: var(--ax-public-form-label-color);
     align-items: center;
 
     .label {
@@ -17,7 +17,7 @@
       height: 0.625rem;
       min-width: 0.625rem;
 
-      color: var(--wb-form-label-asterisk-color);
+      color: var(--ax-public-form-label-asterisk-color);
     }
   }
 

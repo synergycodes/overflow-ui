@@ -1,36 +1,36 @@
 :root {
-  --wb-button-nav-background-color: var(--ax-nav-button-bg-primary-hover);
-  --wb-button-nav-color: var(--ax-nav-button-icon-primary-default);
-  --wb-button-nav-color-active: var(--ax-nav-button-icon-primary-active);
-  --wb-button-nav-color-hover: var(--ax-nav-button-icon-primary-hover);
-  --wb-button-nav-color-disabled: var(--ax-nav-button-icon-primary-disabled);
+  --ax-public-button-nav-background-color: var(--ax-nav-button-bg-primary-hover);
+  --ax-public-button-nav-color: var(--ax-nav-button-icon-primary-default);
+  --ax-public-button-nav-color-active: var(--ax-nav-button-icon-primary-active);
+  --ax-public-button-nav-color-hover: var(--ax-nav-button-icon-primary-hover);
+  --ax-public-button-nav-color-disabled: var(--ax-nav-button-icon-primary-disabled);
 }
 
 @layer ui.component {
   .nav-button {
     background-color: transparent;
-    color: var(--wb-button-nav-color);
+    color: var(--ax-public-button-nav-color);
 
     &:hover {
-      background-color: var(--wb-button-nav-background-color);
+      background-color: var(--ax-public-button-nav-background-color);
 
       &.no-background {
         background: transparent;
-        color: var(--wb-button-nav-color-hover);
+        color: var(--ax-public-button-nav-color-hover);
       }
     }
 
     &:active {
-      color: var(--wb-button-nav-color-active);
-      background-color: var(--wb-button-nav-background-color);
+      color: var(--ax-public-button-nav-color-active);
+      background-color: var(--ax-public-button-nav-background-color);
     }
 
     &:focus-visible {
-      background-color: var(--wb-button-nav-background-color);
+      background-color: var(--ax-public-button-nav-background-color);
     }
 
     &:disabled {
-      color: var(--wb-button-nav-color-disabled);
+      color: var(--ax-public-button-nav-color-disabled);
       background-color: transparent;
     }
   }

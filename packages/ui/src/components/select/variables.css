@@ -1,6 +1,6 @@
 :root {
-  --wb-select-button-color: var(--ax-txt-primary-default);
-  --wb-select-button-border-color: var(--ax-input-stroke-primary-default);
-  --wb-select-button-border-color-focus: var(--ax-input-stroke-primary-focus);
-  --wb-select-button-color-disabled: var(--ax-input-stroke-primary-default);
+  --ax-public-select-button-color: var(--ax-txt-primary-default);
+  --ax-public-select-button-border-color: var(--ax-input-stroke-primary-default);
+  --ax-public-select-button-border-color-focus: var(--ax-input-stroke-primary-focus);
+  --ax-public-select-button-color-disabled: var(--ax-input-stroke-primary-default);
 }

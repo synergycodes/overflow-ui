@@ -1,26 +1,26 @@
 :root {
-  --wb-radio-size-large: 1.25rem;
-  --wb-radio-size-medium: 1.125rem;
-  --wb-radio-size-small: 1rem;
+  --ax-public-radio-size-large: 1.25rem;
+  --ax-public-radio-size-medium: 1.125rem;
+  --ax-public-radio-size-small: 1rem;
 
-  --wb-radio-dot-size-large: 0.625rem;
-  --wb-radio-dot-size-medium: 0.5rem;
-  --wb-radio-dot-size-small: 0.5rem;
+  --ax-public-radio-dot-size-large: 0.625rem;
+  --ax-public-radio-dot-size-medium: 0.5rem;
+  --ax-public-radio-dot-size-small: 0.5rem;
 
-  --wb-radio-border-width: 0.0625rem;
+  --ax-public-radio-border-width: 0.0625rem;
 
-  --wb-radio-border-color: var(--color-ui-ui--stroke--secondary--default);
-  --wb-radio-bg: var(--color-ui-ui--bg--primary--default);
-  --wb-radio-checked-bg: var(--color-ui-ui--bg--tertiary--selected,);
-  --wb-radio-dot-color: var(--colors-gray-gray-100); /* missing token */
+  --ax-public-radio-border-color: var(--color-ui-ui--stroke--secondary--default);
+  --ax-public-radio-bg: var(--color-ui-ui--bg--primary--default);
+  --ax-public-radio-checked-bg: var(--color-ui-ui--bg--tertiary--selected,);
+  --ax-public-radio-dot-color: var(--colors-gray-gray-100); /* missing token */
 
-  --wb-radio-focus-border-color: #000000; /* missing token */
+  --ax-public-radio-focus-border-color: #000000; /* missing token */
 
-  --wb-radio-disabled-border-color: var(
+  --ax-public-radio-disabled-border-color: var(
     --color-ui-ui--stroke--secondary--default
   );
-  --wb-radio-disabled-bg: var(--color-ui-ui--bg--tertiary--default);
-  --wb-radio-disabled-dot-color: var(
+  --ax-public-radio-disabled-bg: var(--color-ui-ui--bg--tertiary--default);
+  --ax-public-radio-disabled-dot-color: var(
     --color-ui-nav-bttn--icon--primary--disabled
   );
 }

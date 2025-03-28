@@ -7,25 +7,25 @@
     background-color: transparent;
     cursor: pointer;
 
-    color: var(--wb-select-button-color);
+    color: var(--ax-public-select-button-color);
 
-    border: 1px solid var(--wb-select-button-border-color);
+    border: 1px solid var(--ax-public-select-button-border-color);
 
     &:not(:hover) {
-      transition: all var(--wb-transition);
+      transition: all var(--ax-public-transition);
     }
 
     &:global(.base--expanded) {
-      border-color: var(--wb-select-button-border-color-focus);
+      border-color: var(--ax-public-select-button-border-color-focus);
     }
 
     &:focus-visible {
-      border-color: var(--wb-select-button-border-color-focus);
+      border-color: var(--ax-public-select-button-border-color-focus);
       outline: none;
     }
 
     &:disabled {
-      color: var(--wb-select-button-color-disabled);
+      color: var(--ax-public-select-button-color-disabled);
       cursor: auto;
     }
 

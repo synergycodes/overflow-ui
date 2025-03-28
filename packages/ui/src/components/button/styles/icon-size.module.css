@@ -1,69 +1,69 @@
 :root {
   /* missing tokens */
-  --wb-icon-size-extra-large: 1.5rem;
-  --wb-icon-size-large: 1.25rem;
-  --wb-icon-size-medium: 1.125rem;
-  --wb-icon-size-small: 1.125rem;
-  --wb-icon-size-extra-small: 1rem;
-  --wb-icon-size-xx-small: 0.75rem;
-  --wb-icon-size-xxx-small: 0.75rem;
-  --wb-icon-size-xxxx-small: 0.625rem;
+  --ax-public-icon-size-extra-large: 1.5rem;
+  --ax-public-icon-size-large: 1.25rem;
+  --ax-public-icon-size-medium: 1.125rem;
+  --ax-public-icon-size-small: 1.125rem;
+  --ax-public-icon-size-extra-small: 1rem;
+  --ax-public-icon-size-xx-small: 0.75rem;
+  --ax-public-icon-size-xxx-small: 0.75rem;
+  --ax-public-icon-size-xxxx-small: 0.625rem;
 }
 
 @layer ui.component {
   .extra-large {
     svg {
-      width: var(--wb-icon-size-extra-large);
-      height: var(--wb-icon-size-extra-large);
+      width: var(--ax-public-icon-size-extra-large);
+      height: var(--ax-public-icon-size-extra-large);
     }
   }
 
   .large {
     svg {
-      width: var(--wb-icon-size-large);
-      height: var(--wb-icon-size-large);
+      width: var(--ax-public-icon-size-large);
+      height: var(--ax-public-icon-size-large);
     }
   }
 
   .medium {
     svg {
-      width: var(--wb-icon-size-medium);
-      height: var(--wb-icon-size-medium);
+      width: var(--ax-public-icon-size-medium);
+      height: var(--ax-public-icon-size-medium);
     }
   }
 
   .small {
     svg {
-      width: var(--wb-icon-size-small);
-      height: var(--wb-icon-size-small);
+      width: var(--ax-public-icon-size-small);
+      height: var(--ax-public-icon-size-small);
     }
   }
 
   .extra-small {
     svg {
-      width: var(--wb-icon-size-extra-small);
-      height: var(--wb-icon-size-extra-small);
+      width: var(--ax-public-icon-size-extra-small);
+      height: var(--ax-public-icon-size-extra-small);
     }
   }
 
   .xx-small {
     svg {
-      width: var(--wb-icon-size-xx-small);
-      height: var(--wb-icon-size-xx-small);
+      width: var(--ax-public-icon-size-xx-small);
+      height: var(--ax-public-icon-size-xx-small);
     }
   }
 
   .xxx-small {
     svg {
-      width: var(--wb-icon-size-xxx-small);
-      height: var(--wb-icon-size-xxx-small);
+      width: var(--ax-public-icon-size-xxx-small);
+      height: var(--ax-public-icon-size-xxx-small);
     }
   }
 
   .xxxx-small {
     svg {
-      width: var(--wb-icon-size-xxxx-small);
-      height: var(--wb-icon-size-xxxx-small);
+      width: var(--ax-public-icon-size-xxxx-small);
+      height: var(--ax-public-icon-size-xxxx-small);
     }
   }
 }

@@ -1,29 +1,29 @@
 :root {
-  --wb-list-box-background-color: var(--ax-dropdown-bg-primary-default);
-  --wb-list-box-border-radius: var(--ax-token-radius-dropdown-wrap-s);
-  --wb-list-box-box-shadow: var(--ax-token-shadow-shadow-s-x)
+  --ax-public-list-box-background-color: var(--ax-dropdown-bg-primary-default);
+  --ax-public-list-box-border-radius: var(--ax-token-radius-dropdown-wrap-s);
+  --ax-public-list-box-box-shadow: var(--ax-token-shadow-shadow-s-x)
     var(--ax-token-shadow-shadow-s-y) var(--ax-token-shadow-shadow-s-blur)
     var(--ax-token-shadow-shadow-s-spread) var(--ax-shadow);
-  --wb-list-box-padding: var(--ax-token-spacing-dropdown-wrap-s-v-pad)
+  --ax-public-list-box-padding: var(--ax-token-spacing-dropdown-wrap-s-v-pad)
     var(--ax-token-spacing-dropdown-wrap-s-h-pad);
-  --wb-list-box-gap: var(--ax-token-spacing-dropdown-wrap-s-gap);
+  --ax-public-list-box-gap: var(--ax-token-spacing-dropdown-wrap-s-gap);
 }
 
 @layer ui.component {
   .popup {
-    border-radius: var(--wb-list-box-border-radius);
+    border-radius: var(--ax-public-list-box-border-radius);
     margin-top: 0.25rem;
-    background: var(--wb-list-box-background-color);
-    box-shadow: var(--wb-list-box-box-shadow);
+    background: var(--ax-public-list-box-background-color);
+    box-shadow: var(--ax-public-list-box-box-shadow);
     z-index: 10000;
   }
 
   .list-box {
     display: flex;
-    padding: var(--wb-list-box-padding);
+    padding: var(--ax-public-list-box-padding);
     flex-direction: column;
     align-items: center;
-    gap: var(--wb-list-box-gap);
+    gap: var(--ax-public-list-box-gap);
     max-height: 200px;
     overflow-y: auto;
     overflow-x: hidden;

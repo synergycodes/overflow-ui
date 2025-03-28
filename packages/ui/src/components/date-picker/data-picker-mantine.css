@@ -3,11 +3,11 @@
 /* Popover Dropdown */
 .mantine-Popover-dropdown {
   position: absolute;
-  background: var(--wb-date-picker-dropdown-background);
-  box-shadow: var(--wb-date-picker-dropdown-box-shadow);
-  border: 1px solid var(--wb-date-picker-dropdown-border-color);
+  background: var(--ax-public-date-picker-dropdown-background);
+  box-shadow: var(--ax-public-date-picker-dropdown-box-shadow);
+  border: 1px solid var(--ax-public-date-picker-dropdown-border-color);
   border-radius: 0.5rem;
-  color: var(--wb-date-picker-color);
+  color: var(--ax-public-date-picker-color);
   width: 100%;
 }
 
@@ -17,7 +17,7 @@
   border: none;
   font: inherit;
   padding: unset;
-  color: var(--wb-date-picker-color);
+  color: var(--ax-public-date-picker-color);
 
   svg {
     min-width: 1rem;
@@ -30,7 +30,7 @@
 .mantine-Popover-dropdown .mantine-DatePickerInput-calendarHeader {
   display: flex;
   justify-content: space-between;
-  background: var(--wb-date-picker-header-background);
+  background: var(--ax-public-date-picker-header-background);
   padding: 0.5rem 0.75rem 0.25rem;
 }
 
@@ -66,7 +66,7 @@
 
   /* Calendar Table Header */
   th {
-    color: var(--wb-date-picker-date-header-color);
+    color: var(--ax-public-date-picker-date-header-color);
     font-weight: 400;
     padding: 0.5rem 0;
   }
@@ -82,7 +82,7 @@
 
     /* Outside Dates */
     &[data-outside="true"] {
-      color: var(--wb-date-picker-date-outside-color);
+      color: var(--ax-public-date-picker-date-outside-color);
     }
   }
 
@@ -97,7 +97,7 @@
 
   td:has(button[data-selected="true"]) {
     border-radius: 0.25rem;
-    background: var(--wb-date-picker-date-selected-background-color);
+    background: var(--ax-public-date-picker-date-selected-background-color);
   }
 
   button[data-selected="true"] {

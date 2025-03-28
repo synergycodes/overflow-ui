@@ -1,6 +1,6 @@
 .container {
-  padding: var(--wb-tooltip-padding);
-  border-radius: var(--wb-tooltip-radius-size);
+  padding: var(--ax-public-tooltip-padding);
+  border-radius: var(--ax-public-tooltip-radius-size);
   box-sizing: border-box;
   width: max-content;
   max-width: 33vw;
@@ -8,13 +8,13 @@
 }
 
 .tooltip-default {
-  color: var(--wb-tooltip-text-color);
-  background-color: var(--wb-tooltip-default-background);
-  fill: var(--wb-tooltip-default-background);
+  color: var(--ax-public-tooltip-text-color);
+  background-color: var(--ax-public-tooltip-default-background);
+  fill: var(--ax-public-tooltip-default-background);
 }
 
 .tooltip-blue {
-  color: var(--wb-tooltip-blue-text-color);
-  background-color: var(--wb-tooltip-blue-background);
-  fill: var(--wb-tooltip-blue-background);
+  color: var(--ax-public-tooltip-blue-text-color);
+  background-color: var(--ax-public-tooltip-blue-background);
+  fill: var(--ax-public-tooltip-blue-background);
 }

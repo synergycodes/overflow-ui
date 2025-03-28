@@ -1,200 +1,200 @@
 :root {
-  --wb-button-primary-background: var(--ax-button-primary-bg-default);
-  --wb-button-primary-background-hover: var(--ax-button-primary-bg-hover);
-  --wb-button-primary-background-active: var(--ax-button-primary-bg-active);
-  --wb-button-primary-background-focus: var(--ax-button-primary-bg-focus);
+  --ax-public-button-primary-background: var(--ax-button-primary-bg-default);
+  --ax-public-button-primary-background-hover: var(--ax-button-primary-bg-hover);
+  --ax-public-button-primary-background-active: var(--ax-button-primary-bg-active);
+  --ax-public-button-primary-background-focus: var(--ax-button-primary-bg-focus);
 
-  --wb-button-secondary-border-color: var(--ax-ui-stroke-secondary-default);
-  --wb-button-secondary-color: var(--ax-txt-primary-default);
-  --wb-button-secondary-border-color-hover: var(--ax-ui-stroke-primary-focus);
-  --wb-button-secondary-color-active: var(--ax-txt-secondary-default);
-  --wb-button-secondary-border-color-active: var(--ax-ui-stroke-primary-focus);
-  --wb-button-secondary-border-color-focus: var(--ax-ui-stroke-primary-focus);
-  --wb-button-secondary-border-color-disabled: var(
+  --ax-public-button-secondary-border-color: var(--ax-ui-stroke-secondary-default);
+  --ax-public-button-secondary-color: var(--ax-txt-primary-default);
+  --ax-public-button-secondary-border-color-hover: var(--ax-ui-stroke-primary-focus);
+  --ax-public-button-secondary-color-active: var(--ax-txt-secondary-default);
+  --ax-public-button-secondary-border-color-active: var(--ax-ui-stroke-primary-focus);
+  --ax-public-button-secondary-border-color-focus: var(--ax-ui-stroke-primary-focus);
+  --ax-public-button-secondary-border-color-disabled: var(
     --ax-ui-stroke-secondary-default
   );
-  --wb-button-secondary-color-disabled: var(--ax-txt-quaternary-default);
+  --ax-public-button-secondary-color-disabled: var(--ax-txt-quaternary-default);
 
-  --wb-button-ghost-destructive-background-color: var(
+  --ax-public-button-ghost-destructive-background-color: var(
     --ax-button-ghost-destructive-bg-default
   );
-  --wb-button-ghost-destructive-border-color: var(
+  --ax-public-button-ghost-destructive-border-color: var(
     --ax-button-ghost-destructive-stroke-default
   );
-  --wb-button-ghost-destructive-color: var(--ax-txt-destuctive-default);
-  --wb-button-ghost-destructive-background-color-hover: var(
+  --ax-public-button-ghost-destructive-color: var(--ax-txt-destuctive-default);
+  --ax-public-button-ghost-destructive-background-color-hover: var(
     --ax-button-ghost-destructive-bg-hover
   );
-  --wb-button-ghost-destructive-background-color-active: var(
+  --ax-public-button-ghost-destructive-background-color-active: var(
     --ax-button-ghost-destructive-bg-active
   );
-  --wb-button-ghost-destructive-background-color-focus: var(
+  --ax-public-button-ghost-destructive-background-color-focus: var(
     --ax-button-ghost-destructive-bg-focus
   );
-  --wb-button-ghost-destructive-background-color-disabled: var(
+  --ax-public-button-ghost-destructive-background-color-disabled: var(
     --ax-button-ghost-destructive-bg-disabled
   );
-  --wb-button-ghost-destructive-color-disabled: var(
+  --ax-public-button-ghost-destructive-color-disabled: var(
     --ax-txt-destructive-disabled
   );
 
-  --wb-button-gray-background: var(--ax-button-gray-bg-default);
-  --wb-button-gray-background-hover: var(--ax-button-gray-bg-hover);
-  --wb-button-gray-background-active: var(--ax-button-gray-bg-active);
-  --wb-button-gray-background-focus: var(--ax-button-gray-bg-focus);
+  --ax-public-button-gray-background: var(--ax-button-gray-bg-default);
+  --ax-public-button-gray-background-hover: var(--ax-button-gray-bg-hover);
+  --ax-public-button-gray-background-active: var(--ax-button-gray-bg-active);
+  --ax-public-button-gray-background-focus: var(--ax-button-gray-bg-focus);
 
-  --wb-button-error-background: var(--ax-button-red-bg-default);
-  --wb-button-error-background-hover: var(--ax-button-red-bg-hover);
-  --wb-button-error-background-active: var(--ax-button-red-bg-active);
-  --wb-button-error-background-focus: var(--ax-button-red-bg-focus);
+  --ax-public-button-error-background: var(--ax-button-red-bg-default);
+  --ax-public-button-error-background-hover: var(--ax-button-red-bg-hover);
+  --ax-public-button-error-background-active: var(--ax-button-red-bg-active);
+  --ax-public-button-error-background-focus: var(--ax-button-red-bg-focus);
 
-  --wb-button-success-background: var(--ax-button-green-bg-default);
-  --wb-button-success-background-hover: var(--ax-button-green-bg-hover);
-  --wb-button-success-background-active: var(--ax-button-green-bg-active);
-  --wb-button-success-background-focus: var(--ax-button-green-bg-focus);
+  --ax-public-button-success-background: var(--ax-button-green-bg-default);
+  --ax-public-button-success-background-hover: var(--ax-button-green-bg-hover);
+  --ax-public-button-success-background-active: var(--ax-button-green-bg-active);
+  --ax-public-button-success-background-focus: var(--ax-button-green-bg-focus);
 
-  --wb-button-warning-background: var(--ax-button-orange-bg-default);
-  --wb-button-warning-background-hover: var(--ax-button-orange-bg-hover);
-  --wb-button-warning-background-active: var(--ax-button-orange-bg-active);
-  --wb-button-warning-background-focus: var(--ax-button-orange-bg-focus);
+  --ax-public-button-warning-background: var(--ax-button-orange-bg-default);
+  --ax-public-button-warning-background-hover: var(--ax-button-orange-bg-hover);
+  --ax-public-button-warning-background-active: var(--ax-button-orange-bg-active);
+  --ax-public-button-warning-background-focus: var(--ax-button-orange-bg-focus);
 }
 
 @layer ui.component {
   button {
     &:not(:disabled) {
       &.primary {
-        background-color: var(--wb-button-primary-background);
+        background-color: var(--ax-public-button-primary-background);
 
         &:hover {
-          background-color: var(--wb-button-primary-background-hover);
+          background-color: var(--ax-public-button-primary-background-hover);
         }
 
         &:active {
-          background-color: var(--wb-button-primary-background-active);
+          background-color: var(--ax-public-button-primary-background-active);
         }
 
         &:focus-visible {
-          background-color: var(--wb-button-primary-background-focus);
+          background-color: var(--ax-public-button-primary-background-focus);
         }
       }
 
       &.secondary {
-        border: 1px solid var(--wb-button-secondary-border-color);
+        border: 1px solid var(--ax-public-button-secondary-border-color);
         background-color: transparent;
-        color: var(--wb-button-secondary-color);
+        color: var(--ax-public-button-secondary-color);
 
         &:hover {
-          border-color: var(--wb-button-secondary-border-color-hover);
+          border-color: var(--ax-public-button-secondary-border-color-hover);
         }
 
         &:active {
-          border-color: var(--wb-button-secondary-border-color-active);
-          color: var(--wb-button-secondary-color-active);
+          border-color: var(--ax-public-button-secondary-border-color-active);
+          color: var(--ax-public-button-secondary-color-active);
         }
 
         &:focus-visible {
-          border-color: var(--wb-button-secondary-border-color-focus);
+          border-color: var(--ax-public-button-secondary-border-color-focus);
         }
 
         &:disabled {
-          border-color: var(--wb-button-secondary-border-color-disabled);
-          color: var(--wb-button-secondary-color-disabled);
+          border-color: var(--ax-public-button-secondary-border-color-disabled);
+          color: var(--ax-public-button-secondary-color-disabled);
         }
       }
 
       &.ghost-destructive {
-        border: 1px solid var(--wb-button-ghost-destructive-border-color);
-        background-color: var(--wb-button-ghost-destructive-background-color);
-        color: var(--wb-button-ghost-destructive-color);
+        border: 1px solid var(--ax-public-button-ghost-destructive-border-color);
+        background-color: var(--ax-public-button-ghost-destructive-background-color);
+        color: var(--ax-public-button-ghost-destructive-color);
 
         &:hover {
           background-color: var(
-            --wb-button-ghost-destructive-background-color-hover
+            --ax-public-button-ghost-destructive-background-color-hover
           );
         }
 
         &:active {
           background-color: var(
-            --wb-button-ghost-destructive-background-color-active
+            --ax-public-button-ghost-destructive-background-color-active
           );
         }
 
         &:focus-visible {
           background-color: var(
-            --wb-button-ghost-destructive-background-color-focus
+            --ax-public-button-ghost-destructive-background-color-focus
           );
           border-width: 2px;
         }
 
         &:disabled {
           background-color: var(
-            --wb-button-ghost-destructive-background-color-disabled
+            --ax-public-button-ghost-destructive-background-color-disabled
           );
-          color: var(--wb-button-ghost-destructive-color-disabled);
+          color: var(--ax-public-button-ghost-destructive-color-disabled);
         }
       }
 
       &.gray {
-        background-color: var(--wb-button-gray-background);
+        background-color: var(--ax-public-button-gray-background);
 
         &:hover {
-          background-color: var(--wb-button-gray-background-hover);
+          background-color: var(--ax-public-button-gray-background-hover);
         }
 
         &:active {
-          background-color: var(--wb-button-gray-background-active);
+          background-color: var(--ax-public-button-gray-background-active);
         }
 
         &:focus-visible {
-          background-color: var(--wb-button-gray-background-focus);
+          background-color: var(--ax-public-button-gray-background-focus);
         }
       }
 
       &.error {
-        background-color: var(--wb-button-error-background);
+        background-color: var(--ax-public-button-error-background);
 
         &:hover {
-          background-color: var(--wb-button-error-background-hover);
+          background-color: var(--ax-public-button-error-background-hover);
         }
 
         &:active {
-          background-color: var(--wb-button-error-background-active);
+          background-color: var(--ax-public-button-error-background-active);
         }
 
         &:focus-visible {
-          background-color: var(--wb-button-error-background-focus);
+          background-color: var(--ax-public-button-error-background-focus);
         }
       }
 
       &.success {
-        background-color: var(--wb-button-success-background);
+        background-color: var(--ax-public-button-success-background);
 
         &:hover {
-          background-color: var(--wb-button-success-background-hover);
+          background-color: var(--ax-public-button-success-background-hover);
         }
 
         &:active {
-          background-color: var(--wb-button-success-background-active);
+          background-color: var(--ax-public-button-success-background-active);
         }
 
         &:focus-visible {
-          background-color: var(--wb-button-success-background-focus);
+          background-color: var(--ax-public-button-success-background-focus);
         }
       }
 
       &.warning {
-        background-color: var(--wb-button-warning-background);
+        background-color: var(--ax-public-button-warning-background);
 
         &:hover {
-          background-color: var(--wb-button-warning-background-hover);
+          background-color: var(--ax-public-button-warning-background-hover);
         }
 
         &:active {
-          background-color: var(--wb-button-warning-background-active);
+          background-color: var(--ax-public-button-warning-background-active);
         }
 
         &:focus-visible {
-          background-color: var(--wb-button-warning-background-focus);
+          background-color: var(--ax-public-button-warning-background-focus);
         }
       }
     }

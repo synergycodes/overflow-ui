@@ -2,7 +2,7 @@
   .backdrop {
     position: fixed;
     inset: 0;
-    background-color: var(--wb-modal-backdrop-background);
+    background-color: var(--ax-public-modal-backdrop-background);
     z-index: 1000;
   }
 
@@ -11,9 +11,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: var(--wb-modal-background);
-    border-radius: var(--wb-modal-border-radius);
-    width: var(--wb-modal-width);
+    background-color: var(--ax-public-modal-background);
+    border-radius: var(--ax-public-modal-border-radius);
+    width: var(--ax-public-modal-width);
     z-index: 1001;
     outline: none;
     overflow: auto;
@@ -21,13 +21,13 @@
 
   .header {
     display: flex;
-    padding: var(--wb-modal-padding);
+    padding: var(--ax-public-modal-padding);
     justify-content: space-between;
     align-items: center;
-    border-radius: var(--wb-modal-border-radius) var(--wb-modal-border-radius) 0
+    border-radius: var(--ax-public-modal-border-radius) var(--ax-public-modal-border-radius) 0
       0;
-    border-bottom: 0.0625rem solid var(--wb-modal-header-border-color);
-    background: var(--wb-modal-header-background);
+    border-bottom: 0.0625rem solid var(--ax-public-modal-header-border-color);
+    background: var(--ax-public-modal-header-background);
   }
 
   .title-wrapper {
@@ -38,81 +38,81 @@
 
   .icon {
     display: flex;
-    padding: var(--wb-modal-icon-padding);
+    padding: var(--ax-public-modal-icon-padding);
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
     border-radius: 0.375rem;
-    background: var(--wb-modal-icon-background);
-    color: var(--wb-modal-icon-color);
+    background: var(--ax-public-modal-icon-background);
+    color: var(--ax-public-modal-icon-color);
   }
 
   .title {
     margin: 0;
-    color: var(--wb-modal-title-color);
+    color: var(--ax-public-modal-title-color);
   }
 
   .description {
-    color: var(--wb-modal-description-color);
+    color: var(--ax-public-modal-description-color);
     font-family: Poppins;
-    font-size: var(--wb-modal-description-size);
+    font-size: var(--ax-public-modal-description-size);
     font-style: normal;
     font-weight: 400;
-    line-height: var(--wb-modal-description-line-height);
+    line-height: var(--ax-public-modal-description-line-height);
     margin: 0;
   }
 
   .content {
     display: flex;
-    padding: var(--wb-modal-content-padding);
+    padding: var(--ax-public-modal-content-padding);
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 0.25rem;
     align-self: stretch;
-    background: var(--wb-modal-content-background);
+    background: var(--ax-public-modal-content-background);
   }
 
   .footer {
     display: flex;
-    padding: var(--wb-modal-footer-padding);
+    padding: var(--ax-public-modal-footer-padding);
     justify-content: space-between;
     align-items: center;
     align-self: stretch;
 
     &.separated {
-      border-top: 1px solid var(--wb-modal-footer-border-color);
+      border-top: 1px solid var(--ax-public-modal-footer-border-color);
     }
   }
 
   .large {
-    width: var(--wb-modal-large-width);
+    width: var(--ax-public-modal-large-width);
 
     .header {
-      padding: var(--wb-modal-large-padding);
+      padding: var(--ax-public-modal-large-padding);
     }
 
     .title {
-      font-size: var(--wb-modal-large-title-size);
-      line-height: var(--wb-modal-large-title-line-height);
+      font-size: var(--ax-public-modal-large-title-size);
+      line-height: var(--ax-public-modal-large-title-line-height);
     }
 
     .icon {
-      padding: var(--wb-modal-large-icon-padding);
+      padding: var(--ax-public-modal-large-icon-padding);
     }
 
     .content {
-      padding: var(--wb-modal-large-padding);
+      padding: var(--ax-public-modal-large-padding);
     }
 
     .footer {
       &.separated {
-        padding: var(--wb-modal-large-padding);
+        padding: var(--ax-public-modal-large-padding);
       }
 
       &.integrated {
-        padding: 0 var(--wb-modal-large-padding) var(--wb-modal-large-padding)
-          var(--wb-modal-large-padding);
+        padding: 0 var(--ax-public-modal-large-padding) var(--ax-public-modal-large-padding)
+          var(--ax-public-modal-large-padding);
       }
     }
   }
