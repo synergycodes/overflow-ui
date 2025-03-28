@@ -1,10 +1,10 @@
 :root {
-  --wb-textarea-color-disabled: var(--color-ui-input--stroke--primary--default);
-  --wb-textarea-root-color: var(--color-text-txt--secondary--default);
-  --wb-textarea-root-border-color: var(--color-ui-input--stroke--primary--default);
-  --wb-textarea-root-border-color-focus: var(--color-ui-input--stroke--primary--focus);
-  --wb-textarea-root-background-color-error: var(--color-ui-input--bg--primary--error);
-  --wb-textarea-root-border-color-error: var(--color-ui-input--stroke--primary--error);
-  --wb-textarea-root-color-error: var(--color-text-txt--error--default);
-  --wb-textarea-root-color-disabled: var(--color-ui-input--stroke--primary--default);
+  --wb-textarea-color-disabled: var(--ax-txt-quaternary-default);
+  --wb-textarea-root-color: var(--ax-txt-secondary-default);
+  --wb-textarea-root-border-color: var(--ax-input-stroke-primary-default);
+  --wb-textarea-root-border-color-focus: var(--ax-input-stroke-primary-focus);
+  --wb-textarea-root-background-color-error: var(--ax-input-bg-primary-error);
+  --wb-textarea-root-border-color-error: var(--ax-input-stroke-primary-error);
+  --wb-textarea-root-color-error: var(--ax-txt-error-default);
+  --wb-textarea-root-color-disabled: var(--ax-txt-quaternary-default);
 }

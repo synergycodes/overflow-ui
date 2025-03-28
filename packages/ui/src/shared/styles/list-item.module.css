@@ -1,32 +1,31 @@
 :root {
-  --wb-list-item-background-color: var(
-    --color-ui-dropdown--bg--secondary--default
-  );
+  --wb-list-item-background-color: var(--ax-dropdown-bg-secondary-default);
   --wb-list-item-background-color-selected: var(
-    --color-ui-dropdown--bg--secondary--active
+    --ax-dropdown-bg-secondary-active
   );
-  --wb-list-item-color-selected: var(--color-text-txt--primary--inverse);
-  --wb-list-item-color: var(--color-text-txt--primary--default);
+  --wb-list-item-color-selected: var(--ax-txt-primary-white);
+  --wb-list-item-color: var(--ax-txt-primary-default);
 
   --wb-list-item-background-color-focus: var(
-    --color-ui-dropdown--bg--secondary--default
+    --ax-dropdown-bg-secondary-default
   );
-  --wb-list-item-outline-color-focus: var(
-    --color-ui-ui--stroke--primary--focus
-  );
+  --wb-list-item-outline-color-focus: var(--ax-ui-stroke-primary-focus);
 
-  --wb-list-item-color-destructive: var(--color-text-txt--error--default);
-  --wb-list-item-background-color-hover-destructive: var(
-    --color-ui-dropdown--bg--destructive--hover
+  --wb-list-item-color-destructive: var(--ax-txt-error-default);
+  --wb-list-item-background-color-destructive: var(
+    --ax-dropdown-bg-destructive-default
   );
+  --wb-list-item-background-color-hover-destructive: var(
+    --ax-dropdown-bg-destructive-hover
+  );
+  --wb-list-border-radius: var(--ax-token-radius-dropdown-item-s);
 }
 
 @layer ui.component {
   .list-item {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    border-radius: 0.375rem;
+    border-radius: var(--wb-list-border-radius);
     width: max-content;
     min-width: 100%;
     box-sizing: border-box;
@@ -54,6 +53,7 @@
 
     &.destructive {
       color: var(--wb-list-item-color-destructive);
+      background-color: var(--wb-list-item-background-color-destructive);
 
       &:hover,
       &:focus-visible {

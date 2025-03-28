@@ -2,7 +2,6 @@
   .input-root {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
 
     color: var(--wb-input-root-color);
 

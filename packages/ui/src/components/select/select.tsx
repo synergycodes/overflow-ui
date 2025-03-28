@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import selectButtonStyles from "./select-button/select-button.module.css";
 import listBoxStyles from "@ui/shared/styles/list-box.module.css";
+import inputFontStyles from "@ui/shared/styles/input-font-size.module.css";
+import inputSizeStyles from "@ui/shared/styles/input-size.module.css";
 import style from "./select.module.css";
 import "./variables.css";
 
@@ -29,7 +31,8 @@ export function Select({
     root: {
       className: clsx(
         selectButtonStyles["container"],
-        selectButtonStyles[size],
+        inputFontStyles[size],
+        inputSizeStyles[size]
       ),
     },
     listbox: { className: listBoxStyles["list-box"] },
@@ -58,7 +61,7 @@ export function Select({
             <Separator key={index} />
           ) : (
             <SelectOption key={item.value} {...item} size={size} />
-          ),
+          )
         )}
       </SelectBase>
     </div>

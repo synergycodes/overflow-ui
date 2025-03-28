@@ -43,11 +43,9 @@
   --wb-icon-switch-padding: 0.5rem;
   --wb-icon-switch-icon-size: 1rem;
 
-  --wb-icon-switch-track-bg: var(--color-ui-ui--bg--tertiary--default);
-  --wb-icon-switch-thumb-bg-primary: var(--color-ui-ui--bg--tertiary--selected);
-  --wb-icon-switch-icon-color: var(--colors-gray-gray-600); /* missing token */
-  --wb-icon-switch-icon-selected-color: var(
-    --colors-gray-gray-100
-  ); /* missing token */
-  --wb-icon-switch-thumb-bg-secondary: var(--color-ui-ui--bg--primary--default);
+  --wb-icon-switch-track-bg: var(--ax-ui-bg-tertiary-default);
+  --wb-icon-switch-thumb-bg-primary: var(--ax-ui-bg-tertiary-selected);
+  --wb-icon-switch-icon-color: var(--ax-txt-tertiary-default);
+  --wb-icon-switch-icon-selected-color: var(--ax-txt-primary-white); 
+  --wb-icon-switch-thumb-bg-secondary: var(--ax-ui-bg-primary-default);
 }

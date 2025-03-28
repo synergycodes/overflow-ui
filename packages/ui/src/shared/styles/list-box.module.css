@@ -1,22 +1,29 @@
 :root {
-  --wb-list-box-background-color: var(--color-ui-dropdown--bg--primary--default);
+  --wb-list-box-background-color: var(--ax-dropdown-bg-primary-default);
+  --wb-list-box-border-radius: var(--ax-token-radius-dropdown-wrap-s);
+  --wb-list-box-box-shadow: var(--ax-token-shadow-shadow-s-x)
+    var(--ax-token-shadow-shadow-s-y) var(--ax-token-shadow-shadow-s-blur)
+    var(--ax-token-shadow-shadow-s-spread) var(--ax-shadow);
+  --wb-list-box-padding: var(--ax-token-spacing-dropdown-wrap-s-v-pad)
+    var(--ax-token-spacing-dropdown-wrap-s-h-pad);
+  --wb-list-box-gap: var(--ax-token-spacing-dropdown-wrap-s-gap);
 }
 
 @layer ui.component {
   .popup {
-    border-radius: 0.5rem;
+    border-radius: var(--wb-list-box-border-radius);
     margin-top: 0.25rem;
     background: var(--wb-list-box-background-color);
-    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.16);
+    box-shadow: var(--wb-list-box-box-shadow);
     z-index: 10000;
   }
 
   .list-box {
     display: flex;
-    padding: 0.25rem;
+    padding: var(--wb-list-box-padding);
     flex-direction: column;
     align-items: center;
-    gap: 0.25rem;
+    gap: var(--wb-list-box-gap);
     max-height: 200px;
     overflow-y: auto;
     overflow-x: hidden;

@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import styles from './snackbar.module.css';
-import './variables.css';
 
 import { forwardRef } from 'react';
 import { Snackbar as BaseSnackbar } from '@mui/base';

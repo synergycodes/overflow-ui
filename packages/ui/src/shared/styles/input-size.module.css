@@ -1,16 +1,36 @@
+:root {
+  --wb-input-padding-large: var(--ax-token-spacing-input-l-v-pad)
+    var(--ax-token-spacing-input-l-h-pad);
+  --wb-input-padding-medium: var(--ax-token-spacing-input-m-v-pad)
+    var(--ax-token-spacing-input-m-h-pad);
+  --wb-input-padding-small: var(--ax-token-spacing-input-s-v-pad)
+    var(--ax-token-spacing-input-s-h-pad);
+
+  --wb-input-border-radius-large: var(--ax-token-radius-input-l);
+  --wb-input-border-radius-medium: var(--ax-token-radius-input-m);
+  --wb-input-border-radius-small: var(--ax-token-radius-input-s);
+
+  --wb-input-gap-large: var(--ax-token-spacing-input-l-gap);
+  --wb-input-gap-medium: var(--ax-token-spacing-input-m-gap);
+  --wb-input-gap-small: var(--ax-token-spacing-input-s-gap);
+}
+
 @layer ui.component {
   .large {
-    padding: 0.6875rem 0.75rem;
-    border-radius: 0.5rem;
+    padding: var(--wb-input-padding-large);
+    border-radius: var(--wb-input-border-radius-large);
+    gap: var(--wb-input-gap-large);
   }
 
   .medium {
-    padding: 0.625rem 0.75rem;
-    border-radius: 0.375rem;
+    padding: var(--wb-input-padding-medium);
+    border-radius: var(--wb-input-border-radius-medium);
+    gap: var(--wb-input-gap-medium);
   }
 
   .small {
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.375rem;
+    padding: var(--wb-input-padding-small);
+    border-radius: var(--wb-input-border-radius-small);
+    gap: var(--wb-input-gap-small);
   }
 }
