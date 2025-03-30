@@ -4,7 +4,6 @@ import listBoxStyles from "@ui/shared/styles/list-box.module.css";
 import inputFontStyles from "@ui/shared/styles/input-font-size.module.css";
 import inputSizeStyles from "@ui/shared/styles/input-size.module.css";
 import style from "./select.module.css";
-import "./variables.css";
 
 import { Select as SelectBase } from "@mui/base/Select";
 import { UseSelectParameters } from "@mui/base";
