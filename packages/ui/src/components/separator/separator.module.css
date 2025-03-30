@@ -1,6 +1,6 @@
 :root {
   --ax-public-list-item-separator-background-color: var(
-    --color-ui-ui--separator--primary--default
+    --ax-ui-separator-primary-default
   );
 }
 

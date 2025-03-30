@@ -17,9 +17,6 @@ export * from "./components/checkbox/checkbox";
 
 export * from "./components/date-picker/date-picker";
 
-export * from "./components/form/form-control-with-label/form-control-with-label";
-export * from "./components/form/label/label";
-
 export * from "./components/input/input";
 
 export * from "./components/menu/menu";
