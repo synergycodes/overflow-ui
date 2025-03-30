@@ -1,13 +1,12 @@
 import clsx from "clsx";
 import switchStyles from "./switch.module.css";
-import "./variables.css";
 
 import { Switch as SwitchBase, SwitchProps } from "@mui/base";
-import { ItemSize } from "@ui/shared/types/item-size";
 import { ChangeEvent } from "react";
+import { SelectorSize } from "@ui/shared/types/selector-size";
 
 export type BaseSwitchProps = {
-  size?: ItemSize;
+  size?: SelectorSize;
   styles?: string;
   thumbChildren?: React.ReactNode;
   trackChildren?: React.ReactNode;
@@ -18,7 +17,7 @@ export type BaseSwitchProps = {
 } & Omit<SwitchProps, "onChange">;
 
 export function Switch({
-  size = "small",
+  size = "medium",
   className,
   styles,
   thumbChildren,
@@ -36,19 +35,16 @@ export function Switch({
         switchStyles["container"],
         switchStyles[size],
         styles,
-        className,
+        className
       ),
     },
     thumb: {
-      className: clsx(thumbChildren ? "" : switchStyles["thumb"]),
+      className: clsx({ [switchStyles["thumb"]]: !thumbChildren }),
       children: thumbChildren,
     },
     track: {
-      className: clsx(trackChildren ? "" : switchStyles["track"]),
+      className: clsx({ [switchStyles["track"]]: !trackChildren }),
       children: trackChildren,
-    },
-    input: {
-      className: switchStyles["input"],
     },
   };
 

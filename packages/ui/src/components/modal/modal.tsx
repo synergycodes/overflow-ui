@@ -38,13 +38,7 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
     return (
       <BaseModal open={open} onClose={onClose} slots={{ backdrop: Backdrop }}>
         <Fade in={open}>
-          <div
-            className={clsx(
-              styles["modal"],
-              size === "large" && styles["large"]
-            )}
-            ref={ref}
-          >
+          <div className={clsx(styles["modal"], styles[size])} ref={ref}>
             <div className={styles["header"]}>
               <div className={styles["title-wrapper"]}>
                 {icon && <div className={styles["icon"]}>{icon}</div>}

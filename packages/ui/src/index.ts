@@ -3,6 +3,7 @@
 
 import "@axiom/tokens/dist/axiom.css";
 import "./styles/layers.css";
+import "./styles/globals.css";
 
 export * from "./components/accordion/accordion";
 export * from "./components/avatar/avatar";

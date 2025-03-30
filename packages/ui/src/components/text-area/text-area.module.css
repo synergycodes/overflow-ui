@@ -1,3 +1,14 @@
+:root {
+  --ax-public-textarea-color-disabled: var(--ax-txt-quaternary-default);
+  --ax-public-textarea-root-color: var(--ax-txt-secondary-default);
+  --ax-public-textarea-root-border-color: var(--ax-input-stroke-primary-default);
+  --ax-public-textarea-root-border-color-focus: var(--ax-input-stroke-primary-focus);
+  --ax-public-textarea-root-background-color-error: var(--ax-input-bg-primary-error);
+  --ax-public-textarea-root-border-color-error: var(--ax-input-stroke-primary-error);
+  --ax-public-textarea-root-color-error: var(--ax-txt-error-default);
+  --ax-public-textarea-root-color-disabled: var(--ax-txt-quaternary-default);
+}
+
 @layer ui.component {
   .text-area-container {
     display: flex;
@@ -29,24 +40,6 @@
     }
   }
 
-  .container-large {
-    composes: text-area-container;
-    padding: 0.6875rem 0.75rem;
-    border-radius: 0.5rem;
-  }
-
-  .container-medium {
-    composes: text-area-container;
-    padding: 0.625rem 0.75rem;
-    border-radius: 0.375rem;
-  }
-
-  .container-small {
-    composes: text-area-container;
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.375rem;
-  }
-
   .text-area {
     border: none;
     background: transparent;
@@ -64,16 +57,5 @@
       color: var(--ax-public-textarea-color-disabled);
       cursor: not-allowed;
     }
-  }
-
-  .text-area-large {
-    composes: text-area;
-    composes: p9 from global;
-  }
-
-  .text-area-medium,
-  .text-area-small {
-    composes: text-area;
-    composes: p10 from global;
   }
 }

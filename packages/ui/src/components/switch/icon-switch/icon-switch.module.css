@@ -1,3 +1,19 @@
+:root {
+  --ax-public-icon-switch-width: 4.125rem;
+  --ax-public-icon-switch-height: 2.125rem;
+  --ax-public-icon-switch-thumb-size: 1.75rem;
+  --ax-public-icon-switch-thumb-offset: 0.1875rem;
+  --ax-public-icon-switch-translate: 2rem;
+  --ax-public-icon-switch-padding: 0.5rem;
+  --ax-public-icon-switch-icon-size: 1rem;
+
+  --ax-public-icon-switch-track-bg: var(--ax-ui-bg-tertiary-default);
+  --ax-public-icon-switch-thumb-bg-primary: var(--ax-ui-bg-tertiary-selected);
+  --ax-public-icon-switch-icon-color: var(--ax-txt-tertiary-default);
+  --ax-public-icon-switch-icon-selected-color: var(--ax-txt-primary-white);
+  --ax-public-icon-switch-thumb-bg-secondary: var(--ax-ui-bg-primary-default);
+}
+
 @layer ui.component {
   .container {
     width: var(--ax-public-icon-switch-width);
@@ -16,7 +32,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 var(--ax-public-icon-switch-padding);
-    color: var(--ax-public-icon-switch-icon-color)
+    color: var(--ax-public-icon-switch-icon-color);
   }
 
   .track > div {

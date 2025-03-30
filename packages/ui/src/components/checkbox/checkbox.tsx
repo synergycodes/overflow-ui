@@ -3,11 +3,10 @@ import styles from "./checkbox.module.css";
 
 import { InputHTMLAttributes } from "react";
 import { Check, Minus } from "@phosphor-icons/react";
-
-type CheckboxSize = "medium" | "small" | "extra-small";
+import { SelectorSize } from "@ui/shared/types/selector-size";
 
 type Props = {
-  size?: CheckboxSize;
+  size?: SelectorSize;
   indeterminate?: boolean;
   checked?: boolean;
 } & Omit<InputHTMLAttributes<HTMLInputElement>, "size">;

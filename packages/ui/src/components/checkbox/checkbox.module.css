@@ -20,7 +20,7 @@
   --ax-public-checkbox-checked-bg: var(--ax-ui-bg-tertiary-selected);
 
   --ax-public-checkbox-focus-border-color: var(--ax-ui-stroke-secondary-default);
-  --ax-public-checkbox-focus-border-shadow: #000; /* missing token */
+  --ax-public-checkbox-focus-border-shadow: var(--ax-txt-primary-default);
 
   --ax-public-checkbox-disabled-bg: var(--ax-ui-bg-tertiary-default);
   --ax-public-checkbox-disabled-border-color: var(--ax-ui-stroke-secondary-default);
@@ -97,7 +97,7 @@
   }
 
   &:disabled {
-    cursor: not-allowed;
+    cursor: auto;
     background-color: var(--ax-public-checkbox-disabled-bg);
     border-color: var(--ax-public-checkbox-disabled-border-color);
   }
