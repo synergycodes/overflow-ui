@@ -1,4 +1,4 @@
-# UI Folder Structure
+# Folder Structure
 
 ### Proposed by: Piotr Błaszczyk
 
