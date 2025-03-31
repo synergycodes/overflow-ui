@@ -3,6 +3,7 @@
 
 import "@axiom/tokens/dist/axiom.css";
 import "./styles/layers.css";
+import "./styles/globals.css";
 
 export * from "./components/accordion/accordion";
 export * from "./components/avatar/avatar";
@@ -15,9 +16,6 @@ export * from "./components/button/nav-button/nav-button";
 export * from "./components/checkbox/checkbox";
 
 export * from "./components/date-picker/date-picker";
-
-export * from "./components/form/form-control-with-label/form-control-with-label";
-export * from "./components/form/label/label";
 
 export * from "./components/input/input";
 

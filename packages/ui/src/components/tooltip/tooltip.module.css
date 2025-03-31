@@ -1,6 +1,15 @@
+:root {
+  --ax-public-tooltip-default-background: var(--ax-tooltip-bg-default);
+  --ax-public-tooltip-blue-background: var(--ax-tooltip-bg-blue);
+  --ax-public-tooltip-padding: var(--ax-token-spacing-tooltip-v-pad) var(--ax-token-spacing-tooltip-h-pad);
+  --ax-public-tooltip-radius-size: var(--ax-token-radius-tooltip);
+  --ax-public-tooltip-text-color: var(--ax-txt-tooltip-bw);
+  --ax-public-tooltip-blue-text-color: var(--ax-txt-tooltip-blue);
+}
+
 .container {
-  padding: var(--wb-tooltip-padding);
-  border-radius: var(--wb-tooltip-radius-size);
+  padding: var(--ax-public-tooltip-padding);
+  border-radius: var(--ax-public-tooltip-radius-size);
   box-sizing: border-box;
   width: max-content;
   max-width: 33vw;
@@ -8,13 +17,13 @@
 }
 
 .tooltip-default {
-  color: var(--wb-tooltip-text-color);
-  background-color: var(--wb-tooltip-default-background);
-  fill: var(--wb-tooltip-default-background);
+  color: var(--ax-public-tooltip-text-color);
+  background-color: var(--ax-public-tooltip-default-background);
+  fill: var(--ax-public-tooltip-default-background);
 }
 
 .tooltip-blue {
-  color: var(--wb-tooltip-blue-text-color);
-  background-color: var(--wb-tooltip-blue-background);
-  fill: var(--wb-tooltip-blue-background);
+  color: var(--ax-public-tooltip-blue-text-color);
+  background-color: var(--ax-public-tooltip-blue-background);
+  fill: var(--ax-public-tooltip-blue-background);
 }

@@ -54,6 +54,7 @@ export const IconLabelButton = forwardRef<
 >(({ size = "medium", variant = "primary", children, ...props }, ref) => (
   <BaseButton
     ref={ref}
+    size={size}
     styles={clsx(
       variantStyles[variant],
       borderRadiusStyles[size],

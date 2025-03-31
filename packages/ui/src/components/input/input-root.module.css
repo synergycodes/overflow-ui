@@ -2,28 +2,27 @@
   .input-root {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
 
-    color: var(--wb-input-root-color);
+    color: var(--ax-public-input-root-color);
 
-    border: 1px solid var(--wb-input-root-border-color);
+    border: 1px solid var(--ax-public-input-root-border-color);
 
     &:not(:hover) {
-      transition: all var(--wb-transition);
+      transition: all var(--ax-public-transition);
     }
 
     &:has(input:focus-visible) {
-      border-color: var(--wb-input-root-border-color-focus);
+      border-color: var(--ax-public-input-root-border-color-focus);
     }
 
     &:global(.base--error) {
-      background-color: var(--wb-input-root-background-color-error);
-      border-color: var(--wb-input-root-border-color-error);
-      color: var(--wb-input-root-color-error);
+      background-color: var(--ax-public-input-root-background-color-error);
+      border-color: var(--ax-public-input-root-border-color-error);
+      color: var(--ax-public-input-root-color-error);
     }
 
     &:global(.base--disabled) {
-      color: var(--wb-input-root-color-disabled);
+      color: var(--ax-public-input-root-color-disabled);
     }
 
     svg {

@@ -1,12 +1,12 @@
 :root {
-  --wb-list-item-separator-background-color: var(
-    --color-ui-ui--separator--primary--default
+  --ax-public-list-item-separator-background-color: var(
+    --ax-ui-separator-primary-default
   );
 }
 
 @layer ui.component {
   .separator {
-    border-top: 1px solid var(--wb-list-item-separator-background-color);
+    border-top: 1px solid var(--ax-public-list-item-separator-background-color);
     width: 100%;
     margin: 0;
     border-bottom: none;

@@ -1,19 +1,12 @@
 import clsx from "clsx";
 import styles from "./checkbox.module.css";
-import "./variables.css";
 
 import { InputHTMLAttributes } from "react";
 import { Check, Minus } from "@phosphor-icons/react";
-import { ItemSize } from "@ui/shared/types/item-size";
-
-const iconSizes = {
-  small: 10,
-  medium: 12,
-  large: 14,
-};
+import { SelectorSize } from "@ui/shared/types/selector-size";
 
 type Props = {
-  size?: ItemSize;
+  size?: SelectorSize;
   indeterminate?: boolean;
   checked?: boolean;
 } & Omit<InputHTMLAttributes<HTMLInputElement>, "size">;
@@ -31,7 +24,7 @@ export function Checkbox({
   }
 
   return (
-    <label className={styles["wrapper"]}>
+    <label className={styles["container"]}>
       <input
         type="checkbox"
         className={clsx(styles["checkbox"], styles[size], className)}
@@ -44,12 +37,8 @@ export function Checkbox({
         }}
         {...props}
       />
-      <span className={styles["icon"]}>
-        {indeterminate ? (
-          <Minus size={iconSizes[size]} weight="bold" />
-        ) : (
-          <Check size={iconSizes[size]} weight="bold" />
-        )}
+      <span className={clsx(styles["icon"], styles[size])}>
+        {indeterminate ? <Minus weight="bold" /> : <Check weight="bold" />}
       </span>
     </label>
   );

@@ -1,3 +1,14 @@
+:root {
+  --ax-public-textarea-color-disabled: var(--ax-txt-quaternary-default);
+  --ax-public-textarea-root-color: var(--ax-txt-secondary-default);
+  --ax-public-textarea-root-border-color: var(--ax-input-stroke-primary-default);
+  --ax-public-textarea-root-border-color-focus: var(--ax-input-stroke-primary-focus);
+  --ax-public-textarea-root-background-color-error: var(--ax-input-bg-primary-error);
+  --ax-public-textarea-root-border-color-error: var(--ax-input-stroke-primary-error);
+  --ax-public-textarea-root-color-error: var(--ax-txt-error-default);
+  --ax-public-textarea-root-color-disabled: var(--ax-txt-quaternary-default);
+}
+
 @layer ui.component {
   .text-area-container {
     display: flex;
@@ -5,46 +16,28 @@
     align-items: flex-start;
     gap: 0.5rem;
     background-color: transparent;
-    color: var(--wb-textarea-root-color);
-    border: 1px solid var(--wb-textarea-root-border-color);
+    color: var(--ax-public-textarea-root-color);
+    border: 1px solid var(--ax-public-textarea-root-border-color);
 
     &:not(:hover) {
-      transition: all var(--wb-transition);
+      transition: all var(--ax-public-transition);
     }
 
     &:has(.text-area:focus-visible) {
-      border-color: var(--wb-textarea-root-border-color-focus);
+      border-color: var(--ax-public-textarea-root-border-color-focus);
     }
 
     &:global(.base--error) {
-      background-color: var(--wb-textarea-root-background-color-error);
-      border-color: var(--wb-textarea-root-border-color-error);
-      color: var(--wb-textarea-root-color-error);
+      background-color: var(--ax-public-textarea-root-background-color-error);
+      border-color: var(--ax-public-textarea-root-border-color-error);
+      color: var(--ax-public-textarea-root-color-error);
     }
 
     &:global(.base--disabled) {
-      color: var(--wb-textarea-root-color-disabled);
-      background-color: var(--wb-textarea-root-background-color-disabled);
+      color: var(--ax-public-textarea-root-color-disabled);
+      background-color: var(--ax-public-textarea-root-background-color-disabled);
       cursor: not-allowed;
     }
-  }
-
-  .container-large {
-    composes: text-area-container;
-    padding: 0.6875rem 0.75rem;
-    border-radius: 0.5rem;
-  }
-
-  .container-medium {
-    composes: text-area-container;
-    padding: 0.625rem 0.75rem;
-    border-radius: 0.375rem;
-  }
-
-  .container-small {
-    composes: text-area-container;
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.375rem;
   }
 
   .text-area {
@@ -61,19 +54,8 @@
     }
 
     &:disabled {
-      color: var(--wb-textarea-color-disabled);
+      color: var(--ax-public-textarea-color-disabled);
       cursor: not-allowed;
     }
-  }
-
-  .text-area-large {
-    composes: text-area;
-    composes: p9 from global;
-  }
-
-  .text-area-medium,
-  .text-area-small {
-    composes: text-area;
-    composes: p10 from global;
   }
 }

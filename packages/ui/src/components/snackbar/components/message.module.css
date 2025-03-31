@@ -9,10 +9,10 @@
 
 .title {
   composes: h8 from global;
-  color: var(--wb-snackbar-title-color);
+  color: var(--ax-public-snackbar-title-color);
 }
 
 .subtitle {
   composes: p10 from global;
-  color: var(--wb-snackbar-subtitle-color);
+  color: var(--ax-public-snackbar-subtitle-color);
 }

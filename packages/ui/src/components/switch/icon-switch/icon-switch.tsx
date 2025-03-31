@@ -1,11 +1,12 @@
 import clsx from "clsx";
-import { BaseSwitchProps, Switch } from "../switch";
 import styles from "./icon-switch.module.css";
-import React from "react";
+
+import { BaseSwitchProps, Switch } from "../switch";
+import { ReactNode } from "react";
 import { WithIcon } from "@ui/shared/types/with-icon";
 
 type IconSwitchProps = WithIcon & {
-  IconChecked: React.ReactNode;
+  IconChecked: ReactNode;
   variant?: Variant;
 } & BaseSwitchProps;
 

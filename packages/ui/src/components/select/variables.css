@@ -1,6 +1,0 @@
-:root {
-  --wb-select-button-color: var(--color-text-txt--secondary--default);
-  --wb-select-button-border-color: var(--color-ui-input--stroke--primary--default);
-  --wb-select-button-border-color-focus: var(--color-ui-input--stroke--primary--focus);
-  --wb-select-button-color-disabled: var(--color-ui-input--stroke--primary--default);
-}

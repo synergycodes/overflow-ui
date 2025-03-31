@@ -1,119 +1,92 @@
+@import "./switch-size.module.css";
+
+:root {
+  --ax-public-switch-outline-color: var(--ax-ui-stroke-secondary-default);
+  --ax-public-switch-disabled-background-color: var(
+    --ax-ui-bg-tertiary-default
+  );
+  --ax-public-switch-disabled-border-color: var(
+    --ax-ui-stroke-secondary-default
+  );
+  --ax-public-track-no-selected-color: var(--ax-ui-bg-primary-default);
+  --ax-public-track-selected-color: var(--ax-ui-bg-tertiary-selected);
+  --ax-public-thumb-no-selected-color: var(
+    --ax-nav-button-icon-primary-default
+  );
+  --ax-public-thumb-disabled-color: var(--ax-nav-button-icon-primary-disabled);
+  --ax-public-thumb-selected-color: var(
+    --ax-colors-gray-100,
+  ); /* missing token */
+
+  --ax-public-switch-focus-border-color: var(--ax-txt-primary-default);
+  --ax-public-switch-border-size: 0.0625rem;
+}
+
 @layer ui.base {
   .container {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    width: var(--wb-switch-width);
-    height: var(--wb-switch-height);
-    border-radius: var(--wb-switch-border-radius);
-    border: 1px solid var(--wb-switch-outline-color);
     cursor: pointer;
+    border-radius: 100px;
+    border: var(--ax-public-switch-border-size) solid
+      var(--ax-public-switch-outline-color);
+    box-sizing: border-box;
 
     &:not(:hover) {
-      transition: background-color var(--wb-transition);
+      transition: background-color var(--ax-public-transition);
     }
 
-    .input {
+    input {
       opacity: 0;
       width: 100%;
       height: 100%;
       position: absolute;
       margin: 0;
       cursor: inherit;
+      z-index: 1;
     }
 
     .thumb {
       position: absolute;
-      background-color: var(--wb-thumb-no-selected-color);
-      border-radius: var(--wb-switch-border-radius);
-      transition: transform var(--wb-transition);
+      border-radius: 100px;
+      background-color: var(--ax-public-thumb-no-selected-color);
+      transition: transform var(--ax-public-transition);
     }
 
     .track {
       position: absolute;
       width: 100%;
       height: 100%;
-      border-radius: var(--wb-switch-border-radius);
+      border-radius: 100px;
     }
 
-    &:focus-visible {
-      box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 1);
+    &:has(input:focus-visible) {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--ax-public-switch-focus-border-color);
     }
 
     &:has(input:checked) {
       .thumb {
-        background-color: var(--wb-thumb-selected-color);
+        background-color: var(--ax-public-thumb-selected-color);
       }
 
       .track {
-        background-color: var(--wb-track-selected-color);
+        background-color: var(--ax-public-track-selected-color);
       }
     }
 
     &:has(input:disabled) {
-      border-color: var(--wb-switch-disabled-border-color);
+      cursor: auto;
+      border-color: var(--ax-public-switch-disabled-border-color);
 
       .track {
-        background-color: var(--wb-switch-disabled-background-color);
+        background-color: var(--ax-public-switch-disabled-background-color);
       }
 
       .thumb {
-        background-color: var(--wb-thumb-disabled-color);
-      }
-    }
-
-    &.small {
-      width: var(--wb-switch-width-small);
-      height: var(--wb-switch-height-small);
-      border-radius: var(--wb-switch-border-radius-small);
-
-      .thumb {
-        width: var(--wb-switch-thumb-size-small);
-        height: var(--wb-switch-thumb-size-small);
-        top: var(--wb-switch-thumb-y-offset-small);
-        left: var(--wb-switch-thumb-y-offset-small);
-      }
-
-      &:has(input:checked) {
-        .thumb {
-          transform: translateX(var(--wb-switch-thumb-x-offset));
-        }
-      }
-
-      &:focus-visible {
-        box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 1);
-      }
-
-      &:has(input:disabled) {
-        border-color: var(--wb-switch-disabled-border-and-thumb-color);
-
-        .track {
-          background-color: var(--wb-switch-disabled-background-color);
-        }
-
-        .thumb {
-          background-color: var(--wb-switch-disabled-border-and-thumb-color);
-        }
-      }
-    }
-
-    &.large {
-      width: var(--wb-switch-width-large);
-      height: var(--wb-switch-height-large);
-      border-radius: var(--wb-switch-border-radius-large);
-
-      .thumb {
-        width: var(--wb-switch-thumb-size-large);
-        height: var(--wb-switch-thumb-size-large);
-        top: var(--wb-switch-thumb-y-offset-large);
-        left: var(--wb-switch-thumb-y-offset-large);
-      }
-
-      &:has(input:checked) {
-        .thumb {
-          transform: translateX(var(--wb-switch-thumb-x-offset-large));
-        }
+        background-color: var(--ax-public-thumb-disabled-color);
       }
     }
   }
