@@ -36,6 +36,11 @@ export * from "./components/text-area/text-area";
 
 export * from "./components/tooltip/tooltip";
 
+export * from "./components/node/node-as-port-wrapper/node-as-port-wrapper";
+export * from "./components/node/node-description/node-description";
+export * from "./components/node/node-icon/node-icon";
+export * from "./components/node/node-panel/node-panel";
+
 // Types
 export * from "./components/button/types";
 export * from "./components/date-picker/types";
