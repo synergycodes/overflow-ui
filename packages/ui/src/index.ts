@@ -41,6 +41,8 @@ export * from "./components/node/node-description/node-description";
 export * from "./components/node/node-icon/node-icon";
 export * from "./components/node/node-panel/node-panel";
 
+export * from "./components/separator/separator";
+
 // Types
 export * from "./components/button/types";
 export * from "./components/date-picker/types";
