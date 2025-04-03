@@ -1,4 +1,21 @@
-@import "./variables.css";
+:root {
+  --ax-public-date-picker-dropdown-background: var(--ax-ui-bg-primary-default);
+  --ax-public-date-picker-dropdown-border-color: var(
+    --ax-ui-stroke-primary-default
+  );
+  --ax-public-date-picker-dropdown-box-shadow: var(--ax-token-shadow-shadow-m-x)
+    var(--ax-token-shadow-shadow-m-y) var(--ax-token-shadow-shadow-m-blur)
+    var(--ax-token-shadow-shadow-m-spread) var(--ax-shadow);
+
+  --ax-public-date-picker-color: var(--ax-txt-secondary-default);
+  --ax-public-date-picker-header-background: var(--ax-ui-bg-secondary-default);
+  --ax-public-date-picker-date-header-color: var(--ax-txt-tertiary-default);
+  --ax-public-date-picker-date-outside-color: var(--ax-txt-quaternary-default);
+  --ax-public-date-picker-date-selected-color: var(--ax-txt-primary-white);
+  --ax-public-date-picker-date-selected-background-color: var(
+    --ax-ui-bg-tertiary-selected
+  );
+}
 
 /* Popover Dropdown */
 .mantine-Popover-dropdown {
@@ -101,7 +118,7 @@
   }
 
   button[data-selected="true"] {
-    color: var(--color-text-txt--primary--inverse);
+    color: var(--ax-public-date-picker-date-selected-color);
   }
 }
 
