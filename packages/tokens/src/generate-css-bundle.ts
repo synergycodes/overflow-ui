@@ -1,6 +1,6 @@
-import { config } from "../config";
-import { Theme } from "./types";
-import { writeFile, readFile } from "node:fs/promises";
+import { config } from '../config';
+import { Theme } from './types';
+import { writeFile, readFile } from 'node:fs/promises';
 const { primitives, themes } = config;
 
 const codeChunks: string[] = [];
@@ -14,9 +14,9 @@ export async function generateCSSBundle() {
     codeChunks.push(await createThemeImport(theme));
   }
 
-  const code = codeChunks.join("\n\n");
+  const code = codeChunks.join('\n\n');
 
-  return writeFile("./dist/axiom.css", code);
+  return writeFile('./dist/axiom.css', code);
 }
 
 function createPrimitiveImport(name: string) {

@@ -1,0 +1,9 @@
+.preview-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  border: 1px #aaaaaa dashed;
+  width: min-content;
+  padding: 4rem 6rem;
+}

@@ -1,15 +1,15 @@
-import clsx from "clsx";
+import clsx from 'clsx';
 
-import variantStyles from "../styles/variant.module.css";
-import borderRadiusStyles from "../styles/border-radius.module.css";
-import fontSizeStyles from "../styles/font-size.module.css";
-import paddingStyles from "./padding.module.css";
-import loaderStyles from "./loader.module.css";
+import variantStyles from '../styles/variant.module.css';
+import borderRadiusStyles from '../styles/border-radius.module.css';
+import fontSizeStyles from '../styles/font-size.module.css';
+import paddingStyles from './padding.module.css';
+import loaderStyles from './loader.module.css';
 
-import { Variant, BaseButtonProps } from "../types";
-import { BaseButton } from "../base-button/base-button";
-import { forwardRef } from "react";
-import { Size } from "@ui/shared/types/size";
+import { Variant, BaseButtonProps } from '../types';
+import { BaseButton } from '../base-button/base-button';
+import { forwardRef } from 'react';
+import { Size } from '@ui/shared/types/size';
 
 type LabelButtonProps = {
   label: string;
@@ -23,7 +23,7 @@ export const LabelButton = forwardRef<
   BaseButtonProps<LabelButtonProps>
 >(
   (
-    { size = "medium", variant = "primary", label, isLoading, ...props },
+    { size = 'medium', variant = 'primary', label, isLoading, ...props },
     ref,
   ) => (
     <BaseButton
@@ -33,16 +33,16 @@ export const LabelButton = forwardRef<
         borderRadiusStyles[size],
         fontSizeStyles[size],
         paddingStyles[size],
-        { [loaderStyles["disable-events"]]: isLoading },
+        { [loaderStyles['disable-events']]: isLoading },
       )}
       {...props}
     >
       {
-        <span className={clsx({ [loaderStyles["hide-label"]]: isLoading })}>
+        <span className={clsx({ [loaderStyles['hide-label']]: isLoading })}>
           {label}
         </span>
       }
-      {isLoading && <span className={loaderStyles["dot-flashing"]}></span>}
+      {isLoading && <span className={loaderStyles['dot-flashing']}></span>}
     </BaseButton>
   ),
 );

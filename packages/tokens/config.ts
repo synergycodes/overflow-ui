@@ -1,14 +1,14 @@
-import { Config } from "./src/types";
+import { Config } from './src/types';
 
 export const config: Config = {
-  primitives: ["numerals-mode-1", "primitives-mode-1"],
+  primitives: ['numerals-mode-1', 'primitives-mode-1'],
   themes: [
     {
-      name: "tokens-dark",
+      name: 'tokens-dark',
       selector: "html[data-theme='dark']",
     },
     {
-      name: "tokens-light",
+      name: 'tokens-light',
       selector: "html[data-theme='light']",
     },
   ],

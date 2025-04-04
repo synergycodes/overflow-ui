@@ -1,10 +1,10 @@
-import { Variant } from "@ui/components/button/types";
-import { SnackbarType } from "../types";
+import { Variant } from '@ui/components/button/types';
+import { SnackbarType } from '../types';
 
-import styles from "./action-buttons.module.css";
-import { X } from "@phosphor-icons/react";
-import { LabelButton } from "@ui/components/button/label-button/label-button";
-import { NavButton } from "@ui/components/button/nav-button/nav-button";
+import styles from './action-buttons.module.css';
+import { X } from '@phosphor-icons/react';
+import { LabelButton } from '@ui/components/button/label-button/label-button';
+import { NavButton } from '@ui/components/button/nav-button/nav-button';
 
 type ActionButtonsProps = {
   variant: string;
@@ -22,17 +22,17 @@ export function ActionButtons({
   onClose,
 }: ActionButtonsProps) {
   const buttonTypeMap: Record<string, Variant> = {
-    [SnackbarType.DEFAULT]: "primary",
-    [SnackbarType.ERROR]: "error",
-    [SnackbarType.INFO]: "primary",
-    [SnackbarType.WARNING]: "warning",
-    [SnackbarType.SUCCESS]: "success",
+    [SnackbarType.DEFAULT]: 'primary',
+    [SnackbarType.ERROR]: 'error',
+    [SnackbarType.INFO]: 'primary',
+    [SnackbarType.WARNING]: 'warning',
+    [SnackbarType.SUCCESS]: 'success',
   };
 
-  const buttonType = buttonTypeMap[variant] || "primary";
+  const buttonType = buttonTypeMap[variant] || 'primary';
 
   return (
-    <div className={styles["container"]}>
+    <div className={styles['container']}>
       {buttonLabel && onButtonClick && (
         <LabelButton
           variant={buttonType}

@@ -1,18 +1,25 @@
-import { TooltipVariant } from "../tooltip/types";
+/**
+ * Button module bla bla
+ * @module
+ */
+import { TooltipVariant } from '../tooltip/types';
 
 export const BUTTON_VARIANTS = [
-  "primary",
-  "secondary",
-  "gray",
-  "error",
-  "warning",
-  "success",
-  "ghost-destructive",
+  'primary',
+  'secondary',
+  'gray',
+  'error',
+  'warning',
+  'success',
+  'ghost-destructive',
 ] as const;
 
 export type Variant = (typeof BUTTON_VARIANTS)[number];
 
-export type Shape = "" | "circle";
+/**
+ * Button's shape
+ */
+export type Shape = '' | 'circle';
 
 export type BaseButtonProps<T> = T &
   React.DetailedHTMLProps<

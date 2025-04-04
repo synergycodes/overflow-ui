@@ -1,8 +1,8 @@
-import { register } from "@tokens-studio/sd-transforms";
-import StyleDictionary, { Config } from "style-dictionary";
-import { toFileName } from "./to-file-name";
-import { OUTPUT_DIR, TOKEN_OUTPUT_DIR } from "./constants";
-import { config } from "../config";
+import { register } from '@tokens-studio/sd-transforms';
+import StyleDictionary, { Config } from 'style-dictionary';
+import { toFileName } from './to-file-name';
+import { OUTPUT_DIR, TOKEN_OUTPUT_DIR } from './constants';
+import { config } from '../config';
 const { primitives, themes } = config;
 
 register(StyleDictionary);
@@ -36,11 +36,11 @@ export async function tokensToCss() {
 function createSDConfig({ name, selector, source }: SDConfigParams) {
   return {
     source,
-    preprocessors: ["tokens-studio"],
+    preprocessors: ['tokens-studio'],
     platforms: {
       css: {
-        transformGroup: "tokens-studio",
-        transforms: ["name/kebab"],
+        transformGroup: 'tokens-studio',
+        transforms: ['name/kebab'],
         buildPath: OUTPUT_DIR,
         options: {
           outputReferences: true,
@@ -49,7 +49,7 @@ function createSDConfig({ name, selector, source }: SDConfigParams) {
         files: [
           {
             destination: `${name}.css`,
-            format: "css/variables",
+            format: 'css/variables',
           },
         ],
       },
@@ -65,9 +65,9 @@ type SDConfigParams = {
 };
 
 const logOptions = {
-  warnings: "disabled", // 'warn' | 'error' | 'disabled'
-  verbosity: "verbose", // 'default' | 'silent' | 'verbose'
+  warnings: 'disabled', // 'warn' | 'error' | 'disabled'
+  verbosity: 'verbose', // 'default' | 'silent' | 'verbose'
   errors: {
-    brokenReferences: "console", // 'throw' | 'console'
+    brokenReferences: 'console', // 'throw' | 'console'
   },
-} satisfies Config["log"];
+} satisfies Config['log'];

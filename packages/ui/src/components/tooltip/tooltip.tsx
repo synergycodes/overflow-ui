@@ -1,13 +1,13 @@
-import clsx from "clsx";
-import styles from "./tooltip.module.css";
+import clsx from 'clsx';
+import styles from './tooltip.module.css';
 
 import {
   useMergeRefs,
   FloatingPortal,
   FloatingArrow,
-} from "@floating-ui/react";
-import { TooltipVariant } from "./types";
-import { TooltipOptions, useTooltip } from "./use-tooltip";
+} from '@floating-ui/react';
+import { TooltipVariant } from './types';
+import { TooltipOptions, useTooltip } from './use-tooltip';
 import {
   createContext,
   useContext,
@@ -15,7 +15,7 @@ import {
   cloneElement,
   isValidElement,
   ReactNode,
-} from "react";
+} from 'react';
 
 type ContextType = ReturnType<typeof useTooltip> | null;
 const TooltipContext = createContext<ContextType>(null);
@@ -24,7 +24,7 @@ export function useTooltipContext(): ContextType {
   const context = useContext(TooltipContext);
 
   if (context == null) {
-    throw new Error("Tooltip components must be wrapped in <Tooltip />");
+    throw new Error('Tooltip components must be wrapped in <Tooltip />');
   }
 
   return context;
@@ -60,7 +60,7 @@ export const TooltipTrigger = forwardRef<
         ref,
         ...props,
         ...(children.props ?? {}),
-        "data-state": context.open ? "open" : "closed",
+        'data-state': context.open ? 'open' : 'closed',
       } as React.HTMLProps<Element>),
     );
   }
@@ -69,7 +69,7 @@ export const TooltipTrigger = forwardRef<
     <div
       ref={ref}
       // The user can style the trigger based on the state
-      data-state={context?.open ? "open" : "closed"}
+      data-state={context?.open ? 'open' : 'closed'}
       {...context?.getReferenceProps(props)}
     >
       {children}
@@ -81,7 +81,7 @@ export const TooltipContent = forwardRef<
   HTMLDivElement,
   React.HTMLProps<HTMLDivElement> & { tooltipType?: TooltipVariant }
 >(function TooltipContent(
-  { style, tooltipType = "default", ...props },
+  { style, tooltipType = 'default', ...props },
   propRef,
 ) {
   const context = useTooltipContext();
@@ -94,12 +94,12 @@ export const TooltipContent = forwardRef<
       <div
         ref={ref}
         className={clsx(
-          styles["container"],
+          styles['container'],
           {
-            [styles["tooltip-default"]]: tooltipType === "default",
-            [styles["tooltip-blue"]]: tooltipType === "blue",
+            [styles['tooltip-default']]: tooltipType === 'default',
+            [styles['tooltip-blue']]: tooltipType === 'blue',
           },
-          "p11",
+          'p11',
         )}
         style={{
           ...context.floatingStyles,
@@ -111,7 +111,7 @@ export const TooltipContent = forwardRef<
         <FloatingArrow
           ref={context.arrowRef}
           fill={getComputedStyle(document.documentElement).getPropertyValue(
-            "--tooltipBackgroundColor",
+            '--tooltipBackgroundColor',
           )}
           width={10}
           height={4}

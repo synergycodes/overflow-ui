@@ -1,21 +1,19 @@
-import type { ReactNode } from "react";
-import clsx from "clsx";
-import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Layout from "@theme/Layout";
-import HomepageFeatures from "@site/src/components/HomepageFeatures";
-import Heading from "@theme/Heading";
-import Logo from "@site/static/img/logo.svg";
+import type { ReactNode } from 'react';
+import clsx from 'clsx';
+import Link from '@docusaurus/Link';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Layout from '@theme/Layout';
+import HomepageFeatures from '@site/src/components/homepage-features';
+import Heading from '@theme/Heading';
+import Logo from '@site/static/img/logo.svg';
 
-import styles from "./index.module.css";
-import { AxiomDocsConfig } from "@site/docusaurus.config";
+import styles from './index.module.css';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
-  const { themeConfig } = siteConfig as unknown as AxiomDocsConfig;
 
   return (
-    <header className={clsx("hero hero--primary", styles.heroBanner)}>
+    <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
           <Logo className={styles.logo} />
@@ -35,11 +33,10 @@ function HomepageHeader() {
 }
 
 export default function Home(): ReactNode {
-  const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
+      title={`Axiom`}
+      description="UI components library made for diagramming"
     >
       <HomepageHeader />
       <main>

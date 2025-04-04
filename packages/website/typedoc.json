@@ -1,5 +1,0 @@
-{
-  "entryPoints": ["../ui/src/index.ts"],
-  "tsconfig": "../ui/tsconfig.json",
-  "excludeNotDocumentedKinds": ["Property", "Interface", "TypeAlias"]
-}
