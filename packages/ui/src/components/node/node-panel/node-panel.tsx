@@ -2,28 +2,70 @@ import clsx from "clsx";
 import nodeStyles from "./node-panel.module.css";
 import handleStyles from "./handle.module.css";
 
-import { Children, isValidElement, PropsWithChildren } from "react";
+import {
+  Children,
+  isValidElement,
+  PropsWithChildren,
+  useMemo,
+  memo,
+} from "react";
 
 type Props = {
   selected: boolean;
   children?: React.ReactNode;
 };
 
+const Header = memo(function Header({
+  children,
+  className,
+}: PropsWithChildren<{ className?: string }>) {
+  return (
+    <div className={clsx(nodeStyles["header-container"], className)}>
+      {children}
+    </div>
+  );
+});
+
+const Content = memo(function Content({
+  children,
+  className,
+}: PropsWithChildren<{ className?: string }>) {
+  return (
+    <div className={clsx(nodeStyles["content-container"], className)}>
+      {children}
+    </div>
+  );
+});
+
+const Handles = memo(function Handles({
+  children,
+  isVisible = true,
+}: PropsWithChildren<{ isVisible?: boolean }>) {
+  return <>{isVisible && children}</>;
+});
+
+export const NodePanel = {
+  Root,
+  Header,
+  Content,
+  Handles,
+};
+
 /**
  * Node Panel component
  *
  * This component ensures a structured layout with optional slots:
- * - `NodeHeaderSlot`: A container for the node's header (at most 1).
- * - `NodeContentSlot`: A container for the node's main content (at most 1).
- * - `NodeHandlesSlot`: A container for action handles (at most 1).
+ * - `NodePanel.Header`: A container for the node's header (at most 1).
+ * - `NodePanel.Content`: A container for the node's main content (at most 1).
+ * - `NodePanel.Handles`: A container for action handles (at most 1).
  *
  * **Usage Example**
  * ```tsx
- * <Node selected={true}>
- *   <NodeHeaderSlot>Header Content</NodeHeaderSlot>
- *   <NodeContentSlot>Main Content</NodeContentSlot>
- *   <NodeHandlesSlot>Handles</NodeHandlesSlot>
- * </Node>
+ * <NodePanel.Root selected={true}>
+ *   <NodePanel.Header>Header Content</NodeHeaderSlot>
+ *   <NodePanel.Content>Main Content</NodeContentSlot>
+ *   <NodePanel.Handles>Handles</NodeHandlesSlot>
+ * </NodePanel.Root>
  * ```
  *
  * **Allowed Combinations:**
@@ -32,14 +74,25 @@ type Props = {
  * - Any combination of Header, Content, and Handles (but max 1 each)
  *
  * **Invalid Cases (Throws a Runtime Warning):**
- * - More than one instance of `NodeHeaderSlot`, `NodeContentSlot`, or `NodeHandlesSlot`
+ * - More than one instance of `NodePanel.Header`, `<NodePanel.Content`, or `NodePanel.Handles`
  * - Passing an unknown child element
  */
-export function NodePanel({ selected, children }: Props) {
-  const childrenArray = Children.toArray(children);
-  const header = findChild(childrenArray, NodeHeaderSlot);
-  const content = findChild(childrenArray, NodeContentSlot);
-  const handles = findChild(childrenArray, NodeHandlesSlot);
+function Root({ selected, children }: Props) {
+  const { header, content, handles } = useMemo(() => {
+    const childrenArray = Children.toArray(children);
+
+    const header = findChild(childrenArray, NodePanel.Header);
+    const content = findChild(childrenArray, NodePanel.Content);
+    const handles = findChild(childrenArray, NodePanel.Handles);
+
+    validateChildren(childrenArray, header, content, handles);
+
+    return {
+      header,
+      content,
+      handles,
+    };
+  }, [children]);
 
   return (
     <div
@@ -61,43 +114,32 @@ export function NodePanel({ selected, children }: Props) {
   );
 }
 
-export function NodeHeaderSlot({
-  children,
-  className,
-}: PropsWithChildren<{ className?: string }>) {
-  return (
-    <div className={clsx(nodeStyles["header-container"], className)}>
-      {children}
-    </div>
-  );
-}
-
-export function NodeContentSlot({
-  children,
-  className,
-}: PropsWithChildren<{ className?: string }>) {
-  return (
-    <div className={clsx(nodeStyles["content-container"], className)}>
-      {children}
-    </div>
-  );
-}
-
-export function NodeHandlesSlot({
-  children,
-  isVisible = true,
-}: PropsWithChildren<{ isVisible?: boolean }>) {
-  return <>{isVisible && children}</>;
-}
-
 function findChild(
   childrenArray: ReturnType<typeof Children.toArray>,
   element:
-    | typeof NodeHeaderSlot
-    | typeof NodeContentSlot
-    | typeof NodeHandlesSlot
+    | typeof NodePanel.Header
+    | typeof NodePanel.Content
+    | typeof NodePanel.Handles
 ) {
   return childrenArray.find(
     (child) => isValidElement(child) && child.type === element
   );
+}
+
+function validateChildren(
+  childrenArray: ReturnType<typeof Children.toArray>,
+  header: React.ReactNode,
+  content: React.ReactNode,
+  handles: React.ReactNode
+) {
+  const totalValidChildren =
+    (header ? 1 : 0) + (content ? 1 : 0) + (handles ? 1 : 0);
+  const totalChildren = childrenArray.length;
+
+  if (totalChildren > totalValidChildren) {
+    console.warn(
+      `NodePanel.Root: Unknown children detected. Only NodePanel.Header, NodePanel.Content, and NodePanel.Handles are allowed. ` +
+        `Each of these components can be used 0 or 1 time only.`
+    )
+  }
 }
