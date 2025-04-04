@@ -3,5 +3,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # Load nvm bash_completion
 export PATH=$(npm bin -g):$PATH
 
-pnpm prepare && pnpm lint:fix && pnpm format && pnpm typecheck && pnpm file-lint
+pnpm lint:fix && pnpm format && pnpm typecheck && pnpm file-lint
 

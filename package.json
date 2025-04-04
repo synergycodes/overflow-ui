@@ -7,7 +7,7 @@
     "format:fix": "prettier --write \"**/*.+(ts|tsx|json)\"",
     "typecheck": "pnpm -r typecheck",
     "file-lint": "pnpm dlx @ls-lint/ls-lint",
-    "prepare": "husky"
+    "prepare": "husky && pnpm -r prepare"
   },
   "devDependencies": {
     "husky": "^9.1.7",
