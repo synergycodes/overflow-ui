@@ -13,7 +13,7 @@ import styles from './component-page.module.css';
 
 type Props = {
   componentPath: AxiomTSXRelativePath;
-  cssPath: AxiomCSSRelativePath;
+  cssPath?: AxiomCSSRelativePath;
   exampleCode: string;
   preview: React.ReactNode;
 };
@@ -33,7 +33,7 @@ export function ComponentPage({
             <Preview>{preview}</Preview>
             <div className={styles['component-container']}>
               <PropsList path={componentPath} />
-              <CSSVariablesList path={cssPath} />
+              {cssPath && <CSSVariablesList path={cssPath} />}
             </div>
           </div>
         </TabItem>

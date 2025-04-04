@@ -4,18 +4,18 @@
  * work well for content-centric websites.
  */
 
-.markdown.markdown {
-  h1,
-  h2,
-  h3,
-  p {
-    all: revert;
-    margin: 0;
-  }
+h1,
+h2,
+h3,
+ul,
+ol,
+p {
+  margin: initial;
+  padding: initial;
+}
 
-  h1 {
-    font-size: 2rem;
-  }
+h1 {
+  font-size: 2rem;
 }
 
 /* You can override the default Infima variables here. */
@@ -32,7 +32,7 @@
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme="dark"] {
+[data-theme='dark'] {
   --ifm-color-primary: #962ee5;
   --ifm-color-primary-dark: #891bdc;
   --ifm-color-primary-darker: #811ad0;

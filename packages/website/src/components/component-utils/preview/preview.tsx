@@ -5,5 +5,9 @@ type Props = {
 };
 
 export function Preview({ children }: Props) {
-  return <div className={styles['preview-container']}>{children}</div>;
+  return (
+    <div className={styles['preview-container']}>
+      <div>{children}</div>
+    </div>
+  );
 }
