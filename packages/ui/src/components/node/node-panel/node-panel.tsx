@@ -1,6 +1,6 @@
-import clsx from "clsx";
-import nodeStyles from "./node-panel.module.css";
-import handleStyles from "./handle.module.css";
+import clsx from 'clsx';
+import nodeStyles from './node-panel.module.css';
+import handleStyles from './handle.module.css';
 
 import {
   Children,
@@ -8,7 +8,7 @@ import {
   PropsWithChildren,
   useMemo,
   memo,
-} from "react";
+} from 'react';
 
 type Props = {
   selected: boolean;
@@ -20,7 +20,7 @@ const Header = memo(function Header({
   className,
 }: PropsWithChildren<{ className?: string }>) {
   return (
-    <div className={clsx(nodeStyles["header-container"], className)}>
+    <div className={clsx(nodeStyles['header-container'], className)}>
       {children}
     </div>
   );
@@ -31,7 +31,7 @@ const Content = memo(function Content({
   className,
 }: PropsWithChildren<{ className?: string }>) {
   return (
-    <div className={clsx(nodeStyles["content-container"], className)}>
+    <div className={clsx(nodeStyles['content-container'], className)}>
       {children}
     </div>
   );
@@ -97,13 +97,13 @@ function Root({ selected, children }: Props) {
   return (
     <div
       className={clsx(
-        handleStyles["handle-container"],
-        nodeStyles["container"]
+        handleStyles['handle-container'],
+        nodeStyles['container'],
       )}
     >
       <div
-        className={clsx(nodeStyles["inner-container"], {
-          [nodeStyles["selected"]]: selected,
+        className={clsx(nodeStyles['inner-container'], {
+          [nodeStyles['selected']]: selected,
         })}
       >
         {header}
@@ -119,10 +119,10 @@ function findChild(
   element:
     | typeof NodePanel.Header
     | typeof NodePanel.Content
-    | typeof NodePanel.Handles
+    | typeof NodePanel.Handles,
 ) {
   return childrenArray.find(
-    (child) => isValidElement(child) && child.type === element
+    (child) => isValidElement(child) && child.type === element,
   );
 }
 
@@ -130,7 +130,7 @@ function validateChildren(
   childrenArray: ReturnType<typeof Children.toArray>,
   header: React.ReactNode,
   content: React.ReactNode,
-  handles: React.ReactNode
+  handles: React.ReactNode,
 ) {
   const totalValidChildren =
     (header ? 1 : 0) + (content ? 1 : 0) + (handles ? 1 : 0);
@@ -139,7 +139,7 @@ function validateChildren(
   if (totalChildren > totalValidChildren) {
     console.warn(
       `NodePanel.Root: Unknown children detected. Only NodePanel.Header, NodePanel.Content, and NodePanel.Handles are allowed. ` +
-        `Each of these components can be used 0 or 1 time only.`
-    )
+        `Each of these components can be used 0 or 1 time only.`,
+    );
   }
 }

@@ -3,18 +3,19 @@
   "scripts": {
     "lint": "pnpm -r lint",
     "lint:fix": "pnpm -r lint:fix",
-    "format": "prettier --write \"**/*.+(ts|tsx|json)\"",
-    "typecheck": "pnpm -r typecheck"
+    "format": "prettier --check \"**/*.+(ts|tsx|json)\"",
+    "format:fix": "prettier --write \"**/*.+(ts|tsx|json)\"",
+    "typecheck": "pnpm -r typecheck",
+    "file-lint": "pnpm dlx @ls-lint/ls-lint",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "husky": "^9.1.7",
     "@eslint/eslintrc": "^3.3.0",
     "@eslint/js": "^9.22.0",
     "@types/node": "^22.13.10",
     "eslint": "^9.22.0",
     "eslint-config-prettier": "^10.1.1",
-    "eslint-import-resolver-alias": "^1.1.2",
-    "eslint-import-resolver-typescript": "^4.1.0",
-    "eslint-plugin-import": "^2.31.0",
     "globals": "^16.0.0",
     "prettier": "^3.5.3",
     "tsx": "^4.19.3",

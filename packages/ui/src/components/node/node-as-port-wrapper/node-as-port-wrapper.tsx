@@ -1,9 +1,9 @@
-import clsx from "clsx";
-import "./node-as-port.css";
+import clsx from 'clsx';
+import './node-as-port.css';
 
-import { PropsWithChildren, useCallback, useRef, useState } from "react";
+import { PropsWithChildren, useCallback, useRef, useState } from 'react';
 
-type Position = "left" | "top" | "right" | "bottom";
+type Position = 'left' | 'top' | 'right' | 'bottom';
 
 type Props = {
   isConnecting: boolean;
@@ -21,10 +21,10 @@ export function NodeAsPortWrapper({
 
   const containerStyles = canApplyStyles
     ? {
-        "--ax-node-as-port-width": `${ref.current?.offsetWidth}px`,
-        "--ax-node-as-port-height": `${ref.current?.offsetHeight}px`,
-        "--ax-node-as-port-position":
-          targetPortPosition === "left"
+        '--ax-node-as-port-width': `${ref.current?.offsetWidth}px`,
+        '--ax-node-as-port-height': `${ref.current?.offsetHeight}px`,
+        '--ax-node-as-port-position':
+          targetPortPosition === 'left'
             ? `translate(-10%, -50%)`
             : `translate(-50%, -10%)`,
       }
@@ -47,7 +47,7 @@ export function NodeAsPortWrapper({
       onMouseLeave={onMouseLeave}
       style={containerStyles as React.CSSProperties}
       className={clsx({
-        ["is-connection-target"]: canApplyStyles,
+        ['is-connection-target']: canApplyStyles,
       })}
     >
       {children}
