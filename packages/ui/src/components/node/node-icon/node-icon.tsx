@@ -1,7 +1,7 @@
-import clsx from "clsx";
-import styles from "./node-icon.module.css";
+import clsx from 'clsx';
+import styles from './node-icon.module.css';
 
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 type Props = {
   icon: ReactNode;
@@ -9,5 +9,5 @@ type Props = {
 };
 
 export function NodeIcon({ icon, className }: Props) {
-  return <div className={clsx(styles["container"], className)}>{icon}</div>;
+  return <div className={clsx(styles['container'], className)}>{icon}</div>;
 }

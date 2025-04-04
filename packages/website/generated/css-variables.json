@@ -247,7 +247,8 @@
       "comment": "missing token"
     },
     {
-      "name": "--ax-public-snackbar-success-background"
+      "name": "--ax-public-snackbar-success-background",
+      "comment": "missing token"
     },
     {
       "name": "--ax-public-snackbar-success-icon-color"
@@ -257,7 +258,8 @@
       "comment": "missing token"
     },
     {
-      "name": "--ax-public-snackbar-error-background"
+      "name": "--ax-public-snackbar-error-background",
+      "comment": "missing token"
     },
     {
       "name": "--ax-public-snackbar-error-icon-color",
@@ -268,7 +270,8 @@
       "comment": "missing token"
     },
     {
-      "name": "--ax-public-snackbar-warning-background"
+      "name": "--ax-public-snackbar-warning-background",
+      "comment": "missing token"
     },
     {
       "name": "--ax-public-snackbar-warning-icon-color"
@@ -283,12 +286,12 @@
       "name": "--ax-public-snackbar-info-icon-color"
     }
   ],
-  "components/select/select.module.css": [],
   "components/separator/separator.module.css": [
     {
       "name": "--ax-public-list-item-separator-background-color"
     }
   ],
+  "components/select/select.module.css": [],
   "components/radio-button/radio.module.css": [
     {
       "name": "--ax-public-radio-border-color"
@@ -321,7 +324,8 @@
   ],
   "components/radio-button/radio-size.module.css": [
     {
-      "name": "--ax-public-radio-size-medium"
+      "name": "--ax-public-radio-size-medium",
+      "comment": "missing tokens"
     },
     {
       "name": "--ax-public-radio-size-small"
@@ -458,7 +462,35 @@
     }
   ],
   "components/date-picker/date-picker.module.css": [],
-  "components/date-picker/data-picker-mantine.css": [],
+  "components/date-picker/data-picker-mantine.css": [
+    {
+      "name": "--ax-public-date-picker-dropdown-background"
+    },
+    {
+      "name": "--ax-public-date-picker-dropdown-border-color"
+    },
+    {
+      "name": "--ax-public-date-picker-dropdown-box-shadow"
+    },
+    {
+      "name": "--ax-public-date-picker-color"
+    },
+    {
+      "name": "--ax-public-date-picker-header-background"
+    },
+    {
+      "name": "--ax-public-date-picker-date-header-color"
+    },
+    {
+      "name": "--ax-public-date-picker-date-outside-color"
+    },
+    {
+      "name": "--ax-public-date-picker-date-selected-color"
+    },
+    {
+      "name": "--ax-public-date-picker-date-selected-background-color"
+    }
+  ],
   "components/input/variables.css": [
     {
       "name": "--ax-public-input-color-disabled"
@@ -614,6 +646,90 @@
       "name": "--ax-public-select-button-color-disabled"
     }
   ],
+  "components/node/node-panel/node-panel.module.css": [
+    {
+      "name": "--ax-public-node-width"
+    },
+    {
+      "name": "--ax-public-node-padding"
+    },
+    {
+      "name": "--ax-public-node-gap"
+    },
+    {
+      "name": "--ax-public-node-border-radius"
+    },
+    {
+      "name": "--ax-public-node-border-color"
+    },
+    {
+      "name": "--ax-public-node-background-color"
+    },
+    {
+      "name": "--ax-public-node-hover-color"
+    },
+    {
+      "name": "--ax-public-node-border-hover-color"
+    },
+    {
+      "name": "--ax-public-node-border-color-selected"
+    },
+    {
+      "name": "--ax-public-node-box-shadow-selected"
+    }
+  ],
+  "components/node/node-panel/handle.module.css": [
+    {
+      "name": "--ax-public-node-port-boundary-size"
+    },
+    {
+      "name": "--ax-public-node-port-size"
+    },
+    {
+      "name": "--ax-public-node-port-size-hover"
+    },
+    {
+      "name": "--ax-public-node-port-border-size"
+    },
+    {
+      "name": "--ax-public-node-port-background-color"
+    },
+    {
+      "name": "--ax-public-node-port-border-color"
+    },
+    {
+      "name": "--ax-public-node-port-background-color-hover"
+    },
+    {
+      "name": "--ax-public-node-port-border-color-hover"
+    }
+  ],
+  "components/node/node-icon/node-icon.module.css": [
+    {
+      "name": "--ax-public-node-icon-border-radius"
+    },
+    {
+      "name": "--ax-public-node-icon-padding"
+    },
+    {
+      "name": "--ax-public-node-icon-color"
+    },
+    {
+      "name": "--ax-public-node-icon-container-border-color"
+    },
+    {
+      "name": "--ax-public-node-icon-container-background-color"
+    }
+  ],
+  "components/node/node-description/node-description.module.css": [
+    {
+      "name": "--ax-public-node-title-color"
+    },
+    {
+      "name": "--ax-public-node-title-subtitle"
+    }
+  ],
+  "components/node/node-as-port-wrapper/node-as-port.css": [],
   "components/input/clear-button/clear-button.module.css": [],
   "components/button/styles/variant.module.css": [
     {
@@ -727,7 +843,8 @@
   ],
   "components/button/styles/icon-size.module.css": [
     {
-      "name": "--ax-public-icon-size-extra-large"
+      "name": "--ax-public-icon-size-extra-large",
+      "comment": "missing tokens"
     },
     {
       "name": "--ax-public-icon-size-large"
