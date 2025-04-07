@@ -71,116 +71,6 @@
       }
     }
   ],
-  "../ui/src/components/checkbox/checkbox.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Checkbox",
-      "props": {
-        "size": {
-          "required": false,
-          "tsType": {
-            "name": "SelectorSize"
-          },
-          "description": "",
-          "defaultValue": {
-            "value": "'medium'",
-            "computed": false
-          }
-        },
-        "indeterminate": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": ""
-        },
-        "checked": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": ""
-        }
-      }
-    }
-  ],
-  "../ui/src/components/input/input.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Input",
-      "props": {
-        "searchIcon": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": ""
-        },
-        "onClear": {
-          "required": false,
-          "tsType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "() => void",
-            "signature": {
-              "arguments": [],
-              "return": {
-                "name": "void"
-              }
-            }
-          },
-          "description": ""
-        },
-        "size": {
-          "required": false,
-          "tsType": {
-            "name": "ItemSize"
-          },
-          "description": "",
-          "defaultValue": {
-            "value": "'medium'",
-            "computed": false
-          }
-        }
-      }
-    }
-  ],
-  "../ui/src/components/date-picker/date-picker.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "DatePicker",
-      "props": {
-        "inputSize": {
-          "required": false,
-          "tsType": {
-            "name": "ItemSize"
-          },
-          "description": "",
-          "defaultValue": {
-            "value": "'medium'",
-            "computed": false
-          }
-        },
-        "valueFormat": {
-          "defaultValue": {
-            "value": "'DD/MM/YYYY'",
-            "computed": false
-          },
-          "required": false
-        },
-        "placeholder": {
-          "defaultValue": {
-            "value": "'dd/mm/yyyy'",
-            "computed": false
-          },
-          "required": false
-        }
-      }
-    }
-  ],
   "../ui/src/components/avatar/avatar.tsx": [
     {
       "description": "Component for displaying user avatars with various sizes",
@@ -234,173 +124,47 @@
       }
     }
   ],
-  "../ui/src/components/modal/modal.tsx": [
+  "../ui/src/components/checkbox/checkbox.tsx": [
     {
       "description": "",
       "methods": [],
-      "displayName": "Modal",
+      "displayName": "Checkbox",
       "props": {
-        "title": {
-          "required": true,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "subtitle": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "children": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
-        "footer": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
         "size": {
           "required": false,
           "tsType": {
-            "name": "union",
-            "raw": "'regular' | 'large'",
-            "elements": [
-              {
-                "name": "literal",
-                "value": "'regular'"
-              },
-              {
-                "name": "literal",
-                "value": "'large'"
-              }
-            ]
+            "name": "SelectorSize"
           },
           "description": "",
           "defaultValue": {
-            "value": "'regular'",
+            "value": "'medium'",
             "computed": false
           }
         },
-        "footerVariant": {
+        "indeterminate": {
           "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "'integrated' | 'separated'",
-            "elements": [
-              {
-                "name": "literal",
-                "value": "'integrated'"
-              },
-              {
-                "name": "literal",
-                "value": "'separated'"
-              }
-            ]
-          },
-          "description": "",
-          "defaultValue": {
-            "value": "'integrated'",
-            "computed": false
-          }
-        },
-        "open": {
-          "required": true,
           "tsType": {
             "name": "boolean"
           },
           "description": ""
         },
-        "onClose": {
+        "checked": {
           "required": false,
           "tsType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "() => void",
-            "signature": {
-              "arguments": [],
-              "return": {
-                "name": "void"
-              }
-            }
+            "name": "boolean"
           },
           "description": ""
         }
       }
     }
   ],
-  "../ui/src/components/menu/menu.tsx": [
+  "../ui/src/components/date-picker/date-picker.tsx": [
     {
       "description": "",
       "methods": [],
-      "displayName": "Menu",
+      "displayName": "DatePicker",
       "props": {
-        "items": {
-          "required": true,
-          "tsType": {
-            "name": "Array",
-            "elements": [
-              {
-                "name": "intersection",
-                "raw": "ListItem & {\n  destructive?: boolean;\n  onClick?: () => void;\n  size?: ItemSize;\n}",
-                "elements": [
-                  {
-                    "name": "ListItem"
-                  },
-                  {
-                    "name": "signature",
-                    "type": "object",
-                    "raw": "{\n  destructive?: boolean;\n  onClick?: () => void;\n  size?: ItemSize;\n}",
-                    "signature": {
-                      "properties": [
-                        {
-                          "key": "destructive",
-                          "value": {
-                            "name": "boolean",
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "onClick",
-                          "value": {
-                            "name": "signature",
-                            "type": "function",
-                            "raw": "() => void",
-                            "signature": {
-                              "arguments": [],
-                              "return": {
-                                "name": "void"
-                              }
-                            },
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "size",
-                          "value": {
-                            "name": "ItemSize",
-                            "required": false
-                          }
-                        }
-                      ]
-                    }
-                  }
-                ]
-              }
-            ],
-            "raw": "MenuItemProps[]"
-          },
-          "description": ""
-        },
-        "size": {
+        "inputSize": {
           "required": false,
           "tsType": {
             "name": "ItemSize"
@@ -411,32 +175,61 @@
             "computed": false
           }
         },
-        "placement": {
+        "valueFormat": {
+          "defaultValue": {
+            "value": "'DD/MM/YYYY'",
+            "computed": false
+          },
+          "required": false
+        },
+        "placeholder": {
+          "defaultValue": {
+            "value": "'dd/mm/yyyy'",
+            "computed": false
+          },
+          "required": false
+        }
+      }
+    }
+  ],
+  "../ui/src/components/input/input.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Input",
+      "props": {
+        "startAdornment": {
           "required": false,
           "tsType": {
-            "name": "union",
-            "raw": "Placement | undefined",
-            "elements": [
-              {
-                "name": "Placement"
-              },
-              {
-                "name": "undefined"
-              }
-            ]
+            "name": "ReactNode"
           },
-          "description": "",
+          "description": "An optional element displayed at the start of the input field.\nTypically used for icons or labels.",
           "defaultValue": {
-            "value": "'bottom-end'",
-            "computed": false
+            "value": "undefined",
+            "computed": true
           }
         },
-        "children": {
-          "required": true,
+        "endAdornment": {
+          "required": false,
           "tsType": {
-            "name": "ReactElement"
+            "name": "ReactNode"
           },
-          "description": ""
+          "description": "An optional element displayed at the end of the input field.\nOften used for buttons, icons, or additional actions.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
+        },
+        "size": {
+          "required": false,
+          "tsType": {
+            "name": "ItemSize"
+          },
+          "description": "Specifies the size of the input field.\nCan be 'small', 'medium', or 'large'.",
+          "defaultValue": {
+            "value": "'medium'",
+            "computed": false
+          }
         }
       }
     }
@@ -707,27 +500,12 @@
       }
     }
   ],
-  "../ui/src/components/separator/separator.tsx": [
+  "../ui/src/components/modal/modal.tsx": [
     {
       "description": "",
       "methods": [],
-      "displayName": "Separator"
-    }
-  ],
-  "../ui/src/components/snackbar/snackbar.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Snackbar",
+      "displayName": "Modal",
       "props": {
-        "variant": {
-          "required": true,
-          "tsType": {
-            "name": "literal",
-            "value": "`${SnackbarType}`"
-          },
-          "description": ""
-        },
         "title": {
           "required": true,
           "tsType": {
@@ -742,38 +520,70 @@
           },
           "description": ""
         },
-        "buttonLabel": {
+        "children": {
           "required": false,
           "tsType": {
-            "name": "string"
+            "name": "ReactNode"
           },
           "description": ""
         },
-        "onButtonClick": {
+        "footer": {
           "required": false,
           "tsType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "() => void",
-            "signature": {
-              "arguments": [],
-              "return": {
-                "name": "void"
+            "name": "ReactNode"
+          },
+          "description": ""
+        },
+        "size": {
+          "required": false,
+          "tsType": {
+            "name": "union",
+            "raw": "'regular' | 'large'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'regular'"
+              },
+              {
+                "name": "literal",
+                "value": "'large'"
               }
-            }
-          },
-          "description": ""
-        },
-        "close": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
+            ]
           },
           "description": "",
           "defaultValue": {
-            "value": "false",
+            "value": "'regular'",
             "computed": false
           }
+        },
+        "footerVariant": {
+          "required": false,
+          "tsType": {
+            "name": "union",
+            "raw": "'integrated' | 'separated'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'integrated'"
+              },
+              {
+                "name": "literal",
+                "value": "'separated'"
+              }
+            ]
+          },
+          "description": "",
+          "defaultValue": {
+            "value": "'integrated'",
+            "computed": false
+          }
+        },
+        "open": {
+          "required": true,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": ""
         },
         "onClose": {
           "required": false,
@@ -791,6 +601,13 @@
           "description": ""
         }
       }
+    }
+  ],
+  "../ui/src/components/separator/separator.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Separator"
     }
   ],
   "../ui/src/components/switch/switch.tsx": [
@@ -1014,6 +831,189 @@
           "required": false,
           "tsType": {
             "name": "string"
+          },
+          "description": ""
+        }
+      }
+    }
+  ],
+  "../ui/src/components/snackbar/snackbar.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Snackbar",
+      "props": {
+        "variant": {
+          "required": true,
+          "tsType": {
+            "name": "literal",
+            "value": "`${SnackbarType}`"
+          },
+          "description": ""
+        },
+        "title": {
+          "required": true,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "subtitle": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "buttonLabel": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "onButtonClick": {
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "() => void",
+            "signature": {
+              "arguments": [],
+              "return": {
+                "name": "void"
+              }
+            }
+          },
+          "description": ""
+        },
+        "close": {
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": "",
+          "defaultValue": {
+            "value": "false",
+            "computed": false
+          }
+        },
+        "onClose": {
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "() => void",
+            "signature": {
+              "arguments": [],
+              "return": {
+                "name": "void"
+              }
+            }
+          },
+          "description": ""
+        }
+      }
+    }
+  ],
+  "../ui/src/components/menu/menu.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Menu",
+      "props": {
+        "items": {
+          "required": true,
+          "tsType": {
+            "name": "Array",
+            "elements": [
+              {
+                "name": "intersection",
+                "raw": "ListItem & {\n  destructive?: boolean;\n  onClick?: () => void;\n  size?: ItemSize;\n}",
+                "elements": [
+                  {
+                    "name": "ListItem"
+                  },
+                  {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{\n  destructive?: boolean;\n  onClick?: () => void;\n  size?: ItemSize;\n}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "destructive",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "onClick",
+                          "value": {
+                            "name": "signature",
+                            "type": "function",
+                            "raw": "() => void",
+                            "signature": {
+                              "arguments": [],
+                              "return": {
+                                "name": "void"
+                              }
+                            },
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "size",
+                          "value": {
+                            "name": "ItemSize",
+                            "required": false
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ],
+            "raw": "MenuItemProps[]"
+          },
+          "description": ""
+        },
+        "size": {
+          "required": false,
+          "tsType": {
+            "name": "ItemSize"
+          },
+          "description": "",
+          "defaultValue": {
+            "value": "'medium'",
+            "computed": false
+          }
+        },
+        "placement": {
+          "required": false,
+          "tsType": {
+            "name": "union",
+            "raw": "Placement | undefined",
+            "elements": [
+              {
+                "name": "Placement"
+              },
+              {
+                "name": "undefined"
+              }
+            ]
+          },
+          "description": "",
+          "defaultValue": {
+            "value": "'bottom-end'",
+            "computed": false
+          }
+        },
+        "children": {
+          "required": true,
+          "tsType": {
+            "name": "ReactElement"
           },
           "description": ""
         }

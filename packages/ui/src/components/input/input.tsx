@@ -6,20 +6,18 @@ import inputSizeStyles from '@ui/shared/styles/input-size.module.css';
 import './variables.css';
 
 import { Input as InputBase } from '@mui/base';
-import { MagnifyingGlass } from '@phosphor-icons/react';
-import { ClearButton } from './clear-button/clear-button';
 import { InputProps } from './types';
 
 export function Input({
-  searchIcon,
   size = 'medium',
-  onClear,
+  startAdornment = undefined,
+  endAdornment = undefined,
   ...props
 }: InputProps) {
   return (
     <InputBase
-      startAdornment={searchIcon && <MagnifyingGlass weight="bold" />}
-      endAdornment={onClear && <ClearButton onClick={onClear} />}
+      startAdornment={startAdornment}
+      endAdornment={endAdornment}
       slotProps={{
         root: {
           className: clsx(inputRootStyles['input-root'], inputSizeStyles[size]),
