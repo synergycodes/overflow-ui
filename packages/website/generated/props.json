@@ -1,4 +1,57 @@
 {
+  "../ui/src/components/avatar/avatar.tsx": [
+    {
+      "description": "Component for displaying user avatars with various sizes",
+      "methods": [],
+      "displayName": "Avatar",
+      "props": {
+        "username": {
+          "required": true,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "Provide to use it as alt of the image for better a11y"
+        },
+        "imageUrl": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "Image URL"
+        },
+        "size": {
+          "required": false,
+          "tsType": {
+            "name": "union",
+            "raw": "'extra-large' | 'large' | 'medium' | 'small'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'extra-large'"
+              },
+              {
+                "name": "literal",
+                "value": "'large'"
+              },
+              {
+                "name": "literal",
+                "value": "'medium'"
+              },
+              {
+                "name": "literal",
+                "value": "'small'"
+              }
+            ]
+          },
+          "description": "Size of the circle container",
+          "defaultValue": {
+            "value": "'extra-large'",
+            "computed": false
+          }
+        }
+      }
+    }
+  ],
   "../ui/src/components/accordion/accordion.tsx": [
     {
       "description": "An interactive UI component that lets users toggle the visibility of content.\nThe content section can be expanded to reveal details and collapsed to hide them,\nkeeping information organized and saving space. Commonly used in FAQs, settings panels,\nand documentation to present layered content efficiently.",
@@ -105,20 +158,20 @@
       }
     }
   ],
-  "../ui/src/components/input/input.tsx": [
+  "../ui/src/components/menu/menu-item.tsx": [
     {
       "description": "",
       "methods": [],
-      "displayName": "Input",
+      "displayName": "MenuItem",
       "props": {
-        "searchIcon": {
+        "destructive": {
           "required": false,
           "tsType": {
             "name": "boolean"
           },
           "description": ""
         },
-        "onClear": {
+        "onClick": {
           "required": false,
           "tsType": {
             "name": "signature",
@@ -177,59 +230,6 @@
             "computed": false
           },
           "required": false
-        }
-      }
-    }
-  ],
-  "../ui/src/components/avatar/avatar.tsx": [
-    {
-      "description": "Component for displaying user avatars with various sizes",
-      "methods": [],
-      "displayName": "Avatar",
-      "props": {
-        "username": {
-          "required": true,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "Provide to use it as alt of the image for better a11y"
-        },
-        "imageUrl": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "Image URL"
-        },
-        "size": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "'extra-large' | 'large' | 'medium' | 'small'",
-            "elements": [
-              {
-                "name": "literal",
-                "value": "'extra-large'"
-              },
-              {
-                "name": "literal",
-                "value": "'large'"
-              },
-              {
-                "name": "literal",
-                "value": "'medium'"
-              },
-              {
-                "name": "literal",
-                "value": "'small'"
-              }
-            ]
-          },
-          "description": "Size of the circle container",
-          "defaultValue": {
-            "value": "'extra-large'",
-            "computed": false
-          }
         }
       }
     }
@@ -337,124 +337,20 @@
       }
     }
   ],
-  "../ui/src/components/menu/menu.tsx": [
+  "../ui/src/components/input/input.tsx": [
     {
       "description": "",
       "methods": [],
-      "displayName": "Menu",
+      "displayName": "Input",
       "props": {
-        "items": {
-          "required": true,
-          "tsType": {
-            "name": "Array",
-            "elements": [
-              {
-                "name": "intersection",
-                "raw": "ListItem & {\n  destructive?: boolean;\n  onClick?: () => void;\n  size?: ItemSize;\n}",
-                "elements": [
-                  {
-                    "name": "ListItem"
-                  },
-                  {
-                    "name": "signature",
-                    "type": "object",
-                    "raw": "{\n  destructive?: boolean;\n  onClick?: () => void;\n  size?: ItemSize;\n}",
-                    "signature": {
-                      "properties": [
-                        {
-                          "key": "destructive",
-                          "value": {
-                            "name": "boolean",
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "onClick",
-                          "value": {
-                            "name": "signature",
-                            "type": "function",
-                            "raw": "() => void",
-                            "signature": {
-                              "arguments": [],
-                              "return": {
-                                "name": "void"
-                              }
-                            },
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "size",
-                          "value": {
-                            "name": "ItemSize",
-                            "required": false
-                          }
-                        }
-                      ]
-                    }
-                  }
-                ]
-              }
-            ],
-            "raw": "MenuItemProps[]"
-          },
-          "description": ""
-        },
-        "size": {
-          "required": false,
-          "tsType": {
-            "name": "ItemSize"
-          },
-          "description": "",
-          "defaultValue": {
-            "value": "'medium'",
-            "computed": false
-          }
-        },
-        "placement": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "Placement | undefined",
-            "elements": [
-              {
-                "name": "Placement"
-              },
-              {
-                "name": "undefined"
-              }
-            ]
-          },
-          "description": "",
-          "defaultValue": {
-            "value": "'bottom-end'",
-            "computed": false
-          }
-        },
-        "children": {
-          "required": true,
-          "tsType": {
-            "name": "ReactElement"
-          },
-          "description": ""
-        }
-      }
-    }
-  ],
-  "../ui/src/components/menu/menu-item.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "MenuItem",
-      "props": {
-        "destructive": {
+        "searchIcon": {
           "required": false,
           "tsType": {
             "name": "boolean"
           },
-          "description": ""
+          "description": "If true, displays a search icon."
         },
-        "onClick": {
+        "onClear": {
           "required": false,
           "tsType": {
             "name": "signature",
@@ -467,68 +363,18 @@
               }
             }
           },
-          "description": ""
+          "description": "Callback function executed after the clear action.\nIf provided, a cross icon will be displayed."
         },
         "size": {
           "required": false,
           "tsType": {
             "name": "ItemSize"
           },
-          "description": "",
+          "description": "Defines the size of the input.",
           "defaultValue": {
             "value": "'medium'",
             "computed": false
           }
-        }
-      }
-    }
-  ],
-  "../ui/src/components/radio-button/radio.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Radio",
-      "props": {
-        "size": {
-          "required": false,
-          "tsType": {
-            "name": "SelectorSize"
-          },
-          "description": "",
-          "defaultValue": {
-            "value": "'medium'",
-            "computed": false
-          }
-        },
-        "checked": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": ""
-        },
-        "name": {
-          "required": true,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "value": {
-          "required": true,
-          "tsType": {
-            "name": "union",
-            "raw": "string | number",
-            "elements": [
-              {
-                "name": "string"
-              },
-              {
-                "name": "number"
-              }
-            ]
-          },
-          "description": ""
         }
       }
     }
@@ -707,6 +553,110 @@
       }
     }
   ],
+  "../ui/src/components/menu/menu.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Menu",
+      "props": {
+        "items": {
+          "required": true,
+          "tsType": {
+            "name": "Array",
+            "elements": [
+              {
+                "name": "intersection",
+                "raw": "ListItem & {\n  destructive?: boolean;\n  onClick?: () => void;\n  size?: ItemSize;\n}",
+                "elements": [
+                  {
+                    "name": "ListItem"
+                  },
+                  {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{\n  destructive?: boolean;\n  onClick?: () => void;\n  size?: ItemSize;\n}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "destructive",
+                          "value": {
+                            "name": "boolean",
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "onClick",
+                          "value": {
+                            "name": "signature",
+                            "type": "function",
+                            "raw": "() => void",
+                            "signature": {
+                              "arguments": [],
+                              "return": {
+                                "name": "void"
+                              }
+                            },
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "size",
+                          "value": {
+                            "name": "ItemSize",
+                            "required": false
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            ],
+            "raw": "MenuItemProps[]"
+          },
+          "description": ""
+        },
+        "size": {
+          "required": false,
+          "tsType": {
+            "name": "ItemSize"
+          },
+          "description": "",
+          "defaultValue": {
+            "value": "'medium'",
+            "computed": false
+          }
+        },
+        "placement": {
+          "required": false,
+          "tsType": {
+            "name": "union",
+            "raw": "Placement | undefined",
+            "elements": [
+              {
+                "name": "Placement"
+              },
+              {
+                "name": "undefined"
+              }
+            ]
+          },
+          "description": "",
+          "defaultValue": {
+            "value": "'bottom-end'",
+            "computed": false
+          }
+        },
+        "children": {
+          "required": true,
+          "tsType": {
+            "name": "ReactElement"
+          },
+          "description": ""
+        }
+      }
+    }
+  ],
   "../ui/src/components/separator/separator.tsx": [
     {
       "description": "",
@@ -793,11 +743,11 @@
       }
     }
   ],
-  "../ui/src/components/switch/switch.tsx": [
+  "../ui/src/components/radio-button/radio.tsx": [
     {
       "description": "",
       "methods": [],
-      "displayName": "Switch",
+      "displayName": "Radio",
       "props": {
         "size": {
           "required": false,
@@ -810,36 +760,6 @@
             "computed": false
           }
         },
-        "styles": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "thumbChildren": {
-          "required": false,
-          "tsType": {
-            "name": "ReactReactNode",
-            "raw": "React.ReactNode"
-          },
-          "description": ""
-        },
-        "trackChildren": {
-          "required": false,
-          "tsType": {
-            "name": "ReactReactNode",
-            "raw": "React.ReactNode"
-          },
-          "description": ""
-        },
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
         "checked": {
           "required": false,
           "tsType": {
@@ -847,44 +767,26 @@
           },
           "description": ""
         },
-        "disabled": {
-          "required": false,
+        "name": {
+          "required": true,
           "tsType": {
-            "name": "boolean"
+            "name": "string"
           },
           "description": ""
         },
-        "onChange": {
-          "required": false,
+        "value": {
+          "required": true,
           "tsType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "(checked: boolean, event: ChangeEvent<HTMLInputElement>) => void",
-            "signature": {
-              "arguments": [
-                {
-                  "type": {
-                    "name": "boolean"
-                  },
-                  "name": "checked"
-                },
-                {
-                  "type": {
-                    "name": "ChangeEvent",
-                    "elements": [
-                      {
-                        "name": "HTMLInputElement"
-                      }
-                    ],
-                    "raw": "ChangeEvent<HTMLInputElement>"
-                  },
-                  "name": "event"
-                }
-              ],
-              "return": {
-                "name": "void"
+            "name": "union",
+            "raw": "string | number",
+            "elements": [
+              {
+                "name": "string"
+              },
+              {
+                "name": "number"
               }
-            }
+            ]
           },
           "description": ""
         }
@@ -1014,6 +916,104 @@
           "required": false,
           "tsType": {
             "name": "string"
+          },
+          "description": ""
+        }
+      }
+    }
+  ],
+  "../ui/src/components/switch/switch.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Switch",
+      "props": {
+        "size": {
+          "required": false,
+          "tsType": {
+            "name": "SelectorSize"
+          },
+          "description": "",
+          "defaultValue": {
+            "value": "'medium'",
+            "computed": false
+          }
+        },
+        "styles": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "thumbChildren": {
+          "required": false,
+          "tsType": {
+            "name": "ReactReactNode",
+            "raw": "React.ReactNode"
+          },
+          "description": ""
+        },
+        "trackChildren": {
+          "required": false,
+          "tsType": {
+            "name": "ReactReactNode",
+            "raw": "React.ReactNode"
+          },
+          "description": ""
+        },
+        "className": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "checked": {
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": ""
+        },
+        "disabled": {
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": ""
+        },
+        "onChange": {
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(checked: boolean, event: ChangeEvent<HTMLInputElement>) => void",
+            "signature": {
+              "arguments": [
+                {
+                  "type": {
+                    "name": "boolean"
+                  },
+                  "name": "checked"
+                },
+                {
+                  "type": {
+                    "name": "ChangeEvent",
+                    "elements": [
+                      {
+                        "name": "HTMLInputElement"
+                      }
+                    ],
+                    "raw": "ChangeEvent<HTMLInputElement>"
+                  },
+                  "name": "event"
+                }
+              ],
+              "return": {
+                "name": "void"
+              }
+            }
           },
           "description": ""
         }
