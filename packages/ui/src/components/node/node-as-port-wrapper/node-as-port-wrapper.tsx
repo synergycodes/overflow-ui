@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import './node-as-port.css';
 
-import { PropsWithChildren, useCallback, useRef, useState } from 'react';
+import { memo, PropsWithChildren, useCallback, useRef, useState } from 'react';
 
 type Position = 'left' | 'top' | 'right' | 'bottom';
 
@@ -10,7 +10,7 @@ type Props = {
   targetPortPosition: Position;
 };
 
-export function NodeAsPortWrapper({
+export const NodeAsPortWrapper = memo(function NodeAsPortWrapper({
   isConnecting,
   targetPortPosition,
   children,
@@ -53,4 +53,4 @@ export function NodeAsPortWrapper({
       {children}
     </div>
   );
-}
+});
