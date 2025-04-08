@@ -44,13 +44,6 @@ const Handles = memo(function Handles({
   return <>{isVisible && children}</>;
 });
 
-export const NodePanel = {
-  Root,
-  Header,
-  Content,
-  Handles,
-};
-
 /**
  * Node Panel component
  *
@@ -77,7 +70,7 @@ export const NodePanel = {
  * - More than one instance of `NodePanel.Header`, `<NodePanel.Content`, or `NodePanel.Handles`
  * - Passing an unknown child element
  */
-function Root({ selected, children }: Props) {
+const Root = memo(function Root({ selected, children }: Props) {
   const { header, content, handles } = useMemo(() => {
     const childrenArray = Children.toArray(children);
 
@@ -112,7 +105,14 @@ function Root({ selected, children }: Props) {
       </div>
     </div>
   );
-}
+});
+
+export const NodePanel = {
+  Root,
+  Header,
+  Content,
+  Handles,
+};
 
 function findChild(
   childrenArray: ReturnType<typeof Children.toArray>,
