@@ -1,4 +1,4 @@
-import { Tooltip, TooltipContent, TooltipTrigger } from '@axiom/ui';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@synergycodes/axiom';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
 import exampleCode from '!!raw-loader!./tooltip-content.example.jsx';
 

@@ -144,9 +144,7 @@ const config = {
       },
     ],
   ],
-  plugins: [
-    './plugins/shadow-dom-css/postcss.ts',
-  ],
+  plugins: ['./plugins/shadow-dom-css/postcss.ts'],
 } satisfies Config;
 
 export default config;

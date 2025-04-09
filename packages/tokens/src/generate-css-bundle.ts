@@ -16,7 +16,7 @@ export async function generateCSSBundle() {
 
   const code = codeChunks.join('\n\n');
 
-  return writeFile('./dist/axiom.css', code);
+  return writeFile('./dist/tokens.css', code);
 }
 
 function createPrimitiveImport(name: string) {
