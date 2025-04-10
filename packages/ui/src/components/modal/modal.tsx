@@ -37,7 +37,7 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
   ) => {
     return (
       <BaseModal open={open} onClose={onClose} slots={{ backdrop: Backdrop }}>
-        <Fade in={open}>
+        <Fade in={open} onClick={onClose}>
           <div className={clsx(styles['modal'], styles[size])} ref={ref}>
             <div className={styles['header']}>
               <div className={styles['title-wrapper']}>
