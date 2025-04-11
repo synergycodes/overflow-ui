@@ -1,0 +1,18 @@
+import { componentPascalName } from '@axiom/ui';
+import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
+import exampleCode from '!!raw-loader!./avatar.example.jsx';
+
+export function AvatarDocs() {
+  return (
+    <componentPascalName
+      preview={
+        <Avatar
+            // TODO: add props
+        />
+      }
+      cssPath="components/ComponentKebabName/ComponentKebabName.module.css"
+      componentPath="components/ComponentKebabName/ComponentKebabName.tsx"
+      exampleCode={exampleCode}
+    />
+  );
+}
