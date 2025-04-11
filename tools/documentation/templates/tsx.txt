@@ -1,12 +1,12 @@
 import { componentPascalName } from '@axiom/ui';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
-import exampleCode from '!!raw-loader!./avatar.example.jsx';
+import exampleCode from '!!raw-loader!./ComponentKebabName.example.jsx';
 
-export function AvatarDocs() {
+export function componentPascalNameDocs() {
   return (
-    <componentPascalName
+    <ComponentPage
       preview={
-        <Avatar
+        <componentPascalName
             // TODO: add props
         />
       }

@@ -1,17 +1,13 @@
 import * as readline from 'node:readline';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
-import { kebabToPascalCase } from './utils/text';
 import { useTemplate } from './utils/template';
 
-// Create readline interface for console input
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
 
-
-// Ask user for component path
 rl.question(
   'Enter component path (e.g., switch or packages/ui/src/components/switch): ',
   (componentInput) => {
@@ -20,7 +16,6 @@ rl.question(
     )
       ? componentInput
       : `packages/ui/src/components/${componentInput}`;
-    // const baseDocsDir = path.resolve(__dirname, '../packages/website/docs/components');
     const componentFileName = path.basename(componentPath);
     const componentDocDir = path.resolve(
       __dirname,
@@ -32,14 +27,11 @@ rl.question(
       console.log(' ');
       console.log(`${componentDocDir} already exists.`);
       console.log('Update it or remove the directory to regenerate.');
-
-      // return;
+    } else {
+      fs.mkdirSync(componentDocDir);
     }
 
     console.log(`Creating dir: ${componentDocDir}`);
-    console.log(componentDocDir);
-
-    // fs.mkdirSync(componentDocDir);
 
     const templatesDir = path.resolve(__dirname, './templates/');
     const tsxContent = useTemplate(
@@ -48,16 +40,32 @@ rl.question(
         componentFileName,
       },
     );
+    const jsxContent = useTemplate(
+      fs.readFileSync(path.join(templatesDir, 'jsx.txt'), 'utf-8'),
+      {
+        componentFileName,
+      },
+    );
+    const mdxContent = useTemplate(
+      fs.readFileSync(path.join(templatesDir, 'mdx.txt'), 'utf-8'),
+      {
+        componentFileName,
+      },
+    );
 
-    // File paths
-    const tsxPath = path.join(componentDocDir, `${componentFileName}.tsx`);
-    const txtPath = path.join(componentDocDir, `${componentFileName}.txt`);
+    const tsxPath = path.join(componentDocDir, `${componentFileName}-docs.tsx`);
+    const jsxPath = path.join(
+      componentDocDir,
+      `${componentFileName}.example.jsx`,
+    );
+    const mdxPath = path.join(componentDocDir, `${componentFileName}.mdx`);
 
-    // Create files with placeholder content
     fs.writeFileSync(tsxPath, tsxContent);
-    fs.writeFileSync(txtPath, `${componentFileName} notes or metadata.`);
+    fs.writeFileSync(jsxPath, jsxContent);
+    fs.writeFileSync(mdxPath, mdxContent);
 
-    console.log(`Created files:\n- ${tsxPath}\n- ${txtPath}`);
+    console.log(`Created files:\n- ${tsxPath}\n- ${jsxPath}\n- ${mdxPath}`);
+
     rl.close();
   },
 );
