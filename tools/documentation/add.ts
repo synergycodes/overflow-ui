@@ -27,8 +27,8 @@ rl.question(
       console.log(' ');
       console.log(`${componentDocDir} already exists.`);
       console.log('Update it or remove the directory to regenerate.');
-    } else {
-      fs.mkdirSync(componentDocDir);
+
+      return;
     }
 
     console.log(`Creating dir: ${componentDocDir}`);
