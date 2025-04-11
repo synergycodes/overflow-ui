@@ -32,6 +32,7 @@ rl.question(
     }
 
     console.log(`Creating dir: ${componentDocDir}`);
+    fs.mkdirSync(componentDocDir);
 
     const templatesDir = path.resolve(__dirname, './templates/');
     const tsxContent = useTemplate(
