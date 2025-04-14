@@ -66,7 +66,7 @@ rl.question(
     fs.writeFileSync(mdxPath, mdxContent);
 
     console.log(`Created files:\n- ${tsxPath}\n- ${jsxPath}\n- ${mdxPath}`);
-    
+
     console.log(' ');
     console.log('Update props in those files.');
 
