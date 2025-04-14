@@ -36,7 +36,13 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
     ref,
   ) => {
     return (
-      <BaseModal open={open} onClose={onClose} slots={{ backdrop: Backdrop }}>
+      <BaseModal
+        open={open}
+        onClose={onClose}
+        slots={{
+          backdrop: (props) => <Backdrop {...props} onClose={onClose} />,
+        }}
+      >
         <Fade in={open}>
           <div className={clsx(styles['modal'], styles[size])} ref={ref}>
             <div className={styles['header']}>
@@ -68,12 +74,21 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
 
 const Backdrop = forwardRef<
   HTMLDivElement,
-  { open?: boolean; className: string }
+  { open?: boolean; className: string; onClose?: () => void }
 >((props, ref) => {
-  const { open, className } = props;
+  const { open, className, onClose } = props;
+
   return (
     <Fade in={open}>
-      <div className={clsx(styles['backdrop'], className)} ref={ref} />
+      <div className={clsx(styles['backdrop'], className)} ref={ref}>
+        {onClose && (
+          <button
+            onClick={onClose}
+            className={styles['backdrop-close']}
+            type="button"
+          />
+        )}
+      </div>
     </Fade>
   );
 });
