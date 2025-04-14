@@ -28,11 +28,15 @@ type Props = DatePickerProps & {
    */
   type?: DatePickerType;
   /**
-   * Default date value when the component is initially rendered (it depends on DatePickerType — check the Playground tab)
+   * Default date value when the component is initially rendered.
+   *
+   * For the "default" is a single date, for the "range" [date, date]; and for the "multiple", an array of dates.
    */
   defaultValue?: DatePickerProps['defaultValue'];
   /**
-   * Controlled value for the selected date (it depends on DatePickerType — check the Playground tab)
+   * Controlled value for the selected date
+   *
+   * For the "default" is a single date, for the "range" [date, date]; and for the "multiple", an array of dates.
    */
   value?: DatePickerProps['value'];
 };
