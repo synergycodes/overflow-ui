@@ -1,4 +1,38 @@
 {
+  "../ui/src/components/date-picker/date-picker.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "DatePicker",
+      "props": {
+        "inputSize": {
+          "required": false,
+          "tsType": {
+            "name": "ItemSize"
+          },
+          "description": "",
+          "defaultValue": {
+            "value": "'medium'",
+            "computed": false
+          }
+        },
+        "valueFormat": {
+          "defaultValue": {
+            "value": "'DD/MM/YYYY'",
+            "computed": false
+          },
+          "required": false
+        },
+        "placeholder": {
+          "defaultValue": {
+            "value": "'dd/mm/yyyy'",
+            "computed": false
+          },
+          "required": false
+        }
+      }
+    }
+  ],
   "../ui/src/components/accordion/accordion.tsx": [
     {
       "description": "An interactive UI component that lets users toggle the visibility of content.\r\nThe content section can be expanded to reveal details and collapsed to hide them,\r\nkeeping information organized and saving space. Commonly used in FAQs, settings panels,\r\nand documentation to present layered content efficiently.",
@@ -71,101 +105,6 @@
       }
     }
   ],
-  "../ui/src/components/avatar/avatar.tsx": [
-    {
-      "description": "Component for displaying user avatars with various sizes",
-      "methods": [],
-      "displayName": "Avatar",
-      "props": {
-        "username": {
-          "required": true,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "Provide to use it as alt of the image for better a11y"
-        },
-        "imageUrl": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "Image URL"
-        },
-        "size": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "'extra-large' | 'large' | 'medium' | 'small'",
-            "elements": [
-              {
-                "name": "literal",
-                "value": "'extra-large'"
-              },
-              {
-                "name": "literal",
-                "value": "'large'"
-              },
-              {
-                "name": "literal",
-                "value": "'medium'"
-              },
-              {
-                "name": "literal",
-                "value": "'small'"
-              }
-            ]
-          },
-          "description": "Size of the circle container",
-          "defaultValue": {
-            "value": "'extra-large'",
-            "computed": false
-          }
-        }
-      }
-    }
-  ],
-  "../ui/src/components/menu/menu-item.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "MenuItem",
-      "props": {
-        "destructive": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": ""
-        },
-        "onClick": {
-          "required": false,
-          "tsType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "() => void",
-            "signature": {
-              "arguments": [],
-              "return": {
-                "name": "void"
-              }
-            }
-          },
-          "description": ""
-        },
-        "size": {
-          "required": false,
-          "tsType": {
-            "name": "ItemSize"
-          },
-          "description": "",
-          "defaultValue": {
-            "value": "'medium'",
-            "computed": false
-          }
-        }
-      }
-    }
-  ],
   "../ui/src/components/checkbox/checkbox.tsx": [
     {
       "description": "",
@@ -194,214 +133,6 @@
           "required": false,
           "tsType": {
             "name": "boolean"
-          },
-          "description": ""
-        }
-      }
-    }
-  ],
-  "../ui/src/components/date-picker/date-picker.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "DatePicker",
-      "props": {
-        "inputSize": {
-          "required": false,
-          "tsType": {
-            "name": "ItemSize"
-          },
-          "description": "",
-          "defaultValue": {
-            "value": "'medium'",
-            "computed": false
-          }
-        },
-        "valueFormat": {
-          "defaultValue": {
-            "value": "'DD/MM/YYYY'",
-            "computed": false
-          },
-          "required": false
-        },
-        "placeholder": {
-          "defaultValue": {
-            "value": "'dd/mm/yyyy'",
-            "computed": false
-          },
-          "required": false
-        }
-      }
-    }
-  ],
-  "../ui/src/components/select/select.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Select",
-      "props": {
-        "size": {
-          "required": false,
-          "tsType": {
-            "name": "Extract",
-            "elements": [
-              {
-                "name": "unknown[number]",
-                "raw": "(typeof SIZES)[number]"
-              },
-              {
-                "name": "union",
-                "raw": "'large' | 'medium' | 'small'",
-                "elements": [
-                  {
-                    "name": "literal",
-                    "value": "'large'"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "'medium'"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "'small'"
-                  }
-                ]
-              }
-            ],
-            "raw": "Extract<Size, 'large' | 'medium' | 'small'>"
-          },
-          "description": "",
-          "defaultValue": {
-            "value": "'medium'",
-            "computed": false
-          }
-        },
-        "placeholder": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "items": {
-          "required": true,
-          "tsType": {
-            "name": "Array",
-            "elements": [
-              {
-                "name": "intersection",
-                "raw": "ListItem & {\r\n  value?: string | number | null;\r\n  label?: string;\r\n}",
-                "elements": [
-                  {
-                    "name": "intersection",
-                    "raw": "Partial<WithIcon> & {\r\n  type?: 'item' | 'separator';\r\n  label?: string;\r\n  disabled?: boolean;\r\n}",
-                    "elements": [
-                      {
-                        "name": "Partial",
-                        "elements": [
-                          {
-                            "name": "signature",
-                            "type": "object",
-                            "raw": "{\r\n  /**\r\n   * Icon content React Node\r\n   */\r\n  icon?: React.ReactNode;\r\n}",
-                            "signature": {
-                              "properties": [
-                                {
-                                  "key": "icon",
-                                  "value": {
-                                    "name": "ReactReactNode",
-                                    "raw": "React.ReactNode",
-                                    "required": false
-                                  },
-                                  "description": "Icon content React Node"
-                                }
-                              ]
-                            }
-                          }
-                        ],
-                        "raw": "Partial<WithIcon>"
-                      },
-                      {
-                        "name": "signature",
-                        "type": "object",
-                        "raw": "{\r\n  type?: 'item' | 'separator';\r\n  label?: string;\r\n  disabled?: boolean;\r\n}",
-                        "signature": {
-                          "properties": [
-                            {
-                              "key": "type",
-                              "value": {
-                                "name": "union",
-                                "raw": "'item' | 'separator'",
-                                "elements": [
-                                  {
-                                    "name": "literal",
-                                    "value": "'item'"
-                                  },
-                                  {
-                                    "name": "literal",
-                                    "value": "'separator'"
-                                  }
-                                ],
-                                "required": false
-                              }
-                            },
-                            {
-                              "key": "label",
-                              "value": {
-                                "name": "string",
-                                "required": false
-                              }
-                            },
-                            {
-                              "key": "disabled",
-                              "value": {
-                                "name": "boolean",
-                                "required": false
-                              }
-                            }
-                          ]
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "name": "signature",
-                    "type": "object",
-                    "raw": "{\r\n  value?: string | number | null;\r\n  label?: string;\r\n}",
-                    "signature": {
-                      "properties": [
-                        {
-                          "key": "value",
-                          "value": {
-                            "name": "union",
-                            "raw": "string | number | null",
-                            "elements": [
-                              {
-                                "name": "string"
-                              },
-                              {
-                                "name": "number"
-                              },
-                              {
-                                "name": "null"
-                              }
-                            ],
-                            "required": false
-                          }
-                        },
-                        {
-                          "key": "label",
-                          "value": {
-                            "name": "string",
-                            "required": false
-                          }
-                        }
-                      ]
-                    }
-                  }
-                ]
-              }
-            ],
-            "raw": "SelectItem[]"
           },
           "description": ""
         }
@@ -615,31 +346,204 @@
       }
     }
   ],
-  "../ui/src/components/separator/separator.tsx": [
+  "../ui/src/components/avatar/avatar.tsx": [
     {
-      "description": "",
+      "description": "Component for displaying user avatars with various sizes",
       "methods": [],
-      "displayName": "Separator"
+      "displayName": "Avatar",
+      "props": {
+        "username": {
+          "required": true,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "Provide to use it as alt of the image for better a11y"
+        },
+        "imageUrl": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "Image URL"
+        },
+        "size": {
+          "required": false,
+          "tsType": {
+            "name": "union",
+            "raw": "'extra-large' | 'large' | 'medium' | 'small'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'extra-large'"
+              },
+              {
+                "name": "literal",
+                "value": "'large'"
+              },
+              {
+                "name": "literal",
+                "value": "'medium'"
+              },
+              {
+                "name": "literal",
+                "value": "'small'"
+              }
+            ]
+          },
+          "description": "Size of the circle container",
+          "defaultValue": {
+            "value": "'extra-large'",
+            "computed": false
+          }
+        }
+      }
     }
   ],
-  "../ui/src/components/input/input.tsx": [
+  "../ui/src/components/menu/menu-item.tsx": [
     {
       "description": "",
       "methods": [],
-      "displayName": "Input",
+      "displayName": "MenuItem",
       "props": {
+        "destructive": {
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": ""
+        },
+        "onClick": {
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "() => void",
+            "signature": {
+              "arguments": [],
+              "return": {
+                "name": "void"
+              }
+            }
+          },
+          "description": ""
+        },
         "size": {
           "required": false,
           "tsType": {
             "name": "ItemSize"
           },
-          "description": "Specifies the size of the input field.\r\nCan be 'small', 'medium', or 'large'.",
+          "description": "",
           "defaultValue": {
             "value": "'medium'",
             "computed": false
           }
         }
       }
+    }
+  ],
+  "../ui/src/components/switch/switch.tsx": [
+    {
+      "description": "A Switch component that allows users to toggle between two states, such as on and off.\r\nTypically used for settings or preferences, it provides immediate visual feedback.",
+      "methods": [],
+      "displayName": "Switch",
+      "props": {
+        "size": {
+          "required": false,
+          "tsType": {
+            "name": "SelectorSize"
+          },
+          "description": "Size of the switch component",
+          "defaultValue": {
+            "value": "'medium'",
+            "computed": false
+          }
+        },
+        "styles": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "Custom styles to apply to the switch"
+        },
+        "thumbChildren": {
+          "required": false,
+          "tsType": {
+            "name": "ReactReactNode",
+            "raw": "React.ReactNode"
+          },
+          "description": "Custom content for the thumb of the switch"
+        },
+        "trackChildren": {
+          "required": false,
+          "tsType": {
+            "name": "ReactReactNode",
+            "raw": "React.ReactNode"
+          },
+          "description": "Custom content for the track of the switch"
+        },
+        "className": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "Custom class name for the switch component"
+        },
+        "checked": {
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": "Whether the switch is checked or not"
+        },
+        "disabled": {
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": "Whether the switch is disabled"
+        },
+        "onChange": {
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(checked: boolean, event: ChangeEvent<HTMLInputElement>) => void",
+            "signature": {
+              "arguments": [
+                {
+                  "type": {
+                    "name": "boolean"
+                  },
+                  "name": "checked"
+                },
+                {
+                  "type": {
+                    "name": "ChangeEvent",
+                    "elements": [
+                      {
+                        "name": "HTMLInputElement"
+                      }
+                    ],
+                    "raw": "ChangeEvent<HTMLInputElement>"
+                  },
+                  "name": "event"
+                }
+              ],
+              "return": {
+                "name": "void"
+              }
+            }
+          },
+          "description": "Callback function when the switch state changes"
+        }
+      }
+    }
+  ],
+  "../ui/src/components/separator/separator.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Separator"
     }
   ],
   "../ui/src/components/radio-button/radio.tsx": [
@@ -821,11 +725,11 @@
       }
     }
   ],
-  "../ui/src/components/button/base-button/base-button.tsx": [
+  "../ui/src/components/button/icon-label-button/icon-label-button.tsx": [
     {
-      "description": "",
+      "description": "A flexible button component that allows only specific combinations of children:\r\n- Icon followed by text.\r\n- Text followed by an Icon.\r\n- Icon, text and another Icon.\r\n\r\nExamples:\r\n```tsx\r\n<IconLabelButton {...props} >\r\n  <PlusCircle />\r\n  Button\r\n</IconLabelButton>\r\n\r\n<Button {...props} >\r\n  Button\r\n  <PlusCircle />\r\n</Button>\r\n\r\n<Button {...props} >\r\n  <PlusCircle />\r\n  Button\r\n  <PlusCircle />\r\n</Button>\r\n```",
       "methods": [],
-      "displayName": "BaseButton",
+      "displayName": "IconLabelButton",
       "props": {
         "tooltip": {
           "required": false,
@@ -850,11 +754,7 @@
               }
             ]
           },
-          "description": "",
-          "defaultValue": {
-            "value": "'default'",
-            "computed": false
-          }
+          "description": ""
         },
         "size": {
           "defaultValue": {
@@ -862,28 +762,185 @@
             "computed": false
           },
           "required": false
+        },
+        "variant": {
+          "defaultValue": {
+            "value": "'primary'",
+            "computed": false
+          },
+          "required": false
         }
       }
     }
   ],
-  "../ui/src/components/input/clear-button/clear-button.tsx": [
+  "../ui/src/components/select/select.tsx": [
     {
       "description": "",
       "methods": [],
-      "displayName": "ClearButton",
+      "displayName": "Select",
       "props": {
-        "onClick": {
+        "size": {
+          "required": false,
+          "tsType": {
+            "name": "Extract",
+            "elements": [
+              {
+                "name": "unknown[number]",
+                "raw": "(typeof SIZES)[number]"
+              },
+              {
+                "name": "union",
+                "raw": "'large' | 'medium' | 'small'",
+                "elements": [
+                  {
+                    "name": "literal",
+                    "value": "'large'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'medium'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'small'"
+                  }
+                ]
+              }
+            ],
+            "raw": "Extract<Size, 'large' | 'medium' | 'small'>"
+          },
+          "description": "",
+          "defaultValue": {
+            "value": "'medium'",
+            "computed": false
+          }
+        },
+        "placeholder": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "items": {
           "required": true,
           "tsType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "() => void",
-            "signature": {
-              "arguments": [],
-              "return": {
-                "name": "void"
+            "name": "Array",
+            "elements": [
+              {
+                "name": "intersection",
+                "raw": "ListItem & {\r\n  value?: string | number | null;\r\n  label?: string;\r\n}",
+                "elements": [
+                  {
+                    "name": "intersection",
+                    "raw": "Partial<WithIcon> & {\r\n  type?: 'item' | 'separator';\r\n  label?: string;\r\n  disabled?: boolean;\r\n}",
+                    "elements": [
+                      {
+                        "name": "Partial",
+                        "elements": [
+                          {
+                            "name": "signature",
+                            "type": "object",
+                            "raw": "{\r\n  /**\r\n   * Icon content React Node\r\n   */\r\n  icon?: React.ReactNode;\r\n}",
+                            "signature": {
+                              "properties": [
+                                {
+                                  "key": "icon",
+                                  "value": {
+                                    "name": "ReactReactNode",
+                                    "raw": "React.ReactNode",
+                                    "required": false
+                                  },
+                                  "description": "Icon content React Node"
+                                }
+                              ]
+                            }
+                          }
+                        ],
+                        "raw": "Partial<WithIcon>"
+                      },
+                      {
+                        "name": "signature",
+                        "type": "object",
+                        "raw": "{\r\n  type?: 'item' | 'separator';\r\n  label?: string;\r\n  disabled?: boolean;\r\n}",
+                        "signature": {
+                          "properties": [
+                            {
+                              "key": "type",
+                              "value": {
+                                "name": "union",
+                                "raw": "'item' | 'separator'",
+                                "elements": [
+                                  {
+                                    "name": "literal",
+                                    "value": "'item'"
+                                  },
+                                  {
+                                    "name": "literal",
+                                    "value": "'separator'"
+                                  }
+                                ],
+                                "required": false
+                              }
+                            },
+                            {
+                              "key": "label",
+                              "value": {
+                                "name": "string",
+                                "required": false
+                              }
+                            },
+                            {
+                              "key": "disabled",
+                              "value": {
+                                "name": "boolean",
+                                "required": false
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "name": "signature",
+                    "type": "object",
+                    "raw": "{\r\n  value?: string | number | null;\r\n  label?: string;\r\n}",
+                    "signature": {
+                      "properties": [
+                        {
+                          "key": "value",
+                          "value": {
+                            "name": "union",
+                            "raw": "string | number | null",
+                            "elements": [
+                              {
+                                "name": "string"
+                              },
+                              {
+                                "name": "number"
+                              },
+                              {
+                                "name": "null"
+                              }
+                            ],
+                            "required": false
+                          }
+                        },
+                        {
+                          "key": "label",
+                          "value": {
+                            "name": "string",
+                            "required": false
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
               }
-            }
+            ],
+            "raw": "SelectItem[]"
           },
           "description": ""
         }
@@ -969,261 +1026,22 @@
       }
     }
   ],
-  "../ui/src/components/button/icon-label-button/icon-label-button.tsx": [
-    {
-      "description": "A flexible button component that allows only specific combinations of children:\r\n- Icon followed by text.\r\n- Text followed by an Icon.\r\n- Icon, text and another Icon.\r\n\r\nExamples:\r\n```tsx\r\n<IconLabelButton {...props} >\r\n  <PlusCircle />\r\n  Button\r\n</IconLabelButton>\r\n\r\n<Button {...props} >\r\n  Button\r\n  <PlusCircle />\r\n</Button>\r\n\r\n<Button {...props} >\r\n  <PlusCircle />\r\n  Button\r\n  <PlusCircle />\r\n</Button>\r\n```",
-      "methods": [],
-      "displayName": "IconLabelButton",
-      "props": {
-        "tooltip": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "tooltipType": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "'default' | 'blue'",
-            "elements": [
-              {
-                "name": "literal",
-                "value": "'default'"
-              },
-              {
-                "name": "literal",
-                "value": "'blue'"
-              }
-            ]
-          },
-          "description": ""
-        },
-        "size": {
-          "defaultValue": {
-            "value": "'medium'",
-            "computed": false
-          },
-          "required": false
-        },
-        "variant": {
-          "defaultValue": {
-            "value": "'primary'",
-            "computed": false
-          },
-          "required": false
-        }
-      }
-    }
-  ],
-  "../ui/src/components/node/node-as-port-wrapper/node-as-port-wrapper.tsx": [
+  "../ui/src/components/input/input.tsx": [
     {
       "description": "",
       "methods": [],
-      "displayName": "NodeAsPortWrapper",
-      "props": {
-        "isConnecting": {
-          "required": true,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": ""
-        },
-        "targetPortPosition": {
-          "required": true,
-          "tsType": {
-            "name": "union",
-            "raw": "'left' | 'top' | 'right' | 'bottom'",
-            "elements": [
-              {
-                "name": "literal",
-                "value": "'left'"
-              },
-              {
-                "name": "literal",
-                "value": "'top'"
-              },
-              {
-                "name": "literal",
-                "value": "'right'"
-              },
-              {
-                "name": "literal",
-                "value": "'bottom'"
-              }
-            ]
-          },
-          "description": ""
-        }
-      }
-    }
-  ],
-  "../ui/src/components/node/node-description/node-description.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "NodeDescription",
-      "props": {
-        "label": {
-          "required": true,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "description": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      }
-    }
-  ],
-  "../ui/src/components/button/nav-button/nav-button.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "NavButton",
-      "props": {
-        "tooltip": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "tooltipType": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "'default' | 'blue'",
-            "elements": [
-              {
-                "name": "literal",
-                "value": "'default'"
-              },
-              {
-                "name": "literal",
-                "value": "'blue'"
-              }
-            ]
-          },
-          "description": ""
-        },
-        "size": {
-          "defaultValue": {
-            "value": "'medium'",
-            "computed": false
-          },
-          "required": false
-        },
-        "shape": {
-          "defaultValue": {
-            "value": "''",
-            "computed": false
-          },
-          "required": false
-        }
-      }
-    }
-  ],
-  "../ui/src/components/switch/switch.tsx": [
-    {
-      "description": "A Switch component that allows users to toggle between two states, such as on and off.\r\nTypically used for settings or preferences, it provides immediate visual feedback.",
-      "methods": [],
-      "displayName": "Switch",
+      "displayName": "Input",
       "props": {
         "size": {
           "required": false,
           "tsType": {
-            "name": "SelectorSize"
+            "name": "ItemSize"
           },
-          "description": "Size of the switch component",
+          "description": "Specifies the size of the input field.\r\nCan be 'small', 'medium', or 'large'.",
           "defaultValue": {
             "value": "'medium'",
             "computed": false
           }
-        },
-        "styles": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "Custom styles to apply to the switch"
-        },
-        "thumbChildren": {
-          "required": false,
-          "tsType": {
-            "name": "ReactReactNode",
-            "raw": "React.ReactNode"
-          },
-          "description": "Custom content for the thumb of the switch"
-        },
-        "trackChildren": {
-          "required": false,
-          "tsType": {
-            "name": "ReactReactNode",
-            "raw": "React.ReactNode"
-          },
-          "description": "Custom content for the track of the switch"
-        },
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "Custom class name for the switch component"
-        },
-        "checked": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": "Whether the switch is checked or not"
-        },
-        "disabled": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": "Whether the switch is disabled"
-        },
-        "onChange": {
-          "required": false,
-          "tsType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "(checked: boolean, event: ChangeEvent<HTMLInputElement>) => void",
-            "signature": {
-              "arguments": [
-                {
-                  "type": {
-                    "name": "boolean"
-                  },
-                  "name": "checked"
-                },
-                {
-                  "type": {
-                    "name": "ChangeEvent",
-                    "elements": [
-                      {
-                        "name": "HTMLInputElement"
-                      }
-                    ],
-                    "raw": "ChangeEvent<HTMLInputElement>"
-                  },
-                  "name": "event"
-                }
-              ],
-              "return": {
-                "name": "void"
-              }
-            }
-          },
-          "description": "Callback function when the switch state changes"
         }
       }
     }
@@ -1283,34 +1101,11 @@
       }
     }
   ],
-  "../ui/src/components/node/node-icon/node-icon.tsx": [
+  "../ui/src/components/button/base-button/base-button.tsx": [
     {
       "description": "",
       "methods": [],
-      "displayName": "NodeIcon",
-      "props": {
-        "icon": {
-          "required": true,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        }
-      }
-    }
-  ],
-  "../ui/src/components/button/label-button/label-button.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "LabelButton",
+      "displayName": "BaseButton",
       "props": {
         "tooltip": {
           "required": false,
@@ -1335,7 +1130,11 @@
               }
             ]
           },
-          "description": ""
+          "description": "",
+          "defaultValue": {
+            "value": "'default'",
+            "computed": false
+          }
         },
         "size": {
           "defaultValue": {
@@ -1343,15 +1142,127 @@
             "computed": false
           },
           "required": false
-        },
-        "variant": {
-          "defaultValue": {
-            "value": "'primary'",
-            "computed": false
-          },
-          "required": false
         }
       }
+    }
+  ],
+  "../ui/src/components/node/node-as-port-wrapper/node-as-port-wrapper.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "NodeAsPortWrapper",
+      "props": {
+        "isConnecting": {
+          "required": true,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": ""
+        },
+        "targetPortPosition": {
+          "required": true,
+          "tsType": {
+            "name": "union",
+            "raw": "'left' | 'top' | 'right' | 'bottom'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'left'"
+              },
+              {
+                "name": "literal",
+                "value": "'top'"
+              },
+              {
+                "name": "literal",
+                "value": "'right'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottom'"
+              }
+            ]
+          },
+          "description": ""
+        }
+      }
+    }
+  ],
+  "../ui/src/components/input/clear-button/clear-button.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "ClearButton",
+      "props": {
+        "onClick": {
+          "required": true,
+          "tsType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "() => void",
+            "signature": {
+              "arguments": [],
+              "return": {
+                "name": "void"
+              }
+            }
+          },
+          "description": ""
+        }
+      }
+    }
+  ],
+  "../ui/src/components/node/node-description/node-description.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "NodeDescription",
+      "props": {
+        "label": {
+          "required": true,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "description": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        }
+      }
+    }
+  ],
+  "../ui/src/components/node/node-icon/node-icon.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "NodeIcon",
+      "props": {
+        "icon": {
+          "required": true,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": ""
+        },
+        "className": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        }
+      }
+    }
+  ],
+  "../ui/src/components/select/select-button/select-button.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "SelectButton"
     }
   ],
   "../ui/src/components/select/select-option/select-option.tsx": [
@@ -1421,196 +1332,6 @@
             "value": "'medium'",
             "computed": false
           }
-        }
-      }
-    }
-  ],
-  "../ui/src/components/select/select-button/select-button.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "SelectButton"
-    }
-  ],
-  "../ui/src/components/snackbar/components/action-buttons.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "ActionButtons",
-      "props": {
-        "variant": {
-          "required": true,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "buttonLabel": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "onButtonClick": {
-          "required": false,
-          "tsType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "() => void",
-            "signature": {
-              "arguments": [],
-              "return": {
-                "name": "void"
-              }
-            }
-          },
-          "description": ""
-        },
-        "close": {
-          "required": true,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": ""
-        },
-        "onClose": {
-          "required": false,
-          "tsType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "() => void",
-            "signature": {
-              "arguments": [],
-              "return": {
-                "name": "void"
-              }
-            }
-          },
-          "description": ""
-        }
-      }
-    }
-  ],
-  "../ui/src/components/switch/icon-switch/icon-switch.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "IconSwitch",
-      "props": {
-        "IconChecked": {
-          "required": true,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
-        "variant": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "'primary' | 'secondary'",
-            "elements": [
-              {
-                "name": "literal",
-                "value": "'primary'"
-              },
-              {
-                "name": "literal",
-                "value": "'secondary'"
-              }
-            ]
-          },
-          "description": "",
-          "defaultValue": {
-            "value": "'primary'",
-            "computed": false
-          }
-        },
-        "size": {
-          "required": false,
-          "tsType": {
-            "name": "SelectorSize"
-          },
-          "description": "Size of the switch component"
-        },
-        "styles": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "Custom styles to apply to the switch"
-        },
-        "thumbChildren": {
-          "required": false,
-          "tsType": {
-            "name": "ReactReactNode",
-            "raw": "React.ReactNode"
-          },
-          "description": "Custom content for the thumb of the switch"
-        },
-        "trackChildren": {
-          "required": false,
-          "tsType": {
-            "name": "ReactReactNode",
-            "raw": "React.ReactNode"
-          },
-          "description": "Custom content for the track of the switch"
-        },
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "Custom class name for the switch component"
-        },
-        "checked": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": "Whether the switch is checked or not"
-        },
-        "disabled": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": "Whether the switch is disabled"
-        },
-        "onChange": {
-          "required": false,
-          "tsType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "(checked: boolean, event: ChangeEvent<HTMLInputElement>) => void",
-            "signature": {
-              "arguments": [
-                {
-                  "type": {
-                    "name": "boolean"
-                  },
-                  "name": "checked"
-                },
-                {
-                  "type": {
-                    "name": "ChangeEvent",
-                    "elements": [
-                      {
-                        "name": "HTMLInputElement"
-                      }
-                    ],
-                    "raw": "ChangeEvent<HTMLInputElement>"
-                  },
-                  "name": "event"
-                }
-              ],
-              "return": {
-                "name": "void"
-              }
-            }
-          },
-          "description": "Callback function when the switch state changes"
         }
       }
     }
@@ -1784,6 +1505,309 @@
       }
     }
   ],
+  "../ui/src/components/snackbar/components/action-buttons.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "ActionButtons",
+      "props": {
+        "variant": {
+          "required": true,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "buttonLabel": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "onButtonClick": {
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "() => void",
+            "signature": {
+              "arguments": [],
+              "return": {
+                "name": "void"
+              }
+            }
+          },
+          "description": ""
+        },
+        "close": {
+          "required": true,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": ""
+        },
+        "onClose": {
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "() => void",
+            "signature": {
+              "arguments": [],
+              "return": {
+                "name": "void"
+              }
+            }
+          },
+          "description": ""
+        }
+      }
+    }
+  ],
+  "../ui/src/components/button/label-button/label-button.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "LabelButton",
+      "props": {
+        "tooltip": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "tooltipType": {
+          "required": false,
+          "tsType": {
+            "name": "union",
+            "raw": "'default' | 'blue'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'default'"
+              },
+              {
+                "name": "literal",
+                "value": "'blue'"
+              }
+            ]
+          },
+          "description": ""
+        },
+        "size": {
+          "defaultValue": {
+            "value": "'medium'",
+            "computed": false
+          },
+          "required": false
+        },
+        "variant": {
+          "defaultValue": {
+            "value": "'primary'",
+            "computed": false
+          },
+          "required": false
+        }
+      }
+    }
+  ],
+  "../ui/src/components/button/nav-button/nav-button.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "NavButton",
+      "props": {
+        "tooltip": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "tooltipType": {
+          "required": false,
+          "tsType": {
+            "name": "union",
+            "raw": "'default' | 'blue'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'default'"
+              },
+              {
+                "name": "literal",
+                "value": "'blue'"
+              }
+            ]
+          },
+          "description": ""
+        },
+        "size": {
+          "defaultValue": {
+            "value": "'medium'",
+            "computed": false
+          },
+          "required": false
+        },
+        "shape": {
+          "defaultValue": {
+            "value": "''",
+            "computed": false
+          },
+          "required": false
+        }
+      }
+    }
+  ],
+  "../ui/src/components/switch/icon-switch/icon-switch.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "IconSwitch",
+      "props": {
+        "IconChecked": {
+          "required": true,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": ""
+        },
+        "variant": {
+          "required": false,
+          "tsType": {
+            "name": "union",
+            "raw": "'primary' | 'secondary'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'primary'"
+              },
+              {
+                "name": "literal",
+                "value": "'secondary'"
+              }
+            ]
+          },
+          "description": "",
+          "defaultValue": {
+            "value": "'primary'",
+            "computed": false
+          }
+        },
+        "size": {
+          "required": false,
+          "tsType": {
+            "name": "SelectorSize"
+          },
+          "description": "Size of the switch component"
+        },
+        "styles": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "Custom styles to apply to the switch"
+        },
+        "thumbChildren": {
+          "required": false,
+          "tsType": {
+            "name": "ReactReactNode",
+            "raw": "React.ReactNode"
+          },
+          "description": "Custom content for the thumb of the switch"
+        },
+        "trackChildren": {
+          "required": false,
+          "tsType": {
+            "name": "ReactReactNode",
+            "raw": "React.ReactNode"
+          },
+          "description": "Custom content for the track of the switch"
+        },
+        "className": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "Custom class name for the switch component"
+        },
+        "checked": {
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": "Whether the switch is checked or not"
+        },
+        "disabled": {
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": "Whether the switch is disabled"
+        },
+        "onChange": {
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(checked: boolean, event: ChangeEvent<HTMLInputElement>) => void",
+            "signature": {
+              "arguments": [
+                {
+                  "type": {
+                    "name": "boolean"
+                  },
+                  "name": "checked"
+                },
+                {
+                  "type": {
+                    "name": "ChangeEvent",
+                    "elements": [
+                      {
+                        "name": "HTMLInputElement"
+                      }
+                    ],
+                    "raw": "ChangeEvent<HTMLInputElement>"
+                  },
+                  "name": "event"
+                }
+              ],
+              "return": {
+                "name": "void"
+              }
+            }
+          },
+          "description": "Callback function when the switch state changes"
+        }
+      }
+    }
+  ],
+  "../ui/src/components/snackbar/components/icon.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Icon",
+      "props": {
+        "isCentered": {
+          "required": true,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": ""
+        },
+        "variant": {
+          "required": true,
+          "tsType": {
+            "name": "literal",
+            "value": "`${SnackbarType}`"
+          },
+          "description": ""
+        }
+      }
+    }
+  ],
   "../ui/src/components/snackbar/components/message.tsx": [
     {
       "description": "",
@@ -1810,30 +1834,6 @@
                 "name": "undefined"
               }
             ]
-          },
-          "description": ""
-        }
-      }
-    }
-  ],
-  "../ui/src/components/snackbar/components/icon.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Icon",
-      "props": {
-        "isCentered": {
-          "required": true,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": ""
-        },
-        "variant": {
-          "required": true,
-          "tsType": {
-            "name": "literal",
-            "value": "`${SnackbarType}`"
           },
           "description": ""
         }
