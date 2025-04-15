@@ -192,151 +192,6 @@
       }
     }
   ],
-  "../ui/src/components/menu/menu-item.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "MenuItem",
-      "props": {
-        "destructive": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": ""
-        },
-        "onClick": {
-          "required": false,
-          "tsType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "() => void",
-            "signature": {
-              "arguments": [],
-              "return": {
-                "name": "void"
-              }
-            }
-          },
-          "description": ""
-        },
-        "size": {
-          "required": false,
-          "tsType": {
-            "name": "ItemSize"
-          },
-          "description": "",
-          "defaultValue": {
-            "value": "'medium'",
-            "computed": false
-          }
-        }
-      }
-    }
-  ],
-  "../ui/src/components/modal/modal.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Modal",
-      "props": {
-        "title": {
-          "required": true,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "subtitle": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "children": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
-        "footer": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
-        "size": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "'regular' | 'large'",
-            "elements": [
-              {
-                "name": "literal",
-                "value": "'regular'"
-              },
-              {
-                "name": "literal",
-                "value": "'large'"
-              }
-            ]
-          },
-          "description": "",
-          "defaultValue": {
-            "value": "'regular'",
-            "computed": false
-          }
-        },
-        "footerVariant": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "'integrated' | 'separated'",
-            "elements": [
-              {
-                "name": "literal",
-                "value": "'integrated'"
-              },
-              {
-                "name": "literal",
-                "value": "'separated'"
-              }
-            ]
-          },
-          "description": "",
-          "defaultValue": {
-            "value": "'integrated'",
-            "computed": false
-          }
-        },
-        "open": {
-          "required": true,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": ""
-        },
-        "onClose": {
-          "required": false,
-          "tsType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "() => void",
-            "signature": {
-              "arguments": [],
-              "return": {
-                "name": "void"
-              }
-            }
-          },
-          "description": ""
-        }
-      }
-    }
-  ],
   "../ui/src/components/menu/menu.tsx": [
     {
       "description": "A customizable dropdown menu component.\nThe menu can be triggered by any React element passed as children.\nSupports different sizes, custom placement, and can render both menu items and separators.",
@@ -441,131 +296,44 @@
       }
     }
   ],
-  "../ui/src/components/radio-button/radio.tsx": [
+  "../ui/src/components/menu/menu-item.tsx": [
     {
       "description": "",
       "methods": [],
-      "displayName": "Radio",
+      "displayName": "MenuItem",
       "props": {
+        "destructive": {
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": ""
+        },
+        "onClick": {
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "() => void",
+            "signature": {
+              "arguments": [],
+              "return": {
+                "name": "void"
+              }
+            }
+          },
+          "description": ""
+        },
         "size": {
           "required": false,
           "tsType": {
-            "name": "SelectorSize"
+            "name": "ItemSize"
           },
           "description": "",
           "defaultValue": {
             "value": "'medium'",
             "computed": false
           }
-        },
-        "checked": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": ""
-        },
-        "name": {
-          "required": true,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "value": {
-          "required": true,
-          "tsType": {
-            "name": "union",
-            "raw": "string | number",
-            "elements": [
-              {
-                "name": "string"
-              },
-              {
-                "name": "number"
-              }
-            ]
-          },
-          "description": ""
-        }
-      }
-    }
-  ],
-  "../ui/src/components/snackbar/snackbar.tsx": [
-    {
-      "description": "A Snackbar component that displays brief messages about app processes.\nThe snackbar appears at the bottom of the screen and automatically disappears after a few seconds.",
-      "methods": [],
-      "displayName": "Snackbar",
-      "props": {
-        "variant": {
-          "required": true,
-          "tsType": {
-            "name": "literal",
-            "value": "`${SnackbarType}`"
-          },
-          "description": "Visual style variant of the snackbar"
-        },
-        "title": {
-          "required": true,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "Main message displayed in the snackbar"
-        },
-        "subtitle": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "Optional secondary message displayed below the title"
-        },
-        "buttonLabel": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "Label for the action button"
-        },
-        "onButtonClick": {
-          "required": false,
-          "tsType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "() => void",
-            "signature": {
-              "arguments": [],
-              "return": {
-                "name": "void"
-              }
-            }
-          },
-          "description": "Callback fired when the action button is clicked"
-        },
-        "close": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": "Whether to show the close button",
-          "defaultValue": {
-            "value": "false",
-            "computed": false
-          }
-        },
-        "onClose": {
-          "required": false,
-          "tsType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "() => void",
-            "signature": {
-              "arguments": [],
-              "return": {
-                "name": "void"
-              }
-            }
-          },
-          "description": "Callback fired when the snackbar is closed"
         }
       }
     }
@@ -586,6 +354,131 @@
             "value": "'medium'",
             "computed": false
           }
+        },
+        "endAdornment": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": "Element displayed at the end of the input field.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
+        },
+        "startAdornment": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": "Element displayed at the start of the input field.",
+          "defaultValue": {
+            "value": "undefined",
+            "computed": true
+          }
+        }
+      }
+    }
+  ],
+  "../ui/src/components/modal/modal.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Modal",
+      "props": {
+        "title": {
+          "required": true,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "subtitle": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "children": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": ""
+        },
+        "footer": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": ""
+        },
+        "size": {
+          "required": false,
+          "tsType": {
+            "name": "union",
+            "raw": "'regular' | 'large'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'regular'"
+              },
+              {
+                "name": "literal",
+                "value": "'large'"
+              }
+            ]
+          },
+          "description": "",
+          "defaultValue": {
+            "value": "'regular'",
+            "computed": false
+          }
+        },
+        "footerVariant": {
+          "required": false,
+          "tsType": {
+            "name": "union",
+            "raw": "'integrated' | 'separated'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'integrated'"
+              },
+              {
+                "name": "literal",
+                "value": "'separated'"
+              }
+            ]
+          },
+          "description": "",
+          "defaultValue": {
+            "value": "'integrated'",
+            "computed": false
+          }
+        },
+        "open": {
+          "required": true,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": ""
+        },
+        "onClose": {
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "() => void",
+            "signature": {
+              "arguments": [],
+              "return": {
+                "name": "void"
+              }
+            }
+          },
+          "description": ""
         }
       }
     }
@@ -764,11 +657,185 @@
       }
     }
   ],
+  "../ui/src/components/radio-button/radio.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Radio",
+      "props": {
+        "size": {
+          "required": false,
+          "tsType": {
+            "name": "SelectorSize"
+          },
+          "description": "",
+          "defaultValue": {
+            "value": "'medium'",
+            "computed": false
+          }
+        },
+        "checked": {
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": ""
+        },
+        "name": {
+          "required": true,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "value": {
+          "required": true,
+          "tsType": {
+            "name": "union",
+            "raw": "string | number",
+            "elements": [
+              {
+                "name": "string"
+              },
+              {
+                "name": "number"
+              }
+            ]
+          },
+          "description": ""
+        }
+      }
+    }
+  ],
+  "../ui/src/components/snackbar/snackbar.tsx": [
+    {
+      "description": "A Snackbar component that displays brief messages about app processes.\nThe snackbar appears at the bottom of the screen and automatically disappears after a few seconds.",
+      "methods": [],
+      "displayName": "Snackbar",
+      "props": {
+        "variant": {
+          "required": true,
+          "tsType": {
+            "name": "literal",
+            "value": "`${SnackbarType}`"
+          },
+          "description": "Visual style variant of the snackbar"
+        },
+        "title": {
+          "required": true,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "Main message displayed in the snackbar"
+        },
+        "subtitle": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "Optional secondary message displayed below the title"
+        },
+        "buttonLabel": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "Label for the action button"
+        },
+        "onButtonClick": {
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "() => void",
+            "signature": {
+              "arguments": [],
+              "return": {
+                "name": "void"
+              }
+            }
+          },
+          "description": "Callback fired when the action button is clicked"
+        },
+        "close": {
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": "Whether to show the close button",
+          "defaultValue": {
+            "value": "false",
+            "computed": false
+          }
+        },
+        "onClose": {
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "() => void",
+            "signature": {
+              "arguments": [],
+              "return": {
+                "name": "void"
+              }
+            }
+          },
+          "description": "Callback fired when the snackbar is closed"
+        }
+      }
+    }
+  ],
   "../ui/src/components/separator/separator.tsx": [
     {
       "description": "",
       "methods": [],
       "displayName": "Separator"
+    }
+  ],
+  "../ui/src/components/button/base-button/base-button.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "BaseButton",
+      "props": {
+        "tooltip": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "tooltipType": {
+          "required": false,
+          "tsType": {
+            "name": "union",
+            "raw": "'default' | 'blue'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'default'"
+              },
+              {
+                "name": "literal",
+                "value": "'blue'"
+              }
+            ]
+          },
+          "description": "",
+          "defaultValue": {
+            "value": "'default'",
+            "computed": false
+          }
+        },
+        "size": {
+          "defaultValue": {
+            "value": "'medium'",
+            "computed": false
+          },
+          "required": false
+        }
+      }
     }
   ],
   "../ui/src/components/switch/switch.tsx": [
@@ -865,6 +932,109 @@
             }
           },
           "description": "Callback function when the switch state changes"
+        }
+      }
+    }
+  ],
+  "../ui/src/components/button/icon-label-button/icon-label-button.tsx": [
+    {
+      "description": "A flexible button component that allows only specific combinations of children:\n- Icon followed by text.\n- Text followed by an Icon.\n- Icon, text and another Icon.\n\nExamples:\n```tsx\n<IconLabelButton {...props} >\n  <PlusCircle />\n  Button\n</IconLabelButton>\n\n<Button {...props} >\n  Button\n  <PlusCircle />\n</Button>\n\n<Button {...props} >\n  <PlusCircle />\n  Button\n  <PlusCircle />\n</Button>\n```",
+      "methods": [],
+      "displayName": "IconLabelButton",
+      "props": {
+        "tooltip": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "tooltipType": {
+          "required": false,
+          "tsType": {
+            "name": "union",
+            "raw": "'default' | 'blue'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'default'"
+              },
+              {
+                "name": "literal",
+                "value": "'blue'"
+              }
+            ]
+          },
+          "description": ""
+        },
+        "size": {
+          "defaultValue": {
+            "value": "'medium'",
+            "computed": false
+          },
+          "required": false
+        },
+        "variant": {
+          "defaultValue": {
+            "value": "'primary'",
+            "computed": false
+          },
+          "required": false
+        }
+      }
+    }
+  ],
+  "../ui/src/components/button/icon-button/icon-button.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "IconButton",
+      "props": {
+        "tooltip": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "tooltipType": {
+          "required": false,
+          "tsType": {
+            "name": "union",
+            "raw": "'default' | 'blue'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'default'"
+              },
+              {
+                "name": "literal",
+                "value": "'blue'"
+              }
+            ]
+          },
+          "description": ""
+        },
+        "size": {
+          "defaultValue": {
+            "value": "'medium'",
+            "computed": false
+          },
+          "required": false
+        },
+        "variant": {
+          "defaultValue": {
+            "value": "'primary'",
+            "computed": false
+          },
+          "required": false
+        },
+        "shape": {
+          "defaultValue": {
+            "value": "''",
+            "computed": false
+          },
+          "required": false
         }
       }
     }
@@ -998,99 +1168,6 @@
       }
     }
   ],
-  "../ui/src/components/button/icon-label-button/icon-label-button.tsx": [
-    {
-      "description": "A flexible button component that allows only specific combinations of children:\n- Icon followed by text.\n- Text followed by an Icon.\n- Icon, text and another Icon.\n\nExamples:\n```tsx\n<IconLabelButton {...props} >\n  <PlusCircle />\n  Button\n</IconLabelButton>\n\n<Button {...props} >\n  Button\n  <PlusCircle />\n</Button>\n\n<Button {...props} >\n  <PlusCircle />\n  Button\n  <PlusCircle />\n</Button>\n```",
-      "methods": [],
-      "displayName": "IconLabelButton",
-      "props": {
-        "tooltip": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "tooltipType": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "'default' | 'blue'",
-            "elements": [
-              {
-                "name": "literal",
-                "value": "'default'"
-              },
-              {
-                "name": "literal",
-                "value": "'blue'"
-              }
-            ]
-          },
-          "description": ""
-        },
-        "size": {
-          "defaultValue": {
-            "value": "'medium'",
-            "computed": false
-          },
-          "required": false
-        },
-        "variant": {
-          "defaultValue": {
-            "value": "'primary'",
-            "computed": false
-          },
-          "required": false
-        }
-      }
-    }
-  ],
-  "../ui/src/components/button/base-button/base-button.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "BaseButton",
-      "props": {
-        "tooltip": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "tooltipType": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "'default' | 'blue'",
-            "elements": [
-              {
-                "name": "literal",
-                "value": "'default'"
-              },
-              {
-                "name": "literal",
-                "value": "'blue'"
-              }
-            ]
-          },
-          "description": "",
-          "defaultValue": {
-            "value": "'default'",
-            "computed": false
-          }
-        },
-        "size": {
-          "defaultValue": {
-            "value": "'medium'",
-            "computed": false
-          },
-          "required": false
-        }
-      }
-    }
-  ],
   "../ui/src/components/button/nav-button/nav-button.tsx": [
     {
       "description": "",
@@ -1139,85 +1216,6 @@
       }
     }
   ],
-  "../ui/src/components/button/icon-button/icon-button.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "IconButton",
-      "props": {
-        "tooltip": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "tooltipType": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "'default' | 'blue'",
-            "elements": [
-              {
-                "name": "literal",
-                "value": "'default'"
-              },
-              {
-                "name": "literal",
-                "value": "'blue'"
-              }
-            ]
-          },
-          "description": ""
-        },
-        "size": {
-          "defaultValue": {
-            "value": "'medium'",
-            "computed": false
-          },
-          "required": false
-        },
-        "variant": {
-          "defaultValue": {
-            "value": "'primary'",
-            "computed": false
-          },
-          "required": false
-        },
-        "shape": {
-          "defaultValue": {
-            "value": "''",
-            "computed": false
-          },
-          "required": false
-        }
-      }
-    }
-  ],
-  "../ui/src/components/input/clear-button/clear-button.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "ClearButton",
-      "props": {
-        "onClick": {
-          "required": true,
-          "tsType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "() => void",
-            "signature": {
-              "arguments": [],
-              "return": {
-                "name": "void"
-              }
-            }
-          },
-          "description": ""
-        }
-      }
-    }
-  ],
   "../ui/src/components/node/node-as-port-wrapper/node-as-port-wrapper.tsx": [
     {
       "description": "",
@@ -1252,6 +1250,132 @@
               {
                 "name": "literal",
                 "value": "'bottom'"
+              }
+            ]
+          },
+          "description": ""
+        }
+      }
+    }
+  ],
+  "../ui/src/components/input/clear-button/clear-button.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "ClearButton",
+      "props": {
+        "onClick": {
+          "required": true,
+          "tsType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "() => void",
+            "signature": {
+              "arguments": [],
+              "return": {
+                "name": "void"
+              }
+            }
+          },
+          "description": ""
+        }
+      }
+    }
+  ],
+  "../ui/src/components/node/node-icon/node-icon.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "NodeIcon",
+      "props": {
+        "icon": {
+          "required": true,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": ""
+        },
+        "className": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        }
+      }
+    }
+  ],
+  "../ui/src/components/node/node-description/node-description.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "NodeDescription",
+      "props": {
+        "label": {
+          "required": true,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "description": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        }
+      }
+    }
+  ],
+  "../ui/src/components/snackbar/components/icon.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Icon",
+      "props": {
+        "isCentered": {
+          "required": true,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": ""
+        },
+        "variant": {
+          "required": true,
+          "tsType": {
+            "name": "literal",
+            "value": "`${SnackbarType}`"
+          },
+          "description": ""
+        }
+      }
+    }
+  ],
+  "../ui/src/components/snackbar/components/message.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Message",
+      "props": {
+        "title": {
+          "required": true,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "subtitle": {
+          "required": true,
+          "tsType": {
+            "name": "union",
+            "raw": "string | undefined",
+            "elements": [
+              {
+                "name": "string"
+              },
+              {
+                "name": "undefined"
               }
             ]
           },
@@ -1304,29 +1428,6 @@
             "computed": false
           },
           "required": false
-        }
-      }
-    }
-  ],
-  "../ui/src/components/node/node-icon/node-icon.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "NodeIcon",
-      "props": {
-        "icon": {
-          "required": true,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": ""
-        },
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
         }
       }
     }
@@ -1398,29 +1499,6 @@
             "value": "'medium'",
             "computed": false
           }
-        }
-      }
-    }
-  ],
-  "../ui/src/components/node/node-description/node-description.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "NodeDescription",
-      "props": {
-        "label": {
-          "required": true,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "description": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
         }
       }
     }
@@ -1548,30 +1626,6 @@
       }
     }
   ],
-  "../ui/src/components/snackbar/components/icon.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Icon",
-      "props": {
-        "isCentered": {
-          "required": true,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": ""
-        },
-        "variant": {
-          "required": true,
-          "tsType": {
-            "name": "literal",
-            "value": "`${SnackbarType}`"
-          },
-          "description": ""
-        }
-      }
-    }
-  ],
   "../ui/src/components/snackbar/components/action-buttons.tsx": [
     {
       "description": "",
@@ -1630,6 +1684,13 @@
           "description": ""
         }
       }
+    }
+  ],
+  "../ui/src/components/select/select-button/select-button.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "SelectButton"
     }
   ],
   "../ui/src/components/select/select-value/select-value.tsx": [
@@ -1799,45 +1860,6 @@
           "description": ""
         }
       }
-    }
-  ],
-  "../ui/src/components/snackbar/components/message.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Message",
-      "props": {
-        "title": {
-          "required": true,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "subtitle": {
-          "required": true,
-          "tsType": {
-            "name": "union",
-            "raw": "string | undefined",
-            "elements": [
-              {
-                "name": "string"
-              },
-              {
-                "name": "undefined"
-              }
-            ]
-          },
-          "description": ""
-        }
-      }
-    }
-  ],
-  "../ui/src/components/select/select-button/select-button.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "SelectButton"
     }
   ]
 }

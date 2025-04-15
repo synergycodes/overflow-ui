@@ -1,0 +1,21 @@
+import { useState } from 'react';
+import { Input, InputProps } from '@axiom/ui';
+import { X } from '@phosphor-icons/react';
+import classes from './preview.module.css';
+
+export function RenderInputWithEndAdornment({ ...props }: InputProps) {
+  const [value, setValue] = useState<string>('Hello World');
+
+  return (
+    <Input
+      {...props}
+      size="large"
+      value={value}
+      onChange={(e) => setValue(e.target.value)}
+      className={classes.input}
+      endAdornment={
+        value && <X onClick={() => setValue('')} className={classes.clearBtn} />
+      }
+    />
+  );
+}
