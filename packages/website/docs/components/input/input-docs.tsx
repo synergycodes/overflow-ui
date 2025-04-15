@@ -12,7 +12,6 @@ export function InputDocs() {
           value={value}
           onChange={(e) => setValue(e.target.value)}
           style={{ minWidth: '150px' }}
-          onClear={() => setValue('')}
         />
       }
       cssPath="components/avatar/avatar.module.css"

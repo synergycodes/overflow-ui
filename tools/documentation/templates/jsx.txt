@@ -1,0 +1,7 @@
+function Page() {
+  return (
+    <componentPascalName
+        // TODO: add props
+    />
+  );
+}

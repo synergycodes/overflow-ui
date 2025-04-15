@@ -5,20 +5,25 @@ import { glob } from 'glob';
 import { CSSVariableData } from '@site/src/types';
 import { getCSSVariableData } from './css-utils';
 
-const OUTPUT_FILE_PATH = './generated/css-variables.json';
+const OUTPUT_FILE_PATH = path.join(
+  process.cwd(),
+  'generated',
+  'css-variables.json',
+);
 
-function main() {
+async function main() {
   const srcPath = getUISourcePath();
-  processCssFiles(srcPath);
+  await processCssFiles(srcPath);
 }
-main();
 
 async function processCssFiles(srcPath: string) {
-  const cssFiles = (await glob(path.join(srcPath, '**/*.css'))) as string[];
+  const cssFiles = (await glob(path.join(srcPath, '**', '*.css'), {
+    windowsPathsNoEscape: true,
+  })) as string[];
   const variables: Record<string, CSSVariableData[]> = {};
 
   for (const cssPath of cssFiles) {
-    const uiPath = path.relative(srcPath, cssPath);
+    const uiPath = path.relative(srcPath, cssPath).split(path.sep).join('/');
     variables[uiPath] = await extractVariables(cssPath);
   }
 
@@ -33,9 +38,14 @@ async function generateJsonOutput(
   variables: Record<string, CSSVariableData[]>,
   outputFilePath: string,
 ) {
+  const outputDir = path.dirname(outputFilePath);
+  await fs.mkdir(outputDir, { recursive: true });
+
   await fs.writeFile(outputFilePath, JSON.stringify(variables, null, 2));
 
   console.log(
     `Public CSS variables data have been successfully written to ${outputFilePath}`,
   );
 }
+
+main();
