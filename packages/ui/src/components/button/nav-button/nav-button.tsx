@@ -13,12 +13,19 @@ import { Size } from '@ui/shared/types/size';
 type NavButtonSize = Size | 'xx-small' | 'xxx-small' | 'xxxx-small';
 
 type NavButtonProps = {
+  /** The icon to display in the button */
   icon: React.ReactNode;
+  /** The size of the button */
   size?: NavButtonSize;
+  /** The shape of the button */
   shape?: Shape;
+  /** Whether to hide the background */
   noBackground?: boolean;
 };
 
+/**
+ * NavButton is a specialized button component designed for navigation purposes.
+ */
 export const NavButton = forwardRef<
   HTMLButtonElement,
   BaseButtonProps<NavButtonProps>

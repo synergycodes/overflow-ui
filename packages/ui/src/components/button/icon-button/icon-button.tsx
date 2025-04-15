@@ -11,16 +11,20 @@ import { BaseButton } from '../base-button/base-button';
 import { forwardRef } from 'react';
 import { Size } from '@ui/shared/types/size';
 
-/**
- * Props for Icon Button
- */
 type IconButtonProps = {
+  /** The icon component to display */
   Icon: Icon;
+  /** The visual style variant of the button */
   variant?: Variant;
+  /** The size of the button */
   size?: Size;
+  /** The shape of the button (circle or default) */
   shape?: Shape;
 };
 
+/**
+ * IconButton is a button component that displays only an icon.
+ */
 export const IconButton = forwardRef<
   HTMLButtonElement,
   BaseButtonProps<IconButtonProps>

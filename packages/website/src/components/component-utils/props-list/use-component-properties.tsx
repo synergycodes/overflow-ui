@@ -27,7 +27,11 @@ export function useComponentProperties(descriptor: PropDescriptor) {
   return { propEntries, propTags, description };
 }
 
-function formatType(type: PropTypeDescriptor) {
+function formatType(type?: PropTypeDescriptor) {
+  if (!type) {
+    return 'unknown';
+  }
+
   switch (type.name) {
     case 'union': {
       return `${type?.raw}`;

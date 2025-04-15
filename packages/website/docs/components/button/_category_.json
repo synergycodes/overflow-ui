@@ -1,0 +1,16 @@
+{
+  "label": "Buttons",
+  "collapsed": true,
+  "link": {
+    "type": "generated-index",
+    "description": "Button components of Axiom library"
+  },
+  "customProps": {
+    "displayNames": {
+      "label-button": "LabelButton",
+      "icon-button": "IconButton",
+      "icon-label-button": "IconLabelButton",
+      "nav-button": "NavButton"
+    }
+  }
+}

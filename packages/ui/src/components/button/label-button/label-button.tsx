@@ -12,12 +12,19 @@ import { forwardRef } from 'react';
 import { Size } from '@ui/shared/types/size';
 
 type LabelButtonProps = {
+  /** The text label displayed on the button */
   label: string;
+  /** The visual style variant of the button */
   variant?: Variant;
+  /** The size of the button */
   size?: Size;
+  /** Whether to show a loading state */
   isLoading?: boolean;
 };
 
+/**
+ * LabelButton is a button component that displays text with optional loading state.
+ */
 export const LabelButton = forwardRef<
   HTMLButtonElement,
   BaseButtonProps<LabelButtonProps>

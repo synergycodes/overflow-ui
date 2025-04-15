@@ -13,40 +13,28 @@ import { Size } from '@ui/shared/types/size';
 
 type IconNode = React.ReactNode;
 type IconLabelButtonProps = {
+  /** The visual style variant of the button */
   variant?: Variant;
+  /** The size of the button */
   size?: Size;
+  /** The children of the button, must follow specific patterns */
   children: AllowedChildren;
 };
 
+/**
+ * Allowed patterns for children in IconLabelButton
+ */
 type AllowedChildren =
   | [IconNode, string]
   | [string, IconNode]
   | [IconNode, string, IconNode];
 
 /**
- * A flexible button component that allows only specific combinations of children:
- * - Icon followed by text.
- * - Text followed by an Icon.
- * - Icon, text and another Icon.
- *
- * Examples:
- * ```tsx
- * <IconLabelButton {...props} >
- *   <PlusCircle />
- *   Button
- * </IconLabelButton>
- *
- * <Button {...props} >
- *   Button
- *   <PlusCircle />
- * </Button>
- *
- * <Button {...props} >
- *   <PlusCircle />
- *   Button
- *   <PlusCircle />
- * </Button>
- * ```
+ * IconLabelButton is a flexible button component that combines icons and text.
+ * It supports specific patterns of children arrangement:
+ * - Icon followed by text
+ * - Text followed by an icon
+ * - Icon, text, and another icon
  */
 export const IconLabelButton = forwardRef<
   HTMLButtonElement,
