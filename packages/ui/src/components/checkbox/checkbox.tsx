@@ -6,11 +6,23 @@ import { Check, Minus } from '@phosphor-icons/react';
 import { SelectorSize } from '@ui/shared/types/selector-size';
 
 type Props = {
+  /**
+   * The size of the checkbox
+   */
   size?: SelectorSize;
+  /**
+   * Whether the checkbox is in an indeterminate state
+   */
   indeterminate?: boolean;
+  /**
+   * Whether the checkbox is checked
+   */
   checked?: boolean;
 } & Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>;
 
+/**
+ * A customizable checkbox component that supports three states: checked, unchecked, and indeterminate. It can be used in forms or as a standalone control.
+ */
 export function Checkbox({
   size = 'medium',
   className,
