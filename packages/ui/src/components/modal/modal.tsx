@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import styles from './modal.module.css';
-
 import { Modal as BaseModal } from '@mui/base/Modal';
 import { forwardRef, type ReactNode } from 'react';
 import { NavButton } from '@ui/components/button/nav-button/nav-button';
@@ -10,16 +9,43 @@ import { X } from '@phosphor-icons/react';
 import { FooterVariant } from './types';
 
 type ModalProps = Partial<WithIcon> & {
+  /**
+   * Title displayed in the modal header
+   */
   title: string;
+  /**
+   * Optional subtitle displayed below the title
+   */
   subtitle?: string;
+  /**
+   * Content to be displayed in the modal body
+   */
   children?: ReactNode;
+  /**
+   * Content to be displayed in the modal footer
+   */
   footer?: ReactNode;
+  /**
+   * Size variant of the modal
+   */
   size?: 'regular' | 'large';
+  /**
+   * Variant of the footer styling
+   */
   footerVariant?: FooterVariant;
+  /**
+   * Controls the visibility of the modal
+   */
   open: boolean;
+  /**
+   * Callback function called when the modal is closed
+   */
   onClose?: () => void;
 };
 
+/**
+ * A modal dialog component that appears on top of the main content,
+ */
 export const Modal = forwardRef<HTMLDivElement, ModalProps>(
   (
     {
@@ -72,6 +98,9 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
   },
 );
 
+/**
+ * Backdrop component for the modal that dims the background
+ */
 const Backdrop = forwardRef<
   HTMLDivElement,
   { open?: boolean; className: string; onClose?: () => void }
