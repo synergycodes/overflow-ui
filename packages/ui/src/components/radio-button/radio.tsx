@@ -6,15 +6,24 @@ import { InputHTMLAttributes } from 'react';
 import { SelectorSize } from '@ui/shared/types/selector-size';
 
 type Props = {
+  /** The size of the radio button */
   size?: SelectorSize;
+  /** Whether the radio button is checked */
   checked?: boolean;
+  /** The name of the radio button group */
   name: string;
+  /** The value of the radio button */
   value: string | number;
+  /** Callback fired when the radio button state changes */
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 } & Omit<
   InputHTMLAttributes<HTMLInputElement>,
   'size' | 'type' | 'value' | 'name'
 >;
 
+/**
+ * A radio button component that allows users to select a single option from a group.
+ */
 export function Radio({
   size = 'medium',
   className,
