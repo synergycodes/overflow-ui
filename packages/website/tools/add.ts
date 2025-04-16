@@ -9,17 +9,13 @@ const rl = readline.createInterface({
 });
 
 rl.question(
-  'Enter component path (e.g., switch or packages/ui/src/components/switch): ',
+  'Enter component path (e.g., switch): ',
   (componentInput) => {
-    const componentPath = componentInput.startsWith(
-      'packages/ui/src/components/',
-    )
-      ? componentInput
-      : `packages/ui/src/components/${componentInput}`;
+    const componentPath = `packages/ui/src/components/${componentInput}`;
     const componentFileName = path.basename(componentPath);
     const componentDocDir = path.resolve(
       __dirname,
-      `../../packages/website/docs/components/${componentFileName}`,
+      `../../website/docs/components/${componentFileName}`,
     );
 
     const isAlreadyAdded = fs.existsSync(componentDocDir);
