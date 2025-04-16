@@ -1,4 +1,4 @@
-import { Documentation } from 'react-docgen';
+import type { Documentation } from 'react-docgen';
 import data from '../../../generated/props.json';
 import { getUISourcePath } from './get-ui-source-path';
 

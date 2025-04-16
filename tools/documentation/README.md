@@ -8,7 +8,7 @@
 
 # How to check Docusaurus
 
-Run `pnpm -F website dev`.
+Run `pnpm run doc` or `pnpm -F website dev`.
 
 ---
 
