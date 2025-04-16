@@ -26,7 +26,6 @@ export function SnackbarDocs() {
               buttonLabel="Undo"
               onClose={() => setShowSnackbar(false)}
               onButtonClick={() => alert('Button clicked')}
-              autoHideDuration={3000}
             />
           )}
         </div>
