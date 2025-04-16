@@ -291,7 +291,6 @@
       "name": "--ax-public-list-item-separator-background-color"
     }
   ],
-  "components/select/select.module.css": [],
   "components/radio-button/radio.module.css": [
     {
       "name": "--ax-public-radio-border-color"
@@ -343,6 +342,7 @@
       "name": "--ax-public-radio-dot-size-extra-small"
     }
   ],
+  "components/select/select.module.css": [],
   "components/modal/modal.module.css": [
     {
       "name": "--ax-public-modal-width"
@@ -589,7 +589,6 @@
       "comment": "missing token"
     }
   ],
-  "components/accordion/accordion.module.css": [],
   "components/switch/icon-switch/icon-switch.module.css": [
     {
       "name": "--ax-public-icon-switch-width"
@@ -628,9 +627,11 @@
       "name": "--ax-public-icon-switch-thumb-bg-secondary"
     }
   ],
+  "components/accordion/accordion.module.css": [],
   "components/snackbar/components/message.module.css": [],
   "components/snackbar/components/icon.module.css": [],
   "components/snackbar/components/action-buttons.module.css": [],
+  "components/select/select-value/select-value.module.css": [],
   "components/select/select-button/select-button.module.css": [
     {
       "name": "--ax-public-select-button-color"
@@ -645,13 +646,29 @@
       "name": "--ax-public-select-button-color-disabled"
     }
   ],
-  "components/select/select-value/select-value.module.css": [],
   "components/node/node-description/node-description.module.css": [
     {
       "name": "--ax-public-node-title-color"
     },
     {
       "name": "--ax-public-node-title-subtitle"
+    }
+  ],
+  "components/node/node-icon/node-icon.module.css": [
+    {
+      "name": "--ax-public-node-icon-border-radius"
+    },
+    {
+      "name": "--ax-public-node-icon-padding"
+    },
+    {
+      "name": "--ax-public-node-icon-color"
+    },
+    {
+      "name": "--ax-public-node-icon-container-border-color"
+    },
+    {
+      "name": "--ax-public-node-icon-container-background-color"
     }
   ],
   "components/node/node-as-port-wrapper/node-as-port.css": [],
@@ -711,6 +728,24 @@
     },
     {
       "name": "--ax-public-node-port-border-color-hover"
+    }
+  ],
+  "components/input/clear-button/clear-button.module.css": [],
+  "components/button/icon-label-button/padding.module.css": [
+    {
+      "name": "--ax-public-icon-label-button-padding-extra-large"
+    },
+    {
+      "name": "--ax-public-icon-label-button-padding-large"
+    },
+    {
+      "name": "--ax-public-icon-label-button-padding-medium"
+    },
+    {
+      "name": "--ax-public-icon-label-button-padding-small"
+    },
+    {
+      "name": "--ax-public-icon-label-button-padding-extra-small"
     }
   ],
   "components/button/styles/variant.module.css": [
@@ -904,41 +939,6 @@
     },
     {
       "name": "--ax-public-button-border-radius-circle"
-    }
-  ],
-  "components/node/node-icon/node-icon.module.css": [
-    {
-      "name": "--ax-public-node-icon-border-radius"
-    },
-    {
-      "name": "--ax-public-node-icon-padding"
-    },
-    {
-      "name": "--ax-public-node-icon-color"
-    },
-    {
-      "name": "--ax-public-node-icon-container-border-color"
-    },
-    {
-      "name": "--ax-public-node-icon-container-background-color"
-    }
-  ],
-  "components/input/clear-button/clear-button.module.css": [],
-  "components/button/icon-label-button/padding.module.css": [
-    {
-      "name": "--ax-public-icon-label-button-padding-extra-large"
-    },
-    {
-      "name": "--ax-public-icon-label-button-padding-large"
-    },
-    {
-      "name": "--ax-public-icon-label-button-padding-medium"
-    },
-    {
-      "name": "--ax-public-icon-label-button-padding-small"
-    },
-    {
-      "name": "--ax-public-icon-label-button-padding-extra-small"
     }
   ],
   "components/button/nav-button/nav-button.module.css": [
