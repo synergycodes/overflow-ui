@@ -10,7 +10,7 @@ export function componentPascalNameDocs() {
             // TODO: add props
         />
       }
-      // TODO: check right .css are picked
+      // TODO: Check that the correct .css files are picked
       cssPaths={["components/ComponentKebabName/ComponentKebabName.module.css"]}
       componentPath="components/ComponentKebabName/ComponentKebabName.tsx"
       exampleCode={exampleCode}
