@@ -37,7 +37,7 @@ const ShadowDomCSS: PluginCreator<ShadowDomCSSOptions> = ({
       const inputFile = root.source?.input.file || '';
 
       const shouldExtract = filesToExtractPatterns.some((namePattern) =>
-        inputFile.includes(namePattern),
+        inputFile.replaceAll('\\', '/').includes(namePattern),
       );
 
       if (shouldExtract) {
@@ -73,7 +73,7 @@ export default function () {
     name: 'shadow-dom-css-postcss',
     configurePostCss(postcssOptions) {
       postcssOptions.plugins.push(
-        ShadowDomCSS({ filesToExtractPatterns: ['axiom\\packages\\ui'] }),
+        ShadowDomCSS({ filesToExtractPatterns: ['axiom/packages/ui'] }),
       );
 
       return postcssOptions;
