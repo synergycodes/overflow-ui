@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Input, InputProps } from '@axiom/ui';
 import { X } from '@phosphor-icons/react';
-import classes from './preview.module.css';
+import classes from './input-preview.module.css';
 
 export function InputWithEndAdornment({ ...props }: InputProps) {
   const [value, setValue] = useState<string>('Hello World');
