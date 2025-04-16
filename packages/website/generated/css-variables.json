@@ -286,12 +286,12 @@
       "name": "--ax-public-snackbar-info-icon-color"
     }
   ],
+  "components/select/select.module.css": [],
   "components/separator/separator.module.css": [
     {
       "name": "--ax-public-list-item-separator-background-color"
     }
   ],
-  "components/select/select.module.css": [],
   "components/radio-button/radio.module.css": [
     {
       "name": "--ax-public-radio-border-color"
@@ -435,34 +435,6 @@
       "name": "--ax-public-modal-content-gap"
     }
   ],
-  "components/input/variables.css": [
-    {
-      "name": "--ax-public-input-color-disabled"
-    },
-    {
-      "name": "--ax-public-input-root-color"
-    },
-    {
-      "name": "--ax-public-input-root-border-color"
-    },
-    {
-      "name": "--ax-public-input-root-border-color-focus"
-    },
-    {
-      "name": "--ax-public-input-root-background-color-error"
-    },
-    {
-      "name": "--ax-public-input-root-border-color-error"
-    },
-    {
-      "name": "--ax-public-input-root-color-error"
-    },
-    {
-      "name": "--ax-public-input-root-color-disabled"
-    }
-  ],
-  "components/input/input.module.css": [],
-  "components/input/input-root.module.css": [],
   "components/date-picker/variables.css": [
     {
       "name": "--ax-public-date-picker-dropdown-background"
@@ -519,6 +491,34 @@
       "name": "--ax-public-date-picker-date-selected-background-color"
     }
   ],
+  "components/input/variables.css": [
+    {
+      "name": "--ax-public-input-color-disabled"
+    },
+    {
+      "name": "--ax-public-input-root-color"
+    },
+    {
+      "name": "--ax-public-input-root-border-color"
+    },
+    {
+      "name": "--ax-public-input-root-border-color-focus"
+    },
+    {
+      "name": "--ax-public-input-root-background-color-error"
+    },
+    {
+      "name": "--ax-public-input-root-border-color-error"
+    },
+    {
+      "name": "--ax-public-input-root-color-error"
+    },
+    {
+      "name": "--ax-public-input-root-color-disabled"
+    }
+  ],
+  "components/input/input.module.css": [],
+  "components/input/input-root.module.css": [],
   "components/checkbox/checkbox.module.css": [
     {
       "name": "--ax-public-checkbox-size-medium"
@@ -579,6 +579,7 @@
       "name": "--ax-public-checkbox-disabled-icon-color"
     }
   ],
+  "components/accordion/accordion.module.css": [],
   "components/avatar/avatar.module.css": [
     {
       "name": "--ax-public-avatar-border-color",
@@ -589,7 +590,6 @@
       "comment": "missing token"
     }
   ],
-  "components/accordion/accordion.module.css": [],
   "components/switch/icon-switch/icon-switch.module.css": [
     {
       "name": "--ax-public-icon-switch-width"
@@ -941,23 +941,6 @@
       "name": "--ax-public-button-border-radius-circle"
     }
   ],
-  "components/button/icon-label-button/padding.module.css": [
-    {
-      "name": "--ax-public-icon-label-button-padding-extra-large"
-    },
-    {
-      "name": "--ax-public-icon-label-button-padding-large"
-    },
-    {
-      "name": "--ax-public-icon-label-button-padding-medium"
-    },
-    {
-      "name": "--ax-public-icon-label-button-padding-small"
-    },
-    {
-      "name": "--ax-public-icon-label-button-padding-extra-small"
-    }
-  ],
   "components/button/label-button/padding.module.css": [
     {
       "name": "--ax-public-label-button-padding-extra-large"
@@ -1018,6 +1001,23 @@
     },
     {
       "name": "--ax-public-button-color"
+    }
+  ],
+  "components/button/icon-label-button/padding.module.css": [
+    {
+      "name": "--ax-public-icon-label-button-padding-extra-large"
+    },
+    {
+      "name": "--ax-public-icon-label-button-padding-large"
+    },
+    {
+      "name": "--ax-public-icon-label-button-padding-medium"
+    },
+    {
+      "name": "--ax-public-icon-label-button-padding-small"
+    },
+    {
+      "name": "--ax-public-icon-label-button-padding-extra-small"
     }
   ]
 }
