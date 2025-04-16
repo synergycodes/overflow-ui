@@ -37,7 +37,10 @@ export function DatePickerDocs() {
           />
         </div>
       }
-      cssPath="components/date-picker/data-picker-mantine.css"
+      cssPaths={[
+        'components/date-picker/date-picker.module.css',
+        'components/date-picker/data-picker-mantine.css',
+      ]}
       componentPath="components/date-picker/date-picker.tsx"
       exampleCode={exampleCode}
     />

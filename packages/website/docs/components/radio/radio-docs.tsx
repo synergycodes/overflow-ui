@@ -24,7 +24,7 @@ export function RadioDocs() {
           />
         </div>
       }
-      cssPath="components/radio-button/radio.module.css"
+      cssPaths={["components/radio-button/radio.module.css"]}
       componentPath="components/radio-button/radio.tsx"
       exampleCode={exampleCode}
     />

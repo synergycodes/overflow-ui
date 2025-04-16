@@ -10,9 +10,12 @@ type Props = {
 export function CSSVariablesList({ path }: Props) {
   const entries = Object.values(cssVariablesData[path] as CSSVariableData[]);
 
+  if (entries.length === 0) {
+    return null;
+  }
+
   return (
     <div>
-      <h1>CSS Variables</h1>
       {entries.map((variableData) => (
         <CSSVariableItem key={variableData.name} {...variableData} />
       ))}
