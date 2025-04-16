@@ -1,14 +1,14 @@
-import { RenderInputWithStartAdornment } from './render-input-with-start-adornment';
-import { RenderInputWithEndAdornment } from './render-input-with-end-adornment';
-import { RenderSimpleInput } from './render-simple-input';
+import { InputWithStartAdornment } from './input-with-start-adornment';
+import { InputWithEndAdornment } from './input-with-end-adornment';
+import { SimpleInput } from './simple-input';
 import classes from './preview.module.css';
 
 export function Preview() {
   return (
     <div className={classes.container}>
-      <RenderSimpleInput />
-      <RenderInputWithStartAdornment />
-      <RenderInputWithEndAdornment />
+      <SimpleInput />
+      <InputWithStartAdornment />
+      <InputWithEndAdornment />
     </div>
   );
 }

@@ -35,7 +35,7 @@ function HomepageHeader() {
 export default function Home(): ReactNode {
   return (
     <Layout
-      title={`Axiom`}
+      title='Axiom'
       description="UI components library made for diagramming"
     >
       <HomepageHeader />

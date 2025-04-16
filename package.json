@@ -8,6 +8,7 @@
     "typecheck": "pnpm -r typecheck",
     "file-lint": "pnpm dlx @ls-lint/ls-lint",
     "prepare": "husky && pnpm -r prepare",
+    "doc": "pnpm -F website dev",
     "doc-add": "tsx tools/documentation/add.ts"
   },
   "devDependencies": {

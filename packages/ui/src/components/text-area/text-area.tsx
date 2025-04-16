@@ -5,6 +5,7 @@ import inputSizeStyles from '@ui/shared/styles/input-size.module.css';
 
 import { TextareaAutosize } from '@mui/base/TextareaAutosize';
 import { ItemSize } from '../../shared/types/item-size';
+import React from 'react';
 
 export type TextAreaProps = {
   /**
@@ -44,6 +45,11 @@ export type TextAreaProps = {
    */
   onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   /**
+   * Function called when the input loses focus.
+   * The event parameter may be undefined.
+   */
+  onBlur?: (event?: React.FocusEvent) => void;
+  /**
    * Custom class name for the textarea
    */
   className?: string;
@@ -62,6 +68,7 @@ export function TextArea({
   disabled,
   error,
   onChange,
+  onBlur,
   className,
   ...props
 }: TextAreaProps) {
@@ -87,6 +94,7 @@ export function TextArea({
         maxRows={maxRows}
         disabled={disabled}
         onChange={onChange}
+        onBlur={onBlur}
         className={textareaClasses}
         {...props}
       />

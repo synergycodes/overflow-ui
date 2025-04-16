@@ -8,7 +8,11 @@ type Props = {
 
 export function PropsList({ path }: Props) {
   const { props } = getAPIData(path);
-  const propsEntries = Object.entries(props);
+  const propsEntries = props ? Object.entries(props) : [];
+
+  if (propsEntries.length === 0) {
+    return null;
+  }
 
   return (
     <div>
