@@ -8,5 +8,9 @@ type Props = {
 export function Description({ path }: Props) {
   const { description } = getAPIData(path);
 
+  if (description) {
+    return null;
+  }
+
   return <p>{description}</p>;
 }

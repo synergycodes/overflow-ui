@@ -11,7 +11,9 @@ import {
 } from 'react';
 
 type Props = {
+  /** Whether the node panel is selected */
   selected: boolean;
+  /** The content of the node panel */
   children?: React.ReactNode;
 };
 
