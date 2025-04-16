@@ -43,7 +43,7 @@ export function ModalDocs() {
           </Modal>
         </>
       }
-      cssPath="components/modal/modal.module.css"
+      cssPaths={["components/modal/modal.module.css"]}
       componentPath="components/modal/modal.tsx"
       exampleCode={exampleCode}
     />

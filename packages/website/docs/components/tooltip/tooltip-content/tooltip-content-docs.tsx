@@ -15,7 +15,7 @@ export function TooltipContentDocs() {
           </TooltipContent>
         </Tooltip>
       }
-      cssPath="components/tooltip/tooltip.module.css"
+      cssPaths={["components/tooltip/tooltip.module.css"]}
       componentPath="components/tooltip/tooltip-content.tsx"
       exampleCode={exampleCode}
     />

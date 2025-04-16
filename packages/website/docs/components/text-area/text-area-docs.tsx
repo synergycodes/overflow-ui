@@ -14,7 +14,7 @@ export function TextAreaDocs() {
           className={classes['text-area']}
         />
       }
-      cssPath="components/text-area/text-area.module.css"
+      cssPaths={["components/text-area/text-area.module.css"]}
       componentPath="components/text-area/text-area.tsx"
       exampleCode={exampleCode}
     />

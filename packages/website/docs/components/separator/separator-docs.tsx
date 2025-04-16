@@ -12,7 +12,7 @@ export function SeparatorDocs() {
           <h1 style={{ width: 'max-content' }}>Section 2</h1>
         </div>
       }
-      cssPath="components/separator/separator.module.css"
+      cssPaths={['components/separator/separator.module.css']}
       componentPath="components/separator/separator.tsx"
       exampleCode={exampleCode}
     />

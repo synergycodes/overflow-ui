@@ -12,7 +12,7 @@ export function TooltipTriggerDocs() {
           </TooltipTrigger>
         </Tooltip>
       }
-      cssPath="components/tooltip/tooltip.module.css"
+      cssPaths={["components/tooltip/tooltip.module.css"]}
       componentPath="components/tooltip/tooltip-trigger.tsx"
       exampleCode={exampleCode}
     />

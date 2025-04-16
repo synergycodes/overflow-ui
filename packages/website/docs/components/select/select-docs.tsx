@@ -19,7 +19,7 @@ export function SelectDocs() {
           placeholder="Pick"
         />
       }
-      cssPath="components/select/select-button/select-button.module.css"
+      cssPaths={["components/select/select-button/select-button.module.css"]}
       componentPath="components/select/select.tsx"
       exampleCode={exampleCode}
     />
