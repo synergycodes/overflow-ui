@@ -21,9 +21,21 @@ const TOOLTIP_OPEN_DELAY = 500;
 const TOOLTIP_CLOSE_DELAY = 0;
 
 export type TooltipOptions = {
+  /**
+   * If true, the component is shown at initial
+   */
   initialOpen?: boolean;
+  /**
+   * Tooltip placement.
+   */
   placement?: Placement;
+  /**
+   * 	If true, the component is shown.
+   */
   open?: boolean;
+  /**
+   * Callback fired when the component requests to be open.
+   */
   onOpenChange?: (open: boolean) => void;
 };
 

@@ -38,6 +38,8 @@ export * from './components/snackbar/snackbar';
 export * from './components/text-area/text-area';
 
 export * from './components/tooltip/tooltip';
+export * from './components/tooltip/tooltip-content';
+export * from './components/tooltip/tooltip-trigger';
 
 export * from './components/node/node-as-port-wrapper/node-as-port-wrapper';
 export * from './components/node/node-description/node-description';
