@@ -30,7 +30,7 @@ const ShadowDomCSS: PluginCreator<ShadowDomCSSOptions> = ({
   if (!fs.existsSync(outputFile)) {
     fs.writeFileSync(
       outputFile,
-      '/* Mocked file run: pnpm prepare before running server to regenerate */',
+      '/* Mocked file run: pnpm clear before running server to regenerate */',
       'utf8',
     );
   }
