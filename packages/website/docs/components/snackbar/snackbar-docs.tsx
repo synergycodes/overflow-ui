@@ -30,7 +30,7 @@ export function SnackbarDocs() {
           )}
         </div>
       }
-      cssPaths={["components/snackbar/snackbar.module.css"]}
+      cssPaths={['components/snackbar/snackbar.module.css']}
       componentPath="components/snackbar/snackbar.tsx"
       exampleCode={exampleCode}
     />

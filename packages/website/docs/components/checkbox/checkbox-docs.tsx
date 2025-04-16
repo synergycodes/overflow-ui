@@ -16,7 +16,7 @@ export function CheckboxDocs() {
           <Checkbox disabled indeterminate />
         </div>
       }
-      cssPaths={["components/checkbox/checkbox.module.css"]}
+      cssPaths={['components/checkbox/checkbox.module.css']}
       componentPath="components/checkbox/checkbox.tsx"
       exampleCode={exampleCode}
     />
