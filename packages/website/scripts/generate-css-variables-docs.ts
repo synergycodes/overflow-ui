@@ -20,9 +20,12 @@ async function processCssFiles(srcPath: string) {
   const cssFiles = (await glob(path.join(srcPath, '**', '*.css'), {
     windowsPathsNoEscape: true,
   })) as string[];
+
+  const sortedCssFiles = cssFiles.toSorted();
+
   const variables: Record<string, CSSVariableData[]> = {};
 
-  for (const cssPath of cssFiles) {
+  for (const cssPath of sortedCssFiles) {
     const uiPath = path.relative(srcPath, cssPath).split(path.sep).join('/');
     variables[uiPath] = await extractVariables(cssPath);
   }

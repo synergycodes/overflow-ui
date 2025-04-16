@@ -1,4 +1,4 @@
-import { TextArea } from '@axiom/ui';
+import { TextArea } from '@synergycodes/axiom';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
 import exampleCode from '!!raw-loader!./text-area.example.jsx';
 import classes from './text-area.module.css';

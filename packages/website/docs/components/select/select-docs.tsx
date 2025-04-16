@@ -1,4 +1,4 @@
-import { Select } from '@axiom/ui';
+import { Select } from '@synergycodes/axiom';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
 import exampleCode from '!!raw-loader!./select.example.jsx';
 

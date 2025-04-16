@@ -1,10 +1,5 @@
 // [TODO] Improvement: Should we automate it?
 // Using glob library could help us generate this entrypoint and imports
-
-import '@axiom/tokens/dist/axiom.css';
-import './styles/layers.css';
-import './styles/globals.css';
-import '@axiom/tokens/dist/axiom.css';
 import './styles/layers.css';
 import './styles/globals.css';
 

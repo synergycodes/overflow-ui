@@ -1,8 +1,22 @@
 {
-  "name": "@axiom/ui",
+  "name": "@synergycodes/axiom",
   "type": "module",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0-beta.4",
+  "description": "A React library for creating node-based UIs and diagram-driven applications. Perfect for React Flow users, providing ready-to-use node templates and components that work seamlessly with React Flow's ecosystem.",
+  "keywords": [
+    "react",
+    "ui",
+    "diagram",
+    "node-based",
+    "components",
+    "typescript",
+    "react flow",
+    "flow",
+    "node-templates",
+    "diagram-components"
+  ],
+  "author": "Synergy Codes",
+  "license": "MIT",
   "scripts": {
     "build": "vite build",
     "dev": "vite build --watch",
@@ -19,8 +33,11 @@
     "./dist/index.d.ts"
   ],
   "exports": {
-    "types": "./dist/index.d.ts",
-    "import": "./dist/axiom.js"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/axiom.js"
+    },
+    "./tokens.css": "./dist/tokens.css"
   },
   "dependencies": {
     "@floating-ui/react": "^0.26.28",
@@ -32,7 +49,7 @@
     "clsx": "^2.0.0"
   },
   "devDependencies": {
-    "@axiom/tokens": "workspace:*",
+    "@synergycodes/axiom-tokens": "workspace:*",
     "@emotion/react": "^11.14.0",
     "@types/react": "^19.0.10",
     "@vitejs/plugin-react": "^4.3.4",
@@ -43,7 +60,8 @@
     "typescript": "^5.3.3",
     "vite": "^6.2.2",
     "vite-plugin-dts": "^4.5.3",
-    "vite-plugin-lib-inject-css": "^2.2.1"
+    "vite-plugin-lib-inject-css": "^2.2.1",
+    "vite-plugin-static-copy": "^2.3.1"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0 || ^19.0.0",

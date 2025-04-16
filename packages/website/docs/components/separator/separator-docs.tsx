@@ -1,4 +1,4 @@
-import { Separator } from '@axiom/ui';
+import { Separator } from '@synergycodes/axiom';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
 import exampleCode from '!!raw-loader!./separator.example.jsx';
 

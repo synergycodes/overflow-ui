@@ -8,9 +8,9 @@
     "typecheck": "pnpm -r typecheck",
     "file-lint": "pnpm dlx @ls-lint/ls-lint",
     "prepare": "husky && pnpm -r prepare",
-    "clear": "pnpm -F website clear",
-    "doc": "pnpm -F website dev",
-    "doc-add": "tsx tools/documentation/add.ts"
+    "ui": "pnpm -F ./packages/ui",
+    "tokens": "pnpm -F ./packages/tokens",
+    "website": "pnpm -F ./packages/website"
   },
   "devDependencies": {
     "husky": "^9.1.7",
