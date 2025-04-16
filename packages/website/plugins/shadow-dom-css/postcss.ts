@@ -18,7 +18,7 @@ const ShadowDomCSS: PluginCreator<ShadowDomCSSOptions> = ({
   if (!didAnnounceBeingAdded) {
     console.log('');
     console.log('🌘 Shadow DOM plugin is active.');
-    console.log(' - To force refresh styles run: pnpm clear (before)');
+    console.log(' - To force refresh styles run: pnpm website clear (before)');
     console.log('');
     didAnnounceBeingAdded = true;
   }
