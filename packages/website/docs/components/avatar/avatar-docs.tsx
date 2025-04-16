@@ -12,7 +12,7 @@ export function AvatarDocs() {
           size="extra-large"
         />
       }
-      cssPaths={["components/avatar/avatar.module.css"]}
+      cssPaths={['components/avatar/avatar.module.css']}
       componentPath="components/avatar/avatar.tsx"
       exampleCode={exampleCode}
     />

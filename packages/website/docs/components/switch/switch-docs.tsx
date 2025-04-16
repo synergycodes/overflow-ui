@@ -6,7 +6,7 @@ export function SwitchDocs() {
   return (
     <ComponentPage
       preview={<Switch />}
-      cssPaths={["components/switch/switch.module.css"]}
+      cssPaths={['components/switch/switch.module.css']}
       componentPath="components/switch/switch.tsx"
       exampleCode={exampleCode}
     />
