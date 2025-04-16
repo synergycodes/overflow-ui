@@ -1,1 +1,3 @@
-@layers base, component;
+@layer ui {
+  @layer base, component;
+}
