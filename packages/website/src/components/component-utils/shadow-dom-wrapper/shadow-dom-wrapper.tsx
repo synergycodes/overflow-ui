@@ -31,8 +31,6 @@ const ShadowDomWrapper: React.FC<ShadowDomWrapperProps> = ({ children }) => {
     }
   }, [shadowRoot]);
 
-  return children;
-
   return (
     <div ref={hostRef}>
       {shadowRoot ? ReactDOM.createPortal(children, shadowRoot) : null}
