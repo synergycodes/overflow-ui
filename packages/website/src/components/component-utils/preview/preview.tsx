@@ -1,6 +1,7 @@
 import { useMuteKnownPreviewErrors } from '@site/src/hooks/use-mute-known-preview-errors';
 
 import styles from './preview.module.css';
+import ShadowDomWrapper from '../shadow-dom-wrapper/shadow-dom-wrapper';
 
 type Props = {
   children: React.ReactNode;
@@ -18,7 +19,9 @@ export function Preview({ children }: Props) {
 
   return (
     <div className={styles['preview-container']}>
-      <div>{children}</div>
+      <ShadowDomWrapper>
+        <div>{children}</div>
+      </ShadowDomWrapper>
     </div>
   );
 }

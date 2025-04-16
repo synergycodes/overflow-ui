@@ -1,4 +1,76 @@
 {
+  "../ui/src/components/accordion/accordion.tsx": [
+    {
+      "description": "An interactive UI component that lets users toggle the visibility of content.\nThe content section can be expanded to reveal details and collapsed to hide them,\nkeeping information organized and saving space. Commonly used in FAQs, settings panels,\nand documentation to present layered content efficiently.",
+      "methods": [],
+      "displayName": "Accordion",
+      "props": {
+        "icon": {
+          "required": false,
+          "tsType": {
+            "name": "ReactReactNode",
+            "raw": "React.ReactNode"
+          },
+          "description": "Icon content React Node"
+        },
+        "label": {
+          "required": true,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "Text displayed in the header"
+        },
+        "children": {
+          "required": true,
+          "tsType": {
+            "name": "ReactReactNode",
+            "raw": "React.ReactNode"
+          },
+          "description": "Contents of the collapsible section"
+        },
+        "isOpen": {
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": "True if not collapsed"
+        },
+        "onToggleOpen": {
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(isOpen: boolean) => void",
+            "signature": {
+              "arguments": [
+                {
+                  "type": {
+                    "name": "boolean"
+                  },
+                  "name": "isOpen"
+                }
+              ],
+              "return": {
+                "name": "void"
+              }
+            }
+          },
+          "description": "Callback run when the open state changes"
+        },
+        "defaultOpen": {
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": "Initial open state",
+          "defaultValue": {
+            "value": "true",
+            "computed": false
+          }
+        }
+      }
+    }
+  ],
   "../ui/src/components/checkbox/checkbox.tsx": [
     {
       "description": "A customizable checkbox component that supports three states: checked, unchecked, and indeterminate. It can be used in forms or as a standalone control.",
@@ -29,6 +101,59 @@
             "name": "boolean"
           },
           "description": "Whether the checkbox is checked"
+        }
+      }
+    }
+  ],
+  "../ui/src/components/avatar/avatar.tsx": [
+    {
+      "description": "Component for displaying user avatars with various sizes",
+      "methods": [],
+      "displayName": "Avatar",
+      "props": {
+        "username": {
+          "required": true,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "Provide to use it as alt of the image for better a11y"
+        },
+        "imageUrl": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "Image URL"
+        },
+        "size": {
+          "required": false,
+          "tsType": {
+            "name": "union",
+            "raw": "'extra-large' | 'large' | 'medium' | 'small'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'extra-large'"
+              },
+              {
+                "name": "literal",
+                "value": "'large'"
+              },
+              {
+                "name": "literal",
+                "value": "'medium'"
+              },
+              {
+                "name": "literal",
+                "value": "'small'"
+              }
+            ]
+          },
+          "description": "Size of the circle container",
+          "defaultValue": {
+            "value": "'extra-large'",
+            "computed": false
+          }
         }
       }
     }
@@ -98,78 +223,6 @@
             "raw": "DatePickerProps['value']"
           },
           "description": "Controlled value for the selected date\n\nFor the \"default\" is a single date, for the \"range\" [date, date]; and for the \"multiple\", an array of dates."
-        }
-      }
-    }
-  ],
-  "../ui/src/components/accordion/accordion.tsx": [
-    {
-      "description": "An interactive UI component that lets users toggle the visibility of content.\nThe content section can be expanded to reveal details and collapsed to hide them,\nkeeping information organized and saving space. Commonly used in FAQs, settings panels,\nand documentation to present layered content efficiently.",
-      "methods": [],
-      "displayName": "Accordion",
-      "props": {
-        "icon": {
-          "required": false,
-          "tsType": {
-            "name": "ReactReactNode",
-            "raw": "React.ReactNode"
-          },
-          "description": "Icon content React Node"
-        },
-        "label": {
-          "required": true,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "Text displayed in the header"
-        },
-        "children": {
-          "required": true,
-          "tsType": {
-            "name": "ReactReactNode",
-            "raw": "React.ReactNode"
-          },
-          "description": "Contents of the collapsible section"
-        },
-        "isOpen": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": "True if not collapsed"
-        },
-        "onToggleOpen": {
-          "required": false,
-          "tsType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "(isOpen: boolean) => void",
-            "signature": {
-              "arguments": [
-                {
-                  "type": {
-                    "name": "boolean"
-                  },
-                  "name": "isOpen"
-                }
-              ],
-              "return": {
-                "name": "void"
-              }
-            }
-          },
-          "description": "Callback run when the open state changes"
-        },
-        "defaultOpen": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": "Initial open state",
-          "defaultValue": {
-            "value": "true",
-            "computed": false
-          }
         }
       }
     }
@@ -493,62 +546,9 @@
       }
     }
   ],
-  "../ui/src/components/avatar/avatar.tsx": [
-    {
-      "description": "Component for displaying user avatars with various sizes",
-      "methods": [],
-      "displayName": "Avatar",
-      "props": {
-        "username": {
-          "required": true,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "Provide to use it as alt of the image for better a11y"
-        },
-        "imageUrl": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "Image URL"
-        },
-        "size": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "'extra-large' | 'large' | 'medium' | 'small'",
-            "elements": [
-              {
-                "name": "literal",
-                "value": "'extra-large'"
-              },
-              {
-                "name": "literal",
-                "value": "'large'"
-              },
-              {
-                "name": "literal",
-                "value": "'medium'"
-              },
-              {
-                "name": "literal",
-                "value": "'small'"
-              }
-            ]
-          },
-          "description": "Size of the circle container",
-          "defaultValue": {
-            "value": "'extra-large'",
-            "computed": false
-          }
-        }
-      }
-    }
-  ],
   "../ui/src/components/select/select.tsx": [
     {
-      "description": "",
+      "description": "Component for displaying a select dropdown with customizable size, placeholder, and item list",
       "methods": [],
       "displayName": "Select",
       "props": {
@@ -582,7 +582,7 @@
             ],
             "raw": "Extract<Size, 'large' | 'medium' | 'small'>"
           },
-          "description": "",
+          "description": "Size of the select input",
           "defaultValue": {
             "value": "'medium'",
             "computed": false
@@ -593,7 +593,7 @@
           "tsType": {
             "name": "string"
           },
-          "description": ""
+          "description": "Placeholder text for the select input"
         },
         "items": {
           "required": true,
@@ -715,7 +715,7 @@
             ],
             "raw": "SelectItem[]"
           },
-          "description": ""
+          "description": "List of items to display in the select dropdown"
         }
       }
     }
@@ -1102,54 +1102,6 @@
       }
     }
   ],
-  "../ui/src/components/button/icon-label-button/icon-label-button.tsx": [
-    {
-      "description": "A flexible button component that allows only specific combinations of children:\n- Icon followed by text.\n- Text followed by an Icon.\n- Icon, text and another Icon.\n\nExamples:\n```tsx\n<IconLabelButton {...props} >\n  <PlusCircle />\n  Button\n</IconLabelButton>\n\n<Button {...props} >\n  Button\n  <PlusCircle />\n</Button>\n\n<Button {...props} >\n  <PlusCircle />\n  Button\n  <PlusCircle />\n</Button>\n```",
-      "methods": [],
-      "displayName": "IconLabelButton",
-      "props": {
-        "tooltip": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "tooltipType": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "'default' | 'blue'",
-            "elements": [
-              {
-                "name": "literal",
-                "value": "'default'"
-              },
-              {
-                "name": "literal",
-                "value": "'blue'"
-              }
-            ]
-          },
-          "description": ""
-        },
-        "size": {
-          "defaultValue": {
-            "value": "'medium'",
-            "computed": false
-          },
-          "required": false
-        },
-        "variant": {
-          "defaultValue": {
-            "value": "'primary'",
-            "computed": false
-          },
-          "required": false
-        }
-      }
-    }
-  ],
   "../ui/src/components/button/icon-button/icon-button.tsx": [
     {
       "description": "",
@@ -1205,6 +1157,54 @@
       }
     }
   ],
+  "../ui/src/components/button/icon-label-button/icon-label-button.tsx": [
+    {
+      "description": "A flexible button component that allows only specific combinations of children:\n- Icon followed by text.\n- Text followed by an Icon.\n- Icon, text and another Icon.\n\nExamples:\n```tsx\n<IconLabelButton {...props} >\n  <PlusCircle />\n  Button\n</IconLabelButton>\n\n<Button {...props} >\n  Button\n  <PlusCircle />\n</Button>\n\n<Button {...props} >\n  <PlusCircle />\n  Button\n  <PlusCircle />\n</Button>\n```",
+      "methods": [],
+      "displayName": "IconLabelButton",
+      "props": {
+        "tooltip": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "tooltipType": {
+          "required": false,
+          "tsType": {
+            "name": "union",
+            "raw": "'default' | 'blue'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'default'"
+              },
+              {
+                "name": "literal",
+                "value": "'blue'"
+              }
+            ]
+          },
+          "description": ""
+        },
+        "size": {
+          "defaultValue": {
+            "value": "'medium'",
+            "computed": false
+          },
+          "required": false
+        },
+        "variant": {
+          "defaultValue": {
+            "value": "'primary'",
+            "computed": false
+          },
+          "required": false
+        }
+      }
+    }
+  ],
   "../ui/src/components/button/label-button/label-button.tsx": [
     {
       "description": "",
@@ -1249,6 +1249,48 @@
             "computed": false
           },
           "required": false
+        }
+      }
+    }
+  ],
+  "../ui/src/components/node/node-as-port-wrapper/node-as-port-wrapper.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "NodeAsPortWrapper",
+      "props": {
+        "isConnecting": {
+          "required": true,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": ""
+        },
+        "targetPortPosition": {
+          "required": true,
+          "tsType": {
+            "name": "union",
+            "raw": "'left' | 'top' | 'right' | 'bottom'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'left'"
+              },
+              {
+                "name": "literal",
+                "value": "'top'"
+              },
+              {
+                "name": "literal",
+                "value": "'right'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottom'"
+              }
+            ]
+          },
+          "description": ""
         }
       }
     }
@@ -1301,48 +1343,6 @@
       }
     }
   ],
-  "../ui/src/components/node/node-as-port-wrapper/node-as-port-wrapper.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "NodeAsPortWrapper",
-      "props": {
-        "isConnecting": {
-          "required": true,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": ""
-        },
-        "targetPortPosition": {
-          "required": true,
-          "tsType": {
-            "name": "union",
-            "raw": "'left' | 'top' | 'right' | 'bottom'",
-            "elements": [
-              {
-                "name": "literal",
-                "value": "'left'"
-              },
-              {
-                "name": "literal",
-                "value": "'top'"
-              },
-              {
-                "name": "literal",
-                "value": "'right'"
-              },
-              {
-                "name": "literal",
-                "value": "'bottom'"
-              }
-            ]
-          },
-          "description": ""
-        }
-      }
-    }
-  ],
   "../ui/src/components/node/node-description/node-description.tsx": [
     {
       "description": "",
@@ -1387,13 +1387,6 @@
           "description": ""
         }
       }
-    }
-  ],
-  "../ui/src/components/select/select-button/select-button.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "SelectButton"
     }
   ],
   "../ui/src/components/select/select-option/select-option.tsx": [
@@ -1694,6 +1687,13 @@
           "description": ""
         }
       }
+    }
+  ],
+  "../ui/src/components/select/select-button/select-button.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "SelectButton"
     }
   ],
   "../ui/src/components/snackbar/components/icon.tsx": [

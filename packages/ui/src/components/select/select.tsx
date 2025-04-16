@@ -15,11 +15,23 @@ import { ItemSize } from '../../shared/types/item-size';
 import { Separator } from '../separator/separator';
 
 export type SelectBaseProps = UseSelectParameters<string | number | null> & {
+  /**
+   * Size of the select input
+   */
   size?: ItemSize;
+  /**
+   * Placeholder text for the select input
+   */
   placeholder?: string;
+  /**
+   * List of items to display in the select dropdown
+   */
   items: SelectItem[];
 };
 
+/**
+ * Component for displaying a select dropdown with customizable size, placeholder, and item list
+ */
 export function Select({
   size = 'medium',
   items,

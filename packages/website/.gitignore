@@ -7,6 +7,7 @@
 # Generated files
 .docusaurus
 .cache-loader
+static/css/shadow-dom-styles.css
 
 # Misc
 .DS_Store
@@ -20,3 +21,5 @@ yarn-debug.log*
 yarn-error.log*
 
 docs/api
+
+
