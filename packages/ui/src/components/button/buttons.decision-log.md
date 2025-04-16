@@ -1,8 +1,8 @@
 # Button Components Design and Implementation
 
-### Proposed by: Piotr Błaszczyk
+Proposed by: **Piotr Błaszczyk**
 
-### Date: 12.12.2024
+Date: **12.12.2024**
 
 ## Context
 
@@ -40,7 +40,12 @@ To satisfy these requirements, the following approach was implemented:
 
    - Specific button components utilize styles via the `clsx` utility. For instance:
      ```tsx
-     clsx(variantStyles[variant], borderRadiusStyles[size], fontSizeStyles[size], paddingStyles[size]);
+     clsx(
+       variantStyles[variant],
+       borderRadiusStyles[size],
+       fontSizeStyles[size],
+       paddingStyles[size],
+     );
      ```
      This ensures that common properties like `borderRadius`, `fontSize`, and `variant` are consistently applied across all button types.
 

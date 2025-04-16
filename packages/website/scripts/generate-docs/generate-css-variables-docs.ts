@@ -1,9 +1,9 @@
 import { promises as fs } from 'fs';
-import { getUISourcePath } from '../src/components/component-utils/get-ui-source-path';
+import { getUISourcePath } from '../../src/components/component-utils/get-ui-source-path';
 import path from 'node:path';
 import { glob } from 'glob';
 import { CSSVariableData } from '@site/src/types';
-import { getCSSVariableData } from './css-utils';
+import { getCSSVariableData } from '../css-utils';
 
 const OUTPUT_FILE_PATH = path.join(
   process.cwd(),
@@ -11,7 +11,7 @@ const OUTPUT_FILE_PATH = path.join(
   'css-variables.json',
 );
 
-async function main() {
+export async function generateCSSVariables() {
   const srcPath = getUISourcePath();
   await processCssFiles(srcPath);
 }
@@ -50,5 +50,3 @@ async function generateJsonOutput(
     `Public CSS variables data have been successfully written to ${outputFilePath}`,
   );
 }
-
-main();

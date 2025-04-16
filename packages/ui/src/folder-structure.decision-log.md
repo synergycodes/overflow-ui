@@ -1,19 +1,20 @@
 # Folder Structure
 
-### Proposed by: Piotr Błaszczyk
+Proposed by: **Piotr Błaszczyk**
 
-### Date: 18.12.2024
+Date: **18.12.2024**
 
-## Context  
+## Context
 
 A consistent and scalable folder structure is crucial for managing reusable UI components.
 
-In this package:  
-- The `components` folder contains all UI components.  
-- The `shared` folder centralizes common types and styles.  
-- The `styles` folder defines global variables and CSS layers.  
+In this package:
 
-This structure ensures better separation of concerns, making the UI library more maintainable and reusable across different projects.  
+- The `components` folder contains all UI components.
+- The `shared` folder centralizes common types and styles.
+- The `styles` folder defines global variables and CSS layers.
+
+This structure ensures better separation of concerns, making the UI library more maintainable and reusable across different projects.
 
 ## Decision
 
@@ -34,11 +35,11 @@ To achieve these objectives, the following folder structure and guidelines were 
    - If any type or style is used by multiple components across different groups, it is placed in the `shared` folder within.
    - Examples include global types or common CSS styles that are not specific to a single component group.
 
-4. **Variables for CSS**:  
+4. **Variables for CSS**:
 
-   - Each CSS module file defines its CSS variables at the very top of the file, inside the `:root` section. This makes it easy to locate and manage variable definitions.  
-   - Variables prefixed with `--ax-public` can be used directly within the component.  
-   - Variables prefixed only with `--ax` (without `--public`) represent tokens from the design system and should **not** be used directly in components. This establishes an anti-corruption layer, ensuring a clear separation between design system tokens and component-level variables.  
+   - Each CSS module file defines its CSS variables at the very top of the file, inside the `:root` section. This makes it easy to locate and manage variable definitions.
+   - Variables prefixed with `--ax-public` can be used directly within the component.
+   - Variables prefixed only with `--ax` (without `--public`) represent tokens from the design system and should **not** be used directly in components. This establishes an anti-corruption layer, ensuring a clear separation between design system tokens and component-level variables.
 
 5. **Types for Component Groups**:
 

@@ -1,8 +1,8 @@
 # CSS Layers
 
-### Proposed by: Jan Librowski
+Proposed by: **Jan Librowski**
 
-### Date: 07.01.2025
+Date: **07.01.2025**
 
 ## Context
 

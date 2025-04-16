@@ -1,7 +1,7 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import { Description } from '../description/description';
-import { PropsList } from '../props-list/props-list';
+import { PropMap, PropsList } from '../props-list/props-list';
 import { Playground } from '../code-playground/code-playground';
 import { Preview } from '../preview/preview';
 import { CSSVariablesList } from '../css-variables-list/css-variables-list';
@@ -12,10 +12,12 @@ import {
 import styles from './component-page.module.css';
 
 type Props = {
-  componentPath: AxiomTSXRelativePath;
+  componentPath?: AxiomTSXRelativePath;
   cssPaths?: AxiomCSSRelativePath[];
   exampleCode: string;
   preview: React.ReactNode;
+  className?: string;
+  hardcodedData?: HardcodedData;
 };
 
 export function ComponentPage({
@@ -23,16 +25,20 @@ export function ComponentPage({
   cssPaths = [],
   exampleCode,
   preview,
+  className,
+  hardcodedData,
 }: Props) {
+  const { props, description } = hardcodedData ?? {};
+
   return (
     <>
-      <Description path={componentPath} />
+      <Description path={componentPath} hardcodedDescription={description} />
       <Tabs>
         <TabItem value="api" label="API">
           <div className={styles['api-tab']}>
-            <Preview>{preview}</Preview>
+            <Preview className={className}>{preview}</Preview>
             <div className={styles['component-container']}>
-              <PropsList path={componentPath} />
+              <PropsList path={componentPath} hardcodedProps={props} />
               {cssPaths.length > 0 && (
                 <div>
                   <h1>CSS Variables</h1>
@@ -51,3 +57,8 @@ export function ComponentPage({
     </>
   );
 }
+
+type HardcodedData = {
+  props?: PropMap;
+  description?: string;
+};

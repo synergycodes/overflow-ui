@@ -2,11 +2,20 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+import { remarkCodeHike, recmaCodeHike, CodeHikeConfig } from 'codehike/mdx';
+
+const codeHikeConfig: CodeHikeConfig = {
+  components: { code: 'Code' },
+  syntaxHighlighting: {
+    theme: 'material-palenight',
+  },
+};
+
 // Options
 
 const config = {
   title: 'Axiom',
-  tagline: 'UI components',
+  tagline: 'UI Components + Diagramming',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -15,10 +24,8 @@ const config = {
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/axiom',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Synergy Codes', // Usually your GitHub org/user name.
-  projectName: 'axiom', // Usually your repo name.
+  organizationName: 'Synergy Codes',
+  projectName: 'axiom',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -36,6 +43,8 @@ const config = {
       'classic',
       {
         docs: {
+          beforeDefaultRemarkPlugins: [[remarkCodeHike, codeHikeConfig]],
+          recmaPlugins: [[recmaCodeHike, codeHikeConfig]],
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -92,37 +101,11 @@ const config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Synergy Codes',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'Synergy Codes',
+              to: 'https://synergycodes.com',
             },
           ],
         },
@@ -144,7 +127,13 @@ const config = {
       },
     ],
   ],
-  plugins: ['./plugins/shadow-dom-css/postcss.ts'],
+  plugins: [
+    './plugins/shadow-dom-css/postcss.ts',
+    './plugins/doc-extract-plugin/doc-extract-plugin.ts',
+    ...[
+      process.env.NODE_ENV === 'production' && '@docusaurus/plugin-debug',
+    ].filter(Boolean),
+  ],
 } satisfies Config;
 
 export default config;

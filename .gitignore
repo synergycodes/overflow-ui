@@ -1,5 +1,6 @@
 node_modules
 dist
+build
 
 *storybook.log
 
@@ -7,3 +8,5 @@ dist
 .DS_Store
 Thumbs.db
 .vscode/*
+
+packages/website/docs/generated-docs

@@ -26,7 +26,7 @@
   }
 
   :global(.react-flow__handle::before) {
-    content: "";
+    content: '';
 
     position: absolute;
     width: var(--ax-public-node-port-boundary-size);
@@ -48,7 +48,7 @@
   }
 
   :global(.react-flow__handle) {
-      &:hover {
+    &:hover {
       background-color: var(--ax-public-node-port-background-color-hover);
       border-color: var(--ax-public-node-port-border-color-hover);
 
