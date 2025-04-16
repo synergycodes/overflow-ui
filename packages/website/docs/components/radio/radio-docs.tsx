@@ -1,4 +1,4 @@
-import { Radio } from '@axiom/ui';
+import { Radio } from '@synergycodes/axiom';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
 import exampleCode from '!!raw-loader!./radio.example.jsx';
 import React from 'react';
@@ -24,7 +24,7 @@ export function RadioDocs() {
           />
         </div>
       }
-      cssPath="components/radio-button/radio.module.css"
+      cssPaths={['components/radio-button/radio.module.css']}
       componentPath="components/radio-button/radio.tsx"
       exampleCode={exampleCode}
     />

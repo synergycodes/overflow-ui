@@ -1,5 +1,5 @@
 import React from 'react';
-import * as axiom from '@axiom/ui';
+import * as axiom from '@synergycodes/axiom';
 
 // Add react-live imports you need here
 const ReactLiveScope: unknown = {

@@ -1,4 +1,4 @@
-import { Avatar } from '@axiom/ui';
+import { Avatar } from '@synergycodes/axiom';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
 import exampleCode from '!!raw-loader!./avatar.example.jsx';
 
@@ -12,7 +12,7 @@ export function AvatarDocs() {
           size="extra-large"
         />
       }
-      cssPath="components/avatar/avatar.module.css"
+      cssPaths={['components/avatar/avatar.module.css']}
       componentPath="components/avatar/avatar.tsx"
       exampleCode={exampleCode}
     />

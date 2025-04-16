@@ -1,4 +1,4 @@
-import { Modal, LabelButton } from '@axiom/ui';
+import { Modal, LabelButton } from '@synergycodes/axiom';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
 import exampleCode from '!!raw-loader!./modal.example.jsx';
 import { useState } from 'react';
@@ -43,7 +43,7 @@ export function ModalDocs() {
           </Modal>
         </>
       }
-      cssPath="components/modal/modal.module.css"
+      cssPaths={['components/modal/modal.module.css']}
       componentPath="components/modal/modal.tsx"
       exampleCode={exampleCode}
     />

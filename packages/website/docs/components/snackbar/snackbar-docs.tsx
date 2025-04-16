@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LabelButton, Snackbar } from '@axiom/ui';
+import { LabelButton, Snackbar } from '@synergycodes/axiom';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
 import exampleCode from '!!raw-loader!./snackbar.example.jsx';
 
@@ -30,7 +30,7 @@ export function SnackbarDocs() {
           )}
         </div>
       }
-      cssPath="components/snackbar/snackbar.module.css"
+      cssPaths={['components/snackbar/snackbar.module.css']}
       componentPath="components/snackbar/snackbar.tsx"
       exampleCode={exampleCode}
     />

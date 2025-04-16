@@ -1,4 +1,4 @@
-import { Tooltip, TooltipContent, TooltipTrigger } from '@axiom/ui';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@synergycodes/axiom';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
 import exampleCode from '!!raw-loader!./tooltip.example.jsx';
 
@@ -15,7 +15,7 @@ export function TooltipDocs() {
           </TooltipContent>
         </Tooltip>
       }
-      cssPath="components/tooltip/tooltip.module.css"
+      cssPaths={['components/tooltip/tooltip.module.css']}
       componentPath="components/tooltip/tooltip.tsx"
       exampleCode={exampleCode}
     />

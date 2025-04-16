@@ -22,7 +22,7 @@ export async function getCSSVariableData(path: string) {
     },
   );
 
-  return variablesData;
+  return variablesData.toSorted((a, b) => a.name.localeCompare(b.name));
 }
 
 const PUBLIC_PREFIX = '--ax-public';

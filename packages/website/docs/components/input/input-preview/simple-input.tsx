@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Input, InputProps } from '@axiom/ui';
+import { Input, InputProps } from '@synergycodes/axiom';
 import classes from './input-preview.module.css';
 
 export function SimpleInput({ ...props }: InputProps) {

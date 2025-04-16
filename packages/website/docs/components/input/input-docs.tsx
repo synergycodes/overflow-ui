@@ -7,7 +7,6 @@ export function InputDocs() {
   return (
     <ComponentPage
       preview={<InputPreview />}
-      cssPath="components/input/input.module.css"
       componentPath="components/input/input.tsx"
       exampleCode={exampleCode}
     />

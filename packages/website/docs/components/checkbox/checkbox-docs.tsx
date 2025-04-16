@@ -1,4 +1,4 @@
-import { Checkbox } from '@axiom/ui';
+import { Checkbox } from '@synergycodes/axiom';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
 import exampleCode from '!!raw-loader!./checkbox.example.jsx';
 
@@ -16,7 +16,7 @@ export function CheckboxDocs() {
           <Checkbox disabled indeterminate />
         </div>
       }
-      cssPath="components/checkbox/checkbox.module.css"
+      cssPaths={['components/checkbox/checkbox.module.css']}
       componentPath="components/checkbox/checkbox.tsx"
       exampleCode={exampleCode}
     />
