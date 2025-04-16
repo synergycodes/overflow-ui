@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
 import exampleCode from '!!raw-loader!./icon-label-button.example.jsx';
-import { IconLabelButton } from '@axiom/ui';
+import { IconLabelButton } from '@synergycodes/axiom';
 import { Check, Plus, User } from '@phosphor-icons/react';
 
 export function IconLabelButtonDocs() {
@@ -29,7 +29,7 @@ export function IconLabelButtonDocs() {
           />
         </div>
       }
-      cssPath="components/button/base-button/base-button.module.css"
+      cssPaths={['components/button/base-button/base-button.module.css']}
       componentPath="components/button/icon-label-button/icon-label-button.tsx"
       exampleCode={exampleCode}
     />

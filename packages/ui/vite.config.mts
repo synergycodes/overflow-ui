@@ -2,6 +2,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { defineConfig } from "vite";
 import { libInjectCss } from "vite-plugin-lib-inject-css";
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 import dts from "vite-plugin-dts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -46,6 +47,13 @@ export default defineConfig({
     libInjectCss(),
     dts({
       entryRoot: "src",
+    }),
+    viteStaticCopy({
+      targets: [
+        { src: '../tokens/dist/tokens.css', dest: '.' },
+        { src: '../tokens/dist/numerals-mode-1.css', dest: '.' },
+        { src: '../tokens/dist/primitives-mode-1.css', dest: '.' },
+      ],
     }),
   ],
 });

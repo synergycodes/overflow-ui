@@ -1,4 +1,4 @@
-import { Separator } from '@axiom/ui';
+import { Separator } from '@synergycodes/axiom';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
 import exampleCode from '!!raw-loader!./separator.example.jsx';
 
@@ -12,7 +12,7 @@ export function SeparatorDocs() {
           <h1 style={{ width: 'max-content' }}>Section 2</h1>
         </div>
       }
-      cssPath="components/separator/separator.module.css"
+      cssPaths={['components/separator/separator.module.css']}
       componentPath="components/separator/separator.tsx"
       exampleCode={exampleCode}
     />

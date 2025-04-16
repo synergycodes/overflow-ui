@@ -38,11 +38,6 @@ type MenuProps = MenuBaseProps & {
   children: ReactElement;
 };
 
-/**
- * A customizable dropdown menu component.
- * The menu can be triggered by any React element passed as children.
- * Supports different sizes, custom placement, and can render both menu items and separators.
- */
 export const Menu = memo(
   ({
     items,

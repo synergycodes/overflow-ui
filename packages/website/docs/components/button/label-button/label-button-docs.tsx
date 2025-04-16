@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
 import exampleCode from '!!raw-loader!./label-button.example.jsx';
-import { LabelButton } from '@axiom/ui';
+import { LabelButton } from '@synergycodes/axiom';
 
 export function LabelButtonDocs() {
   return (
@@ -59,7 +59,7 @@ export function LabelButtonDocs() {
           />
         </div>
       }
-      cssPath="components/button/base-button/base-button.module.css"
+      cssPaths={['components/button/base-button/base-button.module.css']}
       componentPath="components/button/label-button/label-button.tsx"
       exampleCode={exampleCode}
     />

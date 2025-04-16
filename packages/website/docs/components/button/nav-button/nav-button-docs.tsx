@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
 import exampleCode from '!!raw-loader!./nav-button.example.jsx';
-import { NavButton } from '@axiom/ui';
+import { NavButton } from '@synergycodes/axiom';
 import { Check, Plus, User } from '@phosphor-icons/react';
 
 export function NavButtonDocs() {
@@ -14,7 +14,7 @@ export function NavButtonDocs() {
           <NavButton icon={<User size={20} key={3} />} />
         </div>
       }
-      cssPath="components/button/base-button/base-button.module.css"
+      cssPaths={['components/button/base-button/base-button.module.css']}
       componentPath="components/button/nav-button/nav-button.tsx"
       exampleCode={exampleCode}
     />

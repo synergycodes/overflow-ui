@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
 import exampleCode from '!!raw-loader!./icon-button.example.jsx';
-import { IconButton } from '@axiom/ui';
+import { IconButton } from '@synergycodes/axiom';
 import { Check, Plus, User } from '@phosphor-icons/react';
 
 export function IconButtonDocs() {
@@ -14,7 +14,7 @@ export function IconButtonDocs() {
           <IconButton Icon={User} variant="gray" key={3} />
         </div>
       }
-      cssPath="components/button/base-button/base-button.module.css"
+      cssPaths={['components/button/base-button/base-button.module.css']}
       componentPath="components/button/icon-button/icon-button.tsx"
       exampleCode={exampleCode}
     />

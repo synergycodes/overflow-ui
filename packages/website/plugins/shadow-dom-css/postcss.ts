@@ -23,10 +23,14 @@ const ShadowDomCSS: PluginCreator<ShadowDomCSSOptions> = ({
     didAnnounceBeingAdded = true;
   }
 
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir);
+  }
+
   if (!fs.existsSync(outputFile)) {
     fs.writeFileSync(
       outputFile,
-      `/* Mocked file run: pnpm prepare before running server to regenerate */`,
+      '/* Mocked file run: pnpm prepare before running server to regenerate */',
       'utf8',
     );
   }
@@ -37,7 +41,7 @@ const ShadowDomCSS: PluginCreator<ShadowDomCSSOptions> = ({
       const inputFile = root.source?.input.file || '';
 
       const shouldExtract = filesToExtractPatterns.some((namePattern) =>
-        inputFile.includes(namePattern),
+        inputFile.replaceAll('\\', '/').includes(namePattern),
       );
 
       if (shouldExtract) {
@@ -73,7 +77,7 @@ export default function () {
     name: 'shadow-dom-css-postcss',
     configurePostCss(postcssOptions) {
       postcssOptions.plugins.push(
-        ShadowDomCSS({ filesToExtractPatterns: ['axiom\\packages\\ui'] }),
+        ShadowDomCSS({ filesToExtractPatterns: ['axiom/packages/ui'] }),
       );
 
       return postcssOptions;

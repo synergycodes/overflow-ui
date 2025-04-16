@@ -1,5 +1,5 @@
 import { register } from '@tokens-studio/sd-transforms';
-import StyleDictionary, { Config } from 'style-dictionary';
+import StyleDictionary, { Config, TransformedToken } from 'style-dictionary';
 import { toFileName } from './to-file-name';
 import { OUTPUT_DIR, TOKEN_OUTPUT_DIR } from './constants';
 import { config } from '../config';
@@ -8,32 +8,67 @@ const { primitives, themes } = config;
 register(StyleDictionary);
 
 export async function tokensToCss() {
-  const primitiveSource = primitives.map(
-    (tokenSet) => `${TOKEN_OUTPUT_DIR}${tokenSet}.json`,
-  );
+  const primitiveSourceMap = createPrimitiveSourceMap();
 
+  await processPrimitiveTokens(primitiveSourceMap);
+  await processThemeTokens(primitiveSourceMap);
+}
+
+function createPrimitiveSourceMap(): Map<string, string> {
+  const sourceMap = new Map();
+  primitives.forEach((tokenSet) => {
+    sourceMap.set(tokenSet, `${TOKEN_OUTPUT_DIR}${tokenSet}.json`);
+  });
+
+  return sourceMap;
+}
+
+async function processPrimitiveTokens(
+  primitiveSourceMap: Map<string, string>,
+): Promise<void> {
   for (const primitive of primitives) {
     const themeName = toFileName(primitive);
+    const sourcePath = primitiveSourceMap.get(primitive);
 
-    const config = createSDConfig({ name: themeName, source: primitiveSource });
+    if (!sourcePath) {
+      console.warn(`Source path not found for primitive: ${primitive}`);
+      continue;
+    }
 
-    const styleDictionary = new StyleDictionary(config);
-    await styleDictionary.buildAllPlatforms();
-  }
+    const source = [sourcePath];
 
-  for (const { name, selector } of themes) {
-    const themeName = toFileName(name);
-
-    const source = [...primitiveSource, `${TOKEN_OUTPUT_DIR}${name}.json`];
-
-    const config = createSDConfig({ name: themeName, source, selector });
+    const config = createSDConfig({
+      name: themeName,
+      source,
+    });
 
     const styleDictionary = new StyleDictionary(config);
     await styleDictionary.buildAllPlatforms();
   }
 }
 
-function createSDConfig({ name, selector, source }: SDConfigParams) {
+async function processThemeTokens(
+  primitiveSourceMap: Map<string, string>,
+): Promise<void> {
+  for (const { name, selector } of themes) {
+    const themeName = toFileName(name);
+    const primitiveSources = Array.from(primitiveSourceMap.values());
+    const source = [...primitiveSources, `${TOKEN_OUTPUT_DIR}${name}.json`];
+
+    const config = createSDConfig({
+      name: themeName,
+      source,
+      selector,
+      filter: (token) =>
+        !primitives.some((primitive) => token.filePath.includes(primitive)),
+    });
+
+    const styleDictionary = new StyleDictionary(config);
+    await styleDictionary.buildAllPlatforms();
+  }
+}
+
+function createSDConfig({ name, selector, source, filter }: SDConfigParams) {
   return {
     source,
     preprocessors: ['tokens-studio'],
@@ -49,19 +84,21 @@ function createSDConfig({ name, selector, source }: SDConfigParams) {
         files: [
           {
             destination: `${name}.css`,
+            filter,
             format: 'css/variables',
           },
         ],
       },
     },
     log: logOptions,
-  };
+  } as Config;
 }
 
 type SDConfigParams = {
   name: string;
   source: string[];
   selector?: string;
+  filter?: (token: TransformedToken) => boolean;
 };
 
 const logOptions = {

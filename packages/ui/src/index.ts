@@ -1,10 +1,5 @@
 // [TODO] Improvement: Should we automate it?
 // Using glob library could help us generate this entrypoint and imports
-
-import '@axiom/tokens/dist/axiom.css';
-import './styles/layers.css';
-import './styles/globals.css';
-import '@axiom/tokens/dist/axiom.css';
 import './styles/layers.css';
 import './styles/globals.css';
 
@@ -38,6 +33,8 @@ export * from './components/snackbar/snackbar';
 export * from './components/text-area/text-area';
 
 export * from './components/tooltip/tooltip';
+export * from './components/tooltip/tooltip-content';
+export * from './components/tooltip/tooltip-trigger';
 
 export * from './components/node/node-as-port-wrapper/node-as-port-wrapper';
 export * from './components/node/node-description/node-description';

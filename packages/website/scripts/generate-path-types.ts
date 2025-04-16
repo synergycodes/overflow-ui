@@ -26,6 +26,7 @@ export async function generatePathTypes() {
 function pathsToType(paths: string[]) {
   return (
     paths
+      .toSorted()
       .map((filePath) => {
         const normalizedPath = filePath.split(path.sep).join('/');
         const srcIndex = normalizedPath.indexOf('ui/src/');
