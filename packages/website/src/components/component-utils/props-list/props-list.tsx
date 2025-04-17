@@ -14,17 +14,6 @@ export function PropsList({ path }: Props) {
     return null;
   }
 
-  if (props) {
-    return (
-      <div>
-        <h1>Props</h1>
-        <div className={styles['container']}>
-          <p>No props available for this component.</p>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div>
       <h1>Props</h1>

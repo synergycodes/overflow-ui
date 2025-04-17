@@ -8,7 +8,7 @@ type Props = {
 export function Description({ path }: Props) {
   const { description } = getAPIData(path);
 
-  if (description) {
+  if (!description) {
     return null;
   }
 
