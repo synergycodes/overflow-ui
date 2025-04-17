@@ -1,14 +1,14 @@
 # How to add a Component
 
-1. Run `pnpm doc-add`.
-2. Enter the `fileBaseName` of the component.
-3. Update the props in `packages/website/docs/components`.
+1. Run `pnpm website doc-add`.
+2. Enter the `file-base-name` of the component.
+3. Update the props in `packages/website/docs/components/file-base-name`.
 
 ---
 
 # How to check Docusaurus
 
-Run `pnpm run doc` or `pnpm -F website dev`.
+Run `pnpm run doc` or `pnpm website dev`.
 
 ---
 
