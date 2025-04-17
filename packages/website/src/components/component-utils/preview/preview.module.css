@@ -7,3 +7,9 @@
   width: min-content;
   padding: 4rem 6rem;
 }
+
+.node-docs {
+  width: auto;
+  padding: 0;
+  display: block;
+}

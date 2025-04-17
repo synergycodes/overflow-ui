@@ -5,6 +5,7 @@
  */
 
 @import '@synergycodes/axiom/tokens.css';
+@import '@xyflow/react/dist/style.css';
 
 h1,
 h2,

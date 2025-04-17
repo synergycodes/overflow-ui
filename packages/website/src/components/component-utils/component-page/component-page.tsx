@@ -16,6 +16,7 @@ type Props = {
   cssPaths?: AxiomCSSRelativePath[];
   exampleCode: string;
   preview: React.ReactNode;
+  className?: string;
 };
 
 export function ComponentPage({
@@ -23,6 +24,7 @@ export function ComponentPage({
   cssPaths = [],
   exampleCode,
   preview,
+  className,
 }: Props) {
   return (
     <>
@@ -30,7 +32,7 @@ export function ComponentPage({
       <Tabs>
         <TabItem value="api" label="API">
           <div className={styles['api-tab']}>
-            <Preview>{preview}</Preview>
+            <Preview className={className}>{preview}</Preview>
             <div className={styles['component-container']}>
               <PropsList path={componentPath} />
               {cssPaths.length > 0 && (

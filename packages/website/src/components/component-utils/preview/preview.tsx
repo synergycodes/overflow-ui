@@ -1,13 +1,14 @@
 import { useMuteKnownPreviewErrors } from '@site/src/hooks/use-mute-known-preview-errors';
-
+import clsx from 'clsx';
 import styles from './preview.module.css';
 import ShadowDomWrapper from '../shadow-dom-wrapper/shadow-dom-wrapper';
 
 type Props = {
   children: React.ReactNode;
+  className?: string;
 };
 
-export function Preview({ children }: Props) {
+export function Preview({ children, className }: Props) {
   useMuteKnownPreviewErrors([
     /* 
       TextareaAutosize from MUI has an issue with ResizeObserver when switching tabs in Docusaurus.
@@ -18,7 +19,7 @@ export function Preview({ children }: Props) {
   ]);
 
   return (
-    <div className={styles['preview-container']}>
+    <div className={clsx(styles[className], styles['preview-container'])}>
       <ShadowDomWrapper>
         <div>{children}</div>
       </ShadowDomWrapper>

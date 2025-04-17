@@ -17,6 +17,33 @@ type Props = {
   children?: React.ReactNode;
 };
 
+/**
+ * Node Panel component
+ *
+ * This component ensures a structured layout with optional slots:
+ * - `NodePanel.Header`: A container for the node's header (at most 1).
+ * - `NodePanel.Content`: A container for the node's main content (at most 1).
+ * - `NodePanel.Handles`: A container for action handles (at most 1).
+ *
+ * **Usage Example**
+ * ```tsx
+ * <NodePanel.Root selected={true}>
+ *   <NodePanel.Header>Header Content</NodeHeaderSlot>
+ *   <NodePanel.Content>Main Content</NodeContentSlot>
+ *   <NodePanel.Handles>Handles</NodeHandlesSlot>
+ * </NodePanel.Root>
+ * ```
+ *
+ * **Allowed Combinations:**
+ * - No children (empty node)
+ * - Header only, Content only, Handles only
+ * - Any combination of Header, Content, and Handles (but max 1 each)
+ *
+ * **Invalid Cases (Throws a Runtime Warning):**
+ * - More than one instance of `NodePanel.Header`, `<NodePanel.Content`, or `NodePanel.Handles`
+ * - Passing an unknown child element
+ */
+
 const Header = memo(function Header({
   children,
   className,
@@ -46,32 +73,6 @@ const Handles = memo(function Handles({
   return <>{isVisible && children}</>;
 });
 
-/**
- * Node Panel component
- *
- * This component ensures a structured layout with optional slots:
- * - `NodePanel.Header`: A container for the node's header (at most 1).
- * - `NodePanel.Content`: A container for the node's main content (at most 1).
- * - `NodePanel.Handles`: A container for action handles (at most 1).
- *
- * **Usage Example**
- * ```tsx
- * <NodePanel.Root selected={true}>
- *   <NodePanel.Header>Header Content</NodeHeaderSlot>
- *   <NodePanel.Content>Main Content</NodeContentSlot>
- *   <NodePanel.Handles>Handles</NodeHandlesSlot>
- * </NodePanel.Root>
- * ```
- *
- * **Allowed Combinations:**
- * - No children (empty node)
- * - Header only, Content only, Handles only
- * - Any combination of Header, Content, and Handles (but max 1 each)
- *
- * **Invalid Cases (Throws a Runtime Warning):**
- * - More than one instance of `NodePanel.Header`, `<NodePanel.Content`, or `NodePanel.Handles`
- * - Passing an unknown child element
- */
 const Root = memo(function Root({ selected, children }: Props) {
   const { header, content, handles } = useMemo(() => {
     const childrenArray = Children.toArray(children);
