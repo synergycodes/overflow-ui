@@ -3,6 +3,13 @@ import pluginJs from '@eslint/js';
 import tsEslint from 'typescript-eslint';
 import eslintConfigPrettier from 'eslint-config-prettier';
 
+const rules = {
+  '@typescript-eslint/no-unused-vars': [
+    'error',
+    { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+  ],
+};
+
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   { files: ['**/*.{ts}'] },
@@ -15,4 +22,5 @@ export default [
   pluginJs.configs.recommended,
   eslintConfigPrettier,
   ...tsEslint.configs.recommended,
+  { rules },
 ];

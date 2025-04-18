@@ -7,3 +7,5 @@ dist
 .DS_Store
 Thumbs.db
 .vscode/*
+
+packages/website/docs/generated/decision-logs/

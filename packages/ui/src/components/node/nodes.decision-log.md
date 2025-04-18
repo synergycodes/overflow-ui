@@ -1,8 +1,8 @@
 # Node Components Design and Implementation
 
-### Proposed by: Piotr Błaszczyk
+Proposed by: **Piotr Błaszczyk**
 
-### Date: 02.04.2025
+Date: **02.04.2025**
 
 ## Context
 

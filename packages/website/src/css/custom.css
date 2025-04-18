@@ -5,7 +5,6 @@
  */
 
 @import '@synergycodes/axiom/tokens.css';
-@import '@xyflow/react/dist/style.css';
 
 h1,
 h2,
@@ -19,6 +18,10 @@ p {
 
 h1 {
   font-size: 2rem;
+}
+
+li {
+  margin-left: 1rem;
 }
 
 /* You can override the default Infima variables here. */

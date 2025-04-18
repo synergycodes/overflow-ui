@@ -16,6 +16,7 @@
     "generate-type-docs": "react-docgen \"../ui/src/components/**/*.tsx\" --pretty -o \"./generated/props.json\"",
     "generate-css-variables-docs": "tsx ./scripts/generate-css-variables-docs.ts",
     "generate-path-types": "tsx ./scripts/generate-path-types.ts",
+    "generate-decision-log-listing": "tsx ./scripts/generate-decision-log-listing.ts",
     "prepare": "pnpm generate-type-docs && pnpm generate-css-variables-docs && pnpm generate-path-types",
     "doc-add": "tsx tools/add.ts"
   },
@@ -46,6 +47,7 @@
     "@docusaurus/module-type-aliases": "3.7.0",
     "@docusaurus/tsconfig": "3.7.0",
     "@docusaurus/types": "3.7.0",
+    "gray-matter": "^4.0.3",
     "postcss": "^8.5.3",
     "typescript": "~5.6.2"
   },

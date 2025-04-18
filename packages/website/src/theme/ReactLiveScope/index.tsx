@@ -2,7 +2,12 @@ import React from 'react';
 import * as axiom from '@synergycodes/axiom';
 import * as xyflow from '@xyflow/react';
 import { User, Plus, Check } from '@phosphor-icons/react';
-import { NodePanelExample } from '@site/docs/components/node/node-panel-example';
+
+const icons = {
+  User,
+  Plus,
+  Check,
+};
 
 // Add react-live imports you need here
 const ReactLiveScope = {
@@ -10,10 +15,7 @@ const ReactLiveScope = {
   ...React,
   ...axiom,
   ...xyflow,
-  User,
-  Plus,
-  Check,
-  NodePanelExample,
+  ...icons,
 };
 
 export default ReactLiveScope;
