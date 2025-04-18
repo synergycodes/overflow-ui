@@ -74,10 +74,16 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
             <div className={styles['header']}>
               <div className={styles['title-wrapper']}>
                 {icon && <div className={styles['icon']}>{icon}</div>}
-                <div>
-                  <h6 className={styles['title']}>{title}</h6>
+                <div className={styles['title-container']}>
+                  <span className={clsx(styles['title'], 'ax-public-h6')}>
+                    {title}
+                  </span>
                   {subtitle && (
-                    <p className={styles['description']}>{subtitle}</p>
+                    <span
+                      className={clsx(styles['description'], 'ax-public-p11')}
+                    >
+                      {subtitle}
+                    </span>
                   )}
                 </div>
               </div>

@@ -12,7 +12,6 @@ import {
 import { forwardRef } from 'react';
 import type { DatePickerProps } from './types';
 import { MantineProvider } from '@mantine/core';
-
 type Props = DatePickerProps & {
   /**
    * Format string to control how the selected date is displayed
@@ -60,28 +59,30 @@ export const DatePicker = forwardRef<HTMLButtonElement, Props>(
       ...props
     },
     ref,
-  ) => (
-    <MantineProvider>
-      <DatePickerInput
-        {...props}
-        type={type}
-        ref={ref}
-        value={normalizeDateValue(value)}
-        valueFormat={valueFormat}
-        placeholder={placeholder}
-        classNames={{
-          input: clsx(
-            inputFontStyles[inputSize],
-            inputSizeStyles[inputSize],
-            styles['container'],
-            {
-              [styles['container--error']]: error,
-            },
-          ),
-        }}
-      />
-    </MantineProvider>
-  ),
+  ) => {
+    return (
+      <MantineProvider>
+        <DatePickerInput
+          {...props}
+          type={type}
+          ref={ref}
+          value={normalizeDateValue(value)}
+          valueFormat={valueFormat}
+          placeholder={placeholder}
+          classNames={{
+            input: clsx(
+              inputFontStyles[inputSize],
+              inputSizeStyles[inputSize],
+              styles['container'],
+              {
+                [styles['container--error']]: error,
+              },
+            ),
+          }}
+        />
+      </MantineProvider>
+    );
+  },
 );
 
 function normalizeDateValue(value: unknown): DateValue | undefined {

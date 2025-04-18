@@ -8,11 +8,9 @@
 }
 
 .title {
-  composes: h8 from global;
   color: var(--ax-public-snackbar-title-color);
 }
 
 .subtitle {
-  composes: p10 from global;
   color: var(--ax-public-snackbar-subtitle-color);
 }

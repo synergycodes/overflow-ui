@@ -39,7 +39,7 @@ export const TooltipContent = forwardRef<
             [styles['tooltip-default']]: tooltipType === 'default',
             [styles['tooltip-blue']]: tooltipType === 'blue',
           },
-          'p11',
+          'ax-public-p11',
         )}
         style={{
           ...context.floatingStyles,

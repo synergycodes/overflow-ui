@@ -18,19 +18,19 @@
 
 @layer ui.component {
   .large {
-    composes: p9 from global;
+    composes: ax-public-p9 from global;
     padding: var(--ax-public-list-item-padding-large);
     gap: var(--ax-public-list-item-gap-large);
   }
 
   .medium {
-    composes: p10 from global;
+    composes: ax-public-p10 from global;
     padding: var(--ax-public-list-item-padding-medium);
     gap: var(--ax-public-list-item-gap-medium);
   }
 
   .small {
-    composes: p10 from global;
+    composes: ax-public-p10 from global;
     padding: var(--ax-public-list-item-padding-small);
     gap: var(--ax-public-list-item-gap-small);
   }

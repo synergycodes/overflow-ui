@@ -1,10 +1,11 @@
 import { Logger } from './logger';
 
+const logger = new Logger('Scripts');
+
 export function createScript(name: string, scriptFunction: ScriptFunction) {
   return async () => {
-    const logger = new Logger(name);
-
     const startTime = performance.now();
+
     try {
       await scriptFunction({ logger });
     } catch (error) {
@@ -12,9 +13,7 @@ export function createScript(name: string, scriptFunction: ScriptFunction) {
     }
 
     const endTime = performance.now();
-
     const elapsedTime = endTime - startTime;
-
     logger.taskSuccess(name, elapsedTime);
   };
 }
