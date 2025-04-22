@@ -13,7 +13,7 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
-    "generate-type-docs": "react-docgen \"../ui/src/components/**/*.tsx\" --pretty -o \"./generated/props.json\"",
+    "generate-type-docs": "tsx ./scripts/generate-type-docs.ts",
     "generate-css-variables-docs": "tsx ./scripts/generate-css-variables-docs.ts",
     "generate-path-types": "tsx ./scripts/generate-path-types.ts",
     "prepare": "pnpm generate-type-docs && pnpm generate-css-variables-docs && pnpm generate-path-types",
