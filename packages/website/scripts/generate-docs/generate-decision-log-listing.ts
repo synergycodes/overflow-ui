@@ -50,7 +50,7 @@ async function findDecisionLogs(
   return logs;
 }
 
-async function copyFilesAndGenerateListing() {
+export async function generateDecisionLogList() {
   await setupOutputDir();
 
   const logs = await findDecisionLogs(UI_DIR_PATH);
@@ -60,16 +60,10 @@ async function copyFilesAndGenerateListing() {
   const listing: string[] = [];
 
   for (const [index, log] of logs.entries()) {
-    const safeTitle = log.title
-      ? log.title
-          .toLowerCase()
-          .replace(/\s+/g, '-')
-          .replace(/[^a-z0-9-]/g, '')
-      : `log-${index + 1}`;
+    const safeTitle = path.basename(log.originalPath);
+    const fileName = `${safeTitle}.md`;
 
-    const fileName = `${index + 1}-${safeTitle}.md`;
     const destPath = path.join(OUTPUT_DIR, fileName);
-
     await fs.copyFile(log.originalPath, destPath);
 
     const displayTitle = log.title || `Decision Log #${index + 1}`;
@@ -78,7 +72,3 @@ async function copyFilesAndGenerateListing() {
 
   console.log(`✅ Collected ${logs.length} decision logs to ${OUTPUT_DIR}`);
 }
-
-copyFilesAndGenerateListing().catch((err) => {
-  console.error('❌ Error:', err);
-});

@@ -35,6 +35,7 @@ const config = {
     [
       'classic',
       {
+        debug: true,
         docs: {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
@@ -144,7 +145,13 @@ const config = {
       },
     ],
   ],
-  plugins: ['./plugins/shadow-dom-css/postcss.ts'],
+  plugins: [
+    './plugins/shadow-dom-css/postcss.ts',
+    './plugins/doc-extract-plugin/doc-extract-plugin.ts',
+    ...[
+      process.env.NODE_ENV === 'production' && '@docusaurus/plugin-debug',
+    ].filter(Boolean),
+  ],
 } satisfies Config;
 
 export default config;
