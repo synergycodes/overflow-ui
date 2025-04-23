@@ -6,7 +6,7 @@ const UI_DIR_PATH = path.join(process.cwd(), '..', 'ui');
 const OUTPUT_DIR = path.join(
   process.cwd(),
   'docs',
-  'generated',
+  'generated-docs',
   'decision-logs',
 );
 const TARGET_SUFFIX = 'decision-log.md';

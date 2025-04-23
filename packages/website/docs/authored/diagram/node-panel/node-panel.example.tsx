@@ -1,10 +1,5 @@
 import { User } from '@phosphor-icons/react';
-import {
-  Input,
-  NodeDescription,
-  NodeIcon,
-  NodePanel,
-} from '@synergycodes/axiom';
+import { NodeDescription, NodeIcon, NodePanel } from '@synergycodes/axiom';
 import { Handle, Position } from '@xyflow/react';
 import React, { memo } from 'react';
 
@@ -22,20 +17,16 @@ export const NodePanelExample = memo(
           <NodeIcon icon={<User />} />
           <NodeDescription label={data.label} description={data.description} />
         </NodePanel.Header>
-        <NodePanel.Content>
-          <Input />
-          <Input />
-        </NodePanel.Content>
         <NodePanel.Handles>
           <Handle
             id="target"
-            position={Position.Top}
+            position={Position.Left}
             type="target"
             isConnectable={true}
           />
           <Handle
             id="source"
-            position={Position.Bottom}
+            position={Position.Right}
             type="source"
             isConnectable={true}
           />

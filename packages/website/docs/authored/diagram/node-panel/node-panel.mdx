@@ -1,0 +1,166 @@
+---
+title: Node Panel
+description: Node Panel components
+---
+
+import '@xyflow/react/dist/style.css';
+import NodePanelDiagram from "!!raw-loader!./node-panel-diagram.jsx";
+import { CodeSpotlight } from "@site/src/components/code-hike/code-spotlight/code-spotlight"
+
+This section will explain how to build nodes using Axiom components.
+Each component serves a specific purpose in structuring the node's layout.
+The components can be used individually or combined, but each can only be used once within a `NodePanel.Root`.
+The `NodePanel` namespace provides the following slots:
+
+- `NodePanel.Root` - The main container wrapping panel elements. The rest of the components are optional.
+- `NodePanel.Header` - Node's title, description, icon etc.
+- `NodePanel.Content` - Node's main content
+- `NodePanel.Handles` - Container for interactive handles
+
+On top of it, Axiom offers utility components that can serve as building blocks or provide additional functionality:
+- `NodeIcon` - Displays an icon in the node
+- `NodeDescription` - Helper component labeling the node
+- `NodeAsPortWrapper` - Makes the node interactive as a connection point
+
+In the next sections, we will explore how to use these components to create interactive nodes in React Flow.
+
+:::note
+
+Diagramming components are framework agnostic and should work with any library.
+The examples in this section are used with React Flow, but the concepts can be applied to other frameworks as well.
+
+:::
+
+## Customization
+
+<CodeSpotlight previewComponentName='Page' injectedCode={{ after: NodePanelDiagram }}>
+
+## !!steps Basic node structure
+
+The `NodePanel` provides a structured layout with `Header` and `Content` sections.
+
+```tsx ! example.ts
+function Node() {
+  return (
+    <NodePanel.Root selected={false}>
+      <NodePanel.Header>
+        <p>User Node</p>
+      </NodePanel.Header>
+      <NodePanel.Content>
+        <p>Content</p>
+      </NodePanel.Content>
+    </NodePanel.Root>
+  );
+};
+```
+
+## !!steps Adding a Description
+
+Add labels and descriptions using the `NodeDescription` component.
+
+```tsx ! example.ts
+function Node() {
+  return (
+    <NodePanel.Root selected={false}>
+      <NodePanel.Header>
+        <NodeDescription 
+          label="User Node" 
+          description="User information"
+        />
+      </NodePanel.Header>
+      <NodePanel.Content>
+        <p>Content</p>
+      </NodePanel.Content>
+    </NodePanel.Root>
+  );
+}
+```
+
+## !!steps Adding an Icon
+
+Add icons to nodes using the `NodeIcon` component.
+
+```tsx ! example.ts
+function Node() {
+  return (
+    <NodePanel.Root selected={false}>
+      <NodePanel.Header>
+        <NodeIcon icon={<User />} />
+        <NodeDescription 
+          label="User Node" 
+          description="User information"
+        />
+      </NodePanel.Header>
+      <NodePanel.Content>
+        <p>Content</p>
+      </NodePanel.Content>
+    </NodePanel.Root>
+  );
+}
+```
+
+## !!steps Adding Handles
+
+Add action buttons with the `NodePanel.Handles` component. Try connecting the nodes.
+
+```tsx ! example.ts
+function Node() {
+  return (
+    <NodePanel.Root selected={false}>
+      <NodePanel.Header>
+        <NodeIcon icon={<User />} />
+        <NodeDescription 
+          label="User Node" 
+          description="User information"
+        />
+      </NodePanel.Header>
+      <NodePanel.Content>
+        <p>Content</p>
+      </NodePanel.Content>
+      <NodePanel.Handles>
+        <Handle position={Position.Left} type="target" />
+        <Handle position={Position.Right} type="source" />
+      </NodePanel.Handles>
+    </NodePanel.Root>
+  );
+}
+```
+
+## !!steps Simplifying connections
+
+Make the entire node interactive as a connection point with the `NodeAsPortWrapper` component.
+
+```tsx ! example.ts
+function Node() {
+  return (
+    <NodeAsPortWrapper
+      isConnecting={true}
+      targetPortPosition={Position.Left}
+    >
+      <NodePanel.Root selected={false}>
+        <NodePanel.Header>
+          <NodeIcon icon={<User />} />
+          <NodeDescription 
+            label="User Node" 
+            description="User information"
+          />
+        </NodePanel.Header>
+        <NodePanel.Content>
+          <p>Content</p>
+        </NodePanel.Content>
+        <NodePanel.Handles>
+          <Handle position={Position.Left} type="target" />
+          <Handle position={Position.Right} type="source" />
+        </NodePanel.Handles>
+      </NodePanel.Root>
+    </NodeAsPortWrapper>
+  );
+}
+```
+
+</CodeSpotlight>
+
+## Further Reading
+
+These components can be combined and customized to create complex, interactive diagrams for your applications. The modular design allows for flexibility and reusability, making it easy to build consistent and visually appealing nodes throughout your application.
+If you wanna find out more about the technical choices we've made - check the related [decision log](../../../generated-docs/decision-logs/nodes.decision-log.md).

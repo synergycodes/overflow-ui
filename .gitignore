@@ -8,4 +8,4 @@ dist
 Thumbs.db
 .vscode/*
 
-packages/website/docs/generated/decision-logs/
+packages/website/docs/generated-docs

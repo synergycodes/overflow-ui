@@ -2,6 +2,15 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+import { remarkCodeHike, recmaCodeHike, CodeHikeConfig } from 'codehike/mdx';
+
+const codeHikeConfig: CodeHikeConfig = {
+  components: { code: 'Code' },
+  syntaxHighlighting: {
+    theme: 'material-palenight',
+  },
+};
+
 // Options
 
 const config = {
@@ -15,10 +24,8 @@ const config = {
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/axiom',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Synergy Codes', // Usually your GitHub org/user name.
-  projectName: 'axiom', // Usually your repo name.
+  organizationName: 'Synergy Codes',
+  projectName: 'axiom',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -35,8 +42,9 @@ const config = {
     [
       'classic',
       {
-        debug: true,
         docs: {
+          beforeDefaultRemarkPlugins: [[remarkCodeHike, codeHikeConfig]],
+          recmaPlugins: [[recmaCodeHike, codeHikeConfig]],
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.

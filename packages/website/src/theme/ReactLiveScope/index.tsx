@@ -1,9 +1,10 @@
 import React from 'react';
 import * as axiom from '@synergycodes/axiom';
 import * as xyflow from '@xyflow/react';
-import { User, Plus, Check } from '@phosphor-icons/react';
+import { User, Plus, Check, Trash } from '@phosphor-icons/react';
 
 const icons = {
+  Trash,
   User,
   Plus,
   Check,

@@ -1,0 +1,90 @@
+.container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    [class^='playgroundContainer'] {
+      box-shadow: none;
+
+      > * {
+        display: none;
+      }
+
+      [class^='playgroundPreview'] {
+        > div {
+          width: 100%;
+          height: 100%;
+        }
+
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20rem;
+        width: 100%;
+        border-radius: 1rem;
+        border: 1px #aaaaaa dashed;
+        padding: 4rem 6rem;
+        background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+        background-size: 16px 16px;
+      }
+    }
+
+    .steps-container {
+      display: flex;
+      height: 40rem;
+
+      .step-list {
+        justify-content: space-between;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        .step {
+          opacity: 0.7;
+          display: flex;
+          flex-direction: column;
+          cursor: pointer;
+          border-left: 4px solid transparent;
+          padding: 1.5rem 1rem;
+          border-radius: 0.25rem;
+          background-color: #8881;
+          transition: 0.2s padding ease;
+          width: 100%;
+
+          .step-title {
+            font-size: 1.25rem;
+          }
+
+          .step-description {
+            height: 0;
+            opacity: 0;
+            transition: 0.2 height ease;
+          }
+        }
+
+        .step[data-selected='true'] {
+          opacity: 1;
+          background-color: #8881;
+          border-left-color: var(--ifm-color-primary);
+          padding: 3rem 1rem;
+
+          .step-description {
+            height: min-content;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .code {
+      margin: 0;
+      background-color: rgb(41, 45, 62);
+      flex: 2;
+    }
+  }
+}

@@ -3,11 +3,13 @@ import { getAPIData } from '../get-api-data';
 
 type Props = {
   path: AxiomTSXRelativePath;
+  hardcodedDescription?: string;
 };
 
-export function Description({ path }: Props) {
-  const { description } = getAPIData(path);
+export function Description({ path, hardcodedDescription }: Props) {
+  const { description: generatedDescription } = getAPIData(path);
 
+  const description = hardcodedDescription || generatedDescription;
   if (!description) {
     return null;
   }

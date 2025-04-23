@@ -28,9 +28,9 @@ type Props = {
  * **Usage Example**
  * ```tsx
  * <NodePanel.Root selected={true}>
- *   <NodePanel.Header>Header Content</NodeHeaderSlot>
- *   <NodePanel.Content>Main Content</NodeContentSlot>
- *   <NodePanel.Handles>Handles</NodeHandlesSlot>
+ *   <NodePanel.Header>Header Content</NodePanel.Header>
+ *   <NodePanel.Content>Main Content</NodePanel.Content>
+ *   <NodePanel.Handles>Handles</NodePanel.Handles>
  * </NodePanel.Root>
  * ```
  *
