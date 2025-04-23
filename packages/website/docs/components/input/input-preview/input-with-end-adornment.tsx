@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Input } from '@synergycodes/axiom';
 import { X } from '@phosphor-icons/react';
-import classes from './input-preview.module.css';
 
 export function InputWithEndAdornment() {
   const [value, setValue] = useState<string>('Hello World');
@@ -11,9 +10,21 @@ export function InputWithEndAdornment() {
       size="large"
       value={value}
       onChange={(e) => setValue(e.target.value)}
-      className={classes.input}
+      style={{
+        minWidth: '200px'
+      }}
       endAdornment={
-        value && <X onClick={() => setValue('')} className={classes.clearBtn} />
+        value && (
+          <X
+            onClick={() => setValue('')}
+            style={{
+              cursor: 'pointer',
+              fontSize: '15px',
+              height: '1em',
+              width: '1em',
+            }}
+          />
+        )
       }
     />
   );
