@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 import styles from './checkbox.module.css';
 
-import { InputHTMLAttributes } from 'react';
+import type { InputHTMLAttributes } from 'react';
 import { Check, Minus } from '@phosphor-icons/react';
-import { SelectorSize } from '@ui/shared/types/selector-size';
+import type { SelectorSize } from '@ui/shared/types/selector-size';
 
 type Props = {
   /**

@@ -1,7 +1,7 @@
 :root {
   --ax-public-checkbox-size-medium: 1.25rem;
-  --ax-public-checkbox-size-small: 1rem;
-  --ax-public-checkbox-size-extra-small: 1.125rem;
+  --ax-public-checkbox-size-small: 1.125rem;
+  --ax-public-checkbox-size-extra-small: 1rem;
 
   --ax-public-checkbox-icon-size-medium: 0.875rem;
   --ax-public-checkbox-icon-size-small: 0.75rem;
@@ -9,22 +9,32 @@
 
   --ax-public-checkbox-border-radius-medium: var(--ax-token-radius-checkbox-m);
   --ax-public-checkbox-border-radius-small: var(--ax-token-radius-checkbox-s);
-  --ax-public-checkbox-border-radius-extra-small: var(--ax-token-radius-checkbox-xs);
+  --ax-public-checkbox-border-radius-extra-small: var(
+    --ax-token-radius-checkbox-xs
+  );
 
   --ax-public-checkbox-border-width: 0.0625rem;
 
   --ax-public-checkbox-border-color: var(--ax-ui-stroke-secondary-default);
   --ax-public-checkbox-bg: var(--ax-ui-bg-primary-default);
-  --ax-public-checkbox-icon-color: var(--ax-colors-gray-100); /* missing token */
+  --ax-public-checkbox-icon-color: var(
+    --ax-colors-gray-100
+  ); /* missing token */
 
   --ax-public-checkbox-checked-bg: var(--ax-ui-bg-tertiary-selected);
 
-  --ax-public-checkbox-focus-border-color: var(--ax-ui-stroke-secondary-default);
+  --ax-public-checkbox-focus-border-color: var(
+    --ax-ui-stroke-secondary-default
+  );
   --ax-public-checkbox-focus-border-shadow: var(--ax-txt-primary-default);
 
   --ax-public-checkbox-disabled-bg: var(--ax-ui-bg-tertiary-default);
-  --ax-public-checkbox-disabled-border-color: var(--ax-ui-stroke-secondary-default);
-  --ax-public-checkbox-disabled-icon-color: var(--ax-nav-button-icon-primary-disabled);
+  --ax-public-checkbox-disabled-border-color: var(
+    --ax-ui-stroke-secondary-default
+  );
+  --ax-public-checkbox-disabled-icon-color: var(
+    --ax-nav-button-icon-primary-disabled
+  );
 }
 
 .container {
@@ -69,7 +79,8 @@
   display: inline-block;
   position: relative;
   margin: 0;
-  border: var(--ax-public-checkbox-border-width) solid var(--ax-public-checkbox-border-color);
+  border: var(--ax-public-checkbox-border-width) solid
+    var(--ax-public-checkbox-border-color);
   background-color: white;
   cursor: pointer;
   vertical-align: middle;
