@@ -4,9 +4,9 @@ import { Modal as BaseModal } from '@mui/base/Modal';
 import { forwardRef, type ReactNode } from 'react';
 import { NavButton } from '@ui/components/button/nav-button/nav-button';
 import { Fade } from '@mui/material';
-import { WithIcon } from '@ui/shared/types/with-icon';
+import type { WithIcon } from '@ui/shared/types/with-icon';
 import { X } from '@phosphor-icons/react';
-import { FooterVariant } from './types';
+import type { FooterVariant } from './types';
 
 type ModalProps = Partial<WithIcon> & {
   /**

@@ -7,9 +7,9 @@ export function CheckboxDocs() {
     <ComponentPage
       preview={
         <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+          <Checkbox size="extra-small" />
           <Checkbox size="small" />
           <Checkbox size="medium" />
-          <Checkbox size="extra-small" />
           <Checkbox indeterminate />
           <Checkbox disabled />
           <Checkbox disabled checked />
