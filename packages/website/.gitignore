@@ -7,7 +7,7 @@
 # Generated files
 .docusaurus
 .cache-loader
-static/css/shadow-dom-styles.css
+static/css/*
 
 # Misc
 .DS_Store
