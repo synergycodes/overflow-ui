@@ -31,7 +31,7 @@ This issue occurs in `packages/website/src/components/component-utils/code-playg
 
 ## Problem with styles
 
-## Did you updated styles in `packages/ui`?
+### Did you updated styles in `packages/ui`?
 
 1. Run `pnpm ui dev` (refreshes build styles)
 2. Run `pnpm website clear` (removes cached styles in documentation)
@@ -54,7 +54,7 @@ But be aware that Axiom might need to expose those styles as part of its own bui
 
 Now all examples will be rendered without Shadow DOM. If the styles are still broken, it means they’re missing somewhere. If some classes start working as intended, it means the Shadow DOM styles were removing too much.
 
-##### How to find the patter of missing styles in postcss?
+#### How to find the patter of missing styles in postcss?
 
 1. Go to `packages/website/plugins/shadow-dom-css/postcss.ts`
 2. Add `console.log(inputFile)`
