@@ -72,8 +72,6 @@ const regenerateStylesFromCacheIfPossible = () => {
       for (const path of cachedPaths) {
         collectStylesFromFile(path, { shouldLogAction: false });
       }
-
-      console.log('   - Styles were regenerated based on the previous cache.');
     }
   } catch {
     console.log(
