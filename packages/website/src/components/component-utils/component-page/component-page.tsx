@@ -35,10 +35,10 @@ export function ComponentPage({
               <PropsList path={componentPath} />
               {cssPaths.length > 0 && (
                 <div>
-                    <h1>CSS Variables</h1>
-                    {cssPaths.map((path) => (
-                      <CSSVariablesList key={path} path={path} />
-                    ))}
+                  <h1>CSS Variables</h1>
+                  {cssPaths.map((path) => (
+                    <CSSVariablesList key={path} path={path} />
+                  ))}
                 </div>
               )}
             </div>

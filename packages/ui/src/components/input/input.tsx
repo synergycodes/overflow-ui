@@ -8,16 +8,23 @@ import './variables.css';
 import { Input as InputBase } from '@mui/base';
 import { InputProps } from './types';
 
-export function Input({ size = 'medium', ...props }: InputProps) {
+export function Input({
+  size = 'medium',
+  startAdornment = undefined,
+  endAdornment = undefined,
+  ...props
+}: InputProps) {
   return (
     <InputBase
+      {...props}
       slotProps={{
         root: {
           className: clsx(inputRootStyles['input-root'], inputSizeStyles[size]),
         },
         input: { className: clsx(inputStyles['input'], inputFontStyles[size]) },
       }}
-      {...props}
+      startAdornment={startAdornment}
+      endAdornment={endAdornment}
     ></InputBase>
   );
 }
