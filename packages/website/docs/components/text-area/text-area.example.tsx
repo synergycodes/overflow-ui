@@ -1,4 +1,6 @@
-function Page() {
+import { TextArea } from "@synergycodes/axiom";
+
+export function Example() {
   return (
     <TextArea
       size="medium"

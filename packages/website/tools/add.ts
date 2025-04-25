@@ -37,8 +37,8 @@ rl.question(
         componentFileName,
       },
     );
-    const jsxContent = useTemplate(
-      fs.readFileSync(path.join(templatesDir, 'jsx.txt'), 'utf-8'),
+    const tsxExampleContent = useTemplate(
+      fs.readFileSync(path.join(templatesDir, 'tsxExample.txt'), 'utf-8'),
       {
         componentFileName,
       },
@@ -51,17 +51,17 @@ rl.question(
     );
 
     const tsxPath = path.join(componentDocDir, `${componentFileName}-docs.tsx`);
-    const jsxPath = path.join(
+    const tsxExamplePath = path.join(
       componentDocDir,
-      `${componentFileName}.example.jsx`,
+      `${componentFileName}.example.tsx`,
     );
     const mdxPath = path.join(componentDocDir, `${componentFileName}.mdx`);
 
     fs.writeFileSync(tsxPath, tsxContent);
-    fs.writeFileSync(jsxPath, jsxContent);
+    fs.writeFileSync(tsxExamplePath, tsxExampleContent);
     fs.writeFileSync(mdxPath, mdxContent);
 
-    console.log(`Created files:\n- ${tsxPath}\n- ${jsxPath}\n- ${mdxPath}`);
+    console.log(`Created files:\n- ${tsxPath}\n- ${tsxExamplePath}\n- ${mdxPath}`);
 
     console.log(' ');
     console.log('Update props in those files.');

@@ -1,4 +1,6 @@
-function Page() {
+import { Separator } from '@synergycodes/axiom';
+
+export function Example() {
   return (
     <div>
       <h1 style={{ width: 'max-content' }}>Section 1</h1>

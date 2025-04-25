@@ -1,8 +1,8 @@
-import { Modal, LabelButton } from '@synergycodes/axiom';
-import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
-import exampleCode from '!!raw-loader!./modal.example.jsx';
 import { useState } from 'react';
 import { UserCircle } from '@phosphor-icons/react';
+import { Modal, LabelButton } from '@synergycodes/axiom';
+import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
+import exampleCode from '!!raw-loader!./modal.example.tsx';
 
 export function ModalDocs() {
   const [isOpen, setIsOpen] = useState(false);

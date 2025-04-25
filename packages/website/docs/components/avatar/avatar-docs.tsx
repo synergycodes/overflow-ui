@@ -1,6 +1,6 @@
 import { Avatar } from '@synergycodes/axiom';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
-import exampleCode from '!!raw-loader!./avatar.example.jsx';
+import exampleCode from '!!raw-loader!./avatar.example.tsx';
 
 export function AvatarDocs() {
   return (

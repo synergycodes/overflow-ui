@@ -1,5 +1,8 @@
-function Example() {
-  const [selectedOption, setSelectedOption] = React.useState('option1');
+import { Radio } from '@synergycodes/axiom';
+import { useState } from 'react';
+
+export function Example() {
+  const [selectedOption, setSelectedOption] = useState('option1');
 
   return (
     <div style={{ display: 'flex', gap: '8px' }}>

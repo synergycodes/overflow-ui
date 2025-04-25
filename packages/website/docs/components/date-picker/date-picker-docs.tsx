@@ -1,6 +1,6 @@
 import { DatePicker } from '@synergycodes/axiom';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
-import exampleCode from '!!raw-loader!./date-picker.example.jsx';
+import exampleCode from '!!raw-loader!./date-picker.example.tsx';
 
 export function DatePickerDocs() {
   return (

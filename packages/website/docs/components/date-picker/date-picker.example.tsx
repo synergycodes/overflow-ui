@@ -1,4 +1,6 @@
-function Page() {
+import { DatePicker } from '@synergycodes/axiom';
+
+export function Example() {
   return (
     <div
       style={{

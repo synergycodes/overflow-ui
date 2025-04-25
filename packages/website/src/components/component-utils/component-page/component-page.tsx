@@ -5,7 +5,7 @@ import { PropsList } from '../props-list/props-list';
 import { Playground } from '../code-playground/code-playground';
 import { Preview } from '../preview/preview';
 import { CSSVariablesList } from '../css-variables-list/css-variables-list';
-import {
+import type {
   AxiomCSSRelativePath,
   AxiomTSXRelativePath,
 } from '@site/generated/path-types';

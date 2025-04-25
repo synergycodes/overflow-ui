@@ -1,6 +1,6 @@
 import { TextArea } from '@synergycodes/axiom';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
-import exampleCode from '!!raw-loader!./text-area.example.jsx';
+import exampleCode from '!!raw-loader!./text-area.example.tsx';
 import classes from './text-area.module.css';
 
 export function TextAreaDocs() {

@@ -1,4 +1,6 @@
-function Page() {
+import { Select } from '@synergycodes/axiom';
+
+export function Example() {
   return (
     <Select
       items={[

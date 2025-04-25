@@ -1,4 +1,6 @@
-function Page() {
+import { Tooltip, TooltipTrigger } from '@synergycodes/axiom';
+
+export function Example() {
   return (
     <Tooltip>
       <TooltipTrigger>

@@ -1,0 +1,9 @@
+import { componentPascalName } from "@synergycodes/axiom";
+
+export function Example() {
+  return (
+    <componentPascalName
+        // TODO: add props
+    />
+  );
+}

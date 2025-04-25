@@ -1,10 +1,10 @@
+import { useState } from 'react';
 import { Radio } from '@synergycodes/axiom';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
-import exampleCode from '!!raw-loader!./radio.example.jsx';
-import React from 'react';
+import exampleCode from '!!raw-loader!./radio.example.tsx';
 
 export function RadioDocs() {
-  const [selectedOption, setSelectedOption] = React.useState('option1');
+  const [selectedOption, setSelectedOption] = useState('option1');
 
   return (
     <ComponentPage

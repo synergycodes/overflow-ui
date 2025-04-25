@@ -1,6 +1,6 @@
 import { Checkbox } from '@synergycodes/axiom';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
-import exampleCode from '!!raw-loader!./checkbox.example.jsx';
+import exampleCode from '!!raw-loader!./checkbox.example.tsx';
 
 export function CheckboxDocs() {
   return (

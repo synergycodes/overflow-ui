@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { LabelButton, Snackbar } from '@synergycodes/axiom';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
-import exampleCode from '!!raw-loader!./snackbar.example.jsx';
+import exampleCode from '!!raw-loader!./snackbar.example.tsx';
 
 export function SnackbarDocs() {
   const [showSnackbar, setShowSnackbar] = useState(false);

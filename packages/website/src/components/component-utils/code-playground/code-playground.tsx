@@ -6,11 +6,13 @@ type Props = {
 };
 
 export function Playground({ exampleCode }: Props) {
+  const exampleCodeWithoutImports = exampleCode.split('export').at(-1).trim();
+
   return (
     <>
       <ShadowDomWrapper>
         <CodeBlock live language="tsx">
-          {exampleCode}
+          {exampleCodeWithoutImports}
         </CodeBlock>
       </ShadowDomWrapper>
     </>
