@@ -337,8 +337,7 @@
       "name": "--ax-public-checkbox-focus-border-shadow"
     },
     {
-      "name": "--ax-public-checkbox-icon-color",
-      "comment": "missing token"
+      "name": "--ax-public-checkbox-icon-color"
     },
     {
       "name": "--ax-public-checkbox-icon-size-extra-small"
