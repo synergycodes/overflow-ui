@@ -25,7 +25,7 @@ Run `pnpm run doc` or `pnpm website dev`.
 If yes, you need to make sure that they are available for the Docusaurus processor `packages/website/src/theme/ReactLiveScope/index.tsx`. You can add a lib there to make it work.
 
 ### Did you use `export` more than once?
-Use export only **once** in the example snippet. Docusaurus playground doesn’t expect multiple exports; they are used by us to mute errors about unused component code and to identify where imports (which are also not supported by Docusaurus) are removed from the example body.
+Use `export` only **once** in the example snippet. The Docusaurus playground doesn’t support multiple exports. We use `export` keyword to suppress lint error about unused components and to mark the end of the imports list, which is also not supported by Docusaurus and would cause an error if passed further.
 
 This issue occurs in `packages/website/src/components/component-utils/code-playground/code-playground.tsx`.
 
@@ -49,8 +49,7 @@ But be aware that Axiom might need to expose those styles as part of its own bui
 
 #### How to check if Shadow DOM styles are the problem?
 
-1. Go to `packages/website/src/components/component-utils/shadow-dom-w
-rapper/shadow-dom-wrapper.tsx`
+1. Go to `packages/website/src/components/component-utils/shadow-dom-wrapper/shadow-dom-wrapper.tsx`
 2. Add `return children` above `return (<div ref={hostRef}>`
 
 Now all examples will be rendered without Shadow DOM. If the styles are still broken, it means they’re missing somewhere. If some classes start working as intended, it means the Shadow DOM styles were removing too much.
