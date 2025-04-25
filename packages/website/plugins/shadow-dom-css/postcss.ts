@@ -65,18 +65,18 @@ const regenerateStylesFromCacheIfPossible = () => {
     fs.readFileSync(cacheFile, 'utf8'),
   ) as unknown as string[];
 
-  try {
-    if (cachedPaths.length > 0) {
-      const collectStylesFromFile = createStylesCollector();
+  if (cachedPaths.length > 0) {
+    const collectStylesFromFile = createStylesCollector();
 
-      for (const path of cachedPaths) {
-        collectStylesFromFile(path, { shouldLogAction: false });
+    for (const path of cachedPaths) {
+      if (!fs.existsSync(path)) {
+        console.log('   - The cache file has changed (dependencies were updated). Please run: pnpm website clear, and try again.');
+
+        continue;
       }
+
+      collectStylesFromFile(path, { shouldLogAction: false });
     }
-  } catch {
-    console.log(
-      'The cache file has changed (dependencies were updated). Please run: pnpm website clear, and try again.',
-    );
   }
 };
 
