@@ -1,11 +1,12 @@
 import clsx from 'clsx';
+import { ExclamationMark } from '@phosphor-icons/react';
 import nodeStyles from './node-panel.module.css';
 import handleStyles from './handle.module.css';
 
 import {
   Children,
   isValidElement,
-  PropsWithChildren,
+  type PropsWithChildren,
   useMemo,
   memo,
 } from 'react';
@@ -14,6 +15,36 @@ type Props = {
   selected: boolean;
   children?: React.ReactNode;
 };
+
+export type ValidationStatus = 'invalid';
+
+const Status = memo(function Status({
+  validationStatus,
+  className,
+}: {
+  validationStatus?: ValidationStatus;
+  className?: string;
+}) {
+  if (!validationStatus) {
+    return null;
+  }
+
+  return (
+    <span
+      className={clsx(
+        nodeStyles['status-container'],
+        {
+          [nodeStyles['status-container--invalid']]:
+            validationStatus === 'invalid',
+        },
+        className,
+      )}
+    >
+      <ExclamationMark />
+    </span>
+  );
+  // return <>{validationStatus && <span>Test</span>}</>;
+});
 
 const Header = memo(function Header({
   children,
@@ -48,6 +79,7 @@ const Handles = memo(function Handles({
  * Node Panel component
  *
  * This component ensures a structured layout with optional slots:
+ * - `NodePanel.Status`: A container for the node's status (at most 1).
  * - `NodePanel.Header`: A container for the node's header (at most 1).
  * - `NodePanel.Content`: A container for the node's main content (at most 1).
  * - `NodePanel.Handles`: A container for action handles (at most 1).
@@ -55,9 +87,10 @@ const Handles = memo(function Handles({
  * **Usage Example**
  * ```tsx
  * <NodePanel.Root selected={true}>
- *   <NodePanel.Header>Header Content</NodeHeaderSlot>
- *   <NodePanel.Content>Main Content</NodeContentSlot>
- *   <NodePanel.Handles>Handles</NodeHandlesSlot>
+ *   <NodePanel.Status>Header Content</NodePanel.Status>
+ *   <NodePanel.Header>Header Content</NodePanel.Header>
+ *   <NodePanel.Content>Main Content</NodePanel.Content>
+ *   <NodePanel.Handles>Handles</NodePanel.Handles>
  * </NodePanel.Root>
  * ```
  *
@@ -71,16 +104,18 @@ const Handles = memo(function Handles({
  * - Passing an unknown child element
  */
 const Root = memo(function Root({ selected, children }: Props) {
-  const { header, content, handles } = useMemo(() => {
+  const { status, header, content, handles } = useMemo(() => {
     const childrenArray = Children.toArray(children);
 
+    const status = findChild(childrenArray, NodePanel.Status);
     const header = findChild(childrenArray, NodePanel.Header);
     const content = findChild(childrenArray, NodePanel.Content);
     const handles = findChild(childrenArray, NodePanel.Handles);
 
-    validateChildren(childrenArray, header, content, handles);
+    validateChildren(childrenArray, status, header, content, handles);
 
     return {
+      status,
       header,
       content,
       handles,
@@ -99,6 +134,7 @@ const Root = memo(function Root({ selected, children }: Props) {
           [nodeStyles['selected']]: selected,
         })}
       >
+        {status}
         {header}
         {content}
         {handles}
@@ -109,6 +145,7 @@ const Root = memo(function Root({ selected, children }: Props) {
 
 export const NodePanel = {
   Root,
+  Status,
   Header,
   Content,
   Handles,
@@ -117,6 +154,7 @@ export const NodePanel = {
 function findChild(
   childrenArray: ReturnType<typeof Children.toArray>,
   element:
+    | typeof NodePanel.Status
     | typeof NodePanel.Header
     | typeof NodePanel.Content
     | typeof NodePanel.Handles,
@@ -128,12 +166,13 @@ function findChild(
 
 function validateChildren(
   childrenArray: ReturnType<typeof Children.toArray>,
+  status: React.ReactNode,
   header: React.ReactNode,
   content: React.ReactNode,
   handles: React.ReactNode,
 ) {
   const totalValidChildren =
-    (header ? 1 : 0) + (content ? 1 : 0) + (handles ? 1 : 0);
+    (status ? 1 : 0) + (header ? 1 : 0) + (content ? 1 : 0) + (handles ? 1 : 0);
   const totalChildren = childrenArray.length;
 
   if (totalChildren > totalValidChildren) {
