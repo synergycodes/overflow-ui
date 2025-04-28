@@ -1,13 +1,19 @@
 import { Checkbox } from '@synergycodes/axiom';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
 import exampleCode from '!!raw-loader!./checkbox.example.jsx';
-import { useState } from 'react';
+import { useState, ChangeEvent } from 'react';
 
 export function CheckboxDocs() {
-  const [checked, setChecked] = useState([true, false]);
+  const [{ isSet, checked }, setIndeterminateState] = useState<{
+    isSet: boolean;
+    checked: boolean;
+  }>({
+    isSet: true,
+    checked: false,
+  });
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setChecked([event.target.checked, event.target.checked]);
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setIndeterminateState({ isSet: false, checked: event.target.checked });
   };
 
   return (
@@ -18,8 +24,8 @@ export function CheckboxDocs() {
           <Checkbox size="small" />
           <Checkbox size="medium" />
           <Checkbox
-            checked={checked[0] && checked[1]}
-            indeterminate={checked[0] !== checked[1]}
+            checked={!isSet && checked}
+            indeterminate={isSet}
             onChange={handleChange}
           />
           <Checkbox disabled />

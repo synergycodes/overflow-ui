@@ -1,8 +1,11 @@
 function Page() {
-  const [checked, setChecked] = useState([true, false]);
+  const [{ isSet, checked }, setIndeterminateState] = useState({
+    isSet: true,
+    checked: false,
+  });
 
   const handleChange = (event) => {
-    setChecked([event.target.checked, event.target.checked]);
+    setIndeterminateState({ isSet: false, checked: event.target.checked });
   };
 
   return (
@@ -11,8 +14,8 @@ function Page() {
       <Checkbox size="small" />
       <Checkbox size="medium" />
       <Checkbox
-        checked={checked[0] && checked[1]}
-        indeterminate={checked[0] !== checked[1]}
+        checked={!isSet && checked}
+        indeterminate={isSet}
         onChange={handleChange}
       />
       <Checkbox disabled />
