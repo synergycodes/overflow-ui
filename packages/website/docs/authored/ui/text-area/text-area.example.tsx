@@ -1,4 +1,4 @@
-import { TextArea } from "@synergycodes/axiom";
+import { TextArea } from '@synergycodes/axiom';
 
 export function Example() {
   return (

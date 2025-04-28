@@ -1,4 +1,4 @@
-import { Checkbox } from "@synergycodes/axiom";
+import { Checkbox } from '@synergycodes/axiom';
 
 export function Example() {
   return (

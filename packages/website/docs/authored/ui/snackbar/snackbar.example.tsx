@@ -1,5 +1,5 @@
-import { LabelButton, Snackbar } from "@synergycodes/axiom";
-import { useState } from "react";
+import { LabelButton, Snackbar } from '@synergycodes/axiom';
+import { useState } from 'react';
 
 export function Example() {
   const [open, setOpen] = useState(false);
