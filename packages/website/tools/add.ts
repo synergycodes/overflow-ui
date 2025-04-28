@@ -15,7 +15,7 @@ rl.question(
     const componentFileName = path.basename(componentPath);
     const componentDocDir = path.resolve(
       __dirname,
-      `../../website/docs/components/${componentFileName}`,
+      `../../website/docs/authored/ui/${componentFileName}`,
     );
 
     const isAlreadyAdded = fs.existsSync(componentDocDir);
