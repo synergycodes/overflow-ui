@@ -43,7 +43,6 @@ const Status = memo(function Status({
       <ExclamationMark />
     </span>
   );
-  // return <>{validationStatus && <span>Test</span>}</>;
 });
 
 const Header = memo(function Header({

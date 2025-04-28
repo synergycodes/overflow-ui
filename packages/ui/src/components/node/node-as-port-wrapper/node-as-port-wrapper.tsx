@@ -1,7 +1,13 @@
 import clsx from 'clsx';
 import './node-as-port.css';
 
-import { memo, PropsWithChildren, useCallback, useRef, useState } from 'react';
+import {
+  memo,
+  type PropsWithChildren,
+  useCallback,
+  useRef,
+  useState,
+} from 'react';
 
 type Position = 'left' | 'top' | 'right' | 'bottom';
 
