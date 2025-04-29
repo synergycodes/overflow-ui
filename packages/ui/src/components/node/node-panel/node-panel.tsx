@@ -19,13 +19,13 @@ type Props = {
 export type ValidationStatus = 'invalid';
 
 const Status = memo(function Status({
-  validationStatus,
+  status,
   className,
 }: {
-  validationStatus?: ValidationStatus;
+  status?: ValidationStatus;
   className?: string;
 }) {
-  if (!validationStatus) {
+  if (!status) {
     return null;
   }
 
@@ -35,7 +35,7 @@ const Status = memo(function Status({
         nodeStyles['status-container'],
         {
           [nodeStyles['status-container--invalid']]:
-            validationStatus === 'invalid',
+            status === 'invalid',
         },
         className,
       )}
