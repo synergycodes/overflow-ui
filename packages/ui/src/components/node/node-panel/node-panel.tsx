@@ -34,8 +34,7 @@ const Status = memo(function Status({
       className={clsx(
         nodeStyles['status-container'],
         {
-          [nodeStyles['status-container--invalid']]:
-            status === 'invalid',
+          [nodeStyles['status-container--invalid']]: status === 'invalid',
         },
         className,
       )}
