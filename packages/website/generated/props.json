@@ -416,6 +416,17 @@
             "raw": "DatePickerProps['defaultValue']"
           }
         },
+        "error": {
+          "defaultValue": {
+            "computed": false,
+            "value": "false"
+          },
+          "description": "Whether the date picker has an error",
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          }
+        },
         "inputSize": {
           "defaultValue": {
             "computed": false,
@@ -1205,6 +1216,17 @@
       "displayName": "Select",
       "methods": [],
       "props": {
+        "error": {
+          "defaultValue": {
+            "computed": false,
+            "value": "false"
+          },
+          "description": "Whether the select has an error",
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          }
+        },
         "items": {
           "description": "List of items to display in the select dropdown",
           "required": true,

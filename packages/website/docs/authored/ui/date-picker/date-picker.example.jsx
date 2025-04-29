@@ -21,6 +21,7 @@ function Page() {
         ]} // now - day after tomorrow
       />
       <DatePicker
+        error={false}
         type="multiple"
         defaultValue={[
           new Date(new Date().setDate(new Date().getDate() - 2)),

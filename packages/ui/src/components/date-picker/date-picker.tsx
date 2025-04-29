@@ -39,6 +39,10 @@ type Props = DatePickerProps & {
    * For the "default" is a single date, for the "range" [date, date]; and for the "multiple", an array of dates.
    */
   value?: DatePickerProps['value'];
+  /**
+   * Whether the date picker has an error
+   */
+  error?: boolean;
 };
 
 /**
@@ -52,6 +56,7 @@ export const DatePicker = forwardRef<HTMLButtonElement, Props>(
       placeholder = 'dd/mm/yyyy',
       type = 'default',
       value,
+      error = false,
       ...props
     },
     ref,
@@ -69,6 +74,9 @@ export const DatePicker = forwardRef<HTMLButtonElement, Props>(
             inputFontStyles[inputSize],
             inputSizeStyles[inputSize],
             styles['container'],
+            {
+              [styles['container--error']]: error,
+            },
           ),
         }}
       />
@@ -78,7 +86,7 @@ export const DatePicker = forwardRef<HTMLButtonElement, Props>(
 
 function normalizeDateValue(value: unknown): DateValue | undefined {
   if (!value) {
-    return null;
+    return undefined;
   }
 
   if (value instanceof Date) {

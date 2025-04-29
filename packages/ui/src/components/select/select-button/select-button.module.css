@@ -1,8 +1,19 @@
 :root {
   --ax-public-select-button-color: var(--ax-txt-primary-default);
-  --ax-public-select-button-border-color: var(--ax-input-stroke-primary-default);
-  --ax-public-select-button-border-color-focus: var(--ax-input-stroke-primary-focus);
-  --ax-public-select-button-color-disabled: var(--ax-input-stroke-primary-default);
+  --ax-public-select-button-border-color: var(
+    --ax-input-stroke-primary-default
+  );
+  --ax-public-select-button-border-color-focus: var(
+    --ax-input-stroke-primary-focus
+  );
+  --ax-public-select-button-color-disabled: var(
+    --ax-input-stroke-primary-default
+  );
+
+  --ax-public-select-button-background-color-error: var(--ax-input-bg-primary-error);
+  --ax-public-select-button-border-color-error: var(--ax-input-stroke-primary-error);
+  --ax-public-select-button-color-error: var(--ax-txt-error-default);
+
 }
 
 @layer ui.component {
@@ -24,6 +35,12 @@
 
     &:global(.base--expanded) {
       border-color: var(--ax-public-select-button-border-color-focus);
+    }
+
+    &.container--error {
+      background-color: var(--ax-public-select-button-background-color-error);
+      border-color: var(--ax-public-select-button-border-color-error);
+      color: var(--ax-public-select-button-color-error);
     }
 
     &:focus-visible {

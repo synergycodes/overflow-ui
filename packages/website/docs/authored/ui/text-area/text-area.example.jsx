@@ -1,6 +1,7 @@
 function Page() {
   return (
     <TextArea
+      error={false}
       size="medium"
       minRows={1}
       maxRows={5}

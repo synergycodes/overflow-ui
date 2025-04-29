@@ -50,7 +50,7 @@ const createStylesCollector = () => {
       fs.writeFileSync(stylesFile, collectedStyles, 'utf8');
       fs.writeFileSync(
         cacheFile,
-        JSON.stringify(collectedPaths, null, '\t'),
+        JSON.stringify(collectedPaths, null, 2),
         'utf8',
       );
     }

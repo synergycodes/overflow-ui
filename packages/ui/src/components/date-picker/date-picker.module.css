@@ -8,4 +8,10 @@
   &[aria-expanded='true'] {
     border-color: var(--ax-public-input-root-border-color-focus);
   }
+
+  &.container--error {
+    background-color: var(--ax-public-input-root-background-color-error);
+    border-color: var(--ax-public-input-root-border-color-error);
+    color: var(--ax-public-input-root-color-error);
+  }
 }

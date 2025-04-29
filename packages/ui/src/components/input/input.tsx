@@ -6,7 +6,7 @@ import inputSizeStyles from '@ui/shared/styles/input-size.module.css';
 import './variables.css';
 
 import { Input as InputBase } from '@mui/base';
-import { InputProps } from './types';
+import type { InputProps } from './types';
 
 export function Input({
   size = 'medium',
@@ -25,6 +25,6 @@ export function Input({
       }}
       startAdornment={startAdornment}
       endAdornment={endAdornment}
-    ></InputBase>
+    />
   );
 }

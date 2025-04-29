@@ -3,8 +3,8 @@ import listItemStyles from '@ui/shared/styles/list-item.module.css';
 import listItemSize from '@ui/shared/styles/list-item-size.module.css';
 
 import { Option } from '@mui/base';
-import { SelectItem } from '../types';
-import { ItemSize } from '@ui/shared/types/item-size';
+import type { SelectItem } from '../types';
+import type { ItemSize } from '@ui/shared/types/item-size';
 
 type SelectOptionProps = SelectItem & {
   size?: ItemSize;

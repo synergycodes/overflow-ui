@@ -6,12 +6,12 @@ import inputSizeStyles from '@ui/shared/styles/input-size.module.css';
 import style from './select.module.css';
 
 import { Select as SelectBase } from '@mui/base/Select';
-import { UseSelectParameters } from '@mui/base';
+import type { UseSelectParameters } from '@mui/base';
 import { SelectValue } from './select-value/select-value';
 import { SelectButton } from './select-button/select-button';
 import { SelectOption } from './select-option/select-option';
-import { SelectItem } from './types';
-import { ItemSize } from '../../shared/types/item-size';
+import type { SelectItem } from './types';
+import type { ItemSize } from '../../shared/types/item-size';
 import { Separator } from '../separator/separator';
 
 export type SelectBaseProps = UseSelectParameters<string | number | null> & {
@@ -27,6 +27,10 @@ export type SelectBaseProps = UseSelectParameters<string | number | null> & {
    * List of items to display in the select dropdown
    */
   items: SelectItem[];
+  /**
+   * Whether the select has an error
+   */
+  error?: boolean;
 };
 
 /**
@@ -36,12 +40,16 @@ export function Select({
   size = 'medium',
   items,
   placeholder,
+  error = false,
   ...props
 }: SelectBaseProps) {
   const slotProps = {
     root: {
       className: clsx(
         selectButtonStyles['container'],
+        {
+          [selectButtonStyles['container--error']]: error,
+        },
         inputFontStyles[size],
         inputSizeStyles[size],
       ),
