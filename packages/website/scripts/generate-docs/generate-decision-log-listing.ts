@@ -20,7 +20,7 @@ type DecisionLogEntry = {
 
 async function setupOutputDir() {
   await fs.rm(OUTPUT_DIR, { recursive: true, force: true });
-  await fs.mkdir(OUTPUT_DIR);
+  await fs.mkdir(OUTPUT_DIR, { recursive: true });
 }
 
 async function findDecisionLogs(

@@ -124,102 +124,6 @@
       }
     }
   ],
-  "../ui/src/components/checkbox/checkbox.tsx": [
-    {
-      "description": "A customizable checkbox component that supports three states: checked, unchecked, and indeterminate. It can be used in forms or as a standalone control.",
-      "methods": [],
-      "displayName": "Checkbox",
-      "props": {
-        "size": {
-          "required": false,
-          "tsType": {
-            "name": "SelectorSize"
-          },
-          "description": "The size of the checkbox",
-          "defaultValue": {
-            "value": "'medium'",
-            "computed": false
-          }
-        },
-        "indeterminate": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": "Whether the checkbox is in an indeterminate state"
-        },
-        "checked": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": "Whether the checkbox is checked"
-        }
-      }
-    }
-  ],
-  "../ui/src/components/input/input.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Input",
-      "props": {
-        "size": {
-          "required": false,
-          "tsType": {
-            "name": "ItemSize"
-          },
-          "description": "Specifies the size of the input field.\nCan be 'small', 'medium', or 'large'.",
-          "defaultValue": {
-            "value": "'medium'",
-            "computed": false
-          }
-        }
-      }
-    }
-  ],
-  "../ui/src/components/menu/menu-item.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "MenuItem",
-      "props": {
-        "destructive": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": ""
-        },
-        "onClick": {
-          "required": false,
-          "tsType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "() => void",
-            "signature": {
-              "arguments": [],
-              "return": {
-                "name": "void"
-              }
-            }
-          },
-          "description": ""
-        },
-        "size": {
-          "required": false,
-          "tsType": {
-            "name": "ItemSize"
-          },
-          "description": "",
-          "defaultValue": {
-            "value": "'medium'",
-            "computed": false
-          }
-        }
-      }
-    }
-  ],
   "../ui/src/components/date-picker/date-picker.tsx": [
     {
       "description": "Component for selecting a date with customizable format and placeholder",
@@ -285,6 +189,68 @@
             "raw": "DatePickerProps['value']"
           },
           "description": "Controlled value for the selected date\n\nFor the \"default\" is a single date, for the \"range\" [date, date]; and for the \"multiple\", an array of dates."
+        }
+      }
+    }
+  ],
+  "../ui/src/components/input/input.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Input",
+      "props": {
+        "size": {
+          "required": false,
+          "tsType": {
+            "name": "ItemSize"
+          },
+          "description": "Specifies the size of the input field.\nCan be 'small', 'medium', or 'large'.",
+          "defaultValue": {
+            "value": "'medium'",
+            "computed": false
+          }
+        }
+      }
+    }
+  ],
+  "../ui/src/components/menu/menu-item.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "MenuItem",
+      "props": {
+        "destructive": {
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": ""
+        },
+        "onClick": {
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "() => void",
+            "signature": {
+              "arguments": [],
+              "return": {
+                "name": "void"
+              }
+            }
+          },
+          "description": ""
+        },
+        "size": {
+          "required": false,
+          "tsType": {
+            "name": "ItemSize"
+          },
+          "description": "",
+          "defaultValue": {
+            "value": "'medium'",
+            "computed": false
+          }
         }
       }
     }
@@ -389,6 +355,143 @@
             "name": "ReactElement"
           },
           "description": "The trigger element that will open the menu when clicked.\nThis element will be wrapped in a button with appropriate ARIA attributes."
+        }
+      }
+    }
+  ],
+  "../ui/src/components/modal/modal.tsx": [
+    {
+      "description": "A modal dialog component that appears on top of the main content,",
+      "methods": [],
+      "displayName": "Modal",
+      "props": {
+        "title": {
+          "required": true,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "Title displayed in the modal header"
+        },
+        "subtitle": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "Optional subtitle displayed below the title"
+        },
+        "children": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": "Content to be displayed in the modal body"
+        },
+        "footer": {
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          },
+          "description": "Content to be displayed in the modal footer"
+        },
+        "size": {
+          "required": false,
+          "tsType": {
+            "name": "union",
+            "raw": "'regular' | 'large'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'regular'"
+              },
+              {
+                "name": "literal",
+                "value": "'large'"
+              }
+            ]
+          },
+          "description": "Size variant of the modal",
+          "defaultValue": {
+            "value": "'regular'",
+            "computed": false
+          }
+        },
+        "footerVariant": {
+          "required": false,
+          "tsType": {
+            "name": "union",
+            "raw": "'integrated' | 'separated'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'integrated'"
+              },
+              {
+                "name": "literal",
+                "value": "'separated'"
+              }
+            ]
+          },
+          "description": "Variant of the footer styling",
+          "defaultValue": {
+            "value": "'integrated'",
+            "computed": false
+          }
+        },
+        "open": {
+          "required": true,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": "Controls the visibility of the modal"
+        },
+        "onClose": {
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "() => void",
+            "signature": {
+              "arguments": [],
+              "return": {
+                "name": "void"
+              }
+            }
+          },
+          "description": "Callback function called when the modal is closed"
+        }
+      }
+    }
+  ],
+  "../ui/src/components/checkbox/checkbox.tsx": [
+    {
+      "description": "A customizable checkbox component that supports three states: checked, unchecked, and indeterminate. It can be used in forms or as a standalone control.",
+      "methods": [],
+      "displayName": "Checkbox",
+      "props": {
+        "size": {
+          "required": false,
+          "tsType": {
+            "name": "SelectorSize"
+          },
+          "description": "The size of the checkbox",
+          "defaultValue": {
+            "value": "'medium'",
+            "computed": false
+          }
+        },
+        "indeterminate": {
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": "Whether the checkbox is in an indeterminate state"
+        },
+        "checked": {
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": "Whether the checkbox is checked"
         }
       }
     }
@@ -645,116 +748,6 @@
       }
     }
   ],
-  "../ui/src/components/separator/separator.tsx": [
-    {
-      "description": "A visual separator component that creates a horizontal line to divide content.",
-      "methods": [],
-      "displayName": "Separator"
-    }
-  ],
-  "../ui/src/components/modal/modal.tsx": [
-    {
-      "description": "A modal dialog component that appears on top of the main content,",
-      "methods": [],
-      "displayName": "Modal",
-      "props": {
-        "title": {
-          "required": true,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "Title displayed in the modal header"
-        },
-        "subtitle": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "Optional subtitle displayed below the title"
-        },
-        "children": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": "Content to be displayed in the modal body"
-        },
-        "footer": {
-          "required": false,
-          "tsType": {
-            "name": "ReactNode"
-          },
-          "description": "Content to be displayed in the modal footer"
-        },
-        "size": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "'regular' | 'large'",
-            "elements": [
-              {
-                "name": "literal",
-                "value": "'regular'"
-              },
-              {
-                "name": "literal",
-                "value": "'large'"
-              }
-            ]
-          },
-          "description": "Size variant of the modal",
-          "defaultValue": {
-            "value": "'regular'",
-            "computed": false
-          }
-        },
-        "footerVariant": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "'integrated' | 'separated'",
-            "elements": [
-              {
-                "name": "literal",
-                "value": "'integrated'"
-              },
-              {
-                "name": "literal",
-                "value": "'separated'"
-              }
-            ]
-          },
-          "description": "Variant of the footer styling",
-          "defaultValue": {
-            "value": "'integrated'",
-            "computed": false
-          }
-        },
-        "open": {
-          "required": true,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": "Controls the visibility of the modal"
-        },
-        "onClose": {
-          "required": false,
-          "tsType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "() => void",
-            "signature": {
-              "arguments": [],
-              "return": {
-                "name": "void"
-              }
-            }
-          },
-          "description": "Callback function called when the modal is closed"
-        }
-      }
-    }
-  ],
   "../ui/src/components/snackbar/snackbar.tsx": [
     {
       "description": "A Snackbar component that displays brief messages about app processes.\nThe snackbar appears at the bottom of the screen and automatically disappears after a few seconds.",
@@ -830,6 +823,104 @@
             }
           },
           "description": "Callback fired when the snackbar is closed"
+        }
+      }
+    }
+  ],
+  "../ui/src/components/switch/switch.tsx": [
+    {
+      "description": "A Switch component that allows users to toggle between two states, such as on and off.\nTypically used for settings or preferences, it provides immediate visual feedback.",
+      "methods": [],
+      "displayName": "Switch",
+      "props": {
+        "size": {
+          "required": false,
+          "tsType": {
+            "name": "SelectorSize"
+          },
+          "description": "Size of the switch component",
+          "defaultValue": {
+            "value": "'medium'",
+            "computed": false
+          }
+        },
+        "styles": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "Custom styles to apply to the switch"
+        },
+        "thumbChildren": {
+          "required": false,
+          "tsType": {
+            "name": "ReactReactNode",
+            "raw": "React.ReactNode"
+          },
+          "description": "Custom content for the thumb of the switch"
+        },
+        "trackChildren": {
+          "required": false,
+          "tsType": {
+            "name": "ReactReactNode",
+            "raw": "React.ReactNode"
+          },
+          "description": "Custom content for the track of the switch"
+        },
+        "className": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "Custom class name for the switch component"
+        },
+        "checked": {
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": "Whether the switch is checked or not"
+        },
+        "disabled": {
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": "Whether the switch is disabled"
+        },
+        "onChange": {
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "(checked: boolean, event: ChangeEvent<HTMLInputElement>) => void",
+            "signature": {
+              "arguments": [
+                {
+                  "type": {
+                    "name": "boolean"
+                  },
+                  "name": "checked"
+                },
+                {
+                  "type": {
+                    "name": "ChangeEvent",
+                    "elements": [
+                      {
+                        "name": "HTMLInputElement"
+                      }
+                    ],
+                    "raw": "ChangeEvent<HTMLInputElement>"
+                  },
+                  "name": "event"
+                }
+              ],
+              "return": {
+                "name": "void"
+              }
+            }
+          },
+          "description": "Callback function when the switch state changes"
         }
       }
     }
@@ -986,102 +1077,11 @@
       }
     }
   ],
-  "../ui/src/components/switch/switch.tsx": [
+  "../ui/src/components/separator/separator.tsx": [
     {
-      "description": "A Switch component that allows users to toggle between two states, such as on and off.\nTypically used for settings or preferences, it provides immediate visual feedback.",
+      "description": "A visual separator component that creates a horizontal line to divide content.",
       "methods": [],
-      "displayName": "Switch",
-      "props": {
-        "size": {
-          "required": false,
-          "tsType": {
-            "name": "SelectorSize"
-          },
-          "description": "Size of the switch component",
-          "defaultValue": {
-            "value": "'medium'",
-            "computed": false
-          }
-        },
-        "styles": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "Custom styles to apply to the switch"
-        },
-        "thumbChildren": {
-          "required": false,
-          "tsType": {
-            "name": "ReactReactNode",
-            "raw": "React.ReactNode"
-          },
-          "description": "Custom content for the thumb of the switch"
-        },
-        "trackChildren": {
-          "required": false,
-          "tsType": {
-            "name": "ReactReactNode",
-            "raw": "React.ReactNode"
-          },
-          "description": "Custom content for the track of the switch"
-        },
-        "className": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "Custom class name for the switch component"
-        },
-        "checked": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": "Whether the switch is checked or not"
-        },
-        "disabled": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": "Whether the switch is disabled"
-        },
-        "onChange": {
-          "required": false,
-          "tsType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "(checked: boolean, event: ChangeEvent<HTMLInputElement>) => void",
-            "signature": {
-              "arguments": [
-                {
-                  "type": {
-                    "name": "boolean"
-                  },
-                  "name": "checked"
-                },
-                {
-                  "type": {
-                    "name": "ChangeEvent",
-                    "elements": [
-                      {
-                        "name": "HTMLInputElement"
-                      }
-                    ],
-                    "raw": "ChangeEvent<HTMLInputElement>"
-                  },
-                  "name": "event"
-                }
-              ],
-              "return": {
-                "name": "void"
-              }
-            }
-          },
-          "description": "Callback function when the switch state changes"
-        }
-      }
+      "displayName": "Separator"
     }
   ],
   "../ui/src/components/tooltip/tooltip-content.tsx": [
@@ -1109,6 +1109,26 @@
           "description": "TooltipType determines the color type of the tooltip",
           "defaultValue": {
             "value": "'default'",
+            "computed": false
+          }
+        }
+      }
+    }
+  ],
+  "../ui/src/components/tooltip/tooltip-trigger.tsx": [
+    {
+      "description": "Tooltips trigger is the the element that toggles the tooltip",
+      "methods": [],
+      "displayName": "TooltipTrigger",
+      "props": {
+        "asChild": {
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": "`asChild` allows the user to pass any element as the anchor",
+          "defaultValue": {
+            "value": "false",
             "computed": false
           }
         }
@@ -1174,95 +1194,6 @@
       }
     }
   ],
-  "../ui/src/components/tooltip/tooltip-trigger.tsx": [
-    {
-      "description": "Tooltips trigger is the the element that toggles the tooltip",
-      "methods": [],
-      "displayName": "TooltipTrigger",
-      "props": {
-        "asChild": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": "`asChild` allows the user to pass any element as the anchor",
-          "defaultValue": {
-            "value": "false",
-            "computed": false
-          }
-        }
-      }
-    }
-  ],
-  "../ui/src/components/input/clear-button/clear-button.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "ClearButton",
-      "props": {
-        "onClick": {
-          "required": true,
-          "tsType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "() => void",
-            "signature": {
-              "arguments": [],
-              "return": {
-                "name": "void"
-              }
-            }
-          },
-          "description": ""
-        }
-      }
-    }
-  ],
-  "../ui/src/components/button/base-button/base-button.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "BaseButton",
-      "props": {
-        "tooltip": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "tooltipType": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "'default' | 'blue'",
-            "elements": [
-              {
-                "name": "literal",
-                "value": "'default'"
-              },
-              {
-                "name": "literal",
-                "value": "'blue'"
-              }
-            ]
-          },
-          "description": "",
-          "defaultValue": {
-            "value": "'default'",
-            "computed": false
-          }
-        },
-        "size": {
-          "defaultValue": {
-            "value": "'medium'",
-            "computed": false
-          },
-          "required": false
-        }
-      }
-    }
-  ],
   "../ui/src/components/button/icon-button/icon-button.tsx": [
     {
       "description": "",
@@ -1311,6 +1242,51 @@
         "shape": {
           "defaultValue": {
             "value": "''",
+            "computed": false
+          },
+          "required": false
+        }
+      }
+    }
+  ],
+  "../ui/src/components/button/base-button/base-button.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "BaseButton",
+      "props": {
+        "tooltip": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "tooltipType": {
+          "required": false,
+          "tsType": {
+            "name": "union",
+            "raw": "'default' | 'blue'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'default'"
+              },
+              {
+                "name": "literal",
+                "value": "'blue'"
+              }
+            ]
+          },
+          "description": "",
+          "defaultValue": {
+            "value": "'default'",
+            "computed": false
+          }
+        },
+        "size": {
+          "defaultValue": {
+            "value": "'medium'",
             "computed": false
           },
           "required": false
@@ -1498,6 +1474,30 @@
                 "value": "'bottom'"
               }
             ]
+          },
+          "description": ""
+        }
+      }
+    }
+  ],
+  "../ui/src/components/input/clear-button/clear-button.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "ClearButton",
+      "props": {
+        "onClick": {
+          "required": true,
+          "tsType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "() => void",
+            "signature": {
+              "arguments": [],
+              "return": {
+                "name": "void"
+              }
+            }
           },
           "description": ""
         }
@@ -1857,62 +1857,6 @@
       }
     }
   ],
-  "../ui/src/components/snackbar/components/icon.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Icon",
-      "props": {
-        "isCentered": {
-          "required": true,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": ""
-        },
-        "variant": {
-          "required": true,
-          "tsType": {
-            "name": "literal",
-            "value": "`${SnackbarType}`"
-          },
-          "description": ""
-        }
-      }
-    }
-  ],
-  "../ui/src/components/snackbar/components/message.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Message",
-      "props": {
-        "title": {
-          "required": true,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "subtitle": {
-          "required": true,
-          "tsType": {
-            "name": "union",
-            "raw": "string | undefined",
-            "elements": [
-              {
-                "name": "string"
-              },
-              {
-                "name": "undefined"
-              }
-            ]
-          },
-          "description": ""
-        }
-      }
-    }
-  ],
   "../ui/src/components/switch/icon-switch/icon-switch.tsx": [
     {
       "description": "",
@@ -2032,6 +1976,62 @@
             }
           },
           "description": "Callback function when the switch state changes"
+        }
+      }
+    }
+  ],
+  "../ui/src/components/snackbar/components/message.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Message",
+      "props": {
+        "title": {
+          "required": true,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "subtitle": {
+          "required": true,
+          "tsType": {
+            "name": "union",
+            "raw": "string | undefined",
+            "elements": [
+              {
+                "name": "string"
+              },
+              {
+                "name": "undefined"
+              }
+            ]
+          },
+          "description": ""
+        }
+      }
+    }
+  ],
+  "../ui/src/components/snackbar/components/icon.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Icon",
+      "props": {
+        "isCentered": {
+          "required": true,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": ""
+        },
+        "variant": {
+          "required": true,
+          "tsType": {
+            "name": "literal",
+            "value": "`${SnackbarType}`"
+          },
+          "description": ""
         }
       }
     }

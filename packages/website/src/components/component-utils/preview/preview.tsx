@@ -19,7 +19,7 @@ export function Preview({ children, className }: Props) {
   ]);
 
   return (
-    <div className={clsx(styles[className], styles['preview-container'])}>
+    <div className={clsx(styles['preview-container'], className)}>
       <ShadowDomWrapper>
         <div>{children}</div>
       </ShadowDomWrapper>
