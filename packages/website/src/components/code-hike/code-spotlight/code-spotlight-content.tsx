@@ -35,7 +35,7 @@ export function CodeScrollContent({
   const allCode = [before, code, after, renderCode].join('\n');
 
   return (
-    <div className={styles.content}>
+    <div className={styles['content']}>
       <CodeBlock metastring="noInline" live language="tsx">
         {allCode}
       </CodeBlock>
@@ -46,7 +46,7 @@ export function CodeScrollContent({
               key={i}
               index={i}
               selectOn={['click']}
-              className={styles.step}
+              className={styles['step']}
             >
               <h2 className={styles['step-title']}>{step.title}</h2>
               <div className={styles['step-description']}>{step.children}</div>
@@ -68,7 +68,7 @@ function CodeStep({ codeblock }: { codeblock: HighlightedCode }) {
     <Pre
       code={codeblock}
       handlers={[tokenTransitions, wordWrap]}
-      className={styles.code}
+      className={styles['code']}
     />
   );
 }

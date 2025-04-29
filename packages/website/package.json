@@ -15,7 +15,8 @@
     "typecheck": "tsc",
     "generate-docs": "tsx ./scripts/generate-docs/generate-docs.ts",
     "prepare": "pnpm generate-docs",
-    "doc-add": "tsx tools/add.ts"
+    "doc-add": "tsx tools/add.ts",
+    "lint": "eslint"
   },
   "dependencies": {
     "@docusaurus/core": "3.7.0",

@@ -23,7 +23,7 @@ export function CodeSpotlight(props: Props) {
   const { steps } = parseProps(props, CodeSpotlightSchema);
 
   return (
-    <SelectionProvider className={styles.container}>
+    <SelectionProvider className={styles['container']}>
       <CodeScrollContent {...props} steps={steps} />
     </SelectionProvider>
   );
