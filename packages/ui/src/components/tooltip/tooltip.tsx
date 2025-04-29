@@ -1,5 +1,7 @@
 import { TooltipOptions, useTooltip } from './use-tooltip';
 import { createContext, useContext, ReactNode } from 'react';
+import { TooltipContent } from './tooltip-content';
+import { TooltipTrigger } from './tooltip-trigger';
 
 type ContextType = ReturnType<typeof useTooltip> | null;
 const TooltipContext = createContext<ContextType>(null);
@@ -32,3 +34,6 @@ export function Tooltip({ children, ...options }: Props) {
     </TooltipContext.Provider>
   );
 }
+
+Tooltip.Content = TooltipContent;
+Tooltip.Trigger = TooltipTrigger;

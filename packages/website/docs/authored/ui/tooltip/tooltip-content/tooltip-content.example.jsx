@@ -1,12 +1,12 @@
 function Page() {
   return (
     <Tooltip open={true}>
-      <TooltipTrigger>
+      <Tooltip.Trigger>
         <span>Tooltip</span>
-      </TooltipTrigger>
-      <TooltipContent>
+      </Tooltip.Trigger>
+      <Tooltip.Content>
         <span>Tooltip Content Component</span>
-      </TooltipContent>
+      </Tooltip.Content>
     </Tooltip>
   );
 }
