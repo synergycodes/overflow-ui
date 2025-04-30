@@ -1,9 +1,9 @@
 function Page() {
   return (
     <Tooltip>
-      <TooltipTrigger>
+      <Tooltip.Trigger>
         <span>Tooltip trigger</span>
-      </TooltipTrigger>
+      </Tooltip.Trigger>
     </Tooltip>
   );
 }
