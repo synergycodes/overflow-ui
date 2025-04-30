@@ -337,10 +337,6 @@
       "name": "--ax-public-checkbox-focus-border-shadow"
     },
     {
-<<<<<<< HEAD
-=======
-      "comment": "missing token",
->>>>>>> 4dc4239 (Enable sorting for generated props file)
       "name": "--ax-public-checkbox-icon-color"
     },
     {

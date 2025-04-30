@@ -10,7 +10,7 @@ import { NavButton } from '../button/nav-button/nav-button';
 export type AccordionProps = React.HTMLAttributes<HTMLDivElement> &
   WithIcon & {
     /**
-     * Text displayed in the header lol
+     * Text displayed in the header
      */
     label: string;
 

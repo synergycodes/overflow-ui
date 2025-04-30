@@ -35,6 +35,9 @@ importers:
       prettier:
         specifier: ^3.5.3
         version: 3.5.3
+      remeda:
+        specifier: ^2.21.2
+        version: 2.21.2
       tsx:
         specifier: ^4.19.3
         version: 4.19.3
@@ -212,6 +215,9 @@ importers:
       '@types/react':
         specifier: ^19.0.10
         version: 19.0.10
+      chalk:
+        specifier: ^5.4.1
+        version: 5.4.1
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
