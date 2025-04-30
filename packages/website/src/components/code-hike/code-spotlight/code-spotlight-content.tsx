@@ -21,7 +21,7 @@ type Props = z.infer<typeof CodeSpotlightSchema> & {
   };
 };
 
-export function CodeScrollContent({
+export function CodeSpotlightContent({
   previewComponentName,
   injectedCode: { before = '', after = '' } = {},
   steps,

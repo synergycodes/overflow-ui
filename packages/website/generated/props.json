@@ -71,6 +71,40 @@
       }
     }
   ],
+  "../ui/src/components/checkbox/checkbox.tsx": [
+    {
+      "description": "A customizable checkbox component that supports three states: checked, unchecked, and indeterminate. It can be used in forms or as a standalone control.",
+      "methods": [],
+      "displayName": "Checkbox",
+      "props": {
+        "size": {
+          "required": false,
+          "tsType": {
+            "name": "SelectorSize"
+          },
+          "description": "The size of the checkbox",
+          "defaultValue": {
+            "value": "'medium'",
+            "computed": false
+          }
+        },
+        "indeterminate": {
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": "Whether the checkbox is in an indeterminate state"
+        },
+        "checked": {
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": "Whether the checkbox is checked"
+        }
+      }
+    }
+  ],
   "../ui/src/components/avatar/avatar.tsx": [
     {
       "description": "Component for displaying user avatars with various sizes",
@@ -118,95 +152,6 @@
           "description": "Size of the circle container",
           "defaultValue": {
             "value": "'extra-large'",
-            "computed": false
-          }
-        }
-      }
-    }
-  ],
-  "../ui/src/components/date-picker/date-picker.tsx": [
-    {
-      "description": "Component for selecting a date with customizable format and placeholder",
-      "methods": [],
-      "displayName": "DatePicker",
-      "props": {
-        "inputSize": {
-          "required": false,
-          "tsType": {
-            "name": "ItemSize"
-          },
-          "description": "",
-          "defaultValue": {
-            "value": "'medium'",
-            "computed": false
-          }
-        },
-        "valueFormat": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "Format string to control how the selected date is displayed\n(e.g., 'yyyy-MM-dd')",
-          "defaultValue": {
-            "value": "'DD/MM/YYYY'",
-            "computed": false
-          }
-        },
-        "placeholder": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": "Placeholder text to show when no date is selected",
-          "defaultValue": {
-            "value": "'dd/mm/yyyy'",
-            "computed": false
-          }
-        },
-        "type": {
-          "required": false,
-          "tsType": {
-            "name": "DatePickerType"
-          },
-          "description": "Picker type",
-          "defaultValue": {
-            "value": "'default'",
-            "computed": false
-          }
-        },
-        "defaultValue": {
-          "required": false,
-          "tsType": {
-            "name": "intersection['defaultValue']",
-            "raw": "DatePickerProps['defaultValue']"
-          },
-          "description": "Default date value when the component is initially rendered.\n\nFor the \"default\" is a single date, for the \"range\" [date, date]; and for the \"multiple\", an array of dates."
-        },
-        "value": {
-          "required": false,
-          "tsType": {
-            "name": "intersection['value']",
-            "raw": "DatePickerProps['value']"
-          },
-          "description": "Controlled value for the selected date\n\nFor the \"default\" is a single date, for the \"range\" [date, date]; and for the \"multiple\", an array of dates."
-        }
-      }
-    }
-  ],
-  "../ui/src/components/input/input.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Input",
-      "props": {
-        "size": {
-          "required": false,
-          "tsType": {
-            "name": "ItemSize"
-          },
-          "description": "Specifies the size of the input field.\nCan be 'small', 'medium', or 'large'.",
-          "defaultValue": {
-            "value": "'medium'",
             "computed": false
           }
         }
@@ -359,6 +304,95 @@
       }
     }
   ],
+  "../ui/src/components/input/input.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Input",
+      "props": {
+        "size": {
+          "required": false,
+          "tsType": {
+            "name": "ItemSize"
+          },
+          "description": "Specifies the size of the input field.\nCan be 'small', 'medium', or 'large'.",
+          "defaultValue": {
+            "value": "'medium'",
+            "computed": false
+          }
+        }
+      }
+    }
+  ],
+  "../ui/src/components/date-picker/date-picker.tsx": [
+    {
+      "description": "Component for selecting a date with customizable format and placeholder",
+      "methods": [],
+      "displayName": "DatePicker",
+      "props": {
+        "inputSize": {
+          "required": false,
+          "tsType": {
+            "name": "ItemSize"
+          },
+          "description": "",
+          "defaultValue": {
+            "value": "'medium'",
+            "computed": false
+          }
+        },
+        "valueFormat": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "Format string to control how the selected date is displayed\n(e.g., 'yyyy-MM-dd')",
+          "defaultValue": {
+            "value": "'DD/MM/YYYY'",
+            "computed": false
+          }
+        },
+        "placeholder": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": "Placeholder text to show when no date is selected",
+          "defaultValue": {
+            "value": "'dd/mm/yyyy'",
+            "computed": false
+          }
+        },
+        "type": {
+          "required": false,
+          "tsType": {
+            "name": "DatePickerType"
+          },
+          "description": "Picker type",
+          "defaultValue": {
+            "value": "'default'",
+            "computed": false
+          }
+        },
+        "defaultValue": {
+          "required": false,
+          "tsType": {
+            "name": "intersection['defaultValue']",
+            "raw": "DatePickerProps['defaultValue']"
+          },
+          "description": "Default date value when the component is initially rendered.\n\nFor the \"default\" is a single date, for the \"range\" [date, date]; and for the \"multiple\", an array of dates."
+        },
+        "value": {
+          "required": false,
+          "tsType": {
+            "name": "intersection['value']",
+            "raw": "DatePickerProps['value']"
+          },
+          "description": "Controlled value for the selected date\n\nFor the \"default\" is a single date, for the \"range\" [date, date]; and for the \"multiple\", an array of dates."
+        }
+      }
+    }
+  ],
   "../ui/src/components/modal/modal.tsx": [
     {
       "description": "A modal dialog component that appears on top of the main content,",
@@ -458,40 +492,6 @@
             }
           },
           "description": "Callback function called when the modal is closed"
-        }
-      }
-    }
-  ],
-  "../ui/src/components/checkbox/checkbox.tsx": [
-    {
-      "description": "A customizable checkbox component that supports three states: checked, unchecked, and indeterminate. It can be used in forms or as a standalone control.",
-      "methods": [],
-      "displayName": "Checkbox",
-      "props": {
-        "size": {
-          "required": false,
-          "tsType": {
-            "name": "SelectorSize"
-          },
-          "description": "The size of the checkbox",
-          "defaultValue": {
-            "value": "'medium'",
-            "computed": false
-          }
-        },
-        "indeterminate": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": "Whether the checkbox is in an indeterminate state"
-        },
-        "checked": {
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": "Whether the checkbox is checked"
         }
       }
     }
@@ -746,6 +746,13 @@
           "description": "List of items to display in the select dropdown"
         }
       }
+    }
+  ],
+  "../ui/src/components/separator/separator.tsx": [
+    {
+      "description": "A visual separator component that creates a horizontal line to divide content.",
+      "methods": [],
+      "displayName": "Separator"
     }
   ],
   "../ui/src/components/snackbar/snackbar.tsx": [
@@ -1077,13 +1084,6 @@
       }
     }
   ],
-  "../ui/src/components/separator/separator.tsx": [
-    {
-      "description": "A visual separator component that creates a horizontal line to divide content.",
-      "methods": [],
-      "displayName": "Separator"
-    }
-  ],
   "../ui/src/components/tooltip/tooltip-content.tsx": [
     {
       "description": "Tooltips Content is the component that pops out when the tooltip is open.",
@@ -1194,6 +1194,51 @@
       }
     }
   ],
+  "../ui/src/components/button/base-button/base-button.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "BaseButton",
+      "props": {
+        "tooltip": {
+          "required": false,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "tooltipType": {
+          "required": false,
+          "tsType": {
+            "name": "union",
+            "raw": "'default' | 'blue'",
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'default'"
+              },
+              {
+                "name": "literal",
+                "value": "'blue'"
+              }
+            ]
+          },
+          "description": "",
+          "defaultValue": {
+            "value": "'default'",
+            "computed": false
+          }
+        },
+        "size": {
+          "defaultValue": {
+            "value": "'medium'",
+            "computed": false
+          },
+          "required": false
+        }
+      }
+    }
+  ],
   "../ui/src/components/button/icon-button/icon-button.tsx": [
     {
       "description": "",
@@ -1242,51 +1287,6 @@
         "shape": {
           "defaultValue": {
             "value": "''",
-            "computed": false
-          },
-          "required": false
-        }
-      }
-    }
-  ],
-  "../ui/src/components/button/base-button/base-button.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "BaseButton",
-      "props": {
-        "tooltip": {
-          "required": false,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "tooltipType": {
-          "required": false,
-          "tsType": {
-            "name": "union",
-            "raw": "'default' | 'blue'",
-            "elements": [
-              {
-                "name": "literal",
-                "value": "'default'"
-              },
-              {
-                "name": "literal",
-                "value": "'blue'"
-              }
-            ]
-          },
-          "description": "",
-          "defaultValue": {
-            "value": "'default'",
-            "computed": false
-          }
-        },
-        "size": {
-          "defaultValue": {
-            "value": "'medium'",
             "computed": false
           },
           "required": false
@@ -1438,6 +1438,30 @@
       }
     }
   ],
+  "../ui/src/components/input/clear-button/clear-button.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "ClearButton",
+      "props": {
+        "onClick": {
+          "required": true,
+          "tsType": {
+            "name": "signature",
+            "type": "function",
+            "raw": "() => void",
+            "signature": {
+              "arguments": [],
+              "return": {
+                "name": "void"
+              }
+            }
+          },
+          "description": ""
+        }
+      }
+    }
+  ],
   "../ui/src/components/node/node-as-port-wrapper/node-as-port-wrapper.tsx": [
     {
       "description": "",
@@ -1474,30 +1498,6 @@
                 "value": "'bottom'"
               }
             ]
-          },
-          "description": ""
-        }
-      }
-    }
-  ],
-  "../ui/src/components/input/clear-button/clear-button.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "ClearButton",
-      "props": {
-        "onClick": {
-          "required": true,
-          "tsType": {
-            "name": "signature",
-            "type": "function",
-            "raw": "() => void",
-            "signature": {
-              "arguments": [],
-              "return": {
-                "name": "void"
-              }
-            }
           },
           "description": ""
         }
@@ -1857,6 +1857,62 @@
       }
     }
   ],
+  "../ui/src/components/snackbar/components/icon.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Icon",
+      "props": {
+        "isCentered": {
+          "required": true,
+          "tsType": {
+            "name": "boolean"
+          },
+          "description": ""
+        },
+        "variant": {
+          "required": true,
+          "tsType": {
+            "name": "literal",
+            "value": "`${SnackbarType}`"
+          },
+          "description": ""
+        }
+      }
+    }
+  ],
+  "../ui/src/components/snackbar/components/message.tsx": [
+    {
+      "description": "",
+      "methods": [],
+      "displayName": "Message",
+      "props": {
+        "title": {
+          "required": true,
+          "tsType": {
+            "name": "string"
+          },
+          "description": ""
+        },
+        "subtitle": {
+          "required": true,
+          "tsType": {
+            "name": "union",
+            "raw": "string | undefined",
+            "elements": [
+              {
+                "name": "string"
+              },
+              {
+                "name": "undefined"
+              }
+            ]
+          },
+          "description": ""
+        }
+      }
+    }
+  ],
   "../ui/src/components/switch/icon-switch/icon-switch.tsx": [
     {
       "description": "",
@@ -1976,62 +2032,6 @@
             }
           },
           "description": "Callback function when the switch state changes"
-        }
-      }
-    }
-  ],
-  "../ui/src/components/snackbar/components/message.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Message",
-      "props": {
-        "title": {
-          "required": true,
-          "tsType": {
-            "name": "string"
-          },
-          "description": ""
-        },
-        "subtitle": {
-          "required": true,
-          "tsType": {
-            "name": "union",
-            "raw": "string | undefined",
-            "elements": [
-              {
-                "name": "string"
-              },
-              {
-                "name": "undefined"
-              }
-            ]
-          },
-          "description": ""
-        }
-      }
-    }
-  ],
-  "../ui/src/components/snackbar/components/icon.tsx": [
-    {
-      "description": "",
-      "methods": [],
-      "displayName": "Icon",
-      "props": {
-        "isCentered": {
-          "required": true,
-          "tsType": {
-            "name": "boolean"
-          },
-          "description": ""
-        },
-        "variant": {
-          "required": true,
-          "tsType": {
-            "name": "literal",
-            "value": "`${SnackbarType}`"
-          },
-          "description": ""
         }
       }
     }
