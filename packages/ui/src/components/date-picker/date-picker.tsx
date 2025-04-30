@@ -78,7 +78,7 @@ export const DatePicker = forwardRef<HTMLButtonElement, Props>(
 
 function normalizeDateValue(value: unknown): DateValue | undefined {
   if (!value) {
-    return undefined;
+    return null;
   }
 
   if (value instanceof Date) {
