@@ -10,7 +10,7 @@ export function SimpleInput() {
       value={value}
       onChange={(e) => setValue(e.target.value)}
       style={{
-        minWidth: '200px'
+        minWidth: '200px',
       }}
     />
   );
