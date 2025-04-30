@@ -8,7 +8,7 @@ type ShadowDomWrapperProps = {
   children: React.ReactNode;
 };
 
-const ShadowDomWrapper: React.FC<ShadowDomWrapperProps> = ({ children }) => {
+function ShadowDomWrapper({ children }: ShadowDomWrapperProps) {
   const hostRef = useRef<HTMLDivElement | null>(null);
   const [shadowRoot, setShadowRoot] = useState<ShadowRoot | null>(null);
 
@@ -16,6 +16,7 @@ const ShadowDomWrapper: React.FC<ShadowDomWrapperProps> = ({ children }) => {
     if (hostRef.current && !shadowRoot) {
       const shadow = hostRef.current.attachShadow({ mode: 'open' });
 
+      // eslint-disable-next-line no-restricted-syntax
       if (demoStyles.includes('Mocked file run')) {
         console.error(
           '🌘 Shadow DOM plugin: The styles for the Shadow DOM plugin are missing.',
@@ -38,6 +39,6 @@ const ShadowDomWrapper: React.FC<ShadowDomWrapperProps> = ({ children }) => {
       {shadowRoot ? ReactDOM.createPortal(children, shadowRoot) : null}
     </div>
   );
-};
+}
 
 export default ShadowDomWrapper;

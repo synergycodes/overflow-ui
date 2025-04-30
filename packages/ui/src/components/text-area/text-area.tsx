@@ -87,7 +87,7 @@ export function TextArea({
   return (
     <div className={containerClasses}>
       <TextareaAutosize
-        value={value}
+        value={value || ''}
         defaultValue={defaultValue}
         placeholder={placeholder}
         minRows={minRows}

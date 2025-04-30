@@ -1,4 +1,4 @@
-import { Tooltip, TooltipContent, TooltipTrigger } from '@synergycodes/axiom';
+import { Tooltip } from '@synergycodes/axiom';
 
 export function Example() {
   return (
@@ -6,12 +6,12 @@ export function Example() {
       style={{ display: 'flex', justifyContent: 'center', maxWidth: '200px' }}
     >
       <Tooltip>
-        <TooltipTrigger>
+        <Tooltip.Trigger>
           <span>Tooltip</span>
-        </TooltipTrigger>
-        <TooltipContent>
+        </Tooltip.Trigger>
+        <Tooltip.Content>
           <span>Tooltip</span>
-        </TooltipContent>
+        </Tooltip.Content>
       </Tooltip>
     </div>
   );

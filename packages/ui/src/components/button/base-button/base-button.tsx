@@ -8,8 +8,6 @@ import { forwardRef } from 'react';
 import { prepareForSlot } from '@mui/base';
 import { Tooltip } from '@ui/components/tooltip/tooltip';
 import { Size } from '@ui/shared/types/size';
-import { TooltipTrigger } from '../../tooltip/tooltip-trigger';
-import { TooltipContent } from '../../tooltip/tooltip-content';
 
 type Props = {
   /** Class name meant to be used by parent components using <BaseButton /> directly */
@@ -51,8 +49,8 @@ export const BaseButton = prepareForSlot(
 
       return tooltip && !disabled ? (
         <Tooltip>
-          <TooltipTrigger>{button}</TooltipTrigger>
-          <TooltipContent tooltipType={tooltipType}>{tooltip}</TooltipContent>
+          <Tooltip.Trigger>{button}</Tooltip.Trigger>
+          <Tooltip.Content tooltipType={tooltipType}>{tooltip}</Tooltip.Content>
         </Tooltip>
       ) : (
         button

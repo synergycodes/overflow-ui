@@ -1,8 +1,25 @@
+import { useState, type ChangeEvent } from 'react';
 import { Checkbox } from '@synergycodes/axiom';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
 import exampleCode from '!!raw-loader!./checkbox.example.tsx';
 
 export function CheckboxDocs() {
+  const [{ shouldShownIndeterminate, checked }, setIndeterminateState] =
+    useState<{
+      shouldShownIndeterminate: boolean;
+      checked: boolean;
+    }>({
+      shouldShownIndeterminate: true,
+      checked: false,
+    });
+
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setIndeterminateState({
+      shouldShownIndeterminate: false,
+      checked: event.target.checked,
+    });
+  };
+
   return (
     <ComponentPage
       preview={
@@ -10,7 +27,11 @@ export function CheckboxDocs() {
           <Checkbox size="extra-small" />
           <Checkbox size="small" />
           <Checkbox size="medium" />
-          <Checkbox indeterminate />
+          <Checkbox
+            checked={!shouldShownIndeterminate && checked}
+            indeterminate={shouldShownIndeterminate}
+            onChange={handleChange}
+          />
           <Checkbox disabled />
           <Checkbox disabled checked />
           <Checkbox disabled indeterminate />
