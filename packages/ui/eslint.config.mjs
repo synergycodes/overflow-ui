@@ -1,13 +1,10 @@
 import baseEslintConfig from '../../eslint.config.mjs';
 import pluginReact from 'eslint-plugin-react';
 import pluginHooks from 'eslint-plugin-react-hooks';
+import { defineConfig } from 'eslint/config';
 
 /** @type {import('eslint').Linter.RulesRecord} */
 const rules = {
-  '@typescript-eslint/no-unused-vars': [
-    'error',
-    { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
-  ],
   'react/display-name': 'off',
   'react/prop-types': 'off',
   'react/function-component-definition': [
@@ -19,12 +16,20 @@ const rules = {
 };
 
 /** @type {import('eslint').Linter.Config[]} */
-export default [
-  ...baseEslintConfig,
-  { files: ['**/*.{ts,tsx}'] },
-  pluginReact.configs.flat.recommended,
-  pluginReact.configs.flat['jsx-runtime'],
+export default defineConfig([
+  baseEslintConfig,
   {
+    ...pluginReact.configs.flat.recommended,
+    ...pluginReact.configs.flat['jsx-runtime'],
+    settings: {
+      react: {
+        version: 'detect',
+      },
+    },
+  },
+  {
+    name: 'Axiom / UI',
+    files: ['**/*.{ts,tsx}'],
     plugins: {
       'react-hooks': pluginHooks,
     },
@@ -32,10 +37,5 @@ export default [
       ...pluginHooks.configs.recommended.rules,
       ...rules,
     },
-    settings: {
-      react: {
-        version: 'detect',
-      },
-    },
   },
-];
+]);

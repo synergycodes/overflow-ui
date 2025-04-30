@@ -1,4 +1,4 @@
-import { getUISourcePath } from '../src/components/component-utils/get-ui-source-path';
+import { getUISourcePath } from '../../src/components/component-utils/get-ui-source-path';
 import { glob } from 'glob';
 import { writeFile } from 'node:fs/promises';
 import path from 'node:path';
@@ -41,5 +41,3 @@ function pathsToType(paths: string[]) {
       .join(' | ') || '""'
   );
 }
-
-generatePathTypes();
