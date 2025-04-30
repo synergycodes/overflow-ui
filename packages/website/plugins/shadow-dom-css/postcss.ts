@@ -70,7 +70,9 @@ const regenerateStylesFromCacheIfPossible = () => {
 
     for (const path of cachedPaths) {
       if (!fs.existsSync(path)) {
-        console.log('   - The cache file has changed (dependencies were updated). Please run: pnpm website clear, and try again.');
+        console.log(
+          '   - The cache file has changed (dependencies were updated). Please run: pnpm website clear, and try again.',
+        );
 
         continue;
       }
