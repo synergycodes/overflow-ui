@@ -1,12 +1,15 @@
 import type { Plugin } from '@docusaurus/types';
 import { generateDocs } from '../../scripts/generate-docs/generate-docs';
 import path from 'node:path';
+import { pluginLogger } from '../plugin-logger';
 
 export default function () {
   return {
     name: 'doc-extract-plugin',
     loadContent: async () => {
-      return generateDocs();
+      await generateDocs();
+
+      pluginLogger.taskSuccess('Generating docs');
     },
     getPathsToWatch: () => {
       const uiPath = path.resolve('..', 'ui');

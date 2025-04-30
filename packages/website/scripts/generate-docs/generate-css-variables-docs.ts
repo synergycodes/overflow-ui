@@ -3,16 +3,20 @@ import { getUISourcePath } from '../../src/components/component-utils/get-ui-sou
 import { join, dirname, relative, sep } from 'node:path';
 import { glob } from 'glob';
 import { CSSVariableData } from '@site/src/types';
-import { getCSSVariableData } from '../css-utils';
+import { getCSSVariableData } from '../utils/css';
 import { cwd } from 'node:process';
-import { toPrettyJson } from '../json-utils';
+import { toPrettyJson } from '../utils/json';
+import { createScript } from '../utils/create-script';
 
 const OUTPUT_FILE_PATH = join(cwd(), 'generated', 'css-variables.json');
 
-export async function generateCSSVariables() {
-  const srcPath = getUISourcePath();
-  await processCssFiles(srcPath);
-}
+export const generateCSSVariables = createScript(
+  'CSS Variable Lists',
+  async function () {
+    const srcPath = getUISourcePath();
+    await processCssFiles(srcPath);
+  },
+);
 
 async function processCssFiles(srcPath: string) {
   const cssFiles = (await glob(join(srcPath, '**', '*.css'), {
@@ -43,8 +47,4 @@ async function generateJsonOutput(
   await mkdir(outputDir, { recursive: true });
 
   await writeFile(outputFilePath, toPrettyJson(variables));
-
-  console.log(
-    `Public CSS variables data have been successfully written to ${outputFilePath}`,
-  );
 }

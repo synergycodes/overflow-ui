@@ -2,6 +2,7 @@ import { rm, readdir, mkdir, readFile, copyFile } from 'node:fs/promises';
 import { join, basename } from 'node:path';
 import matter from 'gray-matter';
 import { cwd } from 'node:process';
+import { createScript } from '../utils/create-script';
 
 const UI_DIR_PATH = join(cwd(), '..', 'ui');
 const OUTPUT_DIR = join(
@@ -12,12 +13,26 @@ const OUTPUT_DIR = join(
 );
 const TARGET_SUFFIX = 'decision-log.md';
 
-type DecisionLogEntry = {
-  originalPath: string;
-  filename: string;
-  title?: string;
-  date?: string;
-};
+export const generateDecisionLogList = createScript(
+  'Decision Log Entries',
+  async function () {
+    await setupOutputDir();
+    await mkdir(OUTPUT_DIR, { recursive: true });
+
+    const logs = await findDecisionLogs(UI_DIR_PATH);
+    const listing: string[] = [];
+
+    for (const [index, { originalPath, title }] of logs.entries()) {
+      const fileName = `${basename(originalPath)}.md`;
+
+      const destPath = join(OUTPUT_DIR, fileName);
+      await copyFile(originalPath, destPath);
+
+      const displayTitle = title || `Decision Log #${index + 1}`;
+      listing.push(`- [${displayTitle}](./${fileName})`);
+    }
+  },
+);
 
 async function setupOutputDir() {
   await rm(OUTPUT_DIR, { recursive: true, force: true });
@@ -51,22 +66,9 @@ async function findDecisionLogs(
   return logs;
 }
 
-export async function generateDecisionLogList() {
-  await setupOutputDir();
-  await mkdir(OUTPUT_DIR, { recursive: true });
-
-  const logs = await findDecisionLogs(UI_DIR_PATH);
-  const listing: string[] = [];
-
-  for (const [index, { originalPath, title }] of logs.entries()) {
-    const fileName = `${basename(originalPath)}.md`;
-
-    const destPath = join(OUTPUT_DIR, fileName);
-    await copyFile(originalPath, destPath);
-
-    const displayTitle = title || `Decision Log #${index + 1}`;
-    listing.push(`- [${displayTitle}](./${fileName})`);
-  }
-
-  console.log(`✅ Collected ${logs.length} decision logs to ${OUTPUT_DIR}`);
-}
+type DecisionLogEntry = {
+  originalPath: string;
+  filename: string;
+  title?: string;
+  date?: string;
+};

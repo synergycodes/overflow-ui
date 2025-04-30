@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import type { PluginCreator } from 'postcss';
+import { pluginLogger } from '../plugin-logger';
 
 type ShadowDomCSSOptions = {
   filesToExtractPatterns: string[];
@@ -16,10 +17,10 @@ const ShadowDomCSS: PluginCreator<ShadowDomCSSOptions> = ({
   let stylesToExtract = '';
 
   if (!didAnnounceBeingAdded) {
-    console.log('');
-    console.log('🌘 Shadow DOM plugin is active.');
-    console.log(' - To force refresh styles run: pnpm website clear (before)');
-    console.log('');
+    pluginLogger.info(
+      '🌘 Shadow DOM plugin is active.\nTo force refresh styles run: pnpm website clear (before)',
+    );
+
     didAnnounceBeingAdded = true;
   }
 
@@ -45,15 +46,9 @@ const ShadowDomCSS: PluginCreator<ShadowDomCSSOptions> = ({
       );
 
       if (shouldExtract) {
-        console.log('');
-        console.log(
-          '🌘 Shadow DOM plugin is preparing styles for the Shadow DOM.',
+        pluginLogger.info(
+          `🌘 Shadow DOM plugin is preparing styles for the Shadow DOM.\n - extracting: ${root.source.input.file.replace(path.resolve(__dirname, '../../../..'), '')}`,
         );
-
-        console.log(
-          ` - extracting: ${root.source.input.file.replace(path.resolve(__dirname, '../../../..'), '')}`,
-        );
-        console.log('');
 
         const fileContent = fs.existsSync(root.source.input.file)
           ? fs.readFileSync(root.source.input.file, 'utf8')
