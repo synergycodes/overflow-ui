@@ -1,15 +1,13 @@
-import { promises as fs } from 'fs';
+import { mkdir, writeFile } from 'node:fs/promises';
 import { getUISourcePath } from '../../src/components/component-utils/get-ui-source-path';
-import path from 'node:path';
+import { join, dirname, relative, sep } from 'node:path';
 import { glob } from 'glob';
 import { CSSVariableData } from '@site/src/types';
 import { getCSSVariableData } from '../css-utils';
+import { cwd } from 'node:process';
+import { toPrettyJson } from '../json-utils';
 
-const OUTPUT_FILE_PATH = path.join(
-  process.cwd(),
-  'generated',
-  'css-variables.json',
-);
+const OUTPUT_FILE_PATH = join(cwd(), 'generated', 'css-variables.json');
 
 export async function generateCSSVariables() {
   const srcPath = getUISourcePath();
@@ -17,7 +15,7 @@ export async function generateCSSVariables() {
 }
 
 async function processCssFiles(srcPath: string) {
-  const cssFiles = (await glob(path.join(srcPath, '**', '*.css'), {
+  const cssFiles = (await glob(join(srcPath, '**', '*.css'), {
     windowsPathsNoEscape: true,
   })) as string[];
 
@@ -26,7 +24,7 @@ async function processCssFiles(srcPath: string) {
   const variables: Record<string, CSSVariableData[]> = {};
 
   for (const cssPath of sortedCssFiles) {
-    const uiPath = path.relative(srcPath, cssPath).split(path.sep).join('/');
+    const uiPath = relative(srcPath, cssPath).split(sep).join('/');
     variables[uiPath] = await extractVariables(cssPath);
   }
 
@@ -41,10 +39,10 @@ async function generateJsonOutput(
   variables: Record<string, CSSVariableData[]>,
   outputFilePath: string,
 ) {
-  const outputDir = path.dirname(outputFilePath);
-  await fs.mkdir(outputDir, { recursive: true });
+  const outputDir = dirname(outputFilePath);
+  await mkdir(outputDir, { recursive: true });
 
-  await fs.writeFile(outputFilePath, JSON.stringify(variables, null, 2));
+  await writeFile(outputFilePath, toPrettyJson(variables));
 
   console.log(
     `Public CSS variables data have been successfully written to ${outputFilePath}`,
