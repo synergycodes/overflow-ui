@@ -1,9 +1,10 @@
-import fs from 'node:fs/promises';
-import path from 'node:path';
+import { rm, readdir, mkdir, readFile, copyFile } from 'node:fs/promises';
+import { join, basename } from 'node:path';
 import matter from 'gray-matter';
+import { cwd } from 'node:process';
 
-const UI_DIR_PATH = path.join(process.cwd(), '..', 'ui');
-const OUTPUT_DIR = path.join(
+const UI_DIR_PATH = join(cwd(), '..', 'ui');
+const OUTPUT_DIR = join(
   process.cwd(),
   'docs',
   'generated-docs',
@@ -19,23 +20,23 @@ type DecisionLogEntry = {
 };
 
 async function setupOutputDir() {
-  await fs.rm(OUTPUT_DIR, { recursive: true, force: true });
-  await fs.mkdir(OUTPUT_DIR, { recursive: true });
+  await rm(OUTPUT_DIR, { recursive: true, force: true });
+  await mkdir(OUTPUT_DIR, { recursive: true });
 }
 
 async function findDecisionLogs(
   dir: string,
   logs: DecisionLogEntry[] = [],
 ): Promise<DecisionLogEntry[]> {
-  const entries = await fs.readdir(dir, { withFileTypes: true });
+  const entries = await readdir(dir, { withFileTypes: true });
 
   for (const entry of entries) {
-    const fullPath = path.join(dir, entry.name);
+    const fullPath = join(dir, entry.name);
 
     if (entry.isDirectory()) {
       await findDecisionLogs(fullPath, logs);
     } else if (entry.isFile() && entry.name.endsWith(TARGET_SUFFIX)) {
-      const content = await fs.readFile(fullPath, 'utf-8');
+      const content = await readFile(fullPath, 'utf-8');
       const { data } = matter(content);
 
       logs.push({
@@ -52,21 +53,18 @@ async function findDecisionLogs(
 
 export async function generateDecisionLogList() {
   await setupOutputDir();
+  await mkdir(OUTPUT_DIR, { recursive: true });
 
   const logs = await findDecisionLogs(UI_DIR_PATH);
-
-  await fs.mkdir(OUTPUT_DIR, { recursive: true });
-
   const listing: string[] = [];
 
-  for (const [index, log] of logs.entries()) {
-    const safeTitle = path.basename(log.originalPath);
-    const fileName = `${safeTitle}.md`;
+  for (const [index, { originalPath, title }] of logs.entries()) {
+    const fileName = `${basename(originalPath)}.md`;
 
-    const destPath = path.join(OUTPUT_DIR, fileName);
-    await fs.copyFile(log.originalPath, destPath);
+    const destPath = join(OUTPUT_DIR, fileName);
+    await copyFile(originalPath, destPath);
 
-    const displayTitle = log.title || `Decision Log #${index + 1}`;
+    const displayTitle = title || `Decision Log #${index + 1}`;
     listing.push(`- [${displayTitle}](./${fileName})`);
   }
 

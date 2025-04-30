@@ -1,5 +1,6 @@
 import globals from 'globals';
 import pluginJs from '@eslint/js';
+import pluginNode from 'eslint-plugin-n';
 import tsEslint from 'typescript-eslint';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import { defineConfig, globalIgnores } from 'eslint/config';
@@ -21,13 +22,14 @@ export const rules = {
       destructuredArrayIgnorePattern: '^_',
     },
   ],
+  'node/prefer-node-protocol': 'error',
 };
 
 /** @type {import('eslint').Linter.Config[]} */
 export default defineConfig([
   pluginJs.configs.recommended,
   eslintConfigPrettier,
-  ...tsEslint.configs.recommended,
+  tsEslint.configs.recommended,
   globalIgnores(['node_modules', '.git', 'dist']),
   {
     name: 'Axiom / Root',
@@ -36,5 +38,8 @@ export default defineConfig([
       globals: globals.browser,
     },
     rules,
+    plugins: {
+      node: pluginNode,
+    },
   },
 ]);

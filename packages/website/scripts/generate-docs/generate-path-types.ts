@@ -1,9 +1,10 @@
 import { getUISourcePath } from '../../src/components/component-utils/get-ui-source-path';
 import { glob } from 'glob';
 import { writeFile } from 'node:fs/promises';
-import path from 'node:path';
+import { join, sep } from 'node:path';
+import { cwd } from 'node:process';
 
-const OUTPUT_FILE = path.join(process.cwd(), 'generated', 'path-types.ts');
+const OUTPUT_FILE = join(cwd(), 'generated', 'path-types.ts');
 
 export async function generatePathTypes() {
   const cssGlob = getUISourcePath('components/**/*.css');
@@ -28,7 +29,7 @@ function pathsToType(paths: string[]) {
     paths
       .toSorted()
       .map((filePath) => {
-        const normalizedPath = filePath.split(path.sep).join('/');
+        const normalizedPath = filePath.split(sep).join('/');
         const srcIndex = normalizedPath.indexOf('ui/src/');
         if (srcIndex === -1) {
           return null;

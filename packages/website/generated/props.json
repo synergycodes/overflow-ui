@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
 <<<<<<< HEAD
   "../ui/src/components/checkbox/checkbox.tsx": [
@@ -6461,3 +6462,6 @@
 >>>>>>> fb3ca13 (Clean up)
   ]
 }
+=======
+{}
+>>>>>>> 4dc4239 (Enable sorting for generated props file)
