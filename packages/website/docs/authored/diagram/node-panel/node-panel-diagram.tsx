@@ -9,7 +9,7 @@ import {
 import { NodePanel } from '@synergycodes/axiom';
 import { useCallback, useMemo, useState } from 'react';
 
-// Basic node
+// Basic node just as a fallback, it is replaced by playground later.
 function Node({ selected }) {
   return <NodePanel.Root selected={selected}>Node fallback</NodePanel.Root>;
 }
