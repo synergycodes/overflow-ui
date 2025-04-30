@@ -1,4 +1,4 @@
-# How to Run a Local Instance of @synergycodes/axiom
+# How to run a local instance of @synergycodes/axiom
 
 1. Clone the repository: `git clone https://github.com/synergycodes/axiom.git`
 2. Install dependencies: `pnpm install`
