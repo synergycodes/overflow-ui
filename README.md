@@ -66,7 +66,7 @@ or a derived value used by the selected component:
 }
 ```
 
-### Axiom layers of philosophy
+### Axiom css layers
 
 Axiom uses [CSS layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) to separate its styles from yours. By default, CSS styles outside of any layer take precedence over what Axiom defines, so your styles will always win the specificity war. You can customize Axiom components with simple `input {}`.
 
