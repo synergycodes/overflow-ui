@@ -9,21 +9,13 @@ import {
 import { NodePanel } from '@synergycodes/axiom';
 import { useCallback, useMemo, useState } from 'react';
 
-export function Example() {
-  const [isConnecting, setConnecting] = useState(false);
+// Basic node
+function Node({ selected }) {
+  return <NodePanel.Root selected={selected}>Node fallback</NodePanel.Root>;
+}
 
-  const Node = useCallback(({ selected }) => {
-    return (
-      <NodePanel.Root selected={selected}>
-        <NodePanel.Header>
-          <p>User Node</p>
-        </NodePanel.Header>
-        <NodePanel.Content>
-          <p>Content</p>
-        </NodePanel.Content>
-      </NodePanel.Root>
-    );
-  }, []);
+export function Page() {
+  const [isConnecting, setConnecting] = useState(false);
 
   const [nodes, setNodes] = useState<NodeType[]>([
     {
@@ -44,7 +36,7 @@ export function Example() {
     () => ({
       custom: Node,
     }),
-    [Node],
+    [],
   );
 
   const [edges, setEdges] = useState([]);

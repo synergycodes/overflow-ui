@@ -32,7 +32,11 @@ export function CodeSpotlightContent({
   const renderCode = previewComponentName
     ? `render(${previewComponentName})`
     : '';
-  const allCode = [before, code, after, renderCode].join('\n');
+
+  // For more information about "export"
+  // check packages/website/src/components/component-utils/code-playground/code-playground.tsx
+  const afterWithoutExport = after.split('export').at(-1);
+  const allCode = [before, code, afterWithoutExport, renderCode].join('\n');
 
   return (
     <div className={styles['content']}>
