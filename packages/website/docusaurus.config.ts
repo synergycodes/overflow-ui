@@ -22,7 +22,7 @@ const config = {
   url: 'https://synergycodes.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/axiom',
+  baseUrl: '/',
 
   organizationName: 'Synergy Codes',
   projectName: 'axiom',
