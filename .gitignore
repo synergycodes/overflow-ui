@@ -18,7 +18,7 @@
 **/.log*
 
 # Package ignores
-packages/website/docs/generated-docs
+packages/website/docs/generated-docs/*
 packages/website/.docusaurus
 packages/website/.cache-loader
 packages/website/static/css/*
