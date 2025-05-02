@@ -16,7 +16,7 @@
     "generate-docs": "tsx ./scripts/generate-docs/generate-docs-script.ts",
     "prepare": "pnpm generate-docs",
     "doc-add": "tsx tools/add.ts",
-    "lint": "eslint"
+    "lint": "eslint && eslint --config ./docs/code-examples/eslint.config.mjs"
   },
   "dependencies": {
     "@docusaurus/core": "3.7.0",

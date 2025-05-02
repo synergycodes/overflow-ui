@@ -1,13 +1,13 @@
 // eslint-disable-next-line no-restricted-syntax
 import ReactLiveScope from '../../src/theme/ReactLiveScope';
 
-type Scope = typeof ReactLiveScope;
-
 declare global {
   const {
     // React Core
     useState,
     useEffect,
+    useMemo,
+    useCallback,
 
     // UI Components
     Avatar,
@@ -39,6 +39,9 @@ declare global {
     // React Flow
     ReactFlow,
     ReactFlowProvider,
+    applyEdgeChanges,
+    applyNodeChanges,
+    addEdge,
     // @ts-expect-error - Still provides good type hints
   } = ReactLiveScope;
 }

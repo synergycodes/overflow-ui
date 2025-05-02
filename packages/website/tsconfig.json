@@ -6,5 +6,5 @@
     "target": "ES2023",
     "lib": ["ES2023", "DOM"]
   },
-  "exclude": [".docusaurus", "build"]
+  "exclude": [".docusaurus", "build", "docs/code-examples"]
 }
