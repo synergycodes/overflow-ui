@@ -4,8 +4,16 @@ import { generatePathTypes } from './generate-path-types';
 import { generateTypeDocs } from './generate-type-docs';
 
 export async function generateDocs() {
-  await generatePathTypes();
-  await generateCSSVariables();
-  await generateTypeDocs();
-  await generateDecisionLogList();
+  const docsScripts = [
+    generatePathTypes,
+    generateCSSVariables,
+    generateTypeDocs,
+    generateDecisionLogList,
+  ];
+
+  for (const script of docsScripts) {
+    await script();
+  }
 }
+
+generateDocs();

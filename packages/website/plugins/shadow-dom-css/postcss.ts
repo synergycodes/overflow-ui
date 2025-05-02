@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import type { PluginCreator } from 'postcss';
+import { pluginLogger } from '../plugin-logger';
 
 const outputDir = path.resolve(__dirname, '../../static/css');
 const stylesFile = path.join(outputDir, 'shadow-dom-styles.css');
@@ -33,8 +34,8 @@ const createStylesCollector = () => {
 
   return (filePath: string, { shouldLogAction = true } = {}) => {
     if (shouldLogAction) {
-      console.log(
-        ` 🌘 ShadowDomCSS saves: ${filePath.replace(path.resolve(__dirname, '../../../..'), '')}`,
+      pluginLogger.info(
+        `🌘 ShadowDomCSS saves: ${filePath.replace(path.resolve(__dirname, '../../../..'), '')}`,
       );
     }
 
@@ -70,7 +71,7 @@ const regenerateStylesFromCacheIfPossible = () => {
 
     for (const path of cachedPaths) {
       if (!fs.existsSync(path)) {
-        console.log(
+        pluginLogger.info(
           '   - The cache file has changed (dependencies were updated). Please run: pnpm website clear, and try again.',
         );
 

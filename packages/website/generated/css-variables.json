@@ -2,12 +2,12 @@
   "components/accordion/accordion.module.css": [],
   "components/avatar/avatar.module.css": [
     {
-      "name": "--ax-public-avatar-background-color",
-      "comment": "missing token"
+      "comment": "missing token",
+      "name": "--ax-public-avatar-background-color"
     },
     {
-      "name": "--ax-public-avatar-border-color",
-      "comment": "missing token"
+      "comment": "missing token",
+      "name": "--ax-public-avatar-border-color"
     }
   ],
   "components/button/base-button/base-button.module.css": [
@@ -164,8 +164,8 @@
   ],
   "components/button/styles/icon-size.module.css": [
     {
-      "name": "--ax-public-icon-size-extra-large",
-      "comment": "missing tokens"
+      "comment": "missing tokens",
+      "name": "--ax-public-icon-size-extra-large"
     },
     {
       "name": "--ax-public-icon-size-extra-small"
@@ -633,8 +633,8 @@
       "name": "--ax-public-radio-size-extra-small"
     },
     {
-      "name": "--ax-public-radio-size-medium",
-      "comment": "missing tokens"
+      "comment": "missing tokens",
+      "name": "--ax-public-radio-size-medium"
     },
     {
       "name": "--ax-public-radio-size-small"
@@ -663,8 +663,8 @@
       "name": "--ax-public-radio-disabled-dot-color"
     },
     {
-      "name": "--ax-public-radio-dot-color",
-      "comment": "missing token"
+      "comment": "missing token",
+      "name": "--ax-public-radio-dot-color"
     },
     {
       "name": "--ax-public-radio-focus-border-color"
@@ -714,16 +714,16 @@
       "name": "--ax-public-snackbar-default-icon-color"
     },
     {
-      "name": "--ax-public-snackbar-error-background",
-      "comment": "missing token"
+      "comment": "missing token",
+      "name": "--ax-public-snackbar-error-background"
     },
     {
-      "name": "--ax-public-snackbar-error-border",
-      "comment": "missing token"
+      "comment": "missing token",
+      "name": "--ax-public-snackbar-error-border"
     },
     {
-      "name": "--ax-public-snackbar-error-icon-color",
-      "comment": "missing token"
+      "comment": "missing token",
+      "name": "--ax-public-snackbar-error-icon-color"
     },
     {
       "name": "--ax-public-snackbar-info-background"
@@ -741,12 +741,12 @@
       "name": "--ax-public-snackbar-subtitle-color"
     },
     {
-      "name": "--ax-public-snackbar-success-background",
-      "comment": "missing token"
+      "comment": "missing token",
+      "name": "--ax-public-snackbar-success-background"
     },
     {
-      "name": "--ax-public-snackbar-success-border",
-      "comment": "missing token"
+      "comment": "missing token",
+      "name": "--ax-public-snackbar-success-border"
     },
     {
       "name": "--ax-public-snackbar-success-icon-color"
@@ -755,12 +755,12 @@
       "name": "--ax-public-snackbar-title-color"
     },
     {
-      "name": "--ax-public-snackbar-warning-background",
-      "comment": "missing token"
+      "comment": "missing token",
+      "name": "--ax-public-snackbar-warning-background"
     },
     {
-      "name": "--ax-public-snackbar-warning-border",
-      "comment": "missing token"
+      "comment": "missing token",
+      "name": "--ax-public-snackbar-warning-border"
     },
     {
       "name": "--ax-public-snackbar-warning-icon-color"

@@ -1,34 +1,39 @@
 import { getUISourcePath } from '../../src/components/component-utils/get-ui-source-path';
 import { glob } from 'glob';
 import { writeFile } from 'node:fs/promises';
-import path from 'node:path';
+import { join, sep } from 'node:path';
+import { cwd } from 'node:process';
+import { createScript } from '../utils/create-script';
 
-const OUTPUT_FILE = path.join(process.cwd(), 'generated', 'path-types.ts');
+const OUTPUT_FILE = join(cwd(), 'generated', 'path-types.ts');
 
-export async function generatePathTypes() {
-  const cssGlob = getUISourcePath('components/**/*.css');
-  const cssPaths = await glob(cssGlob, { windowsPathsNoEscape: true });
+export const generatePathTypes = createScript(
+  'UI Path Types',
+  async function () {
+    const cssGlob = getUISourcePath('components/**/*.css');
+    const cssPaths = await glob(cssGlob, { windowsPathsNoEscape: true });
 
-  const tsxGlob = getUISourcePath('components/**/*.tsx');
-  const tsxPaths = await glob(tsxGlob, { windowsPathsNoEscape: true });
+    const tsxGlob = getUISourcePath('components/**/*.tsx');
+    const tsxPaths = await glob(tsxGlob, { windowsPathsNoEscape: true });
 
-  const tsxPathType = pathsToType(tsxPaths);
-  const cssPathType = pathsToType(cssPaths);
+    const tsxPathType = pathsToType(tsxPaths);
+    const cssPathType = pathsToType(cssPaths);
 
-  const typeDeclaration = `
+    const typeDeclaration = `
     export type AxiomTSXRelativePath = ${tsxPathType};
     export type AxiomCSSRelativePath = ${cssPathType};
   `;
 
-  await writeFile(OUTPUT_FILE, typeDeclaration);
-}
+    await writeFile(OUTPUT_FILE, typeDeclaration);
+  },
+);
 
 function pathsToType(paths: string[]) {
   return (
     paths
       .toSorted()
       .map((filePath) => {
-        const normalizedPath = filePath.split(path.sep).join('/');
+        const normalizedPath = filePath.split(sep).join('/');
         const srcIndex = normalizedPath.indexOf('ui/src/');
         if (srcIndex === -1) {
           return null;

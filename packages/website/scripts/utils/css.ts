@@ -1,9 +1,9 @@
 import { CSSVariableData } from '@site/src/types';
 import { Declaration, findAll, parse } from 'css-tree';
-import fs from 'node:fs/promises';
+import { readFile } from 'node:fs/promises';
 
 export async function getCSSVariableData(path: string) {
-  const content = await fs.readFile(path, 'utf-8');
+  const content = await readFile(path, 'utf-8');
 
   const variableDeclarations = parsePublicVariables(content);
   const comments = parseCSSComments(content);
