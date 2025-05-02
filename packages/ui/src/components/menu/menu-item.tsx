@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import listItemStyles from '@ui/shared/styles/list-item.module.css';
 import listItemSize from '@ui/shared/styles/list-item-size.module.css';
-
 import { MenuItem as MenuItemBase } from '@mui/base';
 import { MenuItemProps } from './types';
 

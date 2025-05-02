@@ -1,15 +1,15 @@
 @layer ui.component {
   .extra-large {
-    composes: button-large from global;
+    composes: ax-public-button-large from global;
   }
 
   .large {
-    composes: button-medium from global;
+    composes: ax-public-button-medium from global;
   }
 
   .medium,
   .small,
   .extra-small {
-    composes: button-small from global;
+    composes: ax-public-button-small from global;
   }
 }

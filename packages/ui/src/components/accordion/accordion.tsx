@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 import styles from './accordion.module.css';
-
 import { forwardRef, useState } from 'react';
 import { Separator } from '../separator/separator';
 import { WithIcon } from '../../shared/types/with-icon';
@@ -78,7 +77,7 @@ export const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
           onClick={onExpandCollapse}
           aria-expanded={isOpen}
         >
-          <span className="h10">{label}</span>
+          <span className="ax-public-h10">{label}</span>
           <NavButton className={styles['header-button']} icon={<CaretUp />} />
         </div>
         <div

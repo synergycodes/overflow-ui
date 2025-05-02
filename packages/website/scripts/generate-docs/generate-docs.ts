@@ -15,5 +15,3 @@ export async function generateDocs() {
     await script();
   }
 }
-
-generateDocs();

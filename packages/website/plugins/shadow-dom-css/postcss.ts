@@ -72,7 +72,7 @@ const regenerateStylesFromCacheIfPossible = () => {
     for (const path of cachedPaths) {
       if (!fs.existsSync(path)) {
         pluginLogger.info(
-          '   - The cache file has changed (dependencies were updated). Please run: pnpm website clear, and try again.',
+          'The cache file has changed (dependencies were updated). Please run: pnpm website clear, and try again.',
         );
 
         continue;
@@ -89,9 +89,9 @@ const ShadowDomCSS: PluginCreator<ShadowDomCSSOptions> = ({
   generatedMissingPathsAndFilesIfNeeded();
 
   if (isFirstPluginCall) {
-    console.log('');
-    console.log(' 🌘 ShadowDomCSS is active.');
-    console.log('   - To force a refresh of styles, run: pnpm website clear');
+    pluginLogger.info(
+      '🌘 ShadowDomCSS is active.\nTo force a refresh of styles, run: pnpm website clear',
+    );
 
     isFirstPluginCall = false;
 

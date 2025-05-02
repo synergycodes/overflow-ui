@@ -2,6 +2,7 @@
 // Using glob library could help us generate this entrypoint and imports
 import './styles/layers.css';
 import './styles/globals.css';
+import './styles/typography.css';
 
 export * from './components/accordion/accordion';
 export * from './components/avatar/avatar';

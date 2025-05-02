@@ -9,8 +9,10 @@ type Props = {
 export function NodeDescription({ label, description }: Props) {
   return (
     <div className={styles['container']}>
-      <span className={clsx('h9', styles['title'])}>{label}</span>
-      <span className={clsx('p11', styles['subtitle'])}>{description}</span>
+      <span className={clsx('ax-public-h9', styles['title'])}>{label}</span>
+      <span className={clsx('ax-public-p11', styles['subtitle'])}>
+        {description}
+      </span>
     </div>
   );
 }

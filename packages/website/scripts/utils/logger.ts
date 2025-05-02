@@ -4,6 +4,8 @@ import { pipe } from 'remeda';
 export class Logger {
   constructor(private prefix?: string) {}
 
+  private lastHeader = '';
+
   private log(message: string, options: LogOptions = {}) {
     const level = options.level ?? 'info';
     const emoji = options.emoji ?? DEFAULT_EMOJIS[level];
@@ -14,8 +16,16 @@ export class Logger {
       [AXIOM_PREFIX, this.prefix + prefix].join(' • '),
     );
 
-    console.log(`${emoji} ${header}`);
-    console.log(color(chalk.dim(message)), '\n');
+    const headerChanged = this.lastHeader !== header;
+    if (headerChanged) {
+      console.log();
+      console.log(`${emoji} ${header}`);
+      this.lastHeader = header;
+    }
+
+    console.group();
+    console.log(color(chalk.dim(message)));
+    console.groupEnd();
   }
 
   success(message: string, prefix?: string) {
