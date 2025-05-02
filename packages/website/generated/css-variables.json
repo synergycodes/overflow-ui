@@ -672,7 +672,13 @@
   ],
   "components/select/select-button/select-button.module.css": [
     {
+      "name": "--ax-public-select-button-background-color-error"
+    },
+    {
       "name": "--ax-public-select-button-border-color"
+    },
+    {
+      "name": "--ax-public-select-button-border-color-error"
     },
     {
       "name": "--ax-public-select-button-border-color-focus"
@@ -682,6 +688,9 @@
     },
     {
       "name": "--ax-public-select-button-color-disabled"
+    },
+    {
+      "name": "--ax-public-select-button-color-error"
     }
   ],
   "components/select/select-value/select-value.module.css": [],

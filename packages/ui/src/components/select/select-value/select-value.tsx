@@ -1,7 +1,7 @@
 import style from './select-value.module.css';
 
-import { SelectOption } from '@mui/base';
-import { SelectItem } from '../types';
+import type { SelectOption } from '@mui/base';
+import type { SelectItem } from '../types';
 import clsx from 'clsx';
 
 type SelectValueProps = {

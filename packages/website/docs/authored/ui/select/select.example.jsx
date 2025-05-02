@@ -1,6 +1,7 @@
 function Page() {
   return (
     <Select
+      error={false}
       items={[
         { label: 'Chair', value: 'chair' },
         { label: 'Table', value: 'table' },

@@ -1,6 +1,6 @@
-import { WithIcon } from '@ui/shared/types/with-icon';
-import { SelectRootSlotProps } from '@mui/base';
+import type { SelectRootSlotProps } from '@mui/base';
 import { CaretDown } from '@phosphor-icons/react';
+import type { WithIcon } from '@ui/shared/types/with-icon';
 import React from 'react';
 
 export const SelectButton = React.forwardRef(function Button<
