@@ -1,4 +1,4 @@
-function Page() {
+function DatePickerExample() {
   return (
     <div
       style={{

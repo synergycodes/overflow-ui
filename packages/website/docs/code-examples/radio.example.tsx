@@ -1,5 +1,5 @@
-function Example() {
-  const [selectedOption, setSelectedOption] = React.useState('option1');
+function RadioExample() {
+  const [selectedOption, setSelectedOption] = useState('option1');
 
   return (
     <div style={{ display: 'flex', gap: '8px' }}>

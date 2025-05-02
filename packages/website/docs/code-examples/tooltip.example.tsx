@@ -1,11 +1,11 @@
-function Page() {
+function TooltipExample() {
   return (
-    <Tooltip open={true}>
+    <Tooltip>
       <Tooltip.Trigger>
         <span>Tooltip</span>
       </Tooltip.Trigger>
       <Tooltip.Content>
-        <span>Tooltip Content Component</span>
+        <span>Tooltip</span>
       </Tooltip.Content>
     </Tooltip>
   );

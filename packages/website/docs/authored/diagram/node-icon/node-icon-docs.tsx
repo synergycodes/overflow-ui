@@ -1,6 +1,6 @@
 import { NodeIcon, NodePanel } from '@synergycodes/axiom';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
-import exampleCode from '!!raw-loader!./node-icon.example.jsx';
+import exampleCode from '!!raw-loader!@site/docs/code-examples/node-icon.example.tsx';
 import { User } from '@phosphor-icons/react';
 
 export function Docs() {

@@ -8,15 +8,14 @@ const icons = {
   User,
   Plus,
   Check,
-};
+} as const;
 
 // Add react-live imports you need here
 const ReactLiveScope = {
-  React,
   ...React,
   ...axiom,
   ...xyflow,
   ...icons,
-};
+} as const;
 
 export default ReactLiveScope;

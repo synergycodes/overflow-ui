@@ -1,6 +1,6 @@
 import { Checkbox } from '@synergycodes/axiom';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
-import exampleCode from '!!raw-loader!./checkbox.example.jsx';
+import exampleCode from '!!raw-loader!@site/docs/code-examples/checkbox.example.tsx';
 import { useState, ChangeEvent } from 'react';
 
 export function CheckboxDocs() {
