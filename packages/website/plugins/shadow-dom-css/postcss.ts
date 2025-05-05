@@ -22,7 +22,10 @@ const generatedMissingPathsAndFilesIfNeeded = () => {
   if (!fs.existsSync(stylesFile)) {
     fs.writeFileSync(
       stylesFile,
-      '/* Mocked file run: pnpm clear before running server to regenerate */',
+      `/* 
+        Mocked file run: pnpm clear before running server to regenerate.
+        For more information about preview debugging, check packages/website/tools/README.md
+      */`,
       'utf8',
     );
   }
