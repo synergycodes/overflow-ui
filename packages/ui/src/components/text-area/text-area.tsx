@@ -1,11 +1,11 @@
+import type React from 'react';
 import clsx from 'clsx';
 import styles from './text-area.module.css';
 import inputFontStyles from '@ui/shared/styles/input-font-size.module.css';
 import inputSizeStyles from '@ui/shared/styles/input-size.module.css';
 
 import { TextareaAutosize } from '@mui/base/TextareaAutosize';
-import { ItemSize } from '../../shared/types/item-size';
-import React from 'react';
+import type { ItemSize } from '../../shared/types/item-size';
 
 export type TextAreaProps = {
   /**
@@ -45,6 +45,10 @@ export type TextAreaProps = {
    */
   onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   /**
+   * Callback function to handle click
+   */
+  onClick?: (event: React.MouseEvent<HTMLTextAreaElement>) => void;
+  /**
    * Function called when the input loses focus.
    * The event parameter may be undefined.
    */
@@ -68,6 +72,7 @@ export function TextArea({
   disabled,
   error,
   onChange,
+  onClick,
   onBlur,
   className,
   ...props
@@ -94,6 +99,7 @@ export function TextArea({
         maxRows={maxRows}
         disabled={disabled}
         onChange={onChange}
+        onClick={onClick}
         onBlur={onBlur}
         className={textareaClasses}
         {...props}
