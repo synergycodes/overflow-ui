@@ -31,6 +31,8 @@ export * from './components/switch/icon-switch/icon-switch';
 
 export * from './components/snackbar/snackbar';
 
+export * from './components/status/status';
+
 export * from './components/text-area/text-area';
 
 export * from './components/tooltip/tooltip';

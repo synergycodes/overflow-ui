@@ -1,7 +1,7 @@
 {
   "../ui/src/components/accordion/accordion.tsx": [
     {
-      "description": "An interactive UI component that lets users toggle the visibility of content.\r\nThe content section can be expanded to reveal details and collapsed to hide them,\r\nkeeping information organized and saving space. Commonly used in FAQs, settings panels,\r\nand documentation to present layered content efficiently.",
+      "description": "An interactive UI component that lets users toggle the visibility of content.\nThe content section can be expanded to reveal details and collapsed to hide them,\nkeeping information organized and saving space. Commonly used in FAQs, settings panels,\nand documentation to present layered content efficiently.",
       "displayName": "Accordion",
       "methods": [],
       "props": {
@@ -409,7 +409,7 @@
       "methods": [],
       "props": {
         "defaultValue": {
-          "description": "Default date value when the component is initially rendered.\r\n\r\nFor the \"default\" is a single date, for the \"range\" [date, date]; and for the \"multiple\", an array of dates.",
+          "description": "Default date value when the component is initially rendered.\n\nFor the \"default\" is a single date, for the \"range\" [date, date]; and for the \"multiple\", an array of dates.",
           "required": false,
           "tsType": {
             "name": "intersection['defaultValue']",
@@ -461,7 +461,7 @@
           }
         },
         "value": {
-          "description": "Controlled value for the selected date\r\n\r\nFor the \"default\" is a single date, for the \"range\" [date, date]; and for the \"multiple\", an array of dates.",
+          "description": "Controlled value for the selected date\n\nFor the \"default\" is a single date, for the \"range\" [date, date]; and for the \"multiple\", an array of dates.",
           "required": false,
           "tsType": {
             "name": "intersection['value']",
@@ -473,7 +473,7 @@
             "computed": false,
             "value": "'DD/MM/YYYY'"
           },
-          "description": "Format string to control how the selected date is displayed\r\n(e.g., 'yyyy-MM-dd')",
+          "description": "Format string to control how the selected date is displayed\n(e.g., 'yyyy-MM-dd')",
           "required": false,
           "tsType": {
             "name": "string"
@@ -1597,6 +1597,30 @@
       }
     }
   ],
+  "../ui/src/components/status/status.tsx": [
+    {
+      "description": "A component that displays a visual indicator based on validation status.",
+      "displayName": "Status",
+      "methods": [],
+      "props": {
+        "className": {
+          "description": "Custom class name for the component.",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "status": {
+          "description": "The validation status to display.",
+          "required": false,
+          "tsType": {
+            "name": "literal",
+            "value": "'invalid'"
+          }
+        }
+      }
+    }
+  ],
   "../ui/src/components/switch/icon-switch/icon-switch.tsx": [
     {
       "description": "",
@@ -1867,7 +1891,7 @@
           }
         },
         "onBlur": {
-          "description": "Function called when the input loses focus.\r\nThe event parameter may be undefined.",
+          "description": "Function called when the input loses focus.\nThe event parameter may be undefined.",
           "required": false,
           "tsType": {
             "name": "signature",

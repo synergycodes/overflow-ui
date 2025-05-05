@@ -778,6 +778,23 @@
       "name": "--ax-public-snackbar-width"
     }
   ],
+  "components/status/status.module.css": [
+    {
+      "name": "--ax-public-status-icon-size"
+    },
+    {
+      "name": "--ax-public-status-invalid-background-color"
+    },
+    {
+      "name": "--ax-public-status-invalid-color"
+    },
+    {
+      "name": "--ax-public-status-right"
+    },
+    {
+      "name": "--ax-public-status-size"
+    }
+  ],
   "components/switch/icon-switch/icon-switch.module.css": [
     {
       "name": "--ax-public-icon-switch-height"

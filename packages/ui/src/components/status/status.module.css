@@ -1,4 +1,4 @@
-.root {
+:root {
   --ax-public-status-right: var(--ax-primitive-even-12);
   --ax-public-status-size: var(--ax-primitive-even-20);
   --ax-public-status-icon-size: var(--ax-primitive-even-12);
