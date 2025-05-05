@@ -1,5 +1,5 @@
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
-import exampleCode from '!!raw-loader!./input.example.jsx';
+import exampleCode from '!!raw-loader!@site/docs/code-examples/input.example.tsx';
 import React from 'react';
 import { InputPreview } from './input-preview/input-preview';
 

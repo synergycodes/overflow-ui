@@ -1,4 +1,4 @@
-function Page() {
+function TextAreaExample() {
   return (
     <TextArea
       error={false}

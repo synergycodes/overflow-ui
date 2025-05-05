@@ -1,8 +1,9 @@
-function Page() {
+function NodeIconExample() {
   return (
     <NodePanel.Root selected={false}>
       <NodePanel.Header>
-        <NodeDescription label="Node" description="and some description" />
+        <NodeIcon icon={<User />} />
+        Node with Icon
       </NodePanel.Header>
     </NodePanel.Root>
   );

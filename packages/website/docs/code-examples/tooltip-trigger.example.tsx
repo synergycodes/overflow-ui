@@ -1,4 +1,4 @@
-function Page() {
+function TooltipTriggerExample() {
   return (
     <Tooltip>
       <Tooltip.Trigger>

@@ -1,4 +1,4 @@
-function Page() {
+function SeparatorExample() {
   return (
     <div>
       <h1 style={{ width: 'max-content' }}>Section 1</h1>

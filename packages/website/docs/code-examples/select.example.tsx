@@ -1,4 +1,4 @@
-function Page() {
+function SelectExample() {
   return (
     <Select
       error={false}

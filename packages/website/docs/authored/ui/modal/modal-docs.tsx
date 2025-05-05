@@ -1,6 +1,6 @@
 import { Modal, LabelButton } from '@synergycodes/axiom';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
-import exampleCode from '!!raw-loader!./modal.example.jsx';
+import exampleCode from '!!raw-loader!@site/docs/code-examples/modal.example.tsx';
 import { useState } from 'react';
 import { UserCircle } from '@phosphor-icons/react';
 

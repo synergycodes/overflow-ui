@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "module": "preserve"
+  },
+  "includes": [
+    "./code-examples.d.ts",
+    "../../src/theme/ReactLiveScope/*",
+    "./*.example.tsx"
+  ]
+}
