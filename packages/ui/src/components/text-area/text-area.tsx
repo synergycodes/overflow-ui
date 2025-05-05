@@ -1,3 +1,4 @@
+import type React from 'react';
 import clsx from 'clsx';
 import styles from './text-area.module.css';
 import inputFontStyles from '@ui/shared/styles/input-font-size.module.css';
