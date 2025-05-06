@@ -16,6 +16,10 @@ import { Separator } from '../separator/separator';
 
 export type SelectBaseProps = UseSelectParameters<string | number | null> & {
   /**
+   * Custom class name for the component.
+   */
+  className?: string;
+  /**
    * Size of the select input
    */
   size?: ItemSize;
@@ -37,6 +41,7 @@ export type SelectBaseProps = UseSelectParameters<string | number | null> & {
  * Component for displaying a select dropdown with customizable size, placeholder, and item list
  */
 export function Select({
+  className,
   size = 'medium',
   items,
   placeholder,
@@ -64,6 +69,7 @@ export function Select({
   return (
     <div className={style['container']}>
       <SelectBase
+        className={className}
         renderValue={(option) => (
           <SelectValue
             selectedOptionLabel={option}
