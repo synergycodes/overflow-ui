@@ -164,28 +164,35 @@
   ],
   "components/button/styles/icon-size.module.css": [
     {
-      "comment": "missing tokens",
+      "comment": "missing token",
       "name": "--ax-public-icon-size-extra-large"
     },
     {
+      "comment": "missing token",
       "name": "--ax-public-icon-size-extra-small"
     },
     {
+      "comment": "missing token",
       "name": "--ax-public-icon-size-large"
     },
     {
+      "comment": "missing token",
       "name": "--ax-public-icon-size-medium"
     },
     {
+      "comment": "missing token",
       "name": "--ax-public-icon-size-small"
     },
     {
+      "comment": "missing token",
       "name": "--ax-public-icon-size-xx-small"
     },
     {
+      "comment": "missing token",
       "name": "--ax-public-icon-size-xxx-small"
     },
     {
+      "comment": "missing token",
       "name": "--ax-public-icon-size-xxxx-small"
     }
   ],
@@ -621,22 +628,27 @@
   ],
   "components/radio-button/radio-size.module.css": [
     {
+      "comment": "missing token",
       "name": "--ax-public-radio-dot-size-extra-small"
     },
     {
+      "comment": "missing token",
       "name": "--ax-public-radio-dot-size-medium"
     },
     {
+      "comment": "missing token",
       "name": "--ax-public-radio-dot-size-small"
     },
     {
+      "comment": "missing token",
       "name": "--ax-public-radio-size-extra-small"
     },
     {
-      "comment": "missing tokens",
+      "comment": "missing token",
       "name": "--ax-public-radio-size-medium"
     },
     {
+      "comment": "missing token",
       "name": "--ax-public-radio-size-small"
     }
   ],
@@ -780,18 +792,23 @@
   ],
   "components/status/status.module.css": [
     {
+      "comment": "missing token",
       "name": "--ax-public-status-icon-size"
     },
     {
+      "comment": "missing token",
       "name": "--ax-public-status-invalid-background-color"
     },
     {
+      "comment": "missing token",
       "name": "--ax-public-status-invalid-color"
     },
     {
+      "comment": "missing token",
       "name": "--ax-public-status-right"
     },
     {
+      "comment": "missing token",
       "name": "--ax-public-status-size"
     }
   ],
