@@ -1891,7 +1891,7 @@
           }
         },
         "onBlur": {
-          "description": "Function called when the input loses focus.\nThe event parameter may be undefined.",
+          "description": "Function called when the input loses focus.\r\nThe event parameter may be undefined.",
           "required": false,
           "tsType": {
             "name": "signature",
@@ -1931,6 +1931,34 @@
                     ],
                     "name": "ReactChangeEvent",
                     "raw": "React.ChangeEvent<HTMLTextAreaElement>"
+                  }
+                }
+              ],
+              "return": {
+                "name": "void"
+              }
+            },
+            "type": "function"
+          }
+        },
+        "onClick": {
+          "description": "Callback function to handle click",
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "raw": "(event: React.MouseEvent<HTMLTextAreaElement>) => void",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "event",
+                  "type": {
+                    "elements": [
+                      {
+                        "name": "HTMLTextAreaElement"
+                      }
+                    ],
+                    "name": "ReactMouseEvent",
+                    "raw": "React.MouseEvent<HTMLTextAreaElement>"
                   }
                 }
               ],

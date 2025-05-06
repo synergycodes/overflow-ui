@@ -45,6 +45,10 @@ export type TextAreaProps = {
    */
   onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   /**
+   * Callback function to handle click
+   */
+  onClick?: (event: React.MouseEvent<HTMLTextAreaElement>) => void;
+  /**
    * Function called when the input loses focus.
    * The event parameter may be undefined.
    */
@@ -68,6 +72,7 @@ export function TextArea({
   disabled,
   error,
   onChange,
+  onClick,
   onBlur,
   className,
   ...props
@@ -94,6 +99,7 @@ export function TextArea({
         maxRows={maxRows}
         disabled={disabled}
         onChange={onChange}
+        onClick={onClick}
         onBlur={onBlur}
         className={textareaClasses}
         {...props}
