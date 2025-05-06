@@ -21,6 +21,8 @@ function ShadowDomWrapper({ children }: ShadowDomWrapperProps) {
         console.error(
           '🌘 Shadow DOM plugin: The styles for the Shadow DOM plugin are missing.',
           'Run pnpm clear before starting a server to fix.',
+          '',
+          'For more information about preview debugging, check packages/website/tools/README.md',
         );
       }
 
