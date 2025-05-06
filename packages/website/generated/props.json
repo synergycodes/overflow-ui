@@ -1597,6 +1597,30 @@
       }
     }
   ],
+  "../ui/src/components/status/status.tsx": [
+    {
+      "description": "A component that displays a visual indicator based on validation status.",
+      "displayName": "Status",
+      "methods": [],
+      "props": {
+        "className": {
+          "description": "Custom class name for the component.",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "status": {
+          "description": "The validation status to display.",
+          "required": false,
+          "tsType": {
+            "name": "literal",
+            "value": "'invalid'"
+          }
+        }
+      }
+    }
+  ],
   "../ui/src/components/switch/icon-switch/icon-switch.tsx": [
     {
       "description": "",

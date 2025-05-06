@@ -29,7 +29,7 @@ yarn add @synergycodes/axiom
 Add to your style sheet or component:
 
 ```css
-@import ' @synergycodes/axiom/tokens.css';
+@import '@synergycodes/axiom/tokens.css';
 ```
 
 ```tsx

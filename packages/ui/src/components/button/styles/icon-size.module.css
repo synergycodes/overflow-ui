@@ -1,13 +1,12 @@
 :root {
-  /* missing tokens */
-  --ax-public-icon-size-extra-large: 1.5rem;
-  --ax-public-icon-size-large: 1.25rem;
-  --ax-public-icon-size-medium: 1.125rem;
-  --ax-public-icon-size-small: 1.125rem;
-  --ax-public-icon-size-extra-small: 1rem;
-  --ax-public-icon-size-xx-small: 0.75rem;
-  --ax-public-icon-size-xxx-small: 0.75rem;
-  --ax-public-icon-size-xxxx-small: 0.625rem;
+  --ax-public-icon-size-extra-large: 1.5rem /* missing token */;
+  --ax-public-icon-size-large: 1.25rem /* missing token */;
+  --ax-public-icon-size-medium: 1.125rem /* missing token */;
+  --ax-public-icon-size-small: 1.125rem /* missing token */;
+  --ax-public-icon-size-extra-small: 1rem /* missing token */;
+  --ax-public-icon-size-xx-small: 0.75rem /* missing token */;
+  --ax-public-icon-size-xxx-small: 0.75rem /* missing token */;
+  --ax-public-icon-size-xxxx-small: 0.625rem /* missing token */;
 }
 
 @layer ui.component {

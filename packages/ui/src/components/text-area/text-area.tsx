@@ -1,11 +1,11 @@
+import type React from 'react';
 import clsx from 'clsx';
 import styles from './text-area.module.css';
 import inputFontStyles from '@ui/shared/styles/input-font-size.module.css';
 import inputSizeStyles from '@ui/shared/styles/input-size.module.css';
 
 import { TextareaAutosize } from '@mui/base/TextareaAutosize';
-import { ItemSize } from '../../shared/types/item-size';
-import React from 'react';
+import type { ItemSize } from '../../shared/types/item-size';
 
 export type TextAreaProps = {
   /**
