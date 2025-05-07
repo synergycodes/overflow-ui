@@ -109,7 +109,7 @@ const ShadowDomCSS: PluginCreator<ShadowDomCSSOptions> = ({
       const inputFile = root.source?.input.file || '';
 
       const shouldExtract = filesToExtractPatterns.some((namePattern) =>
-        inputFile.replaceAll('\\', '/').includes(namePattern),
+        inputFile.replaceAll('\\', '/').toLowerCase().includes(namePattern),
       );
 
       if (shouldExtract) {
@@ -126,7 +126,11 @@ export default function () {
     configurePostCss(postcssOptions) {
       postcssOptions.plugins.push(
         ShadowDomCSS({
-          filesToExtractPatterns: ['axiom/packages/ui', '@xyflow'],
+          filesToExtractPatterns: [
+            'axiom/packages/ui',
+            'custom.css',
+            '@xyflow',
+          ],
         }),
       );
 
