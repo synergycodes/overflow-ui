@@ -5,7 +5,8 @@ import { pluginLogger } from '../plugin-logger';
 
 const outputDir = path.resolve(__dirname, '../../static/css');
 const stylesFile = path.join(outputDir, 'shadow-dom-styles.css');
-const cacheFile = path.join(outputDir, 'shadow-dom-styles.cache.json');
+const cacheAcceptedPath = path.join(outputDir, 'accepted-paths.json');
+const cacheRejectedPath = path.join(outputDir, 'rejected-paths.json');
 
 type ShadowDomCSSOptions = {
   filesToExtractPatterns: string[];
@@ -29,13 +30,25 @@ const generatedMissingPathsAndFilesIfNeeded = () => {
       'utf8',
     );
   }
+
+  if (!fs.existsSync(cacheAcceptedPath)) {
+    fs.writeFileSync(cacheAcceptedPath, JSON.stringify([], null, 2), 'utf8');
+  }
+
+  if (!fs.existsSync(cacheRejectedPath)) {
+    fs.writeFileSync(cacheRejectedPath, JSON.stringify([], null, 2), 'utf8');
+  }
 };
 
 const createStylesCollector = () => {
   let collectedStyles = '';
-  const collectedPaths: string[] = [];
+  const collectedAcceptedPaths: string[] = [];
+  const collectedRejectedPaths: string[] = [];
 
-  return (filePath: string, { shouldLogAction = true } = {}) => {
+  const collectStylesFromFile = (
+    filePath: string,
+    { shouldLogAction = true } = {},
+  ) => {
     if (shouldLogAction) {
       pluginLogger.info(
         `🌘 ShadowDomCSS saves: ${filePath.replace(path.resolve(__dirname, '../../../..'), '')}`,
@@ -47,30 +60,44 @@ const createStylesCollector = () => {
       : '';
 
     if (fileContent) {
-      collectedPaths.push(filePath.replaceAll('\\', '/'));
+      collectedAcceptedPaths.push(filePath.replaceAll('\\', '/'));
       collectedStyles = `${collectedStyles} ${fileContent}`;
 
-      fs.writeFileSync(stylesFile, collectedStyles, 'utf8');
       fs.writeFileSync(
-        cacheFile,
-        JSON.stringify(collectedPaths, null, 2),
+        cacheAcceptedPath,
+        JSON.stringify(collectedAcceptedPaths, null, 2),
         'utf8',
       );
     }
   };
+
+  const collectRejectedFile = (filePath: string) => {
+    collectedRejectedPaths.push(filePath.replaceAll('\\', '/'));
+
+    fs.writeFileSync(
+      cacheRejectedPath,
+      JSON.stringify(collectedRejectedPaths, null, 2),
+      'utf8',
+    );
+  };
+
+  return {
+    collectStylesFromFile,
+    collectRejectedFile,
+  };
 };
 
 const regenerateStylesFromCacheIfPossible = () => {
-  if (!fs.existsSync(cacheFile)) {
+  if (!fs.existsSync(cacheAcceptedPath)) {
     return;
   }
 
   const cachedPaths = JSON.parse(
-    fs.readFileSync(cacheFile, 'utf8'),
+    fs.readFileSync(cacheAcceptedPath, 'utf8'),
   ) as unknown as string[];
 
   if (cachedPaths.length > 0) {
-    const collectStylesFromFile = createStylesCollector();
+    const { collectStylesFromFile } = createStylesCollector();
 
     for (const path of cachedPaths) {
       if (!fs.existsSync(path)) {
@@ -101,7 +128,8 @@ const ShadowDomCSS: PluginCreator<ShadowDomCSSOptions> = ({
     regenerateStylesFromCacheIfPossible();
   }
 
-  const collectStylesFromFile = createStylesCollector();
+  const { collectStylesFromFile, collectRejectedFile } =
+    createStylesCollector();
 
   return {
     postcssPlugin: 'shadow-dom-css',
@@ -114,6 +142,8 @@ const ShadowDomCSS: PluginCreator<ShadowDomCSSOptions> = ({
 
       if (shouldExtract) {
         collectStylesFromFile(root.source.input.file);
+      } else {
+        collectRejectedFile(root.source.input.file);
       }
     },
   };
