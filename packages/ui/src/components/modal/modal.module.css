@@ -52,6 +52,16 @@
 }
 
 @layer ui.component {
+  .modal-base {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    box-sizing: border-box;
+    padding: 1.5rem;
+    overflow: auto;
+  }
+
   .backdrop {
     position: fixed;
     inset: 0;
@@ -73,16 +83,14 @@
   }
 
   .modal {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    z-index: 1;
+    margin: auto;
     background-color: var(--ax-public-modal-background);
     border-radius: var(--ax-public-modal-border-radius);
     width: var(--ax-public-modal-width);
     z-index: 1001;
     outline: none;
-    overflow: auto;
     box-shadow: var(--ax-public-modal-box-shadow);
   }
 
@@ -126,7 +134,7 @@
 
   .description {
     color: var(--ax-public-modal-description-color);
-    font-family: Poppins;
+    font-family: Poppins, sans-serif;
     font-size: var(--ax-public-modal-description-size);
     font-style: normal;
     font-weight: 400;
