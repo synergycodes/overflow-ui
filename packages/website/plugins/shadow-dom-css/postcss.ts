@@ -9,6 +9,7 @@ const cacheAcceptedPath = path.join(outputDir, 'accepted-paths.json');
 const cacheRejectedPath = path.join(outputDir, 'rejected-paths.json');
 
 type ShadowDomCSSOptions = {
+  filesToAdd: string[];
   filesToExtractPatterns: string[];
 };
 
@@ -63,11 +64,28 @@ const createStylesCollector = () => {
       collectedAcceptedPaths.push(filePath.replaceAll('\\', '/'));
       collectedStyles = `${collectedStyles} ${fileContent}`;
 
+      fs.writeFileSync(stylesFile, collectedStyles, 'utf8');
       fs.writeFileSync(
         cacheAcceptedPath,
         JSON.stringify(collectedAcceptedPaths, null, 2),
         'utf8',
       );
+    }
+  };
+
+  const collectStylesFromFileForLaterUsage = (fileToFind: string) => {
+    const filePath = path.resolve(__dirname, fileToFind);
+
+    const fileContent =
+      fs.existsSync(filePath) &&
+      !collectedAcceptedPaths.includes(filePath.replaceAll('\\', '/'))
+        ? fs.readFileSync(filePath, 'utf8')
+        : '';
+
+    if (fileContent) {
+      console.log('filePath', filePath);
+      collectedAcceptedPaths.push(filePath.replaceAll('\\', '/'));
+      collectedStyles = `${collectedStyles} ${fileContent}`;
     }
   };
 
@@ -83,6 +101,7 @@ const createStylesCollector = () => {
 
   return {
     collectStylesFromFile,
+    collectStylesFromFileForLaterUsage,
     collectRejectedFile,
   };
 };
@@ -114,6 +133,7 @@ const regenerateStylesFromCacheIfPossible = () => {
 };
 
 const ShadowDomCSS: PluginCreator<ShadowDomCSSOptions> = ({
+  filesToAdd,
   filesToExtractPatterns,
 }) => {
   generatedMissingPathsAndFilesIfNeeded();
@@ -128,8 +148,13 @@ const ShadowDomCSS: PluginCreator<ShadowDomCSSOptions> = ({
     regenerateStylesFromCacheIfPossible();
   }
 
-  const { collectStylesFromFile, collectRejectedFile } =
-    createStylesCollector();
+  const {
+    collectStylesFromFile,
+    collectStylesFromFileForLaterUsage,
+    collectRejectedFile,
+  } = createStylesCollector();
+
+  filesToAdd.map(collectStylesFromFileForLaterUsage);
 
   return {
     postcssPlugin: 'shadow-dom-css',
@@ -156,11 +181,13 @@ export default function () {
     configurePostCss(postcssOptions) {
       postcssOptions.plugins.push(
         ShadowDomCSS({
-          filesToExtractPatterns: [
-            'axiom/packages/ui',
-            'custom.css',
-            '@xyflow',
+          filesToAdd: [
+            '../../../ui/dist/index.css',
+            '../../../ui/dist/tokens.css',
+            '../../../ui/dist/numerals-mode-1.css',
+            '../../../ui/dist/primitives-mode-1.css',
           ],
+          filesToExtractPatterns: ['@xyflow'],
         }),
       );
 
