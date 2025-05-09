@@ -160,6 +160,7 @@
     gap: var(--ax-public-modal-content-gap);
     align-self: stretch;
     background: var(--ax-public-modal-content-background);
+    border-radius: var(--ax-public-modal-border-radius);
   }
 
   .footer {
