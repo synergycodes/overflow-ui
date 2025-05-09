@@ -25,7 +25,7 @@
     "directory": "packages/ui"
   },
   "bugs": {
-    "url": "https://github.com/synergycodes/issues"
+    "url": "https://github.com/synergycodes/axiom/issues"
   },
   "scripts": {
     "build": "vite build",
