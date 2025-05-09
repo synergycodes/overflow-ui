@@ -63,6 +63,7 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
   ) => {
     return (
       <BaseModal
+        className={styles['modal-base']}
         open={open}
         onClose={onClose}
         slots={{
