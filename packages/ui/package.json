@@ -17,6 +17,16 @@
   ],
   "author": "Synergy Codes",
   "license": "MIT",
+  "url": "https://github.com/synergycodes/axiom",
+  "homepage": "https://github.com/synergycodes/axiom",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/synergycodes/axiom.git",
+    "directory": "packages/ui"
+  },
+  "bugs": {
+    "url": "https://github.com/synergycodes/issues"
+  },
   "scripts": {
     "build": "vite build",
     "dev": "vite build --watch",
