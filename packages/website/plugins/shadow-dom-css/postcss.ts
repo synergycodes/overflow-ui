@@ -83,7 +83,6 @@ const createStylesCollector = () => {
         : '';
 
     if (fileContent) {
-      console.log('filePath', filePath);
       collectedAcceptedPaths.push(filePath.replaceAll('\\', '/'));
       collectedStyles = `${collectedStyles} ${fileContent}`;
     }
