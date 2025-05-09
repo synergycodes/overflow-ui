@@ -144,7 +144,6 @@
 
   .description {
     color: var(--ax-public-modal-description-color);
-    font-family: Poppins, sans-serif;
     font-size: var(--ax-public-modal-description-size);
     font-style: normal;
     font-weight: 400;
