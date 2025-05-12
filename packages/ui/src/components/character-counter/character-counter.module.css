@@ -1,6 +1,6 @@
 :root {
-  --ax-public-character-counter-text-color: var(--ax-txt-secondary-default);
-  --ax-public-character-counter-text-error-color: var(--ax-txt-error-default);
+  --ax-public-character-counter-text-color: var(--ax-txt-secondary-default); /* missing token */
+  --ax-public-character-counter-text-error-color: var(--ax-txt-error-default); /* missing token */
 }
 
 .container {
