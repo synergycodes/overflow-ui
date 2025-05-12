@@ -1,0 +1,25 @@
+:root {
+  --ax-public-segment-picker-background: var(--ax-ui-bg-tertiary-default);
+  --ax-public-segment-picker-border-radius: 0.375rem;
+  --ax-public-segment-picker-item-border-radius: 0.25rem;
+}
+
+@layer ui.component {
+  .container {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.25rem;
+    background-color: var(--ax-public-segment-picker-background);
+    border-radius: var(--ax-public-segment-picker-border-radius);
+  }
+
+  button.button {
+    width: 100%;
+    min-width: 6.25rem;
+    border-radius: var(--ax-public-segment-picker-item-border-radius);
+
+    &:not(:disabled) {
+      border: none;
+    }
+  }
+}

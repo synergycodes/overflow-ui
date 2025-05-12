@@ -24,6 +24,8 @@ export * from './components/modal/modal';
 
 export * from './components/radio-button/radio';
 
+export * from './components/segment-picker/segment-picker';
+
 export * from './components/select/select';
 
 export * from './components/switch/switch';

@@ -963,6 +963,64 @@
       }
     }
   ],
+  "../ui/src/components/segment-picker/segment-picker.tsx": [
+    {
+      "description": "A segmented picker component that allows users to choose one value from a set of string options.\nTypically used for toggling between views or filtering content.",
+      "displayName": "SegmentPicker",
+      "methods": [],
+      "props": {
+        "className": {
+          "description": "Optional CSS class name for custom styling",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "items": {
+          "description": "Array of selectable item strings",
+          "required": true,
+          "tsType": {
+            "elements": [
+              {
+                "name": "string"
+              }
+            ],
+            "name": "Array",
+            "raw": "string[]"
+          }
+        },
+        "onChange": {
+          "description": "Callback function called when a new item is selected",
+          "required": true,
+          "tsType": {
+            "name": "signature",
+            "raw": "(value: string) => void",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "value",
+                  "type": {
+                    "name": "string"
+                  }
+                }
+              ],
+              "return": {
+                "name": "void"
+              }
+            },
+            "type": "function"
+          }
+        },
+        "value": {
+          "description": "Currently selected value",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        }
+      }
+    }
+  ],
   "../ui/src/components/select/select-button/select-button.tsx": [
     {
       "description": "",

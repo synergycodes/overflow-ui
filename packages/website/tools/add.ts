@@ -13,7 +13,7 @@ rl.question('Enter component path (e.g., switch): ', (componentInput) => {
   const componentFileName = path.basename(componentPath);
   const componentDocDir = path.resolve(
     __dirname,
-    `../../website/docs/components/${componentFileName}`,
+    `../../website/docs/authored/ui/${componentFileName}`,
   );
   const componentExampleDir = path.resolve(
     __dirname,

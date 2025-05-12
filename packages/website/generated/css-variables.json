@@ -682,6 +682,17 @@
       "name": "--ax-public-radio-focus-border-color"
     }
   ],
+  "components/segment-picker/segment-picker.module.css": [
+    {
+      "name": "--ax-public-segment-picker-background"
+    },
+    {
+      "name": "--ax-public-segment-picker-border-radius"
+    },
+    {
+      "name": "--ax-public-segment-picker-item-border-radius"
+    }
+  ],
   "components/select/select-button/select-button.module.css": [
     {
       "name": "--ax-public-select-button-background-color-error"
