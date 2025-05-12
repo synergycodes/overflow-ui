@@ -13,15 +13,19 @@ export function CharacterCounter({
   const isError = (isRequired && value === 0) || (isRequired && value > max);
 
   return (
-    <div className={clsx(
-      characterCounterStyles['container'],
-      characterCounterStyles['text'],
-      className,
-      {
-        [characterCounterStyles['error']]: isError,
-      },
-    )}>
-      <p>{value}/{max}</p>
+    <div
+      className={clsx(
+        characterCounterStyles['container'],
+        characterCounterStyles['text'],
+        className,
+        {
+          [characterCounterStyles['error']]: isError,
+        },
+      )}
+    >
+      <p>
+        {value}/{max}
+      </p>
     </div>
   );
-};
+}

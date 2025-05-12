@@ -17,10 +17,7 @@ export function CharacterCounterPreview() {
           minWidth: '200px',
         }}
       />
-      <CharacterCounter
-        value={value1.length}
-        max={250}
-      />
+      <CharacterCounter value={value1.length} max={250} />
       <h5>Required Character Counter</h5>
       <Input
         size="small"
@@ -30,11 +27,7 @@ export function CharacterCounterPreview() {
           minWidth: '200px',
         }}
       />
-      <CharacterCounter
-        value={value2.length}
-        max={250}
-        isRequired
-      />
+      <CharacterCounter value={value2.length} max={250} isRequired />
     </>
   );
 }
