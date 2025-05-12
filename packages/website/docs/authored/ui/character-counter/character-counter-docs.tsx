@@ -1,12 +1,12 @@
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
 import exampleCode from '!!raw-loader!@site/docs/code-examples/input.example.tsx';
-import { InputPreview } from './input-preview/input-preview';
+import { CharacterCounterPreview } from './character-counter-preview/character-counter-preview';
 
-export function InputDocs() {
+export function CharacterCounterDocs() {
   return (
     <ComponentPage
-      preview={<InputPreview />}
-      componentPath="components/input/input.tsx"
+      preview={<CharacterCounterPreview />}
+      componentPath="components/character-counter/character-counter.tsx"
       exampleCode={exampleCode}
     />
   );

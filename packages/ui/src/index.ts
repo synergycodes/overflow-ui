@@ -46,6 +46,8 @@ export * from './components/node/node-panel/node-panel';
 
 export * from './components/separator/separator';
 
+export * from './components/character-counter/character-counter';
+
 // Types
 export * from './components/button/types';
 export * from './components/date-picker/types';
@@ -57,3 +59,4 @@ export * from './components/snackbar/types';
 export * from './components/tooltip/types';
 export * from './shared/types/size';
 export * from './shared/types/item-size';
+export * from './components/character-counter/types';

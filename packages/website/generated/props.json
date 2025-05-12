@@ -1,7 +1,7 @@
 {
   "../ui/src/components/accordion/accordion.tsx": [
     {
-      "description": "An interactive UI component that lets users toggle the visibility of content.\nThe content section can be expanded to reveal details and collapsed to hide them,\nkeeping information organized and saving space. Commonly used in FAQs, settings panels,\nand documentation to present layered content efficiently.",
+      "description": "An interactive UI component that lets users toggle the visibility of content.\r\nThe content section can be expanded to reveal details and collapsed to hide them,\r\nkeeping information organized and saving space. Commonly used in FAQs, settings panels,\r\nand documentation to present layered content efficiently.",
       "displayName": "Accordion",
       "methods": [],
       "props": {
@@ -226,7 +226,7 @@
   ],
   "../ui/src/components/button/icon-label-button/icon-label-button.tsx": [
     {
-      "description": "A flexible button component that allows only specific combinations of children:\n- Icon followed by text.\n- Text followed by an Icon.\n- Icon, text and another Icon.\n\nExamples:\n```tsx\n<IconLabelButton {...props} >\n  <PlusCircle />\n  Button\n</IconLabelButton>\n\n<Button {...props} >\n  Button\n  <PlusCircle />\n</Button>\n\n<Button {...props} >\n  <PlusCircle />\n  Button\n  <PlusCircle />\n</Button>\n```",
+      "description": "A flexible button component that allows only specific combinations of children:\r\n- Icon followed by text.\r\n- Text followed by an Icon.\r\n- Icon, text and another Icon.\r\n\r\nExamples:\r\n```tsx\r\n<IconLabelButton {...props} >\r\n  <PlusCircle />\r\n  Button\r\n</IconLabelButton>\r\n\r\n<Button {...props} >\r\n  Button\r\n  <PlusCircle />\r\n</Button>\r\n\r\n<Button {...props} >\r\n  <PlusCircle />\r\n  Button\r\n  <PlusCircle />\r\n</Button>\r\n```",
       "displayName": "IconLabelButton",
       "methods": [],
       "props": {
@@ -368,6 +368,59 @@
       }
     }
   ],
+  "../ui/src/components/character-counter/character-counter.tsx": [
+    {
+      "description": "",
+      "displayName": "CharacterCounter",
+      "methods": [],
+      "props": {
+        "className": {
+          "defaultValue": {
+            "computed": false,
+            "value": "''"
+          },
+          "description": "Optional custom class name to apply additional styles.",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "isRequired": {
+          "defaultValue": {
+            "computed": false,
+            "value": "false"
+          },
+          "description": "If true, adds red color to the text when value === 0 and value > max.\r\n(Purely visual; doesn't enforce validation).",
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          }
+        },
+        "max": {
+          "defaultValue": {
+            "computed": false,
+            "value": "250"
+          },
+          "description": "The maximum allowed character count.\r\nIf 0 or undefined, the component will render nothing.",
+          "required": false,
+          "tsType": {
+            "name": "number"
+          }
+        },
+        "value": {
+          "defaultValue": {
+            "computed": false,
+            "value": "0"
+          },
+          "description": "The current character count value to display (e.g., from an input or textarea).\r\nDefaults to 0 if not provided.",
+          "required": false,
+          "tsType": {
+            "name": "number"
+          }
+        }
+      }
+    }
+  ],
   "../ui/src/components/checkbox/checkbox.tsx": [
     {
       "description": "A customizable checkbox component that supports three states: checked, unchecked, and indeterminate. It can be used in forms or as a standalone control.",
@@ -409,7 +462,7 @@
       "methods": [],
       "props": {
         "defaultValue": {
-          "description": "Default date value when the component is initially rendered.\n\nFor the \"default\" is a single date, for the \"range\" [date, date]; and for the \"multiple\", an array of dates.",
+          "description": "Default date value when the component is initially rendered.\r\n\r\nFor the \"default\" is a single date, for the \"range\" [date, date]; and for the \"multiple\", an array of dates.",
           "required": false,
           "tsType": {
             "name": "intersection['defaultValue']",
@@ -461,7 +514,7 @@
           }
         },
         "value": {
-          "description": "Controlled value for the selected date\n\nFor the \"default\" is a single date, for the \"range\" [date, date]; and for the \"multiple\", an array of dates.",
+          "description": "Controlled value for the selected date\r\n\r\nFor the \"default\" is a single date, for the \"range\" [date, date]; and for the \"multiple\", an array of dates.",
           "required": false,
           "tsType": {
             "name": "intersection['value']",
@@ -473,7 +526,7 @@
             "computed": false,
             "value": "'DD/MM/YYYY'"
           },
-          "description": "Format string to control how the selected date is displayed\n(e.g., 'yyyy-MM-dd')",
+          "description": "Format string to control how the selected date is displayed\r\n(e.g., 'yyyy-MM-dd')",
           "required": false,
           "tsType": {
             "name": "string"
@@ -528,7 +581,7 @@
             "computed": false,
             "value": "'medium'"
           },
-          "description": "Specifies the size of the input field.\nCan be 'small', 'medium', or 'large'.",
+          "description": "Specifies the size of the input field.\r\nCan be 'small', 'medium', or 'large'.",
           "required": false,
           "tsType": {
             "name": "ItemSize"
@@ -597,14 +650,14 @@
       "methods": [],
       "props": {
         "children": {
-          "description": "The trigger element that will open the menu when clicked.\nThis element will be wrapped in a button with appropriate ARIA attributes.",
+          "description": "The trigger element that will open the menu when clicked.\r\nThis element will be wrapped in a button with appropriate ARIA attributes.",
           "required": true,
           "tsType": {
             "name": "ReactElement"
           }
         },
         "items": {
-          "description": "Array of menu items to be rendered in the menu.\nEach item can be either a regular menu item or a separator.",
+          "description": "Array of menu items to be rendered in the menu.\r\nEach item can be either a regular menu item or a separator.",
           "required": true,
           "tsType": {
             "elements": [
@@ -615,7 +668,7 @@
                   },
                   {
                     "name": "signature",
-                    "raw": "{\n  destructive?: boolean;\n  onClick?: () => void;\n  size?: ItemSize;\n}",
+                    "raw": "{\r\n  destructive?: boolean;\r\n  onClick?: () => void;\r\n  size?: ItemSize;\r\n}",
                     "signature": {
                       "properties": [
                         {
@@ -653,7 +706,7 @@
                   }
                 ],
                 "name": "intersection",
-                "raw": "ListItem & {\n  destructive?: boolean;\n  onClick?: () => void;\n  size?: ItemSize;\n}"
+                "raw": "ListItem & {\r\n  destructive?: boolean;\r\n  onClick?: () => void;\r\n  size?: ItemSize;\r\n}"
               }
             ],
             "name": "Array",
@@ -665,7 +718,7 @@
             "computed": false,
             "value": "'bottom-end'"
           },
-          "description": "The preferred placement of the menu relative to its trigger element.\nUses Floating UI placement options.\n@default 'bottom-end'",
+          "description": "The preferred placement of the menu relative to its trigger element.\r\nUses Floating UI placement options.\r\n@default 'bottom-end'",
           "required": false,
           "tsType": {
             "elements": [
@@ -685,7 +738,7 @@
             "computed": false,
             "value": "'medium'"
           },
-          "description": "Size variant for the menu items.\n@default 'medium'",
+          "description": "Size variant for the menu items.\r\n@default 'medium'",
           "required": false,
           "tsType": {
             "name": "ItemSize"
@@ -1060,7 +1113,7 @@
                         "elements": [
                           {
                             "name": "signature",
-                            "raw": "{\n  /**\n   * Icon content React Node\n   */\n  icon?: React.ReactNode;\n}",
+                            "raw": "{\r\n  /**\r\n   * Icon content React Node\r\n   */\r\n  icon?: React.ReactNode;\r\n}",
                             "signature": {
                               "properties": [
                                 {
@@ -1082,7 +1135,7 @@
                       },
                       {
                         "name": "signature",
-                        "raw": "{\n  type?: 'item' | 'separator';\n  label?: string;\n  disabled?: boolean;\n}",
+                        "raw": "{\r\n  type?: 'item' | 'separator';\r\n  label?: string;\r\n  disabled?: boolean;\r\n}",
                         "signature": {
                           "properties": [
                             {
@@ -1123,11 +1176,11 @@
                       }
                     ],
                     "name": "intersection",
-                    "raw": "Partial<WithIcon> & {\n  type?: 'item' | 'separator';\n  label?: string;\n  disabled?: boolean;\n}"
+                    "raw": "Partial<WithIcon> & {\r\n  type?: 'item' | 'separator';\r\n  label?: string;\r\n  disabled?: boolean;\r\n}"
                   },
                   {
                     "name": "signature",
-                    "raw": "{\n  value?: string | number | null;\n  label?: string;\n}",
+                    "raw": "{\r\n  value?: string | number | null;\r\n  label?: string;\r\n}",
                     "signature": {
                       "properties": [
                         {
@@ -1162,7 +1215,7 @@
                   }
                 ],
                 "name": "intersection",
-                "raw": "ListItem & {\n  value?: string | number | null;\n  label?: string;\n}"
+                "raw": "ListItem & {\r\n  value?: string | number | null;\r\n  label?: string;\r\n}"
               }
             ],
             "name": "Array",
@@ -1247,7 +1300,7 @@
                         "elements": [
                           {
                             "name": "signature",
-                            "raw": "{\n  /**\n   * Icon content React Node\n   */\n  icon?: React.ReactNode;\n}",
+                            "raw": "{\r\n  /**\r\n   * Icon content React Node\r\n   */\r\n  icon?: React.ReactNode;\r\n}",
                             "signature": {
                               "properties": [
                                 {
@@ -1269,7 +1322,7 @@
                       },
                       {
                         "name": "signature",
-                        "raw": "{\n  type?: 'item' | 'separator';\n  label?: string;\n  disabled?: boolean;\n}",
+                        "raw": "{\r\n  type?: 'item' | 'separator';\r\n  label?: string;\r\n  disabled?: boolean;\r\n}",
                         "signature": {
                           "properties": [
                             {
@@ -1310,11 +1363,11 @@
                       }
                     ],
                     "name": "intersection",
-                    "raw": "Partial<WithIcon> & {\n  type?: 'item' | 'separator';\n  label?: string;\n  disabled?: boolean;\n}"
+                    "raw": "Partial<WithIcon> & {\r\n  type?: 'item' | 'separator';\r\n  label?: string;\r\n  disabled?: boolean;\r\n}"
                   },
                   {
                     "name": "signature",
-                    "raw": "{\n  value?: string | number | null;\n  label?: string;\n}",
+                    "raw": "{\r\n  value?: string | number | null;\r\n  label?: string;\r\n}",
                     "signature": {
                       "properties": [
                         {
@@ -1349,7 +1402,7 @@
                   }
                 ],
                 "name": "intersection",
-                "raw": "ListItem & {\n  value?: string | number | null;\n  label?: string;\n}"
+                "raw": "ListItem & {\r\n  value?: string | number | null;\r\n  label?: string;\r\n}"
               }
             ],
             "name": "Array",
@@ -1527,7 +1580,7 @@
   ],
   "../ui/src/components/snackbar/snackbar.tsx": [
     {
-      "description": "A Snackbar component that displays brief messages about app processes.\nThe snackbar appears at the bottom of the screen and automatically disappears after a few seconds.",
+      "description": "A Snackbar component that displays brief messages about app processes.\r\nThe snackbar appears at the bottom of the screen and automatically disappears after a few seconds.",
       "displayName": "Snackbar",
       "methods": [],
       "props": {
@@ -1753,7 +1806,7 @@
   ],
   "../ui/src/components/switch/switch.tsx": [
     {
-      "description": "A Switch component that allows users to toggle between two states, such as on and off.\nTypically used for settings or preferences, it provides immediate visual feedback.",
+      "description": "A Switch component that allows users to toggle between two states, such as on and off.\r\nTypically used for settings or preferences, it provides immediate visual feedback.",
       "displayName": "Switch",
       "methods": [],
       "props": {
@@ -1898,7 +1951,7 @@
           }
         },
         "onBlur": {
-          "description": "Function called when the input loses focus.\nThe event parameter may be undefined.",
+          "description": "Function called when the input loses focus.\r\nThe event parameter may be undefined.",
           "required": false,
           "tsType": {
             "name": "signature",

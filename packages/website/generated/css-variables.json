@@ -306,6 +306,7 @@
       "name": "--ax-public-button-warning-background-hover"
     }
   ],
+  "components/character-counter/character-counter.module.css": [],
   "components/checkbox/checkbox.module.css": [
     {
       "name": "--ax-public-checkbox-bg"
