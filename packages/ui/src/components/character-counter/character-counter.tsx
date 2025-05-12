@@ -16,7 +16,6 @@ export function CharacterCounter({
     <div
       className={clsx(
         characterCounterStyles['container'],
-        characterCounterStyles['text'],
         className,
         {
           [characterCounterStyles['error']]: isError,
