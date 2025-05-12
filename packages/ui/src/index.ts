@@ -59,4 +59,3 @@ export * from './components/snackbar/types';
 export * from './components/tooltip/types';
 export * from './shared/types/size';
 export * from './shared/types/item-size';
-export * from './components/character-counter/types';
