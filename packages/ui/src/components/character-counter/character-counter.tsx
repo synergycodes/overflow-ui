@@ -14,13 +14,9 @@ export function CharacterCounter({
 
   return (
     <div
-      className={clsx(
-        characterCounterStyles['container'],
-        className,
-        {
-          [characterCounterStyles['error']]: isError,
-        },
-      )}
+      className={clsx(characterCounterStyles['container'], className, {
+        [characterCounterStyles['error']]: isError,
+      })}
     >
       <p>
         {value}/{max}
