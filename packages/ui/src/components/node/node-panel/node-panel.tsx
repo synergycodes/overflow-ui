@@ -15,6 +15,8 @@ type Props = {
   selected: boolean;
   /** The content of the node panel */
   children?: React.ReactNode;
+  /** css className of the node panel */
+  className?: string;
 };
 
 /**
@@ -73,7 +75,7 @@ const Handles = memo(function Handles({
   return <>{isVisible && children}</>;
 });
 
-const Root = memo(function Root({ selected, children }: Props) {
+const Root = memo(function Root({ selected, children, className }: Props) {
   const { header, content, handles } = useMemo(() => {
     const childrenArray = Children.toArray(children);
 
@@ -95,6 +97,7 @@ const Root = memo(function Root({ selected, children }: Props) {
       className={clsx(
         handleStyles['handle-container'],
         nodeStyles['container'],
+        className,
       )}
     >
       <div
