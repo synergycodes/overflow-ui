@@ -48,6 +48,8 @@ export * from './components/node/node-panel/node-panel';
 
 export * from './components/separator/separator';
 
+export * from './components/character-counter/character-counter';
+
 // Types
 export * from './components/button/types';
 export * from './components/date-picker/types';
