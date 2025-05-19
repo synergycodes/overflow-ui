@@ -1,35 +1,6 @@
 import type { ReactNode } from 'react';
-import clsx from 'clsx';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import Heading from '@theme/Heading';
-import Logo from '@site/static/img/logo.svg';
-
-import styles from './index.module.css';
-
-function HomepageHeader() {
-  const { siteConfig } = useDocusaurusContext();
-
-  return (
-    <header className={clsx('hero hero--primary', styles['heroBanner'])}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          <Logo className={styles['logo']} />
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-      </div>
-    </header>
-  );
-}
+import { Redirect } from '@docusaurus/router';
 
 export default function Home(): ReactNode {
-  return (
-    <Layout
-      title="Axiom"
-      description="UI components library made for diagramming"
-    >
-      <HomepageHeader />
-      <main></main>
-    </Layout>
-  );
+  return <Redirect to="/ui-components/category/ui-components" />;
 }

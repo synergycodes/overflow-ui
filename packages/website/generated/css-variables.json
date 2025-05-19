@@ -308,9 +308,11 @@
   ],
   "components/character-counter/character-counter.module.css": [
     {
+      "comment": "missing token",
       "name": "--ax-public-character-counter-text-color"
     },
     {
+      "comment": "missing token",
       "name": "--ax-public-character-counter-text-error-color"
     }
   ],

@@ -22,7 +22,7 @@ const config = {
   url: 'https://synergycodes.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/ui-components',
 
   organizationName: 'Synergy Codes',
   projectName: 'axiom',
@@ -50,22 +50,9 @@ const config = {
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/synergycodes/axiom/tree/main/packages/create-docusaurus/templates/shared/',
+          routeBasePath: '/',
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/synergycodes/axiom/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'ignore',
-        },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -81,15 +68,10 @@ const config = {
     navbar: {
       logo: {
         alt: 'Axiom',
-        src: 'img/logo.svg',
+        src: 'img/logo-light.svg',
+        srcDark: 'img/logo-dark.svg',
       },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'mainSidebar',
-          position: 'left',
-          label: 'Docs',
-        },
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
