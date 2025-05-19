@@ -12,7 +12,6 @@ declare global {
     // UI Components
     Avatar,
     Checkbox,
-    CharacterCounter,
     DatePicker,
     Input,
     LabelButton,
