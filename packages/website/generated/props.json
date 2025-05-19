@@ -368,59 +368,6 @@
       }
     }
   ],
-  "../ui/src/components/character-counter/character-counter.tsx": [
-    {
-      "description": "",
-      "displayName": "CharacterCounter",
-      "methods": [],
-      "props": {
-        "className": {
-          "defaultValue": {
-            "computed": false,
-            "value": "''"
-          },
-          "description": "Optional custom class name to apply additional styles.",
-          "required": false,
-          "tsType": {
-            "name": "string"
-          }
-        },
-        "isRequired": {
-          "defaultValue": {
-            "computed": false,
-            "value": "false"
-          },
-          "description": "If true, adds red color to the text when value === 0 and value > max.\n(Purely visual; doesn't enforce validation).",
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          }
-        },
-        "max": {
-          "defaultValue": {
-            "computed": false,
-            "value": "250"
-          },
-          "description": "The maximum allowed character count.\nIf 0 or undefined, the component will render nothing.",
-          "required": false,
-          "tsType": {
-            "name": "number"
-          }
-        },
-        "value": {
-          "defaultValue": {
-            "computed": false,
-            "value": "0"
-          },
-          "description": "The current character count value to display (e.g., from an input or textarea).\nDefaults to 0 if not provided.",
-          "required": false,
-          "tsType": {
-            "name": "number"
-          }
-        }
-      }
-    }
-  ],
   "../ui/src/components/checkbox/checkbox.tsx": [
     {
       "description": "A customizable checkbox component that supports three states: checked, unchecked, and indeterminate. It can be used in forms or as a standalone control.",
