@@ -19,14 +19,8 @@ import useIsBrowser from '@docusaurus/useIsBrowser';
 import DocSidebarItems from '@theme/DocSidebarItems';
 import type { Props } from '@theme/DocSidebarItem/Category';
 import { NavButton } from '@synergycodes/axiom';
-import {
-  CaretRight,
-  DiamondsFour,
-  Graph,
-  Icon,
-  Lightning,
-  ListChecks,
-} from '@phosphor-icons/react';
+import { CaretRight, Lightning } from '@phosphor-icons/react';
+import { customConfig } from '@site/custom.config';
 
 export default function DocSidebarItemCategory({
   item,
@@ -43,6 +37,9 @@ export default function DocSidebarItemCategory({
       sidebar: { autoCollapseCategories },
     },
   } = useThemeConfig();
+
+  const { categoryIconMap } = customConfig;
+
   const hrefWithSSRFallback = useCategoryHrefWithSSRFallback(item);
 
   const isActive = isActiveSidebarItem(item, activePath);
@@ -78,7 +75,7 @@ export default function DocSidebarItemCategory({
   }, [collapsible, expandedItem, index, setCollapsed, autoCollapseCategories]);
 
   const isTopLevel = level === 1;
-  const IconComponent = CATEGORY_ICON_MAP[item.label] ?? Lightning;
+  const IconComponent = categoryIconMap[item.label] ?? Lightning;
 
   return (
     <li
@@ -216,9 +213,3 @@ function useCategoryHrefWithSSRFallback(
     return findFirstSidebarItemLink(item);
   }, [item, isBrowser]);
 }
-
-const CATEGORY_ICON_MAP: Record<string, Icon> = {
-  'UI Components': DiamondsFour,
-  'Diagram Components': Graph,
-  'Decision Logs': ListChecks,
-};
