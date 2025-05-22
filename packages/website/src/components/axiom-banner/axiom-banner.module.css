@@ -1,0 +1,29 @@
+.banner {
+    display: flex;
+    gap: 2rem;
+    padding: 4rem 0 3rem 0;
+
+    .text-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        flex: 1;
+
+        .title {
+            font-weight: 600;
+            font-size: 2.5rem;
+            line-height: 1.2;
+            background-image: linear-gradient(to right, #5360F9, #852BEC);
+            background-clip: text;
+            color: transparent;
+        }
+
+        .description {
+            font-size: 1.2rem;
+        }
+    }
+
+    .logo {
+        flex: 1;
+    }
+}
