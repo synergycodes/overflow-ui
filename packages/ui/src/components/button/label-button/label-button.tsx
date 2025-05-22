@@ -9,15 +9,21 @@ import loaderStyles from './loader.module.css';
 import { Variant, BaseButtonProps } from '../types';
 import { BaseButton } from '../base-button/base-button';
 import { forwardRef } from 'react';
-import { Size } from '@ui/shared/types/size';
 
 type LabelButtonProps = {
+  /** The text label displayed on the button */
   label: string;
+  /** The visual style variant of the button */
   variant?: Variant;
-  size?: Size;
+  /** Whether to show a loading state */
   isLoading?: boolean;
 };
-
+/**
+ * LabelButton is a versatile button component that displays text content with enhanced functionality.
+ * Features: displays a text label with customizable styling, supports multiple visual variants (primary, secondary, etc.),
+ * configurable sizes (small, medium, large), built-in loading state with animated indicator,
+ * maintains accessibility through BaseButton inheritance, and fully customizable through standard button props.
+ */
 export const LabelButton = forwardRef<
   HTMLButtonElement,
   BaseButtonProps<LabelButtonProps>

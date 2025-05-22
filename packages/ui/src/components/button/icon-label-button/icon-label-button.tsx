@@ -9,44 +9,30 @@ import paddingStyles from './padding.module.css';
 import { Variant, BaseButtonProps } from '../types';
 import { forwardRef } from 'react';
 import { BaseButton } from '../base-button/base-button';
-import { Size } from '@ui/shared/types/size';
 
 type IconNode = React.ReactNode;
 type IconLabelButtonProps = {
+  /** The visual style variant of the button */
   variant?: Variant;
-  size?: Size;
+  /** The children of the button, must follow specific patterns */
   children: AllowedChildren;
 };
 
+/**
+ * Allowed patterns for children in IconLabelButton
+ */
 type AllowedChildren =
   | [IconNode, string]
   | [string, IconNode]
   | [IconNode, string, IconNode];
 
 /**
- * A flexible button component that allows only specific combinations of children:
- * - Icon followed by text.
- * - Text followed by an Icon.
- * - Icon, text and another Icon.
- *
- * Examples:
- * ```tsx
- * <IconLabelButton {...props} >
- *   <PlusCircle />
- *   Button
- * </IconLabelButton>
- *
- * <Button {...props} >
- *   Button
- *   <PlusCircle />
- * </Button>
- *
- * <Button {...props} >
- *   <PlusCircle />
- *   Button
- *   <PlusCircle />
- * </Button>
- * ```
+ * IconLabelButton is a flexible button component that combines icons and text in specific patterns.
+ * Features: supports three distinct content patterns (icon + text, text + icon, or icon + text + icon),
+ * accepts any React node as icons, supports multiple visual variants (primary, secondary, etc.),
+ * configurable sizes (small, medium, large), maintains accessibility through BaseButton inheritance,
+ * and fully customizable through standard button props. The component enforces strict content patterns
+ * to ensure consistent and accessible button layouts.
  */
 export const IconLabelButton = forwardRef<
   HTMLButtonElement,

@@ -24,6 +24,9 @@ declare global {
     Switch,
     TextArea,
     Tooltip,
+    IconButton,
+    IconLabelButton,
+    NavButton,
 
     // Node Components
     NodeDescription,

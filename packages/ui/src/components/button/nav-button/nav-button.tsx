@@ -10,18 +10,26 @@ import { BaseButton } from '../base-button/base-button';
 import { forwardRef } from 'react';
 import { Size } from '@ui/shared/types/size';
 
-type NavButtonSize = Size | 'xx-small' | 'xxx-small' | 'xxxx-small';
-
 type NavButtonProps = {
+  /** The icon to display in the button */
   icon: React.ReactNode;
-  size?: NavButtonSize;
+  /** The shape of the button */
   shape?: Shape;
+  /** Whether to hide the background */
   noBackground?: boolean;
 };
 
+/**
+ * NavButton is a specialized button component designed for navigation purposes.
+ * Features: accepts any React node as an icon, supports extended size range (from xxxx-small to large),
+ * customizable shapes (circle or default), optional background removal for transparent styling,
+ * maintains accessibility through BaseButton inheritance, and fully customizable through standard button props.
+ * Unlike IconButton, NavButton is specifically optimized for navigation contexts with more granular size control.
+ * Also the button has a distinct appearance with only the content visible in default state.
+ */
 export const NavButton = forwardRef<
   HTMLButtonElement,
-  BaseButtonProps<NavButtonProps>
+  Omit<BaseButtonProps<NavButtonProps>, 'size'> & { size?: Size }
 >(({ size = 'medium', shape = '', icon, noBackground, ...props }, ref) => (
   <BaseButton
     ref={ref}
