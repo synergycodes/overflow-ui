@@ -1,0 +1,20 @@
+.category {
+    display: flex;
+    justify-content: space-between;
+
+    & :hover {
+        .link {}
+    }
+}
+
+.collapse-button {
+    svg {
+        transition: 0.2s transform ease;
+    }
+
+    &.collapsed {
+        svg {
+            transform: rotate(90deg);
+        }
+    }
+}

@@ -4,12 +4,9 @@
  * work well for content-centric websites.
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import '@synergycodes/axiom/tokens.css';
-
-* {
-    font-family: 'Poppins', sans-serif !important;
-}
+@import 'sidebar.css';
+@import 'typography.css';
 
 h1,
 h2,
@@ -44,6 +41,7 @@ li {
     --ifm-color-primary-lighter: #a853ea;
     --ifm-color-primary-lightest: #bb77ee;
     --ifm-code-font-size: 95%;
+    --ifm-menu-color-background-active: transparent;
     --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
     --ifm-table-stripe-background: none;
@@ -62,21 +60,24 @@ li {
     --ifm-color-primary-light: #757bf9;
     --ifm-color-primary-lighter: #959afb;
     --ifm-color-primary-lightest: #b5b8fc;
-    --ifm-background-color: var(--ax-colors-acc7-800);
+    --ifm-background-color: var(--ax-colors-acc7-800) !important;
+    --ifm-hr-background-color: var(--ax-colors-gray-650);
 }
 
 #__docusaurus {
+    min-height: 125rem;
+
+    hr {
+        margin: 4rem 0;
+    }
 
     .navbar {
         background: var(--ax-colors-acc7-800);
         border-bottom: 1px solid var(--ax-colors-gray-650)
     }
 
-    [class*='docSidebarContainer'] {
-        border: none;
-    }
-
     [class*='docMainContainer'] {
-        background: radial-gradient(circle at 25% 25%, #141440 0%, transparent 30rem);
+        /* background: radial-gradient(circle at 25% 25%, #141440 0%, rgba(22, 22, 38, 0.00) 50%);*/
+        background: transparent;
     }
 }
