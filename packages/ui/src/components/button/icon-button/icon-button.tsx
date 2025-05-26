@@ -6,27 +6,30 @@ import iconSizeStyles from '../styles/icon-size.module.css';
 import iconPaddingStyles from '../styles/icon-padding.module.css';
 
 import { Variant, Shape, BaseButtonProps } from '../types';
-import type { Icon } from '@phosphor-icons/react';
 import { BaseButton } from '../base-button/base-button';
-import { forwardRef } from 'react';
-import { Size } from '@ui/shared/types/size';
+import { forwardRef, ReactNode } from 'react';
 
-/**
- * Props for Icon Button
- */
 type IconButtonProps = {
-  Icon: Icon;
+  /** The icon component to display */
+  icon: ReactNode;
+  /** The visual style variant of the button */
   variant?: Variant;
-  size?: Size;
+  /** The shape of the button (circle or default) */
   shape?: Shape;
 };
 
+/**
+ * IconButton is a specialized button component that displays only an icon.
+ * Features: accepts any icon component, supports multiple visual variants (primary, secondary, etc.),
+ * configurable sizes (small, medium, large), customizable shapes (circle or default),
+ * maintains accessibility through BaseButton inheritance, and fully customizable through standard button props.
+ */
 export const IconButton = forwardRef<
   HTMLButtonElement,
   BaseButtonProps<IconButtonProps>
 >(
   (
-    { size = 'medium', variant = 'primary', shape = '', Icon, ...props },
+    { size = 'medium', variant = 'primary', shape = '', icon, ...props },
     ref,
   ) => (
     <BaseButton
@@ -41,7 +44,7 @@ export const IconButton = forwardRef<
       )}
       {...props}
     >
-      <Icon />
+      {icon}
     </BaseButton>
   ),
 );

@@ -7,13 +7,11 @@ import { BaseButtonProps, CommonButtonProps } from '../types';
 import { forwardRef } from 'react';
 import { prepareForSlot } from '@mui/base';
 import { Tooltip } from '@ui/components/tooltip/tooltip';
-import { Size } from '@ui/shared/types/size';
 
 type Props = {
   /** Class name meant to be used by parent components using <BaseButton /> directly */
   styles: string;
   children: React.ReactNode;
-  size?: Size;
 } & CommonButtonProps;
 
 export const BaseButton = prepareForSlot(
