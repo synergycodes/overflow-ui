@@ -4,7 +4,7 @@
  */
 import { Size, SIZES } from '../../shared/types/size';
 import { TooltipVariant } from '../tooltip/types';
-import { rangeBetween } from '../../../../website/tools/utils/arrays';
+import { rangeBetween } from '../../shared/utils/arrays';
 
 export const BUTTON_VARIANTS = [
   'primary',

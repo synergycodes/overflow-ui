@@ -1,7 +1,7 @@
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
 import { NavButton, SIZES } from '@synergycodes/axiom';
 import { Check, Plus, User } from '@phosphor-icons/react';
-import { ComponentProp, toPropMap } from '@site/tools/utils/to-prop-map';
+import { ComponentProp, toPropMap } from '@site/docs/utils/to-prop-map';
 
 import exampleCode from '!!raw-loader!@site/docs/code-examples/nav-button.example.tsx';
 

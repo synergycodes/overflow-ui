@@ -4,7 +4,7 @@ import {
   BUTTON_VARIANTS,
   LabelButton,
 } from '@synergycodes/axiom';
-import { ComponentProp, toPropMap } from '@site/tools/utils/to-prop-map';
+import { ComponentProp, toPropMap } from '@site/docs/utils/to-prop-map';
 
 import exampleCode from '!!raw-loader!@site/docs/code-examples/label-button.example.tsx';
 
