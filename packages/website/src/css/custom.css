@@ -5,7 +5,7 @@
  */
 
 @import '@synergycodes/axiom/tokens.css';
-@import 'sidebar.css';
+@import './sidebar.css';
 @import 'typography.css';
 
 h1,
@@ -49,6 +49,8 @@ li {
     --ifm-table-border-width: 0;
 
     --ifm-list-margin: 0;
+
+    --doc-sidebar-width: 20rem !important;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -62,6 +64,8 @@ li {
     --ifm-color-primary-lightest: #b5b8fc;
     --ifm-background-color: var(--ax-colors-acc7-800) !important;
     --ifm-hr-background-color: var(--ax-colors-gray-650);
+    --ifm-menu-link-padding-horizontal: 1.25rem;
+    --ifm-menu-link-padding-vertical: 0;
 }
 
 #__docusaurus {
@@ -77,7 +81,6 @@ li {
     }
 
     [class*='docMainContainer'] {
-        /* background: radial-gradient(circle at 25% 25%, #141440 0%, rgba(22, 22, 38, 0.00) 50%);*/
         background: transparent;
     }
 }

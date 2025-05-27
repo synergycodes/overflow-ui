@@ -12,25 +12,21 @@ export default function DocSidebarItemLink({
   item,
   onItemClick,
   activePath,
-  level,
   ...props
 }: Props): ReactNode {
   const { href, label, autoAddBaseUrl } = item;
   const isActive = isActiveSidebarItem(item, activePath);
   const isInternalLink = isInternalUrl(href);
-  const isNested = level > 1;
+
   return (
-    <li
-      className={clsx({ [styles['nested-list-item']]: isNested })}
-      key={label}
-    >
+    <li key={label}>
       <Link
         className={clsx(
           styles['link'],
           'menu__link',
           !isInternalLink && styles['menuExternalLink'],
           {
-            'menu__link--active': isActive,
+            [styles['active']]: isActive,
           },
         )}
         autoAddBaseUrl={autoAddBaseUrl}

@@ -1,14 +1,11 @@
 #__docusaurus {
-    [class*='docSidebarContainer'] {
+    .theme-doc-sidebar-container {
         border: none;
+        background-color: var(--ax-colors-acc7-800);
 
-        .theme-doc-sidebar-container {
-            background-color: var(--ax-colors-acc7-800);
-
-            .theme-doc-sidebar-menu {
-                padding: 0;
-                height: 100%;
-            }
+        .theme-doc-sidebar-menu {
+            padding: 0;
+            height: 100%;
         }
     }
 }

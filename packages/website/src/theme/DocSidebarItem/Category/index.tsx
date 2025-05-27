@@ -19,7 +19,14 @@ import useIsBrowser from '@docusaurus/useIsBrowser';
 import DocSidebarItems from '@theme/DocSidebarItems';
 import type { Props } from '@theme/DocSidebarItem/Category';
 import { NavButton } from '@synergycodes/axiom';
-import { CaretRight } from '@phosphor-icons/react';
+import {
+  CaretRight,
+  DiamondsFour,
+  Graph,
+  Icon,
+  Lightning,
+  ListChecks,
+} from '@phosphor-icons/react';
 
 export default function DocSidebarItemCategory({
   item,
@@ -30,6 +37,7 @@ export default function DocSidebarItemCategory({
   ...props
 }: Props): ReactNode {
   const { items, label, collapsible, className, href } = item;
+
   const {
     docs: {
       sidebar: { autoCollapseCategories },
@@ -69,6 +77,9 @@ export default function DocSidebarItemCategory({
     }
   }, [collapsible, expandedItem, index, setCollapsed, autoCollapseCategories]);
 
+  const isTopLevel = level === 1;
+  const IconComponent = CATEGORY_ICON_MAP[item.label] ?? Lightning;
+
   return (
     <li
       className={clsx(
@@ -78,24 +89,31 @@ export default function DocSidebarItemCategory({
         className,
       )}
     >
-      <div className={styles['category']}>
+      <div
+        className={clsx(styles['category'], {
+          [styles['top-level-category']]: isTopLevel,
+        })}
+        onClick={
+          collapsible
+            ? (e) => {
+                onItemClick?.(item);
+
+                if (href) {
+                  updateCollapsed(false);
+                } else {
+                  e.preventDefault();
+                  updateCollapsed();
+                }
+              }
+            : () => {
+                onItemClick?.(item);
+              }
+        }
+      >
         <Link
-          className={linkStyles['link']}
-          onClick={
-            collapsible
-              ? (e) => {
-                  onItemClick?.(item);
-                  if (href) {
-                    updateCollapsed(false);
-                  } else {
-                    e.preventDefault();
-                    updateCollapsed();
-                  }
-                }
-              : () => {
-                  onItemClick?.(item);
-                }
-          }
+          className={clsx(linkStyles['link'], {
+            [linkStyles['active']]: isCurrentPage,
+          })}
           aria-current={isCurrentPage ? 'page' : undefined}
           role={collapsible && !href ? 'button' : undefined}
           aria-expanded={collapsible && !href ? !collapsed : undefined}
@@ -104,6 +122,7 @@ export default function DocSidebarItemCategory({
           }
           {...props}
         >
+          {isTopLevel && <IconComponent size={18} weight="bold" />}
           {label}
         </Link>
         {href && collapsible && (
@@ -112,6 +131,7 @@ export default function DocSidebarItemCategory({
             categoryLabel={label}
             onClick={(e) => {
               e.preventDefault();
+              e.stopPropagation();
               updateCollapsed();
             }}
           />
@@ -196,3 +216,9 @@ function useCategoryHrefWithSSRFallback(
     return findFirstSidebarItemLink(item);
   }, [item, isBrowser]);
 }
+
+const CATEGORY_ICON_MAP: Record<string, Icon> = {
+  'UI Components': DiamondsFour,
+  'Diagram Components': Graph,
+  'Decision Logs': ListChecks,
+};
