@@ -6,7 +6,7 @@
 
 @import '@synergycodes/axiom/tokens.css';
 @import './sidebar.css';
-@import 'typography.css';
+@import './typography.css';
 
 h1,
 h2,
@@ -14,73 +14,73 @@ h3,
 ol,
 p,
 table {
-    margin: initial;
-    padding: initial;
+  margin: initial;
+  padding: initial;
 }
 
 ul {
-    margin: initial;
-    padding-left: revert-layer;
+  margin: initial;
+  padding-left: revert-layer;
 }
 
 h1 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 li {
-    margin-left: 1rem;
+  margin-left: 1rem;
 }
 
 /* You can override the default Infima variables here. */
 :root {
-    --ifm-color-primary: #962ee5;
-    --ifm-color-primary-dark: #891bdc;
-    --ifm-color-primary-darker: #811ad0;
-    --ifm-color-primary-darkest: #6a15ab;
-    --ifm-color-primary-light: #a246e8;
-    --ifm-color-primary-lighter: #a853ea;
-    --ifm-color-primary-lightest: #bb77ee;
-    --ifm-code-font-size: 95%;
-    --ifm-menu-color-background-active: transparent;
-    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-color-primary: #962ee5;
+  --ifm-color-primary-dark: #891bdc;
+  --ifm-color-primary-darker: #811ad0;
+  --ifm-color-primary-darkest: #6a15ab;
+  --ifm-color-primary-light: #a246e8;
+  --ifm-color-primary-lighter: #a853ea;
+  --ifm-color-primary-lightest: #bb77ee;
+  --ifm-code-font-size: 95%;
+  --ifm-menu-color-background-active: transparent;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
-    --ifm-table-stripe-background: none;
-    --ifm-table-border-color: none;
-    --ifm-table-border-width: 0;
+  --ifm-table-stripe-background: none;
+  --ifm-table-border-color: none;
+  --ifm-table-border-width: 0;
 
-    --ifm-list-margin: 0;
+  --ifm-list-margin: 0;
 
-    --doc-sidebar-width: 20rem !important;
+  --doc-sidebar-width: 20rem !important;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-    --ifm-color-primary: #555df8;
-    --ifm-color-primary-dark: #353ff7;
-    --ifm-color-primary-darker: #1520f5;
-    --ifm-color-primary-darkest: #0914e0;
-    --ifm-color-primary-light: #757bf9;
-    --ifm-color-primary-lighter: #959afb;
-    --ifm-color-primary-lightest: #b5b8fc;
-    --ifm-background-color: var(--ax-colors-acc7-800) !important;
-    --ifm-hr-background-color: var(--ax-colors-gray-650);
-    --ifm-menu-link-padding-horizontal: 1.25rem;
-    --ifm-menu-link-padding-vertical: 0;
+  --ifm-color-primary: #555df8;
+  --ifm-color-primary-dark: #353ff7;
+  --ifm-color-primary-darker: #1520f5;
+  --ifm-color-primary-darkest: #0914e0;
+  --ifm-color-primary-light: #757bf9;
+  --ifm-color-primary-lighter: #959afb;
+  --ifm-color-primary-lightest: #b5b8fc;
+  --ifm-background-color: var(--ax-colors-acc7-800) !important;
+  --ifm-hr-background-color: var(--ax-colors-gray-650);
+  --ifm-menu-link-padding-horizontal: 1.25rem;
+  --ifm-menu-link-padding-vertical: 0;
 }
 
 #__docusaurus {
-    min-height: 125rem;
+  min-height: 125rem;
 
-    hr {
-        margin: 4rem 0;
-    }
+  hr {
+    margin: 4rem 0;
+  }
 
-    .navbar {
-        background: var(--ax-colors-acc7-800);
-        border-bottom: 1px solid var(--ax-colors-gray-650)
-    }
+  .navbar {
+    background: var(--ax-colors-acc7-800);
+    border-bottom: 1px solid var(--ax-colors-gray-650);
+  }
 
-    [class*='docMainContainer'] {
-        background: transparent;
-    }
+  [class*='docMainContainer'] {
+    background: transparent;
+  }
 }

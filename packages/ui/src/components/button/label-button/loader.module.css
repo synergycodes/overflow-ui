@@ -23,17 +23,19 @@
     border-radius: var(--ax-public-button-loader-dot-border-radius);
     background-color: var(--ax-public-button-loader-dot-color);
     color: var(--ax-public-button-loader-dot-color);
-    animation: dot-flashing var(--ax-public-button-loader-animation-duration) infinite
-      linear alternate;
+    animation: dot-flashing var(--ax-public-button-loader-animation-duration)
+      infinite linear alternate;
   }
 
   .dot-flashing {
-    animation-delay: calc(var(--ax-public-button-loader-animation-duration) / 2);
+    animation-delay: calc(
+      var(--ax-public-button-loader-animation-duration) / 2
+    );
   }
 
   .dot-flashing::before,
   .dot-flashing::after {
-    content: "";
+    content: '';
     display: inline-block;
     top: 0;
   }

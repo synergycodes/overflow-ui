@@ -1,5 +1,7 @@
 :root {
-  --ax-public-list-item-background-color: var(--ax-dropdown-bg-secondary-default);
+  --ax-public-list-item-background-color: var(
+    --ax-dropdown-bg-secondary-default
+  );
   --ax-public-list-item-background-color-selected: var(
     --ax-dropdown-bg-secondary-active
   );

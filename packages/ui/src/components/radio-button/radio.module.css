@@ -34,7 +34,7 @@
   transition: all var(--ax-public-transition);
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;

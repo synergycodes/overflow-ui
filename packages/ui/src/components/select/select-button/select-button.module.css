@@ -10,10 +10,13 @@
     --ax-input-stroke-primary-default
   );
 
-  --ax-public-select-button-background-color-error: var(--ax-input-bg-primary-error);
-  --ax-public-select-button-border-color-error: var(--ax-input-stroke-primary-error);
+  --ax-public-select-button-background-color-error: var(
+    --ax-input-bg-primary-error
+  );
+  --ax-public-select-button-border-color-error: var(
+    --ax-input-stroke-primary-error
+  );
   --ax-public-select-button-color-error: var(--ax-txt-error-default);
-
 }
 
 @layer ui.component {
