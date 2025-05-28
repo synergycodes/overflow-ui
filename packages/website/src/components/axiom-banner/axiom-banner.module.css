@@ -1,0 +1,57 @@
+.banner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-top: 4rem;
+  z-index: -1;
+
+  .text-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    flex: 1;
+
+    .title {
+      font-weight: 600;
+      font-size: 2.5rem;
+      line-height: 1.2;
+      background-image: linear-gradient(103deg, #5360f9 -1.09%, #852bec 51.2%);
+      background-clip: text;
+      color: transparent;
+    }
+
+    .description {
+      font-size: 1.2rem;
+    }
+
+    .background {
+      opacity: 0.5;
+      filter: blur(18px);
+      background: radial-gradient(
+        49.35% 49.35% at 52.8% 48.01%,
+        #141440 0%,
+        rgba(22, 22, 38, 0) 100%
+      );
+      left: 30%;
+      bottom: 0;
+      transform: translate(-50%, 50%);
+      position: absolute;
+      z-index: -1;
+      width: 70rem;
+      height: 70rem;
+    }
+  }
+
+  .logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #5360f9;
+    aspect-ratio: 1;
+    border-radius: 5rem;
+    background: url('/static/img/logo-square.svg');
+    background-size: contain;
+  }
+}

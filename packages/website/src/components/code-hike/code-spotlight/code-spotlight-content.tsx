@@ -11,7 +11,9 @@ import { wordWrap } from '../annotations/word-wrap';
 import { type CodeSpotlightSchema } from './code-spotlight';
 import { z } from 'zod';
 import { HighlightedCode, Pre } from 'codehike/code';
-import CodeBlock from '@theme/CodeBlock';
+import { LiveError, LivePreview, LiveProvider } from 'react-live';
+import { Preview } from '../../component-utils/preview/preview';
+import ReactLiveScope from '@site/src/theme/ReactLiveScope';
 
 type Props = z.infer<typeof CodeSpotlightSchema> & {
   previewComponentName?: string;
@@ -32,13 +34,17 @@ export function CodeSpotlightContent({
   const renderCode = previewComponentName
     ? `render(${previewComponentName})`
     : '';
+
   const allCode = [before, code, after, renderCode].join('\n');
 
   return (
     <div className={styles['content']}>
-      <CodeBlock metastring="noInline" live language="tsx">
-        {allCode}
-      </CodeBlock>
+      <LiveProvider noInline code={allCode} scope={ReactLiveScope}>
+        <Preview className={styles['preview']}>
+          <LivePreview />
+          <LiveError />
+        </Preview>
+      </LiveProvider>
       <div className={styles['steps-container']}>
         <div className={styles['step-list']}>
           {steps.map((step, i) => (
@@ -48,8 +54,13 @@ export function CodeSpotlightContent({
               selectOn={['click']}
               className={styles['step']}
             >
-              <h2 className={styles['step-title']}>{step.title}</h2>
-              <div className={styles['step-description']}>{step.children}</div>
+              <div className={styles['step-content']}>
+                <div className={styles['active-mark']} />
+                <h2 className={styles['step-title']}>{step.title}</h2>
+                <div className={styles['step-description']}>
+                  {step.children}
+                </div>
+              </div>
             </Selectable>
           ))}
         </div>

@@ -3,8 +3,8 @@
   "scripts": {
     "lint": "pnpm -r lint",
     "lint:fix": "pnpm -r lint:fix",
-    "format": "prettier --check \"**/*.+(ts|tsx|json)\"",
-    "format:fix": "prettier --write \"**/*.+(ts|tsx|json)\"",
+    "format": "prettier --check \"**/*.+(ts|css|tsx|json)\"",
+    "format:fix": "prettier --write \"**/*.+(ts|css|tsx|json)\"",
     "typecheck": "pnpm -r typecheck",
     "file-lint": "pnpm dlx @ls-lint/ls-lint",
     "prepare": "husky && pnpm -r prepare",

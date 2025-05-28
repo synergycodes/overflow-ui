@@ -11,17 +11,12 @@ const codeHikeConfig: CodeHikeConfig = {
   },
 };
 
-// Options
-
 const config = {
   title: 'Axiom',
   tagline: 'UI Components + Diagramming',
   favicon: 'img/favicon.ico',
 
-  // Set the production url of your site here
   url: 'https://synergycodes.github.io',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/ui-components',
 
   organizationName: 'Synergy Codes',
@@ -30,9 +25,6 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -46,10 +38,6 @@ const config = {
           beforeDefaultRemarkPlugins: [[remarkCodeHike, codeHikeConfig]],
           recmaPlugins: [[recmaCodeHike, codeHikeConfig]],
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/synergycodes/axiom/tree/main/packages/create-docusaurus/templates/shared/',
           routeBasePath: '/',
         },
         blog: false,
@@ -61,38 +49,40 @@ const config = {
   ],
 
   themeConfig: {
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
     liveCodeBlock: {
       playgroundPosition: 'top',
     },
-    image: 'img/logo.svg',
+    image: 'img/logo-dark.svg',
     navbar: {
       logo: {
         alt: 'Axiom',
-        src: 'img/logo-light.svg',
-        srcDark: 'img/logo-dark.svg',
+        src: 'img/logo.svg',
+        srcDark: 'img/logo.svg',
+        href: 'https://overflow.dev',
       },
-      items: [
-        {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
-        },
-      ],
     },
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'Synergy Codes',
-          items: [
-            {
-              label: 'Synergy Codes',
-              to: 'https://synergycodes.com',
-            },
-          ],
+          label: 'Overflow',
+          to: 'https://www.overflow.dev/',
+        },
+        {
+          label: 'Github',
+          to: 'https://github.com/synergycodes/axiom',
+        },
+        {
+          label: 'YouTube',
+          to: 'https://www.youtube.com/@synergycodes/videos',
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Synergy Codes`,
+      copyright: `© Synergy Codes ${new Date().getFullYear()}`,
     },
     prism: {
       theme: prismThemes.nightOwlLight,

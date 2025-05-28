@@ -1,0 +1,23 @@
+.link {
+  display: flex;
+  flex: 1;
+  padding: 0.38rem 1.25rem;
+  gap: var(--ax-token-spacing-dropdown-item-l-gap, 0.75rem);
+  align-items: center;
+  font-size: 0.8215rem;
+  color: var(--ax-txt-primary-default);
+  text-decoration: none !important;
+  transition: color 0.3s ease;
+  line-height: 1.5;
+
+  background: transparent !important;
+
+  &.active,
+  &:hover {
+    color: var(--ifm-menu-color-active);
+  }
+
+  &.active {
+    font-weight: 600;
+  }
+}

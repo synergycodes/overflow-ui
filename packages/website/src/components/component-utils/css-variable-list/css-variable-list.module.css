@@ -1,0 +1,35 @@
+.variable-list {
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  .category {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    .label {
+      color: var(--ax-txt-tertiary-default);
+      font-size: 1rem;
+      font-weight: normal;
+      padding-bottom: 0.25rem;
+    }
+
+    .variable-item {
+      display: flex;
+      align-items: center;
+      font-family:
+        Fira Mono,
+        monospace;
+
+      .prefix {
+        opacity: 0.5;
+      }
+
+      .name {
+        font-weight: 450;
+      }
+    }
+  }
+}

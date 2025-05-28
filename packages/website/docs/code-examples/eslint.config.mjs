@@ -1,4 +1,4 @@
-import baseConfig from '../../../../eslint.config.mjs';
+import uiConfig from '../../../ui/eslint.config.mjs';
 import { defineConfig } from 'eslint/config';
 
 const IMPORT_WARNING = `Don't use imports in example files.
@@ -25,10 +25,10 @@ const rules = {
 
 /** @type {import('eslint').Linter.Config[]} */
 export default defineConfig([
-  baseConfig,
+  uiConfig,
   {
     name: 'Axiom / Website / Code Examples',
-    files: ['**/*.{ts,tsx}'],
+    files: ['./*.{ts,tsx}'],
     rules,
   },
 ]);

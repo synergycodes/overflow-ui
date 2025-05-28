@@ -1,0 +1,20 @@
+#__docusaurus {
+  .theme-doc-sidebar-container {
+    border: none;
+    background-color: var(--ax-colors-acc7-800);
+    padding-left: 0.5rem;
+
+    .menu {
+      padding-left: 0;
+    }
+
+    .theme-doc-sidebar-menu {
+      padding-left: 0;
+      height: 100%;
+
+      li {
+        margin: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.breadcrumb-container {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.breadcrumb-item {
+  --ifm-link-decoration: none;
+  --ifm-link-hover-decoration: none;
+
+  color: var(--ax-txt-tertiary-default);
+  font-size: 0.875rem;
+  font-weight: 600;
+
+  &:last-child {
+    color: var(--ax-txt-primary-default);
+  }
+}

@@ -15,7 +15,7 @@ export function useComponentProperties(descriptor: PropDescriptor) {
   }, [tsType, defaultValue]);
 
   const propTags = useMemo(() => {
-    const entries = [];
+    const entries: string[] = [];
 
     if (required) {
       entries.push('required');

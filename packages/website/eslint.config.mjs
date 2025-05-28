@@ -5,4 +5,5 @@ import uiEslintConfig from '../ui/eslint.config.mjs';
 export default defineConfig([
   uiEslintConfig,
   globalIgnores(['build', '.docusaurus']),
+  { ignores: ['docs/code-examples'] },
 ]);

@@ -1,9 +1,13 @@
 :root {
-  --ax-public-button-nav-background-color: var(--ax-nav-button-bg-primary-hover);
+  --ax-public-button-nav-background-color: var(
+    --ax-nav-button-bg-primary-hover
+  );
   --ax-public-button-nav-color: var(--ax-nav-button-icon-primary-default);
   --ax-public-button-nav-color-active: var(--ax-nav-button-icon-primary-active);
   --ax-public-button-nav-color-hover: var(--ax-nav-button-icon-primary-hover);
-  --ax-public-button-nav-color-disabled: var(--ax-nav-button-icon-primary-disabled);
+  --ax-public-button-nav-color-disabled: var(
+    --ax-nav-button-icon-primary-disabled
+  );
 }
 
 @layer ui.component {

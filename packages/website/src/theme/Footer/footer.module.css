@@ -1,0 +1,16 @@
+.footer,
+.links-section,
+.copyright-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer {
+  padding: 1.5rem 5.56625rem;
+  font-size: 0.875rem;
+
+  .links-section {
+    gap: 1.25rem;
+  }
+}

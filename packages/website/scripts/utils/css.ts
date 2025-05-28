@@ -9,15 +9,16 @@ export async function getCSSVariableData(path: string) {
   const comments = parseCSSComments(content);
 
   const variablesData = variableDeclarations.map(
-    ({ property, loc }: Declaration): CSSVariableData => {
+    ({ property, loc }: Required<Declaration>): CSSVariableData => {
       const declarationLine = loc.start.line;
       const relatedLines = [declarationLine, declarationLine - 1];
 
       return {
         name: property,
-        comment: comments
-          .find((comment) => relatedLines.includes(comment.line))
-          ?.value.trim(),
+        comment:
+          comments
+            .find((comment) => relatedLines.includes(comment.line))
+            ?.value.trim() ?? '',
       };
     },
   );
