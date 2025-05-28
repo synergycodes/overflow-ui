@@ -1,15 +1,29 @@
 :root {
   --ax-public-button-primary-background: var(--ax-button-primary-bg-default);
-  --ax-public-button-primary-background-hover: var(--ax-button-primary-bg-hover);
-  --ax-public-button-primary-background-active: var(--ax-button-primary-bg-active);
-  --ax-public-button-primary-background-focus: var(--ax-button-primary-bg-focus);
+  --ax-public-button-primary-background-hover: var(
+    --ax-button-primary-bg-hover
+  );
+  --ax-public-button-primary-background-active: var(
+    --ax-button-primary-bg-active
+  );
+  --ax-public-button-primary-background-focus: var(
+    --ax-button-primary-bg-focus
+  );
 
-  --ax-public-button-secondary-border-color: var(--ax-ui-stroke-secondary-default);
+  --ax-public-button-secondary-border-color: var(
+    --ax-ui-stroke-secondary-default
+  );
   --ax-public-button-secondary-color: var(--ax-txt-primary-default);
-  --ax-public-button-secondary-border-color-hover: var(--ax-ui-stroke-primary-focus);
+  --ax-public-button-secondary-border-color-hover: var(
+    --ax-ui-stroke-primary-focus
+  );
   --ax-public-button-secondary-color-active: var(--ax-txt-secondary-default);
-  --ax-public-button-secondary-border-color-active: var(--ax-ui-stroke-primary-focus);
-  --ax-public-button-secondary-border-color-focus: var(--ax-ui-stroke-primary-focus);
+  --ax-public-button-secondary-border-color-active: var(
+    --ax-ui-stroke-primary-focus
+  );
+  --ax-public-button-secondary-border-color-focus: var(
+    --ax-ui-stroke-primary-focus
+  );
   --ax-public-button-secondary-border-color-disabled: var(
     --ax-ui-stroke-secondary-default
   );
@@ -50,12 +64,16 @@
 
   --ax-public-button-success-background: var(--ax-button-green-bg-default);
   --ax-public-button-success-background-hover: var(--ax-button-green-bg-hover);
-  --ax-public-button-success-background-active: var(--ax-button-green-bg-active);
+  --ax-public-button-success-background-active: var(
+    --ax-button-green-bg-active
+  );
   --ax-public-button-success-background-focus: var(--ax-button-green-bg-focus);
 
   --ax-public-button-warning-background: var(--ax-button-orange-bg-default);
   --ax-public-button-warning-background-hover: var(--ax-button-orange-bg-hover);
-  --ax-public-button-warning-background-active: var(--ax-button-orange-bg-active);
+  --ax-public-button-warning-background-active: var(
+    --ax-button-orange-bg-active
+  );
   --ax-public-button-warning-background-focus: var(--ax-button-orange-bg-focus);
 }
 
@@ -104,7 +122,9 @@
 
       &.ghost-destructive {
         border: 1px solid var(--ax-public-button-ghost-destructive-border-color);
-        background-color: var(--ax-public-button-ghost-destructive-background-color);
+        background-color: var(
+          --ax-public-button-ghost-destructive-background-color
+        );
         color: var(--ax-public-button-ghost-destructive-color);
 
         &:hover {

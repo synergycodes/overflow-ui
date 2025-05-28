@@ -7,12 +7,10 @@ type Props = {
 
 export function Playground({ exampleCode }: Props) {
   return (
-    <>
-      <ShadowDomWrapper>
-        <CodeBlock live language="tsx">
-          {exampleCode}
-        </CodeBlock>
-      </ShadowDomWrapper>
-    </>
+    <ShadowDomWrapper>
+      <CodeBlock live language="tsx">
+        {exampleCode}
+      </CodeBlock>
+    </ShadowDomWrapper>
   );
 }

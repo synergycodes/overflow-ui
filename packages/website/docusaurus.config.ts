@@ -61,10 +61,15 @@ const config = {
   ],
 
   themeConfig: {
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
     liveCodeBlock: {
       playgroundPosition: 'top',
     },
-    image: 'img/logo.svg',
+    image: 'img/logo-dark.svg',
     navbar: {
       logo: {
         alt: 'Axiom',
