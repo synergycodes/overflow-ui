@@ -17,11 +17,13 @@ export function PropsList({ path, hardcodedProps }: Props) {
     return null;
   }
 
+  const sortedEntries = propsEntries.sort(sortByRequired);
+
   return (
     <div>
       <h1>Props</h1>
       <div className={styles['container']}>
-        {propsEntries.map(([name, propDescriptor]) => (
+        {sortedEntries.map(([name, propDescriptor]) => (
           <PropDescription key={name} name={name} descriptor={propDescriptor} />
         ))}
       </div>
@@ -30,3 +32,10 @@ export function PropsList({ path, hardcodedProps }: Props) {
 }
 
 export type PropMap = Record<string, PropDescriptor>;
+
+function sortByRequired(
+  [, propDescriptorA]: [string, PropDescriptor],
+  [,]: [string, PropDescriptor],
+) {
+  return propDescriptorA.required ? -1 : 1;
+}

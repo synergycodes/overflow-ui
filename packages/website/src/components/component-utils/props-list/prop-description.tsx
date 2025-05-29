@@ -16,7 +16,7 @@ export function PropDescription({ descriptor, name }: Props) {
   return (
     <div key={name} className={styles['prop-row']}>
       <div className={styles['prop-item']}>
-        <h3>{name}</h3>
+        <h2>{name}</h2>
         {propTags.map((tag: string) => (
           <PropTag key={tag}>{tag}</PropTag>
         ))}
