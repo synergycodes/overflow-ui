@@ -8,6 +8,7 @@
   color: var(--ax-txt-primary-default);
   text-decoration: none !important;
   transition: color 0.3s ease;
+  line-height: 1.5;
 
   background: transparent !important;
 

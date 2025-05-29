@@ -51,5 +51,7 @@
     border: 1px solid #5360f9;
     aspect-ratio: 1;
     border-radius: 5rem;
+    background: url('/static/img/logo-square.svg');
+    background-size: contain;
   }
 }

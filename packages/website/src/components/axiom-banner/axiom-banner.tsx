@@ -13,7 +13,7 @@ export function AxiomBanner() {
           </p>
           <div className={styles['background']} />
         </div>
-        <div className={styles['logo']}>{/* TODO: Add something here */}</div>
+        <div className={styles['logo']} />
       </div>
       <hr />
     </>

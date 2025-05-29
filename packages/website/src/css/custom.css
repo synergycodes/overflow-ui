@@ -7,6 +7,7 @@
 @import '@synergycodes/axiom/tokens.css';
 @import './sidebar.css';
 @import './typography.css';
+@import './footer.css';
 
 h1,
 h2,
@@ -31,6 +32,10 @@ li {
   margin-left: 1rem;
 }
 
+a {
+  color: unset;
+}
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #962ee5;
@@ -43,6 +48,7 @@ li {
   --ifm-code-font-size: 95%;
   --ifm-menu-color-background-active: transparent;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-link-hover-color: var(--ifm-menu-color-active);
 
   --ifm-table-stripe-background: none;
   --ifm-table-border-color: none;
@@ -62,25 +68,20 @@ li {
   --ifm-color-primary-light: #757bf9;
   --ifm-color-primary-lighter: #959afb;
   --ifm-color-primary-lightest: #b5b8fc;
-  --ifm-background-color: var(--ax-colors-acc7-800) !important;
   --ifm-hr-background-color: var(--ax-colors-gray-650);
   --ifm-menu-link-padding-horizontal: 1.25rem;
   --ifm-menu-link-padding-vertical: 0;
+  --ifm-background-color: var(--ax-colors-acc7-800) !important;
 }
 
 #__docusaurus {
-  min-height: 125rem;
+  min-height: 125rem !important;
 
   hr {
     margin: 4rem 0;
   }
 
-  .navbar {
-    background: var(--ax-colors-acc7-800);
-    border-bottom: 1px solid var(--ax-colors-gray-650);
-  }
-
-  [class*='docMainContainer'] {
-    background: transparent;
+  .main-wrapper {
+    padding-top: 1rem;
   }
 }

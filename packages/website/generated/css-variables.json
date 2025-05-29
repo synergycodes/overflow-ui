@@ -6,7 +6,6 @@
       "name": "--ax-public-avatar-background-color"
     },
     {
-      "comment": "missing token",
       "name": "--ax-public-avatar-border-color"
     }
   ],
@@ -739,11 +738,9 @@
       "name": "--ax-public-snackbar-error-background"
     },
     {
-      "comment": "missing token",
       "name": "--ax-public-snackbar-error-border"
     },
     {
-      "comment": "missing token",
       "name": "--ax-public-snackbar-error-icon-color"
     },
     {
@@ -766,7 +763,6 @@
       "name": "--ax-public-snackbar-success-background"
     },
     {
-      "comment": "missing token",
       "name": "--ax-public-snackbar-success-border"
     },
     {
@@ -780,7 +776,6 @@
       "name": "--ax-public-snackbar-warning-background"
     },
     {
-      "comment": "missing token",
       "name": "--ax-public-snackbar-warning-border"
     },
     {
