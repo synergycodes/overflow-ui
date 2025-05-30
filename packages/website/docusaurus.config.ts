@@ -105,6 +105,9 @@ const config = {
       require.resolve('@easyops-cn/docusaurus-search-local'),
       /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
       {
+        indexBlog: false,
+        indexDocs: true,
+        docsRouteBasePath: '/',
         hashed: true,
       },
     ],
