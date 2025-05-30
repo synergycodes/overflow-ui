@@ -4,7 +4,7 @@ import { CSSVariableItem } from './css-variable-item';
 import { AxiomCSSRelativePath } from '@site/generated/path-types';
 
 type Props = {
-  path?: AxiomCSSRelativePath;
+  path: AxiomCSSRelativePath;
 };
 
 export function CSSVariablesList({ path }: Props) {

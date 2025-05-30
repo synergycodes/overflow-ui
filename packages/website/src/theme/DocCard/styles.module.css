@@ -1,4 +1,4 @@
-.card-container {
+.link {
   width: 100%;
 
   --ifm-link-color: none;
@@ -11,7 +11,15 @@
   --ax-public-node-background-color: var(--ax-colors-acc7-800);
   --ax-public-node-hover-color: var(--ax-colors-acc7-800);
 
-  box-shadow: 0 1.5px 3px 0 rgb(0 0 0 / 15%);
-  transition: all var(--ifm-transition-fast) ease;
-  transition-property: border, box-shadow;
+  transition:
+    border-width 150ms ease,
+    box-shadow 150ms ease;
+  border-radius: var(--ax-public-node-border-radius);
+  border-width: 0px;
+
+  &:hover {
+    border-width: 2px;
+    border-color: var(--ax-public-node-border-color-selected);
+    box-shadow: var(--ax-public-node-box-shadow-selected);
+  }
 }

@@ -4,8 +4,8 @@ import { PropDescription } from './prop-description';
 import styles from './props-list.module.css';
 
 type Props = {
-  path?: string;
-  hardcodedProps?: PropMap;
+  path: string;
+  hardcodedProps: PropMap;
 };
 
 export function PropsList({ path, hardcodedProps }: Props) {

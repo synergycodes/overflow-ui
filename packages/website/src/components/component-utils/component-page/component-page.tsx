@@ -1,17 +1,12 @@
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import { Description } from '../description/description';
-import { PropMap, PropsList } from '../props-list/props-list';
-import { Playground } from '../code-playground/code-playground';
-import { Preview } from '../preview/preview';
-import { CSSVariablesList } from '../css-variables-list/css-variables-list';
+import { PropMap } from '../props-list/props-list';
 import {
   AxiomCSSRelativePath,
   AxiomTSXRelativePath,
 } from '@site/generated/path-types';
-import styles from './component-page.module.css';
+import { ComponentTabs } from './component-tabs/component-tabs';
 
-type Props = {
+export type ComponentPageProps = {
   componentPath?: AxiomTSXRelativePath;
   cssPaths?: AxiomCSSRelativePath[];
   exampleCode: string;
@@ -20,40 +15,14 @@ type Props = {
   hardcodedData?: HardcodedData;
 };
 
-export function ComponentPage({
-  componentPath,
-  cssPaths = [],
-  exampleCode,
-  preview,
-  className,
-  hardcodedData,
-}: Props) {
-  const { props, description } = hardcodedData ?? {};
+export function ComponentPage(props: ComponentPageProps) {
+  const { componentPath, hardcodedData } = props;
+  const { description } = hardcodedData ?? {};
 
   return (
     <>
       <Description path={componentPath} hardcodedDescription={description} />
-      <Tabs>
-        <TabItem value="api" label="API">
-          <div className={styles['api-tab']}>
-            <Preview className={className}>{preview}</Preview>
-            <div className={styles['component-container']}>
-              <PropsList path={componentPath} hardcodedProps={props} />
-              {cssPaths.length > 0 && (
-                <div>
-                  <h1>CSS Variables</h1>
-                  {cssPaths.map((path) => (
-                    <CSSVariablesList key={path} path={path} />
-                  ))}
-                </div>
-              )}
-            </div>
-          </div>
-        </TabItem>
-        <TabItem value="playground" label="Playground">
-          <Playground exampleCode={exampleCode} />
-        </TabItem>
-      </Tabs>
+      <ComponentTabs {...props} hardcodedData={hardcodedData ?? {}} />
     </>
   );
 }

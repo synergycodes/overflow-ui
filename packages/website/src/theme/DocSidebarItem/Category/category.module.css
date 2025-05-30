@@ -33,12 +33,13 @@
 
 .collapse-button {
   svg {
+    transform: rotate(90deg);
     transition: 0.2s transform ease;
   }
 
   &.collapsed {
     svg {
-      transform: rotate(90deg);
+      transform: none;
     }
   }
 }

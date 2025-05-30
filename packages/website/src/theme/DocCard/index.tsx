@@ -34,18 +34,11 @@ function useCategoryItemsPlural() {
     );
 }
 
-function CardContainer({
-  href,
-  children,
-}: {
+function CardContainer(props: {
   href: string;
   children: ReactNode;
 }): ReactNode {
-  return (
-    <Link href={href} className={styles['card-container']}>
-      {children}
-    </Link>
-  );
+  return <Link {...props} className={styles['link']} />;
 }
 
 function CardLayout({
