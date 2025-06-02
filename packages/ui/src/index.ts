@@ -44,6 +44,9 @@ export * from './components/node/node-description/node-description';
 export * from './components/node/node-icon/node-icon';
 export * from './components/node/node-panel/node-panel';
 
+export * from './components/edge/edge-label/edge-label';
+export * from './components/edge/use-edge-styles/use-edge-styles';
+
 export * from './components/separator/separator';
 
 // Types
@@ -57,3 +60,4 @@ export * from './components/snackbar/types';
 export * from './components/tooltip/types';
 export * from './shared/types/size';
 export * from './shared/types/item-size';
+export * from './components/edge/types';

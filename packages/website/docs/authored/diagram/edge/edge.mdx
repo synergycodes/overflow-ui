@@ -1,0 +1,68 @@
+---
+title: Edge
+description: Edge components
+---
+
+import '@xyflow/react/dist/style.css';
+import EdgeStylesDiagram from "!!raw-loader!@site/docs/code-examples/edge-styles-diagram.tsx";
+import { CodeSpotlight } from "@site/src/components/code-hike/code-spotlight/code-spotlight"
+
+This section explains how to style edges using Axiom components. 
+In the library, we expose a hook for styling edges and an edge label component - both designed to 
+share a consistent visual style across application.
+
+In React Flow, an edge is represented as an SVG path. 
+The parameters used to calculate the path are provided via React Flow’s hooks. 
+To align with this approach, we introduced a custom hook that returns appropriate styles based on the current state of an edge.
+These styles can be directly applied to the edge element.
+
+For edge labels, we provide a dedicated component that takes the same state parameter, 
+ensuring consistent styling with the edges. Since label positions are often unique, 
+we recommend applying a custom transform via styles to position the label as needed.
+
+Below, you’ll find a guide on how to style edges using components from the Axiom library.
+
+## Customization
+
+<CodeSpotlight previewComponentName='Page' injectedCode={{ after: EdgeStylesDiagram }}>
+
+## !!steps Using hook
+Apply styles to an edge using the useEdgeStyles hook.
+
+```tsx ! example.ts
+function Edge({ id, path, selected, isHovered, labelX, labelY }) {
+  const edgeState = selected ? 'selected' : 'default';
+  const style = useEdgeStyle({ state: edgeState, isHovered });
+  return (
+     <BaseEdge id={id} path={path} style={style} />
+  );
+}
+```
+
+## !!steps Adding a Label
+Use the EdgeLabel component to display a label on the edge.
+
+```tsx ! example.ts
+function Edge({ id, path, selected, isHovered, labelX, labelY }) {
+  const edgeState = selected ? 'selected' : 'default';
+  const style = useEdgeStyle({ state: edgeState, isHovered });
+  return (
+    <>
+      <EdgeLabelRenderer>
+        <EdgeLabel
+          style={{
+            transform: `translate(-50%, -50%) translate(${labelX}px,${labelY}px)`,
+          }}
+          isHovered={isHovered}
+          state={edgeState}
+        >
+          Edge Label
+        </EdgeLabel>
+      </EdgeLabelRenderer>
+      <BaseEdge id={id} path={path} style={style} />
+    </>
+  );
+}
+```
+
+</CodeSpotlight>
