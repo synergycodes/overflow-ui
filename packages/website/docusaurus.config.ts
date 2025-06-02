@@ -40,8 +40,11 @@ const config = {
 
   presets: [
     [
-      'classic',
+      '@docusaurus/preset-classic',
       {
+        theme: {
+          customCss: './src/css/custom.css',
+        },
         docs: {
           beforeDefaultRemarkPlugins: [[remarkCodeHike, codeHikeConfig]],
           recmaPlugins: [[recmaCodeHike, codeHikeConfig]],
@@ -53,8 +56,8 @@ const config = {
           routeBasePath: '/',
         },
         blog: false,
-        theme: {
-          customCss: './src/css/custom.css',
+        googleTagManager: {
+          containerId: 'GTM-P4WNHP8N',
         },
       } satisfies Preset.Options,
     ],
