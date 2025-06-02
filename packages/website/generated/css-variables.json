@@ -421,6 +421,108 @@
       "name": "--ax-public-date-picker-header-background"
     }
   ],
+  "components/edge/edge-label/edge-label-size.module.css": [
+    {
+      "name": "--ax-public-edge-label-extra-small-border-radius"
+    },
+    {
+      "name": "--ax-public-edge-label-extra-small-content-padding"
+    },
+    {
+      "name": "--ax-public-edge-label-extra-small-icon-padding"
+    },
+    {
+      "name": "--ax-public-edge-label-extra-small-icon-size"
+    },
+    {
+      "name": "--ax-public-edge-label-extra-small-label-padding"
+    },
+    {
+      "name": "--ax-public-edge-label-medium-border-radius"
+    },
+    {
+      "name": "--ax-public-edge-label-medium-content-padding"
+    },
+    {
+      "name": "--ax-public-edge-label-medium-icon-padding"
+    },
+    {
+      "name": "--ax-public-edge-label-medium-icon-size"
+    },
+    {
+      "name": "--ax-public-edge-label-medium-label-padding"
+    },
+    {
+      "name": "--ax-public-edge-label-small-border-radius"
+    },
+    {
+      "name": "--ax-public-edge-label-small-content-padding"
+    },
+    {
+      "name": "--ax-public-edge-label-small-icon-padding"
+    },
+    {
+      "name": "--ax-public-edge-label-small-icon-size"
+    },
+    {
+      "name": "--ax-public-edge-label-small-label-padding"
+    }
+  ],
+  "components/edge/edge-label/edge-label.module.css": [
+    {
+      "name": "--ax-public-edge-background-color"
+    },
+    {
+      "name": "--ax-public-edge-label-border-color"
+    },
+    {
+      "name": "--ax-public-edge-label-border-color-disabled"
+    },
+    {
+      "name": "--ax-public-edge-label-border-color-hover"
+    },
+    {
+      "name": "--ax-public-edge-label-border-color-selected"
+    },
+    {
+      "name": "--ax-public-edge-label-border-size"
+    },
+    {
+      "name": "--ax-public-edge-label-border-size-selected"
+    },
+    {
+      "name": "--ax-public-edge-label-border-style"
+    },
+    {
+      "name": "--ax-public-edge-label-color"
+    },
+    {
+      "name": "--ax-public-edge-label-color-disabled"
+    },
+    {
+      "name": "--ax-public-edge-label-gap"
+    }
+  ],
+  "components/edge/use-edge-styles/use-edge-styles.css": [
+    {
+      "name": "--ax-public-edge-color"
+    },
+    {
+      "name": "--ax-public-edge-color-disabled"
+    },
+    {
+      "name": "--ax-public-edge-color-hover"
+    },
+    {
+      "name": "--ax-public-edge-color-select"
+    },
+    {
+      "name": "--ax-public-edge-stroke-width"
+    },
+    {
+      "name": "--ax-public-edge-stroke-width-select"
+    }
+  ],
   "components/input/clear-button/clear-button.module.css": [],
   "components/input/input-root.module.css": [],
   "components/input/input.module.css": [],

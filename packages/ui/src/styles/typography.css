@@ -143,3 +143,20 @@
 .ax-public-button-small {
   font-size: 0.75rem;
 }
+
+/* Edge Label */
+
+.ax-public-edge-label-medium {
+  font-size: 0.75rem;
+  line-height: 100%;
+}
+
+.ax-public-edge-label-small {
+  font-size: 0.75rem;
+  line-height: 100%;
+}
+
+.ax-public-edge-label-extra-small {
+  font-size: 0.625rem;
+  line-height: 100%;
+}

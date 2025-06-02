@@ -1,6 +1,5 @@
 // eslint-disable-next-line no-restricted-syntax
 import ReactLiveScope from '../../src/theme/ReactLiveScope';
-
 declare global {
   const {
     // React Core
@@ -8,6 +7,8 @@ declare global {
     useEffect,
     useMemo,
     useCallback,
+    createContext,
+    useContext,
 
     // UI Components
     Avatar,
@@ -27,6 +28,8 @@ declare global {
     IconButton,
     IconLabelButton,
     NavButton,
+    useEdgeStyle,
+    EdgeLabel,
 
     // Node Components
     NodeDescription,
@@ -38,6 +41,7 @@ declare global {
     Plus,
     Trash,
     User,
+    DiamondsFour,
 
     // React Flow
     ReactFlow,
@@ -45,6 +49,9 @@ declare global {
     applyEdgeChanges,
     applyNodeChanges,
     addEdge,
+    getBezierPath,
+    BaseEdge,
+    EdgeLabelRenderer,
     // @ts-expect-error - Still provides good type hints
   } = ReactLiveScope;
 }

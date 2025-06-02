@@ -609,6 +609,114 @@
       }
     }
   ],
+  "../ui/src/components/edge/edge-label/edge-label.tsx": [
+    {
+      "description": "",
+      "displayName": "EdgeLabel",
+      "methods": [],
+      "props": {
+        "isHovered": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          }
+        },
+        "size": {
+          "defaultValue": {
+            "computed": false,
+            "value": "'medium'"
+          },
+          "description": "",
+          "required": false,
+          "tsType": {
+            "elements": [
+              {
+                "name": "unknown[number]",
+                "raw": "(typeof SIZES)[number]"
+              },
+              {
+                "elements": [
+                  {
+                    "name": "literal",
+                    "value": "'extra-small'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'small'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'medium'"
+                  }
+                ],
+                "name": "union",
+                "raw": "'extra-small' | 'small' | 'medium'"
+              }
+            ],
+            "name": "Extract",
+            "raw": "Extract<Size, 'extra-small' | 'small' | 'medium'>"
+          }
+        },
+        "state": {
+          "defaultValue": {
+            "computed": false,
+            "value": "'default'"
+          },
+          "description": "The visual state of the edge. Determines base styles like `strokeWidth`.",
+          "required": false,
+          "tsType": {
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'default'"
+              },
+              {
+                "name": "literal",
+                "value": "'selected'"
+              },
+              {
+                "name": "literal",
+                "value": "'disabled'"
+              },
+              {
+                "name": "literal",
+                "value": "'temporary'"
+              }
+            ],
+            "name": "union",
+            "raw": "'default' | 'selected' | 'disabled' | 'temporary'"
+          }
+        },
+        "type": {
+          "defaultValue": {
+            "computed": false,
+            "value": "'text'"
+          },
+          "description": "Determines the layout style for the EdgeLabel based on its content:\n\ntext: Simple text label.\nicon: Single icon without additional content.\ncompound: Mixed content like icons + text, multiple icons, etc.",
+          "required": false,
+          "tsType": {
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'text'"
+              },
+              {
+                "name": "literal",
+                "value": "'icon'"
+              },
+              {
+                "name": "literal",
+                "value": "'compound'"
+              }
+            ],
+            "name": "union",
+            "raw": "'text' | 'icon' | 'compound'"
+          }
+        }
+      }
+    }
+  ],
   "../ui/src/components/input/clear-button/clear-button.tsx": [
     {
       "description": "",
