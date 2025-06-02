@@ -15,46 +15,48 @@
   --ax-public-edge-label-border-color-disabled: var(--ax-edge-primary-disabled);
 }
 
-.container {
-  position: absolute;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  gap: var(--ax-public-edge-label-gap);
+@layer ui.component {
+  .container {
+    position: absolute;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--ax-public-edge-label-gap);
 
-  pointer-events: auto;
+    pointer-events: auto;
 
-  width: max-content;
+    width: max-content;
 
-  background-color: var(--ax-public-edge-background-color);
-  color: var(--ax-public-edge-label-color);
+    background-color: var(--ax-public-edge-background-color);
+    color: var(--ax-public-edge-label-color);
 
-  border: var(--ax-public-edge-label-border-size)
-    var(--ax-public-edge-label-border-style)
-    var(--ax-public-edge-label-border-color);
+    border: var(--ax-public-edge-label-border-size)
+      var(--ax-public-edge-label-border-style)
+      var(--ax-public-edge-label-border-color);
 
-  transition: border var(--ax-public-transition);
+    transition: border var(--ax-public-transition);
 
-  &:hover,
-  &.hovered,
-  &.selected,
-  &.disabled {
-    transition: none;
-  }
+    &:hover,
+    &.hovered,
+    &.selected,
+    &.disabled {
+      transition: none;
+    }
 
-  &.hovered:not(.selected, .disabled, .temporary),
-  &:hover:not(.selected, .disabled, .temporary) {
-    border-color: var(--ax-public-edge-label-border-color-hover);
-  }
+    &.hovered:not(.selected, .disabled, .temporary),
+    &:hover:not(.selected, .disabled, .temporary) {
+      border-color: var(--ax-public-edge-label-border-color-hover);
+    }
 
-  &.temporary,
-  &.selected {
-    border-width: var(--ax-public-edge-label-border-size-selected);
-    border-color: var(--ax-public-edge-label-border-color-selected);
-  }
+    &.temporary,
+    &.selected {
+      border-width: var(--ax-public-edge-label-border-size-selected);
+      border-color: var(--ax-public-edge-label-border-color-selected);
+    }
 
-  &.disabled {
-    color: var(--ax-public-edge-label-color-disabled);
-    border-color: var(--ax-public-edge-label-border-color-disabled);
+    &.disabled {
+      color: var(--ax-public-edge-label-color-disabled);
+      border-color: var(--ax-public-edge-label-border-color-disabled);
+    }
   }
 }
