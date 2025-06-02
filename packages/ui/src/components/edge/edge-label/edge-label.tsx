@@ -33,6 +33,12 @@ type EdgeLabelType = 'text' | 'icon' | 'compound';
  * The component extends a standard `HTMLDivElement`, enabling flexibility in layout and positioning.
  * For example, you can use CSS transforms or absolute positioning to control the label's placement on the edge.
  * The content of the label can be any valid `ReactNode`, allowing full customization.
+ *
+ * > **Note:**
+ * > By default, `EdgeLabel` uses `position: absolute` to properly position the label based on the `labelX` and `labelY`
+ * parameters provided by ReactFlow. This ensures the label appears at the correct location on the edge. When using `EdgeLabel`
+ * outside of a diagram context, keep in mind that it may require additional wrapper elements or layout adjustments,
+ * as its absolute positioning removes it from the normal document flow.
  */
 export const EdgeLabel = forwardRef<
   HTMLDivElement,
