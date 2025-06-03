@@ -19,7 +19,7 @@ function NavbarContentLayout({
 }) {
   return (
     <div className={styles['navbar-content']}>
-      <div>{left}</div>
+      <div className={styles['logo-section']}>{left}</div>
       <div className={styles['search-section']}>{right}</div>
     </div>
   );

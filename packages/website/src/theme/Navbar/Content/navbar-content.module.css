@@ -8,6 +8,11 @@
   border-bottom: 1px solid var(--ax-colors-gray-650);
   background: var(--ax-colors-acc7-800);
 
+  .logo-section {
+    display: flex;
+    align-items: center;
+  }
+
   .search-section {
     display: flex;
     justify-content: space-between;
