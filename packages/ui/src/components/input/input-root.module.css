@@ -5,7 +5,8 @@
 
     color: var(--ax-public-input-root-color);
 
-    border: 1px solid var(--ax-public-input-root-border-color);
+    border: var(--ax-public-input-root-border-size) solid
+      var(--ax-public-input-root-border-color);
 
     &:not(:hover) {
       transition: all var(--ax-public-transition);

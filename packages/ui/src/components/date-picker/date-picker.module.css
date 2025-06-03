@@ -1,6 +1,7 @@
 .container {
   background: transparent;
-  border: 1px solid var(--ax-public-input-root-border-color);
+  border: var(--ax-public-input-root-border-size) solid
+    var(--ax-public-input-root-border-color);
   color: var(--ax-public-input-root-color);
   cursor: pointer;
   width: 100%;

@@ -32,10 +32,17 @@ type MenuProps = MenuBaseProps & {
   placement?: Placement | undefined;
 
   /**
+   * Controls whether the menu is open or closed.
+   * When omitted, the menu's open state will be managed internally
+   * and toggled by clicking on the `children` trigger element.
+   */
+  open?: boolean | undefined;
+
+  /**
    * The trigger element that will open the menu when clicked.
    * This element will be wrapped in a button with appropriate ARIA attributes.
    */
-  children: ReactElement;
+  children?: ReactElement;
 };
 
 export const Menu = memo(
@@ -45,16 +52,21 @@ export const Menu = memo(
     placement = 'bottom-end',
     children,
     slotProps,
+    open,
     ...props
   }: MenuProps) => {
-    const MenuTriggerButton = useMemo(
-      () => createTriggerButton(children),
-      [children],
-    );
+    const MenuTriggerButton = useMemo(() => {
+      if (children) {
+        return createTriggerButton(children);
+      }
+      return null;
+    }, [children]);
 
     return (
-      <Dropdown>
-        <MenuButton slots={{ root: MenuTriggerButton }} />
+      <Dropdown open={open}>
+        {MenuTriggerButton && (
+          <MenuButton slots={{ root: MenuTriggerButton }} />
+        )}
         <MenuBase
           slotProps={{
             listbox: {

@@ -833,7 +833,7 @@
       "props": {
         "children": {
           "description": "The trigger element that will open the menu when clicked.\nThis element will be wrapped in a button with appropriate ARIA attributes.",
-          "required": true,
+          "required": false,
           "tsType": {
             "name": "ReactElement"
           }
@@ -893,6 +893,22 @@
             ],
             "name": "Array",
             "raw": "MenuItemProps[]"
+          }
+        },
+        "open": {
+          "description": "Controls whether the menu is open or closed.\nWhen omitted, the menu's open state will be managed internally\nand toggled by clicking on the `children` trigger element.",
+          "required": false,
+          "tsType": {
+            "elements": [
+              {
+                "name": "boolean"
+              },
+              {
+                "name": "undefined"
+              }
+            ],
+            "name": "union",
+            "raw": "boolean | undefined"
           }
         },
         "placement": {

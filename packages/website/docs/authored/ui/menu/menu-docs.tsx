@@ -6,7 +6,7 @@ export function MenuDocs() {
   return (
     <ComponentPage
       preview={
-        <Menu items={[{ label: 'Star Wars' }, { label: 'Star Treck' }]}>
+        <Menu items={[{ label: 'Star Wars' }, { label: 'Star Trek' }]}>
           <LabelButton label="Open" />
         </Menu>
       }
