@@ -1,5 +1,7 @@
 :root {
-  --ax-public-list-item-background-color: var(--ax-dropdown-bg-secondary-default);
+  --ax-public-list-item-background-color: var(
+    --ax-dropdown-bg-secondary-default
+  );
   --ax-public-list-item-background-color-selected: var(
     --ax-dropdown-bg-secondary-active
   );
@@ -10,6 +12,7 @@
     --ax-dropdown-bg-secondary-default
   );
   --ax-public-list-item-outline-color-focus: var(--ax-ui-stroke-primary-focus);
+  --ax-public-list-item-outline-size: 0.0625rem;
 
   --ax-public-list-item-color-destructive: var(--ax-txt-error-default);
   --ax-public-list-item-background-color-destructive: var(
@@ -42,7 +45,8 @@
     }
 
     &:focus-visible {
-      outline: 1px solid var(--ax-public-list-item-outline-color-focus);
+      outline: var(--ax-public-list-item-outline-size) solid
+        var(--ax-public-list-item-outline-color-focus);
       background-color: var(--ax-public-list-item-background-color-focus);
     }
 

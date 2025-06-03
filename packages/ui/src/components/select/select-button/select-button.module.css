@@ -1,4 +1,5 @@
 :root {
+  --ax-public-select-border-size: 0.0625rem;
   --ax-public-select-button-color: var(--ax-txt-primary-default);
   --ax-public-select-button-border-color: var(
     --ax-input-stroke-primary-default
@@ -10,10 +11,13 @@
     --ax-input-stroke-primary-default
   );
 
-  --ax-public-select-button-background-color-error: var(--ax-input-bg-primary-error);
-  --ax-public-select-button-border-color-error: var(--ax-input-stroke-primary-error);
+  --ax-public-select-button-background-color-error: var(
+    --ax-input-bg-primary-error
+  );
+  --ax-public-select-button-border-color-error: var(
+    --ax-input-stroke-primary-error
+  );
   --ax-public-select-button-color-error: var(--ax-txt-error-default);
-
 }
 
 @layer ui.component {
@@ -27,7 +31,8 @@
 
     color: var(--ax-public-select-button-color);
 
-    border: 1px solid var(--ax-public-select-button-border-color);
+    border: var(--ax-public-select-border-size) solid
+      var(--ax-public-select-button-border-color);
 
     &:not(:hover) {
       transition: all var(--ax-public-transition);

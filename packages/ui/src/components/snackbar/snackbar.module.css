@@ -1,4 +1,5 @@
 :root {
+  --ax-public-snackbar-border-size: 0.0625rem;
   --ax-public-snackbar-padding: var(--ax-token-spacing-snackbar-v-pad-1)
     var(--ax-token-spacing-snackbar-h-pad-1);
   --ax-public-snackbar-border-radius: var(--ax-token-radius-snackbar);
@@ -64,7 +65,7 @@
 .container {
   display: flex;
   width: var(--ax-public-snackbar-width);
-  border: 1px solid var(--ax-public-snackbar-default-border);
+  border: var(--ax-public-snackbar-border-size) solid var(--ax-public-snackbar-default-border);
   border-radius: var(--ax-public-snackbar-border-radius);
   background: var(--ax-public-snackbar-default-background);
   padding: var(--ax-public-snackbar-padding);
@@ -78,21 +79,21 @@
 
   &.success {
     background: var(--ax-public-snackbar-success-background);
-    border: 1px solid var(--ax-public-snackbar-success-border);
+    border-color: var(--ax-public-snackbar-success-border);
   }
 
   &.error {
     background: var(--ax-public-snackbar-error-background);
-    border: 1px solid var(--ax-public-snackbar-error-border);
+    border-color: var(--ax-public-snackbar-error-border);
   }
 
   &.warning {
     background: var(--ax-public-snackbar-warning-background);
-    border: 1px solid var(--ax-public-snackbar-warning-border);
+    border-color: var(--ax-public-snackbar-warning-border);
   }
 
   &.info {
     background: var(--ax-public-snackbar-info-background);
-    border: 1px solid var(--ax-public-snackbar-info-border);
+    border-color: var(--ax-public-snackbar-info-border);
   }
 }

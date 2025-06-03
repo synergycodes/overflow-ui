@@ -6,8 +6,11 @@
       "name": "--ax-public-avatar-background-color"
     },
     {
-      "comment": "missing token",
       "name": "--ax-public-avatar-border-color"
+    },
+    {
+      "comment": "missing token",
+      "name": "--ax-public-avatar-border-size"
     }
   ],
   "components/button/base-button/base-button.module.css": [
@@ -198,6 +201,9 @@
   ],
   "components/button/styles/variant.module.css": [
     {
+      "name": "--ax-public-button-border-size"
+    },
+    {
       "name": "--ax-public-button-error-background"
     },
     {
@@ -366,6 +372,9 @@
     }
   ],
   "components/date-picker/data-picker-mantine.css": [
+    {
+      "name": "--ax-public-date-picker-border-size"
+    },
     {
       "name": "--ax-public-date-picker-color"
     },
@@ -543,6 +552,9 @@
       "name": "--ax-public-input-root-border-color-focus"
     },
     {
+      "name": "--ax-public-input-root-border-size"
+    },
+    {
       "name": "--ax-public-input-root-color"
     },
     {
@@ -658,6 +670,9 @@
       "name": "--ax-public-node-icon-border-radius"
     },
     {
+      "name": "--ax-public-node-icon-border-size"
+    },
+    {
       "name": "--ax-public-node-icon-color"
     },
     {
@@ -713,10 +728,16 @@
       "name": "--ax-public-node-border-radius"
     },
     {
+      "name": "--ax-public-node-border-size"
+    },
+    {
       "name": "--ax-public-node-box-shadow-selected"
     },
     {
       "name": "--ax-public-node-gap"
+    },
+    {
+      "name": "--ax-public-node-height"
     },
     {
       "name": "--ax-public-node-hover-color"
@@ -786,6 +807,9 @@
   ],
   "components/select/select-button/select-button.module.css": [
     {
+      "name": "--ax-public-select-border-size"
+    },
+    {
       "name": "--ax-public-select-button-background-color-error"
     },
     {
@@ -812,6 +836,9 @@
   "components/separator/separator.module.css": [
     {
       "name": "--ax-public-list-item-separator-background-color"
+    },
+    {
+      "name": "--ax-public-list-item-separator-border-size"
     }
   ],
   "components/snackbar/components/action-buttons.module.css": [],
@@ -820,6 +847,9 @@
   "components/snackbar/snackbar.module.css": [
     {
       "name": "--ax-public-snackbar-border-radius"
+    },
+    {
+      "name": "--ax-public-snackbar-border-size"
     },
     {
       "name": "--ax-public-snackbar-close-icon-color"
@@ -1030,6 +1060,9 @@
       "name": "--ax-public-textarea-root-border-color-focus"
     },
     {
+      "name": "--ax-public-textarea-root-border-size"
+    },
+    {
       "name": "--ax-public-textarea-root-color"
     },
     {
@@ -1156,6 +1189,9 @@
     },
     {
       "name": "--ax-public-list-item-outline-color-focus"
+    },
+    {
+      "name": "--ax-public-list-item-outline-size"
     }
   ],
   "styles/globals.css": [

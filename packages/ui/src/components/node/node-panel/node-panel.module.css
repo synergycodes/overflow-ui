@@ -1,5 +1,7 @@
 :root {
   --ax-public-node-width: 15rem;
+  --ax-public-node-height: 100%;
+  --ax-public-node-border-size: 0.0625rem;
 
   --ax-public-node-padding: var(--ax-token-spacing-node-head-v-pad);
   --ax-public-node-gap: var(--ax-token-spacing-node-head-gap);
@@ -35,13 +37,15 @@
   .inner-container {
     display: flex;
     width: var(--ax-public-node-width);
+    height: var(--ax-public-node-height);
     padding: var(--ax-public-node-padding);
     gap: var(--ax-public-node-gap);
     align-items: center;
     flex-direction: column;
 
     border-radius: var(--ax-public-node-border-radius);
-    border: 1px solid var(--ax-public-node-border-color);
+    border: var(--ax-public-node-border-size) solid
+      var(--ax-public-node-border-color);
     background: var(--ax-public-node-background-color);
 
     &.selected {

@@ -833,7 +833,7 @@
       "props": {
         "children": {
           "description": "The trigger element that will open the menu when clicked.\nThis element will be wrapped in a button with appropriate ARIA attributes.",
-          "required": true,
+          "required": false,
           "tsType": {
             "name": "ReactElement"
           }
@@ -893,6 +893,72 @@
             ],
             "name": "Array",
             "raw": "MenuItemProps[]"
+          }
+        },
+        "offset": {
+          "description": "Distance between a popup and the trigger element",
+          "required": false,
+          "tsType": {
+            "name": "OffsetOptions"
+          }
+        },
+        "onOpenChange": {
+          "description": "Callback fired when the component requests to be opened or closed.",
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "raw": "(\n  event: MouseEvent | KeyboardEvent | FocusEvent | null,\n  open: boolean,\n) => void",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "event",
+                  "type": {
+                    "elements": [
+                      {
+                        "name": "MouseEvent"
+                      },
+                      {
+                        "name": "KeyboardEvent"
+                      },
+                      {
+                        "name": "FocusEvent"
+                      },
+                      {
+                        "name": "null"
+                      }
+                    ],
+                    "name": "union",
+                    "raw": "MouseEvent | KeyboardEvent | FocusEvent | null"
+                  }
+                },
+                {
+                  "name": "open",
+                  "type": {
+                    "name": "boolean"
+                  }
+                }
+              ],
+              "return": {
+                "name": "void"
+              }
+            },
+            "type": "function"
+          }
+        },
+        "open": {
+          "description": "Controls whether the menu is open or closed.\nWhen omitted, the menu's open state will be managed internally\nand toggled by clicking on the `children` trigger element.",
+          "required": false,
+          "tsType": {
+            "elements": [
+              {
+                "name": "boolean"
+              },
+              {
+                "name": "undefined"
+              }
+            ],
+            "name": "union",
+            "raw": "boolean | undefined"
           }
         },
         "placement": {
