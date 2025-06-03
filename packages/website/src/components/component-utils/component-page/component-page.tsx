@@ -4,7 +4,7 @@ import {
   AxiomCSSRelativePath,
   AxiomTSXRelativePath,
 } from '@site/generated/path-types';
-import { CSSVariablesList } from '../css-variables-list/css-variables-list';
+import { CSSVariablesList } from '../css-variable-list/css-variable-list';
 import { Playground } from '../code-playground/code-playground';
 
 import styles from './component-page.module.css';

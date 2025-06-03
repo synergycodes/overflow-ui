@@ -1,6 +1,8 @@
 import { Prism } from 'prism-react-renderer';
+import { PUBLIC_VARIABLE_PREFIX } from '../css-variable-list/css-variable-types';
 
-const AXIOM_PUBLIC_PREFIX = new RegExp('--ax-public-');
+const pattern = new RegExp(PUBLIC_VARIABLE_PREFIX);
+const variableNamePattern = /(?<=^--ax-public-)(?:[a-zA-Z0-9_-]+)/;
 
 Prism.languages.css = {
   ...Prism.languages.css,
@@ -10,10 +12,10 @@ Prism.languages.css = {
     ...Prism.languages.css.property,
     inside: {
       'ax-prefix': {
-        pattern: AXIOM_PUBLIC_PREFIX,
+        pattern,
       },
       'variable-name': {
-        pattern: /(?<=^--ax-public-)(?:[a-zA-Z0-9_-]+)/,
+        pattern: variableNamePattern,
       },
     },
   },
