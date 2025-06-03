@@ -1,14 +1,21 @@
 import listBoxStyles from '@ui/shared/styles/list-box.module.css';
 import clsx from 'clsx';
 
-import { memo, ReactElement, useMemo } from 'react';
+import {
+  memo,
+  ReactElement,
+  useMemo,
+  MouseEvent,
+  KeyboardEvent,
+  FocusEvent,
+} from 'react';
 import { Dropdown, MenuButton } from '@mui/base';
 import { Menu as MenuBase, MenuProps as MenuBaseProps } from '@mui/base/Menu';
 import { MenuItem } from './menu-item';
 import { MenuItemProps } from './types';
 import { ItemSize } from '@ui/shared/types/item-size';
 import { Separator } from '@ui/components/separator/separator';
-import { Placement } from '@floating-ui/react';
+import { OffsetOptions, Placement } from '@floating-ui/react';
 import { createTriggerButton } from './utils/create-trigger-button';
 
 type MenuProps = MenuBaseProps & {
@@ -39,6 +46,18 @@ type MenuProps = MenuBaseProps & {
   open?: boolean | undefined;
 
   /**
+   * Callback fired when the component requests to be opened or closed.
+   */
+  onOpenChange?: (
+    event: MouseEvent | KeyboardEvent | FocusEvent | null,
+    open: boolean,
+  ) => void;
+
+  /**
+   * Distance between a popup and the trigger element
+   */
+  offset?: OffsetOptions;
+  /**
    * The trigger element that will open the menu when clicked.
    * This element will be wrapped in a button with appropriate ARIA attributes.
    */
@@ -53,6 +72,8 @@ export const Menu = memo(
     children,
     slotProps,
     open,
+    offset,
+    onOpenChange,
     ...props
   }: MenuProps) => {
     const MenuTriggerButton = useMemo(() => {
@@ -63,7 +84,7 @@ export const Menu = memo(
     }, [children]);
 
     return (
-      <Dropdown open={open}>
+      <Dropdown open={open} onOpenChange={onOpenChange}>
         {MenuTriggerButton && (
           <MenuButton slots={{ root: MenuTriggerButton }} />
         )}
@@ -75,6 +96,7 @@ export const Menu = memo(
             root: {
               placement: placement,
               className: clsx(listBoxStyles['popup']),
+              offset,
             },
             ...slotProps,
           }}
