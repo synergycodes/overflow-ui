@@ -8,12 +8,12 @@ import { entries, groupBy } from 'remeda';
 import styles from './css-variable-list.module.css';
 
 type Props = {
-  path: AxiomCSSRelativePath;
+  paths: AxiomCSSRelativePath[];
 };
 
-export function CSSVariablesList({ path }: Props) {
-  const variableEntries = Object.values(
-    cssVariablesData[path] as CSSVariableData[],
+export function CSSVariablesList({ paths }: Props) {
+  const variableEntries = paths.flatMap((path) =>
+    Object.values(cssVariablesData[path] as CSSVariableData[]),
   );
 
   if (variableEntries.length === 0) {
@@ -24,6 +24,7 @@ export function CSSVariablesList({ path }: Props) {
 
   return (
     <div className={styles['variable-list']}>
+      <h1>CSS Variables</h1>
       {entries(variableTypeMap).map(([type, variables]) => (
         <div className={styles['category']} key={type}>
           <h2 className={styles['label']}>{variableTypes[type].label}</h2>

@@ -32,14 +32,7 @@ export function ComponentPage(props: ComponentPageProps) {
         <PropsList path={componentPath} hardcodedProps={hardcodedData?.props} />
       </Section>
       <Section>
-        {cssPaths.length > 0 && (
-          <>
-            <h1>CSS Variables</h1>
-            {cssPaths.map((path) => (
-              <CSSVariablesList key={path} path={path} />
-            ))}
-          </>
-        )}
+        <CSSVariablesList paths={cssPaths} />
       </Section>
     </div>
   );

@@ -13,8 +13,7 @@ import CSSIcon from '@site/static/img/css.svg';
 import styles from './code-playground.module.css';
 import { FileTab } from './file-tab';
 import clsx from 'clsx';
-import { NavButton } from '@synergycodes/axiom';
-import { ClipboardText } from '@phosphor-icons/react';
+import { CopyButton } from './copy-button/copy-button';
 
 type Props = {
   exampleCode: string;
@@ -37,6 +36,8 @@ export function Playground({ exampleCode, cssPaths }: Props) {
     ? `${hostSelectorStart}${cssCode}${hostSelectorEnd}`
     : '';
 
+  const copyContent = isReact ? reactCode : cssCode;
+
   return (
     <LiveProvider code={reactCode} scope={ReactLiveScope}>
       <Preview>
@@ -48,26 +49,27 @@ export function Playground({ exampleCode, cssPaths }: Props) {
       </Preview>
       <div className={styles['editor-container']}>
         <div className={styles['editor-header']}>
-          <FileTab
-            className={clsx(styles['file-react'], {
-              [styles['active']]: isReact,
-            })}
-            onClick={() => setCurrentFile('react')}
-            label="index.tsx"
-            icon={<ReactIcon />}
-          />
-          <FileTab
-            className={clsx(styles['file-css'], { [styles['active']]: isCSS })}
-            onClick={() => setCurrentFile('css')}
-            label="styles.css"
-            icon={<CSSIcon />}
-          />
-
-          <NavButton
-            size="small"
-            className={styles['copy-button']}
-            icon={<ClipboardText />}
-          />
+          <div className={styles['file-tabs']}>
+            <FileTab
+              className={clsx(styles['file-react'], {
+                [styles['active']]: isReact,
+              })}
+              onClick={() => setCurrentFile('react')}
+              label="index.tsx"
+              icon={<ReactIcon />}
+            />
+            <FileTab
+              className={clsx(styles['file-css'], {
+                [styles['active']]: isCSS,
+              })}
+              onClick={() => setCurrentFile('css')}
+              label="styles.css"
+              icon={<CSSIcon />}
+            />
+          </div>
+          <div className={styles['toolbar']}>
+            <CopyButton content={copyContent} />
+          </div>
         </div>
         {isReact && (
           <LiveProvider code={reactCode} scope={ReactLiveScope}>

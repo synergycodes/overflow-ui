@@ -17,42 +17,49 @@
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     align-self: stretch;
 
     border-bottom: 1px solid #575b94;
 
-    .copy-button {
-      position: absolute;
-      right: 0.25rem;
+    .toolbar {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
     }
 
-    .file-tab {
-      border-radius: 0;
-      border: none;
-      transition: all 150ms ease;
-      color: var(--ax-colors-acc7-100);
-      background-color: var(--ax-colors-acc7-700);
-      font-family:
-        Fira Code,
-        monospace;
-      font-weight: normal;
-      font-size: 0.8125rem;
+    .file-tabs {
+      display: flex;
+      align-items: center;
 
-      &:hover {
-        background-color: var(--ax-colors-acc7-600);
-      }
+      .file-tab {
+        border-radius: 0;
+        border: none;
+        transition: all 150ms ease;
+        color: var(--ax-colors-acc7-100);
+        background-color: var(--ax-colors-acc7-700);
+        font-family:
+          Fira Code,
+          monospace;
+        font-weight: normal;
+        font-size: 0.8125rem;
 
-      &.active {
-        color: var(--ax-colors-acc7-50);
-        background-color: var(--ax-colors-acc7-500);
-      }
+        &:hover {
+          background-color: var(--ax-colors-acc7-600);
+        }
 
-      &.file-react {
-        fill: #498ba7;
-      }
+        &.active {
+          color: var(--ax-colors-acc7-50);
+          background-color: var(--ax-colors-acc7-500);
+        }
 
-      &.file-css {
-        fill: rebeccapurple;
+        &.file-react {
+          fill: #498ba7;
+        }
+
+        &.file-css {
+          fill: rebeccapurple;
+        }
       }
     }
   }
