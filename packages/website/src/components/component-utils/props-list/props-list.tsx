@@ -5,10 +5,10 @@ import styles from './props-list.module.css';
 
 type Props = {
   path: string;
-  hardcodedProps: PropMap;
+  hardcodedProps?: PropMap;
 };
 
-export function PropsList({ path, hardcodedProps }: Props) {
+export function PropsList({ path, hardcodedProps = {} }: Props) {
   const { props } = getAPIData(path);
   const allProps = { ...props, ...hardcodedProps };
   const propsEntries = Object.entries(allProps);

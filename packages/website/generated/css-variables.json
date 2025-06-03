@@ -6,158 +6,204 @@
       "name": "--ax-public-avatar-background-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-avatar-border-color"
     }
   ],
   "components/button/base-button/base-button.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-button-background-color-disabled"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-focus-visible-box-shadow-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-inner-border-color"
     }
   ],
   "components/button/base-button/gap.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-button-gap-extra-large"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-gap-extra-small"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-gap-large"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-gap-medium"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-gap-small"
     }
   ],
   "components/button/icon-label-button/padding.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-icon-label-button-padding-extra-large"
     },
     {
+      "comment": "",
       "name": "--ax-public-icon-label-button-padding-extra-small"
     },
     {
+      "comment": "",
       "name": "--ax-public-icon-label-button-padding-large"
     },
     {
+      "comment": "",
       "name": "--ax-public-icon-label-button-padding-medium"
     },
     {
+      "comment": "",
       "name": "--ax-public-icon-label-button-padding-small"
     }
   ],
   "components/button/label-button/loader.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-button-loader-animation-duration"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-loader-dot-border-radius"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-loader-dot-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-loader-dot-size"
     }
   ],
   "components/button/label-button/padding.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-label-button-padding-extra-large"
     },
     {
+      "comment": "",
       "name": "--ax-public-label-button-padding-extra-small"
     },
     {
+      "comment": "",
       "name": "--ax-public-label-button-padding-large"
     },
     {
+      "comment": "",
       "name": "--ax-public-label-button-padding-medium"
     },
     {
+      "comment": "",
       "name": "--ax-public-label-button-padding-small"
     }
   ],
   "components/button/nav-button/nav-button.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-button-nav-background-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-nav-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-nav-color-active"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-nav-color-disabled"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-nav-color-hover"
     }
   ],
   "components/button/styles/border-radius.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-button-border-radius-circle"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-border-radius-extra-large"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-border-radius-extra-small"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-border-radius-large"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-border-radius-medium"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-border-radius-small"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-border-radius-xx-small"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-border-radius-xxx-small"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-border-radius-xxxx-small"
     }
   ],
   "components/button/styles/font-size.module.css": [],
   "components/button/styles/icon-padding.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-button-icon-padding-extra-large"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-icon-padding-extra-small"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-icon-padding-large"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-icon-padding-medium"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-icon-padding-small"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-icon-padding-xx-small"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-icon-padding-xxx-small"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-icon-padding-xxxx-small"
     }
   ],
@@ -197,226 +243,298 @@
   ],
   "components/button/styles/variant.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-button-error-background"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-error-background-active"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-error-background-focus"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-error-background-hover"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-ghost-destructive-background-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-ghost-destructive-background-color-active"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-ghost-destructive-background-color-disabled"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-ghost-destructive-background-color-focus"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-ghost-destructive-background-color-hover"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-ghost-destructive-border-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-ghost-destructive-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-ghost-destructive-color-disabled"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-gray-background"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-gray-background-active"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-gray-background-focus"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-gray-background-hover"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-primary-background"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-primary-background-active"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-primary-background-focus"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-primary-background-hover"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-secondary-border-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-secondary-border-color-active"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-secondary-border-color-disabled"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-secondary-border-color-focus"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-secondary-border-color-hover"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-secondary-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-secondary-color-active"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-secondary-color-disabled"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-success-background"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-success-background-active"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-success-background-focus"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-success-background-hover"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-warning-background"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-warning-background-active"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-warning-background-focus"
     },
     {
+      "comment": "",
       "name": "--ax-public-button-warning-background-hover"
     }
   ],
   "components/checkbox/checkbox.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-checkbox-bg"
     },
     {
+      "comment": "",
       "name": "--ax-public-checkbox-border-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-checkbox-border-radius-extra-small"
     },
     {
+      "comment": "",
       "name": "--ax-public-checkbox-border-radius-medium"
     },
     {
+      "comment": "",
       "name": "--ax-public-checkbox-border-radius-small"
     },
     {
+      "comment": "",
       "name": "--ax-public-checkbox-border-width"
     },
     {
+      "comment": "",
       "name": "--ax-public-checkbox-checked-bg"
     },
     {
+      "comment": "",
       "name": "--ax-public-checkbox-disabled-bg"
     },
     {
+      "comment": "",
       "name": "--ax-public-checkbox-disabled-border-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-checkbox-disabled-icon-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-checkbox-focus-border-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-checkbox-focus-border-shadow"
     },
     {
+      "comment": "",
       "name": "--ax-public-checkbox-icon-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-checkbox-icon-size-extra-small"
     },
     {
+      "comment": "",
       "name": "--ax-public-checkbox-icon-size-medium"
     },
     {
+      "comment": "",
       "name": "--ax-public-checkbox-icon-size-small"
     },
     {
+      "comment": "",
       "name": "--ax-public-checkbox-size-extra-small"
     },
     {
+      "comment": "",
       "name": "--ax-public-checkbox-size-medium"
     },
     {
+      "comment": "",
       "name": "--ax-public-checkbox-size-small"
     }
   ],
   "components/date-picker/data-picker-mantine.css": [
     {
+      "comment": "",
       "name": "--ax-public-date-picker-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-date-picker-date-header-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-date-picker-date-outside-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-date-picker-date-selected-background-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-date-picker-date-selected-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-date-picker-dropdown-background"
     },
     {
+      "comment": "",
       "name": "--ax-public-date-picker-dropdown-border-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-date-picker-dropdown-box-shadow"
     },
     {
+      "comment": "",
       "name": "--ax-public-date-picker-header-background"
     }
   ],
   "components/date-picker/date-picker.module.css": [],
   "components/date-picker/variables.css": [
     {
+      "comment": "",
       "name": "--ax-public-date-picker-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-date-picker-date-header-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-date-picker-date-outside-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-date-picker-date-selected-background-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-date-picker-dropdown-background"
     },
     {
+      "comment": "",
       "name": "--ax-public-date-picker-dropdown-border-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-date-picker-dropdown-box-shadow"
     },
     {
+      "comment": "",
       "name": "--ax-public-date-picker-header-background"
     }
   ],
@@ -425,203 +543,266 @@
   "components/input/input.module.css": [],
   "components/input/variables.css": [
     {
+      "comment": "",
       "name": "--ax-public-input-color-disabled"
     },
     {
+      "comment": "",
       "name": "--ax-public-input-root-background-color-error"
     },
     {
+      "comment": "",
       "name": "--ax-public-input-root-border-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-input-root-border-color-error"
     },
     {
+      "comment": "",
       "name": "--ax-public-input-root-border-color-focus"
     },
     {
+      "comment": "",
       "name": "--ax-public-input-root-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-input-root-color-disabled"
     },
     {
+      "comment": "",
       "name": "--ax-public-input-root-color-error"
     }
   ],
   "components/modal/modal.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-modal-backdrop-background"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-background"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-border-radius"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-box-shadow"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-close-button-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-content-background"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-content-gap"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-content-padding"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-description-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-description-line-height"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-description-size"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-footer-border-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-footer-padding"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-gap"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-gap-large"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-header-background"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-header-border-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-icon-background"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-icon-border-radius"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-icon-border-radius-large"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-icon-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-icon-padding"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-large-icon-padding"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-large-padding"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-large-title-line-height"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-large-title-size"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-large-width"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-padding"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-title-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-modal-width"
     }
   ],
   "components/node/node-as-port-wrapper/node-as-port.css": [],
   "components/node/node-description/node-description.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-node-title-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-node-title-subtitle"
     }
   ],
   "components/node/node-icon/node-icon.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-node-icon-border-radius"
     },
     {
+      "comment": "",
       "name": "--ax-public-node-icon-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-node-icon-container-background-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-node-icon-container-border-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-node-icon-padding"
     }
   ],
   "components/node/node-panel/handle.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-node-port-background-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-node-port-background-color-hover"
     },
     {
+      "comment": "",
       "name": "--ax-public-node-port-border-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-node-port-border-color-hover"
     },
     {
+      "comment": "",
       "name": "--ax-public-node-port-border-size"
     },
     {
+      "comment": "",
       "name": "--ax-public-node-port-boundary-size"
     },
     {
+      "comment": "",
       "name": "--ax-public-node-port-size"
     },
     {
+      "comment": "",
       "name": "--ax-public-node-port-size-hover"
     }
   ],
   "components/node/node-panel/node-panel.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-node-background-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-node-border-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-node-border-color-selected"
     },
     {
+      "comment": "",
       "name": "--ax-public-node-border-hover-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-node-border-radius"
     },
     {
+      "comment": "",
       "name": "--ax-public-node-box-shadow-selected"
     },
     {
+      "comment": "",
       "name": "--ax-public-node-gap"
     },
     {
+      "comment": "",
       "name": "--ax-public-node-hover-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-node-padding"
     },
     {
+      "comment": "",
       "name": "--ax-public-node-width"
     }
   ],
@@ -653,24 +834,31 @@
   ],
   "components/radio-button/radio.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-radio-bg"
     },
     {
+      "comment": "",
       "name": "--ax-public-radio-border-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-radio-border-radius"
     },
     {
+      "comment": "",
       "name": "--ax-public-radio-checked-bg"
     },
     {
+      "comment": "",
       "name": "--ax-public-radio-disabled-bg"
     },
     {
+      "comment": "",
       "name": "--ax-public-radio-disabled-border-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-radio-disabled-dot-color"
     },
     {
@@ -678,29 +866,37 @@
       "name": "--ax-public-radio-dot-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-radio-focus-border-color"
     }
   ],
   "components/select/select-button/select-button.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-select-button-background-color-error"
     },
     {
+      "comment": "",
       "name": "--ax-public-select-button-border-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-select-button-border-color-error"
     },
     {
+      "comment": "",
       "name": "--ax-public-select-button-border-color-focus"
     },
     {
+      "comment": "",
       "name": "--ax-public-select-button-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-select-button-color-disabled"
     },
     {
+      "comment": "",
       "name": "--ax-public-select-button-color-error"
     }
   ],
@@ -708,6 +904,7 @@
   "components/select/select.module.css": [],
   "components/separator/separator.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-list-item-separator-background-color"
     }
   ],
@@ -716,21 +913,27 @@
   "components/snackbar/components/message.module.css": [],
   "components/snackbar/snackbar.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-snackbar-border-radius"
     },
     {
+      "comment": "",
       "name": "--ax-public-snackbar-close-icon-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-snackbar-content-gap"
     },
     {
+      "comment": "",
       "name": "--ax-public-snackbar-default-background"
     },
     {
+      "comment": "",
       "name": "--ax-public-snackbar-default-border"
     },
     {
+      "comment": "",
       "name": "--ax-public-snackbar-default-icon-color"
     },
     {
@@ -738,24 +941,31 @@
       "name": "--ax-public-snackbar-error-background"
     },
     {
+      "comment": "",
       "name": "--ax-public-snackbar-error-border"
     },
     {
+      "comment": "",
       "name": "--ax-public-snackbar-error-icon-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-snackbar-info-background"
     },
     {
+      "comment": "",
       "name": "--ax-public-snackbar-info-border"
     },
     {
+      "comment": "",
       "name": "--ax-public-snackbar-info-icon-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-snackbar-padding"
     },
     {
+      "comment": "",
       "name": "--ax-public-snackbar-subtitle-color"
     },
     {
@@ -763,12 +973,15 @@
       "name": "--ax-public-snackbar-success-background"
     },
     {
+      "comment": "",
       "name": "--ax-public-snackbar-success-border"
     },
     {
+      "comment": "",
       "name": "--ax-public-snackbar-success-icon-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-snackbar-title-color"
     },
     {
@@ -776,12 +989,15 @@
       "name": "--ax-public-snackbar-warning-background"
     },
     {
+      "comment": "",
       "name": "--ax-public-snackbar-warning-border"
     },
     {
+      "comment": "",
       "name": "--ax-public-snackbar-warning-icon-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-snackbar-width"
     }
   ],
@@ -809,250 +1025,326 @@
   ],
   "components/switch/icon-switch/icon-switch.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-icon-switch-height"
     },
     {
+      "comment": "",
       "name": "--ax-public-icon-switch-icon-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-icon-switch-icon-selected-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-icon-switch-icon-size"
     },
     {
+      "comment": "",
       "name": "--ax-public-icon-switch-padding"
     },
     {
+      "comment": "",
       "name": "--ax-public-icon-switch-thumb-bg-primary"
     },
     {
+      "comment": "",
       "name": "--ax-public-icon-switch-thumb-bg-secondary"
     },
     {
+      "comment": "",
       "name": "--ax-public-icon-switch-thumb-offset"
     },
     {
+      "comment": "",
       "name": "--ax-public-icon-switch-thumb-size"
     },
     {
+      "comment": "",
       "name": "--ax-public-icon-switch-track-bg"
     },
     {
+      "comment": "",
       "name": "--ax-public-icon-switch-translate"
     },
     {
+      "comment": "",
       "name": "--ax-public-icon-switch-width"
     }
   ],
   "components/switch/switch-size.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-switch-height-extra-small"
     },
     {
+      "comment": "",
       "name": "--ax-public-switch-height-medium"
     },
     {
+      "comment": "",
       "name": "--ax-public-switch-height-small"
     },
     {
+      "comment": "",
       "name": "--ax-public-switch-thumb-padding-extra-small"
     },
     {
+      "comment": "",
       "name": "--ax-public-switch-thumb-padding-medium"
     },
     {
+      "comment": "",
       "name": "--ax-public-switch-thumb-padding-small"
     },
     {
+      "comment": "",
       "name": "--ax-public-switch-width-extra-small"
     },
     {
+      "comment": "",
       "name": "--ax-public-switch-width-medium"
     },
     {
+      "comment": "",
       "name": "--ax-public-switch-width-small"
     }
   ],
   "components/switch/switch.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-switch-border-size"
     },
     {
+      "comment": "",
       "name": "--ax-public-switch-disabled-background-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-switch-disabled-border-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-switch-focus-border-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-switch-outline-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-thumb-disabled-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-thumb-no-selected-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-thumb-selected-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-track-no-selected-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-track-selected-color"
     }
   ],
   "components/text-area/text-area.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-textarea-color-disabled"
     },
     {
+      "comment": "",
       "name": "--ax-public-textarea-root-background-color-error"
     },
     {
+      "comment": "",
       "name": "--ax-public-textarea-root-border-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-textarea-root-border-color-error"
     },
     {
+      "comment": "",
       "name": "--ax-public-textarea-root-border-color-focus"
     },
     {
+      "comment": "",
       "name": "--ax-public-textarea-root-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-textarea-root-color-disabled"
     },
     {
+      "comment": "",
       "name": "--ax-public-textarea-root-color-error"
     }
   ],
   "components/tooltip/tooltip.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-tooltip-blue-background"
     },
     {
+      "comment": "",
       "name": "--ax-public-tooltip-blue-text-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-tooltip-default-background"
     },
     {
+      "comment": "",
       "name": "--ax-public-tooltip-padding"
     },
     {
+      "comment": "",
       "name": "--ax-public-tooltip-radius-size"
     },
     {
+      "comment": "",
       "name": "--ax-public-tooltip-text-color"
     }
   ],
   "shared/styles/input-font-size.module.css": [],
   "shared/styles/input-size.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-input-border-radius-large"
     },
     {
+      "comment": "",
       "name": "--ax-public-input-border-radius-medium"
     },
     {
+      "comment": "",
       "name": "--ax-public-input-border-radius-small"
     },
     {
+      "comment": "",
       "name": "--ax-public-input-gap-large"
     },
     {
+      "comment": "",
       "name": "--ax-public-input-gap-medium"
     },
     {
+      "comment": "",
       "name": "--ax-public-input-gap-small"
     },
     {
+      "comment": "",
       "name": "--ax-public-input-padding-large"
     },
     {
+      "comment": "",
       "name": "--ax-public-input-padding-medium"
     },
     {
+      "comment": "",
       "name": "--ax-public-input-padding-small"
     }
   ],
   "shared/styles/list-box.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-list-box-background-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-list-box-border-radius"
     },
     {
+      "comment": "",
       "name": "--ax-public-list-box-box-shadow"
     },
     {
+      "comment": "",
       "name": "--ax-public-list-box-gap"
     },
     {
+      "comment": "",
       "name": "--ax-public-list-box-padding"
     }
   ],
   "shared/styles/list-item-size.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-list-item-gap-large"
     },
     {
+      "comment": "",
       "name": "--ax-public-list-item-gap-medium"
     },
     {
+      "comment": "",
       "name": "--ax-public-list-item-gap-small"
     },
     {
+      "comment": "",
       "name": "--ax-public-list-item-padding-large"
     },
     {
+      "comment": "",
       "name": "--ax-public-list-item-padding-medium"
     },
     {
+      "comment": "",
       "name": "--ax-public-list-item-padding-small"
     }
   ],
   "shared/styles/list-item.module.css": [
     {
+      "comment": "",
       "name": "--ax-public-list-border-radius"
     },
     {
+      "comment": "",
       "name": "--ax-public-list-item-background-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-list-item-background-color-destructive"
     },
     {
+      "comment": "",
       "name": "--ax-public-list-item-background-color-focus"
     },
     {
+      "comment": "",
       "name": "--ax-public-list-item-background-color-hover-destructive"
     },
     {
+      "comment": "",
       "name": "--ax-public-list-item-background-color-selected"
     },
     {
+      "comment": "",
       "name": "--ax-public-list-item-color"
     },
     {
+      "comment": "",
       "name": "--ax-public-list-item-color-destructive"
     },
     {
+      "comment": "",
       "name": "--ax-public-list-item-color-selected"
     },
     {
+      "comment": "",
       "name": "--ax-public-list-item-outline-color-focus"
     }
   ],
   "styles/globals.css": [
     {
+      "comment": "",
       "name": "--ax-public-transition"
     }
   ],

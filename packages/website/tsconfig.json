@@ -4,15 +4,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "target": "ES2023",
-    "lib": [
-      "ES2023",
-      "DOM"
-    ],
+    "lib": ["ES2023", "DOM"],
     "strictNullChecks": true
   },
-  "exclude": [
-    ".docusaurus",
-    "build",
-    "docs/code-examples"
-  ]
+  "exclude": [".docusaurus", "build", "docs/code-examples"]
 }

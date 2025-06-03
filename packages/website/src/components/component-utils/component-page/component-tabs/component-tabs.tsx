@@ -25,8 +25,6 @@ export function ComponentTabs({
     hardcodedData: hardcodedData ?? {},
   };
 
-  console.log(tabComponentProps);
-
   return (
     <Tabs>
       {tabs.map(({ value, label, component: Component }) => (
