@@ -171,7 +171,7 @@
               }
             ],
             "name": "Extract",
-            "raw": "Extract<\n  Size,\n  'extra-small' | 'small' | 'medium' | 'large' | 'extra-large'\n>"
+            "raw": "Extract<\r\n  Size,\r\n  'extra-small' | 'small' | 'medium' | 'large' | 'extra-large'\r\n>"
           }
         },
         "tooltip": {
@@ -208,7 +208,7 @@
   ],
   "../ui/src/components/button/icon-button/icon-button.tsx": [
     {
-      "description": "IconButton is a specialized button component that displays only an icon.\nFeatures: accepts any icon component, supports multiple visual variants (primary, secondary, etc.),\nconfigurable sizes (small, medium, large), customizable shapes (circle or default),\nmaintains accessibility through BaseButton inheritance, and fully customizable through standard button props.",
+      "description": "IconButton is a specialized button component that displays only an icon.\r\nFeatures: accepts any icon component, supports multiple visual variants (primary, secondary, etc.),\r\nconfigurable sizes (small, medium, large), customizable shapes (circle or default),\r\nmaintains accessibility through BaseButton inheritance, and fully customizable through standard button props.",
       "displayName": "IconButton",
       "methods": [],
       "props": {
@@ -260,7 +260,7 @@
               }
             ],
             "name": "Extract",
-            "raw": "Extract<\n  Size,\n  'extra-small' | 'small' | 'medium' | 'large' | 'extra-large'\n>"
+            "raw": "Extract<\r\n  Size,\r\n  'extra-small' | 'small' | 'medium' | 'large' | 'extra-large'\r\n>"
           }
         },
         "tooltip": {
@@ -300,7 +300,7 @@
   ],
   "../ui/src/components/button/icon-label-button/icon-label-button.tsx": [
     {
-      "description": "IconLabelButton is a flexible button component that combines icons and text in specific patterns.\nFeatures: supports three distinct content patterns (icon + text, text + icon, or icon + text + icon),\naccepts any React node as icons, supports multiple visual variants (primary, secondary, etc.),\nconfigurable sizes (small, medium, large), maintains accessibility through BaseButton inheritance,\nand fully customizable through standard button props. The component enforces strict content patterns\nto ensure consistent and accessible button layouts.",
+      "description": "IconLabelButton is a flexible button component that combines icons and text in specific patterns.\r\nFeatures: supports three distinct content patterns (icon + text, text + icon, or icon + text + icon),\r\naccepts any React node as icons, supports multiple visual variants (primary, secondary, etc.),\r\nconfigurable sizes (small, medium, large), maintains accessibility through BaseButton inheritance,\r\nand fully customizable through standard button props. The component enforces strict content patterns\r\nto ensure consistent and accessible button layouts.",
       "displayName": "IconLabelButton",
       "methods": [],
       "props": {
@@ -345,7 +345,7 @@
               }
             ],
             "name": "Extract",
-            "raw": "Extract<\n  Size,\n  'extra-small' | 'small' | 'medium' | 'large' | 'extra-large'\n>"
+            "raw": "Extract<\r\n  Size,\r\n  'extra-small' | 'small' | 'medium' | 'large' | 'extra-large'\r\n>"
           }
         },
         "tooltip": {
@@ -385,7 +385,7 @@
   ],
   "../ui/src/components/button/label-button/label-button.tsx": [
     {
-      "description": "LabelButton is a versatile button component that displays text content with enhanced functionality.\nFeatures: displays a text label with customizable styling, supports multiple visual variants (primary, secondary, etc.),\nconfigurable sizes (small, medium, large), built-in loading state with animated indicator,\nmaintains accessibility through BaseButton inheritance, and fully customizable through standard button props.",
+      "description": "LabelButton is a versatile button component that displays text content with enhanced functionality.\r\nFeatures: displays a text label with customizable styling, supports multiple visual variants (primary, secondary, etc.),\r\nconfigurable sizes (small, medium, large), built-in loading state with animated indicator,\r\nmaintains accessibility through BaseButton inheritance, and fully customizable through standard button props.",
       "displayName": "LabelButton",
       "methods": [],
       "props": {
@@ -430,7 +430,7 @@
               }
             ],
             "name": "Extract",
-            "raw": "Extract<\n  Size,\n  'extra-small' | 'small' | 'medium' | 'large' | 'extra-large'\n>"
+            "raw": "Extract<\r\n  Size,\r\n  'extra-small' | 'small' | 'medium' | 'large' | 'extra-large'\r\n>"
           }
         },
         "tooltip": {
@@ -470,7 +470,7 @@
   ],
   "../ui/src/components/button/nav-button/nav-button.tsx": [
     {
-      "description": "NavButton is a specialized button component designed for navigation purposes.\nFeatures: accepts any React node as an icon, supports extended size range (from xxxx-small to large),\ncustomizable shapes (circle or default), optional background removal for transparent styling,\nmaintains accessibility through BaseButton inheritance, and fully customizable through standard button props.\nUnlike IconButton, NavButton is specifically optimized for navigation contexts with more granular size control.\nAlso the button has a distinct appearance with only the content visible in default state.",
+      "description": "NavButton is a specialized button component designed for navigation purposes.\r\nFeatures: accepts any React node as an icon, supports extended size range (from xxxx-small to large),\r\ncustomizable shapes (circle or default), optional background removal for transparent styling,\r\nmaintains accessibility through BaseButton inheritance, and fully customizable through standard button props.\r\nUnlike IconButton, NavButton is specifically optimized for navigation contexts with more granular size control.\r\nAlso the button has a distinct appearance with only the content visible in default state.",
       "displayName": "NavButton",
       "methods": [],
       "props": {
@@ -693,7 +693,7 @@
             "computed": false,
             "value": "'text'"
           },
-          "description": "Determines the layout style for the EdgeLabel based on its content:\n\ntext: Simple text label.\nicon: Single icon without additional content.\ncompound: Mixed content like icons + text, multiple icons, etc.",
+          "description": "Determines the layout style for the EdgeLabel based on its content:\r\n\r\ntext: Simple text label.\r\nicon: Single icon without additional content.\r\ncompound: Mixed content like icons + text, multiple icons, etc.",
           "required": false,
           "tsType": {
             "elements": [
@@ -2252,6 +2252,13 @@
             ],
             "name": "Extract",
             "raw": "Extract<Size, 'large' | 'medium' | 'small'>"
+          }
+        },
+        "spellCheck": {
+          "description": "Enables or disables browser spell checking",
+          "required": false,
+          "tsType": {
+            "name": "boolean"
           }
         },
         "value": {
