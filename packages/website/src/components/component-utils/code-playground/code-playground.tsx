@@ -14,6 +14,7 @@ import styles from './code-playground.module.css';
 import { FileTab } from './file-tab';
 import clsx from 'clsx';
 import { CopyButton } from './copy-button/copy-button';
+import { ResetButton } from './reset-button/reset-button';
 
 type Props = {
   exampleCode: string;
@@ -24,9 +25,10 @@ export type PlaygroundFileType = 'react' | 'css';
 
 const [hostSelectorStart, hostSelectorEnd] = [':host {', '}'];
 export function Playground({ exampleCode, cssPaths }: Props) {
-  const [reactCode, setReactCode] = useState(exampleCode.trim());
-  const initialCssCode = getCSSCode(cssPaths);
-  const [cssCode, setCssCode] = useState(initialCssCode?.trim());
+  const initialReactCode = exampleCode.trim();
+  const [reactCode, setReactCode] = useState(initialReactCode);
+  const initialCssCode = getCSSCode(cssPaths)?.trim();
+  const [cssCode, setCssCode] = useState(initialCssCode);
   const [currentFile, setCurrentFile] = useState<PlaygroundFileType>('react');
 
   const isReact = currentFile === 'react';
@@ -36,7 +38,12 @@ export function Playground({ exampleCode, cssPaths }: Props) {
     ? `${hostSelectorStart}${cssCode}${hostSelectorEnd}`
     : '';
 
-  const copyContent = isReact ? reactCode : cssCode;
+  const codeToCopy = isReact ? reactCode : cssCode;
+
+  function onReset() {
+    setReactCode(initialReactCode);
+    setCssCode(initialCssCode);
+  }
 
   return (
     <LiveProvider code={reactCode} scope={ReactLiveScope}>
@@ -68,7 +75,8 @@ export function Playground({ exampleCode, cssPaths }: Props) {
             />
           </div>
           <div className={styles['toolbar']}>
-            <CopyButton content={copyContent} />
+            <CopyButton content={codeToCopy} />
+            <ResetButton onReset={onReset} />
           </div>
         </div>
         {isReact && (
