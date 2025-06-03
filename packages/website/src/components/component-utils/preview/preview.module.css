@@ -2,7 +2,7 @@
   /* --- Customizable Variables --- */
   --dot-color: color-mix(
     in srgb,
-    var(--ax-txt-tertiary-default) 50%,
+    var(--ax-txt-tertiary-default) 100%,
     transparent
   ); /* Color of the dots */
   --background-color: transparent; /* Background color behind the dots */
@@ -25,8 +25,8 @@
 }
 
 .preview-container {
-  min-width: max(31.5rem, min-content);
-  aspect-ratio: 31.5 / 15;
+  min-width: 20rem;
+  aspect-ratio: 2 / 1;
   display: flex;
   align-items: center;
   justify-content: center;

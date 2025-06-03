@@ -1,12 +1,15 @@
-.component-container {
+.main-container {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 6rem;
 }
 
-.api-tab {
-  padding: 1rem 0;
+.section {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+
+  h1 {
+    margin-bottom: 0 !important;
+  }
 }
