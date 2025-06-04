@@ -538,15 +538,15 @@
         "color": {
           "defaultValue": {
             "computed": false,
-            "value": "'natural'"
+            "value": "'neutral'"
           },
-          "description": "Color theme of the chip. Used to define background and text colors.\n'natural' is neutral; 'accent-*' values represent different theme variations.",
+          "description": "Color theme of the chip. Used to define background and text colors.",
           "required": false,
           "tsType": {
             "elements": [
               {
                 "name": "literal",
-                "value": "'natural'"
+                "value": "'neutral'"
               },
               {
                 "name": "literal",
@@ -570,7 +570,7 @@
               }
             ],
             "name": "union",
-            "raw": "| 'natural'\n| 'accent-1'\n| 'accent-2'\n| 'accent-3'\n| 'accent-4'\n| 'accent-5'"
+            "raw": "| 'neutral'\n| 'accent-1'\n| 'accent-2'\n| 'accent-3'\n| 'accent-4'\n| 'accent-5'"
           }
         },
         "deleteIcon": {
@@ -612,31 +612,41 @@
         "size": {
           "defaultValue": {
             "computed": false,
-            "value": "'m'"
+            "value": "'medium'"
           },
-          "description": "Size of the chip. Controls padding and font size.\n's' - small, 'm' - medium, 'l' - large, 'xl' - extra large.",
+          "description": "Size of the chip. Controls padding and font size.\nsmall, medium, large, extra large.",
           "required": false,
           "tsType": {
             "elements": [
               {
-                "name": "literal",
-                "value": "'s'"
+                "name": "unknown[number]",
+                "raw": "(typeof SIZES)[number]"
               },
               {
-                "name": "literal",
-                "value": "'m'"
-              },
-              {
-                "name": "literal",
-                "value": "'l'"
-              },
-              {
-                "name": "literal",
-                "value": "'xl'"
+                "elements": [
+                  {
+                    "name": "literal",
+                    "value": "'small'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'medium'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'large'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'extra-large'"
+                  }
+                ],
+                "name": "union",
+                "raw": "'small' | 'medium' | 'large' | 'extra-large'"
               }
             ],
-            "name": "union",
-            "raw": "'s' | 'm' | 'l' | 'xl'"
+            "name": "Extract",
+            "raw": "Extract<\n  Size,\n  'small' | 'medium' | 'large' | 'extra-large'\n>"
           }
         }
       }

@@ -1,3 +1,47 @@
+:root {
+  --ax-public-chip-padding-small: var(--ax-token-spacing-chips-s-v-pad)
+    var(--ax-token-spacing-chips-s-h-pad);
+  --ax-public-chip-padding-medium: var(--ax-token-spacing-chips-m-v-pad)
+    var(--ax-token-spacing-chips-m-h-pad);
+  --ax-public-chip-padding-large: var(--ax-token-spacing-chips-l-v-pad)
+    var(--ax-token-spacing-chips-l-h-pad);
+  --ax-public-chip-padding-extra-large: var(--ax-token-spacing-chips-xl-v-pad)
+    var(--ax-token-spacing-chips-xl-h-pad);
+
+  --ax-public-chip-gap-small: var(--ax-token-spacing-chips-s-gap);
+  --ax-public-chip-gap-medium: var(--ax-token-spacing-chips-m-gap);
+  --ax-public-chip-gap-large: var(--ax-token-spacing-chips-l-gap);
+  --ax-public-chip-gap-extra-large: var(--ax-token-spacing-chips-xl-gap);
+
+  --ax-public-chip-border-radius-small: var(--ax-token-radius-chips-s);
+  --ax-public-chip-border-radius-medium: var(--ax-token-radius-chips-m);
+  --ax-public-chip-border-radius-large: var(--ax-token-radius-chips-l);
+  --ax-public-chip-border-radius-extra-large: var(--ax-token-radius-chips-xl);
+
+  --ax-public-chip-bg-neutral: var(--ax-chips-neutral-bg);
+  --ax-public-chip-bg-accent-1: var(--ax-chips-acc1-bg);
+  --ax-public-chip-bg-accent-2: var(--ax-chips-acc2-bg);
+  --ax-public-chip-bg-accent-3: var(--ax-chips-acc3-bg);
+  --ax-public-chip-bg-accent-4: var(--ax-chips-acc4-bg);
+  --ax-public-chip-bg-accent-5: var(--ax-chips-acc5-bg);
+
+  --ax-public-chip-color-neutral: var(--ax-chips-neutral-txt);
+  --ax-public-chip-color-accent-1: var(--ax-chips-acc1-txt);
+  --ax-public-chip-color-accent-2: var(--ax-chips-acc2-txt);
+  --ax-public-chip-color-accent-3: var(--ax-chips-acc3-txt);
+  --ax-public-chip-color-accent-4: var(--ax-chips-acc4-txt);
+  --ax-public-chip-color-accent-5: var(--ax-chips-acc5-txt);
+
+  --ax-public-chip-border-color-neutral: transparent;
+  --ax-public-chip-border-color-accent-1: var(--ax-chips-acc1-stroke);
+  --ax-public-chip-border-color-accent-2: var(--ax-chips-acc2-stroke);
+  --ax-public-chip-border-color-accent-3: var(--ax-chips-acc3-stroke);
+  --ax-public-chip-border-color-accent-4: var(--ax-chips-acc4-stroke);
+  --ax-public-chip-border-color-accent-5: var(--ax-chips-acc5-stroke);
+
+  --ax-public-icon-color-neutral: var(--ax-chips-neutral-icon);
+}
+
 .chip {
   display: inline-flex;
   overflow: hidden;
@@ -8,76 +52,74 @@
   width: fit-content;
   height: fit-content;
   flex-shrink: 0;
+  border: 1px solid;
 }
 
-.size-s {
-  padding: var(--ax-token-spacing-chips-s-v-pad, 2px)
-    var(--ax-token-spacing-chips-s-h-pad, 4px);
-  gap: var(--ax-token-spacing-chips-s-gap, 4px);
-  border-radius: var(--ax-token-radius-chips-s, 4px);
+.size-small {
+  padding: var(--ax-public-chip-padding-small);
+  gap: var(--ax-public-chip-gap-small);
+  border-radius: var(--ax-public-chip-border-radius-small);
   composes: ax-public-p12 from global;
 }
-.size-m {
-  padding: var(--ax-token-spacing-chips-m-v-pad, 3px)
-    var(--ax-token-spacing-chips-m-h-pad, 4px);
-  gap: var(--ax-token-spacing-chips-m-gap, 4px);
-  border-radius: var(--ax-token-radius-chips-m, 4px);
+.size-medium {
+  padding: var(--ax-public-chip-padding-medium);
+  gap: var(--ax-public-chip-gap-medium);
+  border-radius: var(--ax-public-chip-border-radius-medium);
   composes: ax-public-p12 from global;
 }
-.size-l {
-  padding: var(--ax-token-spacing-chips-l-v-pad, 5px)
-    var(--ax-token-spacing-chips-l-h-pad, 6px);
-  gap: var(--ax-token-spacing-chips-l-gap, 4px);
-  border-radius: var(--ax-token-radius-chips-l, 4px);
+.size-large {
+  padding: var(--ax-public-chip-padding-large);
+  gap: var(--ax-public-chip-gap-large);
+  border-radius: var(--ax-public-chip-border-radius-large);
   composes: ax-public-p12 from global;
 }
-.size-xl {
-  padding: var(--ax-token-spacing-chips-xl-v-pad, 5px)
-    var(--ax-token-spacing-chips-xl-h-pad, 6px);
-  gap: var(--ax-token-spacing-chips-xl-gap, 4px);
-  border-radius: var(--ax-token-radius-chips-xl, 4px);
+.size-extra-large {
+  padding: var(--ax-public-chip-padding-extra-large);
+  gap: var(--ax-public-chip-gap-extra-large);
+  border-radius: var(--ax-public-chip-border-radius-extra-large);
   composes: ax-public-p11 from global;
 
   & > .delete-icon > svg,
   & > .icon > svg {
-    width: 12px;
-    height: 12px;
+    width: var(--ax-public-icon-size-xx-small);
+    height: var(--ax-public-icon-size-xx-small);
   }
 }
 
-.natural {
-  background: var(--ax-chips-neutral-bg, #edeff3);
-  color: var(--ax-chips-neutral-txt, #151516);
+.neutral {
+  background: var(--ax-public-chip-bg-neutral);
+  color: var(--ax-public-chip-color-neutral);
+  border-color: var(--ax-public-chip-border-color-neutral);
 
   & > .icon {
-    color: var(--ax-chips-neutral-icon);
+    color: var(--ax-public-icon-color-neutral);
   }
 }
 .accent-1 {
-  border: 1px solid var(--ax-chips-acc1-stroke, #0477c5);
-  background: var(--ax-chips-acc1-bg, rgba(16, 150, 231, 0.1));
-  color: var(--ax-chips-acc1-txt, #0477c5);
+  border-color: var(--ax-public-chip-border-color-accent-1);
+  background: var(--ax-public-chip-bg-accent-1);
+  color: var(--ax-public-chip-color-accent-1);
 }
 
 .accent-2 {
-  border: 1px solid var(--ax-chips-acc2-stroke, #da2f28);
-  background: var(--ax-chips-acc2-bg, rgba(237, 76, 70, 0.1));
-  color: var(--ax-chips-acc2-txt, #da2f28);
+  border-color: var(--ax-public-chip-border-color-accent-2);
+  background: var(--ax-public-chip-bg-accent-2);
+  color: var(--ax-public-chip-color-accent-2);
 }
 .accent-3 {
-  border: 1px solid var(--ax-chips-acc3-stroke, #0a7b52);
-  background: var(--ax-chips-acc3-bg, rgba(11, 193, 117, 0.1));
-  color: var(--ax-chips-acc3-txt, #0a7b52);
+  border-color: var(--ax-public-chip-border-color-accent-3);
+  background: var(--ax-public-chip-bg-accent-3);
+  color: var(--ax-public-chip-color-accent-3);
 }
 .accent-4 {
-  border: 1px solid var(--ax-chips-acc4-stroke, #a839e4);
-  background: var(--ax-chips-acc4-bg, rgba(186, 90, 242, 0.1));
-  color: var(--ax-chips-acc4-txt, #a839e4);
+  border-color: var(--ax-public-chip-border-color-accent-4);
+  background: var(--ax-public-chip-bg-accent-4);
+  color: var(--ax-public-chip-color-accent-4);
 }
 .accent-5 {
-  border: 1px solid var(--ax-chips-acc5-stroke, #be5310);
-  background: var(--ax-chips-acc5-bg, rgba(244, 132, 27, 0.1));
-  color: var(--ax-chips-acc5-txt, #be5310);
+  border-color: var(--ax-public-chip-border-color-accent-5);
+  background: var(--ax-public-chip-bg-accent-5);
+  color: var(--ax-public-chip-color-accent-5);
 }
 
 .delete-icon,
@@ -88,8 +130,8 @@
   justify-content: center;
   aspect-ratio: 1/1;
   svg {
-    width: 10px;
-    height: 10px;
+    width: var(--ax-public-icon-size-xxxx-small);
+    height: var(--ax-public-icon-size-xx-small);
   }
 }
 

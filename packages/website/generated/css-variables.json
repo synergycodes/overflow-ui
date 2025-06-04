@@ -473,7 +473,132 @@
       "name": "--ax-public-checkbox-size-small"
     }
   ],
-  "components/chip/chip.module.css": [],
+  "components/chip/chip.module.css": [
+    {
+      "comment": "",
+      "name": "--ax-public-chip-bg-accent-1"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-bg-accent-2"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-bg-accent-3"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-bg-accent-4"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-bg-accent-5"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-bg-neutral"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-border-color-accent-1"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-border-color-accent-2"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-border-color-accent-3"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-border-color-accent-4"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-border-color-accent-5"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-border-color-neutral"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-border-radius-extra-large"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-border-radius-large"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-border-radius-medium"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-border-radius-small"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-color-accent-1"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-color-accent-2"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-color-accent-3"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-color-accent-4"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-color-accent-5"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-color-neutral"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-gap-extra-large"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-gap-large"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-gap-medium"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-gap-small"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-padding-extra-large"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-padding-large"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-padding-medium"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-chip-padding-small"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-icon-color-neutral"
+    }
+  ],
   "components/date-picker/data-picker-mantine.css": [
     {
       "comment": "",

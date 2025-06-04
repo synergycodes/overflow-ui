@@ -4,8 +4,8 @@ import clsx from 'clsx';
 import { X } from '@phosphor-icons/react';
 
 export function Chip({
-  size = 'm',
-  color = 'natural',
+  size = 'medium',
+  color = 'neutral',
   label,
   icon,
   deleteIcon,

@@ -1,21 +1,26 @@
 import { ReactNode } from 'react';
+import { Size, SIZES } from '../../shared/types/size';
+import { rangeBetween } from '@ui/shared/utils/arrays';
 
-/**
- * Props for the Chip component.
- */
+export const CHIP_SIZES = rangeBetween(SIZES, 'small', 'extra-large');
+
+export type ChipSize = Extract<
+  Size,
+  'small' | 'medium' | 'large' | 'extra-large'
+>;
+
 export type ChipProps = {
   /**
    * Size of the chip. Controls padding and font size.
-   * 's' - small, 'm' - medium, 'l' - large, 'xl' - extra large.
+   * small, medium, large, extra large.
    */
-  size?: 's' | 'm' | 'l' | 'xl';
+  size?: ChipSize;
 
   /**
    * Color theme of the chip. Used to define background and text colors.
-   * 'natural' is neutral; 'accent-*' values represent different theme variations.
    */
   color?:
-    | 'natural'
+    | 'neutral'
     | 'accent-1'
     | 'accent-2'
     | 'accent-3'
