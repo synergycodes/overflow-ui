@@ -1,11 +1,7 @@
-/* Styling of playground tab */
-[class^='playgroundContainer'] {
-  display: flex;
-  flex-flow: column;
-  gap: var(--ifm-leading);
-}
-
-[class^='playgroundEditor'] {
-  font: var(--ifm-code-font-size) / var(--ifm-pre-line-height)
-    var(--ifm-font-family-monospace) !important;
+p,
+h1,
+h2,
+h3 {
+  margin: initial;
+  padding: initial;
 }

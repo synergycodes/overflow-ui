@@ -45,6 +45,10 @@ export function Playground({ exampleCode, cssPaths }: Props) {
     setCssCode(initialCssCode);
   }
 
+  const canReset = isReact
+    ? reactCode !== initialReactCode
+    : cssCode !== initialCssCode;
+
   return (
     <LiveProvider code={reactCode} scope={ReactLiveScope}>
       <Preview>
@@ -76,7 +80,7 @@ export function Playground({ exampleCode, cssPaths }: Props) {
           </div>
           <div className={styles['toolbar']}>
             <CopyButton content={codeToCopy} />
-            <ResetButton onReset={onReset} />
+            <ResetButton disabled={!canReset} onReset={onReset} />
           </div>
         </div>
         {isReact && (

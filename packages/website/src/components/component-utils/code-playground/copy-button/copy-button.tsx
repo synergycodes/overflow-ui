@@ -1,4 +1,4 @@
-import { Copy } from '@phosphor-icons/react';
+import { Check, Copy } from '@phosphor-icons/react';
 import { NavButton, Tooltip } from '@synergycodes/axiom';
 import { useState } from 'react';
 
@@ -25,14 +25,12 @@ export function CopyButton({ content }: Props) {
 
   const tooltipLabel = copied ? 'Copied!' : 'Copy contents';
 
+  const icon = copied ? <Check /> : <Copy />;
+
   return (
     <Tooltip>
       <Tooltip.Trigger>
-        <NavButton
-          onMouseLeave={onMouseLeave}
-          onClick={onCopy}
-          icon={<Copy />}
-        />
+        <NavButton onMouseLeave={onMouseLeave} onClick={onCopy} icon={icon} />
       </Tooltip.Trigger>
       <Tooltip.Content>{tooltipLabel}</Tooltip.Content>
     </Tooltip>

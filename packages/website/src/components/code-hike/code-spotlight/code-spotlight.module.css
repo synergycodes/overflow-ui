@@ -2,79 +2,105 @@
   display: flex;
   gap: 1rem;
   margin-bottom: 2rem;
+  color: var(--ax-txt-secondary-default) !important;
 
   .content {
     display: flex;
     flex-direction: column;
+    border-radius: 0.5rem;
+    border: 1px solid #575b94;
+    width: 100%;
+    overflow: hidden;
 
-    [class^='playgroundContainer'] {
-      box-shadow: none;
-
-      > * {
-        display: none;
-      }
-
-      [class^='playgroundPreview'] {
-        > div {
-          width: 100%;
-          height: 100%;
-        }
-
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 20rem;
-        width: 100%;
-        border-radius: 1rem;
-        border: 1px #aaaaaa dashed;
-        padding: 4rem 6rem;
-        background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
-        background-size: 16px 16px;
-      }
+    .preview {
+      height: 18rem;
+      position: relative;
+      width: 100%;
+      border: none;
     }
 
     .steps-container {
       display: flex;
-      height: 40rem;
+      height: 38rem;
+      border-top: 1px solid #575b94;
+      background-color: var(--ax-colors-acc7-800);
 
       .step-list {
+        width: 19.5625rem;
         justify-content: space-between;
         display: flex;
         flex-direction: column;
-        flex: 1;
 
         .step {
-          opacity: 0.7;
           display: flex;
-          flex-direction: column;
+          justify-content: center;
+          position: relative;
+          transition: flex 0.2s ease;
+          opacity: 0.7;
           cursor: pointer;
-          border-left: 4px solid transparent;
-          padding: 1.5rem 1rem;
-          border-radius: 0.25rem;
-          background-color: #8881;
-          transition: 0.2s padding ease;
+          border-left: 0px solid transparent;
+          padding: 0 1.5rem;
           width: 100%;
+          overflow: hidden;
+          flex: 1;
 
-          .step-title {
-            font-size: 1.25rem;
+          &:not(:last-of-type) {
+            .step-content {
+              border-bottom: 1px solid var(--ax-colors-acc7-400);
+            }
           }
 
-          .step-description {
-            height: 0;
-            opacity: 0;
-            transition: 0.2 height ease;
+          .step-content {
+            transition: height 0.2s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0.5rem;
+            border-radius: 0.25rem;
+
+            .active-mark {
+              position: absolute;
+              background: #5360f9;
+              width: 0;
+              border-radius: 0.125rem;
+              transition:
+                height 0.1s ease,
+                width 0.1s ease;
+
+              left: -0.8125rem;
+              top: 50%;
+              transform: translateY(-50%);
+              height: calc(100% - 4rem);
+            }
+
+            .step-title {
+              font-size: 1.25rem;
+            }
+
+            .step-description {
+              height: 0;
+              opacity: 0;
+
+              transition: opacity 0.2s ease forward;
+            }
           }
         }
 
         .step[data-selected='true'] {
+          flex: 1.5;
           opacity: 1;
-          background-color: #8881;
-          border-left-color: var(--ifm-color-primary);
-          padding: 3rem 1rem;
+
+          .step-content {
+            position: relative;
+
+            .active-mark {
+              width: 0.125rem;
+            }
+          }
 
           .step-description {
-            height: min-content;
+            height: auto;
             opacity: 1;
           }
         }
@@ -83,7 +109,8 @@
 
     .code {
       margin: 0;
-      background-color: rgb(41, 45, 62);
+      padding: 1.5rem;
+      background-color: var(--ax-colors-acc7-900) !important;
       flex: 2;
     }
   }
