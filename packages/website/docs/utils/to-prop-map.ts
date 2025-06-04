@@ -31,7 +31,7 @@ function createProp({
 }) {
   const result: PropDescriptor = { tsType: { name: type } };
 
-  if (unionValues?.length > 0) {
+  if (unionValues && unionValues.length > 0) {
     result.tsType = {
       name: 'union',
       elements: unionValues.map((v) => ({

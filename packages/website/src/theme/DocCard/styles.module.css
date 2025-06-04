@@ -1,0 +1,25 @@
+.link {
+  width: 100%;
+
+  --ifm-link-color: none;
+  --ifm-link-hover-color: none;
+  --ifm-link-hover-decoration: none;
+
+  --ax-public-node-padding: 0.75rem 1rem;
+  --ax-public-node-width: 100%;
+  --ax-public-node-border-hover-color: var(--ifm-color-primary);
+  --ax-public-node-background-color: var(--ax-colors-acc7-800);
+  --ax-public-node-hover-color: var(--ax-colors-acc7-800);
+
+  transition:
+    border-width 150ms ease,
+    box-shadow 150ms ease;
+  border-radius: var(--ax-public-node-border-radius);
+  border-width: 0px;
+
+  &:hover {
+    border-width: 2px;
+    border-color: var(--ax-public-node-border-color-selected);
+    box-shadow: var(--ax-public-node-box-shadow-selected);
+  }
+}

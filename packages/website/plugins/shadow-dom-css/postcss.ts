@@ -24,7 +24,7 @@ const generatedMissingPathsAndFilesIfNeeded = () => {
   if (!fs.existsSync(stylesFile)) {
     fs.writeFileSync(
       stylesFile,
-      `/* 
+      `/*
         Mocked file run: pnpm clear before running server to regenerate.
         For more information about preview debugging, check packages/website/tools/README.md
       */`,
@@ -131,10 +131,12 @@ const regenerateStylesFromCacheIfPossible = () => {
   }
 };
 
-const ShadowDomCSS: PluginCreator<ShadowDomCSSOptions> = ({
-  filesToAdd,
-  filesToExtractPatterns,
-}) => {
+const ShadowDomCSS: PluginCreator<ShadowDomCSSOptions> = (
+  { filesToAdd, filesToExtractPatterns } = {
+    filesToAdd: [],
+    filesToExtractPatterns: [],
+  },
+) => {
   generatedMissingPathsAndFilesIfNeeded();
 
   if (isFirstPluginCall) {
@@ -163,6 +165,10 @@ const ShadowDomCSS: PluginCreator<ShadowDomCSSOptions> = ({
       const shouldExtract = filesToExtractPatterns.some((namePattern) =>
         inputFile.replaceAll('\\', '/').toLowerCase().includes(namePattern),
       );
+
+      if (!root.source?.input.file) {
+        return;
+      }
 
       if (shouldExtract) {
         collectStylesFromFile(root.source.input.file);

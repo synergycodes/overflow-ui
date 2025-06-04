@@ -1,0 +1,24 @@
+.tabs-container {
+  .tabs {
+    min-width: 31.5rem;
+    width: min-content;
+    border-bottom: 1px solid var(--ax-ui-stroke-secondary-default, #4d5059);
+
+    .tabs__item {
+      display: flex;
+      padding: 0.75rem 1.5rem;
+      justify-content: center;
+      align-items: center;
+      color: var(--ax-txt-secondary-default);
+      font-weight: normal;
+      font-size: 0.875rem;
+      line-height: 140%;
+
+      border-radius: 0.25rem 0.25rem 0 0;
+    }
+
+    .tabs__item--active {
+      color: var(--ax-txt-primary-default);
+    }
+  }
+}

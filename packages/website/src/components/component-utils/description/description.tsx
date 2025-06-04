@@ -2,14 +2,15 @@ import { AxiomTSXRelativePath } from '@site/generated/path-types';
 import { getAPIData } from '../get-api-data';
 
 type Props = {
-  path: AxiomTSXRelativePath;
+  path?: AxiomTSXRelativePath;
   hardcodedDescription?: string;
 };
 
 export function Description({ path, hardcodedDescription }: Props) {
-  const { description: generatedDescription } = getAPIData(path);
+  const { description } = path
+    ? getAPIData(path)
+    : { description: hardcodedDescription };
 
-  const description = hardcodedDescription || generatedDescription;
   if (!description) {
     return null;
   }

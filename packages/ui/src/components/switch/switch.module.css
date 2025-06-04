@@ -1,4 +1,4 @@
-@import "./switch-size.module.css";
+@import './switch-size.module.css';
 
 :root {
   --ax-public-switch-outline-color: var(--ax-ui-stroke-secondary-default);

@@ -1,0 +1,79 @@
+.editor-container {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-height: 30rem;
+  position: relative;
+
+  background-color: var(--ax-colors-acc7-800) !important;
+  border-radius: 0.5rem;
+  border: 1px solid #575b94;
+
+  font-family:
+    Fira Code,
+    monospace;
+
+  .editor-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-self: stretch;
+
+    border-bottom: 1px solid #575b94;
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .file-tabs {
+      display: flex;
+      align-items: center;
+
+      .file-tab {
+        border-radius: 0;
+        border: none;
+        transition: all 150ms ease;
+        color: var(--ax-colors-acc7-100);
+        background-color: var(--ax-colors-acc7-700);
+        font-family:
+          Fira Code,
+          monospace;
+        font-weight: normal;
+        font-size: 0.8125rem;
+
+        &:hover {
+          background-color: var(--ax-colors-acc7-600);
+        }
+
+        &.active {
+          color: var(--ax-colors-acc7-50);
+          background-color: var(--ax-colors-acc7-500);
+        }
+
+        &.file-react {
+          fill: #498ba7;
+        }
+
+        &.file-css {
+          fill: rebeccapurple;
+        }
+      }
+    }
+  }
+
+  .editor {
+    overflow-y: auto;
+
+    pre {
+      padding: 1rem 1.5rem !important;
+      background-color: var(--ax-colors-acc7-900) !important;
+
+      :global(.token.ax-prefix) {
+        opacity: 0.5;
+      }
+    }
+  }
+}

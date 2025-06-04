@@ -56,8 +56,8 @@ function Page() {
           onNodesChange={onNodesChange}
           onEdgesChange={onEdgesChange}
           onConnect={onConnect}
-          onConnectionStart={() => setConnecting(true)}
-          onConnectionEnd={() => setConnecting(false)}
+          onConnectStart={() => setConnecting(true)}
+          onConnectEnd={() => setConnecting(false)}
           nodeTypes={nodeTypes}
         />
       </ReactFlowProvider>
