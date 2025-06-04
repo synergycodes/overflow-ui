@@ -473,6 +473,7 @@
       "name": "--ax-public-checkbox-size-small"
     }
   ],
+  "components/chip/chip.module.css": [],
   "components/date-picker/data-picker-mantine.css": [
     {
       "comment": "",

@@ -13,6 +13,7 @@ declare global {
     // UI Components
     Avatar,
     Checkbox,
+    Chip,
     DatePicker,
     Input,
     LabelButton,
@@ -42,6 +43,7 @@ declare global {
     Trash,
     User,
     DiamondsFour,
+    Link,
 
     // React Flow
     ReactFlow,

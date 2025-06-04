@@ -49,6 +49,8 @@ export * from './components/edge/use-edge-styles/use-edge-styles';
 
 export * from './components/separator/separator';
 
+export * from './components/chip/chip';
+
 // Types
 export * from './components/button/types';
 export * from './components/date-picker/types';
@@ -61,3 +63,4 @@ export * from './components/tooltip/types';
 export * from './shared/types/size';
 export * from './shared/types/item-size';
 export * from './components/edge/types';
+export * from './components/chip/types';

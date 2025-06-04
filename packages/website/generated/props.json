@@ -529,6 +529,119 @@
       }
     }
   ],
+  "../ui/src/components/chip/chip.tsx": [
+    {
+      "description": "",
+      "displayName": "Chip",
+      "methods": [],
+      "props": {
+        "color": {
+          "defaultValue": {
+            "computed": false,
+            "value": "'natural'"
+          },
+          "description": "Color theme of the chip. Used to define background and text colors.\n'natural' is neutral; 'accent-*' values represent different theme variations.",
+          "required": false,
+          "tsType": {
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'natural'"
+              },
+              {
+                "name": "literal",
+                "value": "'accent-1'"
+              },
+              {
+                "name": "literal",
+                "value": "'accent-2'"
+              },
+              {
+                "name": "literal",
+                "value": "'accent-3'"
+              },
+              {
+                "name": "literal",
+                "value": "'accent-4'"
+              },
+              {
+                "name": "literal",
+                "value": "'accent-5'"
+              }
+            ],
+            "name": "union",
+            "raw": "| 'natural'\n| 'accent-1'\n| 'accent-2'\n| 'accent-3'\n| 'accent-4'\n| 'accent-5'"
+          }
+        },
+        "deleteIcon": {
+          "description": "Optional icon used as a delete button.\nShown only when onDelete is provided.",
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          }
+        },
+        "icon": {
+          "description": "Optional icon displayed before the label.",
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          }
+        },
+        "label": {
+          "description": "The content (usually text) displayed inside the chip.",
+          "required": true,
+          "tsType": {
+            "name": "ReactNode"
+          }
+        },
+        "onDelete": {
+          "description": "Callback function triggered when the delete icon is clicked.",
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "raw": "() => void",
+            "signature": {
+              "arguments": [],
+              "return": {
+                "name": "void"
+              }
+            },
+            "type": "function"
+          }
+        },
+        "size": {
+          "defaultValue": {
+            "computed": false,
+            "value": "'m'"
+          },
+          "description": "Size of the chip. Controls padding and font size.\n's' - small, 'm' - medium, 'l' - large, 'xl' - extra large.",
+          "required": false,
+          "tsType": {
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'s'"
+              },
+              {
+                "name": "literal",
+                "value": "'m'"
+              },
+              {
+                "name": "literal",
+                "value": "'l'"
+              },
+              {
+                "name": "literal",
+                "value": "'xl'"
+              }
+            ],
+            "name": "union",
+            "raw": "'s' | 'm' | 'l' | 'xl'"
+          }
+        }
+      }
+    }
+  ],
   "../ui/src/components/date-picker/date-picker.tsx": [
     {
       "description": "Component for selecting a date with customizable format and placeholder",
