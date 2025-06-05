@@ -1,0 +1,192 @@
+:root {
+  --ax-pubilc-segment-picker-active-option-bg-color: var(
+    --ax-button-primary-bg-default
+  );
+  --ax-pubilc-segment-picker-bg-color: var(--ax-ui-bg-tertiary-default);
+
+  --ax-public-segment-picker-variant-rounded: var(
+    --ax-token-radius-button-round
+  );
+
+  --ax-pubilc-segment-picker-padding-xxx-small: var(
+    --ax-token-spacing-seg-picker-xxxs-pad
+  );
+  --ax-pubilc-segment-picker-padding-xx-small: var(
+    --ax-token-spacing-seg-picker-xxs-pad
+  );
+  --ax-pubilc-segment-picker-padding-extra-small: var(
+    --ax-token-spacing-seg-picker-xs-pad
+  );
+  --ax-pubilc-segment-picker-padding-small: var(
+    --ax-token-spacing-seg-picker-s-pad
+  );
+  --ax-pubilc-segment-picker-padding-medium: var(
+    --ax-token-spacing-seg-picker-m-pad
+  );
+  --ax-pubilc-segment-picker-padding-large: var(
+    --ax-token-spacing-seg-picker-l-pad
+  );
+  --ax-pubilc-segment-picker-padding-extra-large: var(
+    --ax-token-spacing-seg-picker-xl-pad
+  );
+
+  --ax-pubilc-segment-picker-gap-xxx-small: var(
+    --ax-token-spacing-seg-picker-xxxs-gap
+  );
+  --ax-pubilc-segment-picker-gap-xx-small: var(
+    --ax-token-spacing-seg-picker-xxs-gap
+  );
+  --ax-pubilc-segment-picker-gap-extra-small: var(
+    --ax-token-spacing-seg-picker-xs-gap
+  );
+  --ax-pubilc-segment-picker-gap-small: var(
+    --ax-token-spacing-seg-picker-s-gap
+  );
+  --ax-pubilc-segment-picker-gap-medium: var(
+    --ax-token-spacing-seg-picker-m-gap
+  );
+  --ax-pubilc-segment-picker-gap-large: var(
+    --ax-token-spacing-seg-picker-l-gap
+  );
+  --ax-pubilc-segment-picker-gap-extra-large: var(
+    --ax-token-spacing-seg-picker-xl-gap
+  );
+
+  --ax-pubilc-segment-picker-border-radius-xxx-small: var(
+    --ax-token-radius-seg-picker-xxxs
+  );
+  --ax-pubilc-segment-picker-border-radius-xx-small: var(
+    --ax-token-radius-seg-picker-xxs
+  );
+  --ax-pubilc-segment-picker-border-radius-extra-small: var(
+    --ax-token-radius-seg-picker-xs
+  );
+  --ax-pubilc-segment-picker-border-radius-small: var(
+    --ax-token-radius-segt-picker-s
+  );
+  --ax-pubilc-segment-picker-border-radius-medium: var(
+    --ax-token-radius-seg-picker-m
+  );
+  --ax-pubilc-segment-picker-border-radius-large: var(
+    --ax-token-radius-seg-picker-l
+  );
+  --ax-pubilc-segment-picker-border-radius-extra-large: var(
+    --ax-token-radius-seg-picker-xl
+  );
+
+  --ax-pubilc-segment-picker-icon-size-xxx-small: var(
+    --ax-public-icon-size-xxx-small
+  );
+  --ax-pubilc-segment-picker-icon-size-xx-small: var(
+    --ax-public-icon-size-xx-small
+  );
+  --ax-pubilc-segment-picker-icon-size-extra-small: var(
+    --ax-public-icon-size-extra-small
+  );
+  --ax-pubilc-segment-picker-icon-size-medium: var(
+    --ax-public-icon-size-medium
+  );
+  --ax-pubilc-segment-picker-icon-size-small: var(--ax-public-icon-size-small);
+  --ax-pubilc-segment-picker-icon-size-large: var(--ax-public-icon-size-large);
+  --ax-pubilc-segment-picker-icon-size-extra-large: var(
+    --ax-public-icon-size-extra-large
+  );
+}
+
+.active {
+  background: var(--ax-pubilc-segment-picker-active-option-bg-color);
+}
+
+.segment {
+  flex: 1;
+}
+
+.square {
+  width: 100%;
+}
+
+.rounded {
+  width: fit-content;
+}
+
+.segment-picker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--ax-pubilc-segment-picker-bg-color);
+}
+
+.size-xxx-small {
+  padding: var(--ax-pubilc-segment-picker-padding-xxx-small);
+  gap: var(--ax-pubilc-segment-picker-gap-xxx-small);
+  border-radius: var(--ax-pubilc-segment-picker-border-radius-xxx-small);
+  & svg {
+    width: var(--ax-pubilc-segment-picker-icon-size-xxx-small);
+    height: var(--ax-pubilc-segment-picker-icon-size-xxx-small);
+  }
+}
+.size-xx-small {
+  padding: var(--ax-pubilc-segment-picker-padding-xx-small);
+  gap: var(--ax-pubilc-segment-picker-gap-xx-small);
+  border-radius: var(--ax-pubilc-segment-picker-border-radius-xx-small);
+  & svg {
+    width: var(--ax-pubilc-segment-picker-icon-size-xx-small);
+    height: var(--ax-pubilc-segment-picker-icon-size-xx-small);
+  }
+}
+.size-extra-small {
+  padding: var(--ax-pubilc-segment-picker-padding-extra-small);
+  gap: var(--ax-pubilc-segment-picker-gap-extra-small);
+  border-radius: var(--ax-pubilc-segment-picker-border-radius-extra-small);
+  & svg {
+    width: var(--ax-pubilc-segment-picker-icon-size-extra-small);
+    height: var(--ax-pubilc-segment-picker-icon-size-extra-small);
+  }
+}
+.size-small {
+  padding: var(--ax-pubilc-segment-picker-padding-small);
+  gap: var(--ax-pubilc-segment-picker-gap-small);
+  border-radius: var(--ax-pubilc-segment-picker-border-radius-small);
+  & svg {
+    width: var(--ax-pubilc-segment-picker-icon-size-small);
+    height: var(--ax-pubilc-segment-picker-icon-size-small);
+  }
+}
+.size-medium {
+  padding: var(--ax-pubilc-segment-picker-padding-medium);
+  gap: var(--ax-pubilc-segment-picker-gap-medium);
+  border-radius: var(--ax-pubilc-segment-picker-border-radius-medium);
+  & svg {
+    width: var(--ax-pubilc-segment-picker-icon-size-medium);
+    height: var(--ax-pubilc-segment-picker-icon-size-medium);
+  }
+}
+.size-large {
+  padding: var(--ax-pubilc-segment-picker-padding-large);
+  gap: var(--ax-pubilc-segment-picker-gap-large);
+  border-radius: var(--ax-pubilc-segment-picker-border-radius-large);
+  & svg {
+    width: var(--ax-pubilc-segment-picker-icon-size-large);
+    height: var(--ax-pubilc-segment-picker-icon-size-large);
+  }
+}
+.size-extra-large {
+  padding: var(--ax-pubilc-segment-picker-padding-extra-large);
+  gap: var(--ax-pubilc-segment-picker-gap-extra-large);
+  border-radius: var(--ax-pubilc-segment-picker-border-radius-extra-large);
+  & svg {
+    width: var(--ax-pubilc-segment-picker-icon-size-extra-large);
+    height: var(--ax-pubilc-segment-picker-icon-size-extra-large);
+  }
+}
+
+.rounded,
+.size-xxx-small:has(.rounded),
+.size-xx-small:has(.rounded),
+.size-extra-small:has(.rounded),
+.size-small:has(.rounded),
+.size-medium:has(.rounded),
+.size-large:has(.rounded),
+.size-extra-large:has(.rounded) {
+  border-radius: var(--ax-public-segment-picker-variant-rounded);
+}

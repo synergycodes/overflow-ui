@@ -8,12 +8,17 @@
   --ax-public-button-nav-color-disabled: var(
     --ax-nav-button-icon-primary-disabled
   );
+  --ax-public-buttin-nav-gap: var(--ax-token-spacing-button-l-gap);
 }
 
 @layer ui.component {
   .nav-button {
     background-color: transparent;
     color: var(--ax-public-button-nav-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--ax-public-buttin-nav-gap);
 
     &:hover {
       background-color: var(--ax-public-button-nav-background-color);

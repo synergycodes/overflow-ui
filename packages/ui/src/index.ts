@@ -49,6 +49,9 @@ export * from './components/edge/use-edge-styles/use-edge-styles';
 
 export * from './components/separator/separator';
 
+export * from './components/segment-picker/segment-picker';
+export * from './components/segment-picker/segment-picker-option';
+
 // Types
 export * from './components/button/types';
 export * from './components/date-picker/types';
@@ -61,3 +64,4 @@ export * from './components/tooltip/types';
 export * from './shared/types/size';
 export * from './shared/types/item-size';
 export * from './components/edge/types';
+export * from './components/segment-picker/types';

@@ -119,6 +119,10 @@
   "components/button/nav-button/nav-button.module.css": [
     {
       "comment": "",
+      "name": "--ax-public-buttin-nav-gap"
+    },
+    {
+      "comment": "",
       "name": "--ax-public-button-nav-background-color"
     },
     {
@@ -1030,6 +1034,12 @@
     {
       "comment": "",
       "name": "--ax-public-radio-focus-border-color"
+    }
+  ],
+  "components/segment-picker/segment-picker.module.css": [
+    {
+      "comment": "",
+      "name": "--ax-public-segment-picker-variant-rounded"
     }
   ],
   "components/select/select-button/select-button.module.css": [

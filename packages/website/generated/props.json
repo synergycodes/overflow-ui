@@ -1264,6 +1264,922 @@
       }
     }
   ],
+  "../ui/src/components/segment-picker/segment-picker-option.tsx": [
+    {
+      "description": "",
+      "displayName": "SegmentPickerOption",
+      "methods": [],
+      "props": {
+        "beforeIcon": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          }
+        },
+        "icon": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          }
+        },
+        "label": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          }
+        },
+        "onClick": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "raw": "(e: React.MouseEvent) => void",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "e",
+                  "type": {
+                    "name": "ReactMouseEvent",
+                    "raw": "React.MouseEvent"
+                  }
+                }
+              ],
+              "return": {
+                "name": "void"
+              }
+            },
+            "type": "function"
+          }
+        },
+        "selected": {
+          "defaultValue": {
+            "computed": false,
+            "value": "false"
+          },
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          }
+        },
+        "shape": {
+          "defaultValue": {
+            "computed": false,
+            "value": "''"
+          },
+          "description": "",
+          "required": false,
+          "tsType": {
+            "elements": [
+              {
+                "name": "literal",
+                "value": "''"
+              },
+              {
+                "name": "literal",
+                "value": "'circle'"
+              }
+            ],
+            "name": "union",
+            "raw": "'' | 'circle'"
+          }
+        },
+        "size": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "elements": [
+              {
+                "name": "unknown[number]",
+                "raw": "(typeof SIZES)[number]"
+              },
+              {
+                "elements": [
+                  {
+                    "name": "literal",
+                    "value": "'xxs-small'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'xs-small'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'extra-small'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'small'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'medium'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'large'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'extra-large'"
+                  }
+                ],
+                "name": "union",
+                "raw": "| 'xxs-small'\n| 'xs-small'\n| 'extra-small'\n| 'small'\n| 'medium'\n| 'large'\n| 'extra-large'"
+              }
+            ],
+            "name": "Extract",
+            "raw": "Extract<\n  Size,\n  | 'xxs-small'\n  | 'xs-small'\n  | 'extra-small'\n  | 'small'\n  | 'medium'\n  | 'large'\n  | 'extra-large'\n>"
+          }
+        },
+        "tooltip": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "tooltipType": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'default'"
+              },
+              {
+                "name": "literal",
+                "value": "'blue'"
+              }
+            ],
+            "name": "union",
+            "raw": "'default' | 'blue'"
+          }
+        },
+        "value": {
+          "description": "",
+          "required": true,
+          "tsType": {
+            "name": "any",
+            "raw": "SegmentPickerProps['value']"
+          }
+        }
+      }
+    }
+  ],
+  "../ui/src/components/segment-picker/segment-picker.tsx": [
+    {
+      "description": "",
+      "displayName": "SegmentPicker",
+      "methods": [],
+      "props": {
+        "children": {
+          "description": "Segment options to be rendered inside the picker.",
+          "required": true,
+          "tsType": {
+            "elements": [
+              {
+                "elements": [
+                  {
+                    "elements": [
+                      {
+                        "elements": [
+                          {
+                            "name": "signature",
+                            "raw": "{\n  /** The icon to display before the label of the button */\n  beforeIcon?: React.ReactNode;\n  /** The label to display in the button */\n  label?: React.ReactNode;\n  /** The icon to display in the button */\n  icon?: React.ReactNode;\n  /** The shape of the button */\n  shape?: Shape;\n  /** Whether to hide the background */\n  noBackground?: boolean;\n}",
+                            "signature": {
+                              "properties": [
+                                {
+                                  "description": "The icon to display before the label of the button",
+                                  "key": "beforeIcon",
+                                  "value": {
+                                    "name": "ReactReactNode",
+                                    "raw": "React.ReactNode",
+                                    "required": false
+                                  }
+                                },
+                                {
+                                  "description": "The label to display in the button",
+                                  "key": "label",
+                                  "value": {
+                                    "name": "ReactReactNode",
+                                    "raw": "React.ReactNode",
+                                    "required": false
+                                  }
+                                },
+                                {
+                                  "description": "The icon to display in the button",
+                                  "key": "icon",
+                                  "value": {
+                                    "name": "ReactReactNode",
+                                    "raw": "React.ReactNode",
+                                    "required": false
+                                  }
+                                },
+                                {
+                                  "description": "The shape of the button",
+                                  "key": "shape",
+                                  "value": {
+                                    "elements": [
+                                      {
+                                        "name": "literal",
+                                        "value": "''"
+                                      },
+                                      {
+                                        "name": "literal",
+                                        "value": "'circle'"
+                                      }
+                                    ],
+                                    "name": "union",
+                                    "raw": "'' | 'circle'",
+                                    "required": false
+                                  }
+                                },
+                                {
+                                  "description": "Whether to hide the background",
+                                  "key": "noBackground",
+                                  "value": {
+                                    "name": "boolean",
+                                    "required": false
+                                  }
+                                }
+                              ]
+                            },
+                            "type": "object"
+                          },
+                          {
+                            "elements": [
+                              {
+                                "elements": [
+                                  {
+                                    "name": "HTMLButtonElement"
+                                  }
+                                ],
+                                "name": "ReactButtonHTMLAttributes",
+                                "raw": "React.ButtonHTMLAttributes<HTMLButtonElement>"
+                              },
+                              {
+                                "name": "HTMLButtonElement"
+                              }
+                            ],
+                            "name": "ReactDetailedHTMLProps",
+                            "raw": "React.DetailedHTMLProps<\n  React.ButtonHTMLAttributes<HTMLButtonElement>,\n  HTMLButtonElement\n>"
+                          },
+                          {
+                            "name": "signature",
+                            "raw": "{\n  size?: ButtonSize;\n  tooltip?: string;\n  tooltipType?: TooltipVariant;\n}",
+                            "signature": {
+                              "properties": [
+                                {
+                                  "key": "size",
+                                  "value": {
+                                    "elements": [
+                                      {
+                                        "name": "unknown[number]",
+                                        "raw": "(typeof SIZES)[number]"
+                                      },
+                                      {
+                                        "elements": [
+                                          {
+                                            "name": "literal",
+                                            "value": "'extra-small'"
+                                          },
+                                          {
+                                            "name": "literal",
+                                            "value": "'small'"
+                                          },
+                                          {
+                                            "name": "literal",
+                                            "value": "'medium'"
+                                          },
+                                          {
+                                            "name": "literal",
+                                            "value": "'large'"
+                                          },
+                                          {
+                                            "name": "literal",
+                                            "value": "'extra-large'"
+                                          }
+                                        ],
+                                        "name": "union",
+                                        "raw": "'extra-small' | 'small' | 'medium' | 'large' | 'extra-large'"
+                                      }
+                                    ],
+                                    "name": "Extract",
+                                    "raw": "Extract<\n  Size,\n  'extra-small' | 'small' | 'medium' | 'large' | 'extra-large'\n>",
+                                    "required": false
+                                  }
+                                },
+                                {
+                                  "key": "tooltip",
+                                  "value": {
+                                    "name": "string",
+                                    "required": false
+                                  }
+                                },
+                                {
+                                  "key": "tooltipType",
+                                  "value": {
+                                    "elements": [
+                                      {
+                                        "name": "literal",
+                                        "value": "'default'"
+                                      },
+                                      {
+                                        "name": "literal",
+                                        "value": "'blue'"
+                                      }
+                                    ],
+                                    "name": "union",
+                                    "raw": "'default' | 'blue'",
+                                    "required": false
+                                  }
+                                }
+                              ]
+                            },
+                            "type": "object"
+                          }
+                        ],
+                        "name": "intersection",
+                        "raw": "T &\nReact.DetailedHTMLProps<\n  React.ButtonHTMLAttributes<HTMLButtonElement>,\n  HTMLButtonElement\n> &\nCommonButtonProps"
+                      },
+                      {
+                        "name": "signature",
+                        "raw": "{\n  value: SegmentPickerProps['value'];\n  label?: ReactNode;\n  beforeIcon?: ReactNode;\n  icon?: ReactNode;\n  selected?: boolean;\n  onClick?: (e: React.MouseEvent) => void;\n  size?: SegmentPickerSize;\n  shape?: Shape;\n}",
+                        "signature": {
+                          "properties": [
+                            {
+                              "key": "value",
+                              "value": {
+                                "name": "any",
+                                "raw": "SegmentPickerProps['value']",
+                                "required": true
+                              }
+                            },
+                            {
+                              "key": "label",
+                              "value": {
+                                "name": "ReactNode",
+                                "required": false
+                              }
+                            },
+                            {
+                              "key": "beforeIcon",
+                              "value": {
+                                "name": "ReactNode",
+                                "required": false
+                              }
+                            },
+                            {
+                              "key": "icon",
+                              "value": {
+                                "name": "ReactNode",
+                                "required": false
+                              }
+                            },
+                            {
+                              "key": "selected",
+                              "value": {
+                                "name": "boolean",
+                                "required": false
+                              }
+                            },
+                            {
+                              "key": "onClick",
+                              "value": {
+                                "name": "signature",
+                                "raw": "(e: React.MouseEvent) => void",
+                                "required": false,
+                                "signature": {
+                                  "arguments": [
+                                    {
+                                      "name": "e",
+                                      "type": {
+                                        "name": "ReactMouseEvent",
+                                        "raw": "React.MouseEvent"
+                                      }
+                                    }
+                                  ],
+                                  "return": {
+                                    "name": "void"
+                                  }
+                                },
+                                "type": "function"
+                              }
+                            },
+                            {
+                              "key": "size",
+                              "value": {
+                                "elements": [
+                                  {
+                                    "name": "unknown[number]",
+                                    "raw": "(typeof SIZES)[number]"
+                                  },
+                                  {
+                                    "elements": [
+                                      {
+                                        "name": "literal",
+                                        "value": "'xxs-small'"
+                                      },
+                                      {
+                                        "name": "literal",
+                                        "value": "'xs-small'"
+                                      },
+                                      {
+                                        "name": "literal",
+                                        "value": "'extra-small'"
+                                      },
+                                      {
+                                        "name": "literal",
+                                        "value": "'small'"
+                                      },
+                                      {
+                                        "name": "literal",
+                                        "value": "'medium'"
+                                      },
+                                      {
+                                        "name": "literal",
+                                        "value": "'large'"
+                                      },
+                                      {
+                                        "name": "literal",
+                                        "value": "'extra-large'"
+                                      }
+                                    ],
+                                    "name": "union",
+                                    "raw": "| 'xxs-small'\n| 'xs-small'\n| 'extra-small'\n| 'small'\n| 'medium'\n| 'large'\n| 'extra-large'"
+                                  }
+                                ],
+                                "name": "Extract",
+                                "raw": "Extract<\n  Size,\n  | 'xxs-small'\n  | 'xs-small'\n  | 'extra-small'\n  | 'small'\n  | 'medium'\n  | 'large'\n  | 'extra-large'\n>",
+                                "required": false
+                              }
+                            },
+                            {
+                              "key": "shape",
+                              "value": {
+                                "elements": [
+                                  {
+                                    "name": "literal",
+                                    "value": "''"
+                                  },
+                                  {
+                                    "name": "literal",
+                                    "value": "'circle'"
+                                  }
+                                ],
+                                "name": "union",
+                                "raw": "'' | 'circle'",
+                                "required": false
+                              }
+                            }
+                          ]
+                        },
+                        "type": "object"
+                      }
+                    ],
+                    "name": "intersection",
+                    "raw": "BaseButtonProps<NavButtonProps> & {\n  value: SegmentPickerProps['value'];\n  label?: ReactNode;\n  beforeIcon?: ReactNode;\n  icon?: ReactNode;\n  selected?: boolean;\n  onClick?: (e: React.MouseEvent) => void;\n  size?: SegmentPickerSize;\n  shape?: Shape;\n}"
+                  }
+                ],
+                "name": "ReactElement",
+                "raw": "ReactElement<SegmentPickerOptionProps>"
+              },
+              {
+                "elements": [
+                  {
+                    "elements": [
+                      {
+                        "elements": [
+                          {
+                            "elements": [
+                              {
+                                "name": "signature",
+                                "raw": "{\n  /** The icon to display before the label of the button */\n  beforeIcon?: React.ReactNode;\n  /** The label to display in the button */\n  label?: React.ReactNode;\n  /** The icon to display in the button */\n  icon?: React.ReactNode;\n  /** The shape of the button */\n  shape?: Shape;\n  /** Whether to hide the background */\n  noBackground?: boolean;\n}",
+                                "signature": {
+                                  "properties": [
+                                    {
+                                      "description": "The icon to display before the label of the button",
+                                      "key": "beforeIcon",
+                                      "value": {
+                                        "name": "ReactReactNode",
+                                        "raw": "React.ReactNode",
+                                        "required": false
+                                      }
+                                    },
+                                    {
+                                      "description": "The label to display in the button",
+                                      "key": "label",
+                                      "value": {
+                                        "name": "ReactReactNode",
+                                        "raw": "React.ReactNode",
+                                        "required": false
+                                      }
+                                    },
+                                    {
+                                      "description": "The icon to display in the button",
+                                      "key": "icon",
+                                      "value": {
+                                        "name": "ReactReactNode",
+                                        "raw": "React.ReactNode",
+                                        "required": false
+                                      }
+                                    },
+                                    {
+                                      "description": "The shape of the button",
+                                      "key": "shape",
+                                      "value": {
+                                        "elements": [
+                                          {
+                                            "name": "literal",
+                                            "value": "''"
+                                          },
+                                          {
+                                            "name": "literal",
+                                            "value": "'circle'"
+                                          }
+                                        ],
+                                        "name": "union",
+                                        "raw": "'' | 'circle'",
+                                        "required": false
+                                      }
+                                    },
+                                    {
+                                      "description": "Whether to hide the background",
+                                      "key": "noBackground",
+                                      "value": {
+                                        "name": "boolean",
+                                        "required": false
+                                      }
+                                    }
+                                  ]
+                                },
+                                "type": "object"
+                              },
+                              {
+                                "elements": [
+                                  {
+                                    "elements": [
+                                      {
+                                        "name": "HTMLButtonElement"
+                                      }
+                                    ],
+                                    "name": "ReactButtonHTMLAttributes",
+                                    "raw": "React.ButtonHTMLAttributes<HTMLButtonElement>"
+                                  },
+                                  {
+                                    "name": "HTMLButtonElement"
+                                  }
+                                ],
+                                "name": "ReactDetailedHTMLProps",
+                                "raw": "React.DetailedHTMLProps<\n  React.ButtonHTMLAttributes<HTMLButtonElement>,\n  HTMLButtonElement\n>"
+                              },
+                              {
+                                "name": "signature",
+                                "raw": "{\n  size?: ButtonSize;\n  tooltip?: string;\n  tooltipType?: TooltipVariant;\n}",
+                                "signature": {
+                                  "properties": [
+                                    {
+                                      "key": "size",
+                                      "value": {
+                                        "elements": [
+                                          {
+                                            "name": "unknown[number]",
+                                            "raw": "(typeof SIZES)[number]"
+                                          },
+                                          {
+                                            "elements": [
+                                              {
+                                                "name": "literal",
+                                                "value": "'extra-small'"
+                                              },
+                                              {
+                                                "name": "literal",
+                                                "value": "'small'"
+                                              },
+                                              {
+                                                "name": "literal",
+                                                "value": "'medium'"
+                                              },
+                                              {
+                                                "name": "literal",
+                                                "value": "'large'"
+                                              },
+                                              {
+                                                "name": "literal",
+                                                "value": "'extra-large'"
+                                              }
+                                            ],
+                                            "name": "union",
+                                            "raw": "'extra-small' | 'small' | 'medium' | 'large' | 'extra-large'"
+                                          }
+                                        ],
+                                        "name": "Extract",
+                                        "raw": "Extract<\n  Size,\n  'extra-small' | 'small' | 'medium' | 'large' | 'extra-large'\n>",
+                                        "required": false
+                                      }
+                                    },
+                                    {
+                                      "key": "tooltip",
+                                      "value": {
+                                        "name": "string",
+                                        "required": false
+                                      }
+                                    },
+                                    {
+                                      "key": "tooltipType",
+                                      "value": {
+                                        "elements": [
+                                          {
+                                            "name": "literal",
+                                            "value": "'default'"
+                                          },
+                                          {
+                                            "name": "literal",
+                                            "value": "'blue'"
+                                          }
+                                        ],
+                                        "name": "union",
+                                        "raw": "'default' | 'blue'",
+                                        "required": false
+                                      }
+                                    }
+                                  ]
+                                },
+                                "type": "object"
+                              }
+                            ],
+                            "name": "intersection",
+                            "raw": "T &\nReact.DetailedHTMLProps<\n  React.ButtonHTMLAttributes<HTMLButtonElement>,\n  HTMLButtonElement\n> &\nCommonButtonProps"
+                          },
+                          {
+                            "name": "signature",
+                            "raw": "{\n  value: SegmentPickerProps['value'];\n  label?: ReactNode;\n  beforeIcon?: ReactNode;\n  icon?: ReactNode;\n  selected?: boolean;\n  onClick?: (e: React.MouseEvent) => void;\n  size?: SegmentPickerSize;\n  shape?: Shape;\n}",
+                            "signature": {
+                              "properties": [
+                                {
+                                  "key": "value",
+                                  "value": {
+                                    "name": "any",
+                                    "raw": "SegmentPickerProps['value']",
+                                    "required": true
+                                  }
+                                },
+                                {
+                                  "key": "label",
+                                  "value": {
+                                    "name": "ReactNode",
+                                    "required": false
+                                  }
+                                },
+                                {
+                                  "key": "beforeIcon",
+                                  "value": {
+                                    "name": "ReactNode",
+                                    "required": false
+                                  }
+                                },
+                                {
+                                  "key": "icon",
+                                  "value": {
+                                    "name": "ReactNode",
+                                    "required": false
+                                  }
+                                },
+                                {
+                                  "key": "selected",
+                                  "value": {
+                                    "name": "boolean",
+                                    "required": false
+                                  }
+                                },
+                                {
+                                  "key": "onClick",
+                                  "value": {
+                                    "name": "signature",
+                                    "raw": "(e: React.MouseEvent) => void",
+                                    "required": false,
+                                    "signature": {
+                                      "arguments": [
+                                        {
+                                          "name": "e",
+                                          "type": {
+                                            "name": "ReactMouseEvent",
+                                            "raw": "React.MouseEvent"
+                                          }
+                                        }
+                                      ],
+                                      "return": {
+                                        "name": "void"
+                                      }
+                                    },
+                                    "type": "function"
+                                  }
+                                },
+                                {
+                                  "key": "size",
+                                  "value": {
+                                    "elements": [
+                                      {
+                                        "name": "unknown[number]",
+                                        "raw": "(typeof SIZES)[number]"
+                                      },
+                                      {
+                                        "elements": [
+                                          {
+                                            "name": "literal",
+                                            "value": "'xxs-small'"
+                                          },
+                                          {
+                                            "name": "literal",
+                                            "value": "'xs-small'"
+                                          },
+                                          {
+                                            "name": "literal",
+                                            "value": "'extra-small'"
+                                          },
+                                          {
+                                            "name": "literal",
+                                            "value": "'small'"
+                                          },
+                                          {
+                                            "name": "literal",
+                                            "value": "'medium'"
+                                          },
+                                          {
+                                            "name": "literal",
+                                            "value": "'large'"
+                                          },
+                                          {
+                                            "name": "literal",
+                                            "value": "'extra-large'"
+                                          }
+                                        ],
+                                        "name": "union",
+                                        "raw": "| 'xxs-small'\n| 'xs-small'\n| 'extra-small'\n| 'small'\n| 'medium'\n| 'large'\n| 'extra-large'"
+                                      }
+                                    ],
+                                    "name": "Extract",
+                                    "raw": "Extract<\n  Size,\n  | 'xxs-small'\n  | 'xs-small'\n  | 'extra-small'\n  | 'small'\n  | 'medium'\n  | 'large'\n  | 'extra-large'\n>",
+                                    "required": false
+                                  }
+                                },
+                                {
+                                  "key": "shape",
+                                  "value": {
+                                    "elements": [
+                                      {
+                                        "name": "literal",
+                                        "value": "''"
+                                      },
+                                      {
+                                        "name": "literal",
+                                        "value": "'circle'"
+                                      }
+                                    ],
+                                    "name": "union",
+                                    "raw": "'' | 'circle'",
+                                    "required": false
+                                  }
+                                }
+                              ]
+                            },
+                            "type": "object"
+                          }
+                        ],
+                        "name": "intersection",
+                        "raw": "BaseButtonProps<NavButtonProps> & {\n  value: SegmentPickerProps['value'];\n  label?: ReactNode;\n  beforeIcon?: ReactNode;\n  icon?: ReactNode;\n  selected?: boolean;\n  onClick?: (e: React.MouseEvent) => void;\n  size?: SegmentPickerSize;\n  shape?: Shape;\n}"
+                      }
+                    ],
+                    "name": "ReactElement",
+                    "raw": "ReactElement<SegmentPickerOptionProps>"
+                  }
+                ],
+                "name": "Array",
+                "raw": "ReactElement<SegmentPickerOptionProps>[]"
+              }
+            ],
+            "name": "union",
+            "raw": "| ReactElement<SegmentPickerOptionProps>\n| ReactElement<SegmentPickerOptionProps>[]"
+          }
+        },
+        "onChange": {
+          "description": "Callback triggered when the user selects a different segment.",
+          "required": true,
+          "tsType": {
+            "name": "signature",
+            "raw": "(event: React.MouseEvent, value: any) => void",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "event",
+                  "type": {
+                    "name": "ReactMouseEvent",
+                    "raw": "React.MouseEvent"
+                  }
+                },
+                {
+                  "name": "value",
+                  "type": {
+                    "name": "any"
+                  }
+                }
+              ],
+              "return": {
+                "name": "void"
+              }
+            },
+            "type": "function"
+          }
+        },
+        "size": {
+          "defaultValue": {
+            "computed": false,
+            "value": "'medium'"
+          },
+          "description": "Defines the size of the segment picker.",
+          "required": false,
+          "tsType": {
+            "elements": [
+              {
+                "name": "unknown[number]",
+                "raw": "(typeof SIZES)[number]"
+              },
+              {
+                "elements": [
+                  {
+                    "name": "literal",
+                    "value": "'xxs-small'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'xs-small'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'extra-small'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'small'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'medium'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'large'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'extra-large'"
+                  }
+                ],
+                "name": "union",
+                "raw": "| 'xxs-small'\n| 'xs-small'\n| 'extra-small'\n| 'small'\n| 'medium'\n| 'large'\n| 'extra-large'"
+              }
+            ],
+            "name": "Extract",
+            "raw": "Extract<\n  Size,\n  | 'xxs-small'\n  | 'xs-small'\n  | 'extra-small'\n  | 'small'\n  | 'medium'\n  | 'large'\n  | 'extra-large'\n>"
+          }
+        },
+        "value": {
+          "description": "The currently selected value.",
+          "required": true,
+          "tsType": {
+            "name": "any"
+          }
+        },
+        "variant": {
+          "defaultValue": {
+            "computed": false,
+            "value": "'square'"
+          },
+          "description": "Visual style of the segment picker.",
+          "required": false,
+          "tsType": {
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'rounded'"
+              },
+              {
+                "name": "literal",
+                "value": "'square'"
+              }
+            ],
+            "name": "union",
+            "raw": "'rounded' | 'square'"
+          }
+        }
+      }
+    }
+  ],
   "../ui/src/components/select/select-button/select-button.tsx": [
     {
       "description": "",

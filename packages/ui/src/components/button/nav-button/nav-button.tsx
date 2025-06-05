@@ -10,9 +10,13 @@ import { BaseButton } from '../base-button/base-button';
 import { forwardRef } from 'react';
 import { Size } from '@ui/shared/types/size';
 
-type NavButtonProps = {
+export type NavButtonProps = {
+  /** The icon to display before the label of the button */
+  beforeIcon?: React.ReactNode;
+  /** The label to display in the button */
+  label?: React.ReactNode;
   /** The icon to display in the button */
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   /** The shape of the button */
   shape?: Shape;
   /** Whether to hide the background */
@@ -30,19 +34,34 @@ type NavButtonProps = {
 export const NavButton = forwardRef<
   HTMLButtonElement,
   Omit<BaseButtonProps<NavButtonProps>, 'size'> & { size?: Size }
->(({ size = 'medium', shape = '', icon, noBackground, ...props }, ref) => (
-  <BaseButton
-    ref={ref}
-    styles={clsx(
-      navButtonStyles['nav-button'],
-      { [navButtonStyles['no-background']]: noBackground },
-      paddingStyles[size],
-      iconSizeStyles[size],
-      borderRadiusStyles[shape],
-      borderRadiusStyles[size],
-    )}
-    {...props}
-  >
-    {icon}
-  </BaseButton>
-));
+>(
+  (
+    {
+      size = 'medium',
+      shape = '',
+      beforeIcon,
+      label,
+      icon,
+      noBackground,
+      ...props
+    },
+    ref,
+  ) => (
+    <BaseButton
+      ref={ref}
+      styles={clsx(
+        navButtonStyles['nav-button'],
+        { [navButtonStyles['no-background']]: noBackground },
+        paddingStyles[size],
+        iconSizeStyles[size],
+        borderRadiusStyles[shape],
+        borderRadiusStyles[size],
+      )}
+      {...props}
+    >
+      {beforeIcon}
+      {label}
+      {icon}
+    </BaseButton>
+  ),
+);
