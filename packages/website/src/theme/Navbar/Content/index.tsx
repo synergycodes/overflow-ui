@@ -9,6 +9,22 @@ import styles from './navbar-content.module.css';
 import { NavButton } from '@synergycodes/axiom';
 import { GithubLogo } from '@phosphor-icons/react';
 import { MagnifyingGlass } from '@phosphor-icons/react/dist/ssr';
+import Link from '@docusaurus/Link';
+
+const LINKS = [
+  {
+    label: 'UI Components',
+    href: 'https://www.overflow.dev/ui-components/category/ui-components',
+  },
+  {
+    label: 'Premium',
+    href: 'https://www.overflow.dev/premium?path=/',
+  },
+  {
+    label: 'Contact',
+    href: 'https://www.overflow.dev/contact',
+  },
+];
 
 function NavbarContentLayout({
   left,
@@ -20,7 +36,16 @@ function NavbarContentLayout({
   return (
     <div className={styles['navbar-content']}>
       <div className={styles['logo-section']}>{left}</div>
-      <div className={styles['search-section']}>{right}</div>
+      <div className={styles['search-section']}>
+        {right}
+        <div className={styles['links-section']}>
+          {LINKS.map(({ href, label }) => (
+            <Link key={label} href={href}>
+              {label}
+            </Link>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

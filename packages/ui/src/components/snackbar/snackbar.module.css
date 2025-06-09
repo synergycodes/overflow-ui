@@ -73,7 +73,8 @@
 .container {
   display: flex;
   width: var(--ax-public-snackbar-width);
-  border: var(--ax-public-snackbar-border-size) solid var(--ax-public-snackbar-default-border);
+  border: var(--ax-public-snackbar-border-size) solid
+    var(--ax-public-snackbar-default-border);
   border-radius: var(--ax-public-snackbar-border-radius);
   background: var(--ax-public-snackbar-default-background);
   padding: var(--ax-public-snackbar-padding);

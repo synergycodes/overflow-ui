@@ -48,6 +48,20 @@
     }
   }
 
+  .links-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    padding-left: 2rem;
+    margin-left: 1.25rem;
+    border-left: 1px solid var(--ax-colors-gray-650);
+
+    a {
+      text-decoration: none;
+    }
+  }
+
   .nav-button {
     border: 1px solid var(--ax-ui-stroke-primary-focus);
   }
