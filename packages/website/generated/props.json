@@ -2320,6 +2320,13 @@
             "raw": "Extract<Size, 'large' | 'medium' | 'small'>"
           }
         },
+        "spellCheck": {
+          "description": "Enables or disables browser spell checking",
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          }
+        },
         "value": {
           "description": "Controlled value of the textarea",
           "required": false,

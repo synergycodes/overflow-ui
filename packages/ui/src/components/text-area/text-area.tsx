@@ -57,6 +57,10 @@ export type TextAreaProps = {
    * Custom class name for the textarea
    */
   className?: string;
+  /**
+   * Enables or disables browser spell checking
+   */
+  spellCheck?: boolean;
 };
 
 /**
@@ -75,6 +79,7 @@ export function TextArea({
   onClick,
   onBlur,
   className,
+  spellCheck,
   ...props
 }: TextAreaProps) {
   const containerClasses = clsx(
@@ -102,6 +107,7 @@ export function TextArea({
         onClick={onClick}
         onBlur={onBlur}
         className={textareaClasses}
+        spellCheck={spellCheck}
         {...props}
       />
     </div>
