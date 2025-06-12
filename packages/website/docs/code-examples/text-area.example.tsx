@@ -6,8 +6,7 @@ function TextAreaExample() {
       minRows={1}
       maxRows={5}
       placeholder="Placeholder text"
-      defaultValue=""
-      onChange={() => {}}
+      defaultValue="Witam"
       disabled={false}
     />
   );

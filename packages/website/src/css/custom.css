@@ -26,20 +26,6 @@ ul {
   padding-left: revert-layer;
 }
 
-h1 {
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-
-h2 {
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-li {
-  margin-left: 1rem;
-}
-
 a {
   color: unset;
 }

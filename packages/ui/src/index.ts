@@ -49,6 +49,8 @@ export * from './components/edge/use-edge-styles/use-edge-styles';
 
 export * from './components/separator/separator';
 
+export * from './components/status/status';
+
 // Types
 export * from './components/button/types';
 export * from './components/date-picker/types';

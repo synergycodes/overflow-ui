@@ -23,13 +23,6 @@ const props: Record<string, ComponentProp> = {
 export function IconButtonDocs() {
   return (
     <ComponentPage
-      preview={
-        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-          <IconButton icon={<Check />} variant="primary" />
-          <IconButton icon={<Plus />} variant="secondary" />
-          <IconButton icon={<User />} variant="gray" />
-        </div>
-      }
       cssPaths={[
         'components/button/base-button/base-button.module.css',
         'components/button/styles/border-radius.module.css',
