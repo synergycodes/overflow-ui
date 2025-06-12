@@ -3,8 +3,9 @@
     --ax-nav-button-bg-primary-hover
   );
   --ax-public-button-nav-color: var(--ax-nav-button-icon-primary-default);
-  --ax-public-button-nav-color-active: var(--ax-nav-button-icon-primary-active);
-  --ax-public-button-nav-color-hover: var(--ax-nav-button-icon-primary-hover);
+  --ax-public-button-nav-color-active: var(
+    --ax-nav-button-icon-primary-pressed
+  );
   --ax-public-button-nav-color-disabled: var(
     --ax-nav-button-icon-primary-disabled
   );
@@ -17,11 +18,6 @@
 
     &:hover {
       background-color: var(--ax-public-button-nav-background-color);
-
-      &.no-background {
-        background: transparent;
-        color: var(--ax-public-button-nav-color-hover);
-      }
     }
 
     &:active {
@@ -36,6 +32,12 @@
     &:disabled {
       color: var(--ax-public-button-nav-color-disabled);
       background-color: transparent;
+    }
+
+    &.selected {
+      pointer-events: none;
+      background-color: var(--ax-button-primary-bg-default);
+      color: var(--ax-nav-button-icon-primary-active);
     }
   }
 }

@@ -9,7 +9,9 @@ export function ResetButton({ onReset, ...props }: Props) {
   return (
     <Tooltip>
       <Tooltip.Trigger>
-        <NavButton {...props} onClick={onReset} icon={<ArrowClockwise />} />
+        <NavButton {...props} onClick={onReset}>
+          <ArrowClockwise />
+        </NavButton>
       </Tooltip.Trigger>
       <Tooltip.Content>Reset</Tooltip.Content>
     </Tooltip>

@@ -20,9 +20,6 @@
   --ax-public-button-icon-padding-xxx-small: var(
     --ax-token-spacing-button-xxxs-v-pad
   );
-  --ax-public-button-icon-padding-xxxx-small: var(
-    --ax-token-spacing-button-xxxxs-v-pad
-  );
 }
 
 @layer ui.component {
@@ -52,9 +49,5 @@
 
   .xxx-small {
     padding: var(--ax-public-button-icon-padding-xxx-small);
-  }
-
-  .xxx-small {
-    padding: var(--ax-public-button-icon-padding-xxxx-small);
   }
 }

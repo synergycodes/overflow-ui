@@ -1,10 +1,10 @@
-import { Variant } from '@ui/components/button/types';
+import { Variant } from '@ui/components/button/regular-button/types';
 import { SnackbarType } from '../types';
 
 import styles from './action-buttons.module.css';
 import { X } from '@phosphor-icons/react';
-import { LabelButton } from '@ui/components/button/label-button/label-button';
 import { NavButton } from '@ui/components/button/nav-button/nav-button';
+import { Button } from '../../button/regular-button/button';
 
 type ActionButtonsProps = {
   variant: string;
@@ -34,19 +34,14 @@ export function ActionButtons({
   return (
     <div className={styles['container']}>
       {buttonLabel && onButtonClick && (
-        <LabelButton
-          variant={buttonType}
-          label={buttonLabel}
-          onClick={onButtonClick}
-        />
+        <Button variant={buttonType} onClick={onButtonClick}>
+          {buttonLabel}
+        </Button>
       )}
       {close && onClose && (
-        <NavButton
-          icon={<X />}
-          size="xxx-small"
-          noBackground={true}
-          onClick={onClose}
-        />
+        <NavButton size="xxx-small" iconOnly={true} onClick={onClose}>
+          <X />
+        </NavButton>
       )}
     </div>
   );

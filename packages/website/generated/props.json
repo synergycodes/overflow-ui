@@ -130,48 +130,19 @@
       "displayName": "BaseButton",
       "methods": [],
       "props": {
-        "size": {
-          "defaultValue": {
-            "computed": false,
-            "value": "'medium'"
-          },
+        "children": {
           "description": "",
-          "required": false,
+          "required": true,
           "tsType": {
-            "elements": [
-              {
-                "name": "unknown[number]",
-                "raw": "(typeof SIZES)[number]"
-              },
-              {
-                "elements": [
-                  {
-                    "name": "literal",
-                    "value": "'extra-small'"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "'small'"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "'medium'"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "'large'"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "'extra-large'"
-                  }
-                ],
-                "name": "union",
-                "raw": "'extra-small' | 'small' | 'medium' | 'large' | 'extra-large'"
-              }
-            ],
-            "name": "Extract",
-            "raw": "Extract<\n  Size,\n  'extra-small' | 'small' | 'medium' | 'large' | 'extra-large'\n>"
+            "name": "ReactReactNode",
+            "raw": "React.ReactNode"
+          }
+        },
+        "styles": {
+          "description": "Class name meant to be used by parent components using <BaseButton /> directly",
+          "required": true,
+          "tsType": {
+            "name": "string"
           }
         },
         "tooltip": {
@@ -206,18 +177,71 @@
       }
     }
   ],
-  "../ui/src/components/button/icon-button/icon-button.tsx": [
+  "../ui/src/components/button/nav-button/nav-button.tsx": [
     {
-      "description": "IconButton is a specialized button component that displays only an icon.\nFeatures: accepts any icon component, supports multiple visual variants (primary, secondary, etc.),\nconfigurable sizes (small, medium, large), customizable shapes (circle or default),\nmaintains accessibility through BaseButton inheritance, and fully customizable through standard button props.",
-      "displayName": "IconButton",
+      "description": "",
+      "displayName": "NavButtonComponent",
       "methods": [],
       "props": {
+        "size": {
+          "defaultValue": {
+            "computed": false,
+            "value": "'medium'"
+          },
+          "required": false
+        }
+      }
+    }
+  ],
+  "../ui/src/components/button/nav-button/nav-icon-button/nav-icon-button.tsx": [
+    {
+      "description": "",
+      "displayName": "NavIconButton",
+      "methods": [],
+      "props": {
+        "children": {
+          "description": "",
+          "required": true,
+          "tsType": {
+            "name": "ReactReactElement",
+            "raw": "React.ReactElement"
+          }
+        },
+        "iconOnly": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          }
+        },
+        "isSelected": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          }
+        },
         "shape": {
           "defaultValue": {
             "computed": false,
             "value": "''"
           },
-          "required": false
+          "description": "",
+          "required": false,
+          "tsType": {
+            "elements": [
+              {
+                "name": "literal",
+                "value": "''"
+              },
+              {
+                "name": "literal",
+                "value": "'circle'"
+              }
+            ],
+            "name": "union",
+            "raw": "'' | 'circle'"
+          }
         },
         "size": {
           "defaultValue": {
@@ -227,40 +251,8 @@
           "description": "",
           "required": false,
           "tsType": {
-            "elements": [
-              {
-                "name": "unknown[number]",
-                "raw": "(typeof SIZES)[number]"
-              },
-              {
-                "elements": [
-                  {
-                    "name": "literal",
-                    "value": "'extra-small'"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "'small'"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "'medium'"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "'large'"
-                  },
-                  {
-                    "name": "literal",
-                    "value": "'extra-large'"
-                  }
-                ],
-                "name": "union",
-                "raw": "'extra-small' | 'small' | 'medium' | 'large' | 'extra-large'"
-              }
-            ],
-            "name": "Extract",
-            "raw": "Extract<\n  Size,\n  'extra-small' | 'small' | 'medium' | 'large' | 'extra-large'\n>"
+            "name": "unknown[number]",
+            "raw": "(typeof SIZES)[number]"
           }
         },
         "tooltip": {
@@ -287,6 +279,188 @@
             "name": "union",
             "raw": "'default' | 'blue'"
           }
+        }
+      }
+    }
+  ],
+  "../ui/src/components/button/nav-button/nav-icon-label-button/nav-icon-label-button.tsx": [
+    {
+      "description": "IconLabelButton is a flexible button component that combines icons and text in specific patterns.\nFeatures: supports three distinct content patterns (icon + text, text + icon, or icon + text + icon),\naccepts any React node as icons, supports multiple visual variants (primary, secondary, etc.),\nconfigurable sizes (small, medium, large), maintains accessibility through BaseButton inheritance,\nand fully customizable through standard button props. The component enforces strict content patterns\nto ensure consistent and accessible button layouts.",
+      "displayName": "NavIconLabelButton",
+      "methods": [],
+      "props": {
+        "children": {
+          "description": "",
+          "required": true,
+          "tsType": {
+            "elements": [
+              {
+                "elements": [
+                  {
+                    "name": "ReactReactElement",
+                    "raw": "React.ReactElement"
+                  },
+                  {
+                    "name": "string"
+                  }
+                ],
+                "name": "tuple",
+                "raw": "[IconNode, string]"
+              },
+              {
+                "elements": [
+                  {
+                    "name": "string"
+                  },
+                  {
+                    "name": "ReactReactElement",
+                    "raw": "React.ReactElement"
+                  }
+                ],
+                "name": "tuple",
+                "raw": "[string, IconNode]"
+              },
+              {
+                "elements": [
+                  {
+                    "name": "ReactReactElement",
+                    "raw": "React.ReactElement"
+                  },
+                  {
+                    "name": "string"
+                  },
+                  {
+                    "name": "ReactReactElement",
+                    "raw": "React.ReactElement"
+                  }
+                ],
+                "name": "tuple",
+                "raw": "[IconNode, string, IconNode]"
+              }
+            ],
+            "name": "union",
+            "raw": "| [IconNode, string]\n| [string, IconNode]\n| [IconNode, string, IconNode]"
+          }
+        },
+        "isSelected": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          }
+        },
+        "size": {
+          "defaultValue": {
+            "computed": false,
+            "value": "'medium'"
+          },
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "unknown[number]",
+            "raw": "(typeof SIZES)[number]"
+          }
+        },
+        "tooltip": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "tooltipType": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'default'"
+              },
+              {
+                "name": "literal",
+                "value": "'blue'"
+              }
+            ],
+            "name": "union",
+            "raw": "'default' | 'blue'"
+          }
+        }
+      }
+    }
+  ],
+  "../ui/src/components/button/nav-button/nav-label-button/nav-label-button.tsx": [
+    {
+      "description": "LabelButton is a versatile button component that displays text content with enhanced functionality.\nFeatures: displays a text label with customizable styling, supports multiple visual variants (primary, secondary, etc.),\nconfigurable sizes (small, medium, large), built-in loading state with animated indicator,\nmaintains accessibility through BaseButton inheritance, and fully customizable through standard button props.",
+      "displayName": "NavLabelButton",
+      "methods": [],
+      "props": {
+        "children": {
+          "description": "",
+          "required": true,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "isSelected": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          }
+        },
+        "size": {
+          "defaultValue": {
+            "computed": false,
+            "value": "'medium'"
+          },
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "unknown[number]",
+            "raw": "(typeof SIZES)[number]"
+          }
+        },
+        "tooltip": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "tooltipType": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'default'"
+              },
+              {
+                "name": "literal",
+                "value": "'blue'"
+              }
+            ],
+            "name": "union",
+            "raw": "'default' | 'blue'"
+          }
+        }
+      }
+    }
+  ],
+  "../ui/src/components/button/regular-button/button.tsx": [
+    {
+      "description": "",
+      "displayName": "ButtonComponent",
+      "methods": [],
+      "props": {
+        "size": {
+          "defaultValue": {
+            "computed": false,
+            "value": "'medium'"
+          },
+          "required": false
         },
         "variant": {
           "defaultValue": {
@@ -298,12 +472,111 @@
       }
     }
   ],
-  "../ui/src/components/button/icon-label-button/icon-label-button.tsx": [
+  "../ui/src/components/button/regular-button/icon-button/icon-button.tsx": [
+    {
+      "description": "",
+      "displayName": "IconButton",
+      "methods": [],
+      "props": {
+        "children": {
+          "description": "",
+          "required": true,
+          "tsType": {
+            "name": "ReactReactElement",
+            "raw": "React.ReactElement"
+          }
+        },
+        "shape": {
+          "defaultValue": {
+            "computed": false,
+            "value": "''"
+          },
+          "description": "",
+          "required": false,
+          "tsType": {
+            "elements": [
+              {
+                "name": "literal",
+                "value": "''"
+              },
+              {
+                "name": "literal",
+                "value": "'circle'"
+              }
+            ],
+            "name": "union",
+            "raw": "'' | 'circle'"
+          }
+        },
+        "size": {
+          "defaultValue": {
+            "computed": false,
+            "value": "'medium'"
+          },
+          "required": false
+        }
+      }
+    }
+  ],
+  "../ui/src/components/button/regular-button/icon-label-button/icon-label-button.tsx": [
     {
       "description": "IconLabelButton is a flexible button component that combines icons and text in specific patterns.\nFeatures: supports three distinct content patterns (icon + text, text + icon, or icon + text + icon),\naccepts any React node as icons, supports multiple visual variants (primary, secondary, etc.),\nconfigurable sizes (small, medium, large), maintains accessibility through BaseButton inheritance,\nand fully customizable through standard button props. The component enforces strict content patterns\nto ensure consistent and accessible button layouts.",
       "displayName": "IconLabelButton",
       "methods": [],
       "props": {
+        "children": {
+          "description": "",
+          "required": true,
+          "tsType": {
+            "elements": [
+              {
+                "elements": [
+                  {
+                    "name": "ReactReactElement",
+                    "raw": "React.ReactElement"
+                  },
+                  {
+                    "name": "string"
+                  }
+                ],
+                "name": "tuple",
+                "raw": "[IconNode, string]"
+              },
+              {
+                "elements": [
+                  {
+                    "name": "string"
+                  },
+                  {
+                    "name": "ReactReactElement",
+                    "raw": "React.ReactElement"
+                  }
+                ],
+                "name": "tuple",
+                "raw": "[string, IconNode]"
+              },
+              {
+                "elements": [
+                  {
+                    "name": "ReactReactElement",
+                    "raw": "React.ReactElement"
+                  },
+                  {
+                    "name": "string"
+                  },
+                  {
+                    "name": "ReactReactElement",
+                    "raw": "React.ReactElement"
+                  }
+                ],
+                "name": "tuple",
+                "raw": "[IconNode, string, IconNode]"
+              }
+            ],
+            "name": "union",
+            "raw": "| [IconNode, string]\n| [string, IconNode]\n| [IconNode, string, IconNode]"
+          }
+        },
         "size": {
           "defaultValue": {
             "computed": false,
@@ -374,21 +647,36 @@
           }
         },
         "variant": {
-          "defaultValue": {
-            "computed": false,
-            "value": "'primary'"
-          },
-          "required": false
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "unknown[number]",
+            "raw": "(typeof BUTTON_VARIANTS)[number]"
+          }
         }
       }
     }
   ],
-  "../ui/src/components/button/label-button/label-button.tsx": [
+  "../ui/src/components/button/regular-button/label-button/label-button.tsx": [
     {
       "description": "LabelButton is a versatile button component that displays text content with enhanced functionality.\nFeatures: displays a text label with customizable styling, supports multiple visual variants (primary, secondary, etc.),\nconfigurable sizes (small, medium, large), built-in loading state with animated indicator,\nmaintains accessibility through BaseButton inheritance, and fully customizable through standard button props.",
       "displayName": "LabelButton",
       "methods": [],
       "props": {
+        "children": {
+          "description": "",
+          "required": true,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "isLoading": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          }
+        },
         "size": {
           "defaultValue": {
             "computed": false,
@@ -459,37 +747,11 @@
           }
         },
         "variant": {
-          "defaultValue": {
-            "computed": false,
-            "value": "'primary'"
-          },
-          "required": false
-        }
-      }
-    }
-  ],
-  "../ui/src/components/button/nav-button/nav-button.tsx": [
-    {
-      "description": "NavButton is a specialized button component designed for navigation purposes.\nFeatures: accepts any React node as an icon, supports extended size range (from xxxx-small to large),\ncustomizable shapes (circle or default), optional background removal for transparent styling,\nmaintains accessibility through BaseButton inheritance, and fully customizable through standard button props.\nUnlike IconButton, NavButton is specifically optimized for navigation contexts with more granular size control.\nAlso the button has a distinct appearance with only the content visible in default state.",
-      "displayName": "NavButton",
-      "methods": [],
-      "props": {
-        "shape": {
-          "defaultValue": {
-            "computed": false,
-            "value": "''"
-          },
-          "required": false
-        },
-        "size": {
-          "defaultValue": {
-            "computed": false,
-            "value": "'medium'"
-          },
           "description": "",
           "required": false,
           "tsType": {
-            "name": "Size"
+            "name": "unknown[number]",
+            "raw": "(typeof BUTTON_VARIANTS)[number]"
           }
         }
       }

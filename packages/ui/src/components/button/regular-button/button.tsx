@@ -1,26 +1,20 @@
 import clsx from 'clsx';
+import variantStyles from '../styles/variant.module.css';
 import borderRadiusStyles from '../styles/border-radius.module.css';
-import navButtonStyles from './nav-button.module.css';
 import gapStyles from '../styles/gap.module.css';
 
 import { forwardRef, ReactElement } from 'react';
+import { LabelButton, LabelButtonProps } from './label-button/label-button';
+import {
+  IconLabelButton,
+  IconLabelButtonProps,
+} from './icon-label-button/icon-label-button';
+import { IconButton, IconButtonProps } from './icon-button/icon-button';
 import {
   hasChildrenWithStringAndIcons,
   hasIconChildrenOnly,
   hasStringChildrenOnly,
 } from '../guards';
-import {
-  NavLabelButton,
-  NavLabelButtonProps,
-} from './nav-label-button/nav-label-button';
-import {
-  NavIconButton,
-  NavIconButtonProps,
-} from './nav-icon-button/nav-icon-button';
-import {
-  NavIconLabelButton,
-  NavIconLabelButtonProps,
-} from './nav-icon-label-button/nav-icon-label-button';
 
 type WithRef<T> = T & {
   ref?: React.Ref<HTMLButtonElement>;
@@ -42,41 +36,39 @@ type WithRef<T> = T & {
  * so **overloads are required** to maintain strict type safety and a great developer experience.
  */
 
-type NavButtonProps = {
-  (props: WithRef<NavLabelButtonProps>): ReactElement;
-  (props: WithRef<NavIconButtonProps>): ReactElement;
-  (props: WithRef<NavIconLabelButtonProps>): ReactElement;
+type ButtonProps = {
+  (props: WithRef<LabelButtonProps>): ReactElement;
+  (props: WithRef<IconButtonProps>): ReactElement;
+  (props: WithRef<IconLabelButtonProps>): ReactElement;
 };
 
-const NavButtonComponent = forwardRef<
+const ButtonComponent = forwardRef<
   HTMLButtonElement,
-  NavLabelButtonProps | NavIconButtonProps | NavIconLabelButtonProps
->(({ className, isSelected, size = 'medium', ...props }, ref) => {
+  LabelButtonProps | IconButtonProps | IconLabelButtonProps
+>(({ className, variant = 'primary', size = 'medium', ...props }, ref) => {
   const buttonProps = {
     ref,
     ...props,
     className: clsx(
+      variantStyles[variant],
       borderRadiusStyles[size],
-      navButtonStyles['nav-button'],
-      { [navButtonStyles['selected']]: isSelected },
       gapStyles[size],
       className,
     ),
+    variant,
     size,
   };
 
-  if (hasStringChildrenOnly<NavLabelButtonProps>(props)) {
-    return <NavLabelButton {...buttonProps}>{props.children}</NavLabelButton>;
+  if (hasStringChildrenOnly<LabelButtonProps>(props)) {
+    return <LabelButton {...buttonProps}>{props.children}</LabelButton>;
   }
 
-  if (hasIconChildrenOnly<NavIconButtonProps>(props)) {
-    return <NavIconButton {...buttonProps}>{props.children}</NavIconButton>;
+  if (hasIconChildrenOnly<IconButtonProps>(props)) {
+    return <IconButton {...buttonProps}>{props.children}</IconButton>;
   }
 
-  if (hasChildrenWithStringAndIcons<NavIconLabelButtonProps>(props)) {
-    return (
-      <NavIconLabelButton {...buttonProps}>{props.children}</NavIconLabelButton>
-    );
+  if (hasChildrenWithStringAndIcons<IconLabelButtonProps>(props)) {
+    return <IconLabelButton {...buttonProps}>{props.children}</IconLabelButton>;
   }
 
   return null;
@@ -93,4 +85,4 @@ const NavButtonComponent = forwardRef<
  * - Provides IntelliSense support
  * - Enforces prop correctness at the call site
  */
-export const NavButton = NavButtonComponent as NavButtonProps;
+export const Button = ButtonComponent as ButtonProps;

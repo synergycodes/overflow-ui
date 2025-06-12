@@ -1,4 +1,4 @@
-import { Modal, LabelButton, Select } from '@synergycodes/axiom';
+import { Modal, Button, Select } from '@synergycodes/axiom';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
 import exampleCode from '!!raw-loader!@site/docs/code-examples/modal.example.tsx';
 import { useState } from 'react';
@@ -11,18 +11,20 @@ export function ModalDocs() {
     <ComponentPage
       preview={
         <>
-          <LabelButton
+          <Button
             onClick={() => setOpenedModal('default')}
-            label={'Open Modal'}
             style={{ width: 'max-content' }}
-          />
+          >
+            Open Modal
+          </Button>
           <br />
-          <LabelButton
+          <Button
             onClick={() => setOpenedModal('scroll')}
-            label={'Open modal with scroll'}
             style={{ width: 'max-content' }}
             variant="secondary"
-          />
+          >
+            Open modal with scroll
+          </Button>
           <Modal
             open={openedModal === 'default'}
             onClose={() => setOpenedModal('')}
@@ -33,15 +35,10 @@ export function ModalDocs() {
             footerVariant="integrated"
             footer={
               <>
-                <LabelButton
-                  onClick={() => setOpenedModal('')}
-                  label="Cancel"
-                  variant="secondary"
-                />
-                <LabelButton
-                  onClick={() => setOpenedModal('')}
-                  label="Confirm"
-                />
+                <Button onClick={() => setOpenedModal('')} variant="secondary">
+                  Cancel
+                </Button>
+                <Button onClick={() => setOpenedModal('')}>Confirm</Button>
               </>
             }
           >
@@ -68,15 +65,10 @@ export function ModalDocs() {
             footerVariant="integrated"
             footer={
               <>
-                <LabelButton
-                  onClick={() => setOpenedModal('')}
-                  label="Cancel"
-                  variant="secondary"
-                />
-                <LabelButton
-                  onClick={() => setOpenedModal('')}
-                  label="Confirm"
-                />
+                <Button onClick={() => setOpenedModal('')} variant="secondary">
+                  Cancel
+                </Button>
+                <Button onClick={() => setOpenedModal('')}>Confirm</Button>
               </>
             }
           >

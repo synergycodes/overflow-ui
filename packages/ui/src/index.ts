@@ -7,10 +7,8 @@ import './styles/typography.css';
 export * from './components/accordion/accordion';
 export * from './components/avatar/avatar';
 
-export * from './components/button/icon-button/icon-button';
-export * from './components/button/icon-label-button/icon-label-button';
-export * from './components/button/label-button/label-button';
 export * from './components/button/nav-button/nav-button';
+export * from './components/button/regular-button/button';
 
 export * from './components/checkbox/checkbox';
 
@@ -50,7 +48,7 @@ export * from './components/edge/use-edge-styles/use-edge-styles';
 export * from './components/separator/separator';
 
 // Types
-export * from './components/button/types';
+export * from './components/button/regular-button/types';
 export * from './components/date-picker/types';
 export * from './components/input/types';
 export * from './components/menu/types';

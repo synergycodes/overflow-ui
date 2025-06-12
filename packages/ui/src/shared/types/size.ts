@@ -1,5 +1,4 @@
 export const SIZES = [
-  'xxxx-small',
   'xxx-small',
   'xx-small',
   'extra-small',

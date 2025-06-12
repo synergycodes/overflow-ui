@@ -12,9 +12,6 @@
   --ax-public-button-border-radius-xxx-small: var(
     --ax-token-radius-button-xxxs
   );
-  --ax-public-button-border-radius-xxxx-small: var(
-    --ax-token-radius-button-xxxxs
-  );
 
   --ax-public-button-border-radius-circle: var(--ax-token-radius-button-round);
 }
@@ -47,10 +44,6 @@
 
     &.xxx-small {
       border-radius: var(--ax-public-button-border-radius-xxx-small);
-    }
-
-    &.xxxx-small {
-      border-radius: var(--ax-public-button-border-radius-xxxx-small);
     }
   }
 

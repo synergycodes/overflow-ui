@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LabelButton, Snackbar } from '@synergycodes/axiom';
+import { Button, Snackbar } from '@synergycodes/axiom';
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
 import exampleCode from '!!raw-loader!@site/docs/code-examples/snackbar.example.tsx';
 
@@ -11,11 +11,12 @@ export function SnackbarDocs() {
       preview={
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           {!showSnackbar && (
-            <LabelButton
+            <Button
               onClick={() => setShowSnackbar(true)}
-              label="Show Snackbar"
               style={{ width: 'max-content' }}
-            />
+            >
+              Show Snackbar
+            </Button>
           )}
           {showSnackbar && (
             <Snackbar

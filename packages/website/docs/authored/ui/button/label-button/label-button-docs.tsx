@@ -1,9 +1,5 @@
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
-import {
-  BUTTON_SIZES,
-  BUTTON_VARIANTS,
-  LabelButton,
-} from '@synergycodes/axiom';
+import { BUTTON_SIZES, BUTTON_VARIANTS, Button } from '@synergycodes/axiom';
 import { ComponentProp, toPropMap } from '@site/docs/utils/to-prop-map';
 
 import exampleCode from '!!raw-loader!@site/docs/code-examples/label-button.example.tsx';
@@ -39,20 +35,20 @@ export function LabelButtonDocs() {
     <ComponentPage
       preview={
         <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-          {buttons.map((props, index) => (
-            <LabelButton key={index} {...props} style={sharedButtonStyle} />
+          {buttons.map(({ label, ...props }, index) => (
+            <Button key={index} {...props} style={sharedButtonStyle}>
+              {label}
+            </Button>
           ))}
         </div>
       }
       cssPaths={[
         'components/button/base-button/base-button.module.css',
-        'components/button/label-button/loader.module.css',
-        'components/button/label-button/padding.module.css',
         'components/button/styles/font-size.module.css',
         'components/button/styles/border-radius.module.css',
         'components/button/styles/variant.module.css',
       ]}
-      componentPath="components/button/label-button/label-button.tsx"
+      componentPath="components/button/regular-button/label-button/label-button.tsx"
       exampleCode={exampleCode}
       hardcodedData={{
         props: toPropMap(props),

@@ -1,27 +1,26 @@
 function IconLabelButtonExample() {
   return (
     <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-      <IconLabelButton variant="primary">
+      <Button variant="primary">
         <Check />
-        With Icon Before
-      </IconLabelButton>
-      <IconLabelButton variant="secondary">
+      </Button>
+      <Button variant="secondary">
         With Icon After
         <Check />
-      </IconLabelButton>
-      <IconLabelButton variant="gray">
+      </Button>
+      <Button variant="gray">
         <Check />
         With Both Icons
         <Check />
-      </IconLabelButton>
-      <IconLabelButton variant="success">
+      </Button>
+      <Button variant="success">
         <Plus />
         Add Item
-      </IconLabelButton>
-      <IconLabelButton variant="warning">
+      </Button>
+      <Button variant="warning">
         <User />
         Profile
-      </IconLabelButton>
+      </Button>
     </div>
   );
 }

@@ -88,7 +88,11 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
                   )}
                 </div>
               </div>
-              {onClose && <NavButton icon={<X />} onClick={onClose} />}
+              {onClose && (
+                <NavButton onClick={onClose}>
+                  <X />
+                </NavButton>
+              )}
             </div>
 
             {children && <div className={styles['content']}>{children}</div>}

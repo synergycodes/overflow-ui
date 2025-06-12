@@ -1,5 +1,5 @@
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
-import { BUTTON_SIZES, BUTTON_VARIANTS, IconButton } from '@synergycodes/axiom';
+import { BUTTON_SIZES, BUTTON_VARIANTS, Button } from '@synergycodes/axiom';
 import { Check, Plus, User } from '@phosphor-icons/react';
 import { ComponentProp, toPropMap } from '@site/docs/utils/to-prop-map';
 
@@ -25,9 +25,15 @@ export function IconButtonDocs() {
     <ComponentPage
       preview={
         <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-          <IconButton icon={<Check />} variant="primary" />
-          <IconButton icon={<Plus />} variant="secondary" />
-          <IconButton icon={<User />} variant="gray" />
+          <Button variant="primary">
+            <Check />
+          </Button>
+          <Button variant="secondary">
+            <Plus />
+          </Button>
+          <Button variant="gray">
+            <User />
+          </Button>
         </div>
       }
       cssPaths={[
@@ -37,7 +43,7 @@ export function IconButtonDocs() {
         'components/button/styles/icon-size.module.css',
         'components/button/styles/icon-padding.module.css',
       ]}
-      componentPath="components/button/icon-button/icon-button.tsx"
+      componentPath="components/button/regular-button/icon-button/icon-button.tsx"
       exampleCode={exampleCode}
       hardcodedData={{
         props: toPropMap(props),

@@ -1,9 +1,5 @@
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
-import {
-  BUTTON_SIZES,
-  BUTTON_VARIANTS,
-  IconLabelButton,
-} from '@synergycodes/axiom';
+import { BUTTON_SIZES, BUTTON_VARIANTS, Button } from '@synergycodes/axiom';
 import { Check, Plus, User } from '@phosphor-icons/react';
 import { ComponentProp, toPropMap } from '@site/docs/utils/to-prop-map';
 
@@ -34,23 +30,23 @@ export function IconLabelButtonDocs() {
     <ComponentPage
       preview={
         <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-          <IconLabelButton variant="primary" style={sharedButtonStyle}>
+          <Button variant="primary" style={sharedButtonStyle}>
             <Check /> With Icon Before
-          </IconLabelButton>
-          <IconLabelButton variant="secondary" style={sharedButtonStyle}>
+          </Button>
+          <Button variant="secondary" style={sharedButtonStyle}>
             With Icon After <Check />
-          </IconLabelButton>
-          <IconLabelButton variant="gray" style={sharedButtonStyle}>
+          </Button>
+          <Button variant="gray" style={sharedButtonStyle}>
             <Check /> With Both Icons
             <Check />
-          </IconLabelButton>
-          <IconLabelButton variant="success" style={sharedButtonStyle}>
+          </Button>
+          <Button variant="success" style={sharedButtonStyle}>
             <Plus /> Add Item
-          </IconLabelButton>
-          <IconLabelButton variant="warning" style={sharedButtonStyle}>
+          </Button>
+          <Button variant="warning" style={sharedButtonStyle}>
             <User />
             Profile
-          </IconLabelButton>
+          </Button>
         </div>
       }
       cssPaths={[
@@ -59,9 +55,8 @@ export function IconLabelButtonDocs() {
         'components/button/styles/variant.module.css',
         'components/button/styles/icon-size.module.css',
         'components/button/styles/font-size.module.css',
-        'components/button/icon-label-button/padding.module.css',
       ]}
-      componentPath="components/button/icon-label-button/icon-label-button.tsx"
+      componentPath="components/button/regular-button/label-button/label-button.tsx"
       exampleCode={exampleCode}
       hardcodedData={{
         props: toPropMap(props),

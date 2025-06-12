@@ -23,9 +23,15 @@ export function NavButtonDocs() {
     <ComponentPage
       preview={
         <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-          <NavButton icon={<Check />} />
-          <NavButton icon={<Plus />} shape="circle" />
-          <NavButton icon={<User />} noBackground={true} />
+          <NavButton>
+            <Check />
+          </NavButton>
+          <NavButton shape="circle">
+            <Plus />
+          </NavButton>
+          <NavButton iconOnly={true}>
+            <User />
+          </NavButton>
         </div>
       }
       cssPaths={[
