@@ -14,7 +14,7 @@ import Link from '@docusaurus/Link';
 const LINKS = [
   {
     label: 'UI Components',
-    href: 'https://www.overflow.dev/ui-components/category/ui-components',
+    href: '',
   },
   {
     label: 'Premium',
@@ -40,7 +40,7 @@ function NavbarContentLayout({
         {right}
         <div className={styles['links-section']}>
           {LINKS.map(({ href, label }) => (
-            <Link key={label} href={href}>
+            <Link target="_self" key={label} href={href}>
               {label}
             </Link>
           ))}

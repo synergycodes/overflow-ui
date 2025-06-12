@@ -1,0 +1,5 @@
+.markdown {
+  a {
+    color: var(--ifm-link-color);
+  }
+}
