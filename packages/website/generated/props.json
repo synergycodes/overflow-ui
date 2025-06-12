@@ -251,8 +251,7 @@
           "description": "",
           "required": false,
           "tsType": {
-            "name": "unknown[number]",
-            "raw": "(typeof SIZES)[number]"
+            "name": "Size"
           }
         },
         "tooltip": {
@@ -357,8 +356,7 @@
           "description": "",
           "required": false,
           "tsType": {
-            "name": "unknown[number]",
-            "raw": "(typeof SIZES)[number]"
+            "name": "Size"
           }
         },
         "tooltip": {
@@ -417,8 +415,7 @@
           "description": "",
           "required": false,
           "tsType": {
-            "name": "unknown[number]",
-            "raw": "(typeof SIZES)[number]"
+            "name": "Size"
           }
         },
         "tooltip": {
@@ -513,7 +510,77 @@
             "computed": false,
             "value": "'medium'"
           },
-          "required": false
+          "description": "",
+          "required": false,
+          "tsType": {
+            "elements": [
+              {
+                "name": "unknown[number]",
+                "raw": "(typeof SIZES)[number]"
+              },
+              {
+                "elements": [
+                  {
+                    "name": "literal",
+                    "value": "'extra-small'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'small'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'medium'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'large'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "'extra-large'"
+                  }
+                ],
+                "name": "union",
+                "raw": "'extra-small' | 'small' | 'medium' | 'large' | 'extra-large'"
+              }
+            ],
+            "name": "Extract",
+            "raw": "Extract<\n  Size,\n  'extra-small' | 'small' | 'medium' | 'large' | 'extra-large'\n>"
+          }
+        },
+        "tooltip": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "tooltipType": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'default'"
+              },
+              {
+                "name": "literal",
+                "value": "'blue'"
+              }
+            ],
+            "name": "union",
+            "raw": "'default' | 'blue'"
+          }
+        },
+        "variant": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "unknown[number]",
+            "raw": "(typeof BUTTON_VARIANTS)[number]"
+          }
         }
       }
     }
