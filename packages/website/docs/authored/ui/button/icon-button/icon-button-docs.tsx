@@ -1,6 +1,5 @@
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
-import { BUTTON_SIZES, BUTTON_VARIANTS, IconButton } from '@synergycodes/axiom';
-import { Check, Plus, User } from '@phosphor-icons/react';
+import { BUTTON_SIZES, BUTTON_VARIANTS } from '@synergycodes/axiom';
 import { ComponentProp, toPropMap } from '@site/docs/utils/to-prop-map';
 
 import exampleCode from '!!raw-loader!@site/docs/code-examples/icon-button.example.tsx';

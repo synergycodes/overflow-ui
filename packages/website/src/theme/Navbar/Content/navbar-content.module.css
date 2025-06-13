@@ -59,6 +59,10 @@
 
     a {
       text-decoration: none;
+
+      &.active {
+        color: var(--ifm-link-hover-color);
+      }
     }
   }
 

@@ -10,19 +10,23 @@ import { NavButton } from '@synergycodes/axiom';
 import { GithubLogo } from '@phosphor-icons/react';
 import { MagnifyingGlass } from '@phosphor-icons/react/dist/ssr';
 import Link from '@docusaurus/Link';
+import { clsx } from 'clsx';
 
 const LINKS = [
   {
     label: 'UI Components',
     href: '',
+    active: true,
   },
   {
     label: 'Premium',
     href: 'https://www.overflow.dev/premium?path=/',
+    active: false,
   },
   {
     label: 'Contact',
     href: 'https://www.overflow.dev/contact',
+    active: false,
   },
 ];
 
@@ -39,8 +43,13 @@ function NavbarContentLayout({
       <div className={styles['search-section']}>
         {right}
         <div className={styles['links-section']}>
-          {LINKS.map(({ href, label }) => (
-            <Link target="_self" key={label} href={href}>
+          {LINKS.map(({ href, label, active }) => (
+            <Link
+              className={clsx({ [styles['active']]: active })}
+              target="_self"
+              key={label}
+              href={href}
+            >
               {label}
             </Link>
           ))}
