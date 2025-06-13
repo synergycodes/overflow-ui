@@ -4,8 +4,6 @@
   --ax-public-icon-size-medium: 1.125rem /* missing token */;
   --ax-public-icon-size-small: 1.125rem /* missing token */;
   --ax-public-icon-size-extra-small: 1rem /* missing token */;
-  --ax-public-icon-size-xx-small: 0.75rem /* missing token */;
-  --ax-public-icon-size-xxx-small: 0.75rem /* missing token */;
 }
 
 @layer ui.component {
@@ -41,20 +39,6 @@
     svg {
       width: var(--ax-public-icon-size-extra-small);
       height: var(--ax-public-icon-size-extra-small);
-    }
-  }
-
-  .xx-small {
-    svg {
-      width: var(--ax-public-icon-size-xx-small);
-      height: var(--ax-public-icon-size-xx-small);
-    }
-  }
-
-  .xxx-small {
-    svg {
-      width: var(--ax-public-icon-size-xxx-small);
-      height: var(--ax-public-icon-size-xxx-small);
     }
   }
 }

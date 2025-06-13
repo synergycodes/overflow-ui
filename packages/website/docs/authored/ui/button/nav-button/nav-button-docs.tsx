@@ -39,7 +39,6 @@ export function NavButtonDocs() {
         'components/button/styles/icon-size.module.css',
         'components/button/styles/border-radius.module.css',
         'components/button/styles/icon-padding.module.css',
-        'components/button/nav-button/nav-button.module.css',
       ]}
       componentPath="components/button/nav-button/nav-button.tsx"
       exampleCode={exampleCode}

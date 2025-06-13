@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import variantStyles from '../styles/variant.module.css';
 import borderRadiusStyles from '../styles/border-radius.module.css';
-import gapStyles from '../styles/gap.module.css';
 
 import { forwardRef, ReactElement } from 'react';
 import { LabelButton, LabelButtonProps } from './label-button/label-button';
@@ -55,7 +54,6 @@ const ButtonComponent = forwardRef<
     className: clsx(
       variantStyles[variant],
       borderRadiusStyles[size],
-      gapStyles[size],
       className,
     ),
     variant,

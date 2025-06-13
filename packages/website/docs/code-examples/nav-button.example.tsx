@@ -1,7 +1,7 @@
 function NavButtonExample() {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-      <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
         <NavButton>
           <Check />
         </NavButton>
@@ -12,7 +12,7 @@ function NavButtonExample() {
           <User />
         </NavButton>
       </div>
-      <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
         <NavButton isSelected>
           <Check />
         </NavButton>
@@ -24,7 +24,7 @@ function NavButtonExample() {
         </NavButton>
         <NavButton isSelected>Button</NavButton>
       </div>
-      <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
         <NavButton>
           <Check /> Button
         </NavButton>
@@ -32,6 +32,15 @@ function NavButtonExample() {
           Button <Plus />
         </NavButton>
         <NavButton>Button</NavButton>
+      </div>
+      <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+        <NavButton size="xxx-small">
+          <Check /> Button
+        </NavButton>
+        <NavButton size="xxx-small">
+          Button <Plus />
+        </NavButton>
+        <NavButton size="xxx-small">Button</NavButton>
       </div>
     </div>
   );

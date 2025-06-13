@@ -1,8 +1,9 @@
 import clsx from 'clsx';
 
-import borderRadiusStyles from '../../styles/border-radius.module.css';
 import fontSizeStyles from '../../styles/font-size.module.css';
+import navFontSizeStyles from '../styles/nav-button-font-size.module.css';
 import paddingStyles from '../../styles/label-button-padding.module.css';
+import navPaddingStyles from './nav-label-button-padding.module.css';
 
 import { BaseButton } from '../../base-button/base-button';
 import { forwardRef } from 'react';
@@ -25,9 +26,10 @@ export const NavLabelButton = forwardRef<
   <BaseButton
     ref={ref}
     styles={clsx(
-      borderRadiusStyles[size],
       fontSizeStyles[size],
+      navFontSizeStyles[size],
       paddingStyles[size],
+      navPaddingStyles[size],
     )}
     {...props}
   >

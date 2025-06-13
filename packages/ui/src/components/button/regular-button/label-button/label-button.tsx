@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 
-import borderRadiusStyles from '../../styles/border-radius.module.css';
 import fontSizeStyles from '../../styles/font-size.module.css';
 import paddingStyles from '../../styles/label-button-padding.module.css';
 import loaderStyles from './loader.module.css';
@@ -24,12 +23,9 @@ export const LabelButton = forwardRef<HTMLButtonElement, LabelButtonProps>(
   ({ size = 'medium', isLoading, children, ...props }, ref) => (
     <BaseButton
       ref={ref}
-      styles={clsx(
-        borderRadiusStyles[size],
-        fontSizeStyles[size],
-        paddingStyles[size],
-        { [loaderStyles['disable-events']]: isLoading },
-      )}
+      styles={clsx(fontSizeStyles[size], paddingStyles[size], {
+        [loaderStyles['disable-events']]: isLoading,
+      })}
       {...props}
     >
       {

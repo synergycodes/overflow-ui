@@ -1,9 +1,9 @@
 import clsx from 'clsx';
 
-import borderRadiusStyles from '../../styles/border-radius.module.css';
 import fontSizeStyles from '../../styles/font-size.module.css';
 import iconSizeStyles from '../../styles/icon-size.module.css';
 import paddingStyles from '../../styles/icon-label-button-padding.module.css';
+import gapStyles from '../../styles/gap.module.css';
 
 import { forwardRef } from 'react';
 import { BaseButton } from '../../base-button/base-button';
@@ -32,10 +32,10 @@ export const IconLabelButton = forwardRef<
   <BaseButton
     ref={ref}
     styles={clsx(
-      borderRadiusStyles[size],
       fontSizeStyles[size],
       iconSizeStyles[size],
       paddingStyles[size],
+      gapStyles[size],
     )}
     {...props}
   >

@@ -28,7 +28,6 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
         iconPaddingStyles[size],
         iconSizeStyles[size],
         borderRadiusStyles[shape],
-        borderRadiusStyles[size],
       )}
       {...props}
     >
