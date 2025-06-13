@@ -11,12 +11,6 @@ import { BaseButton } from '../../base-button/base-button';
 import { forwardRef } from 'react';
 import { IconNode, Shape } from '../../types';
 import { NavBaseButtonProps } from '../types';
-/**
- * IconButton is a specialized button component that displays only an icon.
- * Features: accepts any icon component, supports multiple visual variants (primary, secondary, etc.),
- * configurable sizes (small, medium, large), customizable shapes (circle or default),
- * maintains accessibility through BaseButton inheritance, and fully customizable through standard button props.
- */
 
 export type NavIconButtonProps = {
   shape?: Shape;

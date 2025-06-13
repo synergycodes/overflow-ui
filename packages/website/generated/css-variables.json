@@ -159,14 +159,6 @@
     {
       "comment": "",
       "name": "--ax-public-button-border-radius-small"
-    },
-    {
-      "comment": "",
-      "name": "--ax-public-button-border-radius-xx-small"
-    },
-    {
-      "comment": "",
-      "name": "--ax-public-button-border-radius-xxx-small"
     }
   ],
   "components/button/styles/font-size.module.css": [],

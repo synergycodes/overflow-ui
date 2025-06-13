@@ -284,7 +284,7 @@
   ],
   "../ui/src/components/button/nav-button/nav-icon-label-button/nav-icon-label-button.tsx": [
     {
-      "description": "IconLabelButton is a flexible button component that combines icons and text in specific patterns.\nFeatures: supports three distinct content patterns (icon + text, text + icon, or icon + text + icon),\naccepts any React node as icons, supports multiple visual variants (primary, secondary, etc.),\nconfigurable sizes (small, medium, large), maintains accessibility through BaseButton inheritance,\nand fully customizable through standard button props. The component enforces strict content patterns\nto ensure consistent and accessible button layouts.",
+      "description": "",
       "displayName": "NavIconLabelButton",
       "methods": [],
       "props": {
@@ -389,7 +389,7 @@
   ],
   "../ui/src/components/button/nav-button/nav-label-button/nav-label-button.tsx": [
     {
-      "description": "LabelButton is a versatile button component that displays text content with enhanced functionality.\nFeatures: displays a text label with customizable styling, supports multiple visual variants (primary, secondary, etc.),\nconfigurable sizes (small, medium, large), built-in loading state with animated indicator,\nmaintains accessibility through BaseButton inheritance, and fully customizable through standard button props.",
+      "description": "",
       "displayName": "NavLabelButton",
       "methods": [],
       "props": {
@@ -587,7 +587,7 @@
   ],
   "../ui/src/components/button/regular-button/icon-label-button/icon-label-button.tsx": [
     {
-      "description": "IconLabelButton is a flexible button component that combines icons and text in specific patterns.\nFeatures: supports three distinct content patterns (icon + text, text + icon, or icon + text + icon),\naccepts any React node as icons, supports multiple visual variants (primary, secondary, etc.),\nconfigurable sizes (small, medium, large), maintains accessibility through BaseButton inheritance,\nand fully customizable through standard button props. The component enforces strict content patterns\nto ensure consistent and accessible button layouts.",
+      "description": "",
       "displayName": "IconLabelButton",
       "methods": [],
       "props": {
@@ -726,7 +726,7 @@
   ],
   "../ui/src/components/button/regular-button/label-button/label-button.tsx": [
     {
-      "description": "LabelButton is a versatile button component that displays text content with enhanced functionality.\nFeatures: displays a text label with customizable styling, supports multiple visual variants (primary, secondary, etc.),\nconfigurable sizes (small, medium, large), built-in loading state with animated indicator,\nmaintains accessibility through BaseButton inheritance, and fully customizable through standard button props.",
+      "description": "",
       "displayName": "LabelButton",
       "methods": [],
       "props": {

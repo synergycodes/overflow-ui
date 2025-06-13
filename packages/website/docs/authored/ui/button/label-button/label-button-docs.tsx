@@ -18,14 +18,13 @@ const buttons = [
 ] as const;
 
 const props: Record<string, ComponentProp> = {
-  label: { required: true },
   isLoading: { type: 'boolean' },
   size: {
     defaultValue: 'medium',
     unionValues: BUTTON_SIZES,
   },
   variant: {
-    defaultValue: 'medium',
+    defaultValue: 'primary',
     unionValues: BUTTON_VARIANTS,
   },
 };
@@ -45,6 +44,7 @@ export function LabelButtonDocs() {
       cssPaths={[
         'components/button/base-button/base-button.module.css',
         'components/button/styles/font-size.module.css',
+        'components/button/styles/label-button-padding.module.css',
         'components/button/styles/border-radius.module.css',
         'components/button/styles/variant.module.css',
       ]}

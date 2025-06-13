@@ -3,15 +3,9 @@ import { NavButton, SIZES } from '@synergycodes/axiom';
 import { Check, Plus, User } from '@phosphor-icons/react';
 import { ComponentProp, toPropMap } from '@site/docs/utils/to-prop-map';
 
-import exampleCode from '!!raw-loader!@site/docs/code-examples/nav-button.example.tsx';
+import exampleCode from '!!raw-loader!@site/docs/code-examples/nav-label-button.example.tsx';
 
 const props: Record<string, ComponentProp> = {
-  icon: { type: 'ReactNode' },
-  noBackground: { type: 'boolean' },
-  shape: {
-    defaultValue: '',
-    unionValues: ['', 'circle'],
-  },
   size: {
     defaultValue: 'medium',
     unionValues: SIZES,
@@ -36,11 +30,12 @@ export function NavButtonDocs() {
       }
       cssPaths={[
         'components/button/base-button/base-button.module.css',
-        'components/button/styles/icon-size.module.css',
         'components/button/styles/border-radius.module.css',
-        'components/button/styles/icon-padding.module.css',
+        'components/button/nav-button/styles/nav-button-border-radius.module.css',
+        'components/button/styles/label-button-padding.module.css',
+        'components/button/nav-button/nav-label-button/nav-label-button-padding.module.css',
       ]}
-      componentPath="components/button/nav-button/nav-button.tsx"
+      componentPath="components/button/nav-button/nav-label-button/nav-label-button.tsx"
       exampleCode={exampleCode}
       hardcodedData={{
         props: toPropMap(props),

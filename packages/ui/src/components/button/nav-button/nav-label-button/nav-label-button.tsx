@@ -13,12 +13,6 @@ export type NavLabelButtonProps = {
   children: string;
 } & NavBaseButtonProps;
 
-/**
- * LabelButton is a versatile button component that displays text content with enhanced functionality.
- * Features: displays a text label with customizable styling, supports multiple visual variants (primary, secondary, etc.),
- * configurable sizes (small, medium, large), built-in loading state with animated indicator,
- * maintains accessibility through BaseButton inheritance, and fully customizable through standard button props.
- */
 export const NavLabelButton = forwardRef<
   HTMLButtonElement,
   NavLabelButtonProps

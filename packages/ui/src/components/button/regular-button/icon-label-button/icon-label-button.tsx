@@ -17,14 +17,6 @@ export type IconLabelButtonProps = {
     | [IconNode, string, IconNode];
 } & BaseRegularButtonProps;
 
-/**
- * IconLabelButton is a flexible button component that combines icons and text in specific patterns.
- * Features: supports three distinct content patterns (icon + text, text + icon, or icon + text + icon),
- * accepts any React node as icons, supports multiple visual variants (primary, secondary, etc.),
- * configurable sizes (small, medium, large), maintains accessibility through BaseButton inheritance,
- * and fully customizable through standard button props. The component enforces strict content patterns
- * to ensure consistent and accessible button layouts.
- */
 export const IconLabelButton = forwardRef<
   HTMLButtonElement,
   IconLabelButtonProps
