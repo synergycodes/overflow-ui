@@ -5,5 +5,4 @@
   height: var(--ax-node-as-port-height);
   transform: var(--ax-node-as-port-position);
   border-radius: 0;
-  background: red;
 }
