@@ -1,6 +1,4 @@
-![@synergycodes/axiom logo](./about/images/axiom-logo.svg)
-
-# @synergycodes/axiom
+[//]: # "This README file is part of the Axiom documentation website (check overview.mdx)"
 
 A React library for creating node-based user interfaces and diagram-driven apps. Built to work seamlessly with React Flow, it provides a collection of ready-to-use components and templates that simplify the development of visual editors, workflows, and interactive diagrams.
 
