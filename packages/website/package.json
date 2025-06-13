@@ -12,7 +12,7 @@
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
-    "typecheck": "tsc",
+    "typecheck": "tsc --noEmit --pretty",
     "generate-docs": "tsx ./scripts/generate-docs/generate-docs-script.ts",
     "prepare": "pnpm generate-docs",
     "doc-add": "tsx tools/add.ts",
