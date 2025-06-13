@@ -32,33 +32,30 @@
   composes: dot-pattern-gradient;
 
   .inner-container {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
-
-    .background {
-      z-index: 0;
-      --color-inner: var(--ifm-background-color);
-      --color-outer: transparent;
-
-      position: absolute;
-      width: calc(100% + 32rem);
-      height: calc(100% + 16rem);
-
-      background-image: radial-gradient(
-        closest-side,
-        var(--color-inner) 40%,
-        var(--color-outer) 100%
-      );
-    }
 
     .content {
-      width: 100%;
-      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       z-index: 1;
+
+      .background {
+        padding: 8rem 16rem;
+        margin: -8rem -16rem;
+
+        z-index: -1;
+        --color-inner: var(--ifm-background-color);
+        --color-outer: transparent;
+
+        background-image: radial-gradient(
+          closest-side,
+          var(--color-inner) 40%,
+          var(--color-outer) 100%
+        );
+      }
     }
   }
 }

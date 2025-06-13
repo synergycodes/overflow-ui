@@ -21,11 +21,12 @@ export function Preview({ children, className }: Props) {
   return (
     <div className={clsx(styles['preview-container'], className)}>
       <div className={styles['inner-container']}>
-        <div className={styles['background']} />
         <div className={styles['content']}>
-          <ShadowDomWrapper>
-            <div>{children}</div>
-          </ShadowDomWrapper>
+          <div className={styles['background']}>
+            <ShadowDomWrapper>
+              <div>{children}</div>
+            </ShadowDomWrapper>
+          </div>
         </div>
       </div>
     </div>
