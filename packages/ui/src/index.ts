@@ -49,6 +49,8 @@ export * from './components/edge/use-edge-styles/use-edge-styles';
 
 export * from './components/separator/separator';
 
+export * from './components/status/status';
+
 export * from './components/segment-picker/segment-picker';
 export * from './components/segment-picker/segment-picker-option';
 

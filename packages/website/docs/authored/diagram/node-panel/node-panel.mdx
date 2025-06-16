@@ -45,14 +45,14 @@ function Node({ selected }) {
   return (
     <NodePanel.Root selected={selected}>
       <NodePanel.Header>
-        <p>User Node</p>
+        Header
       </NodePanel.Header>
       <NodePanel.Content>
-        <p>Content</p>
+        Content
       </NodePanel.Content>
     </NodePanel.Root>
   );
-};
+}
 ```
 
 ## !!steps Adding a Description
@@ -64,13 +64,13 @@ function Node({ selected }) {
   return (
     <NodePanel.Root selected={selected}>
       <NodePanel.Header>
-        <NodeDescription 
-          label="User Node" 
+        <NodeDescription
+          label="User Node"
           description="User information"
         />
       </NodePanel.Header>
       <NodePanel.Content>
-        <p>Content</p>
+        Content
       </NodePanel.Content>
     </NodePanel.Root>
   );
@@ -87,13 +87,13 @@ function Node({ selected }) {
     <NodePanel.Root selected={selected}>
       <NodePanel.Header>
         <NodeIcon icon={<User />} />
-        <NodeDescription 
-          label="User Node" 
+        <NodeDescription
+          label="User Node"
           description="User information"
         />
       </NodePanel.Header>
       <NodePanel.Content>
-        <p>Content</p>
+        Content
       </NodePanel.Content>
     </NodePanel.Root>
   );
@@ -105,18 +105,18 @@ function Node({ selected }) {
 Add action buttons with the `NodePanel.Handles` component. Try connecting the nodes.
 
 ```tsx ! example.ts
-function Node({selected }) {
+function Node({ selected }) {
   return (
     <NodePanel.Root selected={selected}>
       <NodePanel.Header>
         <NodeIcon icon={<User />} />
-        <NodeDescription 
-          label="User Node" 
+        <NodeDescription
+          label="User Node"
           description="User information"
         />
       </NodePanel.Header>
       <NodePanel.Content>
-        <p>Content</p>
+        Content
       </NodePanel.Content>
       <NodePanel.Handles>
         <Handle position={Position.Left} type="target" />
@@ -133,21 +133,23 @@ Make the entire node interactive as a connection point with the `NodeAsPortWrapp
 
 ```tsx ! example.ts
 function Node({ selected }) {
+  const { isConnecting } = useDiagramContext();
+
   return (
     <NodeAsPortWrapper
-      isConnecting={false}
+      isConnecting={isConnecting}
       targetPortPosition={Position.Left}
     >
       <NodePanel.Root selected={selected}>
         <NodePanel.Header>
           <NodeIcon icon={<User />} />
-          <NodeDescription 
-            label="User Node" 
+          <NodeDescription
+            label="User Node"
             description="User information"
           />
         </NodePanel.Header>
         <NodePanel.Content>
-          <p>Content</p>
+          Content
         </NodePanel.Content>
         <NodePanel.Handles>
           <Handle position={Position.Left} type="target" />

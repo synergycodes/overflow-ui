@@ -1,8 +1,0 @@
----
-title: componentPascalName
-description: componentPascalName component
----
-
-import { componentPascalNameDocs } from "./ComponentKebabName-docs.tsx"
-
-<componentPascalNameDocs />

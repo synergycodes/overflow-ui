@@ -1,3 +1,9 @@
+const DiagramContext = createContext({
+  isConnecting: false,
+});
+
+const useDiagramContext = () => useContext(DiagramContext);
+
 function Page() {
   const [isConnecting, setConnecting] = useState(false);
 
@@ -45,22 +51,24 @@ function Page() {
         top: 0,
       }}
     >
-      <ReactFlowProvider>
-        <ReactFlow
-          fitView
-          fitViewOptions={{
-            padding: 0.2,
-          }}
-          nodes={nodes}
-          edges={edges}
-          onNodesChange={onNodesChange}
-          onEdgesChange={onEdgesChange}
-          onConnect={onConnect}
-          onConnectStart={() => setConnecting(true)}
-          onConnectEnd={() => setConnecting(false)}
-          nodeTypes={nodeTypes}
-        />
-      </ReactFlowProvider>
+      <DiagramContext.Provider value={{ isConnecting }}>
+        <ReactFlowProvider>
+          <ReactFlow
+            fitView
+            fitViewOptions={{
+              padding: 0.2,
+            }}
+            nodes={nodes}
+            edges={edges}
+            onNodesChange={onNodesChange}
+            onEdgesChange={onEdgesChange}
+            onConnect={onConnect}
+            onConnectStart={() => setConnecting(true)}
+            onConnectEnd={() => setConnecting(false)}
+            nodeTypes={nodeTypes}
+          />
+        </ReactFlowProvider>
+      </DiagramContext.Provider>
     </div>
   );
 }

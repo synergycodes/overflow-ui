@@ -30,6 +30,7 @@ declare global {
     NavButton,
     useEdgeStyle,
     EdgeLabel,
+    Status,
     SegmentPicker,
     SegmentPickerOption,
 

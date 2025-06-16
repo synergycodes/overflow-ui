@@ -32,16 +32,14 @@
     "dev": "vite build --watch",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit --pretty"
   },
   "module": "./dist/axiom.js",
   "files": [
     "dist"
   ],
   "main": "./dist/axiom.js",
-  "types": [
-    "./dist/index.d.ts"
-  ],
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",

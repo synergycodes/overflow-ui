@@ -1,7 +1,7 @@
 function AvatarExample() {
   return (
     <Avatar
-      imageUrl="https://picsum.photos/id/237/200/300"
+      imageUrl="/ui-components/img/avatar.png"
       username="Puppy"
       size="extra-large"
     />

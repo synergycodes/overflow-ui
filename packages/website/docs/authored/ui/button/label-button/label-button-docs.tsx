@@ -1,25 +1,8 @@
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
-import {
-  BUTTON_SIZES,
-  BUTTON_VARIANTS,
-  LabelButton,
-} from '@synergycodes/axiom';
+import { BUTTON_SIZES, BUTTON_VARIANTS } from '@synergycodes/axiom';
 import { ComponentProp, toPropMap } from '@site/docs/utils/to-prop-map';
 
 import exampleCode from '!!raw-loader!@site/docs/code-examples/label-button.example.tsx';
-
-const sharedButtonStyle = { minWidth: 'max-content', width: '100%' };
-
-const buttons = [
-  { label: 'Primary Button', variant: 'primary' },
-  { label: 'Secondary Button', variant: 'secondary' },
-  { label: 'Gray Button', variant: 'gray' },
-  { label: 'Error Button', variant: 'error' },
-  { label: 'Warning Button', variant: 'warning' },
-  { label: 'Success Button', variant: 'success' },
-  { label: 'Ghost Destructive', variant: 'ghost-destructive' },
-  { label: 'Loading', variant: 'primary', isLoading: true },
-] as const;
 
 const props: Record<string, ComponentProp> = {
   label: { required: true },
@@ -37,13 +20,6 @@ const props: Record<string, ComponentProp> = {
 export function LabelButtonDocs() {
   return (
     <ComponentPage
-      preview={
-        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-          {buttons.map((props, index) => (
-            <LabelButton key={index} {...props} style={sharedButtonStyle} />
-          ))}
-        </div>
-      }
       cssPaths={[
         'components/button/base-button/base-button.module.css',
         'components/button/label-button/loader.module.css',
