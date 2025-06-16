@@ -17,8 +17,9 @@ export function NavButtonDocs() {
       cssPaths={[
         'components/button/base-button/base-button.module.css',
         'components/button/styles/border-radius.module.css',
-        'components/button/nav-button/styles/nav-button-border-radius.module.css',
         'components/button/styles/label-button-padding.module.css',
+        'components/button/nav-button/styles/nav-button.module.css',
+        'components/button/nav-button/styles/nav-button-border-radius.module.css',
         'components/button/nav-button/nav-label-button/nav-label-button-padding.module.css',
       ]}
       componentPath="components/button/nav-button/nav-label-button/nav-label-button.tsx"
