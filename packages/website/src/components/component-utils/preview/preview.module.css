@@ -46,7 +46,6 @@
         padding: 8rem 16rem;
         margin: -8rem -16rem;
 
-        pointer-events: none;
         z-index: -1;
         --color-inner: var(--ifm-background-color);
         --color-outer: transparent;
