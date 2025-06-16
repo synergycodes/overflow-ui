@@ -16,4 +16,15 @@
   li {
     margin-left: 1rem;
   }
+
+  table {
+    width: 100%;
+    display: table;
+
+    margin-bottom: 1.25rem;
+
+    th {
+      text-align: left;
+    }
+  }
 }
