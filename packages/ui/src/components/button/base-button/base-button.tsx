@@ -1,9 +1,8 @@
 import clsx from 'clsx';
 import buttonStyles from './base-button.module.css';
-import gapStyles from './gap.module.css';
 
 import { Button } from '@mui/base/Button';
-import { BaseButtonProps, CommonButtonProps } from '../types';
+import { BaseButtonProps } from '../types';
 import { forwardRef } from 'react';
 import { prepareForSlot } from '@mui/base';
 import { Tooltip } from '@ui/components/tooltip/tooltip';
@@ -12,10 +11,10 @@ type Props = {
   /** Class name meant to be used by parent components using <BaseButton /> directly */
   styles: string;
   children: React.ReactNode;
-} & CommonButtonProps;
+} & BaseButtonProps;
 
 export const BaseButton = prepareForSlot(
-  forwardRef<HTMLButtonElement, BaseButtonProps<Props>>(
+  forwardRef<HTMLButtonElement, Props>(
     (
       {
         children,
@@ -24,7 +23,6 @@ export const BaseButton = prepareForSlot(
         tooltip,
         disabled,
         tooltipType = 'default',
-        size = 'medium',
         ...props
       },
       ref,
@@ -32,12 +30,7 @@ export const BaseButton = prepareForSlot(
       const button = (
         <Button
           ref={ref}
-          className={clsx(
-            buttonStyles['button'],
-            gapStyles[size],
-            styles,
-            className,
-          )}
+          className={clsx(buttonStyles['button'], styles, className)}
           disabled={disabled}
           {...props}
         >

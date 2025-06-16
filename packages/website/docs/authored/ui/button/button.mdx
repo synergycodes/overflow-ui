@@ -1,3 +1,21 @@
 ---
 title: Button
 ---
+
+A flexible and type-safe button component system that adjusts its appearance and behavior based on its content — offering a simple API despite the complexity of multiple types and variants.
+
+### Usage
+
+The component adapts based on what you place inside:
+
+| Example usage                             | Rendered as                  |
+| ----------------------------------------- | ---------------------------- |
+| `<Button> Save </Button>`                 | Label-only button            |
+| `<Button> <Icon/> </Button>`              | Icon-only button             |
+| `<Button> <Icon/> Save </Button>`         | Icon + label button          |
+| `<Button> <Icon/> Save <Icon/> </Button>` | Icon left, label, icon right |
+
+Each type automatically applies the appropriate spacing, padding, and layout — no additional configuration required.
+
+Additionally, the component makes certain props available only when appropriate.
+For example, `isLoading` is available for label-only buttons but not for icon-only buttons — ensuring each variant remains predictable and consistent.

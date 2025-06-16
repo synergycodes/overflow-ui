@@ -2,11 +2,9 @@ import { ComponentPage } from '@site/src/components/component-utils/component-pa
 import { SIZES } from '@synergycodes/axiom';
 import { ComponentProp, toPropMap } from '@site/docs/utils/to-prop-map';
 
-import exampleCode from '!!raw-loader!@site/docs/code-examples/nav-button.example.tsx';
+import exampleCode from '!!raw-loader!@site/docs/code-examples/nav-icon-button.example.tsx';
 
 const props: Record<string, ComponentProp> = {
-  icon: { type: 'ReactNode' },
-  noBackground: { type: 'boolean' },
   shape: {
     defaultValue: '',
     unionValues: ['', 'circle'],
@@ -17,17 +15,21 @@ const props: Record<string, ComponentProp> = {
   },
 };
 
-export function NavButtonDocs() {
+export function NavIconButtonDocs() {
   return (
     <ComponentPage
       cssPaths={[
         'components/button/base-button/base-button.module.css',
-        'components/button/styles/icon-size.module.css',
         'components/button/styles/border-radius.module.css',
+        'components/button/styles/icon-size.module.css',
         'components/button/styles/icon-padding.module.css',
-        'components/button/nav-button/nav-button.module.css',
+        'components/button/nav-button/styles/nav-button.module.css',
+        'components/button/nav-button/styles/nav-icon-size.module.css',
+        'components/button/nav-button/styles/nav-button-border-radius.module.css',
+        'components/button/nav-button/nav-icon-button/nav-icon-padding.module.css',
+        'components/button/nav-button/nav-icon-button/nav-icon-button.module.css',
       ]}
-      componentPath="components/button/nav-button/nav-button.tsx"
+      componentPath="components/button/nav-button/nav-icon-button/nav-icon-button.tsx"
       exampleCode={exampleCode}
       hardcodedData={{
         props: toPropMap(props),

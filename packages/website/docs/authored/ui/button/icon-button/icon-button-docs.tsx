@@ -14,7 +14,7 @@ const props: Record<string, ComponentProp> = {
     unionValues: BUTTON_SIZES,
   },
   variant: {
-    defaultValue: 'medium',
+    defaultValue: 'primary',
     unionValues: BUTTON_VARIANTS,
   },
 };
@@ -29,7 +29,7 @@ export function IconButtonDocs() {
         'components/button/styles/icon-size.module.css',
         'components/button/styles/icon-padding.module.css',
       ]}
-      componentPath="components/button/icon-button/icon-button.tsx"
+      componentPath="components/button/regular-button/icon-button/icon-button.tsx"
       exampleCode={exampleCode}
       hardcodedData={{
         props: toPropMap(props),

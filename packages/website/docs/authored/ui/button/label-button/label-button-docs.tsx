@@ -5,14 +5,13 @@ import { ComponentProp, toPropMap } from '@site/docs/utils/to-prop-map';
 import exampleCode from '!!raw-loader!@site/docs/code-examples/label-button.example.tsx';
 
 const props: Record<string, ComponentProp> = {
-  label: { required: true },
   isLoading: { type: 'boolean' },
   size: {
     defaultValue: 'medium',
     unionValues: BUTTON_SIZES,
   },
   variant: {
-    defaultValue: 'medium',
+    defaultValue: 'primary',
     unionValues: BUTTON_VARIANTS,
   },
 };
@@ -22,13 +21,12 @@ export function LabelButtonDocs() {
     <ComponentPage
       cssPaths={[
         'components/button/base-button/base-button.module.css',
-        'components/button/label-button/loader.module.css',
-        'components/button/label-button/padding.module.css',
         'components/button/styles/font-size.module.css',
+        'components/button/styles/label-button-padding.module.css',
         'components/button/styles/border-radius.module.css',
         'components/button/styles/variant.module.css',
       ]}
-      componentPath="components/button/label-button/label-button.tsx"
+      componentPath="components/button/regular-button/label-button/label-button.tsx"
       exampleCode={exampleCode}
       hardcodedData={{
         props: toPropMap(props),

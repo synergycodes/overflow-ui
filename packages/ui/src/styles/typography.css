@@ -127,7 +127,8 @@
 
 .ax-public-button-large,
 .ax-public-button-medium,
-.ax-public-button-small {
+.ax-public-button-small,
+.ax-public-button-extra-small {
   font-weight: 600;
   line-height: 100%;
 }
@@ -142,6 +143,10 @@
 
 .ax-public-button-small {
   font-size: 0.75rem;
+}
+
+.ax-public-button-extra-small {
+  font-size: 0.625rem;
 }
 
 /* Edge Label */

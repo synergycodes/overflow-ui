@@ -1,0 +1,24 @@
+---
+title: Nav Button
+---
+
+A flexible and type-safe nav button component system that adjusts its appearance and behavior based on its content — offering a simple API despite the complexity of multiple types and variants.
+
+### Usage
+
+The component adapts based on what you place inside:
+
+| Example usage                                     | Rendered as                  |
+| --------------------------------------------------| ---------------------------- |
+| `<NavButton> Save </NavButton>`                   | Label-only button            |
+| `<NavButton> <Icon/> </NavButton>`                | Icon-only button             |
+| `<NavButton> <Icon/> Save </NavButton>`           | Icon + label button          |
+| `<NavButton> <Icon/> Save <Icon/> </NavButton>`   | Icon left, label, icon right |
+
+Each type automatically applies the appropriate spacing, padding, and layout — no additional configuration required.
+
+Additionally, the component makes certain props available only when appropriate. 
+For example, `isLoading` is available for label-only buttons but not for icon-only buttons — ensuring each variant remains predictable and consistent.
+
+Use `<NavButton>` for navigation-specific use cases. 
+`<Button>` and `<NavButton>` share the same internal structure, but `NavButton` has a streamlined feature set, more sizes and supports an additional `selected` state.

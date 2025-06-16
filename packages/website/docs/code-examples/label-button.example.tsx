@@ -1,14 +1,20 @@
-function Example() {
+function LabelButtonExample() {
   return (
-    <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
-      <LabelButton label="Primary Button" variant="primary" />
-      <LabelButton label="Secondary Button" variant="secondary" />
-      <LabelButton label="Gray Button" variant="gray" />
-      <LabelButton label="Error Button" variant="error" />
-      <LabelButton label="Warning Button" variant="warning" />
-      <LabelButton label="Success Button" variant="success" />
-      <LabelButton label="Ghost Destructive" variant="ghost-destructive" />
-      <LabelButton label="Loading" variant="primary" isLoading />
+    <div style={{ display: 'flex', gap: '8px', flexDirection: 'column' }}>
+      <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+        <Button variant="primary">Primary Button</Button>
+        <Button variant="secondary">Secondary Button</Button>
+        <Button variant="gray">Gray Button</Button>
+        <Button variant="error">Error Button</Button>
+      </div>
+      <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+        <Button variant="warning">Warning Button</Button>
+        <Button variant="success">Success Button</Button>
+        <Button variant="ghost-destructive">Ghost Destructive</Button>
+        <Button variant="primary" isLoading>
+          Loading
+        </Button>
+      </div>
     </div>
   );
 }

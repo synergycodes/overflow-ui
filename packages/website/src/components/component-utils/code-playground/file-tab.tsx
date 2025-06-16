@@ -1,23 +1,24 @@
-import { IconLabelButton } from '@synergycodes/axiom';
+import { Button } from '@synergycodes/axiom';
 import styles from './code-playground.module.css';
 import clsx from 'clsx';
+import { ReactElement } from 'react';
 
 type Props = {
   label: string;
-  icon?: React.ReactNode;
+  icon: ReactElement;
   onClick: () => void;
   className?: string;
 };
 
 export function FileTab({ label, icon, onClick, className }: Props) {
   return (
-    <IconLabelButton
+    <Button
       onClick={onClick}
       className={clsx(styles['file-tab'], className)}
       variant="secondary"
     >
       {icon}
       {label}
-    </IconLabelButton>
+    </Button>
   );
 }

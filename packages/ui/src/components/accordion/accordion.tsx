@@ -78,7 +78,9 @@ export const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
           aria-expanded={isOpen}
         >
           <span className="ax-public-h10">{label}</span>
-          <NavButton className={styles['header-button']} icon={<CaretUp />} />
+          <NavButton className={styles['header-button']}>
+            <CaretUp />
+          </NavButton>
         </div>
         <div
           className={clsx(styles['inner-container'], {

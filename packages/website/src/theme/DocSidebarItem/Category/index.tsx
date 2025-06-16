@@ -161,11 +161,12 @@ function CollapseButton({
       className={clsx(styles['collapse-button'], {
         [styles['collapsed']]: collapsed,
       })}
-      noBackground
+      transparent
       aria-expanded={!collapsed}
       onClick={onClick}
-      icon={<CaretRight />}
-    />
+    >
+      <CaretRight />
+    </NavButton>
   );
 }
 

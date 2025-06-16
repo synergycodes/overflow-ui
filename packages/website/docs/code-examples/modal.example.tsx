@@ -3,7 +3,7 @@ function ModalExample() {
 
   return (
     <>
-      <LabelButton onClick={() => setIsOpen(true)} label={'Open Modal'} />
+      <Button onClick={() => setIsOpen(true)}>Open Modal</Button>
       <Modal
         open={isOpen}
         onClose={() => setIsOpen(false)}
@@ -14,12 +14,10 @@ function ModalExample() {
         footerVariant="integrated"
         footer={
           <>
-            <LabelButton
-              onClick={() => setIsOpen(false)}
-              label="Cancel"
-              variant="secondary"
-            />
-            <LabelButton onClick={() => setIsOpen(false)} label="Confirm" />
+            <Button onClick={() => setIsOpen(false)} variant="secondary">
+              Cancel
+            </Button>
+            <Button onClick={() => setIsOpen(false)}>Confirm</Button>
           </>
         }
       >

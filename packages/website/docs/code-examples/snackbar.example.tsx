@@ -3,9 +3,7 @@ function SnackbarExample() {
 
   return (
     <div>
-      {!open && (
-        <LabelButton onClick={() => setOpen(true)} label="Show Snackbar" />
-      )}
+      {!open && <Button onClick={() => setOpen(true)}>Show Snackbar</Button>}
       {open && (
         <Snackbar
           variant="success"

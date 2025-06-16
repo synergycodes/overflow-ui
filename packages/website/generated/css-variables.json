@@ -32,91 +32,64 @@
       "name": "--ax-public-button-inner-border-color"
     }
   ],
-  "components/button/base-button/gap.module.css": [
+  "components/button/nav-button/nav-icon-button/nav-icon-button.module.css": [
     {
       "comment": "",
-      "name": "--ax-public-button-gap-extra-large"
-    },
-    {
-      "comment": "",
-      "name": "--ax-public-button-gap-extra-small"
-    },
-    {
-      "comment": "",
-      "name": "--ax-public-button-gap-large"
-    },
-    {
-      "comment": "",
-      "name": "--ax-public-button-gap-medium"
-    },
-    {
-      "comment": "",
-      "name": "--ax-public-button-gap-small"
+      "name": "--ax-public-button-nav-color-hover"
     }
   ],
-  "components/button/icon-label-button/padding.module.css": [
+  "components/button/nav-button/nav-icon-button/nav-icon-padding.module.css": [
     {
       "comment": "",
-      "name": "--ax-public-icon-label-button-padding-extra-large"
+      "name": "--ax-public-button-icon-padding-xx-small"
     },
     {
       "comment": "",
-      "name": "--ax-public-icon-label-button-padding-extra-small"
-    },
-    {
-      "comment": "",
-      "name": "--ax-public-icon-label-button-padding-large"
-    },
-    {
-      "comment": "",
-      "name": "--ax-public-icon-label-button-padding-medium"
-    },
-    {
-      "comment": "",
-      "name": "--ax-public-icon-label-button-padding-small"
+      "name": "--ax-public-button-icon-padding-xxx-small"
     }
   ],
-  "components/button/label-button/loader.module.css": [
+  "components/button/nav-button/nav-icon-label-button/nav-button-gap.module.css": [
     {
       "comment": "",
-      "name": "--ax-public-button-loader-animation-duration"
+      "name": "--ax-public-button-gap-xx-small"
     },
     {
       "comment": "",
-      "name": "--ax-public-button-loader-dot-border-radius"
-    },
-    {
-      "comment": "",
-      "name": "--ax-public-button-loader-dot-color"
-    },
-    {
-      "comment": "",
-      "name": "--ax-public-button-loader-dot-size"
+      "name": "--ax-public-button-gap-xxx-small"
     }
   ],
-  "components/button/label-button/padding.module.css": [
+  "components/button/nav-button/nav-icon-label-button/nav-icon-label-button-padding.module.css": [
     {
       "comment": "",
-      "name": "--ax-public-label-button-padding-extra-large"
+      "name": "--ax-public-icon-label-button-padding-xx-small"
     },
     {
       "comment": "",
-      "name": "--ax-public-label-button-padding-extra-small"
-    },
-    {
-      "comment": "",
-      "name": "--ax-public-label-button-padding-large"
-    },
-    {
-      "comment": "",
-      "name": "--ax-public-label-button-padding-medium"
-    },
-    {
-      "comment": "",
-      "name": "--ax-public-label-button-padding-small"
+      "name": "--ax-public-icon-label-button-padding-xxx-small"
     }
   ],
-  "components/button/nav-button/nav-button.module.css": [
+  "components/button/nav-button/nav-label-button/nav-label-button-padding.module.css": [
+    {
+      "comment": "",
+      "name": "--ax-public-label-button-padding-xx-small"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-label-button-padding-xxx-small"
+    }
+  ],
+  "components/button/nav-button/styles/nav-button-border-radius.module.css": [
+    {
+      "comment": "",
+      "name": "--ax-public-button-border-radius-xx-small"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-button-border-radius-xxx-small"
+    }
+  ],
+  "components/button/nav-button/styles/nav-button-font-size.module.css": [],
+  "components/button/nav-button/styles/nav-button.module.css": [
     {
       "comment": "",
       "name": "--ax-public-button-nav-background-color"
@@ -132,10 +105,34 @@
     {
       "comment": "",
       "name": "--ax-public-button-nav-color-disabled"
+    }
+  ],
+  "components/button/nav-button/styles/nav-icon-size.module.css": [
+    {
+      "comment": "missing token",
+      "name": "--ax-public-icon-size-xx-small"
+    },
+    {
+      "comment": "missing token",
+      "name": "--ax-public-icon-size-xxx-small"
+    }
+  ],
+  "components/button/regular-button/label-button/loader.module.css": [
+    {
+      "comment": "",
+      "name": "--ax-public-button-loader-animation-duration"
     },
     {
       "comment": "",
-      "name": "--ax-public-button-nav-color-hover"
+      "name": "--ax-public-button-loader-dot-border-radius"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-button-loader-dot-color"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-button-loader-dot-size"
     }
   ],
   "components/button/styles/border-radius.module.css": [
@@ -162,21 +159,53 @@
     {
       "comment": "",
       "name": "--ax-public-button-border-radius-small"
-    },
-    {
-      "comment": "",
-      "name": "--ax-public-button-border-radius-xx-small"
-    },
-    {
-      "comment": "",
-      "name": "--ax-public-button-border-radius-xxx-small"
-    },
-    {
-      "comment": "",
-      "name": "--ax-public-button-border-radius-xxxx-small"
     }
   ],
   "components/button/styles/font-size.module.css": [],
+  "components/button/styles/gap.module.css": [
+    {
+      "comment": "",
+      "name": "--ax-public-button-gap-extra-large"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-button-gap-extra-small"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-button-gap-large"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-button-gap-medium"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-button-gap-small"
+    }
+  ],
+  "components/button/styles/icon-label-button-padding.module.css": [
+    {
+      "comment": "",
+      "name": "--ax-public-icon-label-button-padding-extra-large"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-icon-label-button-padding-extra-small"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-icon-label-button-padding-large"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-icon-label-button-padding-medium"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-icon-label-button-padding-small"
+    }
+  ],
   "components/button/styles/icon-padding.module.css": [
     {
       "comment": "",
@@ -197,18 +226,6 @@
     {
       "comment": "",
       "name": "--ax-public-button-icon-padding-small"
-    },
-    {
-      "comment": "",
-      "name": "--ax-public-button-icon-padding-xx-small"
-    },
-    {
-      "comment": "",
-      "name": "--ax-public-button-icon-padding-xxx-small"
-    },
-    {
-      "comment": "",
-      "name": "--ax-public-button-icon-padding-xxxx-small"
     }
   ],
   "components/button/styles/icon-size.module.css": [
@@ -231,18 +248,28 @@
     {
       "comment": "missing token",
       "name": "--ax-public-icon-size-small"
+    }
+  ],
+  "components/button/styles/label-button-padding.module.css": [
+    {
+      "comment": "",
+      "name": "--ax-public-label-button-padding-extra-large"
     },
     {
-      "comment": "missing token",
-      "name": "--ax-public-icon-size-xx-small"
+      "comment": "",
+      "name": "--ax-public-label-button-padding-extra-small"
     },
     {
-      "comment": "missing token",
-      "name": "--ax-public-icon-size-xxx-small"
+      "comment": "",
+      "name": "--ax-public-label-button-padding-large"
     },
     {
-      "comment": "missing token",
-      "name": "--ax-public-icon-size-xxxx-small"
+      "comment": "",
+      "name": "--ax-public-label-button-padding-medium"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-label-button-padding-small"
     }
   ],
   "components/button/styles/variant.module.css": [

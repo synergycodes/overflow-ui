@@ -30,6 +30,10 @@ const LINKS = [
   },
 ];
 
+const openGithub = () => {
+  window.location.href = 'https://github.com/synergycodes/axiom';
+};
+
 function NavbarContentLayout({
   left,
   right,
@@ -77,13 +81,12 @@ export default function NavbarContent(): ReactNode {
             <MagnifyingGlass className={styles['search-icon']} />
           </NavbarSearch>
           <NavButton
-            // @ts-expect-error wrong typing
-            rootElementName="a"
-            href="https://github.com/synergycodes/axiom"
             className={styles['nav-button']}
+            onClick={openGithub}
             shape="circle"
-            icon={<GithubLogo weight="fill" />}
-          />
+          >
+            <GithubLogo weight="fill" />
+          </NavButton>
         </>
       }
     />
