@@ -1,12 +1,8 @@
 .dot-pattern-gradient {
   /* --- Customizable Variables --- */
-  --dot-color: color-mix(
-    in srgb,
-    var(--ax-txt-tertiary-default) 100%,
-    transparent
-  ); /* Color of the dots */
+  --dot-color: var(--ax-colors-acc7-400); /* Color of the dots */
   --background-color: transparent; /* Background color behind the dots */
-  --dot-size: 0.1rem; /* Diameter of each dot */
+  --dot-size: 2px; /* Diameter of each dot */
   --dot-spacing: 1.5rem; /* Distance between the centers of adjacent dots */
 
   /* --- Gradient Calculation (No need to edit directly) --- */
@@ -34,4 +30,33 @@
   border: 1px solid #575b94;
 
   composes: dot-pattern-gradient;
+
+  .inner-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+
+      .background {
+        padding: 8rem 16rem;
+        margin: -8rem -16rem;
+
+        pointer-events: none;
+        z-index: -1;
+        --color-inner: var(--ifm-background-color);
+        --color-outer: transparent;
+
+        background-image: radial-gradient(
+          closest-side,
+          var(--color-inner) 40%,
+          var(--color-outer) 100%
+        );
+      }
+    }
+  }
 }

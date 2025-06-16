@@ -13,7 +13,6 @@ export type ComponentPageProps = {
   componentPath?: AxiomTSXRelativePath;
   cssPaths?: AxiomCSSRelativePath[];
   exampleCode: string;
-  preview: React.ReactNode;
   className?: string;
   hardcodedData?: HardcodedData;
 };

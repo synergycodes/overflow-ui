@@ -1,6 +1,4 @@
-![@synergycodes/axiom logo](./about/images/axiom-logo.svg)
-
-# @synergycodes/axiom
+[//]: # "This README file is part of the Axiom documentation website (check overview.mdx)"
 
 A React library for creating node-based user interfaces and diagram-driven apps. Built to work seamlessly with React Flow, it provides a collection of ready-to-use components and templates that simplify the development of visual editors, workflows, and interactive diagrams.
 
@@ -34,6 +32,14 @@ Add to your style sheet or component:
 
 ```tsx
 import '@synergycodes/axiom/tokens.css';
+```
+
+### 🌗 Set the theme
+
+To make the styles use proper variables, include `data-theme` (`light` or `dark`) attribute in `<html>`:
+
+```html
+<html data-theme="light">
 ```
 
 ### 🎛️ Use components

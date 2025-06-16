@@ -28,6 +28,7 @@ declare global {
     NavButton,
     useEdgeStyle,
     EdgeLabel,
+    Status,
 
     // Node Components
     NodeDescription,
