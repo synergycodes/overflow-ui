@@ -4,7 +4,7 @@
 
 @layer ui.component {
   button:hover {
-    &.icon-only {
+    &.transparent {
       background: transparent;
     }
   }

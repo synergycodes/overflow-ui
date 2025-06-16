@@ -6,7 +6,7 @@ Date: **12.06.2025**
 
 ## Context
 
-The original implementation of button components involved creating four distinct components (`LabelButton`, `NavButton`, `ImageButton`, and `ImageLabelButton`) to cover different usage scenarios. While this provided a high degree of specificity and control, it introduced complexity in the API.
+The original implementation of button components involved creating four distinct components (`LabelButton`, `NavButton`, `IconButton`, and `IconLabelButton`) to cover different usage scenarios. While this provided a high degree of specificity and control, it introduced complexity in the API.
 
 Each button type had its own props, styling logic, and render behavior. While maintainable in the short term, it made the overall button API harder to learn and less adaptable to changes.
 

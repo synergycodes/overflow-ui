@@ -207,13 +207,6 @@
             "raw": "React.ReactElement"
           }
         },
-        "iconOnly": {
-          "description": "",
-          "required": false,
-          "tsType": {
-            "name": "boolean"
-          }
-        },
         "isSelected": {
           "description": "",
           "required": false,
@@ -277,6 +270,13 @@
             ],
             "name": "union",
             "raw": "'default' | 'blue'"
+          }
+        },
+        "transparent": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "boolean"
           }
         }
       }

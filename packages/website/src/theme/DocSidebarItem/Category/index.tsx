@@ -161,7 +161,7 @@ function CollapseButton({
       className={clsx(styles['collapse-button'], {
         [styles['collapsed']]: collapsed,
       })}
-      iconOnly
+      transparent
       aria-expanded={!collapsed}
       onClick={onClick}
     >

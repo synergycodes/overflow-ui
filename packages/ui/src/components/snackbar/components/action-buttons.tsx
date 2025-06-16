@@ -39,7 +39,7 @@ export function ActionButtons({
         </Button>
       )}
       {close && onClose && (
-        <NavButton size="xxx-small" iconOnly={true} onClick={onClose}>
+        <NavButton size="xxx-small" transparent={true} onClick={onClose}>
           <X />
         </NavButton>
       )}

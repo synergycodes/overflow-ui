@@ -14,12 +14,12 @@ import { NavBaseButtonProps } from '../types';
 
 export type NavIconButtonProps = {
   shape?: Shape;
-  iconOnly?: boolean;
+  transparent?: boolean;
   children: IconNode;
 } & NavBaseButtonProps;
 
 export const NavIconButton = forwardRef<HTMLButtonElement, NavIconButtonProps>(
-  ({ size = 'medium', shape = '', children, iconOnly, ...props }, ref) => (
+  ({ size = 'medium', shape = '', children, transparent, ...props }, ref) => (
     <BaseButton
       ref={ref}
       styles={clsx(
@@ -28,7 +28,7 @@ export const NavIconButton = forwardRef<HTMLButtonElement, NavIconButtonProps>(
         iconSizeStyles[size],
         navIconSizeStyles[size],
         borderRadiusStyles[shape],
-        { [navIconButtonStyles['icon-only']]: iconOnly },
+        { [navIconButtonStyles['transparent']]: transparent },
       )}
       {...props}
     >

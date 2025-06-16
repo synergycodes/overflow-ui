@@ -7,7 +7,7 @@ function NavIconButtonExample() {
       <NavButton shape="circle">
         <Plus />
       </NavButton>
-      <NavButton iconOnly={true}>
+      <NavButton transparent={true}>
         <User />
       </NavButton>
     </div>
