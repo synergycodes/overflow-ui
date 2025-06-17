@@ -81,7 +81,7 @@ export default function NavbarContent(): ReactNode {
             <MagnifyingGlass className={styles['search-icon']} />
           </NavbarSearch>
           <NavButton
-            className={styles['nav-button']}
+            className={clsx('nav-button', styles['nav-button'])}
             onClick={openGithub}
             shape="circle"
           >

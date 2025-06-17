@@ -30,7 +30,11 @@ export function CopyButton({ content }: Props) {
   return (
     <Tooltip>
       <Tooltip.Trigger>
-        <NavButton onMouseLeave={onMouseLeave} onClick={onCopy}>
+        <NavButton
+          className="nav-button"
+          onMouseLeave={onMouseLeave}
+          onClick={onCopy}
+        >
           {icon}
         </NavButton>
       </Tooltip.Trigger>

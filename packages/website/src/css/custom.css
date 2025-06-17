@@ -51,6 +51,9 @@ a {
   --ifm-list-margin: 0;
 
   --doc-sidebar-width: 20rem !important;
+}
+
+.nav-button {
   --ax-public-button-nav-color-active: var(--ifm-link-hover-color) !important;
 }
 

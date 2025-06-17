@@ -12,22 +12,25 @@ import {
 import { NavButton } from '@ui/components/button/nav-button/nav-button';
 import { SegmentPickerContext } from '../segment-picker';
 import { useContext } from 'react';
+import { BaseButtonProps } from '../../button/types';
 
-export type SegmentPickerItemProps = {
+export type SegmentPickerItemProps = BaseButtonProps & {
   value: string;
 } & (
-  | Pick<NavLabelButtonProps, 'children'>
-  | Pick<NavIconButtonProps, 'children'>
-  | Pick<NavIconLabelButtonProps, 'children'>
-);
+    | Pick<NavLabelButtonProps, 'children'>
+    | Pick<NavIconButtonProps, 'children'>
+    | Pick<NavIconLabelButtonProps, 'children'>
+  );
 
-export function Item({ children, value }: SegmentPickerItemProps) {
+export function Item({
+  children,
+  value,
+  ...buttonProps
+}: SegmentPickerItemProps) {
   const context = useContext(SegmentPickerContext);
 
   if (!context) {
-    throw new Error(
-      'SegmentPicker.Item must be used within a SegmentPicker.Root',
-    );
+    throw new Error('SegmentPicker.Item must be used within a SegmentPicker');
   }
 
   const { selectedValue, onSelect, shape, ...other } = context;
@@ -39,6 +42,7 @@ export function Item({ children, value }: SegmentPickerItemProps) {
     shape,
     children,
     ...other,
+    ...buttonProps,
   };
 
   if (hasStringChildrenOnly<NavLabelButtonProps>(props)) {

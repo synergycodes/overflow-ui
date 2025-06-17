@@ -42,6 +42,8 @@ declare global {
     Trash,
     User,
     DiamondsFour,
+    Calendar,
+    AddressBook,
 
     // React Flow
     ReactFlow,

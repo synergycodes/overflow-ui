@@ -20,17 +20,17 @@ type SegmentPickerContextType = {
 type SegmentPickerProps = {
   children: ReactElement<SegmentPickerItemProps, typeof Item>[];
   value?: string;
-  onChange?: (value: string) => void;
   size?: Size;
   shape?: Shape;
+  onChange?: (value: string) => void;
 };
 
-function Root({
+export function SegmentPicker({
   children,
   value,
-  onChange,
   size = 'medium',
   shape = '',
+  onChange,
 }: SegmentPickerProps) {
   const [selectedValue, setSelectedValue] = useState<string | null>(
     value || null,
@@ -58,7 +58,4 @@ function Root({
   );
 }
 
-export const SegmentPicker = {
-  Root,
-  Item,
-};
+SegmentPicker.Item = Item;
