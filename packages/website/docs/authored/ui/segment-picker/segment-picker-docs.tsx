@@ -14,11 +14,11 @@ export function SegmentPickerDocs() {
       unionValues: SIZES,
     },
     children: {
-      unionValues: ['ReactElement<SegmentPickerItemProps>[]']
+      unionValues: ['ReactElement<SegmentPickerItemProps>[]'],
     },
     onChange: {
-      unionValues: ['(value: string) => void']
-    }
+      unionValues: ['(value: string) => void'],
+    },
   };
 
   return (
