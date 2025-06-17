@@ -94,25 +94,25 @@ Default Axiom order:
 @layer ui.base, ui.component;
 ```
 
-### 🛠️ Development
+# 🛠️ Development
 
 To develop and test components, follow these steps in monorepo root:
 
 1. Install dependencies:
 
-- ```bash
+```bash
 pnpm i
 ```
 
 2. Build UI:
 
-- ```bash
+```bash
 pnpm ui build
 ```
 
 3. Run preview page:
 
-- ```bash
+```bash
 pnpm ui preview
 ```
 
