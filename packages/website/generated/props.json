@@ -1638,106 +1638,7 @@
     {
       "description": "",
       "displayName": "SegmentPicker",
-      "methods": [
-        {
-          "docblock": null,
-          "modifiers": [
-            "static"
-          ],
-          "name": "Item",
-          "params": [
-            {
-              "name": "{\n  children,\n  value,\n  ...buttonProps\n}: SegmentPickerItemProps",
-              "optional": false,
-              "type": {
-                "alias": "SegmentPickerItemProps",
-                "elements": [
-                  {
-                    "elements": [
-                      {
-                        "name": "signature",
-                        "raw": "{\n  tooltip?: string;\n  tooltipType?: TooltipVariant;\n}",
-                        "signature": {
-                          "properties": [
-                            {
-                              "key": "tooltip",
-                              "value": {
-                                "name": "string",
-                                "required": false
-                              }
-                            },
-                            {
-                              "key": "tooltipType",
-                              "value": {
-                                "elements": [
-                                  {
-                                    "name": "literal",
-                                    "value": "'default'"
-                                  },
-                                  {
-                                    "name": "literal",
-                                    "value": "'blue'"
-                                  }
-                                ],
-                                "name": "union",
-                                "raw": "'default' | 'blue'",
-                                "required": false
-                              }
-                            }
-                          ]
-                        },
-                        "type": "object"
-                      },
-                      {
-                        "elements": [
-                          {
-                            "elements": [
-                              {
-                                "name": "HTMLButtonElement"
-                              }
-                            ],
-                            "name": "ReactButtonHTMLAttributes",
-                            "raw": "React.ButtonHTMLAttributes<HTMLButtonElement>"
-                          },
-                          {
-                            "name": "HTMLButtonElement"
-                          }
-                        ],
-                        "name": "ReactDetailedHTMLProps",
-                        "raw": "React.DetailedHTMLProps<\n  React.ButtonHTMLAttributes<HTMLButtonElement>,\n  HTMLButtonElement\n>"
-                      }
-                    ],
-                    "name": "intersection",
-                    "raw": "{\n  tooltip?: string;\n  tooltipType?: TooltipVariant;\n} & React.DetailedHTMLProps<\n  React.ButtonHTMLAttributes<HTMLButtonElement>,\n  HTMLButtonElement\n>"
-                  },
-                  {
-                    "name": "signature",
-                    "raw": "{\n  value: string;\n}",
-                    "signature": {
-                      "properties": [
-                        {
-                          "key": "value",
-                          "value": {
-                            "name": "string",
-                            "required": true
-                          }
-                        }
-                      ]
-                    },
-                    "type": "object"
-                  },
-                  {
-                    "name": "unknown"
-                  }
-                ],
-                "name": "intersection",
-                "raw": "BaseButtonProps & {\n  value: string;\n} & (\n    | Pick<NavLabelButtonProps, 'children'>\n    | Pick<NavIconButtonProps, 'children'>\n    | Pick<NavIconLabelButtonProps, 'children'>\n  )"
-              }
-            }
-          ],
-          "returns": null
-        }
-      ],
+      "methods": [],
       "props": {
         "children": {
           "description": "",
@@ -1839,6 +1740,13 @@
             ],
             "name": "Array",
             "raw": "ReactElement<SegmentPickerItemProps, typeof Item>[]"
+          }
+        },
+        "className": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "string"
           }
         },
         "onChange": {

@@ -2,7 +2,13 @@ import clsx from 'clsx';
 import styles from './segment-picker.module.css';
 import borderRadiusStyles from './border-radius-size.module.css';
 
-import { createContext, useState, ReactElement } from 'react';
+import {
+  createContext,
+  useState,
+  ReactElement,
+  forwardRef,
+  ForwardRefExoticComponent,
+} from 'react';
 import { Size } from '@ui/shared/types/size';
 import { Shape } from '@ui/components/button/types';
 import { SegmentPickerItemProps, Item } from './item/segment-picker-item';
@@ -22,40 +28,48 @@ type SegmentPickerProps = {
   value?: string;
   size?: Size;
   shape?: Shape;
+  className?: string;
   onChange?: (value: string) => void;
 };
 
-export function SegmentPicker({
-  children,
-  value,
-  size = 'medium',
-  shape = '',
-  onChange,
-}: SegmentPickerProps) {
-  const [selectedValue, setSelectedValue] = useState<string | null>(
-    value || null,
-  );
+type SegmentPickerComponent = ForwardRefExoticComponent<
+  SegmentPickerProps & React.RefAttributes<HTMLDivElement>
+> & {
+  Item: typeof Item;
+};
 
-  const handleSelect = (newValue: string) => {
-    setSelectedValue(newValue);
-    onChange?.(newValue);
-  };
+export const SegmentPicker = forwardRef<HTMLDivElement, SegmentPickerProps>(
+  (
+    { children, value, size = 'medium', shape = '', className, onChange },
+    ref,
+  ) => {
+    const [selectedValue, setSelectedValue] = useState<string | null>(
+      value || null,
+    );
 
-  return (
-    <SegmentPickerContext.Provider
-      value={{ selectedValue, onSelect: handleSelect, size, shape }}
-    >
-      <div
-        className={clsx(
-          styles['container'],
-          styles[shape],
-          borderRadiusStyles[size],
-        )}
+    const handleSelect = (newValue: string) => {
+      setSelectedValue(newValue);
+      onChange?.(newValue);
+    };
+
+    return (
+      <SegmentPickerContext.Provider
+        value={{ selectedValue, onSelect: handleSelect, size, shape }}
       >
-        {children}
-      </div>
-    </SegmentPickerContext.Provider>
-  );
-}
+        <div
+          ref={ref}
+          className={clsx(
+            styles['container'],
+            styles[shape],
+            borderRadiusStyles[size],
+            className,
+          )}
+        >
+          {children}
+        </div>
+      </SegmentPickerContext.Provider>
+    );
+  },
+) as SegmentPickerComponent;
 
 SegmentPicker.Item = Item;
