@@ -11,7 +11,7 @@ import {
 } from '@ui/components/button/guards';
 import { NavButton } from '@ui/components/button/nav-button/nav-button';
 import { SegmentPickerContext } from '../segment-picker';
-import { useContext } from 'react';
+import { MouseEventHandler, useContext } from 'react';
 import { BaseButtonProps } from '../../button/types';
 
 export type SegmentPickerItemProps = BaseButtonProps & {
@@ -38,7 +38,8 @@ export function Item({
   const props = {
     className: clsx(itemShapeStyles['item'], itemShapeStyles[shape || '']),
     isSelected: selectedValue === value,
-    onClick: () => onSelect(value),
+    onClick: (event: MouseEventHandler<HTMLButtonElement>) =>
+      onSelect(event, value),
     shape,
     children,
     ...other,

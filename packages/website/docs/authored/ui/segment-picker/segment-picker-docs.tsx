@@ -17,7 +17,9 @@ export function SegmentPickerDocs() {
       unionValues: ['ReactElement<SegmentPickerItemProps>[]'],
     },
     onChange: {
-      unionValues: ['(value: string) => void'],
+      unionValues: [
+        '(event: MouseEventHandler<HTMLButtonElement>, value: string) => void',
+      ],
     },
   };
 

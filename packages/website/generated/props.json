@@ -1754,9 +1754,21 @@
           "required": false,
           "tsType": {
             "name": "signature",
-            "raw": "(value: string) => void",
+            "raw": "(\n  event: MouseEventHandler<HTMLButtonElement>,\n  value: string,\n) => void",
             "signature": {
               "arguments": [
+                {
+                  "name": "event",
+                  "type": {
+                    "elements": [
+                      {
+                        "name": "HTMLButtonElement"
+                      }
+                    ],
+                    "name": "MouseEventHandler",
+                    "raw": "MouseEventHandler<HTMLButtonElement>"
+                  }
+                },
                 {
                   "name": "value",
                   "type": {

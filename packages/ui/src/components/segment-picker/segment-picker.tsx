@@ -8,6 +8,7 @@ import {
   ReactElement,
   forwardRef,
   ForwardRefExoticComponent,
+  MouseEventHandler,
 } from 'react';
 import { Size } from '@ui/shared/types/size';
 import { Shape } from '@ui/components/button/types';
@@ -18,7 +19,10 @@ export const SegmentPickerContext =
 
 type SegmentPickerContextType = {
   selectedValue: string | null;
-  onSelect: (value: string) => void;
+  onSelect: (
+    event: MouseEventHandler<HTMLButtonElement>,
+    value: string,
+  ) => void;
   size?: Size;
   shape?: Shape;
 };
@@ -29,7 +33,10 @@ type SegmentPickerProps = {
   size?: Size;
   shape?: Shape;
   className?: string;
-  onChange?: (value: string) => void;
+  onChange?: (
+    event: MouseEventHandler<HTMLButtonElement>,
+    value: string,
+  ) => void;
 };
 
 type SegmentPickerComponent = ForwardRefExoticComponent<
@@ -47,9 +54,12 @@ export const SegmentPicker = forwardRef<HTMLDivElement, SegmentPickerProps>(
       value || null,
     );
 
-    const handleSelect = (newValue: string) => {
+    const handleSelect = (
+      event: React.MouseEventHandler<HTMLButtonElement>,
+      newValue: string,
+    ) => {
       setSelectedValue(newValue);
-      onChange?.(newValue);
+      onChange?.(event, newValue);
     };
 
     return (
