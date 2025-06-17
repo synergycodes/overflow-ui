@@ -25,11 +25,12 @@ export function createTriggerButton(component: ReactElement) {
       return cache.get(component)?.element;
     }
 
+    const { children } = component.props as React.PropsWithChildren<unknown>;
+
     if (isForwardRefComponent(component)) {
       const element = cloneElement(component, {
         ...props,
-        // @ts-expect-error bla bla
-        children: component.props.children,
+        children,
         ref,
       } as MenuButtonProps);
 

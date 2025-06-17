@@ -1,20 +1,9 @@
-import { Menu, Button } from '..';
-import * as ReactDOM from 'react-dom/client';
-import './index.css';
+import { Button } from '..';
 
-const root = ReactDOM.createRoot(
-  document.querySelector('#root') as HTMLElement,
-);
-
-root.render(<Preview />);
-
-function Preview() {
+export function PreviewPage() {
   return (
     <>
-      <span className="ax-public-h1">Testing</span>
-      <Menu items={[{ label: 'Item 1' }]}>
-        <Button>Menu</Button>
-      </Menu>
+      <Button>Test</Button>
     </>
   );
 }

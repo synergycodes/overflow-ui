@@ -50,7 +50,7 @@ export function Playground({ exampleCode, cssPaths }: Props) {
     : cssCode !== initialCssCode;
 
   return (
-    <LiveProvider enableTypeScript code={reactCode} scope={ReactLiveScope}>
+    <LiveProvider code={reactCode} scope={ReactLiveScope}>
       <Preview>
         <ShadowDomWrapper>
           {cssCode && <style>{parsedCssCode}</style>}

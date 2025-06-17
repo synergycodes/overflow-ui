@@ -30,7 +30,7 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite build --watch",
-    "preview": "vite --config preview/vite.preview.config.ts",
+    "preview": "vite --config preview-page/vite.preview.config.ts",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "typecheck": "tsc --noEmit --pretty"

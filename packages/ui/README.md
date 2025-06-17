@@ -107,6 +107,31 @@ Default Axiom order:
 @layer ui.base, ui.component;
 ```
 
+### 🛠️ Development
+
+To develop and test components, follow these steps in monorepo root:
+
+1. Install dependencies:
+
+- ```bash
+pnpm i
+```
+
+2. Build UI:
+
+- ```bash
+pnpm ui build
+```
+
+3. Run preview page:
+
+- ```bash
+pnpm ui preview
+```
+
+Now visit `localhost:3000` to see every change in components reflected in the preview page.
+Edit `ui/preview-page/preview-page.tsx` to display desired components.
+
 ### 📣 Important Note on Underlying Technology
 
 > **Axiom is built on top of [MUI Base](https://v6.mui.com/base-ui/getting-started/), a headless component library that focuses on accessibility and logic, while leaving the styling up to us.**
