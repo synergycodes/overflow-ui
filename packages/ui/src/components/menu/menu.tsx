@@ -86,7 +86,10 @@ export const Menu = memo(
     return (
       <Dropdown open={open} onOpenChange={onOpenChange}>
         {MenuTriggerButton && (
-          <MenuButton slots={{ root: MenuTriggerButton }} />
+          <>
+            <div>test</div>
+            <MenuButton slots={{ root: MenuTriggerButton }} />
+          </>
         )}
         <MenuBase
           slotProps={{

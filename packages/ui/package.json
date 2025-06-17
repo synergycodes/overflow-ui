@@ -30,6 +30,7 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite build --watch",
+    "preview": "vite --config preview/vite.preview.config.ts",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "typecheck": "tsc --noEmit --pretty"
@@ -48,6 +49,7 @@
     "./tokens.css": "./dist/tokens.css"
   },
   "dependencies": {
+    "@emotion/styled": "^11.14.0",
     "@floating-ui/react": "^0.26.28",
     "@mantine/core": "^7.17.2",
     "@mantine/dates": "^7.17.2",
@@ -57,9 +59,10 @@
     "clsx": "^2.0.0"
   },
   "devDependencies": {
-    "@synergycodes/axiom-tokens": "workspace:*",
     "@emotion/react": "^11.14.0",
+    "@synergycodes/axiom-tokens": "workspace:*",
     "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.3.4",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.2.0",
