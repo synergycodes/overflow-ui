@@ -116,7 +116,7 @@
   background-color: var(--ax-pubilc-segment-picker-bg-color);
 }
 
-.size-xxx-small {
+.xxx-small {
   padding: var(--ax-pubilc-segment-picker-padding-xxx-small);
   gap: var(--ax-pubilc-segment-picker-gap-xxx-small);
   border-radius: var(--ax-pubilc-segment-picker-border-radius-xxx-small);
@@ -125,7 +125,7 @@
     height: var(--ax-pubilc-segment-picker-icon-size-xxx-small);
   }
 }
-.size-xx-small {
+.xx-small {
   padding: var(--ax-pubilc-segment-picker-padding-xx-small);
   gap: var(--ax-pubilc-segment-picker-gap-xx-small);
   border-radius: var(--ax-pubilc-segment-picker-border-radius-xx-small);
@@ -134,7 +134,7 @@
     height: var(--ax-pubilc-segment-picker-icon-size-xx-small);
   }
 }
-.size-extra-small {
+.extra-small {
   padding: var(--ax-pubilc-segment-picker-padding-extra-small);
   gap: var(--ax-pubilc-segment-picker-gap-extra-small);
   border-radius: var(--ax-pubilc-segment-picker-border-radius-extra-small);
@@ -143,7 +143,7 @@
     height: var(--ax-pubilc-segment-picker-icon-size-extra-small);
   }
 }
-.size-small {
+.small {
   padding: var(--ax-pubilc-segment-picker-padding-small);
   gap: var(--ax-pubilc-segment-picker-gap-small);
   border-radius: var(--ax-pubilc-segment-picker-border-radius-small);
@@ -152,7 +152,7 @@
     height: var(--ax-pubilc-segment-picker-icon-size-small);
   }
 }
-.size-medium {
+.medium {
   padding: var(--ax-pubilc-segment-picker-padding-medium);
   gap: var(--ax-pubilc-segment-picker-gap-medium);
   border-radius: var(--ax-pubilc-segment-picker-border-radius-medium);
@@ -161,7 +161,7 @@
     height: var(--ax-pubilc-segment-picker-icon-size-medium);
   }
 }
-.size-large {
+.large {
   padding: var(--ax-pubilc-segment-picker-padding-large);
   gap: var(--ax-pubilc-segment-picker-gap-large);
   border-radius: var(--ax-pubilc-segment-picker-border-radius-large);
@@ -170,7 +170,7 @@
     height: var(--ax-pubilc-segment-picker-icon-size-large);
   }
 }
-.size-extra-large {
+.extra-large {
   padding: var(--ax-pubilc-segment-picker-padding-extra-large);
   gap: var(--ax-pubilc-segment-picker-gap-extra-large);
   border-radius: var(--ax-pubilc-segment-picker-border-radius-extra-large);
@@ -181,12 +181,12 @@
 }
 
 .rounded,
-.size-xxx-small:has(.rounded),
-.size-xx-small:has(.rounded),
-.size-extra-small:has(.rounded),
-.size-small:has(.rounded),
-.size-medium:has(.rounded),
-.size-large:has(.rounded),
-.size-extra-large:has(.rounded) {
+.xxx-small:has(.rounded),
+.xx-small:has(.rounded),
+.extra-small:has(.rounded),
+.small:has(.rounded),
+.medium:has(.rounded),
+.large:has(.rounded),
+.extra-large:has(.rounded) {
   border-radius: var(--ax-public-segment-picker-variant-rounded);
 }

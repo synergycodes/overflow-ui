@@ -12,11 +12,7 @@ export function SegmentPicker({
 }: SegmentPickerProps) {
   return (
     <div
-      className={clsx(
-        styles['segment-picker'],
-        styles[`size-${size}`],
-        styles[variant],
-      )}
+      className={clsx(styles['segment-picker'], styles[size], styles[variant])}
     >
       {Children.map(children, (child) => {
         if (!isValidElement(child)) return null;
