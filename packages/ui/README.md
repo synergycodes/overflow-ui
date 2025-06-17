@@ -34,19 +34,6 @@ Add to your style sheet or component:
 import '@synergycodes/axiom/tokens.css';
 ```
 
-### 🎛️ Apply the Theme
-Wrap the section of your app that uses Axiom components in a container with a `data-theme` attribute and use one of the available theme values: `dark` or `light`.
-
-```tsx
-<div data-theme="dark">
-  <YourApp />
-</div>
-````
-
-Or set it on the `<html>` or `<body>` element.
-
-You can dynamically switch themes by changing the `data-theme` attribute at runtime.
-
 ### 🧱 Use components
 
 ```tsx
