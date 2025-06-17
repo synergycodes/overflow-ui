@@ -29,6 +29,7 @@ declare global {
     useEdgeStyle,
     EdgeLabel,
     Status,
+    SegmentPicker,
 
     // Node Components
     NodeDescription,

@@ -1593,6 +1593,22 @@
       }
     }
   ],
+  "../ui/src/components/segment-picker/item/segment-picker-item.tsx": [
+    {
+      "description": "",
+      "displayName": "Item",
+      "methods": [],
+      "props": {
+        "value": {
+          "description": "",
+          "required": true,
+          "tsType": {
+            "name": "string"
+          }
+        }
+      }
+    }
+  ],
   "../ui/src/components/select/select-button/select-button.tsx": [
     {
       "description": "",

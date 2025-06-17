@@ -6,6 +6,5 @@ export const SIZES = [
   'medium',
   'large',
   'extra-large',
-  'xx-large',
 ] as const;
 export type Size = (typeof SIZES)[number];

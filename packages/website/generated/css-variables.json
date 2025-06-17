@@ -1059,6 +1059,51 @@
       "name": "--ax-public-radio-focus-border-color"
     }
   ],
+  "components/segment-picker/border-radius-size.module.css": [
+    {
+      "comment": "",
+      "name": "--ax-public-segment-picker-border-radius-extra-large"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-segment-picker-border-radius-extra-small"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-segment-picker-border-radius-large"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-segment-picker-border-radius-medium"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-segment-picker-border-radius-small"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-segment-picker-border-radius-xx-small"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-segment-picker-border-radius-xxx-small"
+    }
+  ],
+  "components/segment-picker/item/segment-picker-item-shape.module.css": [],
+  "components/segment-picker/segment-picker.module.css": [
+    {
+      "comment": "",
+      "name": "--ax-public-segment-picker-background-color"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-segment-picker-circe-border-radius"
+    },
+    {
+      "comment": "to be confirmed",
+      "name": "--ax-public-segment-picker-space"
+    }
+  ],
   "components/select/select-button/select-button.module.css": [
     {
       "comment": "",
