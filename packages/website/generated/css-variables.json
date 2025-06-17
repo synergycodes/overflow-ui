@@ -1100,8 +1100,12 @@
       "name": "--ax-public-segment-picker-circe-border-radius"
     },
     {
-      "comment": "to be confirmed",
-      "name": "--ax-public-segment-picker-space"
+      "comment": "",
+      "name": "--ax-public-segment-picker-gap"
+    },
+    {
+      "comment": "",
+      "name": "--ax-public-segment-picker-padding"
     }
   ],
   "components/select/select-button/select-button.module.css": [
