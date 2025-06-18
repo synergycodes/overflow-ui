@@ -22,6 +22,15 @@ export type SegmentPickerItemProps = BaseButtonProps & {
     | Pick<NavIconLabelButtonProps, 'children'>
   );
 
+/**
+ * A single item in the SegmentPicker, rendered as a NavButton under the hood.
+ *
+ * Automatically receives size and shape from SegmentPicker context.
+ * Must be used only within a SegmentPicker component.
+ *
+ * Determines which NavButton variant to render based on its children
+ * (label only, icon only, or icon + label).
+ */
 export function Item({
   children,
   value,

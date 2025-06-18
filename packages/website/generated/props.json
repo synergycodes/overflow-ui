@@ -1595,7 +1595,7 @@
   ],
   "../ui/src/components/segment-picker/item/segment-picker-item.tsx": [
     {
-      "description": "",
+      "description": "A single item in the SegmentPicker, rendered as a NavButton under the hood.\n\nAutomatically receives size and shape from SegmentPicker context.\nMust be used only within a SegmentPicker component.\n\nDetermines which NavButton variant to render based on its children\n(label only, icon only, or icon + label).",
       "displayName": "Item",
       "methods": [],
       "props": {
@@ -1788,7 +1788,7 @@
             "computed": false,
             "value": "''"
           },
-          "description": "",
+          "description": "Controls the shape of the SegmentPicker and its items.\n(default) -Items stretch to fill the container equally.\n'circle' - Items fit tightly around their content to maintain a circular shape.\nOnly supported when items contain icons only.",
           "required": false,
           "tsType": {
             "name": "Shape"
@@ -1807,7 +1807,7 @@
         },
         "value": {
           "description": "",
-          "required": false,
+          "required": true,
           "tsType": {
             "name": "string"
           }

@@ -29,8 +29,14 @@ type SegmentPickerContextType = {
 
 type SegmentPickerProps = {
   children: ReactElement<SegmentPickerItemProps, typeof Item>[];
-  value?: string;
+  value: string;
   size?: Size;
+  /**
+   * Controls the shape of the SegmentPicker and its items.
+   * (default) -Items stretch to fill the container equally.
+   * 'circle' - Items fit tightly around their content to maintain a circular shape.
+   * Only supported when items contain icons only.
+   */
   shape?: Shape;
   className?: string;
   onChange?: (

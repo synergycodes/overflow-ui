@@ -5,15 +5,12 @@ import { SIZES } from '@synergycodes/axiom';
 
 export function SegmentPickerDocs() {
   const props: Record<string, ComponentProp> = {
-    shape: {
-      defaultValue: '',
-      unionValues: ['', 'circle'],
-    },
     size: {
       defaultValue: 'medium',
       unionValues: SIZES,
     },
     children: {
+      required: true,
       unionValues: ['ReactElement<SegmentPickerItemProps>[]'],
     },
     onChange: {
