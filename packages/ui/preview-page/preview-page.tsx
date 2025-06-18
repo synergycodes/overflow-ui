@@ -1,4 +1,4 @@
-import { Button } from '..';
+import { Button } from '../src/index';
 
 export function PreviewPage() {
   return (
