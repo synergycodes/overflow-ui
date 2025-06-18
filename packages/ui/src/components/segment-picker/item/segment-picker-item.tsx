@@ -10,9 +10,9 @@ import {
   hasChildrenWithStringAndIcons,
 } from '@ui/components/button/guards';
 import { NavButton } from '@ui/components/button/nav-button/nav-button';
-import { SegmentPickerContext } from '../segment-picker';
 import { MouseEventHandler, useContext } from 'react';
 import { BaseButtonProps } from '../../button/types';
+import { SegmentPickerContext } from '../utils/context';
 
 export type SegmentPickerItemProps = BaseButtonProps & {
   value: string;

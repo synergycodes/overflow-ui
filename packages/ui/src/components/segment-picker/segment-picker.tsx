@@ -3,7 +3,6 @@ import styles from './segment-picker.module.css';
 import borderRadiusStyles from './border-radius-size.module.css';
 
 import {
-  createContext,
   useState,
   ReactElement,
   forwardRef,
@@ -13,19 +12,8 @@ import {
 import { Size } from '@ui/shared/types/size';
 import { Shape } from '@ui/components/button/types';
 import { SegmentPickerItemProps, Item } from './item/segment-picker-item';
-
-export const SegmentPickerContext =
-  createContext<SegmentPickerContextType | null>(null);
-
-type SegmentPickerContextType = {
-  selectedValue: string | null;
-  onSelect: (
-    event: MouseEventHandler<HTMLButtonElement>,
-    value: string,
-  ) => void;
-  size?: Size;
-  shape?: Shape;
-};
+import { getValidShape } from './utils/get-valid-shape';
+import { SegmentPickerContext } from './utils/context';
 
 type SegmentPickerProps = {
   children: ReactElement<SegmentPickerItemProps, typeof Item>[];
@@ -56,6 +44,7 @@ export const SegmentPicker = forwardRef<HTMLDivElement, SegmentPickerProps>(
     { children, value, size = 'medium', shape = '', className, onChange },
     ref,
   ) => {
+    const validShape = getValidShape(shape, children);
     const [selectedValue, setSelectedValue] = useState<string | null>(
       value || null,
     );
@@ -70,13 +59,18 @@ export const SegmentPicker = forwardRef<HTMLDivElement, SegmentPickerProps>(
 
     return (
       <SegmentPickerContext.Provider
-        value={{ selectedValue, onSelect: handleSelect, size, shape }}
+        value={{
+          selectedValue,
+          onSelect: handleSelect,
+          size,
+          shape: validShape,
+        }}
       >
         <div
           ref={ref}
           className={clsx(
             styles['container'],
-            styles[shape],
+            styles[validShape],
             borderRadiusStyles[size],
             className,
           )}
