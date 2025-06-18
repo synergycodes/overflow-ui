@@ -1,0 +1,6 @@
+@layer ui.component {
+  .item:not(.circle),
+  div:has(.item:not(.circle)) {
+    width: 100%;
+  }
+}

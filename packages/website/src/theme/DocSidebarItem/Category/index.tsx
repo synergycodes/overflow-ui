@@ -158,7 +158,7 @@ function CollapseButton({
 }) {
   return (
     <NavButton
-      className={clsx(styles['collapse-button'], {
+      className={clsx('nav-button', styles['collapse-button'], {
         [styles['collapsed']]: collapsed,
       })}
       transparent

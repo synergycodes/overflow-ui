@@ -1593,6 +1593,228 @@
       }
     }
   ],
+  "../ui/src/components/segment-picker/item/segment-picker-item.tsx": [
+    {
+      "description": "A single item in the SegmentPicker, rendered as a NavButton under the hood.\n\nAutomatically receives size and shape from SegmentPicker context.\nMust be used only within a SegmentPicker component.\n\nDetermines which NavButton variant to render based on its children\n(label only, icon only, or icon + label).",
+      "displayName": "Item",
+      "methods": [],
+      "props": {
+        "tooltip": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "tooltipType": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'default'"
+              },
+              {
+                "name": "literal",
+                "value": "'blue'"
+              }
+            ],
+            "name": "union",
+            "raw": "'default' | 'blue'"
+          }
+        },
+        "value": {
+          "description": "",
+          "required": true,
+          "tsType": {
+            "name": "string"
+          }
+        }
+      }
+    }
+  ],
+  "../ui/src/components/segment-picker/segment-picker.tsx": [
+    {
+      "description": "",
+      "displayName": "SegmentPicker",
+      "methods": [],
+      "props": {
+        "children": {
+          "description": "",
+          "required": true,
+          "tsType": {
+            "elements": [
+              {
+                "elements": [
+                  {
+                    "elements": [
+                      {
+                        "elements": [
+                          {
+                            "name": "signature",
+                            "raw": "{\n  tooltip?: string;\n  tooltipType?: TooltipVariant;\n}",
+                            "signature": {
+                              "properties": [
+                                {
+                                  "key": "tooltip",
+                                  "value": {
+                                    "name": "string",
+                                    "required": false
+                                  }
+                                },
+                                {
+                                  "key": "tooltipType",
+                                  "value": {
+                                    "elements": [
+                                      {
+                                        "name": "literal",
+                                        "value": "'default'"
+                                      },
+                                      {
+                                        "name": "literal",
+                                        "value": "'blue'"
+                                      }
+                                    ],
+                                    "name": "union",
+                                    "raw": "'default' | 'blue'",
+                                    "required": false
+                                  }
+                                }
+                              ]
+                            },
+                            "type": "object"
+                          },
+                          {
+                            "elements": [
+                              {
+                                "elements": [
+                                  {
+                                    "name": "HTMLButtonElement"
+                                  }
+                                ],
+                                "name": "ReactButtonHTMLAttributes",
+                                "raw": "React.ButtonHTMLAttributes<HTMLButtonElement>"
+                              },
+                              {
+                                "name": "HTMLButtonElement"
+                              }
+                            ],
+                            "name": "ReactDetailedHTMLProps",
+                            "raw": "React.DetailedHTMLProps<\n  React.ButtonHTMLAttributes<HTMLButtonElement>,\n  HTMLButtonElement\n>"
+                          }
+                        ],
+                        "name": "intersection",
+                        "raw": "{\n  tooltip?: string;\n  tooltipType?: TooltipVariant;\n} & React.DetailedHTMLProps<\n  React.ButtonHTMLAttributes<HTMLButtonElement>,\n  HTMLButtonElement\n>"
+                      },
+                      {
+                        "name": "signature",
+                        "raw": "{\n  value: string;\n}",
+                        "signature": {
+                          "properties": [
+                            {
+                              "key": "value",
+                              "value": {
+                                "name": "string",
+                                "required": true
+                              }
+                            }
+                          ]
+                        },
+                        "type": "object"
+                      },
+                      {
+                        "name": "unknown"
+                      }
+                    ],
+                    "name": "intersection",
+                    "raw": "BaseButtonProps & {\n  value: string;\n} & (\n    | Pick<NavLabelButtonProps, 'children'>\n    | Pick<NavIconButtonProps, 'children'>\n    | Pick<NavIconLabelButtonProps, 'children'>\n  )"
+                  },
+                  {
+                    "name": "Item"
+                  }
+                ],
+                "name": "ReactElement",
+                "raw": "ReactElement<SegmentPickerItemProps, typeof Item>"
+              }
+            ],
+            "name": "Array",
+            "raw": "ReactElement<SegmentPickerItemProps, typeof Item>[]"
+          }
+        },
+        "className": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "onChange": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "raw": "(\n  event: MouseEventHandler<HTMLButtonElement>,\n  value: string,\n) => void",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "event",
+                  "type": {
+                    "elements": [
+                      {
+                        "name": "HTMLButtonElement"
+                      }
+                    ],
+                    "name": "MouseEventHandler",
+                    "raw": "MouseEventHandler<HTMLButtonElement>"
+                  }
+                },
+                {
+                  "name": "value",
+                  "type": {
+                    "name": "string"
+                  }
+                }
+              ],
+              "return": {
+                "name": "void"
+              }
+            },
+            "type": "function"
+          }
+        },
+        "shape": {
+          "defaultValue": {
+            "computed": false,
+            "value": "''"
+          },
+          "description": "Controls the shape of the SegmentPicker and its items.\n(default) -Items stretch to fill the container equally.\n'circle' - Items fit tightly around their content to maintain a circular shape.\nOnly supported when items contain icons only.",
+          "required": false,
+          "tsType": {
+            "name": "Shape"
+          }
+        },
+        "size": {
+          "defaultValue": {
+            "computed": false,
+            "value": "'medium'"
+          },
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "Size"
+          }
+        },
+        "value": {
+          "description": "",
+          "required": true,
+          "tsType": {
+            "name": "string"
+          }
+        }
+      }
+    }
+  ],
   "../ui/src/components/select/select-button/select-button.tsx": [
     {
       "description": "",

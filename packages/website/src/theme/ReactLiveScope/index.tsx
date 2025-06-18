@@ -1,7 +1,15 @@
 import React from 'react';
 import * as axiom from '@synergycodes/axiom';
 import * as xyflow from '@xyflow/react';
-import { User, Plus, Check, Trash, DiamondsFour } from '@phosphor-icons/react';
+import {
+  User,
+  Plus,
+  Check,
+  Trash,
+  DiamondsFour,
+  Calendar,
+  AddressBook,
+} from '@phosphor-icons/react';
 
 const icons = {
   Trash,
@@ -9,6 +17,8 @@ const icons = {
   Plus,
   Check,
   DiamondsFour,
+  Calendar,
+  AddressBook,
 } as const;
 
 // Add react-live imports you need here

@@ -29,6 +29,7 @@ declare global {
     useEdgeStyle,
     EdgeLabel,
     Status,
+    SegmentPicker,
 
     // Node Components
     NodeDescription,
@@ -41,6 +42,8 @@ declare global {
     Trash,
     User,
     DiamondsFour,
+    Calendar,
+    AddressBook,
 
     // React Flow
     ReactFlow,
