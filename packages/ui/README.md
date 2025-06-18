@@ -34,6 +34,14 @@ Add to your style sheet or component:
 import '@synergycodes/axiom/tokens.css';
 ```
 
+### 🎛️ Apply the Theme
+
+To make the styles use proper variables, include data-theme (light or dark) attribute in <html>:
+
+```html
+<html data-theme="light">
+```
+
 ### 🧱 Use components
 
 ```tsx
