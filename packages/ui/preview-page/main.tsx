@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import { PreviewPage } from './preview-page';
-import styles from './index.module.css';
+import styles from './preview-page.module.css';
 
 const root = createRoot(document.querySelector('#root') as HTMLElement);
 
