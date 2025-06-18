@@ -35,17 +35,12 @@ import '@synergycodes/axiom/tokens.css';
 ```
 
 ### 🎛️ Apply the Theme
-Wrap the section of your app that uses Axiom components in a container with a `data-theme` attribute and use one of the available theme values: `dark` or `light`.
 
-```tsx
-<div data-theme="dark">
-  <YourApp />
-</div>
-````
+To make the styles use proper variables, include data-theme (light or dark) attribute in <html>:
 
-Or set it on the `<html>` or `<body>` element.
-
-You can dynamically switch themes by changing the `data-theme` attribute at runtime.
+```html
+<html data-theme="light">
+```
 
 ### 🧱 Use components
 
@@ -106,6 +101,31 @@ Default Axiom order:
 ```css
 @layer ui.base, ui.component;
 ```
+
+# 🛠️ Development
+
+To develop and test components, follow these steps in monorepo root:
+
+1. Install dependencies:
+
+```bash
+pnpm i
+```
+
+2. Build UI:
+
+```bash
+pnpm ui build
+```
+
+3. Run preview page:
+
+```bash
+pnpm ui preview
+```
+
+Now visit `localhost:3000` to see every change in components reflected in the preview page.
+Edit `ui/preview-page/preview-page.tsx` to display desired components.
 
 ### 📣 Important Note on Underlying Technology
 

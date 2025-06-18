@@ -30,7 +30,7 @@ export default defineConfig([
   pluginJs.configs.recommended,
   eslintConfigPrettier,
   tsEslint.configs.recommended,
-  globalIgnores(['node_modules', '.git', 'dist']),
+  globalIgnores(['**/node_modules', '**/.git', '**/dist']),
   {
     name: 'Axiom / Root',
     files: ['**/*'],
