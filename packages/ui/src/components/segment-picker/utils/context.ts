@@ -3,7 +3,7 @@ import { Shape } from '@ui/components/button/types';
 import { Size } from '@ui/shared/types/size';
 
 type SegmentPickerContextType = {
-  selectedValue: string | null;
+  selectedValue: string | undefined;
   onSelect: (
     event: MouseEventHandler<HTMLButtonElement>,
     value: string,
@@ -12,5 +12,6 @@ type SegmentPickerContextType = {
   shape?: Shape;
 };
 
-export const SegmentPickerContext =
-  createContext<SegmentPickerContextType | null>(null);
+export const SegmentPickerContext = createContext<
+  SegmentPickerContextType | undefined
+>(undefined);

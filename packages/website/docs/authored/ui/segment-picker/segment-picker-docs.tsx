@@ -9,14 +9,26 @@ export function SegmentPickerDocs() {
       defaultValue: 'medium',
       unionValues: SIZES,
     },
+    shape: {
+      defaultValue: '',
+      unionValues: ['', 'circle'],
+    },
     children: {
       required: true,
-      unionValues: ['ReactElement<SegmentPickerItemProps>[]'],
+      type: 'ReactElement<SegmentPickerItemProps>[]',
     },
     onChange: {
-      unionValues: [
-        '(event: MouseEventHandler<HTMLButtonElement>, value: string) => void',
-      ],
+      type: '(event: MouseEventHandler<HTMLButtonElement>, value: string) => void',
+    },
+    value: {
+      unionValues: ['string', 'never'],
+      description:
+        'The currently selected value (controlled mode). Must not be used in controlled mode.',
+    },
+    defaultValue: {
+      unionValues: ['string', 'never'],
+      description:
+        'The initial selected value (uncontrolled mode). Must not be used in uncontrolled mode',
     },
   };
 

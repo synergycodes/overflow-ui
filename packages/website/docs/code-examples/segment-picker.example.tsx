@@ -1,6 +1,6 @@
 function Example() {
   return (
-    <div style={{ width: '500px' }}>
+    <div style={{ display: 'flex', justifyContent: 'center', width: '500px' }}>
       <SegmentPicker value="calendar">
         <SegmentPicker.Item value="calendar">
           <Calendar /> Calendar

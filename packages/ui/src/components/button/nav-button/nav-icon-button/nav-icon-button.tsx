@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 
 import borderRadiusStyles from '../../styles/border-radius.module.css';
+import navBorderRadiusStyles from '../styles/nav-button-border-radius.module.css';
 import iconSizeStyles from '../../styles/icon-size.module.css';
 import navIconSizeStyles from '../styles/nav-icon-size.module.css';
 import iconPaddingStyles from '../../styles/icon-padding.module.css';
@@ -28,6 +29,7 @@ export const NavIconButton = forwardRef<HTMLButtonElement, NavIconButtonProps>(
         iconSizeStyles[size],
         navIconSizeStyles[size],
         borderRadiusStyles[shape],
+        navBorderRadiusStyles[shape],
         { [navIconButtonStyles['transparent']]: transparent },
       )}
       {...props}
