@@ -31,7 +31,7 @@ export const NodeAsPortWrapper = memo(function NodeAsPortWrapper({
         '--ax-node-as-port-position':
           targetPortPosition === 'left'
             ? `translate(calc(-10% + ${offset.x}px), calc(-50% + ${offset.y}px))`
-            : `translate(calc(-100% + ${offset.x}px), calc(-10% + ${offset.y}px))`,
+            : `translate(calc(-50% + ${offset.x}px), calc(-10% + ${offset.y}px))`,
       }
     : null;
 
