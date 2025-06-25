@@ -37,10 +37,30 @@
   );
 }
 
-.container {
+.container,
+.label {
   position: relative;
   display: inline-flex;
   cursor: pointer;
+  height: fit-content;
+  align-items: center;
+}
+
+.label {
+  &.medium {
+    gap: calc(var(--ax-public-checkbox-size-medium) / 2);
+    font-size: var(--ax-public-checkbox-size-medium);
+  }
+
+  &.small {
+    gap: calc(var(--ax-public-checkbox-size-small) / 2);
+    font-size: var(--ax-public-checkbox-size-small);
+  }
+
+  &.extra-small {
+    gap: calc(var(--ax-public-checkbox-size-extra-small) / 2);
+    font-size: var(--ax-public-checkbox-size-extra-small);
+  }
 }
 
 .icon {

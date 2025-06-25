@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import styles from './checkbox.module.css';
 
-import type { InputHTMLAttributes } from 'react';
+import type { InputHTMLAttributes, ReactNode } from 'react';
 import { Check, Minus } from '@phosphor-icons/react';
 import type { SelectorSize } from '@ui/shared/types/selector-size';
 
@@ -18,6 +18,10 @@ type Props = {
    * Whether the checkbox is checked
    */
   checked?: boolean;
+  /**
+   * The label of the checkbox
+   */
+  label?: ReactNode;
 } & Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>;
 
 /**
@@ -28,6 +32,7 @@ export function Checkbox({
   className,
   indeterminate,
   checked,
+  label,
   onChange,
   ...props
 }: Props) {
@@ -36,22 +41,25 @@ export function Checkbox({
   }
 
   return (
-    <label className={styles['container']}>
-      <input
-        type="checkbox"
-        className={clsx(styles['checkbox'], styles[size], className)}
-        onChange={handleChange}
-        checked={checked}
-        ref={(input) => {
-          if (input) {
-            input.indeterminate = indeterminate ?? false;
-          }
-        }}
-        {...props}
-      />
-      <span className={clsx(styles['icon'], styles[size])}>
-        {indeterminate ? <Minus weight="bold" /> : <Check weight="bold" />}
-      </span>
+    <label className={clsx(styles['label'], styles[size])}>
+      <div className={styles['container']}>
+        <input
+          type="checkbox"
+          className={clsx(styles['checkbox'], styles[size], className)}
+          onChange={handleChange}
+          checked={checked}
+          ref={(input) => {
+            if (input) {
+              input.indeterminate = indeterminate ?? false;
+            }
+          }}
+          {...props}
+        />
+        <span className={clsx(styles['icon'], styles[size])}>
+          {indeterminate ? <Minus weight="bold" /> : <Check weight="bold" />}
+        </span>
+      </div>
+      {label}
     </label>
   );
 }

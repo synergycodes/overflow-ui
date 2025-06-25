@@ -844,6 +844,13 @@
             "name": "boolean"
           }
         },
+        "label": {
+          "description": "The label of the checkbox",
+          "required": false,
+          "tsType": {
+            "name": "ReactNode"
+          }
+        },
         "size": {
           "defaultValue": {
             "computed": false,
