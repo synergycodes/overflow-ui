@@ -1440,6 +1440,37 @@
             "name": "boolean"
           }
         },
+        "offset": {
+          "defaultValue": {
+            "computed": false,
+            "value": "{ x: 0, y: 0 }"
+          },
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "raw": "{\n  x?: number;\n  y?: number;\n}",
+            "signature": {
+              "properties": [
+                {
+                  "key": "x",
+                  "value": {
+                    "name": "number",
+                    "required": false
+                  }
+                },
+                {
+                  "key": "y",
+                  "value": {
+                    "name": "number",
+                    "required": false
+                  }
+                }
+              ]
+            },
+            "type": "object"
+          }
+        },
         "targetPortPosition": {
           "description": "",
           "required": true,

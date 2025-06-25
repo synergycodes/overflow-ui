@@ -8,10 +8,15 @@ type Position = 'left' | 'top' | 'right' | 'bottom';
 type Props = {
   isConnecting: boolean;
   targetPortPosition: Position;
+  offset?: {
+    x?: number;
+    y?: number;
+  };
 };
 
 export const NodeAsPortWrapper = memo(function NodeAsPortWrapper({
   isConnecting,
+  offset = { x: 0, y: 0 },
   targetPortPosition,
   children,
 }: PropsWithChildren<Props>) {
@@ -25,8 +30,8 @@ export const NodeAsPortWrapper = memo(function NodeAsPortWrapper({
         '--ax-node-as-port-height': `${ref.current?.offsetHeight}px`,
         '--ax-node-as-port-position':
           targetPortPosition === 'left'
-            ? `translate(-10%, -50%)`
-            : `translate(-50%, -10%)`,
+            ? `translate(calc(-10% + ${offset.x}px), calc(-50% + ${offset.y}px))`
+            : `translate(calc(-50% + ${offset.x}px), calc(-10% + ${offset.y}px))`,
       }
     : null;
 
