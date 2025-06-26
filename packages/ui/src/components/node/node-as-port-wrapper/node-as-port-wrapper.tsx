@@ -36,20 +36,14 @@ export const NodeAsPortWrapper = memo(function NodeAsPortWrapper({
     : null;
 
   const onMouseEnter = useCallback(() => {
-    console.log('onMouseEnter');
-
     if (isConnecting) {
       setIsConnectionTarget(true);
     }
   }, [isConnecting]);
 
   const onMouseLeave = useCallback(() => {
-    console.log('onMouseLeave');
-
     setIsConnectionTarget(false);
   }, []);
-
-  console.log('canApplyStyles', canApplyStyles);
 
   return (
     <div
