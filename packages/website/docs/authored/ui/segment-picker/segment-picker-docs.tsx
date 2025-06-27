@@ -12,6 +12,8 @@ export function SegmentPickerDocs() {
     shape: {
       defaultValue: '',
       unionValues: ['', 'circle'],
+      description:
+        'Controls the shape of the SegmentPicker and its items. Only supported when items contain icons only.',
     },
     children: {
       required: true,

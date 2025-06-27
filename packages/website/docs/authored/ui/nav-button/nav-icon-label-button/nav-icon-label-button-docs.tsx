@@ -20,7 +20,7 @@ export function NavIconLabelButtonDocs() {
         'components/button/styles/icon-size.module.css',
         'components/button/styles/icon-label-button-padding.module.css',
         'components/button/nav-button/styles/nav-button.module.css',
-        'components/button/nav-button/styles/nav-icon-size.module.css',
+        'components/button/nav-button/styles/nav-button-icon-size.module.css',
         'components/button/nav-button/styles/nav-button-border-radius.module.css',
         'components/button/nav-button/nav-icon-label-button/nav-button-gap.module.css',
         'components/button/nav-button/nav-icon-label-button/nav-icon-label-button-padding.module.css',
