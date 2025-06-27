@@ -8,6 +8,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 permissions:
   issues: write
@@ -15,8 +18,42 @@ permissions:
   pull-requests: write
 
 jobs:
+  check_for_pr:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    name: Check for PR
+    env:
+      ENABLE_NODE_MONOREPO_BUILD: true
+      NODE_VERSION: 22
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Install pnpm
+        run: corepack prepare pnpm@10.9.0 --activate
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build UI
+        run: pnpm ui build
+
+      - name: Build Website
+        run: pnpm website build
+
+      - name: Run lint, format, typecheck, file-lint
+        run: pnpm lint:fix && pnpm format && pnpm typecheck && pnpm file-lint
+
   build_and_deploy:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     name: Build and Deploy
     steps:
