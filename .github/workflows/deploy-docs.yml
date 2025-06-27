@@ -18,10 +18,10 @@ permissions:
   pull-requests: write
 
 jobs:
-  check_build:
+  check_for_pr:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
-    name: Build for PR
+    name: Check for PR
     env:
       ENABLE_NODE_MONOREPO_BUILD: true
       NODE_VERSION: 22
