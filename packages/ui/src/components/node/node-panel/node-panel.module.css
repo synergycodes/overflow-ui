@@ -9,13 +9,7 @@
 
   --ax-public-node-border-color: var(--ax-node-stroke-primary-default);
   --ax-public-node-background-color: var(--ax-node-bg-primary-default);
-  --ax-public-node-hover-color:
-    linear-gradient(
-      0deg,
-      var(--ax-node-bg-primary-hover) 0%,
-      var(--ax-node-bg-primary-hover) 100%
-    ),
-    var(--ax-public-node-background-color);
+  --ax-public-node-hover-background-color: var(--ax-node-bg-primary-default);
   --ax-public-node-border-hover-color: var(--ax-node-stroke-primary-hover);
 
   --ax-public-node-border-color-selected: var(--ax-node-stroke-primary-hover);
@@ -30,7 +24,7 @@
 
 @layer ui.component {
   .container:hover .inner-container {
-    background: var(--ax-public-node-hover-color);
+    background: var(--ax-public-node-hover-background-color);
     border-color: var(--ax-public-node-border-hover-color);
   }
 
