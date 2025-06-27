@@ -16,7 +16,7 @@
     background: var(--ax-public-list-box-background-color);
     box-shadow: var(--ax-public-list-box-box-shadow);
     z-index: 10000;
-    &:global(:not(.base--expanded)) {
+    &:global(:not(.base--open)) {
       display: none;
       transform: unset !important;
     }
