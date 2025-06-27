@@ -17,6 +17,9 @@
     box-shadow: var(--ax-public-list-box-box-shadow);
     z-index: 10000;
     &:global(:not(.base--open)) {
+      /* This is work-around to fix problems with site shifts after browser resizing caused by placing Menu's dropdown in fixed position during render.
+      * The .base--open class was used because the .popup class affects both Menu and Select, and both components share the same .base--open class
+      */
       display: none;
       transform: unset !important;
     }
