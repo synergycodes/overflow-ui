@@ -15,13 +15,12 @@ import { SegmentPickerItemProps, Item } from './item/segment-picker-item';
 import { getValidShape } from './utils/get-valid-shape';
 import { SegmentPickerContext } from './utils/context';
 
-type SegmentPickerProps = {
+type SegmentPickerPropsBase = {
   children: ReactElement<SegmentPickerItemProps, typeof Item>[];
-  value: string;
   size?: Size;
   /**
    * Controls the shape of the SegmentPicker and its items.
-   * (default) -Items stretch to fill the container equally.
+   * (default) - Items stretch to fill the container equally.
    * 'circle' - Items fit tightly around their content to maintain a circular shape.
    * Only supported when items contain icons only.
    */
@@ -33,6 +32,24 @@ type SegmentPickerProps = {
   ) => void;
 };
 
+type ControlledSegmentPickerProps = {
+  /** The currently selected value (controlled mode). */
+  value: string;
+  /** Must not be used in controlled mode. */
+  defaultValue?: never;
+} & SegmentPickerPropsBase;
+
+type UncontrolledSegmentPickerProps = {
+  /** The initial selected value (uncontrolled mode). */
+  defaultValue: string;
+  /** Must not be used in uncontrolled mode. */
+  value?: never;
+} & SegmentPickerPropsBase;
+
+type SegmentPickerProps =
+  | ControlledSegmentPickerProps
+  | UncontrolledSegmentPickerProps;
+
 type SegmentPickerComponent = ForwardRefExoticComponent<
   SegmentPickerProps & React.RefAttributes<HTMLDivElement>
 > & {
@@ -41,19 +58,32 @@ type SegmentPickerComponent = ForwardRefExoticComponent<
 
 export const SegmentPicker = forwardRef<HTMLDivElement, SegmentPickerProps>(
   (
-    { children, value, size = 'medium', shape = '', className, onChange },
+    {
+      children,
+      value,
+      defaultValue,
+      size = 'medium',
+      shape = '',
+      className,
+      onChange,
+    },
     ref,
   ) => {
     const validShape = getValidShape(shape, children);
-    const [selectedValue, setSelectedValue] = useState<string | null>(
-      value || null,
+    const isControlled = value !== undefined;
+    const [internalValue, setInternalValue] = useState<string | undefined>(
+      defaultValue,
     );
+
+    const selectedValue = isControlled ? value : internalValue;
 
     const handleSelect = (
       event: React.MouseEventHandler<HTMLButtonElement>,
       newValue: string,
     ) => {
-      setSelectedValue(newValue);
+      if (!isControlled) {
+        setInternalValue(newValue);
+      }
       onChange?.(event, newValue);
     };
 

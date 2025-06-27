@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import fontSizeStyles from '../../styles/font-size.module.css';
 import navFontSizeStyles from '../styles/nav-button-font-size.module.css';
 import iconSizeStyles from '../../styles/icon-size.module.css';
-import navIconSizeStyles from '../styles/nav-icon-size.module.css';
+import navButtonIconSizeStyles from '../styles/nav-button-icon-size.module.css';
 import paddingStyles from '../../styles/icon-label-button-padding.module.css';
 import navPaddingStyles from './nav-icon-label-button-padding.module.css';
 import gapStyles from '../../styles/gap.module.css';
@@ -31,7 +31,7 @@ export const NavIconLabelButton = forwardRef<
       fontSizeStyles[size],
       navFontSizeStyles[size],
       iconSizeStyles[size],
-      navIconSizeStyles[size],
+      navButtonIconSizeStyles[size],
       paddingStyles[size],
       navPaddingStyles[size],
       gapStyles[size],

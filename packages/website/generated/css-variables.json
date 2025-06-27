@@ -32,13 +32,7 @@
       "name": "--ax-public-button-inner-border-color"
     }
   ],
-  "components/button/nav-button/nav-icon-button/nav-icon-button.module.css": [
-    {
-      "comment": "",
-      "name": "--ax-public-button-nav-color-hover"
-    }
-  ],
-  "components/button/nav-button/nav-icon-button/nav-icon-padding.module.css": [
+  "components/button/nav-button/nav-icon-button/nav-button-icon-padding.module.css": [
     {
       "comment": "",
       "name": "--ax-public-button-icon-padding-xx-small"
@@ -46,6 +40,12 @@
     {
       "comment": "",
       "name": "--ax-public-button-icon-padding-xxx-small"
+    }
+  ],
+  "components/button/nav-button/nav-icon-button/nav-icon-button.module.css": [
+    {
+      "comment": "",
+      "name": "--ax-public-button-nav-color-hover"
     }
   ],
   "components/button/nav-button/nav-icon-label-button/nav-button-gap.module.css": [
@@ -89,6 +89,16 @@
     }
   ],
   "components/button/nav-button/styles/nav-button-font-size.module.css": [],
+  "components/button/nav-button/styles/nav-button-icon-size.module.css": [
+    {
+      "comment": "missing token",
+      "name": "--ax-public-icon-size-xx-small"
+    },
+    {
+      "comment": "missing token",
+      "name": "--ax-public-icon-size-xxx-small"
+    }
+  ],
   "components/button/nav-button/styles/nav-button.module.css": [
     {
       "comment": "",
@@ -105,16 +115,6 @@
     {
       "comment": "",
       "name": "--ax-public-button-nav-color-disabled"
-    }
-  ],
-  "components/button/nav-button/styles/nav-icon-size.module.css": [
-    {
-      "comment": "missing token",
-      "name": "--ax-public-icon-size-xx-small"
-    },
-    {
-      "comment": "missing token",
-      "name": "--ax-public-icon-size-xxx-small"
     }
   ],
   "components/button/regular-button/label-button/loader.module.css": [

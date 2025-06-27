@@ -24,9 +24,9 @@ export function NavIconButtonDocs() {
         'components/button/styles/icon-size.module.css',
         'components/button/styles/icon-padding.module.css',
         'components/button/nav-button/styles/nav-button.module.css',
-        'components/button/nav-button/styles/nav-icon-size.module.css',
+        'components/button/nav-button/styles/nav-button-icon-size.module.css',
         'components/button/nav-button/styles/nav-button-border-radius.module.css',
-        'components/button/nav-button/nav-icon-button/nav-icon-padding.module.css',
+        'components/button/nav-button/nav-icon-button/nav-button-icon-padding.module.css',
         'components/button/nav-button/nav-icon-button/nav-icon-button.module.css',
       ]}
       componentPath="components/button/nav-button/nav-icon-button/nav-icon-button.tsx"

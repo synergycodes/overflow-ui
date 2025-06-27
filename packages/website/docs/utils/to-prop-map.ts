@@ -4,8 +4,9 @@ import { PropMap } from '../../src/components/component-utils/props-list/props-l
 export type ComponentProp = {
   required?: boolean;
   defaultValue?: string;
-  type?: 'string' | 'boolean' | 'number' | 'ReactNode';
+  type?: string;
   unionValues?: readonly string[];
+  description?: string;
 };
 
 export function toPropMap(config: Record<string, ComponentProp>): PropMap {
@@ -23,12 +24,8 @@ function createProp({
   defaultValue,
   type = 'string',
   unionValues,
-}: {
-  required?: boolean;
-  defaultValue?: string;
-  type?: string;
-  unionValues?: readonly string[];
-}) {
+  description,
+}: ComponentProp) {
   const result: PropDescriptor = { tsType: { name: type } };
 
   if (unionValues && unionValues.length > 0) {
@@ -52,6 +49,8 @@ function createProp({
       value: `'${defaultValue}'`,
     };
   }
+
+  result.description = description;
 
   return result;
 }

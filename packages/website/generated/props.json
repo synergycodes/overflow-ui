@@ -1671,177 +1671,19 @@
       "displayName": "SegmentPicker",
       "methods": [],
       "props": {
-        "children": {
-          "description": "",
-          "required": true,
-          "tsType": {
-            "elements": [
-              {
-                "elements": [
-                  {
-                    "elements": [
-                      {
-                        "elements": [
-                          {
-                            "name": "signature",
-                            "raw": "{\n  tooltip?: string;\n  tooltipType?: TooltipVariant;\n}",
-                            "signature": {
-                              "properties": [
-                                {
-                                  "key": "tooltip",
-                                  "value": {
-                                    "name": "string",
-                                    "required": false
-                                  }
-                                },
-                                {
-                                  "key": "tooltipType",
-                                  "value": {
-                                    "elements": [
-                                      {
-                                        "name": "literal",
-                                        "value": "'default'"
-                                      },
-                                      {
-                                        "name": "literal",
-                                        "value": "'blue'"
-                                      }
-                                    ],
-                                    "name": "union",
-                                    "raw": "'default' | 'blue'",
-                                    "required": false
-                                  }
-                                }
-                              ]
-                            },
-                            "type": "object"
-                          },
-                          {
-                            "elements": [
-                              {
-                                "elements": [
-                                  {
-                                    "name": "HTMLButtonElement"
-                                  }
-                                ],
-                                "name": "ReactButtonHTMLAttributes",
-                                "raw": "React.ButtonHTMLAttributes<HTMLButtonElement>"
-                              },
-                              {
-                                "name": "HTMLButtonElement"
-                              }
-                            ],
-                            "name": "ReactDetailedHTMLProps",
-                            "raw": "React.DetailedHTMLProps<\n  React.ButtonHTMLAttributes<HTMLButtonElement>,\n  HTMLButtonElement\n>"
-                          }
-                        ],
-                        "name": "intersection",
-                        "raw": "{\n  tooltip?: string;\n  tooltipType?: TooltipVariant;\n} & React.DetailedHTMLProps<\n  React.ButtonHTMLAttributes<HTMLButtonElement>,\n  HTMLButtonElement\n>"
-                      },
-                      {
-                        "name": "signature",
-                        "raw": "{\n  value: string;\n}",
-                        "signature": {
-                          "properties": [
-                            {
-                              "key": "value",
-                              "value": {
-                                "name": "string",
-                                "required": true
-                              }
-                            }
-                          ]
-                        },
-                        "type": "object"
-                      },
-                      {
-                        "name": "unknown"
-                      }
-                    ],
-                    "name": "intersection",
-                    "raw": "BaseButtonProps & {\n  value: string;\n} & (\n    | Pick<NavLabelButtonProps, 'children'>\n    | Pick<NavIconButtonProps, 'children'>\n    | Pick<NavIconLabelButtonProps, 'children'>\n  )"
-                  },
-                  {
-                    "name": "Item"
-                  }
-                ],
-                "name": "ReactElement",
-                "raw": "ReactElement<SegmentPickerItemProps, typeof Item>"
-              }
-            ],
-            "name": "Array",
-            "raw": "ReactElement<SegmentPickerItemProps, typeof Item>[]"
-          }
-        },
-        "className": {
-          "description": "",
-          "required": false,
-          "tsType": {
-            "name": "string"
-          }
-        },
-        "onChange": {
-          "description": "",
-          "required": false,
-          "tsType": {
-            "name": "signature",
-            "raw": "(\n  event: MouseEventHandler<HTMLButtonElement>,\n  value: string,\n) => void",
-            "signature": {
-              "arguments": [
-                {
-                  "name": "event",
-                  "type": {
-                    "elements": [
-                      {
-                        "name": "HTMLButtonElement"
-                      }
-                    ],
-                    "name": "MouseEventHandler",
-                    "raw": "MouseEventHandler<HTMLButtonElement>"
-                  }
-                },
-                {
-                  "name": "value",
-                  "type": {
-                    "name": "string"
-                  }
-                }
-              ],
-              "return": {
-                "name": "void"
-              }
-            },
-            "type": "function"
-          }
-        },
         "shape": {
           "defaultValue": {
             "computed": false,
             "value": "''"
           },
-          "description": "Controls the shape of the SegmentPicker and its items.\n(default) -Items stretch to fill the container equally.\n'circle' - Items fit tightly around their content to maintain a circular shape.\nOnly supported when items contain icons only.",
-          "required": false,
-          "tsType": {
-            "name": "Shape"
-          }
+          "required": false
         },
         "size": {
           "defaultValue": {
             "computed": false,
             "value": "'medium'"
           },
-          "description": "",
-          "required": false,
-          "tsType": {
-            "name": "Size"
-          }
-        },
-        "value": {
-          "description": "",
-          "required": true,
-          "tsType": {
-            "name": "string"
-          }
+          "required": false
         }
       }
     }
