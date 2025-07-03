@@ -12,16 +12,18 @@ jobs:
       matrix:
         node-version: [22]
     permissions:
-      contents: read 
+      contents: read
       packages: write
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 2
-      
+
       - name: Install pnpm
         uses: pnpm/action-setup@v4
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
@@ -39,18 +41,28 @@ jobs:
           echo "old=$OLD" >> $GITHUB_OUTPUT
           echo "new=$NEW" >> $GITHUB_OUTPUT
 
-      - name: Build UI package
-        if: steps.version-check.outputs.new != steps.version-check.outputs.old
+      - name: Conditionally build & publish
         run: |
-          pnpm ui build
+          echo "Old version: ${{ steps.version-check.outputs.old }}"
+          echo "New version: ${{ steps.version-check.outputs.new }}"
+          
+          if [ "${{ steps.version-check.outputs.new }}" != "${{ steps.version-check.outputs.old }}" ]; then
+            echo "Versions differ. Proceeding with build and publish."
 
-      - name: Publish Beta & Tag Latest
-        if: steps.version-check.outputs.new != steps.version-check.outputs.old
+            pnpm ui build
+
+            echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+
+            cd packages/ui
+            echo "Publishing @synergycodes/axiom@${{ steps.version-check.outputs.new }} with 'beta' tag…"
+            pnpm publish --access public --tag beta
+
+            echo "Adding 'latest' dist-tag to @synergycodes/axiom@${{ steps.version-check.outputs.new }}…"
+            pnpm dist-tag add @synergycodes/axiom@${{ steps.version-check.outputs.new }} latest
+
+            rm -f ~/.npmrc
+          else
+            echo "Version unchanged. Skipping build and publish."
+          fi
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          cd packages/ui
-          echo "Publishing @synergycodes/axiom@${{ steps.version-check.outputs.new }} with 'beta' tag…"
-          pnpm publish --access public --tag beta
-          echo "Adding 'latest' dist-tag to @synergycodes/axiom@${{ steps.version-check.outputs.new }}…"
-          pnpm dist-tag add @synergycodes/axiom@${{ steps.version-check.outputs.new }} latest
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
