@@ -1,0 +1,58 @@
+name: Publish @synergycodes/axiom package to NPM
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [22]
+    permissions:
+      contents: read 
+      packages: write
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Read versions
+        id: version-check
+        run: |
+          apt-get update
+          apt-get install -y git jq
+          OLD=$(git show HEAD~1:packages/ui/package.json | jq -r .version)
+          NEW=$(jq -r .version packages/ui/package.json)
+          echo "old=$OLD" >> $GITHUB_OUTPUT
+          echo "new=$NEW" >> $GITHUB_OUTPUT
+
+      - name: Build UI package
+        if: steps.version-check.outputs.new != steps.version-check.outputs.old
+        run: |
+          pnpm ui build
+
+      - name: Publish Beta & Tag Latest
+        if: steps.version-check.outputs.new != steps.version-check.outputs.old
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          cd packages/ui
+          echo "Publishing @synergycodes/axiom@${{ steps.version-check.outputs.new }} with 'beta' tag…"
+          pnpm publish --access public --tag beta
+          echo "Adding 'latest' dist-tag to @synergycodes/axiom@${{ steps.version-check.outputs.new }}…"
+          pnpm dist-tag add @synergycodes/axiom@${{ steps.version-check.outputs.new }} latest
