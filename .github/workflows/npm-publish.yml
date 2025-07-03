@@ -34,8 +34,6 @@ jobs:
       - name: Read versions
         id: version-check
         run: |
-          apt-get update
-          apt-get install -y git jq
           OLD=$(git show HEAD~1:packages/ui/package.json | jq -r .version)
           NEW=$(jq -r .version packages/ui/package.json)
           echo "old=$OLD" >> $GITHUB_OUTPUT
