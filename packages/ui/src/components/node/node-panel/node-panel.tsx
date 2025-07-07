@@ -8,6 +8,8 @@ import {
   PropsWithChildren,
   useMemo,
   memo,
+  ComponentType,
+  ReactElement,
 } from 'react';
 
 type Props = {
@@ -71,43 +73,68 @@ const Content = memo(function Content({
 const Handles = memo(function Handles({
   children,
   isVisible = true,
-}: PropsWithChildren<{ isVisible?: boolean }>) {
+}: PropsWithChildren<{
+  isVisible?: boolean;
+  alignment?: 'center' | 'header';
+}>) {
   return <>{isVisible && children}</>;
 });
 
 const Root = memo(function Root({ selected, children, className }: Props) {
-  const { header, content, handles } = useMemo(() => {
+  const {
+    headerComponent,
+    contentComponent,
+    handlesComponent,
+    handlesAlignment,
+    hasHandles,
+  } = useMemo(() => {
     const childrenArray = Children.toArray(children);
 
-    const header = findChild(childrenArray, NodePanel.Header);
-    const content = findChild(childrenArray, NodePanel.Content);
-    const handles = findChild(childrenArray, NodePanel.Handles);
+    const headerComponent = findChild(childrenArray, NodePanel.Header);
+    const contentComponent = findChild(childrenArray, NodePanel.Content);
+    const handlesComponent = findChild(childrenArray, NodePanel.Handles);
 
-    validateChildren(childrenArray, header, content, handles);
+    validateChildren(
+      childrenArray,
+      headerComponent,
+      contentComponent,
+      handlesComponent,
+    );
+
+    const hasHandles = !!handlesComponent;
+    const handlesAlignment = handlesComponent?.props.alignment || 'center';
 
     return {
-      header,
-      content,
-      handles,
+      headerComponent,
+      contentComponent,
+      handlesComponent,
+      handlesAlignment,
+      hasHandles,
     };
   }, [children]);
 
   return (
     <div
       className={clsx(
-        handleStyles['handle-container'],
-        nodeStyles['container'],
+        nodeStyles['node-panel-wrapper'],
+        handleStyles['handle-wrapper'],
         className,
       )}
     >
       <div
-        className={clsx(nodeStyles['inner-container'], {
+        className={clsx(nodeStyles['container'], {
           [nodeStyles['selected']]: selected,
         })}
       >
-        {header}
-        {content}
-        {handles}
+        <div
+          className={clsx(nodeStyles['header-wrapper'], {
+            [handleStyles[handlesAlignment]]: hasHandles,
+          })}
+        >
+          {headerComponent}
+          {handlesComponent}
+        </div>
+        {contentComponent}
       </div>
     </div>
   );
@@ -120,15 +147,13 @@ export const NodePanel = {
   Handles,
 };
 
-function findChild(
+function findChild<T>(
   childrenArray: ReturnType<typeof Children.toArray>,
-  element:
-    | typeof NodePanel.Header
-    | typeof NodePanel.Content
-    | typeof NodePanel.Handles,
-) {
+  element: ComponentType<T>,
+): ReactElement<T> | undefined {
   return childrenArray.find(
-    (child) => isValidElement(child) && child.type === element,
+    (child): child is ReactElement<T> =>
+      isValidElement(child) && child.type === element,
   );
 }
 
