@@ -62,11 +62,14 @@ const Header = memo(function Header({
 const Content = memo(function Content({
   children,
   className,
-}: PropsWithChildren<{ className?: string }>) {
+  isVisible = true,
+}: PropsWithChildren<{ className?: string; isVisible?: boolean }>) {
   return (
-    <div className={clsx(nodeStyles['content-container'], className)}>
-      {children}
-    </div>
+    isVisible && (
+      <div className={clsx(nodeStyles['content-container'], className)}>
+        {children}
+      </div>
+    )
   );
 });
 

@@ -60,6 +60,7 @@
     .header-container {
       display: flex;
       gap: 0.5rem;
+      align-items: center;
     }
 
     .header-container,

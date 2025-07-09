@@ -858,6 +858,102 @@
       }
     }
   ],
+  "../ui/src/components/collapsible/collapsible.tsx": [
+    {
+      "description": "",
+      "displayName": "Collapsible",
+      "methods": [
+        {
+          "docblock": null,
+          "modifiers": [
+            "static"
+          ],
+          "name": "Button",
+          "params": [],
+          "returns": null
+        },
+        {
+          "docblock": null,
+          "modifiers": [
+            "static"
+          ],
+          "name": "Content",
+          "params": [
+            {
+              "name": "{\n  children,\n}: {\n  children: ReactNode;\n}",
+              "optional": false,
+              "type": {
+                "name": "signature",
+                "raw": "{\n  children: ReactNode;\n}",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "children",
+                      "value": {
+                        "name": "ReactNode",
+                        "required": true
+                      }
+                    }
+                  ]
+                },
+                "type": "object"
+              }
+            }
+          ],
+          "returns": null
+        }
+      ],
+      "props": {
+        "children": {
+          "description": "",
+          "required": true,
+          "tsType": {
+            "name": "ReactNode"
+          }
+        },
+        "defaultExpanded": {
+          "defaultValue": {
+            "computed": false,
+            "value": "false"
+          },
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          }
+        },
+        "isExpanded": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          }
+        },
+        "onToggle": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "raw": "(expanded: boolean) => void",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "expanded",
+                  "type": {
+                    "name": "boolean"
+                  }
+                }
+              ],
+              "return": {
+                "name": "void"
+              }
+            },
+            "type": "function"
+          }
+        }
+      }
+    }
+  ],
   "../ui/src/components/date-picker/date-picker.tsx": [
     {
       "description": "Component for selecting a date with customizable format and placeholder",

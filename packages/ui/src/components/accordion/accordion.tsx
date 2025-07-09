@@ -1,10 +1,10 @@
 import clsx from 'clsx';
 import styles from './accordion.module.css';
+
 import { forwardRef, useState } from 'react';
 import { Separator } from '../separator/separator';
 import { WithIcon } from '../../shared/types/with-icon';
-import { CaretUp } from '@phosphor-icons/react';
-import { NavButton } from '../button/nav-button/nav-button';
+import { Collapsible } from '../collapsible/collapsible';
 
 export type AccordionProps = React.HTMLAttributes<HTMLDivElement> &
   WithIcon & {
@@ -65,32 +65,32 @@ export const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
     }
 
     return (
-      <div
-        ref={ref}
-        className={clsx(styles['accordion'], className)}
-        {...props}
+      <Collapsible
+        defaultExpanded={defaultOpen}
+        isExpanded={isExpanded}
+        onToggle={onExpandCollapse}
       >
         <div
-          className={clsx(styles['header'], {
-            [styles['expanded']]: isExpanded,
-          })}
-          onClick={onExpandCollapse}
-          aria-expanded={isOpen}
+          ref={ref}
+          className={clsx(styles['accordion'], className)}
+          {...props}
         >
-          <span className="ax-public-h10">{label}</span>
-          <NavButton className={styles['header-button']}>
-            <CaretUp />
-          </NavButton>
+          <div
+            className={clsx(styles['header'], {
+              [styles['expanded']]: isExpanded,
+            })}
+            onClick={onExpandCollapse}
+            aria-expanded={isOpen}
+          >
+            <span className="ax-public-h10">{label}</span>
+            <Collapsible.Button />
+          </div>
+          <Collapsible.Content>
+            <div className={styles['inner-content']}>{children}</div>
+          </Collapsible.Content>
+          <Separator />
         </div>
-        <div
-          className={clsx(styles['inner-container'], {
-            [styles['expanded']]: isExpanded,
-          })}
-        >
-          <div className={styles['content']}>{children}</div>
-        </div>
-        <Separator />
-      </div>
+      </Collapsible>
     );
   },
 );
