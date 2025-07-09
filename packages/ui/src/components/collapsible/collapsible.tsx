@@ -22,12 +22,15 @@ const CollapsibleContext = createContext<CollapsibleContextProps | undefined>(
   undefined,
 );
 
-function useCollapsibleContext(component: typeof Collapsible) {
+function useCollapsibleContext() {
   const context = useContext(CollapsibleContext);
-  if (!context) {
-    throw new Error(`<${component}> must be used within <Collapsible>`);
+  if (context) {
+    return context;
   }
-  return context;
+
+  console.error(
+    '<Collapsible.Button> and <Collapsible.Content> must be used within <Collapsible>',
+  );
 }
 
 type CollapsibleProps = {
@@ -64,14 +67,14 @@ export function Collapsible({
 }
 
 Collapsible.Button = function CollapsibleButton() {
-  const { isExpanded, toggle } = useCollapsibleContext(this);
+  const context = useCollapsibleContext();
 
   return (
     <NavButton
       className={clsx(styles['expand-button'], {
-        [styles['expanded']]: isExpanded,
+        [styles['expanded']]: context?.isExpanded,
       })}
-      onClick={toggle}
+      onClick={context?.toggle}
     >
       <CaretUp />
     </NavButton>
@@ -84,15 +87,15 @@ Collapsible.Content = function CollapsibleContent({
   children: ReactNode;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const { isExpanded } = useCollapsibleContext(this);
+  const context = useCollapsibleContext();
 
-  useOverflowDuringTransition(ref, isExpanded);
+  useOverflowDuringTransition(ref, context?.isExpanded || false);
 
   return (
     <div
       ref={ref}
       className={clsx(styles['content-wrapper'], {
-        [styles['expanded']]: isExpanded,
+        [styles['expanded']]: context?.isExpanded,
       })}
     >
       <div className={styles['content']}> {children}</div>

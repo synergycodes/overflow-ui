@@ -171,7 +171,7 @@ function validateChildren(
   const totalChildren = childrenArray.length;
 
   if (totalChildren > totalValidChildren) {
-    console.warn(
+    console.error(
       `NodePanel.Root: Unknown children detected. Only NodePanel.Header, NodePanel.Content, and NodePanel.Handles are allowed. ` +
         `Each of these components can be used 0 or 1 time only.`,
     );
