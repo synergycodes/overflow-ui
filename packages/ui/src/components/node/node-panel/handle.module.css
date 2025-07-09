@@ -11,7 +11,19 @@
   --ax-public-node-port-border-color-hover: var(--ax-node-port-stroke-active);
 }
 
-.handle-container {
+.handle-wrapper {
+  & .header {
+    position: relative;
+
+    :global(.react-flow__handle.react-flow__handle-right) {
+      right: calc(-1 * var(--ax-public-node-padding));
+    }
+
+    :global(.react-flow__handle.react-flow__handle-left) {
+      left: calc(-1 * var(--ax-public-node-padding));
+    }
+  }
+
   :global(.react-flow__handle) {
     box-sizing: content-box;
     width: var(--ax-public-node-port-size);

@@ -6,14 +6,14 @@ import { TooltipTrigger } from './tooltip-trigger';
 type ContextType = ReturnType<typeof useTooltip> | null;
 const TooltipContext = createContext<ContextType>(null);
 
-export function useTooltipContext(): ContextType {
+export function useTooltipContext(): ContextType | undefined {
   const context = useContext(TooltipContext);
 
-  if (context == null) {
-    throw new Error('Tooltip components must be wrapped in <Tooltip />');
+  if (context) {
+    return context;
   }
 
-  return context;
+  console.error('Tooltip components must be wrapped in <Tooltip />');
 }
 
 type Props = {

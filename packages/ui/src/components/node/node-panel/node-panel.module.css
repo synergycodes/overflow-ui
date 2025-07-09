@@ -23,12 +23,12 @@
 }
 
 @layer ui.component {
-  .container:hover .inner-container {
+  .node-panel-wrapper:hover .container {
     background: var(--ax-public-node-hover-background-color);
     border-color: var(--ax-public-node-border-hover-color);
   }
 
-  .inner-container {
+  .container {
     display: flex;
     width: var(--ax-public-node-width);
     height: var(--ax-public-node-height);
@@ -53,9 +53,14 @@
         box-shadow var(--wb-transition);
     }
 
+    .header-wrapper {
+      width: 100%;
+    }
+
     .header-container {
       display: flex;
       gap: 0.5rem;
+      align-items: center;
     }
 
     .header-container,

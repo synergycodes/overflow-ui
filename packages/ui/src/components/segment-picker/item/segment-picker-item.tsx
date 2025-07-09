@@ -39,7 +39,8 @@ export function Item({
   const context = useContext(SegmentPickerContext);
 
   if (!context) {
-    throw new Error('SegmentPicker.Item must be used within a SegmentPicker');
+    console.error('SegmentPicker.Item must be used within a SegmentPicker');
+    return null;
   }
 
   const { selectedValue, onSelect, shape, ...other } = context;

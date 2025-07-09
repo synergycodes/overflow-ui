@@ -51,6 +51,8 @@ export * from './components/status/status';
 
 export * from './components/segment-picker/segment-picker';
 
+export * from './components/collapsible/collapsible';
+
 // Types
 export * from './components/button/regular-button/types';
 export * from './components/date-picker/types';

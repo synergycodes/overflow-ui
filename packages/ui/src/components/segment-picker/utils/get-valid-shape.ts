@@ -16,7 +16,7 @@ export function getValidShape(
   );
 
   if (!everyItemHasOnlyIcon) {
-    console.warn(
+    console.error(
       '[SegmentPicker] The "circle" shape can only be used when all SegmentPicker.Item components contain icon-only children.',
     );
     return '';
