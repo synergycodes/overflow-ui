@@ -55,7 +55,7 @@ jobs:
 
             cd packages/ui
             echo "Publishing @synergycodes/axiom@${{ steps.version-check.outputs.new }} with 'beta' tag…"
-            pnpm publish --access public --tag beta
+            pnpm publish --access public --tag beta --no-git-checks
 
             echo "Adding 'latest' dist-tag to @synergycodes/axiom@${{ steps.version-check.outputs.new }}…"
             pnpm dist-tag add @synergycodes/axiom@${{ steps.version-check.outputs.new }} latest
