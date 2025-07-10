@@ -42,7 +42,23 @@ jobs:
       - name: Build Documentation
         run: pnpm website build
 
+      - name: Check if version changed
+        id: version-check
+        run: |
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
+          PUBLISHED_VERSION=$(npm view @axiomhq/axiom-ui-components version 2>/dev/null || echo "0.0.0")
+          echo "current-version=$CURRENT_VERSION" >> $GITHUB_OUTPUT
+          echo "published-version=$PUBLISHED_VERSION" >> $GITHUB_OUTPUT
+          if [ "$CURRENT_VERSION" != "$PUBLISHED_VERSION" ]; then
+            echo "version-changed=true" >> $GITHUB_OUTPUT
+            echo "Version changed from $PUBLISHED_VERSION to $CURRENT_VERSION"
+          else
+            echo "version-changed=false" >> $GITHUB_OUTPUT
+            echo "Version unchanged: $CURRENT_VERSION"
+          fi
+
       - name: Publish NPM Package
+        if: steps.version-check.outputs.version-changed == 'true'
         run: pnpm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -57,6 +73,7 @@ jobs:
           app_build_command: 'pnpm website build'
           action: 'upload'
           skip_api_build: true
+          deployment_environment: 'release'
         env:
           CUSTOM_BUILD_COMMAND: corepack enable && corepack prepare pnpm@10.9.0 --activate && pnpm install --frozen-lockfile && pnpm ui build && pnpm website build
           ENABLE_NODE_MONOREPO_BUILD: true
