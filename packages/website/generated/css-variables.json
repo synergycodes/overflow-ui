@@ -500,7 +500,12 @@
       "name": "--ax-public-checkbox-size-small"
     }
   ],
-  "components/collapsible/collapsible.module.css": [],
+  "components/collapsible/collapsible.module.css": [
+    {
+      "comment": "",
+      "name": "--ax-public-collapsible-transition-duration"
+    }
+  ],
   "components/date-picker/data-picker-mantine.css": [
     {
       "comment": "",
