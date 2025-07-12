@@ -16,11 +16,15 @@
     position: relative;
 
     :global(.react-flow__handle.react-flow__handle-right) {
-      right: calc(-1 * var(--ax-public-node-padding));
+      right: calc(
+        -1 * (var(--ax-public-node-padding) + var(--ax-public-node-border-size))
+      );
     }
 
     :global(.react-flow__handle.react-flow__handle-left) {
-      left: calc(-1 * var(--ax-public-node-padding));
+      left: calc(
+        -1 * (var(--ax-public-node-padding) + var(--ax-public-node-border-size))
+      );
     }
   }
 
