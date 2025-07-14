@@ -1,0 +1,51 @@
+name: Validate PR
+
+env:
+  APP_LOCATION: ''
+  OUTPUT_LOCATION: 'packages/website/build'
+
+on:
+  pull_request:
+    branches: [main, 'release/*']
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    name: Validate PR
+    env:
+      ENABLE_NODE_MONOREPO_BUILD: true
+      NODE_VERSION: 22
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Enable Corepack
+        run: npm i -g corepack@latest
+
+      - name: Install pnpm
+        run: corepack prepare
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build UI Package
+        run: pnpm ui build
+
+      - name: Build Documentation
+        run: pnpm website build
+
+      - name: Run Quality Checks
+        run: |
+          pnpm lint:fix
+          pnpm format
+          pnpm typecheck
+          pnpm file-lint
