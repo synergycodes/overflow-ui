@@ -33,6 +33,6 @@ jobs:
           skip_api_build: true
           deployment_environment: 'dev'
         env:
-          CUSTOM_BUILD_COMMAND: corepack enable && corepack prepare pnpm@10.9.0 --activate && pnpm install --frozen-lockfile && pnpm ui build && pnpm website build
+          CUSTOM_BUILD_COMMAND: npm i -g corepack@latest && corepack prepare && pnpm install --frozen-lockfile && pnpm ui build && pnpm website build
           ENABLE_NODE_MONOREPO_BUILD: true
           NODE_VERSION: 22

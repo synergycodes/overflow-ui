@@ -29,10 +29,10 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
 
       - name: Enable Corepack
-        run: corepack enable
+        run: npm i -g corepack@latest
 
       - name: Install pnpm
-        run: corepack prepare pnpm@10.9.0 --activate
+        run: corepack prepare
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
