@@ -67,7 +67,7 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
         open={open}
         onClose={onClose}
         slots={{
-          backdrop: (props) => <Backdrop {...props} onClose={onClose} />,
+          backdrop: Backdrop,
         }}
       >
         <Fade in={open}>
@@ -112,23 +112,26 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
 /**
  * Backdrop component for the modal that dims the background
  */
-const Backdrop = forwardRef<
-  HTMLDivElement,
-  { open?: boolean; className: string; onClose?: () => void }
->((props, ref) => {
-  const { open, className, onClose } = props;
+const Backdrop = forwardRef<HTMLDivElement, BackdropProps>((props, ref) => {
+  const { open, className } = props;
 
   return (
     <Fade in={open}>
-      <div className={clsx(styles['backdrop'], className)} ref={ref}>
-        {onClose && (
-          <button
-            onClick={onClose}
-            className={styles['backdrop-close']}
-            type="button"
-          />
+      <div
+        {...props}
+        ref={ref}
+        className={clsx(
+          { 'base-Backdrop-open': open },
+          styles['backdrop'],
+          className,
         )}
-      </div>
+      />
     </Fade>
   );
 });
+
+type BackdropProps = {
+  open?: boolean;
+  className: string;
+  onClose?: () => void;
+};
