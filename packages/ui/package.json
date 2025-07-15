@@ -1,7 +1,7 @@
 {
   "name": "@synergycodes/axiom",
   "type": "module",
-  "version": "1.0.0-beta.20",
+  "version": "1.0.0-beta.21",
   "description": "A React library for creating node-based UIs and diagram-driven applications. Perfect for React Flow users, providing ready-to-use node templates and components that work seamlessly with React Flow's ecosystem.",
   "keywords": [
     "react",
