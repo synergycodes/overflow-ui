@@ -889,6 +889,10 @@
     {
       "comment": "",
       "name": "--ax-public-node-title-subtitle"
+    },
+    {
+      "comment": "missing token",
+      "name": "--ax-public-node-title-subtitle-line-clamp"
     }
   ],
   "components/node/node-icon/node-icon.module.css": [
