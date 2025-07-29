@@ -1,6 +1,8 @@
 :root {
   --ax-public-node-title-color: var(--ax-txt-primary-default);
   --ax-public-node-title-subtitle: var(--ax-txt-secondary-default);
+
+  --ax-public-node-title-subtitle-line-clamp: 10 /* missing token */;
 }
 
 .container {
@@ -21,5 +23,10 @@
 
   .subtitle {
     color: var(--ax-public-node-title-subtitle);
+    display: -webkit-box;
+    -webkit-line-clamp: var(--ax-public-node-title-subtitle-line-clamp);
+    line-clamp: var(--ax-public-node-title-subtitle-line-clamp);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }

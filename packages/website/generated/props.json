@@ -1,7 +1,7 @@
 {
   "../ui/src/components/accordion/accordion.tsx": [
     {
-      "description": "An interactive UI component that lets users toggle the visibility of content.\nThe content section can be expanded to reveal details and collapsed to hide them,\nkeeping information organized and saving space. Commonly used in FAQs, settings panels,\nand documentation to present layered content efficiently.",
+      "description": "An interactive UI component that lets users toggle the visibility of content.\r\nThe content section can be expanded to reveal details and collapsed to hide them,\r\nkeeping information organized and saving space. Commonly used in FAQs, settings panels,\r\nand documentation to present layered content efficiently.",
       "displayName": "Accordion",
       "methods": [],
       "props": {
@@ -338,7 +338,7 @@
               }
             ],
             "name": "union",
-            "raw": "| [IconNode, string]\n| [string, IconNode]\n| [IconNode, string, IconNode]"
+            "raw": "| [IconNode, string]\r\n| [string, IconNode]\r\n| [IconNode, string, IconNode]"
           }
         },
         "isSelected": {
@@ -546,7 +546,7 @@
               }
             ],
             "name": "Extract",
-            "raw": "Extract<\n  Size,\n  'extra-small' | 'small' | 'medium' | 'large' | 'extra-large'\n>"
+            "raw": "Extract<\r\n  Size,\r\n  'extra-small' | 'small' | 'medium' | 'large' | 'extra-large'\r\n>"
           }
         },
         "tooltip": {
@@ -641,7 +641,7 @@
               }
             ],
             "name": "union",
-            "raw": "| [IconNode, string]\n| [string, IconNode]\n| [IconNode, string, IconNode]"
+            "raw": "| [IconNode, string]\r\n| [string, IconNode]\r\n| [IconNode, string, IconNode]"
           }
         },
         "size": {
@@ -685,7 +685,7 @@
               }
             ],
             "name": "Extract",
-            "raw": "Extract<\n  Size,\n  'extra-small' | 'small' | 'medium' | 'large' | 'extra-large'\n>"
+            "raw": "Extract<\r\n  Size,\r\n  'extra-small' | 'small' | 'medium' | 'large' | 'extra-large'\r\n>"
           }
         },
         "tooltip": {
@@ -785,7 +785,7 @@
               }
             ],
             "name": "Extract",
-            "raw": "Extract<\n  Size,\n  'extra-small' | 'small' | 'medium' | 'large' | 'extra-large'\n>"
+            "raw": "Extract<\r\n  Size,\r\n  'extra-small' | 'small' | 'medium' | 'large' | 'extra-large'\r\n>"
           }
         },
         "tooltip": {
@@ -880,11 +880,11 @@
           "name": "Content",
           "params": [
             {
-              "name": "{\n  children,\n}: {\n  children: ReactNode;\n}",
+              "name": "{\r\n  children,\r\n}: {\r\n  children: ReactNode;\r\n}",
               "optional": false,
               "type": {
                 "name": "signature",
-                "raw": "{\n  children: ReactNode;\n}",
+                "raw": "{\r\n  children: ReactNode;\r\n}",
                 "signature": {
                   "properties": [
                     {
@@ -1118,7 +1118,7 @@
             "computed": false,
             "value": "'text'"
           },
-          "description": "Determines the layout style for the EdgeLabel based on its content:\n\ntext: Simple text label.\nicon: Single icon without additional content.\ncompound: Mixed content like icons + text, multiple icons, etc.",
+          "description": "Determines the layout style for the EdgeLabel based on its content:\r\n\r\ntext: Simple text label.\r\nicon: Single icon without additional content.\r\ncompound: Mixed content like icons + text, multiple icons, etc.",
           "required": false,
           "tsType": {
             "elements": [
@@ -1257,14 +1257,14 @@
       "methods": [],
       "props": {
         "children": {
-          "description": "The trigger element that will open the menu when clicked.\nThis element will be wrapped in a button with appropriate ARIA attributes.",
+          "description": "The trigger element that will open the menu when clicked.\r\nThis element will be wrapped in a button with appropriate ARIA attributes.",
           "required": false,
           "tsType": {
             "name": "ReactElement"
           }
         },
         "items": {
-          "description": "Array of menu items to be rendered in the menu.\nEach item can be either a regular menu item or a separator.",
+          "description": "Array of menu items to be rendered in the menu.\r\nEach item can be either a regular menu item or a separator.",
           "required": true,
           "tsType": {
             "elements": [
@@ -1332,7 +1332,7 @@
           "required": false,
           "tsType": {
             "name": "signature",
-            "raw": "(\n  event: MouseEvent | KeyboardEvent | FocusEvent | null,\n  open: boolean,\n) => void",
+            "raw": "(\r\n  event: MouseEvent | KeyboardEvent | FocusEvent | null,\r\n  open: boolean,\r\n) => void",
             "signature": {
               "arguments": [
                 {
@@ -1371,7 +1371,7 @@
           }
         },
         "open": {
-          "description": "Controls whether the menu is open or closed.\nWhen omitted, the menu's open state will be managed internally\nand toggled by clicking on the `children` trigger element.",
+          "description": "Controls whether the menu is open or closed.\r\nWhen omitted, the menu's open state will be managed internally\r\nand toggled by clicking on the `children` trigger element.",
           "required": false,
           "tsType": {
             "elements": [
@@ -1391,7 +1391,7 @@
             "computed": false,
             "value": "'bottom-end'"
           },
-          "description": "The preferred placement of the menu relative to its trigger element.\nUses Floating UI placement options.\n@default 'bottom-end'",
+          "description": "The preferred placement of the menu relative to its trigger element.\r\nUses Floating UI placement options.\r\n@default 'bottom-end'",
           "required": false,
           "tsType": {
             "elements": [
@@ -1411,7 +1411,7 @@
             "computed": false,
             "value": "'medium'"
           },
-          "description": "Size variant for the menu items.\n@default 'medium'",
+          "description": "Size variant for the menu items.\r\n@default 'medium'",
           "required": false,
           "tsType": {
             "name": "ItemSize"
@@ -1545,7 +1545,7 @@
           "required": false,
           "tsType": {
             "name": "signature",
-            "raw": "{\n  x?: number;\n  y?: number;\n}",
+            "raw": "{\r\n  x?: number;\r\n  y?: number;\r\n}",
             "signature": {
               "properties": [
                 {
@@ -1729,7 +1729,7 @@
   ],
   "../ui/src/components/segment-picker/item/segment-picker-item.tsx": [
     {
-      "description": "A single item in the SegmentPicker, rendered as a NavButton under the hood.\n\nAutomatically receives size and shape from SegmentPicker context.\nMust be used only within a SegmentPicker component.\n\nDetermines which NavButton variant to render based on its children\n(label only, icon only, or icon + label).",
+      "description": "A single item in the SegmentPicker, rendered as a NavButton under the hood.\r\n\r\nAutomatically receives size and shape from SegmentPicker context.\r\nMust be used only within a SegmentPicker component.\r\n\r\nDetermines which NavButton variant to render based on its children\r\n(label only, icon only, or icon + label).",
       "displayName": "Item",
       "methods": [],
       "props": {
@@ -2726,7 +2726,7 @@
           }
         },
         "onBlur": {
-          "description": "Function called when the input loses focus.\nThe event parameter may be undefined.",
+          "description": "Function called when the input loses focus.\r\nThe event parameter may be undefined.",
           "required": false,
           "tsType": {
             "name": "signature",
