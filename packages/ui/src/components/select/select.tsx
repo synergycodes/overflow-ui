@@ -35,6 +35,18 @@ export type SelectBaseProps = UseSelectParameters<string | number | null> & {
    * Whether the select has an error
    */
   error?: boolean;
+  /**
+   * Optional class name for the container element
+   */
+  classNameContainer?: string;
+  /**
+   * Optional class name for the select value
+   */
+  classNameValue?: string;
+  /**
+   * Optional class name for the separator inside
+   */
+  classNameSeparator?: string;
 };
 
 /**
@@ -46,6 +58,9 @@ export function Select({
   items,
   placeholder,
   error = false,
+  classNameContainer,
+  classNameValue,
+  classNameSeparator,
   ...props
 }: SelectBaseProps) {
   const slotProps = {
@@ -67,11 +82,12 @@ export function Select({
   };
 
   return (
-    <div className={style['container']}>
+    <div className={clsx(style['container'], classNameContainer)}>
       <SelectBase
         className={className}
         renderValue={(option) => (
           <SelectValue
+            className={classNameValue}
             selectedOptionLabel={option}
             items={items}
             placeholder={placeholder}
@@ -83,7 +99,7 @@ export function Select({
       >
         {items.map((item, index) =>
           item.type === 'separator' ? (
-            <Separator key={index} />
+            <Separator key={index} className={classNameSeparator} />
           ) : (
             <SelectOption key={item.value} {...item} size={size} />
           ),

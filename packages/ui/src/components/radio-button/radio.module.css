@@ -16,7 +16,7 @@
   --ax-public-radio-border-radius: var(--ax-token-radius-radiobutton);
 }
 
-.wrapper {
+.container {
   position: relative;
   display: inline-flex;
   cursor: pointer;

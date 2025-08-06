@@ -5,4 +5,5 @@ export type MenuItemProps = ListItem & {
   destructive?: boolean;
   onClick?: () => void;
   size?: ItemSize;
+  className?: string;
 };

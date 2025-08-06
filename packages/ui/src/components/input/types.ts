@@ -18,4 +18,12 @@ export type InputProps = InputBaseProps & {
    * Element displayed at the start of the input field.
    */
   startAdornment?: ReactNode;
+  /**
+   * Custom class name for the input element
+   */
+  className?: string;
+  /**
+   * Optional class name for the container element
+   */
+  classNameContainer?: string;
 };

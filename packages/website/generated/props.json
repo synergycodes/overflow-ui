@@ -77,6 +77,13 @@
       "displayName": "Avatar",
       "methods": [],
       "props": {
+        "classNameContainer": {
+          "description": "Optional class name for the container element",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
         "imageUrl": {
           "description": "Image URL",
           "required": false,
@@ -837,6 +844,13 @@
             "name": "boolean"
           }
         },
+        "classNameContainer": {
+          "description": "Optional class name for the container element",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
         "indeterminate": {
           "description": "Whether the checkbox is in an indeterminate state",
           "required": false,
@@ -960,6 +974,13 @@
       "displayName": "DatePicker",
       "methods": [],
       "props": {
+        "className": {
+          "description": "Custom class name for the date picker component",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
         "defaultValue": {
           "description": "Default date value when the component is initially rendered.\n\nFor the \"default\" is a single date, for the \"range\" [date, date]; and for the \"multiple\", an array of dates.",
           "required": false,
@@ -1172,6 +1193,20 @@
       "displayName": "Input",
       "methods": [],
       "props": {
+        "className": {
+          "description": "Custom class name for the input element",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "classNameContainer": {
+          "description": "Optional class name for the container element",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
         "endAdornment": {
           "defaultValue": {
             "computed": true,
@@ -1214,6 +1249,13 @@
       "displayName": "MenuItem",
       "methods": [],
       "props": {
+        "className": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
         "destructive": {
           "description": "",
           "required": false,
@@ -1263,6 +1305,20 @@
             "name": "ReactElement"
           }
         },
+        "classNameContainer": {
+          "description": "Optional class name for the container element",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "classNameSeparator": {
+          "description": "Optional class name for the separator inside",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
         "items": {
           "description": "Array of menu items to be rendered in the menu.\nEach item can be either a regular menu item or a separator.",
           "required": true,
@@ -1275,7 +1331,7 @@
                   },
                   {
                     "name": "signature",
-                    "raw": "{\n  destructive?: boolean;\n  onClick?: () => void;\n  size?: ItemSize;\n}",
+                    "raw": "{\n  destructive?: boolean;\n  onClick?: () => void;\n  size?: ItemSize;\n  className?: string;\n}",
                     "signature": {
                       "properties": [
                         {
@@ -1306,6 +1362,13 @@
                             "name": "ItemSize",
                             "required": false
                           }
+                        },
+                        {
+                          "key": "className",
+                          "value": {
+                            "name": "string",
+                            "required": false
+                          }
                         }
                       ]
                     },
@@ -1313,7 +1376,7 @@
                   }
                 ],
                 "name": "intersection",
-                "raw": "ListItem & {\n  destructive?: boolean;\n  onClick?: () => void;\n  size?: ItemSize;\n}"
+                "raw": "ListItem & {\n  destructive?: boolean;\n  onClick?: () => void;\n  size?: ItemSize;\n  className?: string;\n}"
               }
             ],
             "name": "Array",
@@ -1431,6 +1494,20 @@
           "required": false,
           "tsType": {
             "name": "ReactNode"
+          }
+        },
+        "className": {
+          "description": "Custom class name for the input element",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "classNameContainer": {
+          "description": "Optional class name for the container element",
+          "required": false,
+          "tsType": {
+            "name": "string"
           }
         },
         "footer": {
@@ -1609,6 +1686,20 @@
             "name": "string"
           }
         },
+        "classNameLabel": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "classNameSubtitle": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
         "description": {
           "description": "",
           "required": false,
@@ -1660,6 +1751,13 @@
           "required": false,
           "tsType": {
             "name": "boolean"
+          }
+        },
+        "classNameContainer": {
+          "description": "Optional class name for the container element",
+          "required": false,
+          "tsType": {
+            "name": "string"
           }
         },
         "name": {
@@ -1804,6 +1902,13 @@
       "displayName": "SelectOption",
       "methods": [],
       "props": {
+        "className": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
         "disabled": {
           "description": "",
           "required": false,
@@ -1875,6 +1980,13 @@
       "displayName": "SelectValue",
       "methods": [],
       "props": {
+        "className": {
+          "description": "",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
         "items": {
           "description": "",
           "required": true,
@@ -1955,7 +2067,7 @@
                   },
                   {
                     "name": "signature",
-                    "raw": "{\n  value?: string | number | null;\n  label?: string;\n}",
+                    "raw": "{\n  value?: string | number | null;\n  label?: string;\n  className?: string;\n}",
                     "signature": {
                       "properties": [
                         {
@@ -1983,6 +2095,13 @@
                             "name": "string",
                             "required": false
                           }
+                        },
+                        {
+                          "key": "className",
+                          "value": {
+                            "name": "string",
+                            "required": false
+                          }
                         }
                       ]
                     },
@@ -1990,7 +2109,7 @@
                   }
                 ],
                 "name": "intersection",
-                "raw": "ListItem & {\n  value?: string | number | null;\n  label?: string;\n}"
+                "raw": "ListItem & {\n  value?: string | number | null;\n  label?: string;\n  className?: string;\n}"
               }
             ],
             "name": "Array",
@@ -2046,6 +2165,27 @@
       "props": {
         "className": {
           "description": "Custom class name for the component.",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "classNameContainer": {
+          "description": "Optional class name for the container element",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "classNameSeparator": {
+          "description": "Optional class name for the separator inside",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "classNameValue": {
+          "description": "Optional class name for the select value",
           "required": false,
           "tsType": {
             "name": "string"
@@ -2142,7 +2282,7 @@
                   },
                   {
                     "name": "signature",
-                    "raw": "{\n  value?: string | number | null;\n  label?: string;\n}",
+                    "raw": "{\n  value?: string | number | null;\n  label?: string;\n  className?: string;\n}",
                     "signature": {
                       "properties": [
                         {
@@ -2170,6 +2310,13 @@
                             "name": "string",
                             "required": false
                           }
+                        },
+                        {
+                          "key": "className",
+                          "value": {
+                            "name": "string",
+                            "required": false
+                          }
                         }
                       ]
                     },
@@ -2177,7 +2324,7 @@
                   }
                 ],
                 "name": "intersection",
-                "raw": "ListItem & {\n  value?: string | number | null;\n  label?: string;\n}"
+                "raw": "ListItem & {\n  value?: string | number | null;\n  label?: string;\n  className?: string;\n}"
               }
             ],
             "name": "Array",
@@ -2234,7 +2381,16 @@
     {
       "description": "A visual separator component that creates a horizontal line to divide content.",
       "displayName": "Separator",
-      "methods": []
+      "methods": [],
+      "props": {
+        "className": {
+          "description": "Custom class name for the component.",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        }
+      }
     }
   ],
   "../ui/src/components/snackbar/components/action-buttons.tsx": [
@@ -2361,6 +2517,13 @@
       "props": {
         "buttonLabel": {
           "description": "Label for the action button",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "className": {
+          "description": "Custom class name for the component (if the variant is not sufficient)",
           "required": false,
           "tsType": {
             "name": "string"

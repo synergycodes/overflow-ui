@@ -13,6 +13,10 @@ export type SnackbarProps = {
    */
   variant: SnackbarVariant;
   /**
+   * Custom class name for the component (if the variant is not sufficient)
+   */
+  className?: string;
+  /**
    * Main message displayed in the snackbar
    */
   title: string;
@@ -52,13 +56,14 @@ export const Snackbar = forwardRef<HTMLDivElement, SnackbarProps>(
       onButtonClick,
       close = false,
       onClose,
+      className,
     },
     ref,
   ) => (
     <div ref={ref}>
       <BaseSnackbar
         open={true}
-        className={clsx(styles['container'], styles[variant])}
+        className={clsx(styles['container'], styles[variant], className)}
       >
         <div className={styles['content']}>
           <Icon isCentered={!subtitle} variant={variant} />

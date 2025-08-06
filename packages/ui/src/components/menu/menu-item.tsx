@@ -10,14 +10,20 @@ export function MenuItem({
   disabled,
   destructive,
   size = 'medium',
+  className,
   onClick,
 }: MenuItemProps) {
   return (
     <MenuItemBase
       disabled={disabled}
-      className={clsx(listItemStyles['list-item'], listItemSize[size], {
-        [listItemStyles['destructive']]: destructive,
-      })}
+      className={clsx(
+        listItemStyles['list-item'],
+        listItemSize[size],
+        {
+          [listItemStyles['destructive']]: destructive,
+        },
+        className,
+      )}
       onClick={onClick}
     >
       {icon}

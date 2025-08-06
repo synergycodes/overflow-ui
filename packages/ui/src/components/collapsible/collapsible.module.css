@@ -16,7 +16,7 @@
   }
 }
 
-.content-wrapper {
+.content-container {
   display: grid;
   grid-template-rows: 0fr;
   overflow: hidden;

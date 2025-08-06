@@ -57,11 +57,22 @@ type MenuProps = MenuBaseProps & {
    * Distance between a popup and the trigger element
    */
   offset?: OffsetOptions;
+
   /**
    * The trigger element that will open the menu when clicked.
    * This element will be wrapped in a button with appropriate ARIA attributes.
    */
   children?: ReactElement;
+
+  /**
+   * Optional class name for the container element
+   */
+  classNameContainer?: string;
+
+  /**
+   * Optional class name for the separator inside
+   */
+  classNameSeparator?: string;
 };
 
 export const Menu = memo(
@@ -74,6 +85,8 @@ export const Menu = memo(
     open,
     offset,
     onOpenChange,
+    classNameContainer,
+    classNameSeparator,
     ...props
   }: MenuProps) => {
     const MenuTriggerButton = useMemo(() => {
@@ -95,7 +108,7 @@ export const Menu = memo(
             },
             root: {
               placement: placement,
-              className: clsx(listBoxStyles['popup']),
+              className: clsx(listBoxStyles['popup'], classNameContainer),
               offset,
             },
             ...slotProps,
@@ -104,7 +117,7 @@ export const Menu = memo(
         >
           {items.map((item, index) =>
             item.type === 'separator' ? (
-              <Separator key={index} />
+              <Separator key={index} className={classNameSeparator} />
             ) : (
               <MenuItem key={item.label} {...item} size={size} />
             ),

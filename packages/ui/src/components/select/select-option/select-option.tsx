@@ -14,11 +14,16 @@ export function SelectOption({
   value,
   label,
   size = 'medium',
+  className,
   ...props
 }: SelectOptionProps) {
   return (
     <Option
-      className={clsx(listItemStyles['list-item'], listItemSize[size])}
+      className={clsx(
+        listItemStyles['list-item'],
+        listItemSize[size],
+        className,
+      )}
       value={value}
       {...props}
     >

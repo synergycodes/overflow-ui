@@ -4,4 +4,4 @@
 2. Install dependencies: `pnpm install`
 3. Build the Axiom library: `pnpm ui dev`
 4. Start the Docusaurus documentation site: `pnpm website dev`
-5. Open `http://localhost:3000/axiom/`
+5. Open `http://localhost:3000/ui-components/authored/overview`

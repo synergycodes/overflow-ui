@@ -94,7 +94,7 @@ Collapsible.Content = function CollapsibleContent({
   return (
     <div
       ref={ref}
-      className={clsx(styles['content-wrapper'], {
+      className={clsx(styles['content-container'], {
         [styles['expanded']]: context?.isExpanded,
       })}
     >
