@@ -12,6 +12,8 @@ export function Input({
   size = 'medium',
   startAdornment = undefined,
   endAdornment = undefined,
+  className,
+  classNameContainer,
   ...props
 }: InputProps) {
   return (
@@ -19,9 +21,19 @@ export function Input({
       {...props}
       slotProps={{
         root: {
-          className: clsx(inputRootStyles['input-root'], inputSizeStyles[size]),
+          className: clsx(
+            inputRootStyles['input-root'],
+            inputSizeStyles[size],
+            classNameContainer,
+          ),
         },
-        input: { className: clsx(inputStyles['input'], inputFontStyles[size]) },
+        input: {
+          className: clsx(
+            inputStyles['input'],
+            inputFontStyles[size],
+            className,
+          ),
+        },
       }}
       startAdornment={startAdornment}
       endAdornment={endAdornment}

@@ -18,6 +18,10 @@ type Props = {
    * Whether the checkbox is checked
    */
   checked?: boolean;
+  /**
+   * Optional class name for the container element
+   */
+  classNameContainer?: string;
 } & Omit<InputHTMLAttributes<HTMLInputElement>, 'size'>;
 
 /**
@@ -29,6 +33,7 @@ export function Checkbox({
   indeterminate,
   checked,
   onChange,
+  classNameContainer,
   ...props
 }: Props) {
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -36,7 +41,7 @@ export function Checkbox({
   }
 
   return (
-    <label className={styles['container']}>
+    <label className={clsx(styles['container'], classNameContainer)}>
       <input
         type="checkbox"
         className={clsx(styles['checkbox'], styles[size], className)}

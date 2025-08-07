@@ -12,6 +12,7 @@ import {
 import { forwardRef } from 'react';
 import type { DatePickerProps } from './types';
 import { MantineProvider } from '@mantine/core';
+
 type Props = DatePickerProps & {
   /**
    * Format string to control how the selected date is displayed
@@ -42,6 +43,10 @@ type Props = DatePickerProps & {
    * Whether the date picker has an error
    */
   error?: boolean;
+  /**
+   * Custom class name for the date picker component
+   */
+  className?: string;
 };
 
 /**
@@ -56,6 +61,7 @@ export const DatePicker = forwardRef<HTMLButtonElement, Props>(
       type = 'default',
       value,
       error = false,
+      className,
       ...props
     },
     ref,
@@ -74,6 +80,7 @@ export const DatePicker = forwardRef<HTMLButtonElement, Props>(
               inputFontStyles[inputSize],
               inputSizeStyles[inputSize],
               styles['container'],
+              className,
               {
                 [styles['container--error']]: error,
               },

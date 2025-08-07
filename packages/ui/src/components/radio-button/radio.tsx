@@ -16,6 +16,8 @@ type Props = {
   value: string | number;
   /** Callback fired when the radio button state changes */
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  /** Optional class name for the container element */
+  classNameContainer?: string;
 } & Omit<
   InputHTMLAttributes<HTMLInputElement>,
   'size' | 'type' | 'value' | 'name'
@@ -31,6 +33,7 @@ export function Radio({
   name,
   value,
   onChange,
+  classNameContainer,
   ...props
 }: Props) {
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
@@ -38,7 +41,7 @@ export function Radio({
   }
 
   return (
-    <label className={radioButtonStyles['wrapper']}>
+    <label className={clsx(radioButtonStyles['container'], classNameContainer)}>
       <input
         type="radio"
         className={clsx(

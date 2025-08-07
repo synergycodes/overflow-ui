@@ -41,6 +41,14 @@ type ModalProps = Partial<WithIcon> & {
    * Callback function called when the modal is closed
    */
   onClose?: () => void;
+  /**
+   * Custom class name for the input element
+   */
+  className?: string;
+  /**
+   * Optional class name for the container element
+   */
+  classNameContainer?: string;
 };
 
 /**
@@ -58,12 +66,14 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
       footerVariant = 'integrated',
       open,
       onClose,
+      className,
+      classNameContainer,
     },
     ref,
   ) => {
     return (
       <BaseModal
-        className={styles['modal-base']}
+        className={clsx(styles['modal-base'], classNameContainer)}
         open={open}
         onClose={onClose}
         slots={{
@@ -71,9 +81,12 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
         }}
       >
         <Fade in={open}>
-          <div className={clsx(styles['modal'], styles[size])} ref={ref}>
+          <div
+            className={clsx(styles['modal'], styles[size], className)}
+            ref={ref}
+          >
             <div className={styles['header']}>
-              <div className={styles['title-wrapper']}>
+              <div className={styles['title-container']}>
                 {icon && <div className={styles['icon']}>{icon}</div>}
                 <div className={styles['title-container']}>
                   <span className={clsx(styles['title'], 'ax-public-h6')}>

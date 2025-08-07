@@ -115,7 +115,7 @@
     background: var(--ax-public-modal-header-background);
   }
 
-  .title-wrapper {
+  .title-container {
     display: flex;
     align-items: center;
     gap: var(--ax-token-spacing-modal-m-header-gap);
@@ -181,7 +181,7 @@
     .header {
       padding: var(--ax-public-modal-large-padding);
 
-      .title-wrapper {
+      .title-container {
         gap: var(--ax-public-modal-gap-large);
       }
     }
