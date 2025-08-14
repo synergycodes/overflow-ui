@@ -1,4 +1,4 @@
-[//]: # "This README file is part of the Axiom documentation website (check overview.mdx)"
+[//]: # "This README file is part of the overflow-ui documentation website (check overview.mdx)"
 
 A React library for creating node-based user interfaces and diagram-driven apps. Built to work seamlessly with React Flow, it provides a collection of ready-to-use components and templates that simplify the development of visual editors, workflows, and interactive diagrams.
 
@@ -8,18 +8,18 @@ Developed and maintained by **[Synergy Codes](https://www.synergycodes.com/)**.
 
 ### 📦 Installation
 
-Use one of the commands below to add **Axiom** to your project:
+Use one of the commands below to add **overflow-ui** to your project:
 
 ```bash
-npm install @synergycodes/axiom
+npm install @synergycodes/overflow-ui
 ```
 
 ```bash
-pnpm add @synergycodes/axiom
+pnpm add @synergycodes/overflow-ui
 ```
 
 ```bash
-yarn add @synergycodes/axiom
+yarn add @synergycodes/overflow-ui
 ```
 
 ### 🎨 Import styles
@@ -27,11 +27,11 @@ yarn add @synergycodes/axiom
 Add to your style sheet or component:
 
 ```css
-@import '@synergycodes/axiom/tokens.css';
+@import '@synergycodes/overflow-ui/tokens.css';
 ```
 
 ```tsx
-import '@synergycodes/axiom/tokens.css';
+import '@synergycodes/overflow-ui/tokens.css';
 ```
 
 ### 🌗 Set the theme
@@ -45,7 +45,7 @@ To make the styles use proper variables, include `data-theme` (`light` or `dark`
 ### 🎛️ Use components
 
 ```tsx
-import { Input } from '@synergycodes/axiom';
+import { Input } from '@synergycodes/overflow-ui';
 
 // …
 
@@ -54,7 +54,7 @@ import { Input } from '@synergycodes/axiom';
 
 ## Customization
 
-Each axiom component uses CSS variables that are derived from primitive values.
+Each overflow-ui component uses CSS variables that are derived from primitive values.
 
 You can override them:
 
@@ -72,9 +72,9 @@ or a derived value used by the selected component:
 }
 ```
 
-### Axiom css layers
+### overflow-ui css layers
 
-Axiom uses [CSS layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) to separate its styles from yours. By default, CSS styles outside of any layer take precedence over what Axiom defines, so your styles will always win the specificity war. You can customize Axiom components with simple `input {}`.
+overflow-ui uses [CSS layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) to separate its styles from yours. By default, CSS styles outside of any layer take precedence over what overflow-ui defines, so your styles will always win the specificity war. You can customize overflow-ui components with simple `input {}`.
 
 
 ```css
@@ -85,7 +85,7 @@ Axiom uses [CSS layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer)
 }
 ```
 
-Default axiom order:
+Default overflow-ui order:
 ```css
 @layer ui.base, ui.component;
 ```

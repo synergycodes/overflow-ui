@@ -32,7 +32,7 @@ export default defineConfig([
   tsEslint.configs.recommended,
   globalIgnores(['**/node_modules', '**/.git', '**/dist']),
   {
-    name: 'Axiom / Root',
+    name: 'OverflowUI / Root',
     files: ['**/*'],
     languageOptions: {
       globals: globals.browser,

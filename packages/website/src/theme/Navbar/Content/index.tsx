@@ -31,7 +31,7 @@ const LINKS = [
 ];
 
 const openGithub = () => {
-  window.location.href = 'https://github.com/synergycodes/axiom';
+  window.location.href = 'https://github.com/synergycodes/overflow-ui';
 };
 
 function NavbarContentLayout({

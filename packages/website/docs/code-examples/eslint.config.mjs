@@ -27,7 +27,7 @@ const rules = {
 export default defineConfig([
   uiConfig,
   {
-    name: 'Axiom / Website / Code Examples',
+    name: 'OverflowUI / Website / Code Examples',
     files: ['./*.{ts,tsx}'],
     rules,
   },

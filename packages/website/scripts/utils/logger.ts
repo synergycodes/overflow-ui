@@ -13,7 +13,7 @@ export class Logger {
     const color = DEFAULT_COLORS[level];
 
     const header = formatHeader(
-      [AXIOM_PREFIX, this.prefix + prefix].join(' • '),
+      [OVERFLOW_UI_PREFIX, this.prefix + prefix].join(' • '),
     );
 
     const headerChanged = this.lastHeader !== header;
@@ -68,7 +68,7 @@ function formatHeader(text: string) {
   return pipe(text, chalk.bold, chalk.magenta);
 }
 
-const AXIOM_PREFIX = 'AXIOM';
+const OVERFLOW_UI_PREFIX = 'OVERFLOW_UI';
 
 const DEFAULT_EMOJIS: Record<LogLevel, string> = {
   info: 'ℹ️',

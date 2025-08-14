@@ -1,12 +1,12 @@
 name: Deploy Production
 
 env:
-  APP_LOCATION: ''
-  OUTPUT_LOCATION: 'packages/website/build'
+  APP_LOCATION: ""
+  OUTPUT_LOCATION: "packages/website/build"
 
 on:
   push:
-    branches: ['release/*']
+    branches: ["release/*"]
 
 permissions:
   contents: read
@@ -25,7 +25,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: "https://registry.npmjs.org"
 
       - name: Enable Corepack
         run: npm i -g corepack@latest
@@ -45,7 +45,7 @@ jobs:
       - name: Read versions
         id: version-check
         run: |
-          OLD=$(npm view @synergycodes/axiom version 2>/dev/null || echo "0.0.0")
+          OLD=$(npm view @synergycodes/overflow-ui version 2>/dev/null || echo "0.0.0")
           NEW=$(jq -r .version packages/ui/package.json)
           echo "old=$OLD" >> $GITHUB_OUTPUT
           echo "new=$NEW" >> $GITHUB_OUTPUT
@@ -54,24 +54,24 @@ jobs:
         run: |
           echo "Old version: ${{ steps.version-check.outputs.old }}"
           echo "New version: ${{ steps.version-check.outputs.new }}"
-          
+
           if [ "${{ steps.version-check.outputs.new }}" != "${{ steps.version-check.outputs.old }}" ]; then
             echo "Versions differ. Proceeding with build and publish."
 
             pnpm ui build
 
             cd packages/ui
-            
+
             # Check if version contains "beta"
             if [[ "${{ steps.version-check.outputs.new }}" == *"beta"* ]]; then
-              echo "Publishing @synergycodes/axiom@${{ steps.version-check.outputs.new }} with 'beta' tag…"
+              echo "Publishing @synergycodes/overflow-ui@${{ steps.version-check.outputs.new }} with 'beta' tag…"
               pnpm publish --tag beta --access public --no-git-checks
 
               echo "Adding 'latest' tag to beta version…"
               # INFO: The line below marks each beta version as latest. Once we publish stable version we should remove it
-              npm dist-tag add @synergycodes/axiom@${{ steps.version-check.outputs.new }} latest
+              npm dist-tag add @synergycodes/overflow-ui@${{ steps.version-check.outputs.new }} latest
             else
-              echo "Publishing @synergycodes/axiom@${{ steps.version-check.outputs.new }} with 'latest' tag…"
+              echo "Publishing @synergycodes/overflow-ui@${{ steps.version-check.outputs.new }} with 'latest' tag…"
               pnpm publish --access public --no-git-checks
             fi
           else
@@ -87,10 +87,10 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           output_location: ${{ env.OUTPUT_LOCATION }}
           app_location: ${{ env.APP_LOCATION }}
-          app_build_command: 'pnpm website build'
-          action: 'upload'
+          app_build_command: "pnpm website build"
+          action: "upload"
           skip_api_build: true
-          deployment_environment: 'release'
+          deployment_environment: "release"
         env:
           CUSTOM_BUILD_COMMAND: npm i -g corepack@latest && corepack prepare && pnpm install --frozen-lockfile && pnpm ui build && pnpm website build
           ENABLE_NODE_MONOREPO_BUILD: true

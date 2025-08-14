@@ -4,7 +4,7 @@
  * work well for content-centric websites.
  */
 
-@import '@synergycodes/axiom/tokens.css';
+@import '@synergycodes/overflow-ui/tokens.css';
 @import './sidebar.css';
 @import './typography.css';
 @import './footer.css';

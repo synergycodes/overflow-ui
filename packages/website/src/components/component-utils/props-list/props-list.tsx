@@ -2,10 +2,10 @@ import { PropDescriptor } from 'react-docgen';
 import { getAPIData } from '../get-api-data';
 import { PropDescription } from './prop-description';
 import styles from './props-list.module.css';
-import { AxiomTSXRelativePath } from '@site/generated/path-types';
+import { OverflowUITSXRelativePath } from '@site/generated/path-types';
 
 type Props = {
-  path?: AxiomTSXRelativePath;
+  path?: OverflowUITSXRelativePath;
   hardcodedProps?: PropMap;
 };
 

@@ -12,7 +12,7 @@ const codeHikeConfig: CodeHikeConfig = {
 };
 
 const config = {
-  title: 'Axiom',
+  title: 'OverflowUI',
   tagline: 'UI Components + Diagramming',
   favicon: 'img/favicon.ico',
 
@@ -20,7 +20,7 @@ const config = {
   baseUrl: '/ui-components',
 
   organizationName: 'Synergy Codes',
-  projectName: 'axiom',
+  projectName: 'overflow-ui',
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -63,7 +63,7 @@ const config = {
     image: 'img/logo-dark.svg',
     navbar: {
       logo: {
-        alt: 'Axiom',
+        alt: 'OverflowUI',
         src: 'img/logo.svg',
         srcDark: 'img/logo.svg',
         href: 'https://overflow.dev',
@@ -78,7 +78,7 @@ const config = {
         },
         {
           label: 'Github',
-          to: 'https://github.com/synergycodes/axiom',
+          to: 'https://github.com/synergycodes/overflow-ui',
         },
         {
           label: 'YouTube',
@@ -115,4 +115,4 @@ const config = {
 } satisfies Config;
 
 export default config;
-export type AxiomDocsConfig = typeof config;
+export type OverflowUIDocsConfig = typeof config;
