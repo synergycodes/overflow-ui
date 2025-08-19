@@ -1,7 +1,7 @@
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
 import exampleCode from '!!raw-loader!@site/docs/code-examples/segment-picker.example.tsx';
 import { ComponentProp, toPropMap } from '@site/docs/utils/to-prop-map';
-import { SIZES } from '@synergycodes/axiom';
+import { SIZES } from '@synergycodes/overflow-ui';
 
 export function SegmentPickerDocs() {
   const props: Record<string, ComponentProp> = {

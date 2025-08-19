@@ -24,7 +24,7 @@ To meet these requirements, the following components were introduced:
 2. **NodePanel**:
 
    - A foundational building block for nodes.
-   - Offers a well-designed interface for various states, leveraging the OverflowUI design system.
+   - Offers a well-designed interface for various states, leveraging the Overflow UI design system.
    - Accepts three slots as children for structuring the node: `header`, `content`, and `handles`.
 
 3. **NodeIcon & NodeDescription**:

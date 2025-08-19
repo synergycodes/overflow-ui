@@ -15,7 +15,7 @@ import type {
 } from '@docusaurus/plugin-content-docs';
 
 import styles from './styles.module.css';
-import { NodeDescription, NodePanel } from '@synergycodes/axiom';
+import { NodeDescription, NodePanel } from '@synergycodes/overflow-ui';
 
 function useCategoryItemsPlural() {
   const { selectMessage } = usePluralForm();

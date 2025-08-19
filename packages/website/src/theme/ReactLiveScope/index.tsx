@@ -1,5 +1,5 @@
 import React from 'react';
-import * as axiom from '@synergycodes/overflow-ui';
+import * as overflowUI from '@synergycodes/overflow-ui';
 import * as xyflow from '@xyflow/react';
 import {
   User,
@@ -24,7 +24,7 @@ const icons = {
 // Add react-live imports you need here
 const ReactLiveScope = {
   ...React,
-  ...axiom, // imported as overflow-ui
+  ...overflowUI,
   ...xyflow,
   ...icons,
 } as const;

@@ -12,7 +12,7 @@ const codeHikeConfig: CodeHikeConfig = {
 };
 
 const config = {
-  title: 'OverflowUI',
+  title: 'Overflow UI',
   tagline: 'UI Components + Diagramming',
   favicon: 'img/favicon.ico',
 
@@ -63,7 +63,7 @@ const config = {
     image: 'img/logo-dark.svg',
     navbar: {
       logo: {
-        alt: 'OverflowUI',
+        alt: 'Overflow UI',
         src: 'img/logo.svg',
         srcDark: 'img/logo.svg',
         href: 'https://overflow.dev',

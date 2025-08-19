@@ -1,4 +1,4 @@
-[//]: # "This README file is part of the overflow-ui documentation website (check overview.mdx)"
+[//]: # "This README file is part of the Overflow UI documentation website (check overview.mdx)"
 
 A React library for creating node-based user interfaces and diagram-driven apps. Built to work seamlessly with React Flow, it provides a collection of ready-to-use components and templates that simplify the development of visual editors, workflows, and interactive diagrams.
 
@@ -8,7 +8,7 @@ Developed and maintained by **[Synergy Codes](https://www.synergycodes.com/)**.
 
 ### 📦 Installation
 
-Use one of the commands below to add **overflow-ui** to your project:
+Use one of the commands below to add **Overflow UI** to your project:
 
 ```bash
 npm install @synergycodes/overflow-ui
@@ -54,7 +54,7 @@ import { Input } from '@synergycodes/overflow-ui';
 
 ## Customization
 
-Each overflow-ui component uses CSS variables that are derived from primitive values.
+Each Overflow UI component uses CSS variables that are derived from primitive values.
 
 You can override them:
 
@@ -72,9 +72,9 @@ or a derived value used by the selected component:
 }
 ```
 
-### overflow-ui css layers
+### Overflow UI css layers
 
-overflow-ui uses [CSS layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) to separate its styles from yours. By default, CSS styles outside of any layer take precedence over what overflow-ui defines, so your styles will always win the specificity war. You can customize overflow-ui components with simple `input {}`.
+Overflow UI uses [CSS layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) to separate its styles from yours. By default, CSS styles outside of any layer take precedence over what Overflow UI defines, so your styles will always win the specificity war. You can customize Overflow UI components with simple `input {}`.
 
 
 ```css
@@ -85,7 +85,7 @@ overflow-ui uses [CSS layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@
 }
 ```
 
-Default overflow-ui order:
+Default Overflow UI order:
 ```css
 @layer ui.base, ui.component;
 ```

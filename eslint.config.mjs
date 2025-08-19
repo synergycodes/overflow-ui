@@ -32,7 +32,7 @@ export default defineConfig([
   tsEslint.configs.recommended,
   globalIgnores(['**/node_modules', '**/.git', '**/dist']),
   {
-    name: 'OverflowUI / Root',
+    name: 'Overflow UI / Root',
     files: ['**/*'],
     languageOptions: {
       globals: globals.browser,

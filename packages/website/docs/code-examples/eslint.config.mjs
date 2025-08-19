@@ -27,7 +27,7 @@ const rules = {
 export default defineConfig([
   uiConfig,
   {
-    name: 'OverflowUI / Website / Code Examples',
+    name: 'Overflow UI / Website / Code Examples',
     files: ['./*.{ts,tsx}'],
     rules,
   },
