@@ -28,7 +28,7 @@ export default defineConfig([
     },
   },
   {
-    name: 'Axiom / UI',
+    name: 'Overflow UI / UI',
     files: ['**/*.{ts,tsx}'],
     plugins: {
       'react-hooks': pluginHooks,

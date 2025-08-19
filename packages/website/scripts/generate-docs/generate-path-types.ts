@@ -20,8 +20,8 @@ export const generatePathTypes = createScript(
     const cssPathType = pathsToType(cssPaths);
 
     const typeDeclaration = `
-    export type AxiomTSXRelativePath = ${tsxPathType};
-    export type AxiomCSSRelativePath = ${cssPathType};
+    export type OverflowUITSXRelativePath = ${tsxPathType};
+    export type OverflowUICSSRelativePath = ${cssPathType};
   `;
 
     await writeFile(OUTPUT_FILE, typeDeclaration);

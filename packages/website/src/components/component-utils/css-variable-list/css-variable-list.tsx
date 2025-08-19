@@ -1,14 +1,14 @@
 import cssVariablesData from '@site/generated/css-variables.json';
 import { CSSVariableData } from '@site/src/types';
 import { CSSVariableItem } from './css-variable-item';
-import { AxiomCSSRelativePath } from '@site/generated/path-types';
+import { OverflowUICSSRelativePath } from '@site/generated/path-types';
 import { CSSVariableType, variableTypes } from './css-variable-types';
 import { entries, groupBy } from 'remeda';
 
 import styles from './css-variable-list.module.css';
 
 type Props = {
-  paths: AxiomCSSRelativePath[];
+  paths: OverflowUICSSRelativePath[];
 };
 
 export function CSSVariablesList({ paths }: Props) {

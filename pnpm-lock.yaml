@@ -100,7 +100,7 @@ importers:
       '@emotion/react':
         specifier: ^11.14.0
         version: 11.14.0(@types/react@19.1.8)(react@18.3.1)
-      '@synergycodes/axiom-tokens':
+      '@synergycodes/overflow-ui-tokens':
         specifier: workspace:*
         version: link:../tokens
       '@types/react':
@@ -169,7 +169,7 @@ importers:
       '@react-docgen/cli':
         specifier: ^2.0.6
         version: 2.0.6
-      '@synergycodes/axiom':
+      '@synergycodes/overflow-ui':
         specifier: workspace:*
         version: link:../ui
       '@types/css-tree':

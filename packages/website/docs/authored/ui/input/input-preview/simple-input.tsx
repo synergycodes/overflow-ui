@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Input } from '@synergycodes/axiom';
+import { Input } from '@synergycodes/overflow-ui';
 
 export function SimpleInput() {
   const [value, setValue] = useState<string>('Hello World');

@@ -1,5 +1,5 @@
 {
-  "name": "@synergycodes/axiom",
+  "name": "@synergycodes/overflow-ui",
   "type": "module",
   "version": "1.0.0-beta.22",
   "description": "A React library for creating node-based UIs and diagram-driven applications. Perfect for React Flow users, providing ready-to-use node templates and components that work seamlessly with React Flow's ecosystem.",
@@ -17,15 +17,15 @@
   ],
   "author": "Synergy Codes",
   "license": "MIT",
-  "url": "https://github.com/synergycodes/axiom",
-  "homepage": "https://github.com/synergycodes/axiom",
+  "url": "https://github.com/synergycodes/overflow-ui",
+  "homepage": "https://github.com/synergycodes/overflow-ui",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/synergycodes/axiom.git",
+    "url": "git+https://github.com/synergycodes/overflow-ui.git",
     "directory": "packages/ui"
   },
   "bugs": {
-    "url": "https://github.com/synergycodes/axiom/issues"
+    "url": "https://github.com/synergycodes/overflow-ui/issues"
   },
   "scripts": {
     "build": "vite build",
@@ -35,16 +35,16 @@
     "lint:fix": "eslint --fix",
     "typecheck": "tsc --noEmit --pretty"
   },
-  "module": "./dist/axiom.js",
+  "module": "./dist/overflow-ui.js",
   "files": [
     "dist"
   ],
-  "main": "./dist/axiom.js",
+  "main": "./dist/overflow-ui.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/axiom.js"
+      "import": "./dist/overflow-ui.js"
     },
     "./tokens.css": "./dist/tokens.css"
   },
@@ -60,7 +60,7 @@
   },
   "devDependencies": {
     "@emotion/react": "^11.14.0",
-    "@synergycodes/axiom-tokens": "workspace:*",
+    "@synergycodes/overflow-ui-tokens": "workspace:*",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.3.4",
