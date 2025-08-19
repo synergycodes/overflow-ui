@@ -1,4 +1,4 @@
-import { Button } from '@synergycodes/axiom';
+import { Button } from '@synergycodes/overflow-ui';
 import styles from './code-playground.module.css';
 import clsx from 'clsx';
 import { ReactElement } from 'react';

@@ -1,5 +1,5 @@
 import { Check, Copy } from '@phosphor-icons/react';
-import { NavButton, Tooltip } from '@synergycodes/axiom';
+import { NavButton, Tooltip } from '@synergycodes/overflow-ui';
 import { useState } from 'react';
 
 type Props = {

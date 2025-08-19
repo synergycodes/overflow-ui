@@ -1,5 +1,5 @@
 import { ArrowClockwise } from '@phosphor-icons/react';
-import { NavButton, Tooltip } from '@synergycodes/axiom';
+import { NavButton, Tooltip } from '@synergycodes/overflow-ui';
 
 type Props = {
   onReset: () => void;

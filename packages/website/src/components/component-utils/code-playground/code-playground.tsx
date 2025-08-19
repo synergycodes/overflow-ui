@@ -5,7 +5,7 @@ import { LiveError, LivePreview, LiveProvider } from 'react-live';
 import { Preview } from '../preview/preview';
 import ReactLiveScope from '@site/src/theme/ReactLiveScope';
 import { CodeEditor } from './code-editor';
-import { AxiomCSSRelativePath } from '@site/generated/path-types';
+import { OverflowUICSSRelativePath } from '@site/generated/path-types';
 
 import ReactIcon from '@site/static/img/react.svg';
 import CSSIcon from '@site/static/img/css.svg';
@@ -18,7 +18,7 @@ import { ResetButton } from './reset-button/reset-button';
 
 type Props = {
   exampleCode: string;
-  cssPaths: AxiomCSSRelativePath[];
+  cssPaths: OverflowUICSSRelativePath[];
 };
 
 export type PlaygroundFileType = 'react' | 'css';
@@ -98,7 +98,7 @@ export function Playground({ exampleCode, cssPaths }: Props) {
   );
 }
 
-function getCSSCode(cssPaths: AxiomCSSRelativePath[]) {
+function getCSSCode(cssPaths: OverflowUICSSRelativePath[]) {
   const variableNames = cssPaths
     .flatMap((path) => cssVariablesData[path])
     .map(({ name }) => name);

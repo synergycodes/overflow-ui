@@ -18,7 +18,7 @@ import Link from '@docusaurus/Link';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import DocSidebarItems from '@theme/DocSidebarItems';
 import type { Props } from '@theme/DocSidebarItem/Category';
-import { NavButton } from '@synergycodes/axiom';
+import { NavButton } from '@synergycodes/overflow-ui';
 import { CaretRight, Lightning } from '@phosphor-icons/react';
 import { customConfig } from '@site/custom.config';
 

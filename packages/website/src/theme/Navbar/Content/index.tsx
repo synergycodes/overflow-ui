@@ -6,7 +6,7 @@ import NavbarLogo from '@theme/Navbar/Logo';
 import NavbarSearch from '@theme/Navbar/Search';
 
 import styles from './navbar-content.module.css';
-import { NavButton } from '@synergycodes/axiom';
+import { NavButton } from '@synergycodes/overflow-ui';
 import { GithubLogo } from '@phosphor-icons/react';
 import { MagnifyingGlass } from '@phosphor-icons/react/dist/ssr';
 import Link from '@docusaurus/Link';
@@ -31,7 +31,7 @@ const LINKS = [
 ];
 
 const openGithub = () => {
-  window.location.href = 'https://github.com/synergycodes/axiom';
+  window.location.href = 'https://github.com/synergycodes/overflow-ui';
 };
 
 function NavbarContentLayout({

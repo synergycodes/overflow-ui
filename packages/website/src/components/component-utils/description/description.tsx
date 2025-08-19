@@ -1,8 +1,8 @@
-import { AxiomTSXRelativePath } from '@site/generated/path-types';
+import { OverflowUITSXRelativePath } from '@site/generated/path-types';
 import { getAPIData } from '../get-api-data';
 
 type Props = {
-  path?: AxiomTSXRelativePath;
+  path?: OverflowUITSXRelativePath;
   hardcodedDescription?: string;
 };
 

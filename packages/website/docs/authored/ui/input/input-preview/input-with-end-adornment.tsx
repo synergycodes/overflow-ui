@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Input } from '@synergycodes/axiom';
+import { Input } from '@synergycodes/overflow-ui';
 import { X } from '@phosphor-icons/react';
 
 export function InputWithEndAdornment() {

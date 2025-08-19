@@ -1,8 +1,8 @@
 import { Description } from '../description/description';
 import { PropMap, PropsList } from '../props-list/props-list';
 import {
-  AxiomCSSRelativePath,
-  AxiomTSXRelativePath,
+  OverflowUICSSRelativePath,
+  OverflowUITSXRelativePath,
 } from '@site/generated/path-types';
 import { CSSVariablesList } from '../css-variable-list/css-variable-list';
 import { Playground } from '../code-playground/code-playground';
@@ -10,8 +10,8 @@ import { Playground } from '../code-playground/code-playground';
 import styles from './component-page.module.css';
 
 export type ComponentPageProps = {
-  componentPath?: AxiomTSXRelativePath;
-  cssPaths?: AxiomCSSRelativePath[];
+  componentPath?: OverflowUITSXRelativePath;
+  cssPaths?: OverflowUICSSRelativePath[];
   exampleCode: string;
   className?: string;
   hardcodedData?: HardcodedData;

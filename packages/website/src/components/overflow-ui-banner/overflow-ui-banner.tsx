@@ -1,6 +1,6 @@
-import styles from './axiom-banner.module.css';
+import styles from './overflow-ui-banner.module.css';
 
-export function AxiomBanner() {
+export function OverflowUIBanner() {
   return (
     <>
       <div className={styles['banner']}>

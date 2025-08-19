@@ -1,5 +1,5 @@
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
-import { SIZES } from '@synergycodes/axiom';
+import { SIZES } from '@synergycodes/overflow-ui';
 import { ComponentProp, toPropMap } from '@site/docs/utils/to-prop-map';
 
 import exampleCode from '!!raw-loader!@site/docs/code-examples/nav-label-button.example.tsx';

@@ -1,6 +1,6 @@
 import { ComponentPage } from '@site/src/components/component-utils/component-page/component-page';
 import exampleCode from '!!raw-loader!@site/docs/code-examples/edge-label.example.tsx';
-import { EDGE_LABEL_SIZES } from '@synergycodes/axiom';
+import { EDGE_LABEL_SIZES } from '@synergycodes/overflow-ui';
 import { ComponentProp, toPropMap } from '@site/docs/utils/to-prop-map';
 
 const props: Record<string, ComponentProp> = {

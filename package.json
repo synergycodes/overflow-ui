@@ -1,5 +1,5 @@
 {
-  "name": "axiom",
+  "name": "overflow-ui",
   "scripts": {
     "lint": "pnpm -r lint",
     "lint:fix": "pnpm -r lint:fix",
