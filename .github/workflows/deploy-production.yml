@@ -15,6 +15,7 @@ jobs:
   deploy-production:
     runs-on: ubuntu-latest
     name: Deploy to Production
+    environment: Production
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -90,7 +91,6 @@ jobs:
           app_build_command: "pnpm website build"
           action: "upload"
           skip_api_build: true
-          deployment_environment: "Production"
         env:
           CUSTOM_BUILD_COMMAND: npm i -g corepack@latest && corepack prepare && pnpm install --frozen-lockfile && pnpm ui build && pnpm website build
           ENABLE_NODE_MONOREPO_BUILD: true
