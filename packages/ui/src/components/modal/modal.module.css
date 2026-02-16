@@ -63,7 +63,6 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    box-sizing: border-box;
     padding: 1.5rem;
     overflow: auto;
   }

@@ -15,6 +15,16 @@ export function boxSizingPlugin(): Plugin {
           if (!file.endsWith('.module.css')) return;
 
           root.walkRules((rule) => {
+            if (rule.selector === ':root') return;
+
+            const hasDeclarations = rule.nodes?.some(
+              (node) => node.type === 'decl',
+            );
+
+            // Skip rules that only contain nested rules (no declarations).
+            // Adding box-sizing to such container rules would leak to unintended elements
+            if (!hasDeclarations) return;
+
             const hasBoxSizing = rule.nodes?.some(
               (node) => node.type === 'decl' && node.prop === 'box-sizing',
             );

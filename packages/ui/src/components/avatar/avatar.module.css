@@ -19,23 +19,23 @@
   justify-content: center;
 
   &.extra-large {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: calc(2.5rem + 2 * var(--ax-public-avatar-border-size));
+    height: calc(2.5rem + 2 * var(--ax-public-avatar-border-size));
   }
 
   &.large {
-    width: 2rem;
-    height: 2rem;
+    width: calc(2rem + 2 * var(--ax-public-avatar-border-size));
+    height: calc(2rem + 2 * var(--ax-public-avatar-border-size));
   }
 
   &.medium {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: calc(1.5rem + 2 * var(--ax-public-avatar-border-size));
+    height: calc(1.5rem + 2 * var(--ax-public-avatar-border-size));
   }
 
   &.small {
-    width: 1.125rem;
-    height: 1.125rem;
+    width: calc(1.125rem + 2 * var(--ax-public-avatar-border-size));
+    height: calc(1.125rem + 2 * var(--ax-public-avatar-border-size));
   }
 
   img {

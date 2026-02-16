@@ -31,7 +31,6 @@
     border-radius: var(--ax-public-list-border-radius);
     width: max-content;
     min-width: 100%;
-    box-sizing: border-box;
     cursor: pointer;
     color: var(--ax-public-list-item-color);
 
