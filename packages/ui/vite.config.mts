@@ -4,6 +4,7 @@ import { defineConfig } from 'vite';
 import { libInjectCss } from 'vite-plugin-lib-inject-css';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import dts from 'vite-plugin-dts';
+import { boxSizingPlugin } from './postcss-box-sizing.mts';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -35,6 +36,9 @@ export default defineConfig({
   },
   css: {
     devSourcemap: true,
+    postcss: {
+      plugins: [boxSizingPlugin()],
+    },
   },
   resolve: {
     alias: {
