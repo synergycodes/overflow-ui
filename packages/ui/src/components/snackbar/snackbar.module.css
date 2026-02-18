@@ -73,8 +73,9 @@
 .container {
   display: flex;
   width: calc(
-    var(--ax-public-snackbar-width) + 2 * var(--ax-token-spacing-snackbar-h-pad-1)
-      + 2 * var(--ax-public-snackbar-border-size)
+    var(--ax-public-snackbar-width) + 2 *
+      var(--ax-token-spacing-snackbar-h-pad-1) + 2 *
+      var(--ax-public-snackbar-border-size)
   );
   border: var(--ax-public-snackbar-border-size) solid
     var(--ax-public-snackbar-default-border);
