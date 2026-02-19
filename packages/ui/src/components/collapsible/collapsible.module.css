@@ -22,7 +22,6 @@
   overflow: hidden;
   transition: grid-template-rows
     var(--ax-public-collapsible-transition-duration) ease;
-  box-sizing: border-box;
 
   &.expanded {
     overflow: unset;

@@ -1,7 +1,7 @@
 {
   "name": "@synergycodes/overflow-ui",
   "type": "module",
-  "version": "1.0.0-beta.22",
+  "version": "1.0.0-beta.23",
   "description": "A React library for creating node-based UIs and diagram-driven applications. Perfect for React Flow users, providing ready-to-use node templates and components that work seamlessly with React Flow's ecosystem.",
   "keywords": [
     "react",
@@ -66,6 +66,7 @@
     "@vitejs/plugin-react": "^4.3.4",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.2.0",
+    "postcss": "^8.5.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "typescript": "^5.6.3",

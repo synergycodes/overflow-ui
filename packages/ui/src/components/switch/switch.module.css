@@ -33,7 +33,6 @@
     border-radius: 100px;
     border: var(--ax-public-switch-border-size) solid
       var(--ax-public-switch-outline-color);
-    box-sizing: border-box;
 
     &:not(:hover) {
       transition: background-color var(--ax-public-transition);

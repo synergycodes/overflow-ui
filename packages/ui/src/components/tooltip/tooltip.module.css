@@ -11,7 +11,6 @@
 .container {
   padding: var(--ax-public-tooltip-padding);
   border-radius: var(--ax-public-tooltip-radius-size);
-  box-sizing: border-box;
   width: max-content;
   max-width: 33vw;
   z-index: 100;
