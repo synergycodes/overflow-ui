@@ -67,18 +67,8 @@ jobs:
 
             cd packages/ui
 
-            # Check if version contains "beta"
-            if [[ "${{ steps.version-check.outputs.new }}" == *"beta"* ]]; then
-              echo "Publishing @synergycodes/overflow-ui@${{ steps.version-check.outputs.new }} with 'beta' tag…"
-              npm publish --tag beta --access public --provenance
-
-              echo "Adding 'latest' tag to beta version…"
-              # INFO: The line below marks each beta version as latest. Once we publish stable version we should remove it
-              npm dist-tag add @synergycodes/overflow-ui@${{ steps.version-check.outputs.new }} latest
-            else
-              echo "Publishing @synergycodes/overflow-ui@${{ steps.version-check.outputs.new }} with 'latest' tag…"
-              npm publish --access public --provenance
-            fi
+            echo "Publishing @synergycodes/overflow-ui@${{ steps.version-check.outputs.new }}…"
+            npm publish --access public --provenance
           else
             echo "Version unchanged. Skipping build and publish."
           fi
