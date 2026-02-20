@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: read
+  id-token: write
 
 jobs:
   deploy-production:
@@ -33,6 +34,9 @@ jobs:
 
       - name: Install pnpm
         run: corepack prepare
+
+      - name: Install latest npm
+        run: npm install -g npm@latest
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -66,20 +70,18 @@ jobs:
             # Check if version contains "beta"
             if [[ "${{ steps.version-check.outputs.new }}" == *"beta"* ]]; then
               echo "Publishing @synergycodes/overflow-ui@${{ steps.version-check.outputs.new }} with 'beta' tag…"
-              pnpm publish --tag beta --access public --no-git-checks
+              npm publish --tag beta --access public --provenance
 
               echo "Adding 'latest' tag to beta version…"
               # INFO: The line below marks each beta version as latest. Once we publish stable version we should remove it
               npm dist-tag add @synergycodes/overflow-ui@${{ steps.version-check.outputs.new }} latest
             else
               echo "Publishing @synergycodes/overflow-ui@${{ steps.version-check.outputs.new }} with 'latest' tag…"
-              pnpm publish --access public --no-git-checks
+              npm publish --access public --provenance
             fi
           else
             echo "Version unchanged. Skipping build and publish."
           fi
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Deploy Documentation to Production
         uses: Azure/static-web-apps-deploy@v1
