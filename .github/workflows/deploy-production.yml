@@ -68,7 +68,7 @@ jobs:
             cd packages/ui
 
             echo "Publishing @synergycodes/overflow-ui@${{ steps.version-check.outputs.new }}…"
-            npm publish --access public --provenance
+            npm publish --tag latest --access public --provenance
           else
             echo "Version unchanged. Skipping build and publish."
           fi
