@@ -8,40 +8,44 @@ import type { WithIcon } from '@ui/shared/types/with-icon';
 import { X } from '@phosphor-icons/react';
 import type { FooterVariant } from './types';
 
-type ModalProps = Partial<WithIcon> & {
-  /**
-   * Title displayed in the modal header
-   */
-  title: string;
-  /**
-   * Optional subtitle displayed below the title
-   */
-  subtitle?: string;
-  /**
-   * Content to be displayed in the modal body
-   */
-  children?: ReactNode;
-  /**
-   * Content to be displayed in the modal footer
-   */
-  footer?: ReactNode;
-  /**
-   * Size variant of the modal
-   */
-  size?: 'regular' | 'large';
-  /**
-   * Variant of the footer styling
-   */
-  footerVariant?: FooterVariant;
-  /**
-   * Controls the visibility of the modal
-   */
-  open: boolean;
-  /**
-   * Callback function called when the modal is closed
-   */
-  onClose?: () => void;
-};
+type ModalProps = React.DetailedHTMLProps<
+  React.HTMLAttributes<HTMLDivElement>,
+  HTMLDivElement
+> &
+  Partial<WithIcon> & {
+    /**
+     * Title displayed in the modal header
+     */
+    title: string;
+    /**
+     * Optional subtitle displayed below the title
+     */
+    subtitle?: string;
+    /**
+     * Content to be displayed in the modal body
+     */
+    children?: ReactNode;
+    /**
+     * Content to be displayed in the modal footer
+     */
+    footer?: ReactNode;
+    /**
+     * Size variant of the modal
+     */
+    size?: 'regular' | 'large';
+    /**
+     * Variant of the footer styling
+     */
+    footerVariant?: FooterVariant;
+    /**
+     * Controls the visibility of the modal
+     */
+    open: boolean;
+    /**
+     * Callback function called when the modal is closed
+     */
+    onClose?: () => void;
+  };
 
 /**
  * A modal dialog component that appears on top of the main content,
@@ -58,17 +62,20 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
       footerVariant = 'integrated',
       open,
       onClose,
+      className,
+      ...rest
     },
     ref,
   ) => {
     return (
       <BaseModal
-        className={styles['modal-base']}
+        className={clsx(styles['modal-base'], className)}
         open={open}
         onClose={onClose}
         slots={{
           backdrop: Backdrop,
         }}
+        {...rest}
       >
         <Fade in={open}>
           <div className={clsx(styles['modal'], styles[size])} ref={ref}>
