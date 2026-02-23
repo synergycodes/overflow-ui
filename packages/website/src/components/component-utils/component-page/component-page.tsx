@@ -1,11 +1,11 @@
-import { Description } from '../description/description';
-import { PropMap, PropsList } from '../props-list/props-list';
 import {
   OverflowUICSSRelativePath,
   OverflowUITSXRelativePath,
 } from '@site/generated/path-types';
-import { CSSVariablesList } from '../css-variable-list/css-variable-list';
 import { Playground } from '../code-playground/code-playground';
+import { CSSVariablesList } from '../css-variable-list/css-variable-list';
+import { Description } from '../description/description';
+import { PropMap, PropsList } from '../props-list/props-list';
 
 import styles from './component-page.module.css';
 
