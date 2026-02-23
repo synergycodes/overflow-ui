@@ -69,7 +69,7 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
   ) => {
     return (
       <BaseModal
-        className={clsx(styles['modal-base'], className)}
+        className={styles['modal-base']}
         open={open}
         onClose={onClose}
         slots={{
@@ -102,7 +102,11 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
               )}
             </div>
 
-            {children && <div className={styles['content']}>{children}</div>}
+            {children && (
+              <div className={clsx(styles['content'], className)}>
+                {children}
+              </div>
+            )}
 
             {footer && (
               <div className={clsx(styles['footer'], styles[footerVariant])}>
