@@ -39,7 +39,7 @@ import '@synergycodes/overflow-ui/tokens.css';
 To make the styles use proper variables, include `data-theme` (`light` or `dark`) attribute in `<html>`:
 
 ```html
-<html data-theme="light"></html>
+<html data-theme="light">
 ```
 
 ### 🎛️ Use components

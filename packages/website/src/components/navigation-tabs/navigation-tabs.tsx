@@ -1,4 +1,4 @@
-import './navigation-tabs.css';
+import styles from './navigation-tabs.module.css';
 
 interface TabItem {
   id: string;
@@ -13,18 +13,18 @@ interface NavigationTabsProps {
 
 function NavigationTabsComponent({ tabs, activeTabId }: NavigationTabsProps) {
   return (
-    <nav className="nav-tabs-container">
+    <nav className={styles['tabsContainer']}>
       {tabs.map((tab) => {
         const isActive = tab.id === activeTabId;
         if (isActive) {
           return (
             <div
               key={tab.id}
-              className={`nav-tab-item active`}
+              className={`${styles['tabItem']} ${styles['active']}`}
               aria-current={'page'}
               aria-label={tab.label}
             >
-              <span className="radio-indicator" aria-hidden="true" />
+              <span className={styles['radioIndicator']} aria-hidden="true" />
               <span>{tab.label}</span>
             </div>
           );
@@ -34,10 +34,10 @@ function NavigationTabsComponent({ tabs, activeTabId }: NavigationTabsProps) {
           <a
             key={tab.id}
             href={tab.href}
-            className={`nav-tab-item`}
+            className={styles['tabItem']}
             aria-label={tab.label}
           >
-            <span className="radio-indicator" aria-hidden="true" />
+            <span className={styles['radioIndicator']} aria-hidden="true" />
             <span>{tab.label}</span>
           </a>
         );
@@ -55,12 +55,12 @@ export function NavigationTabs({
     {
       id: 'ui-components',
       label: 'Diagram and UI Components Quickstart',
-      href: 'https://www.overflow.dev/ui-components',
+      href: '/ui-components',
     },
     {
       id: 'interaction-components',
       label: 'Interaction Components Quickstart',
-      href: 'https://www.overflow.dev/premium',
+      href: '/premium',
     },
   ];
 
