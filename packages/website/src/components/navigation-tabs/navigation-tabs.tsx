@@ -55,7 +55,7 @@ export function NavigationTabs({
     {
       id: 'ui-components',
       label: 'Diagram and UI Components Quickstart',
-      href: '/ui-components',
+      href: '/ui-components/authored/quickstart',
     },
     {
       id: 'interaction-components',
