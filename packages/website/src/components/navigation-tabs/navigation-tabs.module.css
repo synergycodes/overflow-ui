@@ -1,0 +1,72 @@
+.tabsContainer {
+  --transition: all 0.2s ease-in-out;
+
+  display: flex;
+  width: 100%;
+  gap: 16px;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.tabItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  padding: 16px;
+  border: 1px solid var(--ax-ui-stroke-primary-default);
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--ax-txt-primary-default);
+  font-weight: 600;
+  font-size: 16px;
+  transition: var(--transition);
+  position: relative;
+  background-color: transparent;
+  line-height: 100%;
+}
+
+.tabItem:hover {
+  border-color: var(--ax-txt-secondary-default);
+  text-decoration: none;
+  color: inherit;
+}
+
+.tabItem[aria-current='page'],
+.tabItem.active {
+  border-color: var(--ifm-color-primary);
+  background-color: var(--ax-colors-acc1-500-10);
+  color: var(--ifm-color-primary);
+}
+
+.radioIndicator {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--ax-txt-secondary-default);
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabItem:hover .radioIndicator {
+  border-color: var(--ax-txt-primary-default);
+}
+
+.tabItem[aria-current='page'] .radioIndicator,
+.tabItem.active .radioIndicator {
+  border-color: var(--ifm-color-primary);
+}
+
+.tabItem[aria-current='page'] .radioIndicator::after,
+.tabItem.active .radioIndicator::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: var(--ifm-color-primary);
+  border-radius: 50%;
+  display: block;
+}

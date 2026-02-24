@@ -7,9 +7,9 @@ export function OverflowUIBanner() {
         <div className={styles['text-container']}>
           <p className={styles['title']}>React Flow UI Components</p>
           <p className={styles['description']}>
-            Build better and engage your customers across all channels with our
-            API reference documentation, quickstarts, SDKs and multi- language
-            code samples.
+            Start building with open-source UI components for React Flow.
+            Ready-to-use documentation, code examples, and API references help
+            you reduce setup time and scale faster.
           </p>
           <div className={styles['background']} />
         </div>
