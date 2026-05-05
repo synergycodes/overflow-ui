@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import styles from './snackbar.module.css';
 import { forwardRef } from 'react';
-import { Snackbar as BaseSnackbar } from '@mui/base';
 import { ActionButtons } from './components/action-buttons';
 import { Message } from './components/message';
 import { SnackbarVariant } from './types';
@@ -55,23 +54,23 @@ export const Snackbar = forwardRef<HTMLDivElement, SnackbarProps>(
     },
     ref,
   ) => (
-    <div ref={ref}>
-      <BaseSnackbar
-        open={true}
-        className={clsx(styles['container'], styles[variant])}
-      >
-        <div className={styles['content']}>
-          <Icon isCentered={!subtitle} variant={variant} />
-          <Message title={title} subtitle={subtitle} />
-          <ActionButtons
-            variant={variant}
-            buttonLabel={buttonLabel}
-            onButtonClick={onButtonClick}
-            close={close}
-            onClose={onClose}
-          />
-        </div>
-      </BaseSnackbar>
+    <div
+      ref={ref}
+      role="status"
+      aria-live="polite"
+      className={clsx(styles['container'], styles[variant])}
+    >
+      <div className={styles['content']}>
+        <Icon isCentered={!subtitle} variant={variant} />
+        <Message title={title} subtitle={subtitle} />
+        <ActionButtons
+          variant={variant}
+          buttonLabel={buttonLabel}
+          onButtonClick={onButtonClick}
+          close={close}
+          onClose={onClose}
+        />
+      </div>
     </div>
   ),
 );

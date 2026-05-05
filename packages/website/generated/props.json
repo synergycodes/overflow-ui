@@ -1996,35 +1996,23 @@
             "name": "string"
           }
         },
-        "selectedOptionLabel": {
+        "value": {
           "description": "",
           "required": true,
           "tsType": {
             "elements": [
               {
-                "elements": [
-                  {
-                    "elements": [
-                      {
-                        "name": "string"
-                      },
-                      {
-                        "name": "number"
-                      }
-                    ],
-                    "name": "union",
-                    "raw": "string | number"
-                  }
-                ],
-                "name": "SelectOption",
-                "raw": "SelectOption<string | number>"
+                "name": "string"
+              },
+              {
+                "name": "number"
               },
               {
                 "name": "null"
               }
             ],
             "name": "union",
-            "raw": "SelectOption<string | number> | null"
+            "raw": "string | number | null"
           }
         }
       }
@@ -2041,6 +2029,32 @@
           "required": false,
           "tsType": {
             "name": "string"
+          }
+        },
+        "defaultValue": {
+          "description": "The default value of the select when uncontrolled.",
+          "required": false,
+          "tsType": {
+            "elements": [
+              {
+                "name": "string"
+              },
+              {
+                "name": "number"
+              },
+              {
+                "name": "null"
+              }
+            ],
+            "name": "union",
+            "raw": "string | number | null"
+          }
+        },
+        "disabled": {
+          "description": "Whether the select is disabled.",
+          "required": false,
+          "tsType": {
+            "name": "boolean"
           }
         },
         "error": {
@@ -2176,11 +2190,77 @@
             "raw": "SelectItem[]"
           }
         },
+        "name": {
+          "description": "Identifies the field when a form is submitted.",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "onChange": {
+          "description": "Callback fired when the value of the select changes.",
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "raw": "(\n  event: SyntheticEvent | Event | null,\n  value: SelectValueType,\n) => void",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "event",
+                  "type": {
+                    "elements": [
+                      {
+                        "name": "SyntheticEvent"
+                      },
+                      {
+                        "name": "Event"
+                      },
+                      {
+                        "name": "null"
+                      }
+                    ],
+                    "name": "union",
+                    "raw": "SyntheticEvent | Event | null"
+                  }
+                },
+                {
+                  "name": "value",
+                  "type": {
+                    "elements": [
+                      {
+                        "name": "string"
+                      },
+                      {
+                        "name": "number"
+                      },
+                      {
+                        "name": "null"
+                      }
+                    ],
+                    "name": "union",
+                    "raw": "string | number | null"
+                  }
+                }
+              ],
+              "return": {
+                "name": "void"
+              }
+            },
+            "type": "function"
+          }
+        },
         "placeholder": {
           "description": "Placeholder text for the select input",
           "required": false,
           "tsType": {
             "name": "string"
+          }
+        },
+        "required": {
+          "description": "Whether the user must choose a value before submitting a form.",
+          "required": false,
+          "tsType": {
+            "name": "boolean"
           }
         },
         "size": {
@@ -2217,6 +2297,25 @@
             ],
             "name": "Extract",
             "raw": "Extract<Size, 'large' | 'medium' | 'small'>"
+          }
+        },
+        "value": {
+          "description": "The controlled value of the select.",
+          "required": false,
+          "tsType": {
+            "elements": [
+              {
+                "name": "string"
+              },
+              {
+                "name": "number"
+              },
+              {
+                "name": "null"
+              }
+            ],
+            "name": "union",
+            "raw": "string | number | null"
           }
         }
       }
