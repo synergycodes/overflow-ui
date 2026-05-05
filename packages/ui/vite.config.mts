@@ -47,7 +47,21 @@ export default defineConfig({
       formats: ['es'],
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'react/jsx-runtime'],
+      external: (id) => {
+        if (id === 'react' || id === 'react-dom' || id === 'react/jsx-runtime') {
+          return true;
+        }
+        if (id === '@base-ui/react' || id.startsWith('@base-ui/react/')) {
+          return true;
+        }
+        if (
+          id === '@phosphor-icons/react' ||
+          id.startsWith('@phosphor-icons/react/')
+        ) {
+          return true;
+        }
+        return false;
+      },
       // [TODO] Fix: suppress "Module level directives cause errors when bundled" warnings
       onwarn: (warning, warn) => {
         if (warning.code === 'MODULE_LEVEL_DIRECTIVE') {

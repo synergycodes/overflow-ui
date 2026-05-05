@@ -8,18 +8,18 @@ Developed and maintained by **[Synergy Codes](https://www.synergycodes.com/)**.
 
 ### 📦 Installation
 
-Use one of the commands below to add **Overflow UI** to your project:
+Overflow UI relies on `@base-ui/react` (headless component primitives) and `@phosphor-icons/react` (icon set) as peer dependencies. Install all three at once:
 
 ```bash
-npm install @synergycodes/overflow-ui
+npm install @synergycodes/overflow-ui @base-ui/react @phosphor-icons/react
 ```
 
 ```bash
-pnpm add @synergycodes/overflow-ui
+pnpm add @synergycodes/overflow-ui @base-ui/react @phosphor-icons/react
 ```
 
 ```bash
-yarn add @synergycodes/overflow-ui
+yarn add @synergycodes/overflow-ui @base-ui/react @phosphor-icons/react
 ```
 
 ### 🎨 Import styles
@@ -44,13 +44,17 @@ To make the styles use proper variables, include `data-theme` (`light` or `dark`
 
 ### 🎛️ Use components
 
+The library has a per-component subpath export, so you can import only what you use and let your bundler tree-shake the rest:
+
 ```tsx
-import { Input } from '@synergycodes/overflow-ui';
+import { Input } from '@synergycodes/overflow-ui/input';
 
 // …
 
 <Input value={value} onChange={onChange} />;
 ```
+
+The barrel import (`from '@synergycodes/overflow-ui'`) is also supported and tree-shakes equally well in modern bundlers.
 
 ### Customization
 
