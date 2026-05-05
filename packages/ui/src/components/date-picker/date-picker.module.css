@@ -5,6 +5,10 @@
   color: var(--ax-public-input-root-color);
   cursor: pointer;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 
   &[aria-expanded='true'] {
     border-color: var(--ax-public-input-root-border-color-focus);
@@ -15,4 +19,19 @@
     border-color: var(--ax-public-input-root-border-color-error);
     color: var(--ax-public-input-root-color-error);
   }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+}
+
+.container--placeholder .trigger-label {
+  opacity: 0.5;
+}
+
+.trigger-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

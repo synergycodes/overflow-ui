@@ -55,10 +55,10 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.4.1",
-    "@mantine/core": "^7.17.2",
-    "@mantine/dates": "^7.17.2",
     "@phosphor-icons/react": "^2.1.7",
     "clsx": "^2.0.0",
+    "date-fns": "^4.1.0",
+    "react-day-picker": "^9.14.0",
     "react-textarea-autosize": "^8.5.6"
   },
   "devDependencies": {

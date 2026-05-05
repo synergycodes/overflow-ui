@@ -956,16 +956,73 @@
   ],
   "../ui/src/components/date-picker/date-picker.tsx": [
     {
-      "description": "Component for selecting a date with customizable format and placeholder",
+      "description": "Component for selecting a date with customizable format and placeholder.\n\nBuilt on top of `react-day-picker` (calendar) composed with Base UI\n`Popover` (positioning + dismiss + a11y). The input/trigger uses our\nstandard input-size and input-font-size design tokens.",
       "displayName": "DatePicker",
       "methods": [],
       "props": {
-        "defaultValue": {
-          "description": "Default date value when the component is initially rendered.\n\nFor the \"default\" is a single date, for the \"range\" [date, date]; and for the \"multiple\", an array of dates.",
+        "aria-label": {
+          "description": "Accessible name for the trigger button.",
           "required": false,
           "tsType": {
-            "name": "intersection['defaultValue']",
-            "raw": "DatePickerProps['defaultValue']"
+            "name": "string"
+          }
+        },
+        "aria-labelledby": {
+          "description": "`aria-labelledby` for the trigger button.",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "className": {
+          "description": "Class name applied to the trigger button.",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "defaultValue": {
+          "description": "Initial value when the picker is uncontrolled.\n\n- `default` accepts `Date | string`\n- `range` accepts `[Date, Date]`\n- `multiple` accepts `Date[]`",
+          "required": false,
+          "tsType": {
+            "elements": [
+              {
+                "name": "Date"
+              },
+              {
+                "elements": [
+                  {
+                    "name": "Date"
+                  },
+                  {
+                    "name": "Date"
+                  }
+                ],
+                "name": "tuple",
+                "raw": "[Date, Date]"
+              },
+              {
+                "elements": [
+                  {
+                    "name": "Date"
+                  }
+                ],
+                "name": "Array",
+                "raw": "Date[]"
+              },
+              {
+                "name": "string"
+              }
+            ],
+            "name": "union",
+            "raw": "Date | [Date, Date] | Date[] | string"
+          }
+        },
+        "disabled": {
+          "description": "Disable the picker. The trigger button is not interactive and the\npopover cannot be opened.",
+          "required": false,
+          "tsType": {
+            "name": "boolean"
           }
         },
         "error": {
@@ -973,10 +1030,17 @@
             "computed": false,
             "value": "false"
           },
-          "description": "Whether the date picker has an error",
+          "description": "Render the trigger in an error state.\n\n@default false",
           "required": false,
           "tsType": {
             "name": "boolean"
+          }
+        },
+        "id": {
+          "description": "`id` attribute applied to the trigger button.",
+          "required": false,
+          "tsType": {
+            "name": "string"
           }
         },
         "inputSize": {
@@ -984,10 +1048,76 @@
             "computed": false,
             "value": "'medium'"
           },
-          "description": "",
+          "description": "Size variant of the trigger input.\n@default 'medium'",
           "required": false,
           "tsType": {
             "name": "ItemSize"
+          }
+        },
+        "maxDate": {
+          "description": "The latest selectable date (inclusive).",
+          "required": false,
+          "tsType": {
+            "name": "Date"
+          }
+        },
+        "minDate": {
+          "description": "The earliest selectable date (inclusive).",
+          "required": false,
+          "tsType": {
+            "name": "Date"
+          }
+        },
+        "onChange": {
+          "description": "Callback fired when the selected value changes.\n\n- `default` -> the selected `Date` or `null` when cleared\n- `range`   -> `[from, to]` once both dates are selected, otherwise `null`\n- `multiple`-> the array of selected `Date`s (empty array allowed)",
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "raw": "(value: Date | [Date, Date] | Date[] | null) => void",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "value",
+                  "type": {
+                    "elements": [
+                      {
+                        "name": "Date"
+                      },
+                      {
+                        "elements": [
+                          {
+                            "name": "Date"
+                          },
+                          {
+                            "name": "Date"
+                          }
+                        ],
+                        "name": "tuple",
+                        "raw": "[Date, Date]"
+                      },
+                      {
+                        "elements": [
+                          {
+                            "name": "Date"
+                          }
+                        ],
+                        "name": "Array",
+                        "raw": "Date[]"
+                      },
+                      {
+                        "name": "null"
+                      }
+                    ],
+                    "name": "union",
+                    "raw": "Date | [Date, Date] | Date[] | null"
+                  }
+                }
+              ],
+              "return": {
+                "name": "void"
+              }
+            },
+            "type": "function"
           }
         },
         "placeholder": {
@@ -995,10 +1125,17 @@
             "computed": false,
             "value": "'dd/mm/yyyy'"
           },
-          "description": "Placeholder text to show when no date is selected",
+          "description": "Placeholder text shown when no date is selected.\n\n@default 'dd/mm/yyyy'",
           "required": false,
           "tsType": {
             "name": "string"
+          }
+        },
+        "readOnly": {
+          "description": "Render the picker as read-only. The trigger displays the current value\nbut the popover cannot be opened.",
+          "required": false,
+          "tsType": {
+            "name": "boolean"
           }
         },
         "type": {
@@ -1006,18 +1143,62 @@
             "computed": false,
             "value": "'default'"
           },
-          "description": "Picker type",
+          "description": "Picker type.\n\n- `default` selects a single date\n- `range` selects a `[from, to]` date range\n- `multiple` selects an arbitrary array of dates\n\n@default 'default'",
           "required": false,
           "tsType": {
-            "name": "DatePickerType"
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'default'"
+              },
+              {
+                "name": "literal",
+                "value": "'range'"
+              },
+              {
+                "name": "literal",
+                "value": "'multiple'"
+              }
+            ],
+            "name": "union",
+            "raw": "'default' | 'range' | 'multiple'"
           }
         },
         "value": {
-          "description": "Controlled value for the selected date\n\nFor the \"default\" is a single date, for the \"range\" [date, date]; and for the \"multiple\", an array of dates.",
+          "description": "Controlled selected value. When set, the picker becomes controlled.",
           "required": false,
           "tsType": {
-            "name": "intersection['value']",
-            "raw": "DatePickerProps['value']"
+            "elements": [
+              {
+                "name": "Date"
+              },
+              {
+                "elements": [
+                  {
+                    "name": "Date"
+                  },
+                  {
+                    "name": "Date"
+                  }
+                ],
+                "name": "tuple",
+                "raw": "[Date, Date]"
+              },
+              {
+                "elements": [
+                  {
+                    "name": "Date"
+                  }
+                ],
+                "name": "Array",
+                "raw": "Date[]"
+              },
+              {
+                "name": "string"
+              }
+            ],
+            "name": "union",
+            "raw": "Date | [Date, Date] | Date[] | string"
           }
         },
         "valueFormat": {
@@ -1025,7 +1206,7 @@
             "computed": false,
             "value": "'DD/MM/YYYY'"
           },
-          "description": "Format string to control how the selected date is displayed\n(e.g., 'yyyy-MM-dd')",
+          "description": "Format string used to render the selected date(s) in the trigger.\n\n**Note:** This implementation uses `date-fns` format tokens (e.g.\n`dd/MM/yyyy`). The legacy default value `DD/MM/YYYY` (dayjs tokens) is\naccepted and converted to the equivalent `date-fns` tokens for backwards\ncompatibility.\n\n@default 'DD/MM/YYYY'",
           "required": false,
           "tsType": {
             "name": "string"
