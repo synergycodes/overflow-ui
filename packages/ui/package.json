@@ -37,7 +37,8 @@
     "lint:fix": "eslint --fix",
     "typecheck": "tsc --noEmit --pretty",
     "test:visual": "pnpm preview:build && playwright test",
-    "test:visual:update": "pnpm preview:build && playwright test --update-snapshots"
+    "test:visual:update": "pnpm preview:build && playwright test --update-snapshots",
+    "build:stats": "BUNDLE_STATS=1 vite build"
   },
   "module": "./dist/overflow-ui.js",
   "files": [
@@ -72,6 +73,7 @@
     "postcss": "^8.5.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "rollup-plugin-visualizer": "^7.0.1",
     "typescript": "^5.6.3",
     "vite": "^6.2.2",
     "vite-plugin-dts": "^4.5.3",
