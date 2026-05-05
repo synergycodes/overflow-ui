@@ -5,26 +5,30 @@ import inputFontStyles from '@ui/shared/styles/input-font-size.module.css';
 import inputSizeStyles from '@ui/shared/styles/input-size.module.css';
 import './variables.css';
 
-import { Input as InputBase } from '@mui/base';
+import { Input as InputBase } from '@base-ui/react/input';
 import type { InputProps } from './types';
 
 export function Input({
   size = 'medium',
-  startAdornment = undefined,
-  endAdornment = undefined,
+  startAdornment,
+  endAdornment,
+  className,
   ...props
 }: InputProps) {
   return (
-    <InputBase
-      {...props}
-      slotProps={{
-        root: {
-          className: clsx(inputRootStyles['input-root'], inputSizeStyles[size]),
-        },
-        input: { className: clsx(inputStyles['input'], inputFontStyles[size]) },
-      }}
-      startAdornment={startAdornment}
-      endAdornment={endAdornment}
-    />
+    <div
+      className={clsx(
+        inputRootStyles['input-root'],
+        inputSizeStyles[size],
+        className,
+      )}
+    >
+      {startAdornment}
+      <InputBase
+        {...props}
+        className={clsx(inputStyles['input'], inputFontStyles[size])}
+      />
+      {endAdornment}
+    </div>
   );
 }

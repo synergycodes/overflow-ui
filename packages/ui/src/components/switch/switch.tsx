@@ -1,9 +1,14 @@
 import clsx from 'clsx';
 import switchStyles from './switch.module.css';
 
-import { Switch as SwitchBase, SwitchProps } from '@mui/base';
+import { Switch as SwitchBase } from '@base-ui/react/switch';
 import { ChangeEvent } from 'react';
 import { SelectorSize } from '@ui/shared/types/selector-size';
+
+type SwitchRootProps = Omit<
+  React.ComponentProps<typeof SwitchBase.Root>,
+  'onCheckedChange' | 'render' | 'children' | 'className'
+>;
 
 export type BaseSwitchProps = {
   /**
@@ -38,7 +43,7 @@ export type BaseSwitchProps = {
    * Callback function when the switch state changes
    */
   onChange?: (checked: boolean, event: ChangeEvent<HTMLInputElement>) => void;
-} & Omit<SwitchProps, 'onChange'>;
+} & SwitchRootProps;
 
 /**
  * A Switch component that allows users to toggle between two states, such as on and off.
@@ -53,30 +58,52 @@ export function Switch({
   onChange,
   ...props
 }: BaseSwitchProps) {
-  function handleChange(event: ChangeEvent<HTMLInputElement>) {
-    onChange?.(event.target.checked, event);
+  function handleCheckedChange(
+    checked: boolean,
+    eventDetails: { event: Event },
+  ) {
+    onChange?.(
+      checked,
+      eventDetails.event as unknown as ChangeEvent<HTMLInputElement>,
+    );
   }
 
-  const slotProps = {
-    root: {
-      className: clsx(
+  return (
+    <span
+      className={clsx(
         switchStyles['container'],
         switchStyles[size],
         styles,
         className,
-      ),
-    },
-    thumb: {
-      className: clsx({ [switchStyles['thumb']]: !thumbChildren }),
-      children: thumbChildren,
-    },
-    track: {
-      className: clsx({ [switchStyles['track']]: !trackChildren }),
-      children: trackChildren,
-    },
-  };
-
-  return (
-    <SwitchBase slotProps={slotProps} onChange={handleChange} {...props} />
+      )}
+    >
+      <SwitchBase.Root
+        onCheckedChange={handleCheckedChange}
+        render={(rootProps) => (
+          <span
+            {...rootProps}
+            style={{ ...rootProps.style, display: 'contents' }}
+          />
+        )}
+        {...props}
+      >
+        {trackChildren ?? <span className={switchStyles['track']} />}
+        <SwitchBase.Thumb
+          className={clsx({ [switchStyles['thumb']]: !thumbChildren })}
+          render={
+            thumbChildren
+              ? (thumbProps) => (
+                  <span
+                    {...thumbProps}
+                    style={{ ...thumbProps.style, display: 'contents' }}
+                  />
+                )
+              : undefined
+          }
+        >
+          {thumbChildren}
+        </SwitchBase.Thumb>
+      </SwitchBase.Root>
+    </span>
   );
 }
