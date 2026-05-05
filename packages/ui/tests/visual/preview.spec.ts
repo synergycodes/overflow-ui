@@ -24,6 +24,7 @@ const FLOATING_SHOWCASES = [
   'menu-open',
   'select-open',
   'tooltip-open',
+  'date-picker-open',
   'snackbar-success',
   'snackbar-error',
   'snackbar-warning',
@@ -56,6 +57,13 @@ test.describe('floating showcases', () => {
       if (showcase === 'select-open') {
         await page.getByTestId('select-open-host').locator('button').click();
         await page.waitForTimeout(150);
+      }
+      if (showcase === 'date-picker-open') {
+        await page
+          .getByTestId('date-picker-open-host')
+          .locator('button')
+          .click();
+        await page.waitForTimeout(300);
       }
       await expect(page).toHaveScreenshot(`${showcase}.png`, {
         fullPage: false,

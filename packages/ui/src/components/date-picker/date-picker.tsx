@@ -149,6 +149,7 @@ export const DatePicker = forwardRef<HTMLButtonElement, Props>(
             startMonth={minDate}
             endMonth={maxDate}
             showOutsideDays
+            weekStartsOn={1}
             navLayout="around"
             components={{ Chevron: CalendarChevron }}
           />
@@ -162,6 +163,7 @@ export const DatePicker = forwardRef<HTMLButtonElement, Props>(
             startMonth={minDate}
             endMonth={maxDate}
             showOutsideDays
+            weekStartsOn={1}
             navLayout="around"
             components={{ Chevron: CalendarChevron }}
           />
@@ -179,6 +181,7 @@ export const DatePicker = forwardRef<HTMLButtonElement, Props>(
             startMonth={minDate}
             endMonth={maxDate}
             showOutsideDays
+            weekStartsOn={1}
             navLayout="around"
             components={{ Chevron: CalendarChevron }}
           />

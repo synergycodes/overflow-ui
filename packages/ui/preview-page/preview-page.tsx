@@ -35,7 +35,8 @@ type Showcase =
   | 'snackbar-warning'
   | 'snackbar-info'
   | 'snackbar-default'
-  | 'tooltip-open';
+  | 'tooltip-open'
+  | 'date-picker-open';
 
 function getShowcase(): Showcase {
   if (typeof window === 'undefined') return 'main';
@@ -51,6 +52,7 @@ export function PreviewPage() {
   if (showcase === 'menu-open') return <MenuOpenShowcase />;
   if (showcase === 'select-open') return <SelectOpenShowcase />;
   if (showcase === 'tooltip-open') return <TooltipOpenShowcase />;
+  if (showcase === 'date-picker-open') return <DatePickerOpenShowcase />;
   if (showcase.startsWith('snackbar-')) {
     const variant = showcase.replace('snackbar-', '') as
       | 'success'
@@ -555,6 +557,17 @@ function TooltipOpenShowcase() {
           <span>Tooltip content</span>
         </TooltipContent>
       </Tooltip>
+    </div>
+  );
+}
+
+function DatePickerOpenShowcase() {
+  const today = new Date('2026-05-05T00:00:00');
+  return (
+    <div className={styles['float-host']}>
+      <div style={{ width: 240 }} data-testid="date-picker-open-host">
+        <DatePicker defaultValue={today} />
+      </div>
     </div>
   );
 }

@@ -21,7 +21,7 @@
     var(--ax-token-shadow-shadow-m-spread) var(--ax-shadow);
 
   --ax-public-date-picker-color: var(--ax-txt-secondary-default);
-  --ax-public-date-picker-header-background: var(--ax-ui-bg-secondary-default);
+  --ax-public-date-picker-header-background: var(--ax-ui-bg-tertiary-default);
   --ax-public-date-picker-date-header-color: var(--ax-txt-tertiary-default);
   --ax-public-date-picker-date-outside-color: var(--ax-txt-quaternary-default);
   --ax-public-date-picker-date-selected-color: var(--ax-txt-primary-white);
@@ -64,10 +64,10 @@
 
 /* Calendar root sizing */
 .mantine-Popover-dropdown .rdp-root {
-  --rdp-day-width: 1.875rem;
-  --rdp-day-height: 1.875rem;
-  --rdp-day_button-width: 1.375rem;
-  --rdp-day_button-height: 1.375rem;
+  --rdp-day-width: 2rem;
+  --rdp-day-height: 2rem;
+  --rdp-day_button-width: 1.5rem;
+  --rdp-day_button-height: 1.5rem;
   --rdp-day_button-border-radius: 0.25rem;
   --rdp-day_button-border: none;
   --rdp-nav_button-width: 1.5rem;
@@ -93,24 +93,43 @@
 /*
  * Calendar header.
  *
- * With `navLayout="around"` react-day-picker renders the previous/next
- * buttons as siblings of `.rdp-month_caption` inside `.rdp-month` (which is
- * a `<div>`). The `.rdp-month_grid` is a `<table>`. To replicate Mantine's
- * single-row header (prev | caption | next) above the calendar grid, we
- * absolutely position the buttons inside a relative-positioned banner area
- * shared with the caption, then let the table flow below normally.
+ * With `navLayout="around"` react-day-picker renders DOM order:
+ *   .rdp-month
+ *     .rdp-button_previous
+ *     .rdp-month_caption
+ *     .rdp-button_next
+ *     .rdp-month_grid (<table>)
+ *
+ * To replicate Mantine's single-row header (prev | caption | next), we use
+ * a CSS grid on `.rdp-month` so the first three children share one row and
+ * the grid table spans across all columns below. This avoids any absolute
+ * positioning fragility (which previously caused the buttons to render in
+ * the middle of the day grid).
  */
 .mantine-Popover-dropdown .rdp-month {
-  display: block;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 0.25rem;
+  background: var(--ax-public-date-picker-header-background);
+}
+
+/*
+ * Override the (inherited) header background only behind day cells. We tag
+ * each <tr> of day cells (.rdp-week) with the popup background, so the
+ * caption row + weekday <thead> keep the subtle header shade.
+ */
+.mantine-Popover-dropdown .rdp-week {
+  background: var(--ax-public-date-picker-dropdown-background);
 }
 
 .mantine-Popover-dropdown .rdp-month_caption {
-  position: relative;
+  grid-column: 2 / 3;
+  grid-row: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--ax-public-date-picker-header-background);
-  padding: 0.5rem 0.75rem 0.25rem;
+  padding: 0.375rem 0;
   font-size: 0.75rem;
   font-weight: 400;
 }
@@ -124,9 +143,7 @@
 
 .mantine-Popover-dropdown .rdp-button_previous,
 .mantine-Popover-dropdown .rdp-button_next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  grid-row: 1;
   padding: 0.375rem;
   cursor: pointer;
   display: flex;
@@ -135,11 +152,11 @@
 }
 
 .mantine-Popover-dropdown .rdp-button_previous {
-  left: 0.375rem;
+  grid-column: 1 / 2;
 }
 
 .mantine-Popover-dropdown .rdp-button_next {
-  right: 0.375rem;
+  grid-column: 3 / 4;
 }
 
 .mantine-Popover-dropdown .rdp-button_previous[disabled],
@@ -150,7 +167,9 @@
 
 /* Month grid */
 .mantine-Popover-dropdown .rdp-month_grid {
-  padding: 0.25rem 0.75rem 0.5rem;
+  grid-column: 1 / 4;
+  grid-row: 2;
+  padding: 0.25rem 0.5rem 0.5rem;
   font-size: 0.75rem;
   font-weight: 600;
   border-spacing: 0;
@@ -181,8 +200,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.375rem;
-  height: 1.375rem;
+  width: 1.5rem;
+  height: 1.5rem;
   border-radius: 0.25rem;
 }
 

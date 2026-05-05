@@ -26,3 +26,4 @@ packages/website/static/css/*
 # Playwright
 packages/ui/playwright-report
 packages/ui/test-results
+.playwright-mcp
