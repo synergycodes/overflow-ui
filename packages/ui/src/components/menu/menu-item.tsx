@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import listItemStyles from '@ui/shared/styles/list-item.module.css';
 import listItemSize from '@ui/shared/styles/list-item-size.module.css';
-import { MenuItem as MenuItemBase } from '@mui/base';
+import { Menu as MenuBase } from '@base-ui/react/menu';
 import { MenuItemProps } from './types';
 
 export function MenuItem({
@@ -13,7 +13,7 @@ export function MenuItem({
   onClick,
 }: MenuItemProps) {
   return (
-    <MenuItemBase
+    <MenuBase.Item
       disabled={disabled}
       className={clsx(listItemStyles['list-item'], listItemSize[size], {
         [listItemStyles['destructive']]: destructive,
@@ -22,6 +22,6 @@ export function MenuItem({
     >
       {icon}
       {label}
-    </MenuItemBase>
+    </MenuBase.Item>
   );
 }

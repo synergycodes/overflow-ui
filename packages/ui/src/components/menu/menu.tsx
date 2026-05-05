@@ -4,21 +4,18 @@ import clsx from 'clsx';
 import {
   memo,
   ReactElement,
-  useMemo,
   MouseEvent,
   KeyboardEvent,
   FocusEvent,
 } from 'react';
-import { Dropdown, MenuButton } from '@mui/base';
-import { Menu as MenuBase, MenuProps as MenuBaseProps } from '@mui/base/Menu';
+import { Menu as MenuBase } from '@base-ui/react/menu';
 import { MenuItem } from './menu-item';
 import { MenuItemProps } from './types';
 import { ItemSize } from '@ui/shared/types/item-size';
 import { Separator } from '@ui/components/separator/separator';
 import { OffsetOptions, Placement } from '@floating-ui/react';
-import { createTriggerButton } from './utils/create-trigger-button';
 
-type MenuProps = MenuBaseProps & {
+type MenuProps = {
   /**
    * Array of menu items to be rendered in the menu.
    * Each item can be either a regular menu item or a separator.
@@ -64,53 +61,97 @@ type MenuProps = MenuBaseProps & {
   children?: ReactElement;
 };
 
+type Side = 'top' | 'bottom' | 'left' | 'right' | 'inline-start' | 'inline-end';
+type Align = 'start' | 'center' | 'end';
+
+function placementToSideAlign(placement: Placement): {
+  side: Side;
+  align: Align;
+} {
+  const [side, alignRaw] = placement.split('-') as [string, string | undefined];
+  return {
+    side: side as Side,
+    align: (alignRaw ?? 'center') as Align,
+  };
+}
+
+function offsetToBaseUI(offset?: OffsetOptions): {
+  sideOffset?: number;
+  alignOffset?: number;
+} {
+  if (offset == null) return {};
+  if (typeof offset === 'number') return { sideOffset: offset };
+  if (typeof offset === 'object') {
+    const obj = offset as {
+      mainAxis?: number;
+      crossAxis?: number;
+      alignmentAxis?: number;
+    };
+    return {
+      sideOffset: obj.mainAxis ?? 0,
+      alignOffset: obj.crossAxis ?? obj.alignmentAxis ?? 0,
+    };
+  }
+  return {};
+}
+
 export const Menu = memo(
   ({
     items,
     size = 'medium',
     placement = 'bottom-end',
     children,
-    slotProps,
     open,
     offset,
     onOpenChange,
-    ...props
   }: MenuProps) => {
-    const MenuTriggerButton = useMemo(() => {
-      if (children) {
-        return createTriggerButton(children);
-      }
-      return null;
-    }, [children]);
+    const { side, align } = placementToSideAlign(placement);
+    const { sideOffset, alignOffset } = offsetToBaseUI(offset);
 
     return (
-      <Dropdown open={open} onOpenChange={onOpenChange}>
-        {MenuTriggerButton && (
-          <MenuButton slots={{ root: MenuTriggerButton }} />
-        )}
-        <MenuBase
-          slotProps={{
-            listbox: {
-              className: listBoxStyles['list-box'],
-            },
-            root: {
-              placement: placement,
-              className: clsx(listBoxStyles['popup']),
-              offset,
-            },
-            ...slotProps,
-          }}
-          {...props}
-        >
-          {items.map((item, index) =>
-            item.type === 'separator' ? (
-              <Separator key={index} />
-            ) : (
-              <MenuItem key={item.label} {...item} size={size} />
-            ),
-          )}
-        </MenuBase>
-      </Dropdown>
+      <MenuBase.Root
+        open={open}
+        onOpenChange={
+          onOpenChange
+            ? (nextOpen, eventDetails) => {
+                // Base UI exposes the originating native event via
+                // `eventDetails.event`. Our public callback signature predates
+                // Base UI and types this as a React synthetic event; we cast to
+                // preserve backwards compatibility for consumers, who in
+                // practice almost never read fields off the event itself.
+                onOpenChange(
+                  eventDetails.event as unknown as
+                    | MouseEvent
+                    | KeyboardEvent
+                    | FocusEvent
+                    | null,
+                  nextOpen,
+                );
+              }
+            : undefined
+        }
+      >
+        {children && <MenuBase.Trigger render={children} />}
+        <MenuBase.Portal>
+          <MenuBase.Positioner
+            side={side}
+            align={align}
+            sideOffset={sideOffset}
+            alignOffset={alignOffset}
+            className={clsx(listBoxStyles['popup'])}
+          >
+            <MenuBase.Popup className={listBoxStyles['list-box']}>
+              {items.map((item, index) =>
+                item.type === 'separator' ? (
+                  <Separator key={index} />
+                ) : (
+                  <MenuItem key={item.label} {...item} size={size} />
+                ),
+              )}
+            </MenuBase.Popup>
+          </MenuBase.Positioner>
+        </MenuBase.Portal>
+      </MenuBase.Root>
     );
   },
 );

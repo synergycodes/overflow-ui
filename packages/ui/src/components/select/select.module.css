@@ -6,6 +6,6 @@
   }
 
   .popup {
-    width: 100%;
+    width: var(--anchor-width);
   }
 }

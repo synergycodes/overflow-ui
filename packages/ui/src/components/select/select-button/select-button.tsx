@@ -1,19 +1,14 @@
-import type { SelectRootSlotProps } from '@mui/base';
 import { CaretDown } from '@phosphor-icons/react';
 import type { WithIcon } from '@ui/shared/types/with-icon';
-import React from 'react';
+import { forwardRef, type ComponentPropsWithoutRef } from 'react';
 
-export const SelectButton = React.forwardRef(function Button<
-  TValue extends object,
-  Multiple extends boolean,
->(
-  props: SelectRootSlotProps<TValue, Multiple> & WithIcon,
-  ref: React.ForwardedRef<HTMLButtonElement>,
-) {
-  const { icon, ownerState: _, ...other } = props;
+export const SelectButton = forwardRef<
+  HTMLButtonElement,
+  ComponentPropsWithoutRef<'button'> & WithIcon
+>(function SelectButton({ icon, children, ...rest }, ref) {
   return (
-    <button type="button" {...other} ref={ref}>
-      {other.children}
+    <button type="button" {...rest} ref={ref}>
+      {children}
       {icon ?? <CaretDown weight="bold" />}
     </button>
   );
