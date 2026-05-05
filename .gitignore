@@ -22,3 +22,7 @@ packages/website/docs/generated-docs/*
 packages/website/.docusaurus
 packages/website/.cache-loader
 packages/website/static/css/*
+
+# Playwright
+packages/ui/playwright-report
+packages/ui/test-results

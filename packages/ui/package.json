@@ -32,9 +32,12 @@
     "dev": "vite build --watch",
     "check:built-css": "tsx ./scripts/check-built-css.ts",
     "preview": "vite --config preview-page/vite.preview.config.ts",
+    "preview:build": "vite build --config preview-page/vite.preview.config.ts",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
-    "typecheck": "tsc --noEmit --pretty"
+    "typecheck": "tsc --noEmit --pretty",
+    "test:visual": "pnpm preview:build && playwright test",
+    "test:visual:update": "pnpm preview:build && playwright test --update-snapshots"
   },
   "module": "./dist/overflow-ui.js",
   "files": [
@@ -50,6 +53,7 @@
     "./tokens.css": "./dist/tokens.css"
   },
   "dependencies": {
+    "@base-ui/react": "^1.4.1",
     "@emotion/styled": "^11.14.0",
     "@floating-ui/react": "^0.26.28",
     "@mantine/core": "^7.17.2",
@@ -57,10 +61,12 @@
     "@mui/base": "5.0.0-beta.62",
     "@mui/material": "^6.4.7",
     "@phosphor-icons/react": "^2.1.7",
-    "clsx": "^2.0.0"
+    "clsx": "^2.0.0",
+    "react-textarea-autosize": "^8.5.6"
   },
   "devDependencies": {
     "@emotion/react": "^11.14.0",
+    "@playwright/test": "^1.59.1",
     "@synergycodes/overflow-ui-tokens": "workspace:*",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
