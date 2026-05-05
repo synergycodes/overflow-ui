@@ -1,11 +1,44 @@
+import fs from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { defineConfig } from 'vite';
+import { defineConfig, type Plugin } from 'vite';
 import { libInjectCss } from 'vite-plugin-lib-inject-css';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import dts from 'vite-plugin-dts';
 import { visualizer } from 'rollup-plugin-visualizer';
 import { boxSizingPlugin } from './postcss-box-sizing.mts';
+
+function combineCssBundle(): Plugin {
+  return {
+    name: 'overflow-ui:combine-css-bundle',
+    apply: 'build',
+    closeBundle() {
+      const distDir = resolve(__dirname, 'dist');
+      const assetsDir = resolve(distDir, 'assets');
+      if (fs.existsSync(assetsDir)) {
+        const cssFiles = fs
+          .readdirSync(assetsDir)
+          .filter((f) => f.endsWith('.css'))
+          .sort();
+        const combined = cssFiles
+          .map((f) => fs.readFileSync(resolve(assetsDir, f), 'utf-8'))
+          .join('\n');
+        fs.writeFileSync(resolve(distDir, 'index.css'), combined);
+      }
+      // Backwards-compat shim for consumers that hard-coded the old
+      // single-bundle filename (e.g. workflow-builder's LOCAL_OVERFLOW_UI
+      // dev alias).
+      fs.writeFileSync(
+        resolve(distDir, 'overflow-ui.js'),
+        `export * from './index.js';\n`,
+      );
+      fs.writeFileSync(
+        resolve(distDir, 'overflow-ui.d.ts'),
+        `export * from './index';\n`,
+      );
+    },
+  };
+}
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -106,6 +139,7 @@ export default defineConfig({
         { src: '../tokens/dist/primitives-mode-1.css', dest: '.' },
       ],
     }),
+    combineCssBundle(),
     ...(process.env.BUNDLE_STATS
       ? [
           visualizer({
