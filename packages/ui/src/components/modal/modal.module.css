@@ -65,6 +65,16 @@
     height: 100vh;
     padding: 1.5rem;
     overflow: auto;
+
+    transition:
+      opacity 200ms ease-out,
+      transform 200ms ease-out;
+
+    &[data-starting-style],
+    &[data-ending-style] {
+      opacity: 0;
+      transform: scale(0.96);
+    }
   }
 
   .backdrop {
@@ -80,6 +90,13 @@
       var(--ax-public-modal-backdrop-background),
       transparent 50%
     );
+
+    transition: opacity 200ms ease-out;
+
+    &[data-starting-style],
+    &[data-ending-style] {
+      opacity: 0;
+    }
   }
 
   .backdrop-close {

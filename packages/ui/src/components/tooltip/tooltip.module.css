@@ -14,6 +14,17 @@
   width: max-content;
   max-width: 33vw;
   z-index: 100;
+
+  transition:
+    opacity 120ms ease-out,
+    transform 120ms ease-out;
+  transform-origin: var(--transform-origin, center);
+
+  &[data-starting-style],
+  &[data-ending-style] {
+    opacity: 0;
+    transform: scale(0.96);
+  }
 }
 
 .tooltip-default {

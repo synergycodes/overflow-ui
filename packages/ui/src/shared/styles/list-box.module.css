@@ -16,6 +16,18 @@
     background: var(--ax-public-list-box-background-color);
     box-shadow: var(--ax-public-list-box-box-shadow);
     z-index: 10000;
+
+    transition:
+      opacity 150ms ease-out,
+      transform 150ms ease-out;
+    transform-origin: top;
+
+    &[data-starting-style],
+    &[data-ending-style] {
+      opacity: 0;
+      transform: scaleY(0.96);
+    }
+
     &:not([data-open]) {
       display: none;
       transform: unset !important;
