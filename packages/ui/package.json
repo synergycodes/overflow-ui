@@ -40,16 +40,96 @@
     "test:visual:update": "pnpm preview:build && playwright test --update-snapshots",
     "build:stats": "BUNDLE_STATS=1 vite build"
   },
-  "module": "./dist/overflow-ui.js",
+  "module": "./dist/index.js",
   "files": [
     "dist"
   ],
-  "main": "./dist/overflow-ui.js",
+  "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/overflow-ui.js"
+      "import": "./dist/index.js"
+    },
+    "./accordion": {
+      "types": "./dist/components/accordion/index.d.ts",
+      "import": "./dist/accordion.js"
+    },
+    "./avatar": {
+      "types": "./dist/components/avatar/index.d.ts",
+      "import": "./dist/avatar.js"
+    },
+    "./button": {
+      "types": "./dist/components/button/index.d.ts",
+      "import": "./dist/button.js"
+    },
+    "./checkbox": {
+      "types": "./dist/components/checkbox/index.d.ts",
+      "import": "./dist/checkbox.js"
+    },
+    "./collapsible": {
+      "types": "./dist/components/collapsible/index.d.ts",
+      "import": "./dist/collapsible.js"
+    },
+    "./date-picker": {
+      "types": "./dist/components/date-picker/index.d.ts",
+      "import": "./dist/date-picker.js"
+    },
+    "./edge": {
+      "types": "./dist/components/edge/index.d.ts",
+      "import": "./dist/edge.js"
+    },
+    "./input": {
+      "types": "./dist/components/input/index.d.ts",
+      "import": "./dist/input.js"
+    },
+    "./menu": {
+      "types": "./dist/components/menu/index.d.ts",
+      "import": "./dist/menu.js"
+    },
+    "./modal": {
+      "types": "./dist/components/modal/index.d.ts",
+      "import": "./dist/modal.js"
+    },
+    "./node": {
+      "types": "./dist/components/node/index.d.ts",
+      "import": "./dist/node.js"
+    },
+    "./radio-button": {
+      "types": "./dist/components/radio-button/index.d.ts",
+      "import": "./dist/radio-button.js"
+    },
+    "./segment-picker": {
+      "types": "./dist/components/segment-picker/index.d.ts",
+      "import": "./dist/segment-picker.js"
+    },
+    "./select": {
+      "types": "./dist/components/select/index.d.ts",
+      "import": "./dist/select.js"
+    },
+    "./separator": {
+      "types": "./dist/components/separator/index.d.ts",
+      "import": "./dist/separator.js"
+    },
+    "./snackbar": {
+      "types": "./dist/components/snackbar/index.d.ts",
+      "import": "./dist/snackbar.js"
+    },
+    "./status": {
+      "types": "./dist/components/status/index.d.ts",
+      "import": "./dist/status.js"
+    },
+    "./switch": {
+      "types": "./dist/components/switch/index.d.ts",
+      "import": "./dist/switch.js"
+    },
+    "./text-area": {
+      "types": "./dist/components/text-area/index.d.ts",
+      "import": "./dist/text-area.js"
+    },
+    "./tooltip": {
+      "types": "./dist/components/tooltip/index.d.ts",
+      "import": "./dist/tooltip.js"
     },
     "./tokens.css": "./dist/tokens.css"
   },

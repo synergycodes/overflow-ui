@@ -9,12 +9,41 @@ import { boxSizingPlugin } from './postcss-box-sizing.mts';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+const componentEntries = [
+  'accordion',
+  'avatar',
+  'button',
+  'checkbox',
+  'collapsible',
+  'date-picker',
+  'edge',
+  'input',
+  'menu',
+  'modal',
+  'node',
+  'radio-button',
+  'segment-picker',
+  'select',
+  'separator',
+  'snackbar',
+  'status',
+  'switch',
+  'text-area',
+  'tooltip',
+] as const;
+
+const entry: Record<string, string> = {
+  index: resolve(__dirname, 'src/index.ts'),
+};
+for (const name of componentEntries) {
+  entry[name] = resolve(__dirname, `src/components/${name}/index.ts`);
+}
+
 export default defineConfig({
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
+      entry,
       name: 'Overflow UI',
-      fileName: 'overflow-ui',
       formats: ['es'],
     },
     rollupOptions: {
@@ -27,6 +56,9 @@ export default defineConfig({
         warn(warning);
       },
       output: {
+        entryFileNames: '[name].js',
+        chunkFileNames: 'chunks/[name]-[hash].js',
+        assetFileNames: 'assets/[name][extname]',
         globals: {
           'react-dom': 'ReactDom',
           react: 'React',
