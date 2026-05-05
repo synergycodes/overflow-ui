@@ -27,3 +27,37 @@
   background-color: var(--ax-public-tooltip-blue-background);
   fill: var(--ax-public-tooltip-blue-background);
 }
+
+.arrow {
+  width: 10px;
+  height: 4px;
+  display: block;
+  pointer-events: none;
+}
+
+/*
+ * The arrow SVG is drawn pointing downwards (apex at the bottom) — that's the
+ * shape we want when the popup sits above the anchor (`data-side="top"`).
+ * For the other sides we rotate the arrow so its tip always faces the anchor.
+ */
+.arrow[data-side='bottom'] {
+  transform: rotate(180deg);
+}
+
+.arrow[data-side='left'],
+.arrow[data-side='inline-end'] {
+  transform: rotate(-90deg);
+}
+
+.arrow[data-side='right'],
+.arrow[data-side='inline-start'] {
+  transform: rotate(90deg);
+}
+
+.arrow-default {
+  color: var(--ax-public-tooltip-default-background);
+}
+
+.arrow-blue {
+  color: var(--ax-public-tooltip-blue-background);
+}

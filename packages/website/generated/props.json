@@ -1316,7 +1316,52 @@
           "description": "Distance between a popup and the trigger element",
           "required": false,
           "tsType": {
-            "name": "OffsetOptions"
+            "elements": [
+              {
+                "name": "number"
+              },
+              {
+                "name": "signature",
+                "raw": "{\n  mainAxis?: number;\n  crossAxis?: number;\n  alignmentAxis?: number | null;\n}",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "mainAxis",
+                      "value": {
+                        "name": "number",
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "crossAxis",
+                      "value": {
+                        "name": "number",
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "alignmentAxis",
+                      "value": {
+                        "elements": [
+                          {
+                            "name": "number"
+                          },
+                          {
+                            "name": "null"
+                          }
+                        ],
+                        "name": "union",
+                        "raw": "number | null",
+                        "required": false
+                      }
+                    }
+                  ]
+                },
+                "type": "object"
+              }
+            ],
+            "name": "union",
+            "raw": "| number\n| {\n    mainAxis?: number;\n    crossAxis?: number;\n    alignmentAxis?: number | null;\n  }"
           }
         },
         "onOpenChange": {
@@ -1388,7 +1433,36 @@
           "tsType": {
             "elements": [
               {
-                "name": "Placement"
+                "elements": [
+                  {
+                    "elements": [
+                      {
+                        "name": "literal",
+                        "value": "'top'"
+                      },
+                      {
+                        "name": "literal",
+                        "value": "'bottom'"
+                      },
+                      {
+                        "name": "literal",
+                        "value": "'left'"
+                      },
+                      {
+                        "name": "literal",
+                        "value": "'right'"
+                      }
+                    ],
+                    "name": "union",
+                    "raw": "'top' | 'bottom' | 'left' | 'right'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "`${Side}-${Align}`"
+                  }
+                ],
+                "name": "union",
+                "raw": "Side | `${Side}-${Align}`"
               },
               {
                 "name": "undefined"
@@ -3056,10 +3130,65 @@
           }
         },
         "placement": {
+          "defaultValue": {
+            "computed": false,
+            "value": "'bottom'"
+          },
           "description": "Tooltip placement.",
           "required": false,
           "tsType": {
-            "name": "Placement"
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'top'"
+              },
+              {
+                "name": "literal",
+                "value": "'top-start'"
+              },
+              {
+                "name": "literal",
+                "value": "'top-end'"
+              },
+              {
+                "name": "literal",
+                "value": "'right'"
+              },
+              {
+                "name": "literal",
+                "value": "'right-start'"
+              },
+              {
+                "name": "literal",
+                "value": "'right-end'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottom'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottom-start'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottom-end'"
+              },
+              {
+                "name": "literal",
+                "value": "'left'"
+              },
+              {
+                "name": "literal",
+                "value": "'left-start'"
+              },
+              {
+                "name": "literal",
+                "value": "'left-end'"
+              }
+            ],
+            "name": "union",
+            "raw": "| 'top'\n| 'top-start'\n| 'top-end'\n| 'right'\n| 'right-start'\n| 'right-end'\n| 'bottom'\n| 'bottom-start'\n| 'bottom-end'\n| 'left'\n| 'left-start'\n| 'left-end'"
           }
         }
       }

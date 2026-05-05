@@ -1,13 +1,12 @@
-import { forwardRef } from 'react';
-import { TooltipVariant } from './types';
-import { useTooltipContext } from './tooltip';
-import {
-  FloatingArrow,
-  FloatingPortal,
-  useMergeRefs,
-} from '@floating-ui/react';
+import { Tooltip as BaseTooltip } from '@base-ui/react/tooltip';
 import clsx from 'clsx';
+import { forwardRef } from 'react';
+import { useTooltipPlacement } from './tooltip';
 import styles from './tooltip.module.css';
+import { TooltipVariant } from './types';
+
+const TOOLTIP_OFFSET = 10;
+const TOOLTIP_COLLISION_PADDING = 5;
 
 /**
  * Tooltips Content is the component that pops out when the tooltip is open.
@@ -21,43 +20,56 @@ export const TooltipContent = forwardRef<
     tooltipType?: TooltipVariant;
   }
 >(function TooltipContent(
-  { style, tooltipType = 'default', ...props },
+  { style, tooltipType = 'default', children, className, ...props },
   propRef,
 ) {
-  const context = useTooltipContext();
-  const ref = useMergeRefs([context?.refs.setFloating, propRef]);
+  const { side, align } = useTooltipPlacement();
 
-  if (!context?.open || !props.children) return null;
+  if (!children) return null;
 
   return (
-    <FloatingPortal>
-      <div
-        ref={ref}
-        className={clsx(
-          styles['container'],
-          {
-            [styles['tooltip-default']]: tooltipType === 'default',
-            [styles['tooltip-blue']]: tooltipType === 'blue',
-          },
-          'ax-public-p11',
-        )}
-        style={{
-          ...context.floatingStyles,
-          ...style,
-        }}
-        {...context.getFloatingProps(props)}
+    <BaseTooltip.Portal>
+      <BaseTooltip.Positioner
+        side={side}
+        align={align}
+        sideOffset={TOOLTIP_OFFSET}
+        collisionPadding={TOOLTIP_COLLISION_PADDING}
+        arrowPadding={TOOLTIP_COLLISION_PADDING}
       >
-        {props.children}
-        <FloatingArrow
-          ref={context.arrowRef}
-          fill={getComputedStyle(document.documentElement).getPropertyValue(
-            '--tooltipBackgroundColor',
+        <BaseTooltip.Popup
+          ref={propRef}
+          className={clsx(
+            styles['container'],
+            {
+              [styles['tooltip-default']]: tooltipType === 'default',
+              [styles['tooltip-blue']]: tooltipType === 'blue',
+            },
+            'ax-public-p11',
+            className,
           )}
-          width={10}
-          height={4}
-          context={context.context}
-        />
-      </div>
-    </FloatingPortal>
+          style={style}
+          {...props}
+        >
+          {children}
+          <BaseTooltip.Arrow
+            className={clsx(styles['arrow'], {
+              [styles['arrow-default']]: tooltipType === 'default',
+              [styles['arrow-blue']]: tooltipType === 'blue',
+            })}
+          >
+            <svg
+              width="10"
+              height="4"
+              viewBox="0 0 10 4"
+              fill="currentColor"
+              style={{ display: 'block' }}
+              aria-hidden="true"
+            >
+              <path d="M0 0 L5 4 L10 0 Z" />
+            </svg>
+          </BaseTooltip.Arrow>
+        </BaseTooltip.Popup>
+      </BaseTooltip.Positioner>
+    </BaseTooltip.Portal>
   );
 });

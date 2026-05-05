@@ -13,7 +13,18 @@ import { MenuItem } from './menu-item';
 import { MenuItemProps } from './types';
 import { ItemSize } from '@ui/shared/types/item-size';
 import { Separator } from '@ui/components/separator/separator';
-import { OffsetOptions, Placement } from '@floating-ui/react';
+type Side = 'top' | 'bottom' | 'left' | 'right';
+type Align = 'start' | 'end';
+
+export type Placement = Side | `${Side}-${Align}`;
+
+export type OffsetOptions =
+  | number
+  | {
+      mainAxis?: number;
+      crossAxis?: number;
+      alignmentAxis?: number | null;
+    };
 
 type MenuProps = {
   /**
@@ -61,17 +72,23 @@ type MenuProps = {
   children?: ReactElement;
 };
 
-type Side = 'top' | 'bottom' | 'left' | 'right' | 'inline-start' | 'inline-end';
-type Align = 'start' | 'center' | 'end';
+type BaseUiSide =
+  | 'top'
+  | 'bottom'
+  | 'left'
+  | 'right'
+  | 'inline-start'
+  | 'inline-end';
+type BaseUiAlign = 'start' | 'center' | 'end';
 
 function placementToSideAlign(placement: Placement): {
-  side: Side;
-  align: Align;
+  side: BaseUiSide;
+  align: BaseUiAlign;
 } {
   const [side, alignRaw] = placement.split('-') as [string, string | undefined];
   return {
-    side: side as Side,
-    align: (alignRaw ?? 'center') as Align,
+    side: side as BaseUiSide,
+    align: (alignRaw ?? 'center') as BaseUiAlign,
   };
 }
 
