@@ -4,7 +4,7 @@ import styles from './text-area.module.css';
 import inputFontStyles from '@ui/shared/styles/input-font-size.module.css';
 import inputSizeStyles from '@ui/shared/styles/input-size.module.css';
 
-import { TextareaAutosize } from '@mui/base/TextareaAutosize';
+import TextareaAutosize from 'react-textarea-autosize';
 import type { ItemSize } from '../../shared/types/item-size';
 
 export type TextAreaProps = {
