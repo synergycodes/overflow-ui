@@ -28,8 +28,9 @@
     "url": "https://github.com/synergycodes/overflow-ui/issues"
   },
   "scripts": {
-    "build": "vite build",
+    "build": "vite build && pnpm check:built-css",
     "dev": "vite build --watch",
+    "check:built-css": "tsx ./scripts/check-built-css.ts",
     "preview": "vite --config preview-page/vite.preview.config.ts",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
