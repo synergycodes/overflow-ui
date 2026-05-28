@@ -2,6 +2,7 @@
   .input-root {
     display: flex;
     align-items: center;
+    cursor: text;
 
     color: var(--ax-public-input-root-color);
 
