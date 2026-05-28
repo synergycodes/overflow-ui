@@ -65,9 +65,7 @@
       var(--ax-snackbar-bg-information) 100%
     ),
     var(--ax-ui-bg-primary-default);
-  --ax-public-snackbar-info-icon-color: var(
-    var(--ax-colors-blue-400)
-  ); /* missing token */
+  --ax-public-snackbar-info-icon-color: var(--ax-colors-blue-400);
 }
 
 .container {
