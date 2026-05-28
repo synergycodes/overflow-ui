@@ -15,6 +15,17 @@
   & .header {
     position: relative;
 
+    :global(
+      :is(
+        .react-flow__handle.react-flow__handle-right,
+        .react-flow__handle.react-flow__handle-left
+      )
+    ) {
+      top: calc(
+        var(--ax-public-node-icon-padding) +
+          var(--ax-public-node-icon-border-size) + 0.75rem
+      );
+    }
     :global(.react-flow__handle.react-flow__handle-right) {
       box-sizing: content-box;
       right: calc(
