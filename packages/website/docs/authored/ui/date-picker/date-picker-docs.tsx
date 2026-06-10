@@ -4,10 +4,7 @@ import exampleCode from '!!raw-loader!@site/docs/code-examples/date-picker.examp
 export function DatePickerDocs() {
   return (
     <ComponentPage
-      cssPaths={[
-        'components/date-picker/date-picker.module.css',
-        'components/date-picker/data-picker-mantine.css',
-      ]}
+      cssPaths={['components/date-picker/date-picker.module.css']}
       componentPath="components/date-picker/date-picker.tsx"
       exampleCode={exampleCode}
     />

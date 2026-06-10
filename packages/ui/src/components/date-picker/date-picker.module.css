@@ -35,3 +35,183 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+/*
+ * Calendar popup.
+ *
+ * The calendar markup comes from `react-day-picker`, whose stylesheet we
+ * deliberately don't import — every `.rdp-*` selector below provides the
+ * full styling, scoped under the local `.calendar` class.
+ */
+
+:root {
+  --ax-public-date-picker-border-size: 0.0625rem;
+  --ax-public-date-picker-dropdown-background: var(--ax-ui-bg-primary-default);
+  --ax-public-date-picker-dropdown-border-color: var(
+    --ax-ui-stroke-primary-default
+  );
+  --ax-public-date-picker-dropdown-box-shadow: var(--ax-token-shadow-shadow-m-x)
+    var(--ax-token-shadow-shadow-m-y) var(--ax-token-shadow-shadow-m-blur)
+    var(--ax-token-shadow-shadow-m-spread) var(--ax-shadow);
+
+  --ax-public-date-picker-color: var(--ax-txt-secondary-default);
+  --ax-public-date-picker-date-header-color: var(--ax-txt-tertiary-default);
+  --ax-public-date-picker-date-outside-color: var(--ax-txt-quaternary-default);
+  --ax-public-date-picker-date-selected-color: var(--ax-txt-primary-white);
+  --ax-public-date-picker-date-selected-background-color: var(
+    --ax-ui-bg-tertiary-selected
+  );
+}
+
+.calendar {
+  background: var(--ax-public-date-picker-dropdown-background);
+  box-shadow: var(--ax-public-date-picker-dropdown-box-shadow);
+  border: var(--ax-public-date-picker-border-size) solid
+    var(--ax-public-date-picker-dropdown-border-color);
+  border-radius: 0.5rem;
+  color: var(--ax-public-date-picker-color);
+  padding: 0.5rem;
+  font-size: 0.75rem;
+}
+
+/*
+ * Header layout. With `navLayout="around"` react-day-picker renders the
+ * previous button, caption and next button as the first three children of
+ * `.rdp-month`, followed by the day grid — a 3-column grid puts them on one
+ * row with the grid spanning below.
+ */
+.calendar :global(.rdp-month) {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+}
+
+.calendar :global(.rdp-month_caption) {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.375rem 0;
+}
+
+.calendar :global(.rdp-month_grid) {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  border-collapse: collapse;
+}
+
+/* Buttons (react-day-picker renders native <button>s, unstyled here) */
+.calendar :global(.rdp-button_previous),
+.calendar :global(.rdp-button_next),
+.calendar :global(.rdp-day_button) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  font: inherit;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+
+.calendar :global(.rdp-button_previous) {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.calendar :global(.rdp-button_next) {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.calendar :global(.rdp-button_previous),
+.calendar :global(.rdp-button_next) {
+  padding: 0.375rem;
+}
+
+.calendar :global(.rdp-button_previous svg),
+.calendar :global(.rdp-button_next svg) {
+  width: 1rem;
+  height: 1rem;
+}
+
+.calendar :global(.rdp-button_previous[disabled]),
+.calendar :global(.rdp-button_next[disabled]) {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Weekday header */
+.calendar :global(.rdp-weekday) {
+  color: var(--ax-public-date-picker-date-header-color);
+  font-weight: 400;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+/* Day cells */
+.calendar :global(.rdp-day) {
+  padding: 0.25rem;
+  text-align: center;
+}
+
+.calendar :global(.rdp-day_button) {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.25rem;
+  margin: 0 auto;
+}
+
+.calendar :global(.rdp-outside .rdp-day_button) {
+  color: var(--ax-public-date-picker-date-outside-color);
+}
+
+.calendar
+  :global(
+    .rdp-day:not(.rdp-disabled):not(.rdp-selected) .rdp-day_button
+  ):hover {
+  background: var(--ax-ui-bg-secondary-default);
+}
+
+.calendar :global(.rdp-selected .rdp-day_button) {
+  background: var(--ax-public-date-picker-date-selected-background-color);
+  color: var(--ax-public-date-picker-date-selected-color);
+}
+
+/* Range selection: a continuous filled strip from start to end */
+.calendar :global(.rdp-range_start),
+.calendar :global(.rdp-range_middle),
+.calendar :global(.rdp-range_end) {
+  background: var(--ax-public-date-picker-date-selected-background-color);
+  color: var(--ax-public-date-picker-date-selected-color);
+}
+
+.calendar :global(.rdp-range_start) {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.calendar :global(.rdp-range_end) {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.calendar :global(.rdp-range_start.rdp-range_end) {
+  border-radius: 0.25rem;
+}
+
+.calendar :global(.rdp-range_start .rdp-day_button),
+.calendar :global(.rdp-range_middle .rdp-day_button),
+.calendar :global(.rdp-range_end .rdp-day_button) {
+  background: transparent;
+  color: inherit;
+}
+
+.calendar :global(.rdp-disabled .rdp-day_button) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.calendar :global(.rdp-today:not(.rdp-selected) .rdp-day_button) {
+  font-weight: 700;
+}

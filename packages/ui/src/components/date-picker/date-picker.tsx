@@ -9,7 +9,6 @@ import inputFontStyles from '@ui/shared/styles/input-font-size.module.css';
 import inputSizeStyles from '@ui/shared/styles/input-size.module.css';
 
 import styles from './date-picker.module.css';
-import './data-picker-mantine.css';
 
 import type { DatePickerProps, DatePickerType } from './types';
 
@@ -120,6 +119,17 @@ export const DatePicker = forwardRef<HTMLButtonElement, Props>(
       [isControlled, onChange],
     );
 
+    // Open the calendar at the month of the current selection (react-day-picker
+    // does not derive this from `selected` — without it the calendar always
+    // opens on today's month).
+    const defaultMonth = useMemo(() => {
+      if (currentValue instanceof Date) return currentValue;
+      if (Array.isArray(currentValue) && currentValue[0] instanceof Date) {
+        return currentValue[0];
+      }
+      return undefined;
+    }, [currentValue]);
+
     const disabledMatcher = useMemo<Matcher[] | undefined>(() => {
       const matchers: Matcher[] = [];
       if (minDate) matchers.push({ before: minDate });
@@ -144,8 +154,14 @@ export const DatePicker = forwardRef<HTMLButtonElement, Props>(
           <DayPicker
             mode="single"
             selected={currentValue instanceof Date ? currentValue : undefined}
-            onSelect={(selected) => handleChange(selected ?? null)}
+            onSelect={(selected) => {
+              handleChange(selected ?? null);
+              // A single-date pick is a complete selection — close the
+              // popover. Range/multiple modes stay open for further picks.
+              setOpen(false);
+            }}
             disabled={disabledMatcher}
+            defaultMonth={defaultMonth}
             startMonth={minDate}
             endMonth={maxDate}
             showOutsideDays
@@ -160,6 +176,7 @@ export const DatePicker = forwardRef<HTMLButtonElement, Props>(
             selected={toDateRange(currentValue)}
             onSelect={(range) => handleChange(fromDateRange(range))}
             disabled={disabledMatcher}
+            defaultMonth={defaultMonth}
             startMonth={minDate}
             endMonth={maxDate}
             showOutsideDays
@@ -178,6 +195,7 @@ export const DatePicker = forwardRef<HTMLButtonElement, Props>(
             }
             onSelect={(dates) => handleChange(dates ?? [])}
             disabled={disabledMatcher}
+            defaultMonth={defaultMonth}
             startMonth={minDate}
             endMonth={maxDate}
             showOutsideDays
@@ -213,7 +231,7 @@ export const DatePicker = forwardRef<HTMLButtonElement, Props>(
         </Popover.Trigger>
         <Popover.Portal>
           <Popover.Positioner sideOffset={4} align="start">
-            <Popover.Popup className="mantine-Popover-dropdown">
+            <Popover.Popup className={styles['calendar']}>
               {calendar}
             </Popover.Popup>
           </Popover.Positioner>

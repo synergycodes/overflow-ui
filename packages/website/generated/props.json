@@ -1546,38 +1546,23 @@
           }
         },
         "onOpenChange": {
-          "description": "Callback fired when the component requests to be opened or closed.",
+          "description": "Callback fired when the component requests to be opened or closed.\nReceives the next open state and the native event that triggered the\nchange (if any).",
           "required": false,
           "tsType": {
             "name": "signature",
-            "raw": "(\n  event: MouseEvent | KeyboardEvent | FocusEvent | null,\n  open: boolean,\n) => void",
+            "raw": "(open: boolean, event?: Event) => void",
             "signature": {
               "arguments": [
-                {
-                  "name": "event",
-                  "type": {
-                    "elements": [
-                      {
-                        "name": "MouseEvent"
-                      },
-                      {
-                        "name": "KeyboardEvent"
-                      },
-                      {
-                        "name": "FocusEvent"
-                      },
-                      {
-                        "name": "null"
-                      }
-                    ],
-                    "name": "union",
-                    "raw": "MouseEvent | KeyboardEvent | FocusEvent | null"
-                  }
-                },
                 {
                   "name": "open",
                   "type": {
                     "name": "boolean"
+                  }
+                },
+                {
+                  "name": "event",
+                  "type": {
+                    "name": "Event"
                   }
                 }
               ],
