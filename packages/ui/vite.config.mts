@@ -12,6 +12,23 @@ function combineCssBundle(): Plugin {
   return {
     name: 'overflow-ui:combine-css-bundle',
     apply: 'build',
+    generateBundle(_options, bundle) {
+      // Every CSS asset must establish the layer order before any rule from
+      // either layer. Only the barrel entry imports src/styles/layers.css,
+      // so a consumer loading per-component assets (or the alphabetical
+      // concat below) could otherwise have the first *use* of a layer fix
+      // the order as [ui.component, ui.base], inverting the cascade.
+      // Re-stating the order in later files is a no-op, so prepending it
+      // everywhere is safe.
+      const layerOrder = fs
+        .readFileSync(resolve(__dirname, 'src/styles/layers.css'), 'utf-8')
+        .trim();
+      for (const output of Object.values(bundle)) {
+        if (output.type === 'asset' && output.fileName.endsWith('.css')) {
+          output.source = `${layerOrder}\n${output.source}`;
+        }
+      }
+    },
     closeBundle() {
       const distDir = resolve(__dirname, 'dist');
       const assetsDir = resolve(distDir, 'assets');
