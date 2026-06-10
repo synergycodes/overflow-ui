@@ -42,7 +42,7 @@
       left: var(--ax-public-switch-thumb-padding-medium);
     }
 
-    &:has(input:checked) {
+    &[data-checked] {
       .thumb {
         transform: translateX(
           calc(
@@ -66,7 +66,7 @@
       left: var(--ax-public-switch-thumb-padding-small);
     }
 
-    &:has(input:checked) {
+    &[data-checked] {
       .thumb {
         transform: translateX(
           calc(
@@ -90,7 +90,7 @@
       left: var(--ax-public-switch-thumb-padding-extra-small);
     }
 
-    &:has(input:checked) {
+    &[data-checked] {
       .thumb {
         transform: translateX(
           calc(

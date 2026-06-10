@@ -69,41 +69,37 @@ export function Switch({
   }
 
   return (
-    <span
+    // The styled container is the Switch root itself. It must be a real box
+    // (not `display: contents`) to be focusable, and `nativeButton={false}`
+    // tells Base UI to attach role/tabindex/keyboard handling to the span.
+    <SwitchBase.Root
+      onCheckedChange={handleCheckedChange}
       className={clsx(
         switchStyles['container'],
         switchStyles[size],
         styles,
         className,
       )}
+      nativeButton={false}
+      render={<span />}
+      {...props}
     >
-      <SwitchBase.Root
-        onCheckedChange={handleCheckedChange}
-        render={(rootProps) => (
-          <span
-            {...rootProps}
-            style={{ ...rootProps.style, display: 'contents' }}
-          />
-        )}
-        {...props}
+      {trackChildren ?? <span className={switchStyles['track']} />}
+      <SwitchBase.Thumb
+        className={clsx({ [switchStyles['thumb']]: !thumbChildren })}
+        render={
+          thumbChildren
+            ? (thumbProps) => (
+                <span
+                  {...thumbProps}
+                  style={{ ...thumbProps.style, display: 'contents' }}
+                />
+              )
+            : undefined
+        }
       >
-        {trackChildren ?? <span className={switchStyles['track']} />}
-        <SwitchBase.Thumb
-          className={clsx({ [switchStyles['thumb']]: !thumbChildren })}
-          render={
-            thumbChildren
-              ? (thumbProps) => (
-                  <span
-                    {...thumbProps}
-                    style={{ ...thumbProps.style, display: 'contents' }}
-                  />
-                )
-              : undefined
-          }
-        >
-          {thumbChildren}
-        </SwitchBase.Thumb>
-      </SwitchBase.Root>
-    </span>
+        {thumbChildren}
+      </SwitchBase.Thumb>
+    </SwitchBase.Root>
   );
 }
