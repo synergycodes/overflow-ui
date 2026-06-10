@@ -1,13 +1,7 @@
 import listBoxStyles from '@ui/shared/styles/list-box.module.css';
 import clsx from 'clsx';
 
-import {
-  memo,
-  ReactElement,
-  MouseEvent,
-  KeyboardEvent,
-  FocusEvent,
-} from 'react';
+import { memo, ReactElement } from 'react';
 import { Menu as MenuBase } from '@base-ui/react/menu';
 import { MenuItem } from './menu-item';
 import { MenuItemProps } from './types';
@@ -55,11 +49,10 @@ type MenuProps = {
 
   /**
    * Callback fired when the component requests to be opened or closed.
+   * Receives the next open state and the native event that triggered the
+   * change (if any).
    */
-  onOpenChange?: (
-    event: MouseEvent | KeyboardEvent | FocusEvent | null,
-    open: boolean,
-  ) => void;
+  onOpenChange?: (open: boolean, event?: Event) => void;
 
   /**
    * Distance between a popup and the trigger element
@@ -130,21 +123,8 @@ export const Menu = memo(
         open={open}
         onOpenChange={
           onOpenChange
-            ? (nextOpen, eventDetails) => {
-                // Base UI exposes the originating native event via
-                // `eventDetails.event`. Our public callback signature predates
-                // Base UI and types this as a React synthetic event; we cast to
-                // preserve backwards compatibility for consumers, who in
-                // practice almost never read fields off the event itself.
-                onOpenChange(
-                  eventDetails.event as unknown as
-                    | MouseEvent
-                    | KeyboardEvent
-                    | FocusEvent
-                    | null,
-                  nextOpen,
-                );
-              }
+            ? (nextOpen, eventDetails) =>
+                onOpenChange(nextOpen, eventDetails.event)
             : undefined
         }
       >
