@@ -85,24 +85,24 @@ function placementToSideAlign(placement: Placement): {
   };
 }
 
-function offsetToBaseUI(offset?: OffsetOptions): {
+function offsetToBaseUI(
+  offset: OffsetOptions | undefined,
+  align: BaseUiAlign,
+): {
   sideOffset?: number;
   alignOffset?: number;
 } {
   if (offset == null) return {};
   if (typeof offset === 'number') return { sideOffset: offset };
-  if (typeof offset === 'object') {
-    const obj = offset as {
-      mainAxis?: number;
-      crossAxis?: number;
-      alignmentAxis?: number;
-    };
-    return {
-      sideOffset: obj.mainAxis ?? 0,
-      alignOffset: obj.crossAxis ?? obj.alignmentAxis ?? 0,
-    };
-  }
-  return {};
+  // Base UI's alignOffset is logical — it flips direction for `align="end"`,
+  // like Floating UI's alignmentAxis, which also wins over crossAxis when
+  // both are given. Floating UI's crossAxis is physical, so it must be
+  // negated for end alignment to keep pointing the same way.
+  const { mainAxis, crossAxis, alignmentAxis } = offset;
+  const physicalCross = crossAxis ?? 0;
+  const alignOffset =
+    alignmentAxis ?? (align === 'end' ? -physicalCross : physicalCross);
+  return { sideOffset: mainAxis ?? 0, alignOffset };
 }
 
 export const Menu = memo(
@@ -116,7 +116,7 @@ export const Menu = memo(
     onOpenChange,
   }: MenuProps) => {
     const { side, align } = placementToSideAlign(placement);
-    const { sideOffset, alignOffset } = offsetToBaseUI(offset);
+    const { sideOffset, alignOffset } = offsetToBaseUI(offset, align);
 
     return (
       <MenuBase.Root
