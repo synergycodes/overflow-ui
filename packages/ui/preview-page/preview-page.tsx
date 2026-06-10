@@ -36,7 +36,8 @@ type Showcase =
   | 'snackbar-info'
   | 'snackbar-default'
   | 'tooltip-open'
-  | 'date-picker-open';
+  | 'date-picker-open'
+  | 'interactive';
 
 function getShowcase(): Showcase {
   if (typeof window === 'undefined') return 'main';
@@ -53,6 +54,7 @@ export function PreviewPage() {
   if (showcase === 'select-open') return <SelectOpenShowcase />;
   if (showcase === 'tooltip-open') return <TooltipOpenShowcase />;
   if (showcase === 'date-picker-open') return <DatePickerOpenShowcase />;
+  if (showcase === 'interactive') return <InteractiveShowcase />;
   if (showcase.startsWith('snackbar-')) {
     const variant = showcase.replace('snackbar-', '') as
       | 'success'
@@ -568,6 +570,100 @@ function DatePickerOpenShowcase() {
       <div style={{ width: 240 }} data-testid="date-picker-open-host">
         <DatePicker defaultValue={today} />
       </div>
+    </div>
+  );
+}
+
+/**
+ * Stateful, fully-wired components for the interaction test suite
+ * (tests/visual/interactions.spec.ts). Unlike the visual showcases above,
+ * nothing here is forced open — tests drive everything via mouse/keyboard.
+ */
+function InteractiveShowcase() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [lastMenuAction, setLastMenuAction] = useState('none');
+  const [switchChecked, setSwitchChecked] = useState(false);
+  const [selectValue, setSelectValue] = useState<string | number | null>(null);
+
+  return (
+    <div className={styles['preview-container']}>
+      <Section testId="ix-tooltip" title="Tooltip">
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <Button>Tooltip trigger</Button>
+          </TooltipTrigger>
+          <TooltipContent>
+            <span>Interactive tooltip content</span>
+          </TooltipContent>
+        </Tooltip>
+      </Section>
+
+      <Section testId="ix-modal" title="Modal">
+        <Button onClick={() => setModalOpen(true)}>Open modal</Button>
+        <Modal
+          open={modalOpen}
+          onClose={() => setModalOpen(false)}
+          title="Interactive modal"
+          subtitle="Driven by the interaction tests"
+          footer={
+            <>
+              <Button variant="secondary" onClick={() => setModalOpen(false)}>
+                Cancel
+              </Button>
+              <Button onClick={() => setModalOpen(false)}>Confirm</Button>
+            </>
+          }
+        >
+          <Input placeholder="Field inside modal" />
+        </Modal>
+      </Section>
+
+      <Section testId="ix-menu" title="Menu">
+        <Menu
+          items={[
+            { label: 'First', onClick: () => setLastMenuAction('First') },
+            { label: 'Second', onClick: () => setLastMenuAction('Second') },
+            { type: 'separator' },
+            {
+              label: 'Delete',
+              destructive: true,
+              onClick: () => setLastMenuAction('Delete'),
+            },
+          ]}
+        >
+          <Button>Open menu</Button>
+        </Menu>
+        <span data-testid="menu-last-action">{lastMenuAction}</span>
+      </Section>
+
+      <Section testId="ix-select" title="Select">
+        <div style={{ width: 240 }}>
+          <Select
+            placeholder="Pick an item"
+            items={[
+              { label: 'Chair', value: 'chair' },
+              { label: 'Table', value: 'table' },
+              { label: 'Sofa', value: 'sofa' },
+            ]}
+            onChange={(_, value) => setSelectValue(value)}
+          />
+        </div>
+        <span data-testid="select-value">{String(selectValue)}</span>
+      </Section>
+
+      <Section testId="ix-switch" title="Switch">
+        <Switch
+          checked={switchChecked}
+          onChange={(checked) => setSwitchChecked(checked)}
+        />
+        <span data-testid="switch-value">{String(switchChecked)}</span>
+      </Section>
+
+      <Section testId="ix-date-picker" title="DatePicker">
+        <div style={{ width: 240 }}>
+          <DatePicker defaultValue={new Date('2026-05-05T00:00:00')} />
+        </div>
+      </Section>
     </div>
   );
 }
