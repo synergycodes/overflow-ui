@@ -519,6 +519,7 @@ function MenuOpenShowcase() {
         items={[
           { label: 'New file', onClick: () => {} },
           { label: 'Open', onClick: () => {} },
+          { label: 'Share', disabled: true, onClick: () => {} },
           { type: 'separator' },
           { label: 'Delete', destructive: true, onClick: () => {} },
         ]}
@@ -542,6 +543,7 @@ function SelectOpenShowcase() {
             { label: 'Other', value: 'other' },
           ]}
           placeholder="Pick"
+          defaultValue="table"
         />
       </div>
     </div>
