@@ -1360,6 +1360,17 @@
             "name": "ReactNode"
           }
         },
+        "error": {
+          "defaultValue": {
+            "computed": false,
+            "value": "false"
+          },
+          "description": "Renders the input in an error state.",
+          "required": false,
+          "tsType": {
+            "name": "boolean"
+          }
+        },
         "size": {
           "defaultValue": {
             "computed": false,
