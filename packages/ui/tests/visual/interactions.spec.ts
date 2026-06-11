@@ -268,4 +268,59 @@ test.describe('date picker', () => {
     await expect(page.getByRole('grid')).toBeHidden();
     await expect(trigger).toHaveText('05/05/2026');
   });
+
+  test('re-clicking the selected day keeps the value (no deselect)', async ({
+    page,
+  }) => {
+    await gotoInteractive(page);
+    const trigger = page.getByRole('button', { name: '05/05/2026' });
+    await trigger.click();
+
+    const grid = page.getByRole('grid');
+    await grid.getByText('5', { exact: true }).click();
+    await expect(grid).toBeHidden();
+    await expect(trigger).toHaveText('05/05/2026');
+  });
+
+  test('range: partial pick reports null, completing fires once and closes', async ({
+    page,
+  }) => {
+    await gotoInteractive(page);
+    const host = page.getByTestId('section-ix-date-picker-range');
+    const trigger = host.getByRole('button');
+    await expect(trigger).toHaveText('10/05/2026 – 12/05/2026');
+    await trigger.click();
+
+    const grid = page.getByRole('grid');
+    await expect(grid).toBeVisible();
+
+    // Clicking the existing range start restarts the pick: the value goes
+    // back to the placeholder while the draft highlights the start day.
+    await grid.getByText('10', { exact: true }).click();
+    await expect(trigger).toHaveText('dd/mm/yyyy');
+    await expect(grid).toBeVisible();
+
+    await grid.getByText('15', { exact: true }).click();
+    await expect(grid).toBeHidden();
+    await expect(trigger).toHaveText('10/05/2026 – 15/05/2026');
+  });
+
+  test('multiple: third pick keeps the first two dates selected', async ({
+    page,
+  }) => {
+    await gotoInteractive(page);
+    const host = page.getByTestId('section-ix-date-picker-multiple');
+    const trigger = host.getByRole('button');
+    await trigger.click();
+
+    const grid = page.getByRole('grid');
+    await grid.getByText('12', { exact: true }).click();
+    await expect(trigger).toHaveText('06/05/2026, 12/05/2026');
+
+    // The regression: with exactly 2 dates selected, the third pick used to
+    // wipe the previous ones.
+    await grid.getByText('19', { exact: true }).click();
+    await expect(trigger).toHaveText('06/05/2026, 12/05/2026, 19/05/2026');
+    await expect(grid).toBeVisible();
+  });
 });

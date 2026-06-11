@@ -94,6 +94,12 @@ export const DatePicker = forwardRef<HTMLButtonElement, Props>(
       Date | [Date, Date] | Date[] | null
     >(() => normalizeInitialValue(defaultValue, type));
     const [open, setOpen] = useState(false);
+    // In-progress range pick ({ from, to: undefined }). The public value
+    // type can't represent a partial range, so the draft renders the
+    // first-click highlight until the range completes.
+    const [rangeDraft, setRangeDraft] = useState<DateRange | undefined>(
+      undefined,
+    );
 
     const currentValue = isControlled
       ? normalizeInitialValue(value, type)
@@ -153,6 +159,10 @@ export const DatePicker = forwardRef<HTMLButtonElement, Props>(
         {type === 'default' && (
           <DayPicker
             mode="single"
+            // `required` disables react-day-picker's click-to-deselect, so
+            // re-clicking the selected day confirms instead of wiping the
+            // value (Mantine parity: allowDeselect was off).
+            required
             selected={currentValue instanceof Date ? currentValue : undefined}
             onSelect={(selected) => {
               handleChange(selected ?? null);
@@ -173,8 +183,23 @@ export const DatePicker = forwardRef<HTMLButtonElement, Props>(
         {type === 'range' && (
           <DayPicker
             mode="range"
-            selected={toDateRange(currentValue)}
-            onSelect={(range) => handleChange(fromDateRange(range))}
+            // min={1} makes the first click report { from, to: undefined }
+            // instead of a same-day "complete" range, and rejects single-day
+            // ranges (Mantine parity: allowSingleDateInRange was off).
+            min={1}
+            selected={rangeDraft ?? toDateRange(currentValue)}
+            onSelect={(range) => {
+              if (range?.from && range?.to) {
+                setRangeDraft(undefined);
+                handleChange([range.from, range.to]);
+                setOpen(false);
+              } else {
+                setRangeDraft(range);
+                if (currentValue !== null) {
+                  handleChange(null);
+                }
+              }
+            }}
             disabled={disabledMatcher}
             defaultMonth={defaultMonth}
             startMonth={minDate}
@@ -188,11 +213,11 @@ export const DatePicker = forwardRef<HTMLButtonElement, Props>(
         {type === 'multiple' && (
           <DayPicker
             mode="multiple"
-            selected={
-              Array.isArray(currentValue) && !isDateTuple(currentValue)
-                ? (currentValue as Date[])
-                : undefined
-            }
+            // In multiple mode the value is always Date[] | null (see
+            // normalizeInitialValue/handleChange) — never test the shape
+            // with isDateTuple here: a 2-element Date[] would match it and
+            // wipe the selection.
+            selected={Array.isArray(currentValue) ? currentValue : undefined}
             onSelect={(dates) => handleChange(dates ?? [])}
             disabled={disabledMatcher}
             defaultMonth={defaultMonth}
@@ -213,6 +238,10 @@ export const DatePicker = forwardRef<HTMLButtonElement, Props>(
         onOpenChange={(nextOpen) => {
           if (disabled || readOnly) return;
           setOpen(nextOpen);
+          if (!nextOpen) {
+            // Closing mid-pick abandons the partial range.
+            setRangeDraft(undefined);
+          }
         }}
       >
         <Popover.Trigger
@@ -301,11 +330,6 @@ function toDateRange(
 ): DateRange | undefined {
   if (!isDateTuple(value)) return undefined;
   return { from: value[0], to: value[1] };
-}
-
-function fromDateRange(range: DateRange | undefined): [Date, Date] | null {
-  if (!range || !range.from || !range.to) return null;
-  return [range.from, range.to];
 }
 
 function normalizeInitialValue(

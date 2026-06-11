@@ -664,6 +664,27 @@ function InteractiveShowcase() {
           <DatePicker defaultValue={new Date('2026-05-05T00:00:00')} />
         </div>
       </Section>
+
+      <Section testId="ix-date-picker-range" title="DatePicker range">
+        <div style={{ width: 280 }}>
+          <DatePicker
+            type="range"
+            defaultValue={[
+              new Date('2026-05-10T00:00:00'),
+              new Date('2026-05-12T00:00:00'),
+            ]}
+          />
+        </div>
+      </Section>
+
+      <Section testId="ix-date-picker-multiple" title="DatePicker multiple">
+        <div style={{ width: 280 }}>
+          <DatePicker
+            type="multiple"
+            defaultValue={[new Date('2026-05-06T00:00:00')]}
+          />
+        </div>
+      </Section>
     </div>
   );
 }
