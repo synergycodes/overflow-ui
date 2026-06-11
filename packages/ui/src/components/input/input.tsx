@@ -12,6 +12,7 @@ export function Input({
   size = 'medium',
   startAdornment,
   endAdornment,
+  error = false,
   className,
   ...props
 }: InputProps) {
@@ -20,6 +21,12 @@ export function Input({
       className={clsx(
         inputRootStyles['input-root'],
         inputSizeStyles[size],
+        // State classes consumed by input-root.module.css (same convention
+        // as TextArea) — the root div gets no state from Base UI.
+        {
+          'base--error': error,
+          'base--disabled': props.disabled,
+        },
         className,
       )}
     >

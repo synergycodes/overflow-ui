@@ -17,4 +17,9 @@ export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> & {
    * Element displayed at the start of the input field.
    */
   startAdornment?: ReactNode;
+
+  /**
+   * Renders the input in an error state.
+   */
+  error?: boolean;
 };

@@ -224,6 +224,7 @@ function InputSection() {
           <Input size="medium" placeholder="Medium placeholder" />
           <Input size="medium" defaultValue="Medium with value" />
           <Input size="medium" disabled defaultValue="Disabled" />
+          <Input size="medium" error defaultValue="Error" />
         </div>
         <div className={styles['row']}>
           <Input size="small" placeholder="Small placeholder" />
