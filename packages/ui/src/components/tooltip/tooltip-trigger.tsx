@@ -1,4 +1,5 @@
 import { Tooltip as BaseTooltip } from '@base-ui/react/tooltip';
+import { mergeProps } from '@base-ui/react/merge-props';
 import { cloneElement, forwardRef, isValidElement, ReactElement } from 'react';
 import { useTooltipDelay } from './tooltip';
 
@@ -31,16 +32,25 @@ export const TooltipTrigger = forwardRef<
           const childElement = children as ReactElement<
             Record<string, unknown>
           >;
+          // mergeProps composes event handlers (all of them run) and merges
+          // className/style — a plain spread would let a child's own
+          // onMouseEnter/onFocus silently replace Base UI's interaction
+          // handlers and break the tooltip.
           return cloneElement(childElement, {
-            ...triggerProps,
-            ...props,
-            ...(childElement.props ?? {}),
+            ...mergeProps(
+              triggerProps,
+              props as Record<string, unknown>,
+              childElement.props ?? {},
+            ),
             'data-state': dataState,
           });
         }
 
         return (
-          <div {...triggerProps} {...props} data-state={dataState}>
+          <div
+            {...mergeProps(triggerProps, props as Record<string, unknown>)}
+            data-state={dataState}
+          >
             {children}
           </div>
         );

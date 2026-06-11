@@ -212,7 +212,10 @@ test.describe('tooltip', () => {
     page,
   }) => {
     await gotoInteractive(page);
-    const trigger = page.getByRole('button', { name: 'Tooltip trigger' });
+    const trigger = page.getByRole('button', {
+      name: 'Tooltip trigger',
+      exact: true,
+    });
 
     await trigger.hover();
     await expect(page.getByText('Interactive tooltip content')).toBeVisible({
@@ -230,11 +233,55 @@ test.describe('tooltip', () => {
     // Base UI tooltip — programmatic .focus() doesn't.
     await page.keyboard.press('Tab');
     await expect(
-      page.getByRole('button', { name: 'Tooltip trigger' }),
+      page.getByRole('button', { name: 'Tooltip trigger', exact: true }),
     ).toBeFocused();
     await expect(page.getByText('Interactive tooltip content')).toBeVisible({
       timeout: 2_000,
     });
+  });
+
+  test('asChild trigger composes child handlers with tooltip interactions', async ({
+    page,
+  }) => {
+    await gotoInteractive(page);
+    const trigger = page.getByRole('button', {
+      name: 'Tooltip trigger',
+      exact: true,
+    });
+
+    await trigger.hover();
+    // Both must hold: the child's own onMouseEnter fired AND the tooltip
+    // opened — a plain prop spread would sacrifice one for the other.
+    await expect(page.getByText('Interactive tooltip content')).toBeVisible({
+      timeout: 2_000,
+    });
+    await expect(page.getByTestId('tooltip-trigger-hovered')).toHaveText(
+      'true',
+    );
+  });
+
+  test('controlled tooltip ignores hover and follows its open prop', async ({
+    page,
+  }) => {
+    await gotoInteractive(page);
+    const trigger = page.getByRole('button', {
+      name: 'Controlled tooltip trigger',
+    });
+
+    // Hover past the 500ms open delay — a controlled tooltip must not open.
+    await trigger.hover();
+    await page.waitForTimeout(900);
+    await expect(page.getByText('Controlled tooltip content')).toBeHidden();
+    await page.mouse.move(0, 0);
+
+    await page
+      .getByRole('button', { name: 'Toggle controlled tooltip' })
+      .click();
+    await expect(page.getByText('Controlled tooltip content')).toBeVisible();
+
+    // Dismissal still propagates in controlled mode (v1 parity).
+    await page.keyboard.press('Escape');
+    await expect(page.getByText('Controlled tooltip content')).toBeHidden();
   });
 });
 

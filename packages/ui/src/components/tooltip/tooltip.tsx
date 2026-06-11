@@ -75,6 +75,20 @@ type Props = {
 } & TooltipOptions;
 
 /**
+ * Interactions a controlled tooltip ignores. Before the migration the
+ * Floating UI hover/focus interactions were disabled entirely whenever
+ * `open` was controlled (the parent has sole authority); dismissal
+ * (Escape/outside press) stayed active. Base UI keeps all interactions
+ * routed through onOpenChange, so the hover/focus reasons are filtered
+ * out here to preserve that contract.
+ */
+const HOVER_FOCUS_REASONS = new Set<string>([
+  'trigger-hover',
+  'trigger-focus',
+  'focus-out',
+]);
+
+/**
  * Tooltips display informative text when users hover over, focus on, or tap an element.
  */
 export function Tooltip({
@@ -84,6 +98,7 @@ export function Tooltip({
   open,
   onOpenChange,
 }: Props) {
+  const isControlled = open !== undefined;
   const placementValue = useMemo(
     () => placementToSideAlign(placement),
     [placement],
@@ -95,7 +110,17 @@ export function Tooltip({
         defaultOpen={initialOpen}
         open={open}
         onOpenChange={
-          onOpenChange ? (nextOpen) => onOpenChange(nextOpen) : undefined
+          onOpenChange
+            ? (nextOpen, eventDetails) => {
+                if (
+                  isControlled &&
+                  HOVER_FOCUS_REASONS.has(eventDetails.reason)
+                ) {
+                  return;
+                }
+                onOpenChange(nextOpen);
+              }
+            : undefined
         }
       >
         <TooltipDelayApplier>{children}</TooltipDelayApplier>

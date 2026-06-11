@@ -587,18 +587,42 @@ function InteractiveShowcase() {
   const [lastMenuAction, setLastMenuAction] = useState('none');
   const [switchChecked, setSwitchChecked] = useState(false);
   const [selectValue, setSelectValue] = useState<string | number | null>(null);
+  const [triggerHovered, setTriggerHovered] = useState(false);
+  const [controlledTipOpen, setControlledTipOpen] = useState(false);
 
   return (
     <div className={styles['preview-container']}>
       <Section testId="ix-tooltip" title="Tooltip">
         <Tooltip>
           <TooltipTrigger asChild>
-            <Button>Tooltip trigger</Button>
+            <Button onMouseEnter={() => setTriggerHovered(true)}>
+              Tooltip trigger
+            </Button>
           </TooltipTrigger>
           <TooltipContent>
             <span>Interactive tooltip content</span>
           </TooltipContent>
         </Tooltip>
+        <span data-testid="tooltip-trigger-hovered">
+          {String(triggerHovered)}
+        </span>
+      </Section>
+
+      <Section testId="ix-tooltip-controlled" title="Tooltip controlled">
+        <Tooltip open={controlledTipOpen} onOpenChange={setControlledTipOpen}>
+          <TooltipTrigger asChild>
+            <Button>Controlled tooltip trigger</Button>
+          </TooltipTrigger>
+          <TooltipContent>
+            <span>Controlled tooltip content</span>
+          </TooltipContent>
+        </Tooltip>
+        <Button
+          variant="secondary"
+          onClick={() => setControlledTipOpen((prev) => !prev)}
+        >
+          Toggle controlled tooltip
+        </Button>
       </Section>
 
       <Section testId="ix-modal" title="Modal">
