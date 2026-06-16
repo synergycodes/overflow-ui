@@ -110,6 +110,12 @@ export default defineConfig({
         ) {
           return true;
         }
+        if (
+          id === 'react-textarea-autosize' ||
+          id.startsWith('react-textarea-autosize/')
+        ) {
+          return true;
+        }
         return false;
       },
       // [TODO] Fix: suppress "Module level directives cause errors when bundled" warnings
