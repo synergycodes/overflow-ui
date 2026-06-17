@@ -16,5 +16,23 @@
       border-color: var(--ax-public-input-root-border-color-error);
       color: var(--ax-public-input-root-color-error);
     }
+
+    &.container--placeholder {
+      opacity: 0.5;
+    }
+  }
+
+  .trigger-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .calendar {
+    background: var(--ax-public-date-picker-dropdown-background);
+    border: 0.0625rem solid var(--ax-public-date-picker-dropdown-border-color);
+    border-radius: 0.5rem;
+    box-shadow: var(--ax-public-date-picker-dropdown-box-shadow);
+    color: var(--ax-public-date-picker-color);
   }
 }

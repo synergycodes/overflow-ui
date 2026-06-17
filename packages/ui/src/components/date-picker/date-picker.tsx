@@ -9,6 +9,7 @@ import inputFontStyles from '@ui/shared/styles/input-font-size.module.css';
 import inputSizeStyles from '@ui/shared/styles/input-size.module.css';
 
 import styles from './date-picker.module.css';
+import './variables.css';
 
 import type { DatePickerProps, DatePickerType } from './types';
 

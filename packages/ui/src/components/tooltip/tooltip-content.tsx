@@ -51,12 +51,7 @@ export const TooltipContent = forwardRef<
           {...props}
         >
           {children}
-          <BaseTooltip.Arrow
-            className={clsx(styles['arrow'], {
-              [styles['arrow-default']]: tooltipType === 'default',
-              [styles['arrow-blue']]: tooltipType === 'blue',
-            })}
-          >
+          <BaseTooltip.Arrow>
             <svg
               width="10"
               height="4"
