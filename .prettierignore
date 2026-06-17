@@ -2,6 +2,7 @@
 /dist
 /coverage
 .claude/worktrees
+.claude/launch.json
 
 packages/tokens/tokens.json
 packages/tokens/tokens.json

@@ -105,12 +105,6 @@ export default defineConfig({
           return true;
         }
         if (
-          id === '@phosphor-icons/react' ||
-          id.startsWith('@phosphor-icons/react/')
-        ) {
-          return true;
-        }
-        if (
           id === 'react-textarea-autosize' ||
           id.startsWith('react-textarea-autosize/')
         ) {
