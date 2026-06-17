@@ -36,8 +36,6 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "typecheck": "tsc --noEmit --pretty",
-    "test:visual": "pnpm preview:build && playwright test",
-    "test:visual:update": "pnpm preview:build && playwright test --update-snapshots",
     "build:stats": "BUNDLE_STATS=1 vite build"
   },
   "module": "./dist/index.js",
@@ -141,7 +139,6 @@
     "react-textarea-autosize": "^8.5.6"
   },
   "devDependencies": {
-    "@playwright/test": "^1.59.1",
     "@synergycodes/overflow-ui-tokens": "workspace:*",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",

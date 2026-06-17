@@ -8,67 +8,24 @@
   --ax-public-tooltip-blue-text-color: var(--ax-txt-tooltip-blue);
 }
 
-.container {
-  padding: var(--ax-public-tooltip-padding);
-  border-radius: var(--ax-public-tooltip-radius-size);
-  width: max-content;
-  max-width: 33vw;
-  z-index: 100;
-
-  transition:
-    opacity 120ms ease-out,
-    transform 120ms ease-out;
-  transform-origin: var(--transform-origin, center);
-
-  &[data-starting-style],
-  &[data-ending-style] {
-    opacity: 0;
-    transform: scale(0.96);
+@layer ui.component {
+  .container {
+    padding: var(--ax-public-tooltip-padding);
+    border-radius: var(--ax-public-tooltip-radius-size);
+    width: max-content;
+    max-width: 33vw;
+    z-index: 100;
   }
-}
 
-.tooltip-default {
-  color: var(--ax-public-tooltip-text-color);
-  background-color: var(--ax-public-tooltip-default-background);
-  fill: var(--ax-public-tooltip-default-background);
-}
+  .tooltip-default {
+    color: var(--ax-public-tooltip-text-color);
+    background-color: var(--ax-public-tooltip-default-background);
+    fill: var(--ax-public-tooltip-default-background);
+  }
 
-.tooltip-blue {
-  color: var(--ax-public-tooltip-blue-text-color);
-  background-color: var(--ax-public-tooltip-blue-background);
-  fill: var(--ax-public-tooltip-blue-background);
-}
-
-.arrow {
-  width: 10px;
-  height: 4px;
-  display: block;
-  pointer-events: none;
-}
-
-/*
- * The arrow SVG is drawn pointing downwards (apex at the bottom) — that's the
- * shape we want when the popup sits above the anchor (`data-side="top"`).
- * For the other sides we rotate the arrow so its tip always faces the anchor.
- */
-.arrow[data-side='bottom'] {
-  transform: rotate(180deg);
-}
-
-.arrow[data-side='left'],
-.arrow[data-side='inline-end'] {
-  transform: rotate(-90deg);
-}
-
-.arrow[data-side='right'],
-.arrow[data-side='inline-start'] {
-  transform: rotate(90deg);
-}
-
-.arrow-default {
-  color: var(--ax-public-tooltip-default-background);
-}
-
-.arrow-blue {
-  color: var(--ax-public-tooltip-blue-background);
+  .tooltip-blue {
+    color: var(--ax-public-tooltip-blue-text-color);
+    background-color: var(--ax-public-tooltip-blue-background);
+    fill: var(--ax-public-tooltip-blue-background);
+  }
 }
