@@ -333,6 +333,24 @@ function toDateRange(
   return { from: value[0], to: value[1] };
 }
 
+const DATE_ONLY_PATTERN = /^(\d{4})-(\d{2})-(\d{2})$/;
+
+/**
+ * Parses a date string into a local `Date`.
+ *
+ * A bare `YYYY-MM-DD` string is parsed by the native `Date` constructor as UTC
+ * midnight, which renders as the previous day in any negative-UTC-offset
+ * timezone. We build such date-only values in local time instead; any other
+ * format falls back to the native parser.
+ */
+function parseDateValue(raw: string): Date | null {
+  const match = DATE_ONLY_PATTERN.exec(raw);
+  const parsed = match
+    ? new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]))
+    : new Date(raw);
+  return Number.isNaN(parsed.getTime()) ? null : parsed;
+}
+
 function normalizeInitialValue(
   raw: Date | [Date, Date] | Date[] | string | null | undefined,
   type: DatePickerType,
@@ -341,8 +359,7 @@ function normalizeInitialValue(
   if (type === 'default') {
     if (raw instanceof Date) return raw;
     if (typeof raw === 'string') {
-      const parsed = new Date(raw);
-      return Number.isNaN(parsed.getTime()) ? null : parsed;
+      return parseDateValue(raw);
     }
     return null;
   }
