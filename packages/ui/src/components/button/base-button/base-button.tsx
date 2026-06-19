@@ -19,6 +19,7 @@ export const BaseButton = forwardRef<HTMLButtonElement, Props>(
       className,
       tooltip,
       disabled,
+      type = 'button',
       tooltipType = 'default',
       ...props
     },
@@ -27,6 +28,7 @@ export const BaseButton = forwardRef<HTMLButtonElement, Props>(
     const button = (
       <button
         ref={ref}
+        type={type}
         className={clsx(buttonStyles['button'], styles, className)}
         disabled={disabled}
         {...props}
