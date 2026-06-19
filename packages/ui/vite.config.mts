@@ -42,6 +42,18 @@ function combineCssBundle(): Plugin {
           .join('\n');
         fs.writeFileSync(resolve(distDir, 'index.css'), combined);
       }
+      // Standalone global stylesheet for "./*" subpath consumers. Importing a
+      // single component via the subpath export injects only that component's
+      // CSS, not the layer declaration / globals / typography that the barrel
+      // pulls in through src/index.ts. Expose those three (layer order first)
+      // as @synergycodes/overflow-ui/styles.css so per-component consumers can
+      // opt into the globals exactly once.
+      const globalStyles = ['layers.css', 'globals.css', 'typography.css']
+        .map((f) =>
+          fs.readFileSync(resolve(__dirname, 'src/styles', f), 'utf-8'),
+        )
+        .join('\n');
+      fs.writeFileSync(resolve(distDir, 'styles.css'), globalStyles);
       // Backwards-compat shim for consumers that hard-coded the old
       // single-bundle filename (e.g. workflow-builder's LOCAL_OVERFLOW_UI
       // dev alias).
@@ -98,7 +110,11 @@ export default defineConfig({
     },
     rollupOptions: {
       external: (id) => {
-        if (id === 'react' || id === 'react-dom' || id === 'react/jsx-runtime') {
+        if (
+          id === 'react' ||
+          id === 'react-dom' ||
+          id === 'react/jsx-runtime'
+        ) {
           return true;
         }
         if (id === '@base-ui/react' || id.startsWith('@base-ui/react/')) {

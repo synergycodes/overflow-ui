@@ -53,6 +53,7 @@
       "types": "./dist/components/*/index.d.ts",
       "import": "./dist/*.js"
     },
+    "./styles.css": "./dist/styles.css",
     "./tokens.css": "./dist/tokens.css"
   },
   "dependencies": {
