@@ -6,23 +6,10 @@ import { TooltipTrigger } from './tooltip-trigger';
 const TOOLTIP_OPEN_DELAY = 500;
 const TOOLTIP_CLOSE_DELAY = 0;
 
-/**
- * Tooltip placement matching the Floating UI shape that this component used
- * before the migration to Base UI. Kept verbatim to preserve the public API.
- */
-export type TooltipPlacement =
-  | 'top'
-  | 'top-start'
-  | 'top-end'
-  | 'right'
-  | 'right-start'
-  | 'right-end'
-  | 'bottom'
-  | 'bottom-start'
-  | 'bottom-end'
-  | 'left'
-  | 'left-start'
-  | 'left-end';
+type Side = 'top' | 'right' | 'bottom' | 'left';
+type Align = 'start' | 'end';
+
+export type TooltipPlacement = Side | `${Side}-${Align}`;
 
 export type TooltipOptions = {
   /**
@@ -44,7 +31,7 @@ export type TooltipOptions = {
 };
 
 type PlacementContextValue = {
-  side: 'top' | 'bottom' | 'left' | 'right';
+  side: Side;
   align: 'start' | 'center' | 'end';
 };
 
@@ -74,14 +61,6 @@ type Props = {
   children: ReactNode;
 } & TooltipOptions;
 
-/**
- * Interactions a controlled tooltip ignores. Before the migration the
- * Floating UI hover/focus interactions were disabled entirely whenever
- * `open` was controlled (the parent has sole authority); dismissal
- * (Escape/outside press) stayed active. Base UI keeps all interactions
- * routed through onOpenChange, so the hover/focus reasons are filtered
- * out here to preserve that contract.
- */
 const HOVER_FOCUS_REASONS = new Set<string>([
   'trigger-hover',
   'trigger-focus',
@@ -129,12 +108,6 @@ export function Tooltip({
   );
 }
 
-/**
- * Internal context that propagates the tooltip open/close delay to the trigger.
- * Base UI puts the `delay` and `closeDelay` props on `Tooltip.Trigger`, but to
- * preserve our wrapper's public API (delays applied automatically) we pass them
- * implicitly through this context.
- */
 const TooltipDelayContext = createContext<{
   delay: number;
   closeDelay: number;

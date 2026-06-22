@@ -10,22 +10,27 @@
 
 @layer ui.component {
   .container {
+    --tooltip-background: var(--ax-public-tooltip-default-background);
+    --tooltip-text-color: var(--ax-public-tooltip-text-color);
+
     padding: var(--ax-public-tooltip-padding);
     border-radius: var(--ax-public-tooltip-radius-size);
     width: max-content;
     max-width: 33vw;
     z-index: 100;
+    color: var(--tooltip-text-color);
+    background-color: var(--tooltip-background);
   }
 
-  .tooltip-default {
-    color: var(--ax-public-tooltip-text-color);
-    background-color: var(--ax-public-tooltip-default-background);
-    fill: var(--ax-public-tooltip-default-background);
+  .container[data-tooltip-type='blue'] {
+    --tooltip-background: var(--ax-public-tooltip-blue-background);
+    --tooltip-text-color: var(--ax-public-tooltip-blue-text-color);
   }
 
-  .tooltip-blue {
-    color: var(--ax-public-tooltip-blue-text-color);
-    background-color: var(--ax-public-tooltip-blue-background);
-    fill: var(--ax-public-tooltip-blue-background);
+  .arrow {
+    width: 10px;
+    height: 4px;
+    background-color: var(--tooltip-background);
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
   }
 }

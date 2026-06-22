@@ -8,9 +8,6 @@ import { TooltipVariant } from './types';
 const TOOLTIP_OFFSET = 10;
 const TOOLTIP_COLLISION_PADDING = 5;
 
-/**
- * Tooltips Content is the component that pops out when the tooltip is open.
- */
 export const TooltipContent = forwardRef<
   HTMLDivElement,
   React.HTMLProps<HTMLDivElement> & {
@@ -38,31 +35,13 @@ export const TooltipContent = forwardRef<
       >
         <BaseTooltip.Popup
           ref={propRef}
-          className={clsx(
-            styles['container'],
-            {
-              [styles['tooltip-default']]: tooltipType === 'default',
-              [styles['tooltip-blue']]: tooltipType === 'blue',
-            },
-            'ax-public-p11',
-            className,
-          )}
+          className={clsx(styles['container'], 'ax-public-p11', className)}
+          data-tooltip-type={tooltipType}
           style={style}
           {...props}
         >
           {children}
-          <BaseTooltip.Arrow>
-            <svg
-              width="10"
-              height="4"
-              viewBox="0 0 10 4"
-              fill="currentColor"
-              style={{ display: 'block' }}
-              aria-hidden="true"
-            >
-              <path d="M0 0 L5 4 L10 0 Z" />
-            </svg>
-          </BaseTooltip.Arrow>
+          <BaseTooltip.Arrow className={styles['arrow']} />
         </BaseTooltip.Popup>
       </BaseTooltip.Positioner>
     </BaseTooltip.Portal>
