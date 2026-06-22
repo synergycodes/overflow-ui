@@ -38,7 +38,8 @@ import '@synergycodes/overflow-ui/tokens.css';
 
 > **Subpath imports.** You can also import a single component directly, e.g.
 > `import { DatePicker } from '@synergycodes/overflow-ui/date-picker'`. That
-> injects only the component's own CSS, so add the global stylesheet once:
+> injects only the component's own CSS, so import the global stylesheet once and
+> **before any component**, so the cascade layers are ordered correctly:
 > `import '@synergycodes/overflow-ui/styles.css'`.
 
 ### 🎛️ Apply the Theme

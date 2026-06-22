@@ -11,15 +11,22 @@ Declaring the order once, before any rule from either layer, guarantees that
 `ui.component` always wins over `ui.base`, and that unlayered consumer styles
 win over both.
 
-## Why every emitted stylesheet repeats the order
+## Establishing the order
 
-The build is multi-entry: each component ships its own stylesheet, and there is
-also a combined `index.css` and a global `styles.css`. Only the barrel entry
-imports `src/styles/layers.css`, so a consumer who loads a single per-component
-stylesheet would otherwise have the **first use** of a layer fix the order. If
-a component rule (`ui.component`) is seen before any `ui.base` rule, the browser
-locks the order as `[ui.component, ui.base]`, inverting the cascade.
+The order is fixed by the **first** `@layer` declaration the browser sees, so
+the declaration must load before any component rule. The declaration lives in
+`styles.css` (and in the package barrel, which imports it first), so consumers
+establish it by either:
 
-To prevent that, the `combine-css-bundle` Vite plugin prepends the layer-order
-declaration to every emitted CSS asset. Re-stating an already-declared order is
-a no-op, so prepending it everywhere is safe.
+- importing from the package root - the barrel imports the declaration first; or
+- importing `@synergycodes/overflow-ui/styles.css` **before** any component when
+  using per-component subpath imports.
+
+Per-component stylesheets deliberately do **not** repeat the declaration. If one
+loads before `styles.css`, the first use of a layer fixes the order: a
+`ui.component` rule seen before any `ui.base` rule locks it as
+`[ui.component, ui.base]`, inverting the cascade. Importing `styles.css` first
+avoids this.
+
+The combined `index.css` (consumed standalone, e.g. by Workflow Builder) carries
+the declaration at its top for the same reason.
