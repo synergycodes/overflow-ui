@@ -4,7 +4,7 @@ import type { Plugin } from 'vite';
 
 /**
  * Post-build CSS steps for the multi-entry library bundle. See
- * docs/css-layers.md for the layer-order rationale.
+ * css-layers.md for the layer-order rationale.
  *
  * - prepends the `@layer` order to every emitted CSS asset;
  * - emits `index.css` (all component styles) and `styles.css` (global layer
