@@ -1,7 +1,7 @@
 import listBoxStyles from '@ui/shared/styles/list-box.module.css';
 import clsx from 'clsx';
 
-import { memo, ReactElement } from 'react';
+import { memo, ReactElement, type ComponentProps } from 'react';
 import { Menu as MenuBase } from '@base-ui/react/menu';
 import { MenuItem } from './menu-item';
 import { MenuItemProps } from './types';
@@ -12,13 +12,13 @@ type Align = 'start' | 'end';
 
 export type Placement = Side | `${Side}-${Align}`;
 
-export type OffsetOptions =
-  | number
-  | {
-      mainAxis?: number;
-      crossAxis?: number;
-      alignmentAxis?: number | null;
-    };
+type OffsetAxes = {
+  mainAxis?: number;
+  crossAxis?: number;
+  alignmentAxis?: number | null;
+};
+
+export type OffsetOptions = number | OffsetAxes;
 
 type MenuProps = {
   /**
@@ -65,39 +65,27 @@ type MenuProps = {
   children?: ReactElement;
 };
 
-type BaseUiSide =
-  | 'top'
-  | 'bottom'
-  | 'left'
-  | 'right'
-  | 'inline-start'
-  | 'inline-end';
-type BaseUiAlign = 'start' | 'center' | 'end';
+type PositionerProps = ComponentProps<typeof MenuBase.Positioner>;
+type PositionerSide = NonNullable<PositionerProps['side']>;
+type PositionerAlign = NonNullable<PositionerProps['align']>;
 
 function placementToSideAlign(placement: Placement): {
-  side: BaseUiSide;
-  align: BaseUiAlign;
+  side: PositionerSide;
+  align: PositionerAlign;
 } {
-  const [side, alignRaw] = placement.split('-') as [string, string | undefined];
-  return {
-    side: side as BaseUiSide,
-    align: (alignRaw ?? 'center') as BaseUiAlign,
-  };
+  const [side, alignRaw] = placement.split('-') as [
+    PositionerSide,
+    PositionerAlign | undefined,
+  ];
+  return { side, align: alignRaw ?? 'center' };
 }
 
 function offsetToBaseUI(
   offset: OffsetOptions | undefined,
-  align: BaseUiAlign,
-): {
-  sideOffset?: number;
-  alignOffset?: number;
-} {
+  align: PositionerAlign,
+): { sideOffset?: number; alignOffset?: number } {
   if (offset == null) return {};
   if (typeof offset === 'number') return { sideOffset: offset };
-  // Base UI's alignOffset is logical — it flips direction for `align="end"`,
-  // like Floating UI's alignmentAxis, which also wins over crossAxis when
-  // both are given. Floating UI's crossAxis is physical, so it must be
-  // negated for end alignment to keep pointing the same way.
   const { mainAxis, crossAxis, alignmentAxis } = offset;
   const physicalCross = crossAxis ?? 0;
   const alignOffset =
