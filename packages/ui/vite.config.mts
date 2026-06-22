@@ -1,75 +1,14 @@
-import fs from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { defineConfig, type Plugin } from 'vite';
+import { defineConfig } from 'vite';
 import { libInjectCss } from 'vite-plugin-lib-inject-css';
 import { viteStaticCopy } from 'vite-plugin-static-copy';
 import dts from 'vite-plugin-dts';
 import { visualizer } from 'rollup-plugin-visualizer';
 import { boxSizingPlugin } from './postcss-box-sizing.mts';
+import { combineCssBundle } from './combine-css-bundle.mts';
 
-function combineCssBundle(): Plugin {
-  return {
-    name: 'overflow-ui:combine-css-bundle',
-    apply: 'build',
-    generateBundle(_options, bundle) {
-      // Every CSS asset must establish the layer order before any rule from
-      // either layer. Only the barrel entry imports src/styles/layers.css,
-      // so a consumer loading per-component assets (or the alphabetical
-      // concat below) could otherwise have the first *use* of a layer fix
-      // the order as [ui.component, ui.base], inverting the cascade.
-      // Re-stating the order in later files is a no-op, so prepending it
-      // everywhere is safe.
-      const layerOrder = fs
-        .readFileSync(resolve(__dirname, 'src/styles/layers.css'), 'utf-8')
-        .trim();
-      for (const output of Object.values(bundle)) {
-        if (output.type === 'asset' && output.fileName.endsWith('.css')) {
-          output.source = `${layerOrder}\n${output.source}`;
-        }
-      }
-    },
-    closeBundle() {
-      const distDir = resolve(__dirname, 'dist');
-      const assetsDir = resolve(distDir, 'assets');
-      if (fs.existsSync(assetsDir)) {
-        const cssFiles = fs
-          .readdirSync(assetsDir)
-          .filter((f) => f.endsWith('.css'))
-          .sort();
-        const combined = cssFiles
-          .map((f) => fs.readFileSync(resolve(assetsDir, f), 'utf-8'))
-          .join('\n');
-        fs.writeFileSync(resolve(distDir, 'index.css'), combined);
-      }
-      // Standalone global stylesheet for "./*" subpath consumers. Importing a
-      // single component via the subpath export injects only that component's
-      // CSS, not the layer declaration / globals / typography that the barrel
-      // pulls in through src/index.ts. Expose those three (layer order first)
-      // as @synergycodes/overflow-ui/styles.css so per-component consumers can
-      // opt into the globals exactly once.
-      const globalStyles = ['layers.css', 'globals.css', 'typography.css']
-        .map((f) =>
-          fs.readFileSync(resolve(__dirname, 'src/styles', f), 'utf-8'),
-        )
-        .join('\n');
-      fs.writeFileSync(resolve(distDir, 'styles.css'), globalStyles);
-      // Backwards-compat shim for consumers that hard-coded the old
-      // single-bundle filename (e.g. workflow-builder's LOCAL_OVERFLOW_UI
-      // dev alias).
-      fs.writeFileSync(
-        resolve(distDir, 'overflow-ui.js'),
-        `export * from './index.js';\n`,
-      );
-      fs.writeFileSync(
-        resolve(distDir, 'overflow-ui.d.ts'),
-        `export * from './index';\n`,
-      );
-    },
-  };
-}
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
+const rootDir = dirname(fileURLToPath(import.meta.url));
 
 const componentEntries = [
   'accordion',
@@ -94,45 +33,62 @@ const componentEntries = [
   'tooltip',
 ] as const;
 
-const entry: Record<string, string> = {
-  index: resolve(__dirname, 'src/index.ts'),
-};
-for (const name of componentEntries) {
-  entry[name] = resolve(__dirname, `src/components/${name}/index.ts`);
+const externalPackages = ['@base-ui/react', 'react-textarea-autosize'];
+const externalModules = ['react', 'react-dom', 'react/jsx-runtime'];
+
+function getEntries(): Record<string, string> {
+  const entries: Record<string, string> = {
+    index: resolve(rootDir, 'src/index.ts'),
+  };
+  for (const name of componentEntries) {
+    entries[name] = resolve(rootDir, `src/components/${name}/index.ts`);
+  }
+  return entries;
+}
+
+function isExternal(id: string): boolean {
+  if (externalModules.includes(id)) return true;
+  return externalPackages.some((pkg) => id === pkg || id.startsWith(`${pkg}/`));
+}
+
+function copyTokenStyles() {
+  const files = ['tokens.css', 'numerals-mode-1.css', 'primitives-mode-1.css'];
+  return viteStaticCopy({
+    targets: files.map((file) => ({
+      src: `../tokens/dist/${file}`,
+      dest: '.',
+    })),
+  });
+}
+
+function bundleStatsPlugins() {
+  return [
+    visualizer({
+      filename: 'dist/bundle-stats.html',
+      template: 'treemap',
+      gzipSize: true,
+      brotliSize: true,
+    }),
+    visualizer({
+      filename: 'dist/bundle-stats.json',
+      json: true,
+      gzipSize: true,
+      brotliSize: true,
+    }),
+  ];
 }
 
 export default defineConfig({
   build: {
     lib: {
-      entry,
+      entry: getEntries(),
       name: 'Overflow UI',
       formats: ['es'],
     },
     rollupOptions: {
-      external: (id) => {
-        if (
-          id === 'react' ||
-          id === 'react-dom' ||
-          id === 'react/jsx-runtime'
-        ) {
-          return true;
-        }
-        if (id === '@base-ui/react' || id.startsWith('@base-ui/react/')) {
-          return true;
-        }
-        if (
-          id === 'react-textarea-autosize' ||
-          id.startsWith('react-textarea-autosize/')
-        ) {
-          return true;
-        }
-        return false;
-      },
-      // [TODO] Fix: suppress "Module level directives cause errors when bundled" warnings
+      external: isExternal,
       onwarn: (warning, warn) => {
-        if (warning.code === 'MODULE_LEVEL_DIRECTIVE') {
-          return;
-        }
+        if (warning.code === 'MODULE_LEVEL_DIRECTIVE') return;
         warn(warning);
       },
       output: {
@@ -155,39 +111,16 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@ui': resolve(__dirname, './src'),
+      '@ui': resolve(rootDir, './src'),
     },
   },
-  // [TODO]: Preferably we should include just a single .d.ts file, but setting rollupTypes to true doesn't work with current setup
-  // Source: https://github.com/qmhc/vite-plugin-dts?tab=readme-ov-file#internal-error-occurs-when-using-rolluptypes-true
   plugins: [
     libInjectCss(),
-    dts({
-      entryRoot: 'src',
-    }),
-    viteStaticCopy({
-      targets: [
-        { src: '../tokens/dist/tokens.css', dest: '.' },
-        { src: '../tokens/dist/numerals-mode-1.css', dest: '.' },
-        { src: '../tokens/dist/primitives-mode-1.css', dest: '.' },
-      ],
-    }),
-    combineCssBundle(),
-    ...(process.env.BUNDLE_STATS
-      ? [
-          visualizer({
-            filename: 'dist/bundle-stats.html',
-            template: 'treemap',
-            gzipSize: true,
-            brotliSize: true,
-          }),
-          visualizer({
-            filename: 'dist/bundle-stats.json',
-            json: true,
-            gzipSize: true,
-            brotliSize: true,
-          }),
-        ]
-      : []),
+    // Per-entry .d.ts; rollupTypes is intentionally off (incompatible with this
+    // multi-entry setup, see vite-plugin-dts docs).
+    dts({ entryRoot: 'src' }),
+    copyTokenStyles(),
+    combineCssBundle(rootDir),
+    ...(process.env.BUNDLE_STATS ? bundleStatsPlugins() : []),
   ],
 });
