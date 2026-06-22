@@ -52,9 +52,10 @@
       border-radius: 100px;
     }
 
-    /* The container is the Base UI Switch root: state arrives as data
-       attributes, and keyboard focus lands on the root itself (the hidden
-       form input is rendered as a sibling, outside this subtree). */
+    .thumb-contents {
+      display: contents;
+    }
+
     &:focus-visible {
       outline: none;
       box-shadow: 0 0 0 2px var(--ax-public-switch-focus-border-color);

@@ -2,7 +2,6 @@ import clsx from 'clsx';
 import switchStyles from './switch.module.css';
 
 import { Switch as SwitchBase } from '@base-ui/react/switch';
-import { ChangeEvent } from 'react';
 import { SelectorSize } from '@ui/shared/types/selector-size';
 
 type SwitchRootProps = Omit<
@@ -42,7 +41,7 @@ export type BaseSwitchProps = {
   /**
    * Callback function when the switch state changes
    */
-  onChange?: (checked: boolean, event: ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (checked: boolean, event: Event) => void;
 } & SwitchRootProps;
 
 /**
@@ -62,16 +61,10 @@ export function Switch({
     checked: boolean,
     eventDetails: { event: Event },
   ) {
-    onChange?.(
-      checked,
-      eventDetails.event as unknown as ChangeEvent<HTMLInputElement>,
-    );
+    onChange?.(checked, eventDetails.event);
   }
 
   return (
-    // The styled container is the Switch root itself. It must be a real box
-    // (not `display: contents`) to be focusable, and `nativeButton={false}`
-    // tells Base UI to attach role/tabindex/keyboard handling to the span.
     <SwitchBase.Root
       onCheckedChange={handleCheckedChange}
       className={clsx(
@@ -92,7 +85,10 @@ export function Switch({
             ? (thumbProps) => (
                 <span
                   {...thumbProps}
-                  style={{ ...thumbProps.style, display: 'contents' }}
+                  className={clsx(
+                    thumbProps.className,
+                    switchStyles['thumb-contents'],
+                  )}
                 />
               )
             : undefined

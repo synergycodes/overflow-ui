@@ -46,6 +46,10 @@ changes; read the sections below before upgrading from `1.x`.
   The MUI `slotProps` / passthrough surface is no longer available.
 - **Select**: `onChange` signature is `(event, value)` - the event is the first
   argument, the selected value the second.
+- **Switch**: `onChange` is `(checked: boolean, event: Event)`. The second
+  argument is the native DOM event (previously typed as a React
+  `ChangeEvent<HTMLInputElement>`, which never matched the value passed at
+  runtime).
 - Transitions moved to the popup element, where Base UI sets
   `data-starting-style` / `data-ending-style`.
 
