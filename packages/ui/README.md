@@ -24,7 +24,9 @@ yarn add @synergycodes/overflow-ui
 
 ### 🎨 Import styles
 
-Add to your style sheet or component:
+Import components from the package root (the recommended default). Their styles,
+including the global layer order, reset, and typography, are injected
+automatically, so you only need to add the design tokens:
 
 ```css
 @import '@synergycodes/overflow-ui/tokens.css';
@@ -34,15 +36,10 @@ Add to your style sheet or component:
 import '@synergycodes/overflow-ui/tokens.css';
 ```
 
-When you import components from the package root, their styles (and the global
-layer order, reset, and typography) are injected automatically. If you instead
-import per-component entries (e.g. `@synergycodes/overflow-ui/date-picker`),
-add the global stylesheet once so the layer order, reset, and typography are
-present:
-
-```tsx
-import '@synergycodes/overflow-ui/styles.css';
-```
+> **Subpath imports.** You can also import a single component directly, e.g.
+> `import { DatePicker } from '@synergycodes/overflow-ui/date-picker'`. That
+> injects only the component's own CSS, so add the global stylesheet once:
+> `import '@synergycodes/overflow-ui/styles.css'`.
 
 ### 🎛️ Apply the Theme
 
