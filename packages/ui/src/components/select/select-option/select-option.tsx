@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import listItemStyles from '@ui/shared/styles/list-item.module.css';
 import listItemSize from '@ui/shared/styles/list-item-size.module.css';
-import { Option } from '@mui/base';
+import { Select as SelectBase } from '@base-ui/react/select';
 import type { SelectItem } from '../types';
 import type { ItemSize } from '@ui/shared/types/item-size';
 
@@ -14,16 +14,17 @@ export function SelectOption({
   value,
   label,
   size = 'medium',
-  ...props
+  disabled,
 }: SelectOptionProps) {
   return (
-    <Option
+    <SelectBase.Item
       className={clsx(listItemStyles['list-item'], listItemSize[size])}
       value={value}
-      {...props}
+      label={label}
+      disabled={disabled}
     >
       {icon}
       {label}
-    </Option>
+    </SelectBase.Item>
   );
 }

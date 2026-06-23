@@ -38,7 +38,7 @@
       transition: all var(--ax-public-transition);
     }
 
-    &:global(.base--expanded) {
+    &[data-popup-open] {
       border-color: var(--ax-public-select-button-border-color-focus);
     }
 

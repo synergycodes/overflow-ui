@@ -16,60 +16,62 @@
   --ax-public-radio-border-radius: var(--ax-token-radius-radiobutton);
 }
 
-.wrapper {
-  position: relative;
-  display: inline-flex;
-  cursor: pointer;
-}
-
-.radio {
-  appearance: none;
-  position: relative;
-  margin: 0;
-  border: 0.0625rem solid var(--ax-public-radio-border-color);
-  border-radius: var(--ax-public-radio-border-radius);
-  background-color: var(--ax-public-radio-bg);
-  cursor: pointer;
-  vertical-align: middle;
-  transition: all var(--ax-public-transition);
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: var(--ax-public-radio-dot-size-small);
-    height: var(--ax-public-radio-dot-size-small);
-    border-radius: 50%;
-    background-color: var(--ax-public-radio-dot-color);
-    opacity: 0;
+@layer ui.component {
+  .wrapper {
+    position: relative;
+    display: inline-flex;
+    cursor: pointer;
   }
 
-  &:checked {
-    border-color: var(--ax-public-radio-checked-bg);
-    background-color: var(--ax-public-radio-checked-bg);
+  .radio {
+    appearance: none;
+    position: relative;
+    margin: 0;
+    border: 0.0625rem solid var(--ax-public-radio-border-color);
+    border-radius: var(--ax-public-radio-border-radius);
+    background-color: var(--ax-public-radio-bg);
+    cursor: pointer;
+    vertical-align: middle;
+    transition: all var(--ax-public-transition);
 
     &::after {
-      opacity: 1;
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: var(--ax-public-radio-dot-size-small);
+      height: var(--ax-public-radio-dot-size-small);
+      border-radius: 50%;
+      background-color: var(--ax-public-radio-dot-color);
+      opacity: 0;
     }
-  }
-
-  &:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--ax-public-radio-focus-border-color);
-  }
-
-  &:disabled {
-    cursor: not-allowed;
-    background-color: var(--ax-public-radio-disabled-bg);
-    border-color: var(--ax-public-radio-disabled-border-color);
 
     &:checked {
-      background-color: var(--ax-public-radio-disabled-bg);
+      border-color: var(--ax-public-radio-checked-bg);
+      background-color: var(--ax-public-radio-checked-bg);
 
       &::after {
-        background-color: var(--ax-public-radio-disabled-dot-color);
+        opacity: 1;
+      }
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--ax-public-radio-focus-border-color);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      background-color: var(--ax-public-radio-disabled-bg);
+      border-color: var(--ax-public-radio-disabled-border-color);
+
+      &:checked {
+        background-color: var(--ax-public-radio-disabled-bg);
+
+        &::after {
+          background-color: var(--ax-public-radio-disabled-dot-color);
+        }
       }
     }
   }

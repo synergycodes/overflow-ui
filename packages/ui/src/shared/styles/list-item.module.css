@@ -34,22 +34,27 @@
     cursor: pointer;
     color: var(--ax-public-list-item-color);
 
-    &:hover:not(:global(.base--disabled)) {
+    /* Base UI items expose state as data attributes (data-selected,
+       data-disabled, data-highlighted) — not the MUI-era base--* classes. */
+    &:hover:not([data-disabled]) {
       background-color: var(--ax-public-list-item-background-color);
     }
 
-    &:global(.base--selected):not(option:focus-visible) {
-      background-color: var(--ax-public-list-item-background-color-selected);
-      color: var(--ax-public-list-item-color-selected);
-    }
-
-    &:focus-visible {
+    &:focus-visible,
+    &[data-highlighted] {
       outline: var(--ax-public-list-item-outline-size) solid
         var(--ax-public-list-item-outline-color-focus);
       background-color: var(--ax-public-list-item-background-color-focus);
     }
 
-    &:global(.base--disabled) {
+    /* After the highlight rule: a selected item keeps its selected colors
+       while highlighted — the outline alone marks the keyboard cursor. */
+    &[data-selected] {
+      background-color: var(--ax-public-list-item-background-color-selected);
+      color: var(--ax-public-list-item-color-selected);
+    }
+
+    &[data-disabled] {
       color: var(--ax-public-input-color-disabled);
       cursor: auto;
     }
@@ -59,7 +64,8 @@
       background-color: var(--ax-public-list-item-background-color-destructive);
 
       &:hover,
-      &:focus-visible {
+      &:focus-visible,
+      &[data-highlighted] {
         background-color: var(
           --ax-public-list-item-background-color-hover-destructive
         );

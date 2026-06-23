@@ -1,24 +1,26 @@
 import listBoxStyles from '@ui/shared/styles/list-box.module.css';
 import clsx from 'clsx';
 
-import {
-  memo,
-  ReactElement,
-  useMemo,
-  MouseEvent,
-  KeyboardEvent,
-  FocusEvent,
-} from 'react';
-import { Dropdown, MenuButton } from '@mui/base';
-import { Menu as MenuBase, MenuProps as MenuBaseProps } from '@mui/base/Menu';
+import { memo, ReactElement, type ComponentProps } from 'react';
+import { Menu as MenuBase } from '@base-ui/react/menu';
 import { MenuItem } from './menu-item';
 import { MenuItemProps } from './types';
 import { ItemSize } from '@ui/shared/types/item-size';
 import { Separator } from '@ui/components/separator/separator';
-import { OffsetOptions, Placement } from '@floating-ui/react';
-import { createTriggerButton } from './utils/create-trigger-button';
+type Side = 'top' | 'bottom' | 'left' | 'right';
+type Align = 'start' | 'end';
 
-type MenuProps = MenuBaseProps & {
+export type Placement = Side | `${Side}-${Align}`;
+
+type OffsetAxes = {
+  mainAxis?: number;
+  crossAxis?: number;
+  alignmentAxis?: number | null;
+};
+
+export type OffsetOptions = number | OffsetAxes;
+
+type MenuProps = {
   /**
    * Array of menu items to be rendered in the menu.
    * Each item can be either a regular menu item or a separator.
@@ -47,11 +49,10 @@ type MenuProps = MenuBaseProps & {
 
   /**
    * Callback fired when the component requests to be opened or closed.
+   * Receives the next open state and the native event that triggered the
+   * change (if any).
    */
-  onOpenChange?: (
-    event: MouseEvent | KeyboardEvent | FocusEvent | null,
-    open: boolean,
-  ) => void;
+  onOpenChange?: (open: boolean, event?: Event) => void;
 
   /**
    * Distance between a popup and the trigger element
@@ -64,53 +65,78 @@ type MenuProps = MenuBaseProps & {
   children?: ReactElement;
 };
 
+type PositionerProps = ComponentProps<typeof MenuBase.Positioner>;
+type PositionerSide = NonNullable<PositionerProps['side']>;
+type PositionerAlign = NonNullable<PositionerProps['align']>;
+
+function placementToSideAlign(placement: Placement): {
+  side: PositionerSide;
+  align: PositionerAlign;
+} {
+  const [side, alignRaw] = placement.split('-') as [
+    PositionerSide,
+    PositionerAlign | undefined,
+  ];
+  return { side, align: alignRaw ?? 'center' };
+}
+
+function offsetToBaseUI(
+  offset: OffsetOptions | undefined,
+  align: PositionerAlign,
+): { sideOffset?: number; alignOffset?: number } {
+  if (offset == null) return {};
+  if (typeof offset === 'number') return { sideOffset: offset };
+  const { mainAxis, crossAxis, alignmentAxis } = offset;
+  const physicalCross = crossAxis ?? 0;
+  const alignOffset =
+    alignmentAxis ?? (align === 'end' ? -physicalCross : physicalCross);
+  return { sideOffset: mainAxis ?? 0, alignOffset };
+}
+
 export const Menu = memo(
   ({
     items,
     size = 'medium',
     placement = 'bottom-end',
     children,
-    slotProps,
     open,
     offset,
     onOpenChange,
-    ...props
   }: MenuProps) => {
-    const MenuTriggerButton = useMemo(() => {
-      if (children) {
-        return createTriggerButton(children);
-      }
-      return null;
-    }, [children]);
+    const { side, align } = placementToSideAlign(placement);
+    const { sideOffset, alignOffset } = offsetToBaseUI(offset, align);
 
     return (
-      <Dropdown open={open} onOpenChange={onOpenChange}>
-        {MenuTriggerButton && (
-          <MenuButton slots={{ root: MenuTriggerButton }} />
-        )}
-        <MenuBase
-          slotProps={{
-            listbox: {
-              className: listBoxStyles['list-box'],
-            },
-            root: {
-              placement: placement,
-              className: clsx(listBoxStyles['popup']),
-              offset,
-            },
-            ...slotProps,
-          }}
-          {...props}
-        >
-          {items.map((item, index) =>
-            item.type === 'separator' ? (
-              <Separator key={index} />
-            ) : (
-              <MenuItem key={item.label} {...item} size={size} />
-            ),
-          )}
-        </MenuBase>
-      </Dropdown>
+      <MenuBase.Root
+        open={open}
+        onOpenChange={
+          onOpenChange
+            ? (nextOpen, eventDetails) =>
+                onOpenChange(nextOpen, eventDetails.event)
+            : undefined
+        }
+      >
+        {children && <MenuBase.Trigger render={children} />}
+        <MenuBase.Portal>
+          <MenuBase.Positioner
+            side={side}
+            align={align}
+            sideOffset={sideOffset}
+            alignOffset={alignOffset}
+            className={clsx(listBoxStyles['popup'])}
+          >
+            <MenuBase.Popup className={listBoxStyles['list-box']}>
+              {items.map((item, index) =>
+                item.type === 'separator' ? (
+                  <Separator key={index} />
+                ) : (
+                  <MenuItem key={item.label} {...item} size={size} />
+                ),
+              )}
+            </MenuBase.Popup>
+          </MenuBase.Positioner>
+        </MenuBase.Portal>
+      </MenuBase.Root>
     );
   },
 );

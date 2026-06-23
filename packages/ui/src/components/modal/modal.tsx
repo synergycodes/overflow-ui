@@ -1,9 +1,8 @@
 import clsx from 'clsx';
 import styles from './modal.module.css';
-import { Modal as BaseModal } from '@mui/base/Modal';
+import { Dialog } from '@base-ui/react/dialog';
 import { forwardRef, type ReactNode } from 'react';
 import { NavButton } from '@ui/components/button/nav-button/nav-button';
-import { Fade } from '@mui/material';
 import type { WithIcon } from '@ui/shared/types/with-icon';
 import { X } from '@phosphor-icons/react';
 import type { FooterVariant } from './types';
@@ -68,81 +67,64 @@ export const Modal = forwardRef<HTMLDivElement, ModalProps>(
     ref,
   ) => {
     return (
-      <BaseModal
-        className={styles['modal-base']}
+      <Dialog.Root
         open={open}
-        onClose={onClose}
-        slots={{
-          backdrop: Backdrop,
+        onOpenChange={(nextOpen) => {
+          if (!nextOpen) {
+            onClose?.();
+          }
         }}
-        {...rest}
       >
-        <Fade in={open}>
-          <div className={clsx(styles['modal'], styles[size])} ref={ref}>
-            <div className={styles['header']}>
-              <div className={styles['title-wrapper']}>
-                {icon && <div className={styles['icon']}>{icon}</div>}
-                <div className={styles['title-container']}>
-                  <span className={clsx(styles['title'], 'ax-public-h6')}>
-                    {title}
-                  </span>
-                  {subtitle && (
-                    <span
-                      className={clsx(styles['description'], 'ax-public-p11')}
+        <Dialog.Portal>
+          <Dialog.Backdrop className={styles['backdrop']} />
+          <Dialog.Popup className={styles['modal-base']}>
+            <div
+              className={clsx(styles['modal'], styles[size])}
+              ref={ref}
+              {...rest}
+            >
+              <div className={styles['header']}>
+                <div className={styles['title-wrapper']}>
+                  {icon && <div className={styles['icon']}>{icon}</div>}
+                  <div className={styles['title-container']}>
+                    <Dialog.Title
+                      className={clsx(styles['title'], 'ax-public-h6')}
+                      render={<span />}
                     >
-                      {subtitle}
-                    </span>
-                  )}
+                      {title}
+                    </Dialog.Title>
+                    {subtitle && (
+                      <Dialog.Description
+                        className={clsx(styles['description'], 'ax-public-p11')}
+                        render={<span />}
+                      >
+                        {subtitle}
+                      </Dialog.Description>
+                    )}
+                  </div>
                 </div>
+                {onClose && (
+                  <NavButton onClick={onClose}>
+                    <X />
+                  </NavButton>
+                )}
               </div>
-              {onClose && (
-                <NavButton onClick={onClose}>
-                  <X />
-                </NavButton>
+
+              {children && (
+                <div className={clsx(styles['content'], className)}>
+                  {children}
+                </div>
+              )}
+
+              {footer && (
+                <div className={clsx(styles['footer'], styles[footerVariant])}>
+                  {footer}
+                </div>
               )}
             </div>
-
-            {children && (
-              <div className={clsx(styles['content'], className)}>
-                {children}
-              </div>
-            )}
-
-            {footer && (
-              <div className={clsx(styles['footer'], styles[footerVariant])}>
-                {footer}
-              </div>
-            )}
-          </div>
-        </Fade>
-      </BaseModal>
+          </Dialog.Popup>
+        </Dialog.Portal>
+      </Dialog.Root>
     );
   },
 );
-
-/**
- * Backdrop component for the modal that dims the background
- */
-const Backdrop = forwardRef<HTMLDivElement, BackdropProps>((props, ref) => {
-  const { open, className } = props;
-
-  return (
-    <Fade in={open}>
-      <div
-        {...props}
-        ref={ref}
-        className={clsx(
-          { 'base-Backdrop-open': open },
-          styles['backdrop'],
-          className,
-        )}
-      />
-    </Fade>
-  );
-});
-
-type BackdropProps = {
-  open?: boolean;
-  className: string;
-  onClose?: () => void;
-};

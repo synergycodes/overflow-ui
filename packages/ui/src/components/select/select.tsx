@@ -5,8 +5,8 @@ import inputFontStyles from '@ui/shared/styles/input-font-size.module.css';
 import inputSizeStyles from '@ui/shared/styles/input-size.module.css';
 import style from './select.module.css';
 
-import { Select as SelectBase } from '@mui/base/Select';
-import type { UseSelectParameters } from '@mui/base';
+import { Select as SelectBase } from '@base-ui/react/select';
+import type { SyntheticEvent } from 'react';
 import { SelectValue } from './select-value/select-value';
 import { SelectButton } from './select-button/select-button';
 import { SelectOption } from './select-option/select-option';
@@ -14,7 +14,9 @@ import type { SelectItem } from './types';
 import type { ItemSize } from '../../shared/types/item-size';
 import { Separator } from '../separator/separator';
 
-export type SelectBaseProps = UseSelectParameters<string | number | null> & {
+type SelectValueType = string | number | null;
+
+export type SelectBaseProps = {
   /**
    * Custom class name for the component.
    */
@@ -35,6 +37,33 @@ export type SelectBaseProps = UseSelectParameters<string | number | null> & {
    * Whether the select has an error
    */
   error?: boolean;
+  /**
+   * The controlled value of the select.
+   */
+  value?: SelectValueType;
+  /**
+   * The default value of the select when uncontrolled.
+   */
+  defaultValue?: SelectValueType;
+  /**
+   * Callback fired when the value of the select changes.
+   */
+  onChange?: (
+    event: SyntheticEvent | Event | null,
+    value: SelectValueType,
+  ) => void;
+  /**
+   * Whether the select is disabled.
+   */
+  disabled?: boolean;
+  /**
+   * Identifies the field when a form is submitted.
+   */
+  name?: string;
+  /**
+   * Whether the user must choose a value before submitting a form.
+   */
+  required?: boolean;
 };
 
 /**
@@ -46,49 +75,66 @@ export function Select({
   items,
   placeholder,
   error = false,
-  ...props
+  value,
+  defaultValue,
+  onChange,
+  disabled,
+  name,
+  required,
 }: SelectBaseProps) {
-  const slotProps = {
-    root: {
-      className: clsx(
-        selectButtonStyles['container'],
-        {
-          [selectButtonStyles['container--error']]: error,
-        },
-        inputFontStyles[size],
-        inputSizeStyles[size],
-      ),
+  const triggerClassName = clsx(
+    selectButtonStyles['container'],
+    {
+      [selectButtonStyles['container--error']]: error,
     },
-    listbox: { className: listBoxStyles['list-box'] },
-    popup: {
-      disablePortal: true,
-      className: clsx(listBoxStyles['popup'], style['popup']),
-    },
-  };
+    inputFontStyles[size],
+    inputSizeStyles[size],
+    className,
+  );
 
   return (
     <div className={style['container']}>
-      <SelectBase
-        className={className}
-        renderValue={(option) => (
-          <SelectValue
-            selectedOptionLabel={option}
-            items={items}
-            placeholder={placeholder}
-          />
-        )}
-        slots={{ root: SelectButton }}
-        slotProps={slotProps}
-        {...props}
+      <SelectBase.Root
+        value={value}
+        defaultValue={defaultValue}
+        disabled={disabled}
+        name={name}
+        required={required}
+        onValueChange={(nextValue, eventDetails) => {
+          onChange?.(eventDetails.event ?? null, nextValue as SelectValueType);
+        }}
       >
-        {items.map((item, index) =>
-          item.type === 'separator' ? (
-            <Separator key={index} />
-          ) : (
-            <SelectOption key={item.value} {...item} size={size} />
-          ),
-        )}
-      </SelectBase>
+        <SelectBase.Trigger
+          className={triggerClassName}
+          render={<SelectButton />}
+        >
+          <SelectBase.Value>
+            {(currentValue) => (
+              <SelectValue
+                value={currentValue as SelectValueType}
+                items={items}
+                placeholder={placeholder}
+              />
+            )}
+          </SelectBase.Value>
+        </SelectBase.Trigger>
+        <SelectBase.Portal>
+          <SelectBase.Positioner
+            className={clsx(listBoxStyles['popup'], style['popup'])}
+            alignItemWithTrigger={false}
+          >
+            <SelectBase.Popup className={listBoxStyles['list-box']}>
+              {items.map((item, index) =>
+                item.type === 'separator' ? (
+                  <Separator key={index} />
+                ) : (
+                  <SelectOption key={item.value} {...item} size={size} />
+                ),
+              )}
+            </SelectBase.Popup>
+          </SelectBase.Positioner>
+        </SelectBase.Portal>
+      </SelectBase.Root>
     </div>
   );
 }

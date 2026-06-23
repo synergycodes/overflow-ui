@@ -68,43 +68,45 @@
   --ax-public-snackbar-info-icon-color: var(--ax-colors-blue-400);
 }
 
-.container {
-  display: flex;
-  width: calc(
-    var(--ax-public-snackbar-width) + 2 *
-      var(--ax-token-spacing-snackbar-h-pad-1) + 2 *
-      var(--ax-public-snackbar-border-size)
-  );
-  border: var(--ax-public-snackbar-border-size) solid
-    var(--ax-public-snackbar-default-border);
-  border-radius: var(--ax-public-snackbar-border-radius);
-  background: var(--ax-public-snackbar-default-background);
-  padding: var(--ax-public-snackbar-padding);
-
-  .content {
+@layer ui.component {
+  .container {
     display: flex;
-    gap: var(--ax-public-snackbar-content-gap);
-    width: 100%;
-    min-width: 0;
-  }
+    width: calc(
+      var(--ax-public-snackbar-width) + 2 *
+        var(--ax-token-spacing-snackbar-h-pad-1) + 2 *
+        var(--ax-public-snackbar-border-size)
+    );
+    border: var(--ax-public-snackbar-border-size) solid
+      var(--ax-public-snackbar-default-border);
+    border-radius: var(--ax-public-snackbar-border-radius);
+    background: var(--ax-public-snackbar-default-background);
+    padding: var(--ax-public-snackbar-padding);
 
-  &.success {
-    background: var(--ax-public-snackbar-success-background);
-    border-color: var(--ax-public-snackbar-success-border);
-  }
+    .content {
+      display: flex;
+      gap: var(--ax-public-snackbar-content-gap);
+      width: 100%;
+      min-width: 0;
+    }
 
-  &.error {
-    background: var(--ax-public-snackbar-error-background);
-    border-color: var(--ax-public-snackbar-error-border);
-  }
+    &.success {
+      background: var(--ax-public-snackbar-success-background);
+      border-color: var(--ax-public-snackbar-success-border);
+    }
 
-  &.warning {
-    background: var(--ax-public-snackbar-warning-background);
-    border-color: var(--ax-public-snackbar-warning-border);
-  }
+    &.error {
+      background: var(--ax-public-snackbar-error-background);
+      border-color: var(--ax-public-snackbar-error-border);
+    }
 
-  &.info {
-    background: var(--ax-public-snackbar-info-background);
-    border-color: var(--ax-public-snackbar-info-border);
+    &.warning {
+      background: var(--ax-public-snackbar-warning-background);
+      border-color: var(--ax-public-snackbar-warning-border);
+    }
+
+    &.info {
+      background: var(--ax-public-snackbar-info-background);
+      border-color: var(--ax-public-snackbar-info-border);
+    }
   }
 }

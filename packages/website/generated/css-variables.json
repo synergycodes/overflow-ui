@@ -506,7 +506,7 @@
       "name": "--ax-public-collapsible-transition-duration"
     }
   ],
-  "components/date-picker/data-picker-mantine.css": [
+  "components/date-picker/date-picker.module.css": [
     {
       "comment": "",
       "name": "--ax-public-date-picker-border-size"
@@ -542,13 +542,8 @@
     {
       "comment": "",
       "name": "--ax-public-date-picker-dropdown-box-shadow"
-    },
-    {
-      "comment": "",
-      "name": "--ax-public-date-picker-header-background"
     }
   ],
-  "components/date-picker/date-picker.module.css": [],
   "components/date-picker/variables.css": [
     {
       "comment": "",

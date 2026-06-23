@@ -956,16 +956,73 @@
   ],
   "../ui/src/components/date-picker/date-picker.tsx": [
     {
-      "description": "Component for selecting a date with customizable format and placeholder",
+      "description": "Component for selecting a date with customizable format and placeholder.\n\nBuilt on top of `react-day-picker` (calendar) composed with Base UI\n`Popover` (positioning + dismiss + a11y). The input/trigger uses our\nstandard input-size and input-font-size design tokens.",
       "displayName": "DatePicker",
       "methods": [],
       "props": {
-        "defaultValue": {
-          "description": "Default date value when the component is initially rendered.\n\nFor the \"default\" is a single date, for the \"range\" [date, date]; and for the \"multiple\", an array of dates.",
+        "aria-label": {
+          "description": "Accessible name for the trigger button.",
           "required": false,
           "tsType": {
-            "name": "intersection['defaultValue']",
-            "raw": "DatePickerProps['defaultValue']"
+            "name": "string"
+          }
+        },
+        "aria-labelledby": {
+          "description": "`aria-labelledby` for the trigger button.",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "className": {
+          "description": "Class name applied to the trigger button.",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "defaultValue": {
+          "description": "Initial value when the picker is uncontrolled.\n\n- `default` accepts `Date | string`\n- `range` accepts `[Date, Date]`\n- `multiple` accepts `Date[]`",
+          "required": false,
+          "tsType": {
+            "elements": [
+              {
+                "name": "Date"
+              },
+              {
+                "elements": [
+                  {
+                    "name": "Date"
+                  },
+                  {
+                    "name": "Date"
+                  }
+                ],
+                "name": "tuple",
+                "raw": "[Date, Date]"
+              },
+              {
+                "elements": [
+                  {
+                    "name": "Date"
+                  }
+                ],
+                "name": "Array",
+                "raw": "Date[]"
+              },
+              {
+                "name": "string"
+              }
+            ],
+            "name": "union",
+            "raw": "Date | [Date, Date] | Date[] | string"
+          }
+        },
+        "disabled": {
+          "description": "Disable the picker. The trigger button is not interactive and the\npopover cannot be opened.",
+          "required": false,
+          "tsType": {
+            "name": "boolean"
           }
         },
         "error": {
@@ -973,10 +1030,17 @@
             "computed": false,
             "value": "false"
           },
-          "description": "Whether the date picker has an error",
+          "description": "Render the trigger in an error state.\n\n@default false",
           "required": false,
           "tsType": {
             "name": "boolean"
+          }
+        },
+        "id": {
+          "description": "`id` attribute applied to the trigger button.",
+          "required": false,
+          "tsType": {
+            "name": "string"
           }
         },
         "inputSize": {
@@ -984,10 +1048,76 @@
             "computed": false,
             "value": "'medium'"
           },
-          "description": "",
+          "description": "Size variant of the trigger input.\n@default 'medium'",
           "required": false,
           "tsType": {
             "name": "ItemSize"
+          }
+        },
+        "maxDate": {
+          "description": "The latest selectable date (inclusive).",
+          "required": false,
+          "tsType": {
+            "name": "Date"
+          }
+        },
+        "minDate": {
+          "description": "The earliest selectable date (inclusive).",
+          "required": false,
+          "tsType": {
+            "name": "Date"
+          }
+        },
+        "onChange": {
+          "description": "Callback fired when the selected value changes.\n\n- `default` -> the selected `Date` or `null` when cleared\n- `range`   -> `[from, to]` once both dates are selected, otherwise `null`\n- `multiple`-> the array of selected `Date`s (empty array allowed)",
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "raw": "(value: Date | [Date, Date] | Date[] | null) => void",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "value",
+                  "type": {
+                    "elements": [
+                      {
+                        "name": "Date"
+                      },
+                      {
+                        "elements": [
+                          {
+                            "name": "Date"
+                          },
+                          {
+                            "name": "Date"
+                          }
+                        ],
+                        "name": "tuple",
+                        "raw": "[Date, Date]"
+                      },
+                      {
+                        "elements": [
+                          {
+                            "name": "Date"
+                          }
+                        ],
+                        "name": "Array",
+                        "raw": "Date[]"
+                      },
+                      {
+                        "name": "null"
+                      }
+                    ],
+                    "name": "union",
+                    "raw": "Date | [Date, Date] | Date[] | null"
+                  }
+                }
+              ],
+              "return": {
+                "name": "void"
+              }
+            },
+            "type": "function"
           }
         },
         "placeholder": {
@@ -995,10 +1125,17 @@
             "computed": false,
             "value": "'dd/mm/yyyy'"
           },
-          "description": "Placeholder text to show when no date is selected",
+          "description": "Placeholder text shown when no date is selected.\n\n@default 'dd/mm/yyyy'",
           "required": false,
           "tsType": {
             "name": "string"
+          }
+        },
+        "readOnly": {
+          "description": "Render the picker as read-only. The trigger displays the current value\nbut the popover cannot be opened.",
+          "required": false,
+          "tsType": {
+            "name": "boolean"
           }
         },
         "type": {
@@ -1006,18 +1143,62 @@
             "computed": false,
             "value": "'default'"
           },
-          "description": "Picker type",
+          "description": "Picker type.\n\n- `default` selects a single date\n- `range` selects a `[from, to]` date range\n- `multiple` selects an arbitrary array of dates\n\n@default 'default'",
           "required": false,
           "tsType": {
-            "name": "DatePickerType"
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'default'"
+              },
+              {
+                "name": "literal",
+                "value": "'range'"
+              },
+              {
+                "name": "literal",
+                "value": "'multiple'"
+              }
+            ],
+            "name": "union",
+            "raw": "'default' | 'range' | 'multiple'"
           }
         },
         "value": {
-          "description": "Controlled value for the selected date\n\nFor the \"default\" is a single date, for the \"range\" [date, date]; and for the \"multiple\", an array of dates.",
+          "description": "Controlled selected value. When set, the picker becomes controlled.",
           "required": false,
           "tsType": {
-            "name": "intersection['value']",
-            "raw": "DatePickerProps['value']"
+            "elements": [
+              {
+                "name": "Date"
+              },
+              {
+                "elements": [
+                  {
+                    "name": "Date"
+                  },
+                  {
+                    "name": "Date"
+                  }
+                ],
+                "name": "tuple",
+                "raw": "[Date, Date]"
+              },
+              {
+                "elements": [
+                  {
+                    "name": "Date"
+                  }
+                ],
+                "name": "Array",
+                "raw": "Date[]"
+              },
+              {
+                "name": "string"
+              }
+            ],
+            "name": "union",
+            "raw": "Date | [Date, Date] | Date[] | string"
           }
         },
         "valueFormat": {
@@ -1025,7 +1206,7 @@
             "computed": false,
             "value": "'DD/MM/YYYY'"
           },
-          "description": "Format string to control how the selected date is displayed\n(e.g., 'yyyy-MM-dd')",
+          "description": "Format string used to render the selected date(s) in the trigger.\n\n**Note:** This implementation uses `date-fns` format tokens (e.g.\n`dd/MM/yyyy`). The legacy default value `DD/MM/YYYY` (dayjs tokens) is\naccepted and converted to the equivalent `date-fns` tokens for backwards\ncompatibility.\n\n@default 'DD/MM/YYYY'",
           "required": false,
           "tsType": {
             "name": "string"
@@ -1173,14 +1354,21 @@
       "methods": [],
       "props": {
         "endAdornment": {
-          "defaultValue": {
-            "computed": true,
-            "value": "undefined"
-          },
           "description": "Element displayed at the end of the input field.",
           "required": false,
           "tsType": {
             "name": "ReactNode"
+          }
+        },
+        "error": {
+          "defaultValue": {
+            "computed": false,
+            "value": "false"
+          },
+          "description": "Renders the input in an error state.",
+          "required": false,
+          "tsType": {
+            "name": "boolean"
           }
         },
         "size": {
@@ -1195,10 +1383,6 @@
           }
         },
         "startAdornment": {
-          "defaultValue": {
-            "computed": true,
-            "value": "undefined"
-          },
           "description": "Element displayed at the start of the input field.",
           "required": false,
           "tsType": {
@@ -1324,42 +1508,72 @@
           "description": "Distance between a popup and the trigger element",
           "required": false,
           "tsType": {
-            "name": "OffsetOptions"
+            "elements": [
+              {
+                "name": "number"
+              },
+              {
+                "name": "signature",
+                "raw": "{\n  mainAxis?: number;\n  crossAxis?: number;\n  alignmentAxis?: number | null;\n}",
+                "signature": {
+                  "properties": [
+                    {
+                      "key": "mainAxis",
+                      "value": {
+                        "name": "number",
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "crossAxis",
+                      "value": {
+                        "name": "number",
+                        "required": false
+                      }
+                    },
+                    {
+                      "key": "alignmentAxis",
+                      "value": {
+                        "elements": [
+                          {
+                            "name": "number"
+                          },
+                          {
+                            "name": "null"
+                          }
+                        ],
+                        "name": "union",
+                        "raw": "number | null",
+                        "required": false
+                      }
+                    }
+                  ]
+                },
+                "type": "object"
+              }
+            ],
+            "name": "union",
+            "raw": "| number\n| {\n    mainAxis?: number;\n    crossAxis?: number;\n    alignmentAxis?: number | null;\n  }"
           }
         },
         "onOpenChange": {
-          "description": "Callback fired when the component requests to be opened or closed.",
+          "description": "Callback fired when the component requests to be opened or closed.\nReceives the next open state and the native event that triggered the\nchange (if any).",
           "required": false,
           "tsType": {
             "name": "signature",
-            "raw": "(\n  event: MouseEvent | KeyboardEvent | FocusEvent | null,\n  open: boolean,\n) => void",
+            "raw": "(open: boolean, event?: Event) => void",
             "signature": {
               "arguments": [
-                {
-                  "name": "event",
-                  "type": {
-                    "elements": [
-                      {
-                        "name": "MouseEvent"
-                      },
-                      {
-                        "name": "KeyboardEvent"
-                      },
-                      {
-                        "name": "FocusEvent"
-                      },
-                      {
-                        "name": "null"
-                      }
-                    ],
-                    "name": "union",
-                    "raw": "MouseEvent | KeyboardEvent | FocusEvent | null"
-                  }
-                },
                 {
                   "name": "open",
                   "type": {
                     "name": "boolean"
+                  }
+                },
+                {
+                  "name": "event",
+                  "type": {
+                    "name": "Event"
                   }
                 }
               ],
@@ -1396,7 +1610,36 @@
           "tsType": {
             "elements": [
               {
-                "name": "Placement"
+                "elements": [
+                  {
+                    "elements": [
+                      {
+                        "name": "literal",
+                        "value": "'top'"
+                      },
+                      {
+                        "name": "literal",
+                        "value": "'bottom'"
+                      },
+                      {
+                        "name": "literal",
+                        "value": "'left'"
+                      },
+                      {
+                        "name": "literal",
+                        "value": "'right'"
+                      }
+                    ],
+                    "name": "union",
+                    "raw": "'top' | 'bottom' | 'left' | 'right'"
+                  },
+                  {
+                    "name": "literal",
+                    "value": "`${Side}-${Align}`"
+                  }
+                ],
+                "name": "union",
+                "raw": "Side | `${Side}-${Align}`"
               },
               {
                 "name": "undefined"
@@ -2004,35 +2247,23 @@
             "name": "string"
           }
         },
-        "selectedOptionLabel": {
+        "value": {
           "description": "",
           "required": true,
           "tsType": {
             "elements": [
               {
-                "elements": [
-                  {
-                    "elements": [
-                      {
-                        "name": "string"
-                      },
-                      {
-                        "name": "number"
-                      }
-                    ],
-                    "name": "union",
-                    "raw": "string | number"
-                  }
-                ],
-                "name": "SelectOption",
-                "raw": "SelectOption<string | number>"
+                "name": "string"
+              },
+              {
+                "name": "number"
               },
               {
                 "name": "null"
               }
             ],
             "name": "union",
-            "raw": "SelectOption<string | number> | null"
+            "raw": "string | number | null"
           }
         }
       }
@@ -2049,6 +2280,32 @@
           "required": false,
           "tsType": {
             "name": "string"
+          }
+        },
+        "defaultValue": {
+          "description": "The default value of the select when uncontrolled.",
+          "required": false,
+          "tsType": {
+            "elements": [
+              {
+                "name": "string"
+              },
+              {
+                "name": "number"
+              },
+              {
+                "name": "null"
+              }
+            ],
+            "name": "union",
+            "raw": "string | number | null"
+          }
+        },
+        "disabled": {
+          "description": "Whether the select is disabled.",
+          "required": false,
+          "tsType": {
+            "name": "boolean"
           }
         },
         "error": {
@@ -2184,11 +2441,77 @@
             "raw": "SelectItem[]"
           }
         },
+        "name": {
+          "description": "Identifies the field when a form is submitted.",
+          "required": false,
+          "tsType": {
+            "name": "string"
+          }
+        },
+        "onChange": {
+          "description": "Callback fired when the value of the select changes.",
+          "required": false,
+          "tsType": {
+            "name": "signature",
+            "raw": "(\n  event: SyntheticEvent | Event | null,\n  value: SelectValueType,\n) => void",
+            "signature": {
+              "arguments": [
+                {
+                  "name": "event",
+                  "type": {
+                    "elements": [
+                      {
+                        "name": "SyntheticEvent"
+                      },
+                      {
+                        "name": "Event"
+                      },
+                      {
+                        "name": "null"
+                      }
+                    ],
+                    "name": "union",
+                    "raw": "SyntheticEvent | Event | null"
+                  }
+                },
+                {
+                  "name": "value",
+                  "type": {
+                    "elements": [
+                      {
+                        "name": "string"
+                      },
+                      {
+                        "name": "number"
+                      },
+                      {
+                        "name": "null"
+                      }
+                    ],
+                    "name": "union",
+                    "raw": "string | number | null"
+                  }
+                }
+              ],
+              "return": {
+                "name": "void"
+              }
+            },
+            "type": "function"
+          }
+        },
         "placeholder": {
           "description": "Placeholder text for the select input",
           "required": false,
           "tsType": {
             "name": "string"
+          }
+        },
+        "required": {
+          "description": "Whether the user must choose a value before submitting a form.",
+          "required": false,
+          "tsType": {
+            "name": "boolean"
           }
         },
         "size": {
@@ -2225,6 +2548,25 @@
             ],
             "name": "Extract",
             "raw": "Extract<Size, 'large' | 'medium' | 'small'>"
+          }
+        },
+        "value": {
+          "description": "The controlled value of the select.",
+          "required": false,
+          "tsType": {
+            "elements": [
+              {
+                "name": "string"
+              },
+              {
+                "name": "number"
+              },
+              {
+                "name": "null"
+              }
+            ],
+            "name": "union",
+            "raw": "string | number | null"
           }
         }
       }
@@ -2965,10 +3307,65 @@
           }
         },
         "placement": {
+          "defaultValue": {
+            "computed": false,
+            "value": "'bottom'"
+          },
           "description": "Tooltip placement.",
           "required": false,
           "tsType": {
-            "name": "Placement"
+            "elements": [
+              {
+                "name": "literal",
+                "value": "'top'"
+              },
+              {
+                "name": "literal",
+                "value": "'top-start'"
+              },
+              {
+                "name": "literal",
+                "value": "'top-end'"
+              },
+              {
+                "name": "literal",
+                "value": "'right'"
+              },
+              {
+                "name": "literal",
+                "value": "'right-start'"
+              },
+              {
+                "name": "literal",
+                "value": "'right-end'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottom'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottom-start'"
+              },
+              {
+                "name": "literal",
+                "value": "'bottom-end'"
+              },
+              {
+                "name": "literal",
+                "value": "'left'"
+              },
+              {
+                "name": "literal",
+                "value": "'left-start'"
+              },
+              {
+                "name": "literal",
+                "value": "'left-end'"
+              }
+            ],
+            "name": "union",
+            "raw": "| 'top'\n| 'top-start'\n| 'top-end'\n| 'right'\n| 'right-start'\n| 'right-end'\n| 'bottom'\n| 'bottom-start'\n| 'bottom-end'\n| 'left'\n| 'left-start'\n| 'left-end'"
           }
         }
       }

@@ -24,7 +24,9 @@ yarn add @synergycodes/overflow-ui
 
 ### 🎨 Import styles
 
-Add to your style sheet or component:
+Import components from the package root (the recommended default). Their styles,
+including the global layer order, reset, and typography, are injected
+automatically, so you only need to add the design tokens:
 
 ```css
 @import '@synergycodes/overflow-ui/tokens.css';
@@ -34,12 +36,18 @@ Add to your style sheet or component:
 import '@synergycodes/overflow-ui/tokens.css';
 ```
 
+> **Subpath imports.** You can also import a single component directly, e.g.
+> `import { DatePicker } from '@synergycodes/overflow-ui/date-picker'`. That
+> injects only the component's own CSS, so import the global stylesheet once and
+> **before any component**, so the cascade layers are ordered correctly:
+> `import '@synergycodes/overflow-ui/styles.css'`.
+
 ### 🎛️ Apply the Theme
 
 To make the styles use proper variables, include data-theme (light or dark) attribute in <html>:
 
 ```html
-<html data-theme="light">
+<html data-theme="light"></html>
 ```
 
 ### 🧱 Use components
@@ -88,7 +96,6 @@ or a derived value used by the selected component:
 
 Overflow UI uses [CSS layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) to separate its styles from yours. By default, CSS styles outside of any layer take precedence over what Overflow UI defines, so your styles will always win the specificity war. You can customize Overflow UI components with simple `input {}`.
 
-
 ```css
 @layer ui.component {
   .separator {
@@ -98,6 +105,7 @@ Overflow UI uses [CSS layers](https://developer.mozilla.org/en-US/docs/Web/CSS/@
 ```
 
 Default Overflow UI order:
+
 ```css
 @layer ui.base, ui.component;
 ```
@@ -129,20 +137,11 @@ Edit `ui/preview-page/preview-page.tsx` to display desired components.
 
 ### 📣 Important Note on Underlying Technology
 
-> **Overflow UI is built on top of [MUI Base](https://v6.mui.com/base-ui/getting-started/), a headless component library that focuses on accessibility and logic, while leaving the styling up to us.**
+> **Overflow UI is built on top of [Base UI](https://base-ui.com), a headless component library that focuses on accessibility and logic, while leaving the styling up to us.**
 >
-> Thanks to MUI Base, Overflow UI provides components that are **accessible by default** and **fully customizable** through our design tokens.
+> Thanks to Base UI, Overflow UI provides components that are **accessible by default** and **fully customizable** through our design tokens.
 >
-> We are aware that **MUI Base has been deprecated**, and the MUI team recommends migrating to [Base UI](https://base-ui.com).
-> However, after careful evaluation, we've chosen to **stay with MUI Base** for now because:
->
-> * ✅ **Base UI is not yet mature enough** for our needs.
-> * ✅ We want to ensure a stable, well-tested experience for Overflow UI users.
->
-> This is a **conscious and informed decision**.
-> We will continue to monitor Base UI's progress and will consider migrating when we feel it's the right time, ensuring a smooth and thoughtful transition for Overflow UI users.
->
-> If you have any questions or concerns, feel free to reach out — we’re happy to share our reasoning and plans in more detail!
+> Earlier `1.0.0` betas were built on the now-deprecated [MUI Base](https://v6.mui.com/base-ui/getting-started/). From `1.0.0-beta.28` the library is built on Base UI; see [CHANGELOG.md](./CHANGELOG.md) for the full list of changes.
 
 ## Showcase
 
