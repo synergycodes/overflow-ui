@@ -2,11 +2,11 @@
 
 All notable changes to `@synergycodes/overflow-ui` are documented in this file.
 
-## 2.0.0-beta.0
+## 1.0.0-beta.28
 
-This release rebuilds the library on [Base UI](https://base-ui.com/) and removes
+This beta rebuilds the library on [Base UI](https://base-ui.com/) and removes
 the previous MUI / Mantine / Emotion / Floating UI stack. It contains breaking
-changes; read the sections below before upgrading from `1.x`.
+changes relative to `1.0.0-beta.27`; read the sections below before upgrading.
 
 ### Breaking changes
 

@@ -141,7 +141,7 @@ Edit `ui/preview-page/preview-page.tsx` to display desired components.
 >
 > Thanks to Base UI, Overflow UI provides components that are **accessible by default** and **fully customizable** through our design tokens.
 >
-> Earlier releases (`1.x`) were built on the now-deprecated [MUI Base](https://v6.mui.com/base-ui/getting-started/). Version `2.0` migrates to Base UI; see [CHANGELOG.md](./CHANGELOG.md) for the full list of breaking changes.
+> Earlier `1.0.0` betas were built on the now-deprecated [MUI Base](https://v6.mui.com/base-ui/getting-started/). From `1.0.0-beta.28` the library is built on Base UI; see [CHANGELOG.md](./CHANGELOG.md) for the full list of changes.
 
 ## Showcase
 
